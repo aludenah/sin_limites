@@ -1,5 +1,5 @@
 (() => {
-  const ADMIN_EMAILS=['coord.fis@sacooliveros.edu.pe'];
+  const ADMIN_EMAILS=['alexludenah@gmail.com'];
   let adminEnabled=false;
 
   function isAdmin(user){
