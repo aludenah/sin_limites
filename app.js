@@ -199,6 +199,7 @@ function openCourse(id){
   state.activeTab='Teoría';
   state.view='course';
   saveProgress();
+  if(id===12){window.location.assign('historia-universal-capitulo-01.html');return}
   window.scrollTo(0,0);
   render();
 }
