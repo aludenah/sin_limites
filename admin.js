@@ -14,7 +14,7 @@ auth.languageCode='es';
 const provider=new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({prompt:'select_account'});
 
-const ADMIN_EMAIL='coord.fis@sacooliveros.edu.pe';
+const ADMIN_EMAIL='alexludenah@gmail.com';
 const app=document.getElementById('adminApp');
 let allStudents=[];
 
@@ -59,7 +59,7 @@ function renderShell(user){
 }
 
 function renderPermissionError(){
-  document.getElementById('dashboardBody').innerHTML=`<div class="rounded-3xl border border-amber-200 bg-amber-50 p-6"><div class="flex items-start gap-4"><div class="w-11 h-11 shrink-0 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center"><i data-lucide="shield-alert" class="w-5 h-5"></i></div><div><h2 class="font-extrabold text-amber-950">Falta habilitar la lectura administrativa en Firestore</h2><p class="mt-2 text-sm leading-relaxed text-amber-800">El panel ya está creado, pero las reglas actuales solo permiten que cada estudiante lea sus propios datos. Publica las reglas administrativas preparadas para este proyecto y vuelve a cargar esta página.</p></div></div></div>`;
+  document.getElementById('dashboardBody').innerHTML=`<div class="rounded-3xl border border-amber-200 bg-amber-50 p-6"><div class="flex items-start gap-4"><div class="w-11 h-11 shrink-0 rounded-2xl bg-amber-100 text-amber-700 flex items-center justify-center"><i data-lucide="shield-alert" class="w-5 h-5"></i></div><div><h2 class="font-extrabold text-amber-950">Falta habilitar la lectura administrativa en Firestore</h2><p class="mt-2 text-sm leading-relaxed text-amber-800">Publica las reglas administrativas de Firestore con la cuenta ${ADMIN_EMAIL} y vuelve a cargar esta página.</p></div></div></div>`;
   lucide.createIcons();
 }
 
