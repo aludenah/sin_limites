@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Historia Universal - Capítulo 1: La historia como ciencia. Academia Virtual Saco Oliveros.">
+  <title>Historia Universal | Capítulo 1 - La historia como ciencia</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body{font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased}
+    .tab-btn.active{color:#172554;border-color:#dc2626}
+    .panel{display:none}
+    .panel.active{display:block;animation:fadeIn .18s ease-out}
+    .option.correct{border-color:#16a34a;background:#f0fdf4}
+    .option.wrong{border-color:#dc2626;background:#fef2f2}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
+    @media print{.no-print{display:none!important}body{background:#fff}.print-card{box-shadow:none!important;border:0!important}}
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-40 no-print">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+      <a href="index.html" class="flex items-center gap-3 min-w-0">
+        <div class="w-11 h-11 rounded-2xl bg-blue-950 text-white flex items-center justify-center shrink-0 shadow-sm">
+          <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+        </div>
+        <div class="min-w-0">
+          <div class="font-black text-blue-950 tracking-tight leading-tight truncate">SACO <span class="text-red-600">OLIVEROS</span></div>
+          <div class="text-[11px] uppercase tracking-[0.18em] text-slate-400 truncate">Academia Virtual · Historia Universal</div>
+        </div>
+      </a>
+      <a href="index.html" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-200 text-sm font-semibold text-slate-600 hover:text-blue-950 hover:border-blue-300">
+        <i data-lucide="arrow-left" class="w-4 h-4"></i> Volver a cursos
+      </a>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
+    <section class="overflow-hidden rounded-3xl bg-gradient-to-r from-blue-950 to-blue-900 text-white shadow-sm print-card">
+      <div class="p-6 sm:p-10">
+        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+          <div class="max-w-3xl">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/10 text-xs font-semibold">
+              <i data-lucide="landmark" class="w-4 h-4 text-red-300"></i>
+              Historia Universal · Capítulo 01 de 24
+            </div>
+            <h1 class="mt-5 text-3xl sm:text-5xl font-black leading-tight">La historia como ciencia</h1>
+            <p class="mt-4 text-blue-100 leading-relaxed max-w-2xl">Comprende qué estudia la Historia, cómo construye conocimiento sobre el pasado y por qué las fuentes históricas son esenciales para interpretar los procesos humanos.</p>
+          </div>
+          <div class="grid grid-cols-2 gap-3 min-w-[240px]">
+            <div class="rounded-2xl bg-white/10 p-4">
+              <div class="text-2xl font-black">4</div>
+              <div class="text-xs text-blue-200 mt-1">bloques clave</div>
+            </div>
+            <div class="rounded-2xl bg-white/10 p-4">
+              <div class="text-2xl font-black">10</div>
+              <div class="text-xs text-blue-200 mt-1">preguntas</div>
+            </div>
+            <div class="rounded-2xl bg-white/10 p-4 col-span-2">
+              <div class="text-sm font-bold">Meta de aprendizaje</div>
+              <div class="text-xs text-blue-100 mt-1">Explicar el carácter científico de la Historia y reconocer el valor de sus fuentes y métodos.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-6 bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm print-card">
+      <div class="px-4 sm:px-6 border-b border-slate-100 overflow-x-auto no-print">
+        <div class="flex min-w-max">
+          <button class="tab-btn active px-4 py-4 text-sm font-semibold border-b-2" data-tab="teoria">Teoría</button>
+          <button class="tab-btn px-4 py-4 text-sm font-semibold border-b-2 border-transparent text-slate-400" data-tab="practica">Práctica</button>
+          <button class="tab-btn px-4 py-4 text-sm font-semibold border-b-2 border-transparent text-slate-400" data-tab="evaluacion">Evaluación</button>
+          <button class="tab-btn px-4 py-4 text-sm font-semibold border-b-2 border-transparent text-slate-400" data-tab="materiales">Materiales</button>
+        </div>
+      </div>
+
+      <div class="p-6 sm:p-8 lg:p-10">
+        <section id="teoria" class="panel active">
+          <div class="max-w-4xl">
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i data-lucide="book-open" class="w-6 h-6"></i></div>
+              <div>
+                <p class="text-sm font-bold uppercase tracking-wider text-red-600">Idea central</p>
+                <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-1">La Historia estudia a las sociedades humanas en el tiempo</h2>
+              </div>
+            </div>
+            <p class="mt-5 text-slate-600 leading-relaxed">La <strong>Historia</strong> es una ciencia social que investiga e interpreta las acciones, cambios y continuidades de las sociedades humanas a través del tiempo. No se limita a memorizar fechas: busca explicar procesos, causas, consecuencias, permanencias y transformaciones.</p>
+          </div>
+
+          <div class="mt-8 grid md:grid-cols-2 gap-5">
+            <article class="rounded-3xl border border-slate-200 p-6 bg-slate-50">
+              <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-blue-950 text-white flex items-center justify-center"><i data-lucide="target" class="w-5 h-5"></i></div><h3 class="font-extrabold text-slate-900">Objeto de estudio</h3></div>
+              <p class="mt-4 text-sm leading-relaxed text-slate-600">El objeto de estudio de la Historia es la <strong>actividad humana en sociedad</strong>, situada en un tiempo y espacio determinados. Analiza hechos y procesos políticos, económicos, sociales, culturales y tecnológicos.</p>
+            </article>
+            <article class="rounded-3xl border border-slate-200 p-6 bg-slate-50">
+              <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-blue-950 text-white flex items-center justify-center"><i data-lucide="search" class="w-5 h-5"></i></div><h3 class="font-extrabold text-slate-900">Finalidad</h3></div>
+              <p class="mt-4 text-sm leading-relaxed text-slate-600">Busca <strong>comprender y explicar</strong> el pasado humano a partir de evidencias. Esto permite interpretar el presente, reconocer procesos de larga duración y analizar críticamente los cambios históricos.</p>
+            </article>
+          </div>
+
+          <div class="mt-10">
+            <h3 class="text-xl font-black text-slate-900">1. ¿Por qué la Historia es una ciencia?</h3>
+            <p class="mt-3 text-slate-600 leading-relaxed">Porque aplica procedimientos sistemáticos para formular problemas, localizar evidencias, contrastar información, interpretar datos y elaborar explicaciones fundamentadas. Sus conclusiones pueden revisarse cuando aparecen nuevas fuentes o nuevas preguntas.</p>
+            <div class="mt-5 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div class="rounded-2xl border border-slate-200 p-4"><div class="text-xs font-bold text-red-600">01</div><div class="mt-1 font-bold text-slate-900">Problematiza</div><p class="mt-2 text-xs text-slate-500">Formula preguntas sobre el pasado.</p></div>
+              <div class="rounded-2xl border border-slate-200 p-4"><div class="text-xs font-bold text-red-600">02</div><div class="mt-1 font-bold text-slate-900">Busca fuentes</div><p class="mt-2 text-xs text-slate-500">Reúne testimonios y evidencias.</p></div>
+              <div class="rounded-2xl border border-slate-200 p-4"><div class="text-xs font-bold text-red-600">03</div><div class="mt-1 font-bold text-slate-900">Critica y contrasta</div><p class="mt-2 text-xs text-slate-500">Evalúa origen, intención y confiabilidad.</p></div>
+              <div class="rounded-2xl border border-slate-200 p-4"><div class="text-xs font-bold text-red-600">04</div><div class="mt-1 font-bold text-slate-900">Interpreta</div><p class="mt-2 text-xs text-slate-500">Construye explicaciones argumentadas.</p></div>
+            </div>
+          </div>
+
+          <div class="mt-10">
+            <h3 class="text-xl font-black text-slate-900">2. El método histórico</h3>
+            <div class="mt-5 space-y-4">
+              <div class="flex gap-4"><div class="w-9 h-9 rounded-full bg-red-600 text-white font-black flex items-center justify-center shrink-0">1</div><div><h4 class="font-bold text-slate-900">Planteamiento del problema</h4><p class="text-sm text-slate-600 mt-1">El historiador delimita un tema y formula una pregunta de investigación.</p></div></div>
+              <div class="flex gap-4"><div class="w-9 h-9 rounded-full bg-red-600 text-white font-black flex items-center justify-center shrink-0">2</div><div><h4 class="font-bold text-slate-900">Heurística</h4><p class="text-sm text-slate-600 mt-1">Consiste en localizar, reunir y seleccionar las fuentes útiles para la investigación.</p></div></div>
+              <div class="flex gap-4"><div class="w-9 h-9 rounded-full bg-red-600 text-white font-black flex items-center justify-center shrink-0">3</div><div><h4 class="font-bold text-slate-900">Crítica de fuentes</h4><p class="text-sm text-slate-600 mt-1">Se analiza su autenticidad, procedencia, autoría, contexto, intención y confiabilidad.</p></div></div>
+              <div class="flex gap-4"><div class="w-9 h-9 rounded-full bg-red-600 text-white font-black flex items-center justify-center shrink-0">4</div><div><h4 class="font-bold text-slate-900">Interpretación y síntesis</h4><p class="text-sm text-slate-600 mt-1">Se relacionan los datos y se elabora una explicación coherente del proceso estudiado.</p></div></div>
+            </div>
+          </div>
+
+          <div class="mt-10">
+            <h3 class="text-xl font-black text-slate-900">3. Las fuentes históricas</h3>
+            <p class="mt-3 text-slate-600 leading-relaxed">Son los testimonios o evidencias que permiten conocer aspectos del pasado. Una misma fuente puede ofrecer información distinta según la pregunta que plantee el investigador.</p>
+            <div class="mt-5 overflow-x-auto rounded-2xl border border-slate-200">
+              <table class="w-full text-sm">
+                <thead class="bg-slate-100 text-slate-700"><tr><th class="text-left p-4">Tipo</th><th class="text-left p-4">Ejemplos</th><th class="text-left p-4">Qué pueden revelar</th></tr></thead>
+                <tbody class="divide-y divide-slate-100">
+                  <tr><td class="p-4 font-bold">Escritas</td><td class="p-4">Cartas, crónicas, leyes, periódicos</td><td class="p-4">Ideas, normas, decisiones, relatos</td></tr>
+                  <tr><td class="p-4 font-bold">Materiales</td><td class="p-4">Cerámica, edificios, armas, monedas</td><td class="p-4">Tecnología, economía, vida cotidiana</td></tr>
+                  <tr><td class="p-4 font-bold">Orales</td><td class="p-4">Testimonios, relatos, tradiciones</td><td class="p-4">Memoria, experiencias, identidades</td></tr>
+                  <tr><td class="p-4 font-bold">Iconográficas</td><td class="p-4">Pinturas, fotografías, mapas</td><td class="p-4">Representaciones, espacios, símbolos</td></tr>
+                  <tr><td class="p-4 font-bold">Audiovisuales</td><td class="p-4">Grabaciones, cine, documentales</td><td class="p-4">Discursos, gestos, contextos sonoros y visuales</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="mt-5 rounded-2xl bg-amber-50 border border-amber-200 p-5">
+              <div class="flex gap-3"><i data-lucide="lightbulb" class="w-5 h-5 text-amber-600 shrink-0 mt-0.5"></i><p class="text-sm text-amber-900"><strong>Clave:</strong> una fuente no “habla sola”. Debe ser contextualizada, contrastada e interpretada. Por eso, el historiador compara varias evidencias antes de sostener una conclusión.</p></div>
+            </div>
+          </div>
+
+          <div class="mt-10">
+            <h3 class="text-xl font-black text-slate-900">4. Ciencias auxiliares de la Historia</h3>
+            <div class="mt-5 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div class="rounded-2xl border border-slate-200 p-5"><h4 class="font-extrabold">Arqueología</h4><p class="text-sm text-slate-600 mt-2">Estudia sociedades del pasado a partir de restos materiales.</p></div>
+              <div class="rounded-2xl border border-slate-200 p-5"><h4 class="font-extrabold">Antropología</h4><p class="text-sm text-slate-600 mt-2">Analiza al ser humano y sus culturas en distintos contextos.</p></div>
+              <div class="rounded-2xl border border-slate-200 p-5"><h4 class="font-extrabold">Geografía</h4><p class="text-sm text-slate-600 mt-2">Ayuda a comprender la relación entre sociedad y espacio.</p></div>
+              <div class="rounded-2xl border border-slate-200 p-5"><h4 class="font-extrabold">Paleografía</h4><p class="text-sm text-slate-600 mt-2">Estudia y descifra escrituras antiguas.</p></div>
+              <div class="rounded-2xl border border-slate-200 p-5"><h4 class="font-extrabold">Numismática</h4><p class="text-sm text-slate-600 mt-2">Estudia monedas y medallas históricas.</p></div>
+              <div class="rounded-2xl border border-slate-200 p-5"><h4 class="font-extrabold">Cronología</h4><p class="text-sm text-slate-600 mt-2">Ordena los acontecimientos y procesos en el tiempo.</p></div>
+            </div>
+          </div>
+
+          <div class="mt-10 rounded-3xl bg-blue-950 text-white p-6 sm:p-8">
+            <p class="text-xs font-bold uppercase tracking-[.18em] text-red-300">Resumen para recordar</p>
+            <div class="mt-4 grid md:grid-cols-2 gap-4 text-sm text-blue-100">
+              <p>• La Historia es una <strong class="text-white">ciencia social</strong>.</p>
+              <p>• Su objeto de estudio es la <strong class="text-white">sociedad humana en el tiempo</strong>.</p>
+              <p>• El conocimiento histórico se construye mediante <strong class="text-white">fuentes y método</strong>.</p>
+              <p>• Toda fuente debe ser <strong class="text-white">criticada, contextualizada y contrastada</strong>.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="practica" class="panel">
+          <div class="max-w-4xl">
+            <p class="text-sm font-bold uppercase tracking-wider text-red-600">Práctica dirigida</p>
+            <h2 class="mt-1 text-2xl sm:text-3xl font-black text-slate-900">Comprueba lo aprendido</h2>
+            <p class="mt-3 text-slate-600">Responde antes de desplegar la clave. El objetivo es justificar cada elección.</p>
+          </div>
+          <div class="mt-7 space-y-5" id="practiceList">
+            <article class="rounded-2xl border border-slate-200 p-5"><p class="font-bold">1. ¿Qué diferencia principalmente a la Historia de una simple colección de fechas?</p><p class="mt-2 text-sm text-slate-600">A) La Historia evita emplear documentos.<br>B) La Historia interpreta procesos y explica relaciones de causa y consecuencia.<br>C) La Historia estudia únicamente personajes importantes.<br>D) La Historia se limita a ordenar cronológicamente los hechos.</p><button onclick="toggleAnswer(this)" class="mt-4 text-sm font-bold text-blue-950 no-print">Ver respuesta</button><div class="answer hidden mt-3 rounded-xl bg-green-50 border border-green-200 p-4 text-sm text-green-900"><strong>Respuesta: B.</strong> La Historia busca comprender y explicar procesos humanos, no solo enumerar datos.</div></article>
+            <article class="rounded-2xl border border-slate-200 p-5"><p class="font-bold">2. La etapa del método histórico dedicada a localizar y reunir fuentes recibe el nombre de:</p><p class="mt-2 text-sm text-slate-600">A) Heurística.<br>B) Síntesis.<br>C) Cronología.<br>D) Paleografía.</p><button onclick="toggleAnswer(this)" class="mt-4 text-sm font-bold text-blue-950 no-print">Ver respuesta</button><div class="answer hidden mt-3 rounded-xl bg-green-50 border border-green-200 p-4 text-sm text-green-900"><strong>Respuesta: A.</strong> La heurística consiste en la búsqueda y selección de fuentes.</div></article>
+            <article class="rounded-2xl border border-slate-200 p-5"><p class="font-bold">3. Una moneda antigua utilizada para estudiar intercambio comercial constituye principalmente una fuente:</p><p class="mt-2 text-sm text-slate-600">A) Oral.<br>B) Material.<br>C) Escrita exclusivamente.<br>D) Audiovisual.</p><button onclick="toggleAnswer(this)" class="mt-4 text-sm font-bold text-blue-950 no-print">Ver respuesta</button><div class="answer hidden mt-3 rounded-xl bg-green-50 border border-green-200 p-4 text-sm text-green-900"><strong>Respuesta: B.</strong> La moneda es un resto material y también puede ser estudiada por la numismática.</div></article>
+            <article class="rounded-2xl border border-slate-200 p-5"><p class="font-bold">4. ¿Cuál es la función principal de la crítica de fuentes?</p><p class="mt-2 text-sm text-slate-600">A) Eliminar todas las fuentes contradictorias.<br>B) Determinar autenticidad, procedencia, intención y confiabilidad.<br>C) Elegir siempre la fuente más antigua.<br>D) Reemplazar fuentes por opiniones del investigador.</p><button onclick="toggleAnswer(this)" class="mt-4 text-sm font-bold text-blue-950 no-print">Ver respuesta</button><div class="answer hidden mt-3 rounded-xl bg-green-50 border border-green-200 p-4 text-sm text-green-900"><strong>Respuesta: B.</strong> La crítica permite valorar qué información puede aportar una fuente y con qué límites.</div></article>
+            <article class="rounded-2xl border border-slate-200 p-5"><p class="font-bold">5. Si un investigador estudia un asentamiento antiguo a partir de restos de viviendas y cerámica, la ciencia auxiliar más directamente relacionada es:</p><p class="mt-2 text-sm text-slate-600">A) Lingüística.<br>B) Arqueología.<br>C) Paleografía.<br>D) Demografía.</p><button onclick="toggleAnswer(this)" class="mt-4 text-sm font-bold text-blue-950 no-print">Ver respuesta</button><div class="answer hidden mt-3 rounded-xl bg-green-50 border border-green-200 p-4 text-sm text-green-900"><strong>Respuesta: B.</strong> La Arqueología estudia sociedades a partir de sus restos materiales.</div></article>
+          </div>
+        </section>
+
+        <section id="evaluacion" class="panel">
+          <div class="max-w-4xl">
+            <p class="text-sm font-bold uppercase tracking-wider text-red-600">Autoevaluación</p>
+            <h2 class="mt-1 text-2xl sm:text-3xl font-black text-slate-900">Evaluación rápida</h2>
+            <p class="mt-3 text-slate-600">Selecciona una alternativa en cada pregunta y luego calcula tu resultado.</p>
+          </div>
+          <form id="quiz" class="mt-7 space-y-6">
+            <div class="question rounded-2xl border border-slate-200 p-5" data-answer="b"><p class="font-bold">1. El objeto central de estudio de la Historia es:</p><div class="mt-4 grid gap-2"><label class="option border rounded-xl p-3 cursor-pointer"><input type="radio" name="q1" value="a" class="mr-2">Los fenómenos naturales aislados.</label><label class="option border rounded-xl p-3 cursor-pointer"><input type="radio" name="q1" value="b" class="mr-2">Las sociedades humanas a través del tiempo.</label><label class="option border rounded-xl p-3 cursor-pointer"><input type="radio" name="q1" value="c" class="mr-2">Solo las guerras y gobiernos.</label><label class="option border rounded-xl p-3 cursor-pointer"><input type="radio" name="q1" value="d" class="mr-2">Únicamente los documentos escritos.</label></div></div>
+            <div class="question rounded-2xl border border-slate-200 p-5" data-answer="c"><p class="font-bold">2. ¿Qué acción corresponde a la crítica histórica?</p><div class="mt-4 grid gap-2"><label class="option border rounded-xl p-3 cursor-pointer"><input type="radio" name="q2" value="a" class="mr-2">Copiar literalmente una fuente.</label><label class="option border rounded-xl p-3 cursor-pointer"><input type="radio" name="q2" value="b" class="mr-2">Ordenar alfabéticamente documentos.</label><label class="option border rounded-xl p-3 cursor-pointer"><input type="radio" name="q2" value="c" class="mr-2">Examinar procedencia, autenticidad e intención.</label><label class="option border rounded-xl p-3 cursor-pointer"><input type="radio" name="q2" value="d" class="mr-2">Elegir una sola evidencia.</label></div></div>
+            <div class="question rounded-2xl border border-slate-200 p-5" data-answer="a"><p class="font-bold">3. Una entrevista a una persona que vivió un acontecimiento es una fuente principalmente:</p><div class="mt-4 grid gap-2"><label class="option border rounded-xl p-3 cursor-pointer"><input type="radio" name="q3" value="a" class="mr-2">Oral.</label><label class="option border rounded-xl p-3 cursor-pointer"><input type="radio" name="q3" value="b" class="mr-2">Material.</label><label class="option border rounded-xl p-3 cursor-pointer"><input type="radio" name="q3" value="c" class="mr-2">Numismática.</label><label class="option border rounded-xl p-3 cursor-pointer"><input type="radio" name="q3" value="d" class="mr-2">Geográfica.</label></div></div>
+            <div class="question rounded-2xl border border-slate-200 p-5" data-answer="d"><p class="font-bold">4. La disciplina que estudia monedas antiguas se denomina:</p><div class="mt-4 grid gap-2"><label class="option border rounded-xl p-3 cursor-pointer"><input type="radio" name="q4" value="a" class="mr-2">Paleografía.</label><label class="option border rounded-xl p-3 cursor-pointer"><input type="radio" name="q4" value="b" class="mr-2">Antropología.</label><label class="option border rounded-xl p-3 cursor-pointer"><input type="radio" name="q4" value="c" class="mr-2">Cronología.</label><label class="option border rounded-xl p-3 cursor-pointer"><input type="radio" name="q4" value="d" class="mr-2">Numismática.</label></div></div>
+            <div class="question rounded-2xl border border-slate-200 p-5" data-answer="c"><p class="font-bold">5. ¿Qué afirmación expresa mejor el carácter científico de la Historia?</p><div class="mt-4 grid gap-2"><label class="option border rounded-xl p-3 cursor-pointer"><input type="radio" name="q5" value="a" class="mr-2">Sus conclusiones son inmutables.</label><label class="option border rounded-xl p-3 cursor-pointer"><input type="radio" name="q5" value="b" class="mr-2">Depende solo de la memoria colectiva.</label><label class="option border rounded-xl p-3 cursor-pointer"><input type="radio" name="q5" value="c" class="mr-2">Construye explicaciones mediante métodos y evidencias contrastables.</label><label class="option border rounded-xl p-3 cursor-pointer"><input type="radio" name="q5" value="d" class="mr-2">Rechaza toda interpretación.</label></div></div>
+            <div class="flex flex-wrap gap-3 no-print"><button type="button" onclick="gradeQuiz()" class="px-5 py-3 rounded-xl bg-blue-950 text-white font-bold hover:bg-blue-900">Calcular resultado</button><button type="button" onclick="resetQuiz()" class="px-5 py-3 rounded-xl border border-slate-200 text-slate-600 font-bold">Reiniciar</button></div>
+            <div id="result" class="hidden rounded-2xl p-5 font-semibold"></div>
+          </form>
+        </section>
+
+        <section id="materiales" class="panel">
+          <div class="max-w-4xl">
+            <p class="text-sm font-bold uppercase tracking-wider text-red-600">Materiales de repaso</p>
+            <h2 class="mt-1 text-2xl sm:text-3xl font-black text-slate-900">Ficha de estudio</h2>
+            <p class="mt-3 text-slate-600">Una síntesis breve para repasar antes de resolver preguntas tipo admisión.</p>
+          </div>
+          <div class="mt-7 grid lg:grid-cols-2 gap-5">
+            <div class="rounded-3xl border border-slate-200 p-6 bg-slate-50"><h3 class="font-extrabold text-lg">Conceptos esenciales</h3><dl class="mt-4 space-y-4 text-sm"><div><dt class="font-bold text-slate-900">Historia</dt><dd class="text-slate-600 mt-1">Ciencia social que estudia e interpreta a las sociedades humanas en el tiempo.</dd></div><div><dt class="font-bold text-slate-900">Fuente histórica</dt><dd class="text-slate-600 mt-1">Evidencia o testimonio utilizado para conocer el pasado.</dd></div><div><dt class="font-bold text-slate-900">Heurística</dt><dd class="text-slate-600 mt-1">Búsqueda y recopilación sistemática de fuentes.</dd></div><div><dt class="font-bold text-slate-900">Crítica histórica</dt><dd class="text-slate-600 mt-1">Evaluación de autenticidad, procedencia, intención y confiabilidad.</dd></div><div><dt class="font-bold text-slate-900">Interpretación</dt><dd class="text-slate-600 mt-1">Explicación razonada construida a partir de fuentes contrastadas.</dd></div></dl></div>
+            <div class="rounded-3xl border border-slate-200 p-6"><h3 class="font-extrabold text-lg">Checklist de dominio</h3><div class="mt-4 space-y-3 text-sm text-slate-700"><label class="flex gap-3"><input type="checkbox" class="mt-1"> Puedo definir la Historia como ciencia social.</label><label class="flex gap-3"><input type="checkbox" class="mt-1"> Identifico su objeto de estudio.</label><label class="flex gap-3"><input type="checkbox" class="mt-1"> Distingo los pasos básicos del método histórico.</label><label class="flex gap-3"><input type="checkbox" class="mt-1"> Clasifico fuentes históricas.</label><label class="flex gap-3"><input type="checkbox" class="mt-1"> Explico por qué una fuente debe ser contrastada.</label><label class="flex gap-3"><input type="checkbox" class="mt-1"> Reconozco al menos tres ciencias auxiliares.</label></div><button onclick="window.print()" class="mt-6 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-red-600 text-white font-bold text-sm no-print"><i data-lucide="printer" class="w-4 h-4"></i> Imprimir ficha</button></div>
+          </div>
+          <div class="mt-5 rounded-3xl border border-slate-200 p-6"><h3 class="font-extrabold text-lg">Mapa mental express</h3><div class="mt-5 grid sm:grid-cols-2 lg:grid-cols-4 gap-3 text-sm"><div class="rounded-2xl bg-blue-950 text-white p-4"><div class="font-black">HISTORIA</div><div class="text-blue-200 mt-1">Ciencia social</div></div><div class="rounded-2xl bg-slate-100 p-4"><div class="font-black text-slate-900">ESTUDIA</div><div class="text-slate-600 mt-1">Sociedad + tiempo + espacio</div></div><div class="rounded-2xl bg-slate-100 p-4"><div class="font-black text-slate-900">UTILIZA</div><div class="text-slate-600 mt-1">Fuentes + método histórico</div></div><div class="rounded-2xl bg-slate-100 p-4"><div class="font-black text-slate-900">EXPLICA</div><div class="text-slate-600 mt-1">Cambios, permanencias, causas y consecuencias</div></div></div></div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="mt-8 border-t border-slate-200 bg-white no-print"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-7 text-xs text-slate-400 flex flex-col sm:flex-row gap-2 justify-between"><span>Academia Virtual · Historia Universal</span><span>Capítulo 01 · La historia como ciencia</span></div></footer>
+
+  <script>
+    const tabButtons=[...document.querySelectorAll('.tab-btn')];
+    const panels=[...document.querySelectorAll('.panel')];
+    tabButtons.forEach(btn=>btn.addEventListener('click',()=>{
+      tabButtons.forEach(b=>{b.classList.remove('active');b.classList.add('border-transparent','text-slate-400')});
+      btn.classList.add('active');btn.classList.remove('border-transparent','text-slate-400');
+      panels.forEach(p=>p.classList.remove('active'));
+      document.getElementById(btn.dataset.tab).classList.add('active');
+      window.scrollTo({top:0,behavior:'smooth'});
+    }));
+
+    function toggleAnswer(button){
+      const answer=button.parentElement.querySelector('.answer');
+      answer.classList.toggle('hidden');
+      button.textContent=answer.classList.contains('hidden')?'Ver respuesta':'Ocultar respuesta';
+    }
+
+    function gradeQuiz(){
+      const questions=[...document.querySelectorAll('.question')];
+      let score=0;
+      questions.forEach((q,i)=>{
+        const answer=q.dataset.answer;
+        const selected=q.querySelector(`input[name="q${i+1}"]:checked`);
+        q.querySelectorAll('.option').forEach(o=>o.classList.remove('correct','wrong'));
+        q.querySelectorAll('.option').forEach(o=>{
+          const input=o.querySelector('input');
+          if(input.value===answer)o.classList.add('correct');
+          if(selected&&input===selected&&input.value!==answer)o.classList.add('wrong');
+        });
+        if(selected&&selected.value===answer)score++;
+      });
+      const result=document.getElementById('result');
+      result.classList.remove('hidden','bg-green-50','text-green-900','border-green-200','bg-amber-50','text-amber-900','border-amber-200');
+      result.classList.add('border');
+      if(score>=4){result.classList.add('bg-green-50','text-green-900','border-green-200');result.textContent=`Resultado: ${score}/5. Muy buen dominio del capítulo.`}
+      else{result.classList.add('bg-amber-50','text-amber-900','border-amber-200');result.textContent=`Resultado: ${score}/5. Revisa la teoría y vuelve a intentarlo.`}
+    }
+
+    function resetQuiz(){document.getElementById('quiz').reset();document.querySelectorAll('.option').forEach(o=>o.classList.remove('correct','wrong'));document.getElementById('result').classList.add('hidden')}
+    lucide.createIcons();
+  </script>
+</body>
+</html>
