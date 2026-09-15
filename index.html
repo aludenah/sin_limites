@@ -1,452 +1,981 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saco Oliveros | Academia Virtual</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Lucide Icons CDN -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            -webkit-font-smoothing: antialiased;
-        }
-        /* Custom Scrollbar for the sidebar */
-        .custom-scrollbar::-webkit-scrollbar {
-            width: 6px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-            background: #f9fafb; 
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #e5e7eb; 
-            border-radius: 10px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-            background: #d1d5db; 
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Academia Virtual: temario organizado en 18 cursos y 24 capítulos por curso para la Prueba General de Admisión 2026-II.">
+  <title>Saco Oliveros | Academia Virtual 2026-II</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue:#172554;
+      --red:#dc2626;
+    }
+    html { scroll-behavior:smooth; }
+    body { font-family:'Inter',sans-serif; -webkit-font-smoothing:antialiased; }
+    .custom-scrollbar::-webkit-scrollbar { width:7px; height:7px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background:#f1f5f9; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background:#cbd5e1; border-radius:999px; }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover { background:#94a3b8; }
+    .course-card { transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease; }
+    .course-card:hover { transform:translateY(-3px); box-shadow:0 18px 35px rgba(15,23,42,.10); }
+    .chapter-btn { transition:background-color .15s ease, color .15s ease, transform .15s ease; }
+    .chapter-btn:hover { transform:translateX(2px); }
+    .fade-in { animation:fadeIn .18s ease-out; }
+    @keyframes fadeIn { from {opacity:0; transform:translateY(4px)} to {opacity:1; transform:translateY(0)} }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-slate-50 text-slate-800">
+  <div id="app"></div>
 
-    <!-- App Container -->
-    <div id="app"></div>
+  <script>
+    const COURSES = [
+  {
+    "name": "Habilidad Verbal",
+    "icon": "book-open",
+    "category": "Habilidades",
+    "topics": [
+      "Tipología textual: textos con gráfico",
+      "Tipología textual: textos dialécticos",
+      "Tipología textual: textos en inglés",
+      "Tema central",
+      "Idea principal",
+      "Cohesión textual",
+      "Coherencia textual",
+      "Síntesis de información",
+      "Selección de información",
+      "Generalización de información",
+      "Abstracción de información",
+      "Sinonimia contextual",
+      "Antonimia contextual",
+      "Denotación",
+      "Connotación",
+      "Compatibilidad literal",
+      "Incompatibilidad literal",
+      "Compatibilidad inferencial",
+      "Incompatibilidad inferencial",
+      "Inferencia holística",
+      "Inferencia de datos y léxica",
+      "Inferencia causal y de intención",
+      "Inferencia prospectiva",
+      "Extrapolación cognitiva y referencial"
+    ],
+    "id": 1
+  },
+  {
+    "name": "Habilidad Lógico-Matemática",
+    "icon": "brain",
+    "category": "Habilidades",
+    "topics": [
+      "Máximos y mínimos",
+      "Pesadas y balanzas",
+      "Arreglos numéricos",
+      "Seccionamientos y cortes",
+      "Dados, cerillos y dominó",
+      "Calendarios",
+      "Traslados",
+      "Frecuencia de sucesos",
+      "Inducción numérica, verbal y geométrica",
+      "Cronometría",
+      "Simbolización y ecuaciones",
+      "Rotación y traslación de figuras",
+      "Rutas, trayectorias y puntos cardinales",
+      "Trazo de figuras",
+      "Conteo de figuras",
+      "Simetría y reflexiones",
+      "Visualización de figuras en el espacio",
+      "Perímetros y áreas de regiones",
+      "Ruedas, poleas y engranajes",
+      "Congruencia y semejanza de figuras",
+      "Tablas y gráficos estadísticos",
+      "Situaciones deportivas y suficiencia de datos",
+      "Certeza, deducción y ordenamiento",
+      "Verdades y mentiras, lazos familiares y diagramas de flujo"
+    ],
+    "id": 2
+  },
+  {
+    "name": "Aritmética",
+    "icon": "calculator",
+    "category": "Matemática",
+    "topics": [
+      "Lógica proposicional y tablas de verdad",
+      "Conjuntos: determinación, relaciones y operaciones",
+      "Números naturales: operaciones elementales",
+      "Potenciación y radicación",
+      "Sistema de numeración decimal",
+      "Números enteros y relaciones de orden",
+      "Algoritmo de la división y divisibilidad",
+      "Números primos, factorización y divisores",
+      "Máximo común divisor y algoritmo de Euclides",
+      "Mínimo común múltiplo",
+      "Fracciones ordinarias",
+      "Números racionales: operaciones y orden",
+      "Representación decimal de una fracción",
+      "Razones y proporciones",
+      "Series de razones geométricas iguales",
+      "Magnitudes directa e inversamente proporcionales",
+      "Reparto proporcional y regla de tres",
+      "Porcentajes",
+      "Sucesiones",
+      "Progresiones aritméticas y geométricas",
+      "Sumatorias: interés, descuento, mezclas y aleaciones",
+      "Medidas de tendencia central",
+      "Medidas de posición, dispersión, tablas y gráficos",
+      "Combinatoria y probabilidad"
+    ],
+    "id": 3
+  },
+  {
+    "name": "Geometría",
+    "icon": "shapes",
+    "category": "Matemática",
+    "topics": [
+      "Segmento de recta y ángulos",
+      "Triángulos y congruencia",
+      "Desigualdades geométricas",
+      "Rectas perpendiculares y paralelas",
+      "Mediatriz y bisectriz",
+      "Cuadriláteros, paralelogramos, trapecios y polígonos",
+      "Circunferencia y ángulos en la circunferencia",
+      "Circunferencias inscritas y circunscritas",
+      "Puntos notables del triángulo",
+      "Teorema de Tales",
+      "Criterios de semejanza",
+      "Teorema de Pitágoras",
+      "Teoremas de la bisectriz y la mediana",
+      "Relaciones métricas en triángulo y circunferencia",
+      "Áreas de triángulos, cuadriláteros y polígonos",
+      "Longitud de circunferencia, círculo y sector circular",
+      "Poliedros convexos y regulares",
+      "Prismas y troncos de prisma",
+      "Pirámides y troncos de pirámide",
+      "Cilindro, cono y troncos",
+      "Esfera: áreas y volúmenes",
+      "Geometría analítica: distancia entre dos puntos",
+      "Ecuación de la recta y posiciones relativas",
+      "Circunferencia, parábola y elipse"
+    ],
+    "id": 4
+  },
+  {
+    "name": "Álgebra",
+    "icon": "variable",
+    "category": "Matemática",
+    "topics": [
+      "Números reales: operaciones",
+      "Intervalos",
+      "Valor absoluto",
+      "Números complejos: forma binomial",
+      "Módulo y conjugado de complejos",
+      "Ecuaciones de primer y segundo grado",
+      "Ecuaciones bicuadradas",
+      "Inecuaciones de primer y segundo grado",
+      "Sistemas lineales de dos y tres variables",
+      "Métodos de Cramer y Gauss",
+      "Sistemas de inecuaciones y programación lineal",
+      "Expresiones algebraicas: operaciones",
+      "Potenciación y radicación algebraica",
+      "Polinomios y grado de expresiones",
+      "Adición y multiplicación de polinomios",
+      "División de polinomios: método clásico, Ruffini y Horner",
+      "Teoremas del resto y del factor",
+      "Productos notables, Binomio de Newton y cocientes notables",
+      "Factorización de polinomios",
+      "MCD, MCM y teorema fundamental del álgebra",
+      "Raíces y coeficientes de un polinomio",
+      "Funciones: dominio, rango y representación",
+      "Funciones elementales, paridad y monotonía",
+      "Funciones inversas, exponenciales, logarítmicas y modelación"
+    ],
+    "id": 5
+  },
+  {
+    "name": "Trigonometría",
+    "icon": "triangle",
+    "category": "Matemática",
+    "topics": [
+      "Sistemas sexagesimal, centesimal y radial",
+      "Conversión entre sistemas angulares",
+      "Longitud de arco",
+      "Área de un sector circular",
+      "Razones trigonométricas en triángulos rectángulos",
+      "Ángulos notables: 30°, 45° y 60°",
+      "Ángulos notables: 37° y 53°",
+      "Ángulos complementarios",
+      "Resolución de triángulos rectángulos",
+      "Ángulo en posición normal",
+      "Círculo trigonométrico",
+      "Reducción al primer cuadrante",
+      "Razones trigonométricas de ángulos negativos",
+      "Identidades fundamentales",
+      "Suma y diferencia de ángulos",
+      "Ángulo doble",
+      "Ángulo mitad",
+      "Transformaciones de suma o diferencia a producto",
+      "Ecuaciones trigonométricas elementales",
+      "Ecuaciones trigonométricas no elementales",
+      "Ley de senos",
+      "Leyes de cosenos y tangentes",
+      "Ángulos de elevación y depresión",
+      "Funciones trigonométricas, inversas y aplicaciones"
+    ],
+    "id": 6
+  },
+  {
+    "name": "Lenguaje",
+    "icon": "languages",
+    "category": "Letras",
+    "topics": [
+      "Comunicación: elementos y funciones del lenguaje",
+      "Lengua y habla",
+      "Variedades de la lengua",
+      "Lengua española en el Perú",
+      "Realidad lingüística del Perú",
+      "Fonema y relación fonema-letra",
+      "Sílaba: estructura y clases",
+      "Diptongo, triptongo e hiato",
+      "Silabeo ortográfico",
+      "Acentuación general",
+      "Acentuación diacrítica y enfática",
+      "Morfemas y alomorfía",
+      "Formación de palabras",
+      "Frase nominal",
+      "Sustantivo",
+      "Adjetivo",
+      "Frase verbal",
+      "Verbo",
+      "Adverbio, preposición y conjunción",
+      "Oración simple y compuesta",
+      "Signos de puntuación",
+      "Mayúsculas y minúsculas",
+      "Lexicología, signo y significado",
+      "Relaciones semánticas"
+    ],
+    "id": 7
+  },
+  {
+    "name": "Literatura",
+    "icon": "library",
+    "category": "Letras",
+    "topics": [
+      "Géneros literarios",
+      "Figuras literarias",
+      "Épica griega: Ilíada y Odisea",
+      "Tragedia griega: Sófocles y Edipo rey",
+      "Shakespeare: Romeo y Julieta",
+      "Romanticismo: Goethe",
+      "Realismo: Dostoyevski",
+      "Literatura contemporánea: Kafka",
+      "Edad Media española: Poema del Mio Cid",
+      "Barroco español: Cervantes y Don Quijote",
+      "Calderón de la Barca: La vida es sueño",
+      "Romanticismo español: Bécquer",
+      "Modernismo hispanoamericano: Rubén Darío",
+      "Pablo Neruda",
+      "Jorge Luis Borges",
+      "Alejo Carpentier",
+      "Gabriel García Márquez",
+      "Inca Garcilaso de la Vega",
+      "Manuel Ascencio Segura",
+      "Ricardo Palma",
+      "Clorinda Matto de Turner y Manuel González Prada",
+      "Eguren, Valdelomar y Vallejo",
+      "Indigenismo: Ciro Alegría y José María Arguedas",
+      "Generación del 50: Varela, Ribeyro y Vargas Llosa"
+    ],
+    "id": 8
+  },
+  {
+    "name": "Psicología",
+    "icon": "brain",
+    "category": "Humanidades",
+    "topics": [
+      "Orígenes de la Psicología como ciencia",
+      "Psicoanálisis",
+      "Conductismo",
+      "Humanismo y cognitivismo",
+      "Bases fisiológicas del comportamiento",
+      "Proceso de socialización",
+      "Roles sociales y normas de convivencia",
+      "Familia, apego y estilos de crianza",
+      "Actitudes y valores",
+      "Sensación y atención",
+      "Percepción y memoria",
+      "Pensamiento y lenguaje",
+      "Desarrollo de la inteligencia",
+      "Aprendizaje por condicionamiento",
+      "Aprendizaje significativo y por descubrimiento",
+      "Aprendizaje observacional, cooperativo y autorregulado",
+      "Factores del desarrollo humano",
+      "Dimensiones del desarrollo humano",
+      "Etapas del ciclo vital",
+      "Identidad, imagen corporal y autoestima",
+      "Amistad, enamoramiento y sexualidad responsable",
+      "Estilo de vida saludable y conductas de riesgo",
+      "Proyecto de vida y orientación vocacional",
+      "Afectividad, inteligencia emocional y motivación"
+    ],
+    "id": 9
+  },
+  {
+    "name": "Educación Cívica",
+    "icon": "scale",
+    "category": "Humanidades",
+    "topics": [
+      "Concepto y características de los Derechos Humanos",
+      "Derecho Internacional de los Derechos Humanos",
+      "Declaración Universal de los Derechos Humanos",
+      "Convención sobre los Derechos del Niño",
+      "Comisión y Corte Interamericanas",
+      "Derechos fundamentales y garantías constitucionales",
+      "Mecanismos de participación ciudadana",
+      "Control ciudadano y rendición de cuentas",
+      "Sociedad civil y movimientos sociales",
+      "Convivencia democrática y cultura de paz",
+      "Discriminación, delitos y corrupción",
+      "Negociación, mediación, conciliación y arbitraje",
+      "Violencia terrorista, pacificación y reconciliación",
+      "Diversidad étnica y lingüística",
+      "Patrimonio histórico y natural",
+      "Sentido de pertenencia, costumbres y tradiciones",
+      "Identidad cultural e interculturalidad",
+      "Estado de Derecho",
+      "Estructura y deberes del Estado",
+      "Poder Legislativo",
+      "Poder Ejecutivo",
+      "Poder Judicial",
+      "Seguridad, Defensa Nacional y órganos constitucionales autónomos",
+      "Sistema Electoral: JNE, ONPE y RENIEC"
+    ],
+    "id": 10
+  },
+  {
+    "name": "Historia del Perú",
+    "icon": "landmark",
+    "category": "Humanidades",
+    "topics": [
+      "Rutas migratorias del poblamiento americano",
+      "Periodos lítico y arcaico",
+      "Periodo formativo",
+      "Desarrollos regionales: Nazca, Moche y Recuay",
+      "Estados panandinos: Tiahuanaco y Wari",
+      "Estados regionales tardíos",
+      "Tawantinsuyo: origen y expansión",
+      "Tawantinsuyo: organización",
+      "Caída del Tawantinsuyo y resistencia",
+      "Reformas toledanas y sistema colonial",
+      "Virreinato: política, sociedad, economía y cultura",
+      "Reformas borbónicas",
+      "Rebeliones andinas del siglo XVIII",
+      "Crisis del Imperio español y Cortes de Cádiz",
+      "Rebeliones y conspiraciones del siglo XIX",
+      "Independencia: San Martín y Bolívar",
+      "Primer militarismo y caudillismo",
+      "Boom del guano",
+      "Guerra con Chile",
+      "Segundo militarismo y Reconstrucción Nacional",
+      "República Aristocrática y Oncenio de Leguía",
+      "Aprismo, socialismo y regímenes del siglo XX",
+      "Reformismo, Gobierno Revolucionario y retorno democrático",
+      "Fujimorato, siglo XXI y Comisión de la Verdad y Reconciliación"
+    ],
+    "id": 11
+  },
+  {
+    "name": "Historia Universal",
+    "icon": "globe",
+    "category": "Humanidades",
+    "topics": [
+      "La historia como ciencia",
+      "Fuentes históricas y periodización",
+      "Hominización",
+      "Prehistoria: Paleolítico y Mesolítico",
+      "Neolítico y Edad de los Metales",
+      "Primeras civilizaciones: Mesopotamia y Egipto",
+      "India y China antiguas",
+      "Grecia",
+      "Roma y caída del Imperio romano de Occidente",
+      "Reinos germánicos",
+      "Imperios carolingio y bizantino",
+      "Islam",
+      "Expansión y sociedad medieval",
+      "Humanismo y Renacimiento",
+      "Reforma y Contrarreforma",
+      "Descubrimientos geográficos e imperios coloniales",
+      "Monarquías absolutistas",
+      "Ilustración e Independencia de Estados Unidos",
+      "Revolución francesa y Primera Revolución Industrial",
+      "Guerras napoleónicas y revoluciones liberales",
+      "Segunda Revolución Industrial e imperialismo",
+      "Primera Guerra Mundial, revoluciones rusa y mexicana",
+      "Crisis de 1929, fascismos y Segunda Guerra Mundial",
+      "Guerra Fría, descolonización, globalización y crisis de 2008"
+    ],
+    "id": 12
+  },
+  {
+    "name": "Geografía",
+    "icon": "map",
+    "category": "Humanidades",
+    "topics": [
+      "Geosistema y espacio geográfico",
+      "Líneas imaginarias y coordenadas geográficas",
+      "Cartografía: mapas, cartas y planos",
+      "Fuerzas geológicas internas",
+      "Fuerzas geológicas externas",
+      "Geosfera, deriva continental y placas tectónicas",
+      "Relieve submarino y costero del Perú",
+      "Relieve de la región andina",
+      "Relieve de la selva",
+      "Clima del Perú según Senamhi",
+      "Desastres climáticos",
+      "Fenómenos El Niño y La Niña",
+      "Calentamiento global y acuerdos climáticos",
+      "Vertientes hidrográficas del Perú",
+      "Mar peruano, Corriente peruana y glaciares",
+      "Cuencas hidrográficas",
+      "Gestión del riesgo de desastres",
+      "Vulnerabilidad, exposición, fragilidad y resiliencia",
+      "Biodiversidad y biomas",
+      "Amazonía, Antártida y áreas naturales protegidas",
+      "Problemas ambientales y desarrollo sostenible",
+      "Actividades económicas e IDH",
+      "Población, migraciones y organización territorial del Perú",
+      "Continentes: elementos físicos, sociales y recursos naturales"
+    ],
+    "id": 13
+  },
+  {
+    "name": "Economía",
+    "icon": "trending-up",
+    "category": "Humanidades",
+    "topics": [
+      "Economía: definición, campo y método",
+      "Necesidades humanas y problemas económicos",
+      "Escasez, eficiencia, equidad y costo de oportunidad",
+      "Flujo circular, microeconomía y macroeconomía",
+      "Demanda y elasticidades",
+      "Producción, costos e ingresos",
+      "Oferta y elasticidades",
+      "Tipos de mercado",
+      "Fallas de mercado y organismos reguladores",
+      "Mercado de factores",
+      "Capital humano y productividad",
+      "Salarios y segmentación laboral",
+      "Sistema financiero",
+      "BCRP y política monetaria",
+      "Dinero, oferta, demanda y tasa de interés",
+      "Estado, presupuesto y política fiscal",
+      "Sistema tributario y deuda pública",
+      "Consumo, ahorro e inversión",
+      "IPC y canasta de consumo",
+      "Balanza de pagos y comercio internacional",
+      "Aranceles, tipo de cambio e integración económica",
+      "Ciclo, crecimiento y desarrollo económico",
+      "Economía informal, desigualdad y pobreza",
+      "Emprendimiento y evaluación de proyectos"
+    ],
+    "id": 14
+  },
+  {
+    "name": "Filosofía",
+    "icon": "lightbulb",
+    "category": "Humanidades",
+    "topics": [
+      "Etimología, definición y origen de la filosofía",
+      "Características y disciplinas filosóficas",
+      "Filosofía antigua",
+      "Filosofía moderna",
+      "Filosofía contemporánea",
+      "Filosofía latinoamericana y peruana",
+      "Etapas de la filosofía latinoamericana",
+      "Filosofía latinoamericana del siglo XX y contemporánea",
+      "Naturaleza humana y subjetividad",
+      "Individuo y sociedad",
+      "Problemas éticos y dilemas morales",
+      "Poder y Estado",
+      "Tolerancia, pluralismo, democracia y feminismo",
+      "Conocimiento científico",
+      "Ciencia y método científico",
+      "Problemas e hipótesis científicas",
+      "Crítica a la ciencia y la tecnología",
+      "Lenguaje, ciencia, verdad y política",
+      "Teoría de la argumentación",
+      "Premisas y conclusiones",
+      "Paradojas y falacias",
+      "Argumentación en la investigación científica",
+      "Apreciación estética y arte contemporáneo",
+      "Arte, cultura, sociedad y estética"
+    ],
+    "id": 15
+  },
+  {
+    "name": "Física",
+    "icon": "atom",
+    "category": "Ciencias",
+    "topics": [
+      "Magnitudes físicas, vectores y análisis dimensional",
+      "Cinemática: posición, desplazamiento, velocidad y aceleración",
+      "Movimiento rectilíneo uniforme (MRU)",
+      "MRUV y caída libre",
+      "Movimiento de proyectiles",
+      "Movimiento circular: MCU y MCUV",
+      "Leyes de Newton, masa, peso y rozamiento",
+      "Dinámica rectilínea y circular",
+      "Estática, fuerza elástica y torque",
+      "Impulso y cantidad de movimiento",
+      "Colisiones, gravitación y leyes de Kepler",
+      "Trabajo y potencia mecánica",
+      "Energía cinética y teorema trabajo-energía",
+      "Energía potencial y conservación de la energía",
+      "Temperatura, equilibrio térmico y dilatación",
+      "Calor, calor específico y cambios de fase",
+      "Densidad, presión e hidrostática",
+      "Hidrodinámica, Bernoulli y viscosidad",
+      "Electrostática: carga, fuerza y campo eléctrico",
+      "Potencial eléctrico y condensadores",
+      "Electrodinámica y circuitos eléctricos",
+      "Magnetismo e inducción electromagnética",
+      "Movimiento armónico simple, ondas y óptica",
+      "Física moderna: cuántica, radiactividad y relatividad"
+    ],
+    "id": 16
+  },
+  {
+    "name": "Química",
+    "icon": "flask-conical",
+    "category": "Ciencias",
+    "topics": [
+      "Química, método científico y Sistema Internacional",
+      "Materia: mezclas, sustancias y estados de agregación",
+      "Propiedades y fenómenos de la materia",
+      "Estructura atómica e isótopos",
+      "Modelos atómicos",
+      "Números cuánticos y configuración electrónica",
+      "Tabla periódica y propiedades periódicas",
+      "Enlace químico y fuerzas intermoleculares",
+      "Nomenclatura y funciones inorgánicas",
+      "Reacciones químicas y ecuaciones",
+      "Reacciones redox y métodos de balanceo",
+      "Mol, masa molar y leyes ponderales",
+      "Cálculos estequiométricos",
+      "Reactivo limitante, pureza y rendimiento",
+      "Estado gaseoso y leyes de los gases",
+      "Estados líquido y sólido",
+      "Soluciones, concentración y diluciones",
+      "Ácidos, bases, neutralización y pH",
+      "Cinética química",
+      "Equilibrio químico y Le Chatelier",
+      "Electroquímica: pilas y electrólisis",
+      "Química orgánica: carbono e hidrocarburos",
+      "Compuestos oxigenados y nitrogenados",
+      "Recursos naturales, ambiente y potabilización del agua"
+    ],
+    "id": 17
+  },
+  {
+    "name": "Biología",
+    "icon": "dna",
+    "category": "Ciencias",
+    "topics": [
+      "Biología, método científico y seres vivos",
+      "Niveles de organización, virus y biomoléculas",
+      "Teoría celular y célula procariota",
+      "Célula eucariota, organelas y núcleo",
+      "Tejidos vegetales",
+      "Tejidos animales",
+      "Nutrición autótrofa y heterótrofa",
+      "Fotosíntesis y respiración celular",
+      "Intercambio gaseoso y sistema respiratorio",
+      "Sistema digestivo",
+      "Circulación y transporte",
+      "Sistema linfático",
+      "Excreción y sistema urinario",
+      "Sistema inmunológico e inmunidad",
+      "Coordinación química y sistema endocrino",
+      "Sistema nervioso y órganos de los sentidos",
+      "Reproducción, mitosis y meiosis",
+      "Reproducción vegetal, animal y humana",
+      "Genética mendeliana y alelos múltiples",
+      "Genética del sexo, mutaciones y bioética",
+      "Origen de la vida, evolución y evolución humana",
+      "Reino Animal",
+      "Reino Plantae, salud e higiene",
+      "Ecología, recursos naturales y desarrollo sostenible"
+    ],
+    "id": 18
+  }
+];
 
-    <script>
-        // --- DATOS ---
-        const COURSES = [
-            { id: 1, name: 'Lenguaje', icon: 'book-open', category: 'Letras', topics: ['La Comunicación', 'El Lenguaje', 'Fonética y Fonología', 'La Sílaba y la Secuencia Vocálicas', 'Acentuación: Prosódica y Ortográfica', 'Uso de las Letras Mayúsculas', 'Semántica', 'Morfología', 'El Sustantivo o Nombre', 'Pronombre', 'El Adjetivo', 'Los Determinantes', 'El Verbo I', 'El Verbo II', 'El Adverbio', 'Preposición y Conjunción', 'La Sintaxis', 'El Sujeto', 'Predicado', 'La Oración Compuesta', 'La Oración Subordinada Sustantiva', 'La Oración Subordinada Adjetiva y Adverbial', 'Signos de Puntuación I', 'Signos de Puntuación II - Textos'] },
-            { id: 2, name: 'Literatura', icon: 'file-text', category: 'Letras', topics: ['Figuras Literarias', 'Clasicismo Griego I', 'Clasicismo Griego II', 'Literatura Medieval', 'Renacimiento', 'Romanticismo', 'Realismo', 'Vanguardismo', 'Poesía en el Siglo de Oro Español', 'Novela en el Siglo de Oro Español', 'Teatro en el Siglo de Oro Español', 'Generación del 27', 'Modernismo Hispanoamericano', 'Nueva Narrativa Hispanoamericana', 'Boom Hispanoamericano', 'Literatura Quechua y de la Conquista', 'Literatura de la Emancipación y Costumbrismo', 'Romanticismo Peruano y Realismo Peruano', 'Posmodernismo', 'Vanguardismo Peruano', 'Indigenismo', 'Generación del 50', 'Generación del 60', 'Generación del 60 II'] },
-            { id: 3, name: 'Raz. Verbal', icon: 'edit-3', category: 'Letras', topics: ['Sinónimos', 'Tipología Textual - Modelo Deco', 'Antónimos', 'Comprensión de Lectura II: Tipos de Ítems', 'Etimología', 'Comprensión de Lectura III: Ideas Principales', 'Términos Excluidos', 'Comprensión de Lectura IV: Relaciones Semánticas', 'Inclusión e Implicación', 'Comprensión de Lectura V: Compatibilidad', 'Series Verbales', 'Comprensión de Lectura VI: Inferencias', 'Analogías I', 'Comprensión de Lectura VII: Extrapolación', 'Analogías II', 'Comprensión de Lectura VIII: Texto Argumentativo', 'Práctica Integral', 'Comprensión de Lectura IX: Textos Literarios', 'Oraciones Incompletas', 'Comprensión de Lectura X: Textos Científicos', 'Conectores Lógicos I', 'Comprensión de Lectura XI: Textos Filosóficos', 'Conectores Lógicos II', 'Comprensión de Lectura XII'] },
-            { id: 4, name: 'Economía', icon: 'trending-up', category: 'Humanidades', topics: ['Generalidades', 'Necesidades, Bienes y Servicios', 'Proceso Económico y Producción', 'Los Costos de Producción', 'Trabajo', 'Capital y Empresa', 'Emprendimiento', 'Circulación y Presupuesto Familiar', 'Mercado – Modelos de Mercado', 'Demanda Elasticidad Precio Demanda', 'Oferta y Equilibrio', 'Dinero e Inflación', 'Crédito y Sistema Financiero', 'El Sector Público', 'Economía Informal', 'Presupuesto General de la República', 'Comercio Internacional', 'Balanza de Pagos y Ciclos Económicos', 'OFI – Integración Económica', 'Derechos Primarios', 'Derechos Fundamentales y Garantías', 'La Ciudadanía y el Estado', 'El Estado - Poder Legislativo', 'El Poder Ejecutivo y Judicial'] },
-            { id: 5, name: 'Geografía', icon: 'globe', category: 'Humanidades', topics: ['Ciencia Geográfica - Líneas Imaginarias', 'La Cartografía', 'Fuerzas Geológicas Internas', 'Fuerzas Geológicas Externas', 'Relieve del Perú I', 'Relieve del Perú II', 'Cambio Climático y Calentamiento Global', 'Clima en el Perú y sus Factores', 'Climas del Perú II', 'Hidrografía', 'Mar Peruano', 'Principales Ecosistemas del Mundo', 'Ocho Regiones Naturales', 'Ecorregiones del Perú', 'Recursos Naturales y sus Problemas I', 'Recursos Naturales y sus Problemas II', 'Áreas Naturales Protegidas', 'Desastres Naturales y Gestión del Riesgo', 'Población Humana del Perú', 'Actividades Económicas I', 'Actividades Económicas II', 'Perú Político', 'Los Continentes I', 'Los Continentes II'] },
-            { id: 6, name: 'Historia del Perú', icon: 'landmark', category: 'Humanidades', topics: ['Poblamiento Americano', 'Primer Horizonte y Primer Desarrollo Regional', 'Horizonte Medio e Intermedio Tardío', 'Incas I', 'Incas II', 'Invasión Europea al Tahuantinsuyo', 'Resistencia Indígena y Guerras Civiles', 'Virreinato Peruano: Origen', 'Virreinato Peruano: Estructura', 'Luchas Anticoloniales', 'Precursores y Rebeliones Criollas', 'Corriente Libertadora del Sur', 'Primer Congreso y Corriente Libertadora del Norte', 'Primer Militarismo e Inicios de la República', 'Prosperidad Falaz', 'Entre Pezet y el Civilismo de Pardo', 'Guerra del Salitre y Segundo Militarismo', 'República Aristocrática', 'Oncenio de Leguía', 'Tercer Militarismo a la Primavera Democrática', 'Del Ochenio al Segundo Belaundismo', 'Gobierno de Fujimori', 'Transición Democrática', 'Perú en el Siglo XXI'] },
-            { id: 7, name: 'Historia Universal', icon: 'globe', category: 'Humanidades', topics: ['Origen del Hombre y Comunidad Primitiva', 'Mesopotamia y Egipto', 'Civilizaciones del Lejano Oriente', 'Grecia Antigua', 'Roma', 'Alta Edad Media e Imperio Bizantino', 'Imperio Árabe Musulmán y Carolingio', 'Feudalismo y Cruzadas', 'Baja Edad Media y Expansión Europea', 'Humanismo, Renacimiento y Crisis Religiosa', 'Monarquías Modernas Absolutistas', 'Ilustración e Independencia de las 13 Colonias', 'Revolución Francesa', 'Era Napoleónica y Revoluciones Liberales', 'Revoluciones Industriales e Imperialismo', 'Primera Guerra Mundial', 'Revolución Rusa', 'Periodo Entre Guerras', 'Segunda Guerra Mundial', 'Guerra Fría I', 'Guerra Fría II', 'Fin del Bloque Soviético y Guerra de Yugoslavia', 'El Nuevo Orden Mundial', 'Mundo Contemporáneo'] },
-            { id: 8, name: 'Psicología', icon: 'brain', category: 'Humanidades', topics: ['Psicología como Ciencia', 'Bases Biológicas de la Conducta', 'Bases Sociales de la Conducta', 'Sensación y Percepción', 'Antropología Filosófica', 'Gnoseología', 'Epistemología', 'Axiología', 'Memoria y Atención', 'Pensamiento y Lenguaje', 'Aprendizaje', 'Inteligencia', 'Ética', 'Filosofía Antigua', 'Filosofía Antigua II y Medieval', 'Filosofía Moderna', 'Desarrollo de la Inteligencia', 'Afectividad y Motivación', 'Desarrollo Humano', 'Personalidad y Psicoanálisis', 'Alteraciones de la Personalidad', 'Filosofía Siglo XIX', 'Filosofía Siglo XX', 'Filosofía en el Perú'] },
-            { id: 9, name: 'Biología', icon: 'dna', category: 'Ciencias', topics: ['Bioelementos, Agua, Glúcidos y Lípidos', 'Proteínas y Ácidos Nucleicos', 'Virus y Bacterias', 'Célula Eucariota', 'Fisiología y Fotosíntesis', 'Respiración Celular', 'Ciclo Celular, Mitosis y Meiosis', 'Genética Mendeliana', 'Genética Posmendeliana y Citogenética', 'Evolución y Taxonomía Biológica', 'Taxonomía II', 'Reino Plantae I: Taxonomía e Histología', 'Reino Plantae II: Organografía', 'Reino Animal: Taxonomía', 'Intercambio Gaseoso Animal y Humano', 'Sistemas Digestivos', 'Circulación y Transporte', 'Sistema Linfático e Inmune', 'Coordinación Química y Endocrina', 'Sistemas Nerviosos y Sensorial', 'Salud y Enfermedad', 'Reproducción Animal', 'Reproducción Humana', 'Ecología y Recursos Naturales'] },
-            { id: 10, name: 'Física', icon: 'atom', category: 'Ciencias', topics: ['Vectores I', 'Vectores II', 'Movimiento Rectilíneo Uniforme (MRU)', 'Movimiento Rectilíneo Uniformemente Variado (MRUV)', 'Movimiento Vertical de Caída Libre', 'Movimiento Parabólico de Caída Libre', 'Estática I', 'Estática II', 'Rozamiento y Dinámica', 'Trabajo Mecánico', 'Energía Mecánica I', 'Energía Mecánica II - Potencia', 'Hidrostática I', 'Hidrostática II', 'Movimiento Armónico Simple (MAS)', 'Ondas Mecánicas', 'Electrostática I', 'Electrostática II', 'Electrodinámica I', 'Electrodinámica II', 'Electromagnetismo I', 'Electromagnetismo II', 'Física Moderna', 'Relatividad'] },
-            { id: 11, name: 'Química', icon: 'flask-conical', category: 'Ciencias', topics: ['Estructura Atómica', 'Números Cuánticos', 'Distribución Electrónica', 'Tabla Periódica Actual', 'Enlace Químico I', 'Enlace Químico II', 'Cantidad de Sustancia', 'Estado Gaseoso I', 'Reacciones Químicas I', 'Reacciones Químicas II', 'Estequiometría I', 'Estequiometría II', 'Masa Equivalente', 'Soluciones I', 'Soluciones II', 'Cinética Química', 'Equilibrio Químico', 'Ácidos y Bases', 'Celdas Galvánicas y Electrolíticas', 'Introducción a la Química Orgánica', 'Química Orgánica: Hidrocarburos', 'Química Orgánica: Funciones Oxigenadas I', 'Química Orgánica: Funciones Oxigenadas II', 'Compuestos Aromáticos'] },
-            { id: 12, name: 'Álgebra', icon: 'calculator', category: 'Matemáticas', topics: ['Polinomios I: Expresiones Algebraicas', 'Polinomios II: Teoría de Grados', 'Productos Notables', 'División I: Horner y Ruffini', 'División II: Teorema del Resto y Divisibilidad', 'Cocientes Notables', 'Factorización I', 'Factorización II', 'Factorial y Número Combinatorio', 'Binomio de Newton', 'Radicación', 'Teoría de Ecuaciones', 'Ecuaciones Cuadráticas', 'Ecuaciones Polinomiales', 'Matrices y Determinantes', 'Sistemas de Ecuaciones', 'Desigualdades e Inecuaciones Racionales', 'Inecuaciones Irracionales y Exponenciales', 'Valor Absoluto – Ecuaciones e Inecuaciones', 'Sistemas de Inecuaciones y Programación Lineal', 'Funciones I', 'Funciones Especiales II', 'Logaritmos I', 'Logaritmos II'] },
-            { id: 13, name: 'Aritmética', icon: 'calculator', category: 'Matemáticas', topics: ['Razones y Proporciones', 'Serie de Razones Geométricas Equivalentes', 'Promedios', 'Magnitudes Proporcionales y Regla de Tres', 'Reparto Proporcional', 'Tanto Por Ciento', 'Regla de Mezcla', 'Regla de Interés', 'Regla de Descuento', 'Lógica Proposicional', 'Teoría de Conjuntos I', 'Teoría de Conjuntos II', 'Teoría Numeración', 'Conteo de Números', 'Adición y Sustracción', 'Multiplicación y División', 'Divisibilidad', 'Criterios de Divisibilidad', 'Números Primos', 'MCM y MCD', 'Números Racionales I', 'Números Racionales II', 'Análisis Combinatorio', 'Probabilidades'] },
-            { id: 14, name: 'Geometría', icon: 'layout', category: 'Matemáticas', topics: ['Triángulo', 'Líneas Notables', 'Triángulos Congruentes', 'Cuadrilátero', 'Cuadriláteros II', 'Ángulos en la Circunferencia', 'Líneas en la Circunferencia', 'Puntos Notables', 'Proporcionalidad de Segmentos y Semejanzas', 'Relaciones Métricas en la Circunferencia', 'Relaciones Métricas en Triángulos Rectángulos', 'Relaciones Métricas en Triángulos Oblicuángulos', 'Área de Regiones Triangulares', 'Área de Regiones Cuadrangulares', 'Área de Regiones Circulares', 'Poliedros Regulares', 'Prisma y Cilindro', 'Pirámide y Cono', 'Esfera y Pappus', 'Plano Cartesiano', 'Ecuación de la Recta', 'Ecuación de la Circunferencia', 'Ecuación de la Parábola', 'Ecuación de la Elipse'] },
-            { id: 15, name: 'Raz. Matemático', icon: 'brain', category: 'Matemáticas', topics: ['Juegos Lógicos', 'Razonamiento Lógico I', 'Razonamiento Lógico II', 'Calendarios', 'Algoritmia Sensorial I', 'Algoritmia Sensorial II', 'Planteo de Ecuaciones I', 'Planteo de Ecuaciones II', 'Interpretación de Enunciados', 'Arreglos Numéricos', 'Operaciones Matemáticas', 'Sucesiones', 'Cronometría I', 'Cronometría II', 'Certezas - Máximos y Mínimos', 'Razonamiento Geométrico', 'Frecuencia de Sucesos', 'Deducción Simple y Deducción Compuesta', 'Formas y Movimientos', 'Situaciones Topológicas', 'Localización', 'Problemas de Cantidad e Inferencia', 'Interpretación de Gráficos Estadísticos', 'Simetría y Reflexiones'] },
-            { id: 16, name: 'Trigonometría', icon: 'layout', category: 'Matemáticas', topics: ['Sistema de Medición Angular', 'Razones Trigonométricas de un Ángulo Agudo I', 'Razones Trigonométricas de un Ángulo Agudo II', 'Resolución de Triángulos Rectángulos', 'Geometría Analítica', 'RT de un Ángulo en Posición Normal I', 'RT de un Ángulo en Posición Normal II', 'Reducción al Primer Cuadrante I', 'Reducción al Primer Cuadrante II', 'Circunferencia Trigonométrica I', 'Circunferencia Trigonométrica II', 'Identidades Trigonométricas Fundamentales', 'Identidades de Ángulos Compuestos I', 'Identidades de Ángulos Compuestos II', 'Identidades de Ángulo Doble', 'Identidades de Ángulo Triple', 'Transformaciones Trigonométricas', 'Funciones Trigonométricas I', 'Funciones Trigonométricas II', 'Funciones Trigonométricas Inversas', 'Ecuaciones Trigonométricas I', 'Ecuación Trigonométrica II', 'Resolución de Triángulos Oblicuángulos', 'Práctica Integral'] },
-        ];
+    const CATEGORIES = ['Todos', ...new Set(COURSES.map(c => c.category))];
+    const TAB_INFO = {
+      'Teoría': {
+        icon: 'book-open',
+        title: 'Teoría del capítulo',
+        text: 'Aquí se incorporará el desarrollo conceptual, definiciones, propiedades, ejemplos y fórmulas esenciales de este capítulo.'
+      },
+      'Práctica': {
+        icon: 'pencil-ruler',
+        title: 'Práctica dirigida',
+        text: 'Aquí se incorporarán ejercicios graduados, problemas tipo admisión y actividades de aplicación.'
+      },
+      'Evaluación': {
+        icon: 'badge-check',
+        title: 'Evaluación',
+        text: 'Aquí se incorporará una evaluación breve con retroalimentación y registro de progreso.'
+      },
+      'Materiales': {
+        icon: 'folder-open',
+        title: 'Materiales',
+        text: 'Aquí se podrán enlazar PDFs, videos, infografías, solucionarios y recursos complementarios.'
+      }
+    };
 
-        const STATS = [
-            { value: '16', label: 'Cursos', icon: 'book-open' },
-            { value: '384', label: 'Capítulos', icon: 'layout' },
-            { value: '24', label: 'Temas por Curso', icon: 'check-square' },
-            { value: '+5k', label: 'Minutos', icon: 'clock' },
-        ];
+    const state = {
+      view: 'catalog',
+      activeCourseId: null,
+      activeTopicIndex: 0,
+      activeTab: 'Teoría',
+      category: 'Todos',
+      search: ''
+    };
 
-        const METHODOLOGY = [
-            { title: 'Teoría', time: '10-15 min', desc: 'Explicación concisa de los conceptos clave.', icon: 'play-circle' },
-            { title: 'Práctica', time: '10-15 min', desc: 'Resolución de 8 problemas tipo examen de admisión.', icon: 'edit-3' },
-            { title: 'Autoaprendizaje', time: 'Test interactivo', desc: 'Formulario de 10 preguntas con retroalimentación.', icon: 'check-square' },
-            { title: 'Solucionario', time: 'PDF descargable', desc: 'Material paso a paso para reforzar lo aprendido.', icon: 'file-down' },
-        ];
+    function esc(value) {
+      return String(value)
+        .replaceAll('&','&amp;')
+        .replaceAll('<','&lt;')
+        .replaceAll('>','&gt;')
+        .replaceAll('"','&quot;')
+        .replaceAll("'",'&#039;');
+    }
 
-        // --- ESTADO DE LA APLICACIÓN ---
-        let state = {
-            activeCourse: null,
-            activeTopicIndex: 0,
-            activeTab: 'Teoría',
-            mobileMenuOpen: false
-        };
+    function saveProgress() {
+      try {
+        localStorage.setItem('academia-sm-state', JSON.stringify({
+          activeCourseId: state.activeCourseId,
+          activeTopicIndex: state.activeTopicIndex
+        }));
+      } catch(e) {}
+    }
 
-        // --- FUNCIONES DE ACTUALIZACIÓN DE ESTADO ---
-        function openCourse(courseId) {
-            state.activeCourse = COURSES.find(c => c.id === courseId);
-            state.activeTopicIndex = 0;
-            state.activeTab = 'Teoría';
-            renderApp();
-            window.scrollTo(0, 0);
+    function loadProgress() {
+      try {
+        const saved = JSON.parse(localStorage.getItem('academia-sm-state') || 'null');
+        if (saved && COURSES.some(c => c.id === saved.activeCourseId)) {
+          state.activeCourseId = saved.activeCourseId;
+          state.activeTopicIndex = Math.min(Math.max(saved.activeTopicIndex || 0, 0), 23);
         }
+      } catch(e) {}
+    }
 
-        function closeCourse() {
-            state.activeCourse = null;
-            renderApp();
-            window.scrollTo(0, 0);
-        }
+    function render() {
+      document.getElementById('app').innerHTML =
+        state.view === 'course' ? renderCourse() : renderCatalog();
+      lucide.createIcons();
+    }
 
-        function setTopic(index) {
-            state.activeTopicIndex = index;
-            renderApp();
-        }
+    function filteredCourses() {
+      const term = state.search.trim().toLowerCase();
+      return COURSES.filter(course => {
+        const categoryOk = state.category === 'Todos' || course.category === state.category;
+        const searchOk = !term ||
+          course.name.toLowerCase().includes(term) ||
+          course.topics.some(t => t.toLowerCase().includes(term));
+        return categoryOk && searchOk;
+      });
+    }
 
-        function setTab(tab) {
-            state.activeTab = tab;
-            renderApp();
-        }
+    function renderHeader(compact=false) {
+      return `
+        <header class="bg-white border-b border-slate-200 sticky top-0 z-40">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
+            <button onclick="goHome()" class="flex items-center gap-3 min-w-0 text-left">
+              <div class="w-11 h-11 rounded-2xl bg-blue-950 text-white flex items-center justify-center shrink-0 shadow-sm">
+                <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+              </div>
+              <div class="min-w-0">
+                <div class="font-black text-blue-950 tracking-tight leading-tight truncate">SACO <span class="text-red-600">OLIVEROS</span></div>
+                <div class="text-[11px] uppercase tracking-[0.18em] text-slate-400 truncate">Academia Virtual · Admisión 2026-II</div>
+              </div>
+            </button>
+            <div class="hidden sm:flex items-center gap-2 text-xs font-semibold text-slate-500">
+              <span class="px-3 py-1.5 bg-slate-100 rounded-full">18 cursos</span>
+              <span class="px-3 py-1.5 bg-slate-100 rounded-full">24 capítulos c/u</span>
+              <span class="px-3 py-1.5 bg-slate-100 rounded-full">432 capítulos</span>
+            </div>
+          </div>
+        </header>
+      `;
+    }
 
-        function toggleMobileMenu() {
-            state.mobileMenuOpen = !state.mobileMenuOpen;
-            renderApp();
-        }
+    function renderCatalog() {
+      const courses = filteredCourses();
+      const categoryButtons = CATEGORIES.map(cat => `
+        <button onclick="setCategory('${esc(cat)}')"
+          class="px-4 py-2 rounded-full text-sm font-semibold border transition
+          ${state.category === cat
+            ? 'bg-blue-950 text-white border-blue-950'
+            : 'bg-white text-slate-600 border-slate-200 hover:border-blue-300 hover:text-blue-950'}">
+          ${esc(cat)}
+        </button>
+      `).join('');
 
-        function scrollToSection(id) {
-            state.mobileMenuOpen = false;
-            renderApp();
-            setTimeout(() => {
-                const el = document.getElementById(id);
-                if (el) el.scrollIntoView({ behavior: 'smooth' });
-            }, 50);
-        }
+      const cards = courses.map(course => `
+        <button onclick="openCourse(${course.id})"
+          class="course-card bg-white rounded-3xl border border-slate-200 p-5 text-left group w-full">
+          <div class="flex items-start justify-between gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-blue-50 text-blue-950 flex items-center justify-center group-hover:bg-blue-950 group-hover:text-white transition">
+              <i data-lucide="${esc(course.icon)}" class="w-6 h-6"></i>
+            </div>
+            <span class="text-[11px] font-bold uppercase tracking-wider text-slate-400 bg-slate-50 px-2.5 py-1 rounded-full">
+              ${esc(course.category)}
+            </span>
+          </div>
+          <h3 class="mt-5 text-lg font-extrabold text-slate-900 leading-snug">${esc(course.name)}</h3>
+          <p class="mt-2 text-sm text-slate-500 line-clamp-2">${esc(course.topics[0])} · ${esc(course.topics[1])} · …</p>
+          <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+            <div class="flex items-center gap-2 text-sm font-semibold text-slate-500">
+              <i data-lucide="layers-3" class="w-4 h-4"></i>
+              24 capítulos
+            </div>
+            <span class="text-blue-950 group-hover:text-red-600 transition">
+              <i data-lucide="arrow-right" class="w-5 h-5"></i>
+            </span>
+          </div>
+        </button>
+      `).join('');
 
-        // --- RENDERIZADO HTML ---
-        function renderApp() {
-            const app = document.getElementById('app');
-            
-            if (state.activeCourse) {
-                app.innerHTML = renderVirtualClassroom();
-            } else {
-                app.innerHTML = renderLandingPage();
-            }
-
-            // Inicializar iconos de Lucide después de actualizar el DOM
-            lucide.createIcons();
-        }
-
-        function renderVirtualClassroom() {
-            const course = state.activeCourse;
-            const topicName = course.topics[state.activeTopicIndex];
-            const topicNumber = String(state.activeTopicIndex + 1).padStart(2, '0');
-            const tabs = ['Teoría', 'Práctica', 'Evaluación', 'Materiales'];
-
-            // Generar la lista de temas en el sidebar
-            let topicsListHtml = '';
-            course.topics.forEach((topic, i) => {
-                const isActive = state.activeTopicIndex === i;
-                const activeClass = isActive 
-                    ? 'bg-white shadow-sm border border-gray-100 text-blue-900 font-medium' 
-                    : 'text-gray-500 hover:bg-gray-100';
-                const numberClass = isActive ? 'text-red-600 font-bold' : 'text-gray-400';
-                const topicNum = String(i + 1).padStart(2, '0');
-
-                topicsListHtml += `
-                    <li>
-                        <button onclick="setTopic(${i})" class="w-full text-left px-4 py-3 rounded-lg flex items-center gap-3 transition-colors ${activeClass}">
-                            <span class="text-xs shrink-0 ${numberClass}">${topicNum}</span>
-                            <span class="text-sm truncate" title="${topic}">${topic}</span>
-                        </button>
-                    </li>
-                `;
-            });
-
-            // Generar pestañas
-            let tabsHtml = '';
-            tabs.forEach(tab => {
-                const isActive = state.activeTab === tab;
-                const tabClass = isActive ? 'text-blue-900' : 'text-gray-400 hover:text-gray-600';
-                const underlineHtml = isActive ? '<span class="absolute bottom-0 left-0 w-full h-0.5 bg-red-600 rounded-t-full"></span>' : '';
-                
-                tabsHtml += `
-                    <button onclick="setTab('${tab}')" class="pb-4 text-sm font-medium transition-colors relative ${tabClass}">
-                        ${tab}
-                        ${underlineHtml}
-                    </button>
-                `;
-            });
-
-            return `
-                <div class="flex flex-col h-screen bg-white">
-                    <!-- Navbar Aula Virtual -->
-                    <header class="border-b border-gray-100 p-4 flex items-center justify-between z-10 bg-white shrink-0">
-                        <div class="flex items-center gap-4">
-                            <button onclick="closeCourse()" class="p-2 text-gray-400 hover:text-blue-900 hover:bg-gray-50 rounded-full transition-colors">
-                                <i data-lucide="arrow-left" class="w-5 h-5"></i>
-                            </button>
-                            <div>
-                                <h1 class="font-semibold text-lg text-blue-900">${course.name}</h1>
-                                <p class="text-xs text-gray-500 tracking-wide uppercase">Educación sin Límites</p>
-                            </div>
-                        </div>
-                        <div class="hidden md:flex items-center">
-                            <span class="text-xs font-semibold text-red-600 bg-red-50 px-3 py-1 rounded-full uppercase tracking-wider">Sistema Helicoidal</span>
-                        </div>
-                    </header>
-
-                    <!-- Contenido Principal Aula Virtual -->
-                    <div class="flex flex-1 overflow-hidden">
-                        <!-- Sidebar (Temario) -->
-                        <aside class="w-72 bg-gray-50 border-r border-gray-100 overflow-y-auto hidden md:block custom-scrollbar shrink-0">
-                            <div class="p-6">
-                                <h2 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Temario del Curso</h2>
-                                <ul class="space-y-1">
-                                    ${topicsListHtml}
-                                </ul>
-                            </div>
-                        </aside>
-
-                        <!-- Área de Estudio -->
-                        <main class="flex-1 overflow-y-auto bg-white p-6 md:p-12 custom-scrollbar">
-                            <div class="max-w-3xl mx-auto">
-                                
-                                <!-- Reproductor de Video -->
-                                <div class="w-full aspect-video bg-gray-100 rounded-2xl flex items-center justify-center group cursor-pointer relative overflow-hidden border border-gray-100 shadow-sm">
-                                    <i data-lucide="play-circle" class="w-16 h-16 text-gray-300 group-hover:text-red-600 group-hover:scale-110 transition-all duration-300"></i>
-                                    <div class="absolute bottom-6 left-6">
-                                        <span class="bg-black/50 backdrop-blur-sm text-white text-xs px-3 py-1.5 rounded-full">15:00 min</span>
-                                    </div>
-                                </div>
-
-                                <div class="mt-8">
-                                    <h2 class="text-2xl font-semibold text-blue-900 mb-2">Tema ${topicNumber}: ${topicName}</h2>
-                                    <p class="text-gray-500 text-sm">Profesor Experto en Preparación Preuniversitaria</p>
-                                </div>
-
-                                <!-- Pestañas de Navegación -->
-                                <div class="mt-10 border-b border-gray-100 flex gap-8">
-                                    ${tabsHtml}
-                                </div>
-                                    
-                                <!-- Contenido de la pestaña -->
-                                <div class="py-8">
-                                    <p class="text-gray-600 leading-relaxed mb-8">
-                                        En esta sesión abarcaremos los principios esenciales del curso. Aplicaremos el nivel helicoidal para asegurar el dominio progresivo de los temas más recurrentes en los exámenes de admisión.
-                                    </p>
-                                    
-                                    <div class="bg-gray-50 p-6 rounded-2xl flex items-start gap-4 border border-gray-100">
-                                        <i data-lucide="award" class="w-6 h-6 text-blue-900 shrink-0 mt-1"></i>
-                                        <div>
-                                            <h4 class="font-semibold text-blue-900 mb-1">Rigor Académico</h4>
-                                            <p class="text-sm text-gray-500 leading-relaxed">Contenido actualizado y diseñado específicamente para enfrentar los exámenes de admisión de las principales universidades del país.</p>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </main>
-                    </div>
+      return `
+        ${renderHeader()}
+        <main>
+          <section class="relative overflow-hidden bg-gradient-to-br from-blue-950 via-blue-900 to-slate-900 text-white">
+            <div class="absolute inset-0 opacity-10" style="background-image:radial-gradient(circle at 1px 1px,white 1px,transparent 0);background-size:28px 28px"></div>
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+              <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/10 text-xs font-semibold mb-6">
+                  <i data-lucide="target" class="w-4 h-4 text-red-400"></i>
+                  Temario estructurado para la Prueba General de Admisión 2026-II
                 </div>
-            `;
-        }
+                <h1 class="text-4xl sm:text-6xl font-black tracking-tight leading-[1.04]">
+                  Tu ruta de estudio,<br><span class="text-red-400">curso por curso.</span>
+                </h1>
+                <p class="mt-6 text-base sm:text-lg text-blue-100 max-w-2xl leading-relaxed">
+                  Los contenidos del temario han sido organizados en 18 cursos. Cada curso cuenta con 24 capítulos para facilitar una programación académica uniforme.
+                </p>
+              </div>
+            </div>
+          </section>
 
-        function renderLandingPage() {
-            // Generar tarjetas de estadísticas
-            let statsHtml = '';
-            STATS.forEach(stat => {
-                statsHtml += `
-                    <div class="flex flex-col items-center justify-center text-center px-4">
-                        <i data-lucide="${stat.icon}" class="w-8 h-8 text-blue-900 mb-4 opacity-80"></i>
-                        <p class="text-3xl md:text-4xl font-bold text-blue-900 mb-2">${stat.value}</p>
-                        <p class="text-xs text-gray-400 font-semibold uppercase tracking-wider">${stat.label}</p>
-                    </div>
-                `;
-            });
+          <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class="bg-white border border-slate-200 rounded-3xl p-4 sm:p-5 shadow-sm">
+              <div class="relative">
+                <i data-lucide="search" class="w-5 h-5 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2"></i>
+                <input id="searchInput" value="${esc(state.search)}" oninput="setSearch(this.value)"
+                  placeholder="Buscar curso o capítulo..."
+                  class="w-full pl-12 pr-4 py-3.5 rounded-2xl bg-slate-50 border border-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-900/20 focus:border-blue-900 text-sm">
+              </div>
+              <div class="mt-4 flex flex-wrap gap-2">${categoryButtons}</div>
+            </div>
 
-            // Generar tarjetas de metodología
-            let methodologyHtml = '';
-            METHODOLOGY.forEach(step => {
-                methodologyHtml += `
-                    <div class="bg-white rounded-2xl p-8 border border-gray-100 hover:border-blue-100 hover:shadow-md transition-all">
-                        <div class="mb-6 bg-gray-50 w-12 h-12 rounded-xl flex items-center justify-center">
-                            <i data-lucide="${step.icon}" class="w-6 h-6 text-red-600"></i>
-                        </div>
-                        <h3 class="text-lg font-semibold text-blue-900 mb-1">${step.title}</h3>
-                        <span class="block text-xs text-red-600 font-medium mb-4">${step.time}</span>
-                        <p class="text-gray-500 text-sm leading-relaxed">${step.desc}</p>
-                    </div>
-                `;
-            });
+            <div class="mt-8 flex items-end justify-between gap-4">
+              <div>
+                <p class="text-sm font-semibold text-red-600 uppercase tracking-wider">Malla académica</p>
+                <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-1">${courses.length} curso${courses.length===1?'':'s'}</h2>
+              </div>
+              <p class="hidden sm:block text-sm text-slate-500">Selecciona un curso para ver sus 24 capítulos.</p>
+            </div>
 
-            // Generar tarjetas de cursos
-            let coursesHtml = '';
-            COURSES.forEach(course => {
-                coursesHtml += `
-                    <button onclick="openCourse(${course.id})" class="group flex items-center p-4 bg-gray-50 rounded-2xl hover:bg-blue-900 hover:text-white transition-all text-left border border-transparent hover:border-blue-900">
-                        <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center text-blue-900 group-hover:text-red-600 shrink-0 shadow-sm mr-4 transition-colors">
-                            <i data-lucide="${course.icon}" class="w-5 h-5"></i>
-                        </div>
-                        <div class="overflow-hidden">
-                            <h3 class="font-semibold text-gray-800 group-hover:text-white text-sm truncate">${course.name}</h3>
-                            <span class="text-[10px] text-gray-400 group-hover:text-blue-200 uppercase tracking-wider">${course.category}</span>
-                        </div>
-                    </button>
-                `;
-            });
+            <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+              ${cards || `
+                <div class="sm:col-span-2 lg:col-span-3 xl:col-span-4 bg-white border border-dashed border-slate-300 rounded-3xl p-12 text-center">
+                  <i data-lucide="search-x" class="w-10 h-10 mx-auto text-slate-300"></i>
+                  <p class="mt-3 font-semibold text-slate-600">No encontramos coincidencias.</p>
+                </div>`}
+            </div>
+          </section>
+        </main>
 
-            // Menú móvil
-            const mobileMenuHtml = state.mobileMenuOpen ? `
-                <div class="md:hidden bg-white border-b border-gray-100 p-6 space-y-4 absolute w-full shadow-lg">
-                    <button onclick="scrollToSection('metodologia')" class="block w-full text-left text-gray-600">Metodología</button>
-                    <button onclick="scrollToSection('cursos')" class="block w-full text-left text-gray-600">Cursos</button>
-                    <button onclick="scrollToSection('cursos')" class="w-full bg-blue-900 text-white px-6 py-3 rounded-xl font-medium mt-4">
-                        Ingresar a clases
-                    </button>
+        <footer class="border-t border-slate-200 bg-white mt-8">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-7 text-xs text-slate-400 flex flex-col sm:flex-row gap-2 justify-between">
+            <span>Academia Virtual · Organización académica 2026-II</span>
+            <span>18 cursos · 432 capítulos</span>
+          </div>
+        </footer>
+      `;
+    }
+
+    function renderCourse() {
+      const course = COURSES.find(c => c.id === state.activeCourseId) || COURSES[0];
+      const topic = course.topics[state.activeTopicIndex];
+      const tab = TAB_INFO[state.activeTab];
+      const chapterButtons = course.topics.map((name, idx) => `
+        <button onclick="setTopic(${idx})"
+          class="chapter-btn w-full flex items-center gap-3 px-3 py-3 rounded-xl text-left
+          ${idx===state.activeTopicIndex ? 'bg-blue-950 text-white' : 'text-slate-600 hover:bg-slate-100'}">
+          <span class="text-[11px] font-bold w-7 shrink-0 ${idx===state.activeTopicIndex ? 'text-red-300' : 'text-slate-400'}">
+            ${String(idx+1).padStart(2,'0')}
+          </span>
+          <span class="text-sm font-medium leading-snug">${esc(name)}</span>
+        </button>
+      `).join('');
+
+      const tabs = Object.keys(TAB_INFO).map(name => `
+        <button onclick="setTab('${name}')"
+          class="px-4 py-3 text-sm font-semibold whitespace-nowrap border-b-2 transition
+          ${state.activeTab===name ? 'text-blue-950 border-red-600' : 'text-slate-400 border-transparent hover:text-slate-700'}">
+          ${name}
+        </button>
+      `).join('');
+
+      const prevDisabled = state.activeTopicIndex === 0;
+      const nextDisabled = state.activeTopicIndex === course.topics.length-1;
+
+      return `
+        ${renderHeader(true)}
+        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div class="mb-5 flex flex-wrap items-center gap-3">
+            <button onclick="goHome()" class="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-white border border-slate-200 text-sm font-semibold text-slate-600 hover:text-blue-950">
+              <i data-lucide="arrow-left" class="w-4 h-4"></i> Cursos
+            </button>
+            <span class="text-xs font-bold uppercase tracking-wider text-slate-400">${esc(course.category)}</span>
+          </div>
+
+          <div class="grid lg:grid-cols-[330px_1fr] gap-6 min-h-[72vh]">
+            <aside class="bg-white rounded-3xl border border-slate-200 overflow-hidden lg:sticky lg:top-24 lg:h-[calc(100vh-7.5rem)]">
+              <div class="p-5 border-b border-slate-100">
+                <div class="flex items-center gap-3">
+                  <div class="w-11 h-11 rounded-2xl bg-blue-50 text-blue-950 flex items-center justify-center shrink-0">
+                    <i data-lucide="${esc(course.icon)}" class="w-5 h-5"></i>
+                  </div>
+                  <div class="min-w-0">
+                    <h1 class="font-extrabold text-slate-900 leading-tight">${esc(course.name)}</h1>
+                    <p class="text-xs text-slate-400 mt-1">24 capítulos</p>
+                  </div>
                 </div>
-            ` : '';
+              </div>
+              <div class="p-3 overflow-y-auto custom-scrollbar h-[calc(100%-86px)]">
+                ${chapterButtons}
+              </div>
+            </aside>
 
-            const menuIcon = state.mobileMenuOpen ? 'x' : 'menu';
-
-            return `
-                <!-- Navegación -->
-                <nav class="bg-white sticky top-0 z-50 border-b border-gray-100">
-                    <div class="max-w-6xl mx-auto px-6">
-                        <div class="flex justify-between h-24 items-center">
-                            <!-- Logo -->
-                            <div class="flex flex-col leading-none cursor-pointer" onclick="window.scrollTo(0,0)">
-                                <span class="text-2xl font-black italic tracking-tighter text-blue-900">
-                                    SACO <span class="text-red-600">OLIVEROS</span>
-                                </span>
-                                <span class="text-[9px] font-bold text-gray-400 tracking-widest uppercase mt-1">Academia Virtual</span>
-                            </div>
-
-                            <!-- Desktop Nav -->
-                            <div class="hidden md:flex items-center space-x-10">
-                                <button onclick="scrollToSection('metodologia')" class="text-sm text-gray-500 hover:text-blue-900 transition-colors">Metodología</button>
-                                <button onclick="scrollToSection('cursos')" class="text-sm text-gray-500 hover:text-blue-900 transition-colors">Cursos</button>
-                                <button onclick="scrollToSection('cursos')" class="bg-blue-900 text-white text-sm px-6 py-2.5 rounded-full font-medium hover:bg-blue-800 transition-colors shadow-sm">
-                                    Ingresar a clases
-                                </button>
-                            </div>
-
-                            <!-- Mobile Menu Button -->
-                            <div class="md:hidden">
-                                <button onclick="toggleMobileMenu()" class="text-gray-500 p-2">
-                                    <i data-lucide="${menuIcon}" class="w-6 h-6"></i>
-                                </button>
-                            </div>
-                        </div>
+            <section class="min-w-0">
+              <div class="bg-white rounded-3xl border border-slate-200 overflow-hidden">
+                <div class="p-6 sm:p-8 bg-gradient-to-r from-blue-950 to-blue-900 text-white">
+                  <div class="flex items-start justify-between gap-4">
+                    <div>
+                      <p class="text-xs font-bold uppercase tracking-[.18em] text-blue-200">Capítulo ${String(state.activeTopicIndex+1).padStart(2,'0')} de 24</p>
+                      <h2 class="mt-3 text-2xl sm:text-4xl font-black leading-tight">${esc(topic)}</h2>
+                      <p class="mt-3 text-sm text-blue-100">${esc(course.name)} · Temario 2026-II</p>
                     </div>
-                    ${mobileMenuHtml}
-                </nav>
-
-                <!-- Hero Section -->
-                <section class="bg-white py-20 lg:py-32">
-                    <div class="max-w-4xl mx-auto px-6 text-center">
-                        <span class="inline-block py-1.5 px-4 rounded-full bg-red-50 text-red-600 text-xs font-bold uppercase tracking-wider mb-8 border border-red-100">
-                            Educación sin límites
-                        </span>
-                        <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-blue-900 mb-6 leading-[1.1]">
-                            Tu camino a la universidad <br class="hidden md:block"/> comienza de forma inteligente.
-                        </h1>
-                        <p class="text-lg text-gray-500 mb-10 max-w-2xl mx-auto leading-relaxed">
-                            Preparación de alta calidad enfocada en resultados. Estudia a tu propio ritmo empleando el Sistema Helicoidal desde cualquier lugar del país.
-                        </p>
-                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                            <button onclick="scrollToSection('cursos')" class="bg-red-600 text-white px-8 py-3.5 rounded-full font-medium hover:bg-red-700 transition-colors shadow-sm">
-                                Ver malla curricular
-                            </button>
-                            <button onclick="scrollToSection('metodologia')" class="bg-white text-blue-900 border border-gray-200 px-8 py-3.5 rounded-full font-medium hover:bg-gray-50 transition-colors">
-                                Conocer más
-                            </button>
-                        </div>
+                    <div class="hidden sm:flex w-12 h-12 rounded-2xl bg-white/10 items-center justify-center shrink-0">
+                      <i data-lucide="${esc(course.icon)}" class="w-6 h-6"></i>
                     </div>
-                </section>
+                  </div>
+                </div>
 
-                <!-- Statistics -->
-                <section class="bg-white pb-20">
-                    <div class="max-w-6xl mx-auto px-6">
-                        <div class="border-t border-b border-gray-100 py-12">
-                            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 divide-x divide-gray-100">
-                                ${statsHtml}
-                            </div>
-                        </div>
+                <div class="px-4 sm:px-6 border-b border-slate-100 overflow-x-auto custom-scrollbar">
+                  <div class="flex min-w-max">${tabs}</div>
+                </div>
+
+                <div class="p-6 sm:p-8">
+                  <div class="fade-in">
+                    <div class="w-12 h-12 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center">
+                      <i data-lucide="${tab.icon}" class="w-6 h-6"></i>
                     </div>
-                </section>
+                    <h3 class="mt-5 text-xl font-extrabold text-slate-900">${tab.title}</h3>
+                    <p class="mt-2 text-slate-600 leading-relaxed max-w-3xl">${tab.text}</p>
 
-                <!-- Metodología -->
-                <section id="metodologia" class="py-24 bg-gray-50">
-                    <div class="max-w-6xl mx-auto px-6">
-                        <div class="mb-16">
-                            <h2 class="text-3xl font-bold text-blue-900 mb-4 tracking-tight">Estructura de aprendizaje</h2>
-                            <p class="text-gray-500 max-w-2xl leading-relaxed">
-                                Desarrollado con rigor académico y progresión de dificultad garantizada. Cada tema de nuestro currículo se domina a través de 4 etapas claras y concisas.
-                            </p>
+                    <div class="mt-7 rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-5 sm:p-6">
+                      <div class="flex items-start gap-3">
+                        <i data-lucide="construction" class="w-5 h-5 text-amber-500 mt-0.5 shrink-0"></i>
+                        <div>
+                          <p class="font-semibold text-slate-700">Estructura académica creada</p>
+                          <p class="mt-1 text-sm text-slate-500">El capítulo ya forma parte de la malla. En la siguiente etapa podemos incorporar el contenido académico de esta sección.</p>
                         </div>
-                        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                            ${methodologyHtml}
-                        </div>
+                      </div>
                     </div>
-                </section>
+                  </div>
+                </div>
 
-                <!-- Cursos -->
-                <section id="cursos" class="py-24 bg-white">
-                    <div class="max-w-6xl mx-auto px-6">
-                        <div class="mb-16">
-                            <h2 class="text-3xl font-bold text-blue-900 mb-4 tracking-tight">Currículo Integral</h2>
-                            <p class="text-gray-500 max-w-2xl leading-relaxed">
-                                Accede a 16 cursos completos diseñados para abarcar todos los frentes de los exámenes de admisión más exigentes. Selecciona un curso para ver su temario.
-                            </p>
-                        </div>
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                            ${coursesHtml}
-                        </div>
-                    </div>
-                </section>
+                <div class="px-6 sm:px-8 py-5 border-t border-slate-100 flex items-center justify-between gap-4">
+                  <button onclick="moveTopic(-1)" ${prevDisabled?'disabled':''}
+                    class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold border border-slate-200
+                    ${prevDisabled?'text-slate-300 cursor-not-allowed':'text-slate-600 hover:text-blue-950 hover:border-blue-300'}">
+                    <i data-lucide="chevron-left" class="w-4 h-4"></i> Anterior
+                  </button>
+                  <div class="hidden sm:block text-xs text-slate-400">${state.activeTopicIndex+1} / 24</div>
+                  <button onclick="moveTopic(1)" ${nextDisabled?'disabled':''}
+                    class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold border border-slate-200
+                    ${nextDisabled?'text-slate-300 cursor-not-allowed':'text-slate-600 hover:text-blue-950 hover:border-blue-300'}">
+                    Siguiente <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                  </button>
+                </div>
+              </div>
+            </section>
+          </div>
+        </main>
+      `;
+    }
 
-                <!-- Footer Minimalista -->
-                <footer class="bg-white border-t border-gray-100 pt-16 pb-8">
-                    <div class="max-w-6xl mx-auto px-6">
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-                            <div>
-                                <span class="text-xl font-black italic tracking-tighter text-blue-900 block mb-4">
-                                    SACO <span class="text-red-600">OLIVEROS</span>
-                                </span>
-                                <p class="text-gray-500 text-sm leading-relaxed max-w-md">
-                                    Garantizamos el acceso a la educación preuniversitaria de calidad, empleando la tecnología para romper barreras económicas y geográficas.
-                                </p>
-                            </div>
-                            <div class="grid grid-cols-2 gap-8 md:justify-items-end">
-                                <div>
-                                    <h4 class="font-semibold text-gray-800 mb-4 text-sm">Plataforma</h4>
-                                    <ul class="space-y-3 text-sm text-gray-500">
-                                        <li><button onclick="scrollToSection('cursos')" class="hover:text-blue-900">Cursos</button></li>
-                                        <li><button onclick="scrollToSection('metodologia')" class="hover:text-blue-900">Metodología</button></li>
-                                        <li><a href="#" class="hover:text-blue-900">Docentes</a></li>
-                                    </ul>
-                                </div>
-                                <div>
-                                    <h4 class="font-semibold text-gray-800 mb-4 text-sm">Soporte</h4>
-                                    <ul class="space-y-3 text-sm text-gray-500">
-                                        <li><a href="#" class="hover:text-blue-900">Contacto</a></li>
-                                        <li><a href="#" class="hover:text-blue-900">Privacidad</a></li>
-                                        <li><a href="#" class="hover:text-blue-900">Términos</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="border-t border-gray-100 pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-gray-400">
-                            <p>© ${new Date().getFullYear()} Saco Oliveros. Educación sin Límites.</p>
-                            <p class="mt-2 sm:mt-0">Desarrollado con el Sistema Helicoidal</p>
-                        </div>
-                    </div>
-                </footer>
-            `;
-        }
+    function openCourse(id) {
+      state.activeCourseId = id;
+      state.activeTopicIndex = 0;
+      state.activeTab = 'Teoría';
+      state.view = 'course';
+      saveProgress();
+      window.scrollTo(0,0);
+      render();
+    }
 
-        // --- INICIALIZACIÓN ---
-        document.addEventListener('DOMContentLoaded', () => {
-            renderApp();
-        });
+    function goHome() {
+      state.view = 'catalog';
+      window.scrollTo(0,0);
+      render();
+    }
 
-    </script>
+    function setTopic(index) {
+      state.activeTopicIndex = index;
+      state.activeTab = 'Teoría';
+      saveProgress();
+      render();
+      window.scrollTo({top:0, behavior:'smooth'});
+    }
+
+    function moveTopic(delta) {
+      const course = COURSES.find(c => c.id === state.activeCourseId);
+      const next = state.activeTopicIndex + delta;
+      if (next >= 0 && next < course.topics.length) setTopic(next);
+    }
+
+    function setTab(tab) {
+      if (TAB_INFO[tab]) {
+        state.activeTab = tab;
+        render();
+      }
+    }
+
+    function setCategory(category) {
+      state.category = category;
+      render();
+    }
+
+    function setSearch(value) {
+      state.search = value;
+      render();
+      const input = document.getElementById('searchInput');
+      if (input) {
+        input.focus();
+        input.setSelectionRange(input.value.length, input.value.length);
+      }
+    }
+
+    loadProgress();
+    render();
+  </script>
 </body>
 </html>
