@@ -3,260 +3,155 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Historia Universal - Capítulo 1: La historia como ciencia. Academia Virtual Saco Oliveros.">
-  <title>Historia Universal | Capítulo 1 - La historia como ciencia</title>
+  <meta name="description" content="Historia Universal - Capítulo 1: La historia como ciencia. Ruta de aprendizaje de SIN LÍMITES.">
+  <title>Historia Universal | La historia como ciencia</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/12.19.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/12.19.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore-compat.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
-    body{font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased}
-    .tab-btn.active{color:#172554;border-color:#dc2626}
-    .panel{display:none}
-    .panel.active{display:block;animation:fadeIn .18s ease-out}
-    .option.correct{border-color:#16a34a;background:#f0fdf4}
-    .option.wrong{border-color:#dc2626;background:#fef2f2}
-    @keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}
-    @media print{.no-print{display:none!important}body{background:#fff}.print-card{box-shadow:none!important;border:0!important}}
+    html{scroll-behavior:smooth}body{font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased}.step-btn{transition:.16s ease}.step-btn:not(:disabled):hover{transform:translateX(2px)}.answer-label{transition:.14s ease}.answer-label:hover{border-color:#93c5fd;background:#f8fafc}.answer-label.selected{border-color:#1e3a8a;background:#eff6ff}.fade-in{animation:fadeIn .18s ease-out}@keyframes fadeIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
   </style>
 </head>
 <body class="bg-slate-50 text-slate-800">
-  <header class="bg-white border-b border-slate-200 sticky top-0 z-40 no-print">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
-      <a href="index.html" class="flex items-center gap-3 min-w-0">
-        <div class="w-11 h-11 rounded-2xl bg-blue-950 text-white flex items-center justify-center shrink-0 shadow-sm">
-          <i data-lucide="graduation-cap" class="w-6 h-6"></i>
-        </div>
-        <div class="min-w-0">
-          <div class="font-black text-blue-950 tracking-tight leading-tight truncate">SACO <span class="text-red-600">OLIVEROS</span></div>
-          <div class="text-[11px] uppercase tracking-[0.18em] text-slate-400 truncate">Academia Virtual · Historia Universal</div>
-        </div>
-      </a>
-      <a href="index.html" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-200 text-sm font-semibold text-slate-600 hover:text-blue-950 hover:border-blue-300">
-        <i data-lucide="arrow-left" class="w-4 h-4"></i> Volver a cursos
-      </a>
-    </div>
-  </header>
+  <div id="app"><div class="min-h-screen flex items-center justify-center"><div class="text-center"><div class="w-14 h-14 mx-auto rounded-2xl bg-blue-950 text-white flex items-center justify-center font-black text-xl">SL</div><p class="mt-4 text-sm text-slate-500">Cargando tu progreso…</p></div></div></div>
 
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10">
-    <section class="overflow-hidden rounded-3xl bg-gradient-to-r from-blue-950 to-blue-900 text-white shadow-sm print-card">
-      <div class="p-6 sm:p-10">
-        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
-          <div class="max-w-3xl">
-            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 border border-white/10 text-xs font-semibold">
-              <i data-lucide="landmark" class="w-4 h-4 text-red-300"></i>
-              Historia Universal · Capítulo 01 de 24
-            </div>
-            <h1 class="mt-5 text-3xl sm:text-5xl font-black leading-tight">La historia como ciencia</h1>
-            <p class="mt-4 text-blue-100 leading-relaxed max-w-2xl">Comprende qué estudia la Historia, cómo construye conocimiento sobre el pasado y por qué las fuentes históricas son esenciales para interpretar los procesos humanos.</p>
-          </div>
-          <div class="grid grid-cols-2 gap-3 min-w-[240px]">
-            <div class="rounded-2xl bg-white/10 p-4">
-              <div class="text-2xl font-black">4</div>
-              <div class="text-xs text-blue-200 mt-1">bloques clave</div>
-            </div>
-            <div class="rounded-2xl bg-white/10 p-4">
-              <div class="text-2xl font-black">10</div>
-              <div class="text-xs text-blue-200 mt-1">preguntas</div>
-            </div>
-            <div class="rounded-2xl bg-white/10 p-4 col-span-2">
-              <div class="text-sm font-bold">Meta de aprendizaje</div>
-              <div class="text-xs text-blue-100 mt-1">Explicar el carácter científico de la Historia y reconocer el valor de sus fuentes y métodos.</div>
-            </div>
-          </div>
-        </div>
+<script>
+const firebaseConfig={apiKey:'AIzaSyCurhmnJ21SMqGM6G54t8QM8jcqO8jV0OE',authDomain:'sin-limites-12f07.firebaseapp.com',projectId:'sin-limites-12f07',storageBucket:'sin-limites-12f07.firebasestorage.app',messagingSenderId:'757098079298',appId:'1:757098079298:web:068a9a7ea93149bfef79db'};
+firebase.initializeApp(firebaseConfig);
+const auth=firebase.auth();
+const db=firebase.firestore();
+const CHAPTER_ID='historia-universal-capitulo-01';
+const TOTAL_ITEMS=5;
+let currentUser=null;
+let feedback=null;
+let progress={currentItem:0,unlockedItem:0,completedItems:[],attempts:{},itemScores:{},percent:0,chapterCompleted:false};
+
+const items=[
+  {
+    title:'¿Qué estudia la Historia?',
+    short:'Concepto, objeto y finalidad',
+    icon:'book-open',
+    content:`
+      <p class="text-lg leading-relaxed text-slate-700">La <strong>Historia</strong> es una ciencia social que estudia a las sociedades humanas a través del tiempo. No consiste en memorizar fechas: busca comprender <strong>cambios, permanencias, causas y consecuencias</strong>.</p>
+      <div class="mt-6 grid md:grid-cols-2 gap-4">
+        <div class="rounded-2xl bg-slate-50 border border-slate-200 p-5"><div class="flex items-center gap-3"><span class="w-9 h-9 rounded-xl bg-blue-950 text-white flex items-center justify-center"><i data-lucide="target" class="w-4 h-4"></i></span><h3 class="font-extrabold text-slate-900">Objeto de estudio</h3></div><p class="mt-3 text-sm leading-relaxed text-slate-600">La actividad humana en sociedad, situada en un tiempo y espacio determinados: política, economía, cultura, tecnología y vida cotidiana.</p></div>
+        <div class="rounded-2xl bg-slate-50 border border-slate-200 p-5"><div class="flex items-center gap-3"><span class="w-9 h-9 rounded-xl bg-blue-950 text-white flex items-center justify-center"><i data-lucide="search" class="w-4 h-4"></i></span><h3 class="font-extrabold text-slate-900">Finalidad</h3></div><p class="mt-3 text-sm leading-relaxed text-slate-600">Comprender y explicar el pasado mediante evidencias para interpretar mejor el presente y los procesos de larga duración.</p></div>
       </div>
-    </section>
-
-    <section class="mt-6 bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-sm print-card">
-      <div class="px-4 sm:px-6 border-b border-slate-100 overflow-x-auto no-print">
-        <div class="flex min-w-max">
-          <button class="tab-btn active px-4 py-4 text-sm font-semibold border-b-2" data-tab="teoria">Teoría</button>
-          <button class="tab-btn px-4 py-4 text-sm font-semibold border-b-2 border-transparent text-slate-400" data-tab="practica">Práctica</button>
-          <button class="tab-btn px-4 py-4 text-sm font-semibold border-b-2 border-transparent text-slate-400" data-tab="evaluacion">Evaluación</button>
-          <button class="tab-btn px-4 py-4 text-sm font-semibold border-b-2 border-transparent text-slate-400" data-tab="materiales">Materiales</button>
-        </div>
+      <div class="mt-6 rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm text-amber-900"><strong>Idea clave:</strong> la Historia estudia procesos humanos, no una simple lista de acontecimientos.</div>`,
+    quiz:[
+      {q:'¿Cuál es el objeto central de estudio de la Historia?',options:['Los fenómenos naturales aislados','Las sociedades humanas en el tiempo','Únicamente las guerras','Solo los documentos escritos'],answer:1,why:'La Historia analiza la actividad humana en sociedad a través del tiempo.'},
+      {q:'¿Qué expresa mejor la finalidad de la Historia?',options:['Memorizar todas las fechas','Predecir con certeza el futuro','Comprender y explicar procesos del pasado','Estudiar únicamente gobernantes'],answer:2,why:'Su finalidad es comprender y explicar procesos humanos a partir de evidencias.'}
+    ]
+  },
+  {
+    title:'¿Por qué la Historia es una ciencia?',
+    short:'Evidencia, método e interpretación',
+    icon:'microscope',
+    content:`
+      <p class="text-lg leading-relaxed text-slate-700">La Historia es una ciencia porque construye conocimiento mediante <strong>preguntas, evidencias, procedimientos sistemáticos y explicaciones argumentadas</strong>. Sus conclusiones pueden revisarse cuando aparecen nuevas fuentes o nuevas preguntas.</p>
+      <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+        <div class="rounded-2xl border border-slate-200 p-4"><span class="text-xs font-black text-red-600">01</span><h3 class="mt-1 font-bold">Problematiza</h3><p class="mt-2 text-xs text-slate-500">Formula preguntas sobre el pasado.</p></div>
+        <div class="rounded-2xl border border-slate-200 p-4"><span class="text-xs font-black text-red-600">02</span><h3 class="mt-1 font-bold">Busca evidencias</h3><p class="mt-2 text-xs text-slate-500">Localiza testimonios y restos.</p></div>
+        <div class="rounded-2xl border border-slate-200 p-4"><span class="text-xs font-black text-red-600">03</span><h3 class="mt-1 font-bold">Contrasta</h3><p class="mt-2 text-xs text-slate-500">Compara fuentes y evalúa su confiabilidad.</p></div>
+        <div class="rounded-2xl border border-slate-200 p-4"><span class="text-xs font-black text-red-600">04</span><h3 class="mt-1 font-bold">Interpreta</h3><p class="mt-2 text-xs text-slate-500">Elabora explicaciones fundamentadas.</p></div>
       </div>
-
-      <div class="p-6 sm:p-8 lg:p-10">
-        <section id="teoria" class="panel active">
-          <div class="max-w-4xl">
-            <div class="flex items-start gap-4">
-              <div class="w-12 h-12 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i data-lucide="book-open" class="w-6 h-6"></i></div>
-              <div>
-                <p class="text-sm font-bold uppercase tracking-wider text-red-600">Idea central</p>
-                <h2 class="text-2xl sm:text-3xl font-black text-slate-900 mt-1">La Historia estudia a las sociedades humanas en el tiempo</h2>
-              </div>
-            </div>
-            <p class="mt-5 text-slate-600 leading-relaxed">La <strong>Historia</strong> es una ciencia social que investiga e interpreta las acciones, cambios y continuidades de las sociedades humanas a través del tiempo. No se limita a memorizar fechas: busca explicar procesos, causas, consecuencias, permanencias y transformaciones.</p>
-          </div>
-
-          <div class="mt-8 grid md:grid-cols-2 gap-5">
-            <article class="rounded-3xl border border-slate-200 p-6 bg-slate-50">
-              <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-blue-950 text-white flex items-center justify-center"><i data-lucide="target" class="w-5 h-5"></i></div><h3 class="font-extrabold text-slate-900">Objeto de estudio</h3></div>
-              <p class="mt-4 text-sm leading-relaxed text-slate-600">El objeto de estudio de la Historia es la <strong>actividad humana en sociedad</strong>, situada en un tiempo y espacio determinados. Analiza hechos y procesos políticos, económicos, sociales, culturales y tecnológicos.</p>
-            </article>
-            <article class="rounded-3xl border border-slate-200 p-6 bg-slate-50">
-              <div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-blue-950 text-white flex items-center justify-center"><i data-lucide="search" class="w-5 h-5"></i></div><h3 class="font-extrabold text-slate-900">Finalidad</h3></div>
-              <p class="mt-4 text-sm leading-relaxed text-slate-600">Busca <strong>comprender y explicar</strong> el pasado humano a partir de evidencias. Esto permite interpretar el presente, reconocer procesos de larga duración y analizar críticamente los cambios históricos.</p>
-            </article>
-          </div>
-
-          <div class="mt-10">
-            <h3 class="text-xl font-black text-slate-900">1. ¿Por qué la Historia es una ciencia?</h3>
-            <p class="mt-3 text-slate-600 leading-relaxed">Porque aplica procedimientos sistemáticos para formular problemas, localizar evidencias, contrastar información, interpretar datos y elaborar explicaciones fundamentadas. Sus conclusiones pueden revisarse cuando aparecen nuevas fuentes o nuevas preguntas.</p>
-            <div class="mt-5 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <div class="rounded-2xl border border-slate-200 p-4"><div class="text-xs font-bold text-red-600">01</div><div class="mt-1 font-bold text-slate-900">Problematiza</div><p class="mt-2 text-xs text-slate-500">Formula preguntas sobre el pasado.</p></div>
-              <div class="rounded-2xl border border-slate-200 p-4"><div class="text-xs font-bold text-red-600">02</div><div class="mt-1 font-bold text-slate-900">Busca fuentes</div><p class="mt-2 text-xs text-slate-500">Reúne testimonios y evidencias.</p></div>
-              <div class="rounded-2xl border border-slate-200 p-4"><div class="text-xs font-bold text-red-600">03</div><div class="mt-1 font-bold text-slate-900">Critica y contrasta</div><p class="mt-2 text-xs text-slate-500">Evalúa origen, intención y confiabilidad.</p></div>
-              <div class="rounded-2xl border border-slate-200 p-4"><div class="text-xs font-bold text-red-600">04</div><div class="mt-1 font-bold text-slate-900">Interpreta</div><p class="mt-2 text-xs text-slate-500">Construye explicaciones argumentadas.</p></div>
-            </div>
-          </div>
-
-          <div class="mt-10">
-            <h3 class="text-xl font-black text-slate-900">2. El método histórico</h3>
-            <div class="mt-5 space-y-4">
-              <div class="flex gap-4"><div class="w-9 h-9 rounded-full bg-red-600 text-white font-black flex items-center justify-center shrink-0">1</div><div><h4 class="font-bold text-slate-900">Planteamiento del problema</h4><p class="text-sm text-slate-600 mt-1">El historiador delimita un tema y formula una pregunta de investigación.</p></div></div>
-              <div class="flex gap-4"><div class="w-9 h-9 rounded-full bg-red-600 text-white font-black flex items-center justify-center shrink-0">2</div><div><h4 class="font-bold text-slate-900">Heurística</h4><p class="text-sm text-slate-600 mt-1">Consiste en localizar, reunir y seleccionar las fuentes útiles para la investigación.</p></div></div>
-              <div class="flex gap-4"><div class="w-9 h-9 rounded-full bg-red-600 text-white font-black flex items-center justify-center shrink-0">3</div><div><h4 class="font-bold text-slate-900">Crítica de fuentes</h4><p class="text-sm text-slate-600 mt-1">Se analiza su autenticidad, procedencia, autoría, contexto, intención y confiabilidad.</p></div></div>
-              <div class="flex gap-4"><div class="w-9 h-9 rounded-full bg-red-600 text-white font-black flex items-center justify-center shrink-0">4</div><div><h4 class="font-bold text-slate-900">Interpretación y síntesis</h4><p class="text-sm text-slate-600 mt-1">Se relacionan los datos y se elabora una explicación coherente del proceso estudiado.</p></div></div>
-            </div>
-          </div>
-
-          <div class="mt-10">
-            <h3 class="text-xl font-black text-slate-900">3. Las fuentes históricas</h3>
-            <p class="mt-3 text-slate-600 leading-relaxed">Son los testimonios o evidencias que permiten conocer aspectos del pasado. Una misma fuente puede ofrecer información distinta según la pregunta que plantee el investigador.</p>
-            <div class="mt-5 overflow-x-auto rounded-2xl border border-slate-200">
-              <table class="w-full text-sm">
-                <thead class="bg-slate-100 text-slate-700"><tr><th class="text-left p-4">Tipo</th><th class="text-left p-4">Ejemplos</th><th class="text-left p-4">Qué pueden revelar</th></tr></thead>
-                <tbody class="divide-y divide-slate-100">
-                  <tr><td class="p-4 font-bold">Escritas</td><td class="p-4">Cartas, crónicas, leyes, periódicos</td><td class="p-4">Ideas, normas, decisiones, relatos</td></tr>
-                  <tr><td class="p-4 font-bold">Materiales</td><td class="p-4">Cerámica, edificios, armas, monedas</td><td class="p-4">Tecnología, economía, vida cotidiana</td></tr>
-                  <tr><td class="p-4 font-bold">Orales</td><td class="p-4">Testimonios, relatos, tradiciones</td><td class="p-4">Memoria, experiencias, identidades</td></tr>
-                  <tr><td class="p-4 font-bold">Iconográficas</td><td class="p-4">Pinturas, fotografías, mapas</td><td class="p-4">Representaciones, espacios, símbolos</td></tr>
-                  <tr><td class="p-4 font-bold">Audiovisuales</td><td class="p-4">Grabaciones, cine, documentales</td><td class="p-4">Discursos, gestos, contextos sonoros y visuales</td></tr>
-                </tbody>
-              </table>
-            </div>
-            <div class="mt-5 rounded-2xl bg-amber-50 border border-amber-200 p-5">
-              <div class="flex gap-3"><i data-lucide="lightbulb" class="w-5 h-5 text-amber-600 shrink-0 mt-0.5"></i><p class="text-sm text-amber-900"><strong>Clave:</strong> una fuente no “habla sola”. Debe ser contextualizada, contrastada e interpretada. Por eso, el historiador compara varias evidencias antes de sostener una conclusión.</p></div>
-            </div>
-          </div>
-
-          <div class="mt-10">
-            <h3 class="text-xl font-black text-slate-900">4. Ciencias auxiliares de la Historia</h3>
-            <div class="mt-5 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              <div class="rounded-2xl border border-slate-200 p-5"><h4 class="font-extrabold">Arqueología</h4><p class="text-sm text-slate-600 mt-2">Estudia sociedades del pasado a partir de restos materiales.</p></div>
-              <div class="rounded-2xl border border-slate-200 p-5"><h4 class="font-extrabold">Antropología</h4><p class="text-sm text-slate-600 mt-2">Analiza al ser humano y sus culturas en distintos contextos.</p></div>
-              <div class="rounded-2xl border border-slate-200 p-5"><h4 class="font-extrabold">Geografía</h4><p class="text-sm text-slate-600 mt-2">Ayuda a comprender la relación entre sociedad y espacio.</p></div>
-              <div class="rounded-2xl border border-slate-200 p-5"><h4 class="font-extrabold">Paleografía</h4><p class="text-sm text-slate-600 mt-2">Estudia y descifra escrituras antiguas.</p></div>
-              <div class="rounded-2xl border border-slate-200 p-5"><h4 class="font-extrabold">Numismática</h4><p class="text-sm text-slate-600 mt-2">Estudia monedas y medallas históricas.</p></div>
-              <div class="rounded-2xl border border-slate-200 p-5"><h4 class="font-extrabold">Cronología</h4><p class="text-sm text-slate-600 mt-2">Ordena los acontecimientos y procesos en el tiempo.</p></div>
-            </div>
-          </div>
-
-          <div class="mt-10 rounded-3xl bg-blue-950 text-white p-6 sm:p-8">
-            <p class="text-xs font-bold uppercase tracking-[.18em] text-red-300">Resumen para recordar</p>
-            <div class="mt-4 grid md:grid-cols-2 gap-4 text-sm text-blue-100">
-              <p>• La Historia es una <strong class="text-white">ciencia social</strong>.</p>
-              <p>• Su objeto de estudio es la <strong class="text-white">sociedad humana en el tiempo</strong>.</p>
-              <p>• El conocimiento histórico se construye mediante <strong class="text-white">fuentes y método</strong>.</p>
-              <p>• Toda fuente debe ser <strong class="text-white">criticada, contextualizada y contrastada</strong>.</p>
-            </div>
-          </div>
-        </section>
-
-        <section id="practica" class="panel">
-          <div class="max-w-4xl">
-            <p class="text-sm font-bold uppercase tracking-wider text-red-600">Práctica dirigida</p>
-            <h2 class="mt-1 text-2xl sm:text-3xl font-black text-slate-900">Comprueba lo aprendido</h2>
-            <p class="mt-3 text-slate-600">Responde antes de desplegar la clave. El objetivo es justificar cada elección.</p>
-          </div>
-          <div class="mt-7 space-y-5" id="practiceList">
-            <article class="rounded-2xl border border-slate-200 p-5"><p class="font-bold">1. ¿Qué diferencia principalmente a la Historia de una simple colección de fechas?</p><p class="mt-2 text-sm text-slate-600">A) La Historia evita emplear documentos.<br>B) La Historia interpreta procesos y explica relaciones de causa y consecuencia.<br>C) La Historia estudia únicamente personajes importantes.<br>D) La Historia se limita a ordenar cronológicamente los hechos.</p><button onclick="toggleAnswer(this)" class="mt-4 text-sm font-bold text-blue-950 no-print">Ver respuesta</button><div class="answer hidden mt-3 rounded-xl bg-green-50 border border-green-200 p-4 text-sm text-green-900"><strong>Respuesta: B.</strong> La Historia busca comprender y explicar procesos humanos, no solo enumerar datos.</div></article>
-            <article class="rounded-2xl border border-slate-200 p-5"><p class="font-bold">2. La etapa del método histórico dedicada a localizar y reunir fuentes recibe el nombre de:</p><p class="mt-2 text-sm text-slate-600">A) Heurística.<br>B) Síntesis.<br>C) Cronología.<br>D) Paleografía.</p><button onclick="toggleAnswer(this)" class="mt-4 text-sm font-bold text-blue-950 no-print">Ver respuesta</button><div class="answer hidden mt-3 rounded-xl bg-green-50 border border-green-200 p-4 text-sm text-green-900"><strong>Respuesta: A.</strong> La heurística consiste en la búsqueda y selección de fuentes.</div></article>
-            <article class="rounded-2xl border border-slate-200 p-5"><p class="font-bold">3. Una moneda antigua utilizada para estudiar intercambio comercial constituye principalmente una fuente:</p><p class="mt-2 text-sm text-slate-600">A) Oral.<br>B) Material.<br>C) Escrita exclusivamente.<br>D) Audiovisual.</p><button onclick="toggleAnswer(this)" class="mt-4 text-sm font-bold text-blue-950 no-print">Ver respuesta</button><div class="answer hidden mt-3 rounded-xl bg-green-50 border border-green-200 p-4 text-sm text-green-900"><strong>Respuesta: B.</strong> La moneda es un resto material y también puede ser estudiada por la numismática.</div></article>
-            <article class="rounded-2xl border border-slate-200 p-5"><p class="font-bold">4. ¿Cuál es la función principal de la crítica de fuentes?</p><p class="mt-2 text-sm text-slate-600">A) Eliminar todas las fuentes contradictorias.<br>B) Determinar autenticidad, procedencia, intención y confiabilidad.<br>C) Elegir siempre la fuente más antigua.<br>D) Reemplazar fuentes por opiniones del investigador.</p><button onclick="toggleAnswer(this)" class="mt-4 text-sm font-bold text-blue-950 no-print">Ver respuesta</button><div class="answer hidden mt-3 rounded-xl bg-green-50 border border-green-200 p-4 text-sm text-green-900"><strong>Respuesta: B.</strong> La crítica permite valorar qué información puede aportar una fuente y con qué límites.</div></article>
-            <article class="rounded-2xl border border-slate-200 p-5"><p class="font-bold">5. Si un investigador estudia un asentamiento antiguo a partir de restos de viviendas y cerámica, la ciencia auxiliar más directamente relacionada es:</p><p class="mt-2 text-sm text-slate-600">A) Lingüística.<br>B) Arqueología.<br>C) Paleografía.<br>D) Demografía.</p><button onclick="toggleAnswer(this)" class="mt-4 text-sm font-bold text-blue-950 no-print">Ver respuesta</button><div class="answer hidden mt-3 rounded-xl bg-green-50 border border-green-200 p-4 text-sm text-green-900"><strong>Respuesta: B.</strong> La Arqueología estudia sociedades a partir de sus restos materiales.</div></article>
-          </div>
-        </section>
-
-        <section id="evaluacion" class="panel">
-          <div class="max-w-4xl">
-            <p class="text-sm font-bold uppercase tracking-wider text-red-600">Autoevaluación</p>
-            <h2 class="mt-1 text-2xl sm:text-3xl font-black text-slate-900">Evaluación rápida</h2>
-            <p class="mt-3 text-slate-600">Selecciona una alternativa en cada pregunta y luego calcula tu resultado.</p>
-          </div>
-          <form id="quiz" class="mt-7 space-y-6">
-            <div class="question rounded-2xl border border-slate-200 p-5" data-answer="b"><p class="font-bold">1. El objeto central de estudio de la Historia es:</p><div class="mt-4 grid gap-2"><label class="option border rounded-xl p-3 cursor-pointer"><input type="radio" name="q1" value="a" class="mr-2">Los fenómenos naturales aislados.</label><label class="option border rounded-xl p-3 cursor-pointer"><input type="radio" name="q1" value="b" class="mr-2">Las sociedades humanas a través del tiempo.</label><label class="option border rounded-xl p-3 cursor-pointer"><input type="radio" name="q1" value="c" class="mr-2">Solo las guerras y gobiernos.</label><label class="option border rounded-xl p-3 cursor-pointer"><input type="radio" name="q1" value="d" class="mr-2">Únicamente los documentos escritos.</label></div></div>
-            <div class="question rounded-2xl border border-slate-200 p-5" data-answer="c"><p class="font-bold">2. ¿Qué acción corresponde a la crítica histórica?</p><div class="mt-4 grid gap-2"><label class="option border rounded-xl p-3 cursor-pointer"><input type="radio" name="q2" value="a" class="mr-2">Copiar literalmente una fuente.</label><label class="option border rounded-xl p-3 cursor-pointer"><input type="radio" name="q2" value="b" class="mr-2">Ordenar alfabéticamente documentos.</label><label class="option border rounded-xl p-3 cursor-pointer"><input type="radio" name="q2" value="c" class="mr-2">Examinar procedencia, autenticidad e intención.</label><label class="option border rounded-xl p-3 cursor-pointer"><input type="radio" name="q2" value="d" class="mr-2">Elegir una sola evidencia.</label></div></div>
-            <div class="question rounded-2xl border border-slate-200 p-5" data-answer="a"><p class="font-bold">3. Una entrevista a una persona que vivió un acontecimiento es una fuente principalmente:</p><div class="mt-4 grid gap-2"><label class="option border rounded-xl p-3 cursor-pointer"><input type="radio" name="q3" value="a" class="mr-2">Oral.</label><label class="option border rounded-xl p-3 cursor-pointer"><input type="radio" name="q3" value="b" class="mr-2">Material.</label><label class="option border rounded-xl p-3 cursor-pointer"><input type="radio" name="q3" value="c" class="mr-2">Numismática.</label><label class="option border rounded-xl p-3 cursor-pointer"><input type="radio" name="q3" value="d" class="mr-2">Geográfica.</label></div></div>
-            <div class="question rounded-2xl border border-slate-200 p-5" data-answer="d"><p class="font-bold">4. La disciplina que estudia monedas antiguas se denomina:</p><div class="mt-4 grid gap-2"><label class="option border rounded-xl p-3 cursor-pointer"><input type="radio" name="q4" value="a" class="mr-2">Paleografía.</label><label class="option border rounded-xl p-3 cursor-pointer"><input type="radio" name="q4" value="b" class="mr-2">Antropología.</label><label class="option border rounded-xl p-3 cursor-pointer"><input type="radio" name="q4" value="c" class="mr-2">Cronología.</label><label class="option border rounded-xl p-3 cursor-pointer"><input type="radio" name="q4" value="d" class="mr-2">Numismática.</label></div></div>
-            <div class="question rounded-2xl border border-slate-200 p-5" data-answer="c"><p class="font-bold">5. ¿Qué afirmación expresa mejor el carácter científico de la Historia?</p><div class="mt-4 grid gap-2"><label class="option border rounded-xl p-3 cursor-pointer"><input type="radio" name="q5" value="a" class="mr-2">Sus conclusiones son inmutables.</label><label class="option border rounded-xl p-3 cursor-pointer"><input type="radio" name="q5" value="b" class="mr-2">Depende solo de la memoria colectiva.</label><label class="option border rounded-xl p-3 cursor-pointer"><input type="radio" name="q5" value="c" class="mr-2">Construye explicaciones mediante métodos y evidencias contrastables.</label><label class="option border rounded-xl p-3 cursor-pointer"><input type="radio" name="q5" value="d" class="mr-2">Rechaza toda interpretación.</label></div></div>
-            <div class="flex flex-wrap gap-3 no-print"><button type="button" onclick="gradeQuiz()" class="px-5 py-3 rounded-xl bg-blue-950 text-white font-bold hover:bg-blue-900">Calcular resultado</button><button type="button" onclick="resetQuiz()" class="px-5 py-3 rounded-xl border border-slate-200 text-slate-600 font-bold">Reiniciar</button></div>
-            <div id="result" class="hidden rounded-2xl p-5 font-semibold"></div>
-          </form>
-        </section>
-
-        <section id="materiales" class="panel">
-          <div class="max-w-4xl">
-            <p class="text-sm font-bold uppercase tracking-wider text-red-600">Materiales de repaso</p>
-            <h2 class="mt-1 text-2xl sm:text-3xl font-black text-slate-900">Ficha de estudio</h2>
-            <p class="mt-3 text-slate-600">Una síntesis breve para repasar antes de resolver preguntas tipo admisión.</p>
-          </div>
-          <div class="mt-7 grid lg:grid-cols-2 gap-5">
-            <div class="rounded-3xl border border-slate-200 p-6 bg-slate-50"><h3 class="font-extrabold text-lg">Conceptos esenciales</h3><dl class="mt-4 space-y-4 text-sm"><div><dt class="font-bold text-slate-900">Historia</dt><dd class="text-slate-600 mt-1">Ciencia social que estudia e interpreta a las sociedades humanas en el tiempo.</dd></div><div><dt class="font-bold text-slate-900">Fuente histórica</dt><dd class="text-slate-600 mt-1">Evidencia o testimonio utilizado para conocer el pasado.</dd></div><div><dt class="font-bold text-slate-900">Heurística</dt><dd class="text-slate-600 mt-1">Búsqueda y recopilación sistemática de fuentes.</dd></div><div><dt class="font-bold text-slate-900">Crítica histórica</dt><dd class="text-slate-600 mt-1">Evaluación de autenticidad, procedencia, intención y confiabilidad.</dd></div><div><dt class="font-bold text-slate-900">Interpretación</dt><dd class="text-slate-600 mt-1">Explicación razonada construida a partir de fuentes contrastadas.</dd></div></dl></div>
-            <div class="rounded-3xl border border-slate-200 p-6"><h3 class="font-extrabold text-lg">Checklist de dominio</h3><div class="mt-4 space-y-3 text-sm text-slate-700"><label class="flex gap-3"><input type="checkbox" class="mt-1"> Puedo definir la Historia como ciencia social.</label><label class="flex gap-3"><input type="checkbox" class="mt-1"> Identifico su objeto de estudio.</label><label class="flex gap-3"><input type="checkbox" class="mt-1"> Distingo los pasos básicos del método histórico.</label><label class="flex gap-3"><input type="checkbox" class="mt-1"> Clasifico fuentes históricas.</label><label class="flex gap-3"><input type="checkbox" class="mt-1"> Explico por qué una fuente debe ser contrastada.</label><label class="flex gap-3"><input type="checkbox" class="mt-1"> Reconozco al menos tres ciencias auxiliares.</label></div><button onclick="window.print()" class="mt-6 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-red-600 text-white font-bold text-sm no-print"><i data-lucide="printer" class="w-4 h-4"></i> Imprimir ficha</button></div>
-          </div>
-          <div class="mt-5 rounded-3xl border border-slate-200 p-6"><h3 class="font-extrabold text-lg">Mapa mental express</h3><div class="mt-5 grid sm:grid-cols-2 lg:grid-cols-4 gap-3 text-sm"><div class="rounded-2xl bg-blue-950 text-white p-4"><div class="font-black">HISTORIA</div><div class="text-blue-200 mt-1">Ciencia social</div></div><div class="rounded-2xl bg-slate-100 p-4"><div class="font-black text-slate-900">ESTUDIA</div><div class="text-slate-600 mt-1">Sociedad + tiempo + espacio</div></div><div class="rounded-2xl bg-slate-100 p-4"><div class="font-black text-slate-900">UTILIZA</div><div class="text-slate-600 mt-1">Fuentes + método histórico</div></div><div class="rounded-2xl bg-slate-100 p-4"><div class="font-black text-slate-900">EXPLICA</div><div class="text-slate-600 mt-1">Cambios, permanencias, causas y consecuencias</div></div></div></div>
-        </section>
+      <div class="mt-6 rounded-2xl bg-blue-950 text-white p-5"><p class="text-sm text-blue-100"><strong class="text-white">Importante:</strong> una explicación histórica no es una opinión libre; debe estar sustentada en fuentes analizadas y contrastadas.</p></div>`,
+    quiz:[
+      {q:'¿Qué característica demuestra mejor el carácter científico de la Historia?',options:['Sus conclusiones nunca cambian','Usa métodos y evidencias contrastables','Depende solo de la memoria','Rechaza toda interpretación'],answer:1,why:'La investigación histórica usa procedimientos sistemáticos y evidencias que pueden ser examinadas.'},
+      {q:'Si aparece una nueva fuente confiable, una explicación histórica puede…',options:['Ser revisada o ampliada','Permanecer obligatoriamente igual','Dejar de ser científica','Ignorar la nueva evidencia'],answer:0,why:'El conocimiento histórico puede revisarse cuando aparecen nuevas evidencias.'}
+    ]
+  },
+  {
+    title:'El método histórico',
+    short:'De la pregunta a la explicación',
+    icon:'route',
+    content:`
+      <p class="text-lg leading-relaxed text-slate-700">El <strong>método histórico</strong> organiza la investigación. Permite pasar de una pregunta inicial a una explicación sustentada.</p>
+      <div class="mt-6 space-y-4">
+        <div class="flex gap-4 rounded-2xl border border-slate-200 p-5"><span class="w-9 h-9 rounded-full bg-red-600 text-white font-black flex items-center justify-center shrink-0">1</span><div><h3 class="font-extrabold">Planteamiento del problema</h3><p class="mt-1 text-sm text-slate-600">Se delimita el tema y se formula una pregunta de investigación.</p></div></div>
+        <div class="flex gap-4 rounded-2xl border border-slate-200 p-5"><span class="w-9 h-9 rounded-full bg-red-600 text-white font-black flex items-center justify-center shrink-0">2</span><div><h3 class="font-extrabold">Heurística</h3><p class="mt-1 text-sm text-slate-600">Se localizan, reúnen y seleccionan las fuentes útiles.</p></div></div>
+        <div class="flex gap-4 rounded-2xl border border-slate-200 p-5"><span class="w-9 h-9 rounded-full bg-red-600 text-white font-black flex items-center justify-center shrink-0">3</span><div><h3 class="font-extrabold">Crítica de fuentes</h3><p class="mt-1 text-sm text-slate-600">Se analiza autenticidad, procedencia, contexto, intención y confiabilidad.</p></div></div>
+        <div class="flex gap-4 rounded-2xl border border-slate-200 p-5"><span class="w-9 h-9 rounded-full bg-red-600 text-white font-black flex items-center justify-center shrink-0">4</span><div><h3 class="font-extrabold">Interpretación y síntesis</h3><p class="mt-1 text-sm text-slate-600">Se relacionan los datos y se construye una explicación coherente.</p></div></div>
+      </div>`,
+    quiz:[
+      {q:'¿Cómo se llama la etapa dedicada a localizar y reunir fuentes?',options:['Cronología','Heurística','Síntesis','Periodización'],answer:1,why:'La heurística es la búsqueda y selección sistemática de fuentes.'},
+      {q:'¿Qué se analiza durante la crítica de fuentes?',options:['Solo la antigüedad del documento','Autenticidad, procedencia e intención','Únicamente el tamaño de la fuente','Solo la opinión del investigador'],answer:1,why:'La crítica histórica evalúa la fuente, su contexto y su confiabilidad.'}
+    ]
+  },
+  {
+    title:'Las fuentes históricas',
+    short:'Evidencias para conocer el pasado',
+    icon:'archive',
+    content:`
+      <p class="text-lg leading-relaxed text-slate-700">Las <strong>fuentes históricas</strong> son testimonios o evidencias que permiten conocer aspectos del pasado. Su valor depende de la pregunta de investigación y de la crítica que realice el historiador.</p>
+      <div class="mt-6 overflow-x-auto rounded-2xl border border-slate-200">
+        <table class="w-full text-sm"><thead class="bg-slate-100"><tr><th class="text-left p-4">Tipo</th><th class="text-left p-4">Ejemplos</th><th class="text-left p-4">Pueden revelar</th></tr></thead><tbody class="divide-y divide-slate-100">
+          <tr><td class="p-4 font-bold">Escritas</td><td class="p-4">Cartas, leyes, crónicas</td><td class="p-4">Ideas, normas y decisiones</td></tr>
+          <tr><td class="p-4 font-bold">Materiales</td><td class="p-4">Cerámica, edificios, monedas</td><td class="p-4">Tecnología y vida cotidiana</td></tr>
+          <tr><td class="p-4 font-bold">Orales</td><td class="p-4">Testimonios y tradiciones</td><td class="p-4">Memoria y experiencias</td></tr>
+          <tr><td class="p-4 font-bold">Iconográficas</td><td class="p-4">Fotografías, pinturas, mapas</td><td class="p-4">Representaciones y símbolos</td></tr>
+          <tr><td class="p-4 font-bold">Audiovisuales</td><td class="p-4">Grabaciones, cine, video</td><td class="p-4">Discursos, gestos y contextos</td></tr>
+        </tbody></table>
       </div>
-    </section>
-  </main>
+      <div class="mt-6 rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm text-amber-900"><strong>Clave:</strong> una fuente no “habla sola”. Debe contextualizarse, contrastarse e interpretarse.</div>`,
+    quiz:[
+      {q:'Una moneda antigua utilizada para estudiar el comercio es principalmente una fuente…',options:['Oral','Material','Audiovisual','Exclusivamente literaria'],answer:1,why:'La moneda es un objeto material producido en el pasado.'},
+      {q:'¿Por qué se contrastan varias fuentes?',options:['Para eliminar toda diferencia','Para construir una explicación mejor sustentada','Para usar siempre la más antigua','Porque una sola fuente siempre es falsa'],answer:1,why:'Contrastar permite reconocer coincidencias, diferencias, sesgos y límites.'}
+    ]
+  },
+  {
+    title:'Ciencias auxiliares de la Historia',
+    short:'Disciplinas que amplían la investigación',
+    icon:'network',
+    content:`
+      <p class="text-lg leading-relaxed text-slate-700">La Historia se apoya en otras disciplinas para analizar distintos tipos de evidencia y comprender mejor a las sociedades del pasado.</p>
+      <div class="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="rounded-2xl border border-slate-200 p-5"><h3 class="font-extrabold">Arqueología</h3><p class="mt-2 text-sm text-slate-600">Estudia sociedades mediante restos materiales.</p></div>
+        <div class="rounded-2xl border border-slate-200 p-5"><h3 class="font-extrabold">Antropología</h3><p class="mt-2 text-sm text-slate-600">Analiza al ser humano y sus culturas.</p></div>
+        <div class="rounded-2xl border border-slate-200 p-5"><h3 class="font-extrabold">Geografía</h3><p class="mt-2 text-sm text-slate-600">Relaciona sociedad, territorio y espacio.</p></div>
+        <div class="rounded-2xl border border-slate-200 p-5"><h3 class="font-extrabold">Paleografía</h3><p class="mt-2 text-sm text-slate-600">Estudia y descifra escrituras antiguas.</p></div>
+        <div class="rounded-2xl border border-slate-200 p-5"><h3 class="font-extrabold">Numismática</h3><p class="mt-2 text-sm text-slate-600">Estudia monedas y medallas.</p></div>
+        <div class="rounded-2xl border border-slate-200 p-5"><h3 class="font-extrabold">Cronología</h3><p class="mt-2 text-sm text-slate-600">Ordena acontecimientos y procesos en el tiempo.</p></div>
+      </div>
+      <div class="mt-6 rounded-3xl bg-blue-950 text-white p-6"><p class="text-xs font-bold uppercase tracking-[.18em] text-red-300">Síntesis del capítulo</p><div class="mt-4 grid md:grid-cols-2 gap-3 text-sm text-blue-100"><p>• La Historia es una <strong class="text-white">ciencia social</strong>.</p><p>• Estudia a la <strong class="text-white">sociedad humana en el tiempo</strong>.</p><p>• Utiliza <strong class="text-white">fuentes y método histórico</strong>.</p><p>• Sus explicaciones se construyen mediante <strong class="text-white">análisis y contraste</strong>.</p></div></div>`,
+    quiz:[
+      {q:'¿Qué disciplina estudia especialmente monedas y medallas?',options:['Paleografía','Numismática','Geografía','Cronología'],answer:1,why:'La numismática estudia monedas y medallas como evidencias históricas.'},
+      {q:'Si se estudian viviendas y cerámicas de un asentamiento antiguo, ¿qué disciplina resulta especialmente útil?',options:['Arqueología','Gramática','Astronomía','Lógica'],answer:0,why:'La Arqueología analiza sociedades a partir de sus restos materiales.'}
+    ]
+  }
+];
 
-  <footer class="mt-8 border-t border-slate-200 bg-white no-print"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-7 text-xs text-slate-400 flex flex-col sm:flex-row gap-2 justify-between"><span>Academia Virtual · Historia Universal</span><span>Capítulo 01 · La historia como ciencia</span></div></footer>
+const esc=v=>String(v??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;');
+const uniqueSorted=a=>[...new Set((Array.isArray(a)?a:[]).map(Number).filter(n=>n>=0&&n<TOTAL_ITEMS))].sort((a,b)=>a-b);
+function percent(){return Math.round((progress.completedItems.length/TOTAL_ITEMS)*100)}
+function normalizeProgress(data){const completed=uniqueSorted(data&&data.completedItems);const unlocked=Math.min(Math.max(Number(data&&data.unlockedItem)||0,0),TOTAL_ITEMS-1);const current=Math.min(Math.max(Number(data&&data.currentItem)||0,0),unlocked);progress={currentItem:current,unlockedItem:unlocked,completedItems:completed,attempts:(data&&data.attempts)||{},itemScores:(data&&data.itemScores)||{},percent:Math.round(completed.length/TOTAL_ITEMS*100),chapterCompleted:completed.length===TOTAL_ITEMS}}
+function progressRef(){return db.collection('users').doc(currentUser.uid).collection('progress').doc(CHAPTER_ID)}
+async function loadProgress(){try{const snap=await progressRef().get();if(snap.exists)normalizeProgress(snap.data());else await saveProgress();}catch(e){console.error('Carga de progreso:',e)}}
+async function saveProgress(){if(!currentUser)return;progress.percent=percent();progress.chapterCompleted=progress.completedItems.length===TOTAL_ITEMS;try{await progressRef().set({courseId:12,courseName:'Historia Universal',chapterNumber:1,chapterName:'La historia como ciencia',currentItem:progress.currentItem,unlockedItem:progress.unlockedItem,completedItems:progress.completedItems,attempts:progress.attempts,itemScores:progress.itemScores,percent:progress.percent,chapterCompleted:progress.chapterCompleted,updatedAt:firebase.firestore.FieldValue.serverTimestamp()},{merge:true})}catch(e){console.error('Guardado de progreso:',e)}}
 
-  <script>
-    const tabButtons=[...document.querySelectorAll('.tab-btn')];
-    const panels=[...document.querySelectorAll('.panel')];
-    tabButtons.forEach(btn=>btn.addEventListener('click',()=>{
-      tabButtons.forEach(b=>{b.classList.remove('active');b.classList.add('border-transparent','text-slate-400')});
-      btn.classList.add('active');btn.classList.remove('border-transparent','text-slate-400');
-      panels.forEach(p=>p.classList.remove('active'));
-      document.getElementById(btn.dataset.tab).classList.add('active');
-      window.scrollTo({top:0,behavior:'smooth'});
-    }));
+function renderLocked(){return `<main class="min-h-screen flex items-center justify-center p-5 bg-slate-50"><div class="max-w-md w-full bg-white rounded-3xl border border-slate-200 p-8 text-center shadow-sm"><div class="w-14 h-14 mx-auto rounded-2xl bg-blue-950 text-white flex items-center justify-center"><i data-lucide="lock" class="w-6 h-6"></i></div><h1 class="mt-5 text-2xl font-black text-slate-900">Acceso requerido</h1><p class="mt-3 text-sm leading-relaxed text-slate-500">Inicia sesión en SIN LÍMITES para continuar tu ruta de aprendizaje y guardar tu progreso.</p><a href="index.html" class="mt-6 inline-flex px-5 py-3 rounded-xl bg-blue-950 text-white font-bold text-sm">Ir a iniciar sesión</a></div></main>`}
+function itemStatus(i){if(progress.completedItems.includes(i))return 'done';if(i===progress.currentItem)return 'current';if(i<=progress.unlockedItem)return 'open';return 'locked'}
+function sidebar(){return items.map((it,i)=>{const s=itemStatus(i);const disabled=s==='locked';const icon=s==='done'?'check':s==='locked'?'lock':String(i+1);const circle=s==='done'?'bg-emerald-600 text-white':s==='current'?'bg-blue-950 text-white':s==='open'?'bg-blue-50 text-blue-950':'bg-slate-100 text-slate-400';const row=s==='current'?'bg-blue-50 border-blue-200':s==='done'?'bg-emerald-50/60 border-emerald-100':'bg-white border-slate-200';return `<button ${disabled?'disabled':''} onclick="goToItem(${i})" class="step-btn w-full text-left rounded-2xl border ${row} p-3.5 ${disabled?'opacity-55 cursor-not-allowed':''}"><div class="flex items-center gap-3"><span class="w-9 h-9 rounded-xl ${circle} flex items-center justify-center shrink-0 text-xs font-black">${s==='done'||s==='locked'?`<i data-lucide="${icon}" class="w-4 h-4"></i>`:icon}</span><div class="min-w-0"><div class="text-[11px] font-bold uppercase tracking-wider ${s==='done'?'text-emerald-700':s==='current'?'text-blue-900':'text-slate-400'}">Ítem ${i+1}</div><div class="mt-0.5 text-sm font-bold text-slate-800 leading-tight">${esc(it.title)}</div></div></div></button>`}).join('')}
+function quizHtml(item,i){if(progress.completedItems.includes(i)){return `<div class="mt-8 rounded-3xl border border-emerald-200 bg-emerald-50 p-6"><div class="flex items-start gap-3"><span class="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0"><i data-lucide="check" class="w-5 h-5"></i></span><div><h3 class="font-extrabold text-emerald-900">Ítem aprobado</h3><p class="mt-1 text-sm text-emerald-800">Ya superaste este microcuestionario. Tu avance está guardado en la nube.</p>${i<TOTAL_ITEMS-1?`<button onclick="goToItem(${Math.min(i+1,progress.unlockedItem)})" class="mt-4 inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-700 text-white text-sm font-bold">Continuar <i data-lucide="arrow-right" class="w-4 h-4"></i></button>`:`<div class="mt-4 text-sm font-bold text-emerald-900">¡Capítulo completado!</div>`}</div></div></div>`}
+return `<div class="mt-8 rounded-3xl border border-slate-200 overflow-hidden"><div class="p-5 sm:p-6 bg-slate-50 border-b border-slate-200"><div class="flex items-start gap-3"><span class="w-10 h-10 rounded-xl bg-red-50 text-red-600 flex items-center justify-center shrink-0"><i data-lucide="badge-check" class="w-5 h-5"></i></span><div><div class="text-xs font-bold uppercase tracking-wider text-red-600">Control de avance</div><h3 class="mt-1 text-lg font-extrabold text-slate-900">Responde 2 de 2 para desbloquear el siguiente ítem</h3><p class="mt-1 text-sm text-slate-500">Puedes intentarlo nuevamente si no alcanzas el puntaje requerido.</p></div></div></div><form id="microquiz" class="p-5 sm:p-6 space-y-6">${item.quiz.map((q,qi)=>`<fieldset><legend class="font-bold text-slate-900">${qi+1}. ${esc(q.q)}</legend><div class="mt-3 grid gap-2">${q.options.map((op,oi)=>`<label class="answer-label flex items-start gap-3 rounded-xl border border-slate-200 p-3.5 cursor-pointer"><input type="radio" name="q${qi}" value="${oi}" class="mt-1" onchange="markSelected(this)"><span class="text-sm text-slate-700">${esc(op)}</span></label>`).join('')}</div></fieldset>`).join('')}<button type="button" onclick="submitQuiz()" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-blue-950 text-white font-bold text-sm hover:bg-blue-900">Comprobar respuestas <i data-lucide="check-circle" class="w-4 h-4"></i></button><div id="quizFeedback"></div></form></div>`}
+function renderApp(){const i=progress.currentItem,item=items[i];const p=percent();document.getElementById('app').innerHTML=`
+<header class="bg-white border-b border-slate-200 sticky top-0 z-40"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-18 py-3 flex items-center justify-between gap-4"><a href="index.html" class="flex items-center gap-3"><span class="w-10 h-10 rounded-xl bg-blue-950 text-white flex items-center justify-center font-black">SL</span><div><div class="font-black text-blue-950 leading-tight">SIN <span class="text-red-600">LÍMITES</span></div><div class="text-[10px] uppercase tracking-[.18em] text-slate-400">Historia Universal</div></div></a><div class="flex items-center gap-3"><div class="hidden sm:block text-right"><div class="text-xs font-bold text-slate-700">${esc(currentUser.displayName||'Estudiante')}</div><div class="text-[11px] text-slate-400">Progreso guardado en la nube</div></div>${currentUser.photoURL?`<img src="${esc(currentUser.photoURL)}" class="w-9 h-9 rounded-full border border-slate-200" alt="Perfil">`:''}</div></div></header>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+  <section class="rounded-3xl bg-gradient-to-r from-blue-950 to-blue-900 text-white p-6 sm:p-8"><div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6"><div><div class="text-xs font-bold uppercase tracking-[.18em] text-red-300">Historia Universal · Capítulo 01</div><h1 class="mt-2 text-3xl sm:text-4xl font-black">La historia como ciencia</h1><p class="mt-3 max-w-2xl text-sm sm:text-base text-blue-100">Avanza por los 5 ítems. Cada microcuestionario aprobado desbloquea el siguiente.</p></div><div class="lg:w-72"><div class="flex items-center justify-between text-sm"><span class="font-bold">Tu progreso</span><span class="font-black">${p}%</span></div><div class="mt-2 h-3 rounded-full bg-white/15 overflow-hidden"><div class="h-full bg-red-400 rounded-full transition-all" style="width:${p}%"></div></div><div class="mt-2 text-xs text-blue-200">${progress.completedItems.length} de ${TOTAL_ITEMS} ítems aprobados</div></div></div></section>
+  ${progress.chapterCompleted?`<section class="mt-5 rounded-3xl border border-emerald-200 bg-emerald-50 p-5 sm:p-6"><div class="flex items-center gap-4"><span class="w-12 h-12 rounded-2xl bg-emerald-600 text-white flex items-center justify-center"><i data-lucide="trophy" class="w-6 h-6"></i></span><div><h2 class="font-black text-emerald-900">¡Capítulo completado!</h2><p class="mt-1 text-sm text-emerald-800">Superaste los cinco controles de avance. Tu progreso quedó registrado.</p></div></div></section>`:''}
+  <div class="mt-6 grid lg:grid-cols-[290px_1fr] gap-6 items-start"><aside class="lg:sticky lg:top-24"><div class="bg-white rounded-3xl border border-slate-200 p-4"><div class="px-2 pb-3"><div class="text-xs font-bold uppercase tracking-wider text-slate-400">Ruta del capítulo</div></div><div class="space-y-2">${sidebar()}</div></div></aside><section class="min-w-0"><article class="fade-in bg-white rounded-3xl border border-slate-200 p-6 sm:p-8"><div class="flex items-start justify-between gap-5"><div class="flex items-start gap-4"><span class="w-12 h-12 rounded-2xl bg-blue-50 text-blue-950 flex items-center justify-center shrink-0"><i data-lucide="${item.icon}" class="w-6 h-6"></i></span><div><div class="text-xs font-bold uppercase tracking-wider text-red-600">Ítem ${i+1} de ${TOTAL_ITEMS}</div><h2 class="mt-1 text-2xl sm:text-3xl font-black text-slate-900">${esc(item.title)}</h2><p class="mt-1 text-sm text-slate-400">${esc(item.short)}</p></div></div>${progress.completedItems.includes(i)?'<span class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold"><i data-lucide="check" class="w-3.5 h-3.5"></i>Aprobado</span>':''}</div><div class="mt-7">${item.content}</div>${quizHtml(item,i)}</article></section></div>
+</main>`;
+lucide.createIcons();window.scrollTo({top:0,behavior:'smooth'});}
+function markSelected(input){document.querySelectorAll(`input[name="${input.name}"]`).forEach(el=>el.closest('label').classList.remove('selected'));input.closest('label').classList.add('selected')}
+async function goToItem(i){if(i>progress.unlockedItem||i<0||i>=TOTAL_ITEMS)return;progress.currentItem=i;feedback=null;await saveProgress();renderApp()}
+async function submitQuiz(){const i=progress.currentItem,item=items[i];const form=document.getElementById('microquiz');if(!form)return;let score=0;let answered=0;const details=[];item.quiz.forEach((q,qi)=>{const selected=form.querySelector(`input[name="q${qi}"]:checked`);if(selected){answered++;const value=Number(selected.value);if(value===q.answer)score++;details.push({correct:value===q.answer,why:q.why})}});const box=document.getElementById('quizFeedback');if(answered<item.quiz.length){box.innerHTML='<div class="rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900">Responde todas las preguntas antes de comprobar.</div>';return}const key=`item_${i+1}`;progress.attempts[key]=(Number(progress.attempts[key])||0)+1;progress.itemScores[key]=Math.round(score/item.quiz.length*100);if(score===item.quiz.length){if(!progress.completedItems.includes(i))progress.completedItems.push(i);progress.completedItems=uniqueSorted(progress.completedItems);progress.unlockedItem=Math.min(Math.max(progress.unlockedItem,i+1),TOTAL_ITEMS-1);await saveProgress();box.innerHTML=`<div class="rounded-2xl border border-emerald-200 bg-emerald-50 p-5 text-emerald-900"><div class="font-extrabold">¡Excelente! ${score}/${item.quiz.length} respuestas correctas.</div><p class="mt-1 text-sm">${i<TOTAL_ITEMS-1?'Se desbloqueó el siguiente ítem.':'Completaste la ruta teórica del capítulo.'}</p><button type="button" onclick="${i<TOTAL_ITEMS-1?`goToItem(${i+1})`:'renderApp()'}" class="mt-4 px-4 py-2.5 rounded-xl bg-emerald-700 text-white text-sm font-bold">${i<TOTAL_ITEMS-1?'Ir al siguiente ítem':'Ver capítulo completado'}</button></div>`}else{await saveProgress();box.innerHTML=`<div class="rounded-2xl border border-red-200 bg-red-50 p-5 text-red-900"><div class="font-extrabold">Obtuviste ${score}/${item.quiz.length}.</div><p class="mt-1 text-sm">Revisa el contenido e inténtalo nuevamente. Necesitas responder correctamente las 2 preguntas.</p><div class="mt-3 space-y-2 text-sm">${details.map((d,idx)=>`<p><strong>${idx+1}.</strong> ${d.correct?'Correcta.':'Revisa:'} ${esc(d.why)}</p>`).join('')}</div></div>`}lucide.createIcons()}
 
-    function toggleAnswer(button){
-      const answer=button.parentElement.querySelector('.answer');
-      answer.classList.toggle('hidden');
-      button.textContent=answer.classList.contains('hidden')?'Ver respuesta':'Ocultar respuesta';
-    }
-
-    function gradeQuiz(){
-      const questions=[...document.querySelectorAll('.question')];
-      let score=0;
-      questions.forEach((q,i)=>{
-        const answer=q.dataset.answer;
-        const selected=q.querySelector(`input[name="q${i+1}"]:checked`);
-        q.querySelectorAll('.option').forEach(o=>o.classList.remove('correct','wrong'));
-        q.querySelectorAll('.option').forEach(o=>{
-          const input=o.querySelector('input');
-          if(input.value===answer)o.classList.add('correct');
-          if(selected&&input===selected&&input.value!==answer)o.classList.add('wrong');
-        });
-        if(selected&&selected.value===answer)score++;
-      });
-      const result=document.getElementById('result');
-      result.classList.remove('hidden','bg-green-50','text-green-900','border-green-200','bg-amber-50','text-amber-900','border-amber-200');
-      result.classList.add('border');
-      if(score>=4){result.classList.add('bg-green-50','text-green-900','border-green-200');result.textContent=`Resultado: ${score}/5. Muy buen dominio del capítulo.`}
-      else{result.classList.add('bg-amber-50','text-amber-900','border-amber-200');result.textContent=`Resultado: ${score}/5. Revisa la teoría y vuelve a intentarlo.`}
-    }
-
-    function resetQuiz(){document.getElementById('quiz').reset();document.querySelectorAll('.option').forEach(o=>o.classList.remove('correct','wrong'));document.getElementById('result').classList.add('hidden')}
-    lucide.createIcons();
-  </script>
+auth.onAuthStateChanged(async user=>{if(!user){document.getElementById('app').innerHTML=renderLocked();lucide.createIcons();return}currentUser=user;await loadProgress();renderApp()});
+</script>
 </body>
 </html>
