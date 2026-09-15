@@ -14,7 +14,7 @@ service cloud.firestore {
     function isAdmin() {
       return signedIn()
         && request.auth.token.email_verified == true
-        && request.auth.token.email == 'coord.fis@sacooliveros.edu.pe';
+        && request.auth.token.email == 'alexludenah@gmail.com';
     }
 
     match /users/{userId} {
