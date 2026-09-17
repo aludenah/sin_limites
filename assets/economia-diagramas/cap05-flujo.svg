@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1448" height="1086" viewBox="0 0 1448 1086" role="img"><title>Flujo circular simplificado</title><desc>Hogares y empresas intercambian recursos, productos e ingresos.</desc><defs><marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L10 5 L0 10" fill="#587081"/></marker></defs>
+<rect width="1448" height="1086" fill="#f4f7f9"/><rect width="1448" height="14" fill="#ba3e45"/>
+<text x="74" y="74" font-family="DejaVu Sans,Arial,sans-serif" font-size="22" font-weight="700" text-anchor="start" fill="#587081">SIN LÍMITES  /  ECONOMÍA  /  05</text>
+<text x="74" y="149" font-family="DejaVu Sans,Arial,sans-serif" font-size="54" font-weight="800" text-anchor="start" fill="#102d48">Flujo circular simplificado</text>
+<text x="74" y="260" font-family="DejaVu Sans,Arial,sans-serif" font-size="26" font-weight="400" text-anchor="start" fill="#587081">Hogares y empresas intercambian recursos, productos e ingresos.</text>
+<rect x="74" y="440" width="398" height="310" rx="22" fill="#ffffff" stroke="#d9e3e9" stroke-width="2"/>
+<rect x="74" y="440" width="398" height="9" rx="0" fill="#0a7376" stroke="#0a7376" stroke-width="2"/>
+<text x="102" y="499" font-family="DejaVu Sans,Arial,sans-serif" font-size="33" font-weight="800" text-anchor="start" fill="#0a7376">Hogares</text>
+<text x="102" y="557" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" text-anchor="start" fill="#203a4e">Ofrecen trabajo y</text>
+<text x="102" y="596" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" text-anchor="start" fill="#203a4e">compran bienes y</text>
+<text x="102" y="635" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" text-anchor="start" fill="#203a4e">servicios.</text>
+<rect x="976" y="440" width="398" height="310" rx="22" fill="#ffffff" stroke="#d9e3e9" stroke-width="2"/>
+<rect x="976" y="440" width="398" height="9" rx="0" fill="#2b67a3" stroke="#2b67a3" stroke-width="2"/>
+<text x="1004" y="499" font-family="DejaVu Sans,Arial,sans-serif" font-size="33" font-weight="800" text-anchor="start" fill="#2b67a3">Empresas</text>
+<text x="1004" y="557" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" text-anchor="start" fill="#203a4e">Organizan producción</text>
+<text x="1004" y="596" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" text-anchor="start" fill="#203a4e">y contratan factores.</text>
+<text x="724" y="349" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="700" text-anchor="middle" fill="#0a7376">Trabajo y otros factores</text>
+<line x1="488" y1="370" x2="960" y2="370" stroke="#0a7376" stroke-width="4" marker-end="url(#arrow)"/>
+<text x="724" y="399" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="700" text-anchor="middle" fill="#2b67a3">Ingresos de los factores</text>
+<line x1="960" y1="420" x2="488" y2="420" stroke="#2b67a3" stroke-width="4" marker-end="url(#arrow)"/>
+<text x="724" y="766" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="700" text-anchor="middle" fill="#0a7376">Bienes y servicios</text>
+<line x1="960" y1="787" x2="488" y2="787" stroke="#0a7376" stroke-width="4" marker-end="url(#arrow)"/>
+<text x="724" y="829" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="700" text-anchor="middle" fill="#2b67a3">Gasto de consumo</text>
+<line x1="488" y1="850" x2="960" y2="850" stroke="#2b67a3" stroke-width="4" marker-end="url(#arrow)"/>
+<line x1="74" y1="968" x2="1374" y2="968" stroke="#c6d6df" stroke-width="2"/>
+<text x="74" y="1010" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#587081">Flujos reales en verde; monetarios en azul. Modelo sin Estado, ahorro ni sector externo.</text>
+</svg>

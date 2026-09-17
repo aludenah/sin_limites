@@ -2,6 +2,7 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
 const {harness}=require('./study-entry.test.cjs');
 const root=path.join(__dirname,'..');
 const chapters=[
+ ...['economia','educacion-civica'].flatMap(prefix=>[1,2,3,4,5,6].map(n=>({id:`${prefix}-capitulo-0${n}`,files:[`${prefix}-catalog.js`,'history-progress.js',`${prefix}-capitulo-0${n}-data.js`,'history-chapter.js'],number:n,course:prefix==='economia'?14:10}))),
  ...[1,2,3,4,5,6].map(n=>({id:`lenguaje-capitulo-0${n}`,files:['lenguaje-catalog.js','history-progress.js',`lenguaje-capitulo-0${n}-data.js`,'history-chapter.js'],number:n,course:7})),
  ...[1,2,3,4,5,6].map(n=>({id:`historia-del-peru-capitulo-0${n}`,files:['peru-catalog.js','history-progress.js',`historia-del-peru-capitulo-0${n}-data.js`,'history-chapter.js'],number:n,course:11})),
  ...[1,2].map(n=>({id:`fisica-capitulo-0${n}`,files:[`fisica-capitulo-0${n}-data.js`,`fisica-capitulo-0${n}.js`],number:n,course:16})),

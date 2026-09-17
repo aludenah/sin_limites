@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1448" height="1086" viewBox="0 0 1448 1086" role="img"><title>Cinco fases conectadas</title><desc>El proceso económico es continuo e interdependiente.</desc><defs><marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L10 5 L0 10" fill="#587081"/></marker></defs>
+<rect width="1448" height="1086" fill="#f4f7f9"/><rect width="1448" height="14" fill="#ba3e45"/>
+<text x="74" y="74" font-family="DejaVu Sans,Arial,sans-serif" font-size="22" font-weight="700" text-anchor="start" fill="#587081">SIN LÍMITES  /  ECONOMÍA  /  05</text>
+<text x="74" y="149" font-family="DejaVu Sans,Arial,sans-serif" font-size="54" font-weight="800" text-anchor="start" fill="#102d48">Cinco fases conectadas</text>
+<text x="74" y="260" font-family="DejaVu Sans,Arial,sans-serif" font-size="26" font-weight="400" text-anchor="start" fill="#587081">El proceso económico es continuo e interdependiente.</text>
+<rect x="74" y="325" width="412" height="250" rx="22" fill="#ffffff" stroke="#d9e3e9" stroke-width="2"/>
+<rect x="74" y="325" width="412" height="9" rx="0" fill="#0a7376" stroke="#0a7376" stroke-width="2"/>
+<text x="102" y="384" font-family="DejaVu Sans,Arial,sans-serif" font-size="33" font-weight="800" text-anchor="start" fill="#0a7376">Producción</text>
+<text x="102" y="442" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" text-anchor="start" fill="#203a4e">Crear bienes y</text>
+<text x="102" y="481" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" text-anchor="start" fill="#203a4e">servicios.</text>
+<rect x="518" y="325" width="412" height="250" rx="22" fill="#ffffff" stroke="#d9e3e9" stroke-width="2"/>
+<rect x="518" y="325" width="412" height="9" rx="0" fill="#2b67a3" stroke="#2b67a3" stroke-width="2"/>
+<text x="546" y="384" font-family="DejaVu Sans,Arial,sans-serif" font-size="33" font-weight="800" text-anchor="start" fill="#2b67a3">Circulación</text>
+<text x="546" y="442" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" text-anchor="start" fill="#203a4e">Intercambiar entre</text>
+<text x="546" y="481" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" text-anchor="start" fill="#203a4e">agentes.</text>
+<rect x="962" y="325" width="412" height="250" rx="22" fill="#ffffff" stroke="#d9e3e9" stroke-width="2"/>
+<rect x="962" y="325" width="412" height="9" rx="0" fill="#a76812" stroke="#a76812" stroke-width="2"/>
+<text x="990" y="384" font-family="DejaVu Sans,Arial,sans-serif" font-size="33" font-weight="800" text-anchor="start" fill="#a76812">Distribución</text>
+<text x="990" y="442" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" text-anchor="start" fill="#203a4e">Asignar ingresos.</text>
+<rect x="740" y="660" width="412" height="250" rx="22" fill="#ffffff" stroke="#d9e3e9" stroke-width="2"/>
+<rect x="740" y="660" width="412" height="9" rx="0" fill="#ba3e45" stroke="#ba3e45" stroke-width="2"/>
+<text x="768" y="719" font-family="DejaVu Sans,Arial,sans-serif" font-size="33" font-weight="800" text-anchor="start" fill="#ba3e45">Consumo</text>
+<text x="768" y="777" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" text-anchor="start" fill="#203a4e">Satisfacer</text>
+<text x="768" y="816" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" text-anchor="start" fill="#203a4e">necesidades.</text>
+<rect x="296" y="660" width="412" height="250" rx="22" fill="#ffffff" stroke="#d9e3e9" stroke-width="2"/>
+<rect x="296" y="660" width="412" height="9" rx="0" fill="#0a7376" stroke="#0a7376" stroke-width="2"/>
+<text x="324" y="719" font-family="DejaVu Sans,Arial,sans-serif" font-size="33" font-weight="800" text-anchor="start" fill="#0a7376">Inversión</text>
+<text x="324" y="777" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" text-anchor="start" fill="#203a4e">Renovar capacidad</text>
+<text x="324" y="816" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" text-anchor="start" fill="#203a4e">productiva.</text>
+<line x1="489" y1="450" x2="510" y2="450" stroke="#587081" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="933" y1="450" x2="954" y2="450" stroke="#587081" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="1168" y1="580" x2="950" y2="650" stroke="#587081" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="735" y1="785" x2="714" y2="785" stroke="#587081" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="292" y1="742" x2="200" y2="586" stroke="#587081" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="74" y1="968" x2="1374" y2="968" stroke="#c6d6df" stroke-width="2"/>
+<text x="74" y="1010" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#587081">Esquema didáctico: las fases también se relacionan simultáneamente y en otros sentidos.</text>
+</svg>

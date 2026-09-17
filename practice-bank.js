@@ -3329,3 +3329,1747 @@ Object.assign(window.CHAPTER_PRACTICES, {
     ]
   }
 });
+
+// Economía y Educación Cívica · capítulos 1–6
+Object.assign(window.CHAPTER_PRACTICES,{
+  "economia-capitulo-01": {
+    "title": "La ciencia económica",
+    "problems": [
+      {
+        "topic": "Objeto de estudio",
+        "prompt": "Una municipalidad debe elegir entre dos proyectos porque su presupuesto no alcanza para ambos. ¿Qué problema económico se manifiesta?",
+        "options": [
+          "La equivalencia entre economía y contabilidad.",
+          "La asignación de recursos escasos entre usos alternativos.",
+          "La desaparición de todas las necesidades.",
+          "La inexistencia de costos por usar recursos públicos.",
+          "La imposibilidad de valorar alternativas."
+        ],
+        "answer": 1,
+        "solution": "El presupuesto tiene usos alternativos y no permite realizarlos todos. La elección ante restricciones constituye un problema de asignación y escasez.",
+        "id": "p01"
+      },
+      {
+        "topic": "Escasez",
+        "prompt": "¿Cuál de los siguientes casos muestra escasez sin implicar necesariamente pobreza?",
+        "options": [
+          "Un estudiante abandona clases por falta de recursos.",
+          "Un hogar no logra cubrir servicios básicos.",
+          "Una persona de altos ingresos no dispone de tiempo para todos sus proyectos.",
+          "Un hogar no puede acceder a alimentación suficiente.",
+          "Una familia carece de vivienda adecuada."
+        ],
+        "answer": 2,
+        "solution": "La escasez se refiere a recursos limitados frente a usos deseados. El tiempo puede ser escaso incluso cuando no existen privaciones monetarias.",
+        "id": "p02"
+      },
+      {
+        "topic": "Costo de oportunidad",
+        "prompt": "Raúl elige estudiar. Sus alternativas eran trabajar por S/ 70 o ayudar en un negocio por S/ 40; prefiere el trabajo de S/ 70. ¿Qué ingreso sacrifica como costo de oportunidad?",
+        "options": [
+          "S/ 40.",
+          "S/ 30.",
+          "S/ 0.",
+          "S/ 70.",
+          "S/ 110."
+        ],
+        "answer": 3,
+        "solution": "La mejor alternativa descartada es trabajar por S/ 70. No se suman los ingresos de actividades que eran alternativas mutuamente excluyentes.",
+        "id": "p03"
+      },
+      {
+        "topic": "Costo económico",
+        "prompt": "Un taller cobra S/ 25 y asistir impide realizar un trabajo que pagaría S/ 60. Sin otros costos, ¿cuál es el costo económico total de asistir?",
+        "options": [
+          "S/ 25.",
+          "S/ 60.",
+          "S/ 35.",
+          "S/ 150.",
+          "S/ 85."
+        ],
+        "answer": 4,
+        "solution": "Se suma el desembolso explícito de S/ 25 y el ingreso alternativo sacrificado de S/ 60: el costo económico total es S/ 85.",
+        "id": "p04"
+      },
+      {
+        "topic": "Inducción",
+        "prompt": "Una investigadora compara compras en varios mercados y propone una regularidad general. ¿Qué razonamiento predomina?",
+        "options": [
+          "Inductivo.",
+          "Deductivo.",
+          "Normativo por definición.",
+          "Contable exclusivamente.",
+          "Una identidad sin observaciones."
+        ],
+        "answer": 0,
+        "solution": "La inducción parte de casos particulares y busca formular regularidades generales. La propuesta todavía debe contrastarse con evidencia adicional.",
+        "id": "p05"
+      },
+      {
+        "topic": "Deducción",
+        "prompt": "A partir de un modelo, se predice que un precio mayor reducirá la cantidad demandada si lo demás permanece constante. ¿Qué método se utiliza?",
+        "options": [
+          "Valoración moral de precios.",
+          "Deducción.",
+          "Inducción desde nuevos casos.",
+          "Clasificación de necesidades.",
+          "Recolección censal sin teoría."
+        ],
+        "answer": 1,
+        "solution": "Se obtiene una consecuencia particular a partir de supuestos y relaciones generales del modelo. Ese es el sentido del razonamiento deductivo.",
+        "id": "p06"
+      },
+      {
+        "topic": "Ceteris paribus",
+        "prompt": "En una comparación económica, ceteris paribus significa:",
+        "options": [
+          "Impedir el uso de datos estadísticos.",
+          "Asegurar que una teoría nunca pueda cambiar.",
+          "Mantener constantes los demás factores relevantes.",
+          "Suponer que todas las personas son idénticas.",
+          "Eliminar cualquier incertidumbre para siempre."
+        ],
+        "answer": 2,
+        "solution": "La expresión aísla una relación al mantener constantes otros factores relevantes. Es un supuesto analítico y debe explicitarse.",
+        "id": "p07"
+      },
+      {
+        "topic": "Eficiencia y equidad",
+        "prompt": "Una medida aumenta la producción total, pero sus beneficios se concentran en pocos hogares. ¿Qué conclusión es más adecuada?",
+        "options": [
+          "Toda distribución desigual impide aumentar la producción.",
+          "La equidad solo mide unidades producidas.",
+          "La eficiencia elimina la necesidad de estudiar beneficiarios.",
+          "El resultado productivo y la distribución deben evaluarse por separado.",
+          "Más producción demuestra siempre mayor equidad."
+        ],
+        "answer": 3,
+        "solution": "Eficiencia y equidad responden a preguntas diferentes. Aumentar la producción no demuestra cómo se reparten sus beneficios.",
+        "id": "p08"
+      },
+      {
+        "topic": "Economía política",
+        "prompt": "Investigar cómo la propiedad de los recursos influye en la negociación entre grupos corresponde especialmente a:",
+        "options": [
+          "La medición exclusiva de unidades físicas.",
+          "La eliminación de las instituciones del análisis.",
+          "El cálculo de un promedio sin contexto.",
+          "La equivalencia entre precio y justicia.",
+          "La economía política."
+        ],
+        "answer": 4,
+        "solution": "La economía política relaciona instituciones, propiedad y poder con resultados económicos. Puede estudiarse desde diferentes enfoques.",
+        "id": "p09"
+      },
+      {
+        "topic": "Causalidad",
+        "prompt": "Durante una temporada suben a la vez ventas de helados y consumo de agua. ¿Qué afirmación es más rigurosa?",
+        "options": [
+          "La coincidencia no prueba causalidad; la temperatura podría influir en ambas.",
+          "Comprar helados causa necesariamente todo el consumo de agua.",
+          "La coincidencia demuestra que no existe ningún otro factor.",
+          "Toda correlación es una ley económica definitiva.",
+          "Los datos observados carecen siempre de utilidad."
+        ],
+        "answer": 0,
+        "solution": "Una tercera variable, como el calor, puede explicar movimientos conjuntos. Observar correlación orienta hipótesis, pero no demuestra por sí solo causalidad.",
+        "id": "p10"
+      }
+    ]
+  },
+  "economia-capitulo-02": {
+    "title": "División de la economía",
+    "problems": [
+      {
+        "topic": "Economía positiva",
+        "prompt": "¿Cuál es un enunciado positivo, aunque necesite comprobarse?",
+        "options": [
+          "El Estado debería priorizar este gasto sobre los demás.",
+          "Es preferible sacrificar crecimiento para lograr mayor igualdad.",
+          "El aumento del pasaje redujo el número de viajes.",
+          "El transporte debe ser gratuito por justicia.",
+          "La distribución actual es moralmente inaceptable."
+        ],
+        "answer": 2,
+        "solution": "El enunciado propone una relación observable entre precio y viajes. Puede contrastarse, por lo que es positivo independientemente de que resulte verdadero.",
+        "id": "p01"
+      },
+      {
+        "topic": "Economía normativa",
+        "prompt": "¿Qué enunciado expresa directamente un juicio normativo?",
+        "options": [
+          "Una encuesta registró menos abandono escolar.",
+          "El gasto por estudiante se calcula dividiendo gasto entre matrícula.",
+          "El precio nominal de un libro pasó de S/ 20 a S/ 24.",
+          "El presupuesto debería priorizar el acceso igualitario a educación.",
+          "El presupuesto educativo aumentó respecto del año anterior."
+        ],
+        "answer": 3,
+        "solution": "La propuesta utiliza un criterio de prioridad y justicia. Las demás opciones describen hechos o procedimientos de cálculo.",
+        "id": "p02"
+      },
+      {
+        "topic": "Descripción",
+        "prompt": "Una entidad realiza una encuesta, ordena respuestas y publica una tabla de empleo. Esta actividad corresponde principalmente a:",
+        "options": [
+          "Una decisión normativa ya ejecutada.",
+          "La creación de una ley universal sin datos.",
+          "Una política monetaria.",
+          "Una reforma constitucional.",
+          "Economía descriptiva."
+        ],
+        "answer": 4,
+        "solution": "La economía descriptiva recoge y organiza datos sobre hechos económicos. Explicar sus causas constituye una tarea analítica posterior o complementaria.",
+        "id": "p03"
+      },
+      {
+        "topic": "Microeconomía",
+        "prompt": "¿Cuál es una pregunta microeconómica?",
+        "options": [
+          "¿Cómo varían los costos de una panadería al producir más?",
+          "¿Cómo evoluciona la inflación del país?",
+          "¿Cuál es la producción real agregada de la economía?",
+          "¿Qué explica el desempleo nacional?",
+          "¿Cómo se comporta la demanda agregada?"
+        ],
+        "answer": 0,
+        "solution": "Los costos de una empresa y sus decisiones de producción son preguntas microeconómicas. El tamaño de la empresa no cambia esta clasificación.",
+        "id": "p04"
+      },
+      {
+        "topic": "Macroeconomía",
+        "prompt": "¿Qué investigación corresponde a macroeconomía?",
+        "options": [
+          "La estrategia de un vendedor en un mercado particular.",
+          "La relación entre producción nacional y desempleo agregado.",
+          "La preferencia de una familia entre dos productos.",
+          "El precio de una entrada de cine específica.",
+          "El costo de un horno de una panadería."
+        ],
+        "answer": 1,
+        "solution": "La producción nacional y el desempleo agregado se estudian a escala del conjunto económico. Las otras preguntas se centran en agentes o mercados específicos.",
+        "id": "p05"
+      },
+      {
+        "topic": "Magnitudes nominales",
+        "prompt": "Una tienda vende 50 unidades a S/ 6 y luego 50 a S/ 8. ¿Qué ocurrió?",
+        "options": [
+          "El ingreso por ventas permaneció igual.",
+          "El aumento demuestra mayor productividad laboral.",
+          "Aumentaron las ventas nominales, pero no la cantidad vendida.",
+          "La cantidad vendida aumentó un tercio.",
+          "La cantidad vendida cayó un cuarto."
+        ],
+        "answer": 2,
+        "solution": "El ingreso pasó de S/ 300 a S/ 400, mientras la cantidad siguió en 50. El cambio monetario se explica por el precio.",
+        "id": "p06"
+      },
+      {
+        "topic": "Política fiscal",
+        "prompt": "¿Cuál es un instrumento del ámbito fiscal?",
+        "options": [
+          "La elección de compra de una sola familia.",
+          "La capacidad física de una máquina.",
+          "La utilidad marginal de un consumidor.",
+          "El gasto en construcción de infraestructura pública.",
+          "La tasa de referencia del banco central."
+        ],
+        "answer": 3,
+        "solution": "La política fiscal se relaciona con ingresos, gasto y financiamiento públicos. La inversión pública es una decisión de ese ámbito.",
+        "id": "p07"
+      },
+      {
+        "topic": "Política monetaria",
+        "prompt": "Una modificación de la tasa de referencia del BCRP pertenece al ámbito de:",
+        "options": [
+          "Política de clasificación de bienes.",
+          "Reforma del sistema de normas morales.",
+          "Contabilidad doméstica exclusivamente.",
+          "Medición de necesidades básicas por sí sola.",
+          "Política monetaria."
+        ],
+        "answer": 4,
+        "solution": "La tasa de referencia es un instrumento de política monetaria. El BCRP tiene autonomía y finalidad constitucional de preservar la estabilidad monetaria.",
+        "id": "p08"
+      },
+      {
+        "topic": "Desarrollo",
+        "prompt": "La producción real crece, pero no mejoran servicios ni oportunidades para gran parte de la población. ¿Qué conclusión es válida?",
+        "options": [
+          "El crecimiento observado no demuestra por sí solo desarrollo integral.",
+          "Crecimiento y desarrollo son siempre sinónimos exactos.",
+          "La producción real no puede crecer en ese contexto.",
+          "El acceso a servicios es irrelevante para el desarrollo.",
+          "Todo crecimiento elimina automáticamente la pobreza."
+        ],
+        "answer": 0,
+        "solution": "El desarrollo incorpora capacidades y condiciones de vida. Para evaluarlo se requiere información adicional al crecimiento de la producción.",
+        "id": "p09"
+      },
+      {
+        "topic": "Evaluación de políticas",
+        "prompt": "Después de un programa mejora el empleo. ¿Qué hace falta para atribuirle causalmente la mejora?",
+        "options": [
+          "Descartar cualquier información previa.",
+          "Comparar con una alternativa pertinente y considerar otros cambios.",
+          "Suponer que todo lo posterior fue causado por el programa.",
+          "Reemplazar los datos por la intención declarada.",
+          "Observar únicamente un caso favorable."
+        ],
+        "answer": 1,
+        "solution": "La evaluación necesita un contrafactual o comparación adecuada. Otros factores pueden haber contribuido al cambio observado.",
+        "id": "p10"
+      }
+    ]
+  },
+  "economia-capitulo-03": {
+    "title": "Necesidades y pobreza",
+    "problems": [
+      {
+        "topic": "Necesidad y deseo",
+        "prompt": "Una estudiante necesita trasladarse y desea una marca específica de bicicleta. ¿Qué distinción es correcta?",
+        "options": [
+          "Necesidad y marca son siempre términos idénticos.",
+          "Ningún servicio puede satisfacer transporte.",
+          "Elegir una marca elimina la escasez.",
+          "Trasladarse es la necesidad; la bicicleta elegida es un satisfactor deseado.",
+          "La marca es la única necesidad posible."
+        ],
+        "answer": 3,
+        "solution": "La necesidad puede satisfacerse mediante alternativas. El deseo concreta una opción, que no tiene que ser la única viable.",
+        "id": "p01"
+      },
+      {
+        "topic": "Concurrencia",
+        "prompt": "Al mismo tiempo, un hogar necesita reparar el techo y comprar materiales de estudio, pero debe priorizar. ¿Qué característica aparece?",
+        "options": [
+          "Ausencia de restricciones.",
+          "Utilidad total negativa necesariamente.",
+          "Identidad entre todos los satisfactores.",
+          "Pobreza extrema demostrada sin medición.",
+          "Concurrencia de necesidades."
+        ],
+        "answer": 4,
+        "solution": "Las necesidades concurrentes se presentan simultáneamente y exigen priorización cuando no pueden atenderse todas de inmediato.",
+        "id": "p02"
+      },
+      {
+        "topic": "Complementariedad",
+        "prompt": "Para participar en una clase virtual se requieren dispositivo y conexión. En este caso son:",
+        "options": [
+          "Recursos complementarios para esa actividad.",
+          "Dos sustitutos perfectos en todos los usos.",
+          "Prueba de ausencia de necesidades.",
+          "Bienes necesariamente gratuitos.",
+          "Recursos que nunca tienen costo de oportunidad."
+        ],
+        "answer": 0,
+        "solution": "Los recursos se usan conjuntamente para atender la actividad. Contar con solo uno puede no permitir el acceso.",
+        "id": "p03"
+      },
+      {
+        "topic": "Utilidad marginal",
+        "prompt": "La utilidad total aumenta de 24 a 30 al consumir una unidad adicional. ¿Cuál es la utilidad marginal de esa unidad?",
+        "options": [
+          "−6 unidades.",
+          "6 unidades de utilidad.",
+          "54 unidades.",
+          "30 unidades.",
+          "24 unidades."
+        ],
+        "answer": 1,
+        "solution": "La utilidad marginal es el incremento de utilidad total: 30 − 24 = 6. Las unidades son hipotéticas dentro del ejercicio.",
+        "id": "p04"
+      },
+      {
+        "topic": "Utilidad total",
+        "prompt": "Si la utilidad marginal pasa de 8 a 5 y continúa siendo positiva, la utilidad total:",
+        "options": [
+          "Permanece obligatoriamente constante.",
+          "Se iguala al precio de mercado.",
+          "Sigue aumentando, pero con un incremento menor.",
+          "Disminuye necesariamente.",
+          "Se vuelve siempre negativa."
+        ],
+        "answer": 2,
+        "solution": "Una utilidad marginal positiva agrega satisfacción total. Que sea decreciente significa que el incremento es menor, no que la total deba caer.",
+        "id": "p05"
+      },
+      {
+        "topic": "Clasificación de necesidades",
+        "prompt": "¿Cómo debe interpretarse la clasificación escolar de necesidades primarias, secundarias y suntuarias?",
+        "options": [
+          "Como una lista idéntica para toda sociedad y época.",
+          "Como autorización para negar atención de salud.",
+          "Como una medición oficial de pobreza por sí sola.",
+          "Como una herramienta contextual que no establece una jerarquía de derechos.",
+          "Como prueba de que educación no puede ser un derecho."
+        ],
+        "answer": 3,
+        "solution": "Las categorías didácticas dependen del contexto. No reemplazan los derechos ni justifican considerar prescindibles educación o salud.",
+        "id": "p06"
+      },
+      {
+        "topic": "Pobreza y escasez",
+        "prompt": "¿Cuál es la distinción más precisa?",
+        "options": [
+          "Toda persona que elige es necesariamente pobre extrema.",
+          "Solo existe escasez en hogares sin ingresos.",
+          "Pobreza significa únicamente falta de monedas.",
+          "Escasez y pobreza son siempre equivalentes.",
+          "La escasez obliga a elegir usos; la pobreza expresa privaciones de bienestar."
+        ],
+        "answer": 4,
+        "solution": "Los recursos tienen usos alternativos en todas las economías. La pobreza requiere evaluar condiciones de vida mediante criterios específicos.",
+        "id": "p07"
+      },
+      {
+        "topic": "Línea hipotética",
+        "prompt": "Un hogar de 5 personas gasta S/ 1800. Las líneas hipotéticas por persona son S/ 500 total y S/ 250 alimentaria. Se clasifica como:",
+        "options": [
+          "Pobre monetario no extremo.",
+          "Pobre extremo.",
+          "No pobre monetario.",
+          "Imposible calcular por no conocer ingresos.",
+          "Hogar con gasto per cápita de S/ 1800."
+        ],
+        "answer": 0,
+        "solution": "El gasto por persona es 1800 ÷ 5 = S/ 360. Está por debajo de la línea total y por encima de la alimentaria.",
+        "id": "p08"
+      },
+      {
+        "topic": "Umbral del hogar",
+        "prompt": "Con una línea hipotética total de S/ 480 por persona, ¿cuál es el umbral para un hogar de 4 integrantes?",
+        "options": [
+          "S/ 480.",
+          "S/ 1920.",
+          "S/ 120.",
+          "S/ 484.",
+          "S/ 960."
+        ],
+        "answer": 1,
+        "solution": "Se multiplica el umbral por persona por el número de integrantes: 480 × 4 = S/ 1920. La cifra es hipotética.",
+        "id": "p09"
+      },
+      {
+        "topic": "Medición no monetaria",
+        "prompt": "¿Qué evidencia complementa una medición monetaria de pobreza?",
+        "options": [
+          "El total de billetes sin conocer el hogar.",
+          "La preferencia política de la persona.",
+          "La disponibilidad de agua segura y condiciones de vivienda.",
+          "Únicamente el nombre de una marca consumida.",
+          "Solo el precio de un producto de lujo."
+        ],
+        "answer": 2,
+        "solution": "Las condiciones de vivienda y acceso a servicios informan sobre privaciones que el gasto monetario por sí solo puede no revelar.",
+        "id": "p10"
+      }
+    ]
+  },
+  "economia-capitulo-04": {
+    "title": "Bienes y servicios",
+    "problems": [
+      {
+        "topic": "Bien económico",
+        "prompt": "Un servicio se ofrece sin cobro al usuario, pero utiliza personal y equipos. ¿Qué afirmación es correcta?",
+        "options": [
+          "Debe ser libre porque no tiene precio para el usuario.",
+          "No utiliza recursos si es financiado públicamente.",
+          "Nunca tiene costo de oportunidad.",
+          "No puede satisfacer necesidades.",
+          "Puede ser económico porque utiliza recursos escasos aunque sea gratuito al usuario."
+        ],
+        "answer": 4,
+        "solution": "Gratuidad para el usuario y ausencia de escasez son conceptos distintos. Trabajo y equipos tienen usos alternativos y costos.",
+        "id": "p01"
+      },
+      {
+        "topic": "Destino",
+        "prompt": "Un horno nuevo se utiliza durante años en una panadería. Por destino y duración, es:",
+        "options": [
+          "De capital y duradero.",
+          "De consumo y no duradero.",
+          "Libre y no duradero.",
+          "Intermedio por ser siempre destruido al primer uso.",
+          "De consumo solo por tener un precio."
+        ],
+        "answer": 0,
+        "solution": "El horno contribuye a producir otros bienes y se usa repetidamente. Por ello es capital físico y bien duradero.",
+        "id": "p02"
+      },
+      {
+        "topic": "Intermedio y final",
+        "prompt": "La harina que compra una familia para cocinar para sí misma se considera, por su uso en ese caso:",
+        "options": [
+          "Bien Giffen por definición.",
+          "Bien final de consumo.",
+          "Bien intermedio de la panadería.",
+          "Bien de capital fijo.",
+          "Bien necesariamente libre."
+        ],
+        "answer": 1,
+        "solution": "La clasificación depende del destino. Comprada para uso final del hogar, la harina es un bien final de consumo.",
+        "id": "p03"
+      },
+      {
+        "topic": "Sustitutos",
+        "prompt": "Si sube el precio del té y algunos consumidores compran más café, manteniendo lo demás constante, ambos actúan como:",
+        "options": [
+          "Factores fijos de producción.",
+          "Servicios colectivos estatales.",
+          "Sustitutos en ese contexto.",
+          "Complementarios necesariamente.",
+          "Bienes públicos idénticos."
+        ],
+        "answer": 2,
+        "solution": "El café sustituye parte del consumo de té. La relación se identifica por el comportamiento de demanda en el contexto analizado.",
+        "id": "p04"
+      },
+      {
+        "topic": "Complementarios",
+        "prompt": "¿Qué pareja representa más claramente complementariedad en un uso específico?",
+        "options": [
+          "Dos marcas intercambiables de agua.",
+          "Autobús y bicicleta como alternativas de viaje.",
+          "Dos productos que nunca se usan juntos.",
+          "Impresora y cartucho compatible.",
+          "Té y café como bebidas alternativas."
+        ],
+        "answer": 3,
+        "solution": "La impresora requiere el cartucho compatible para ese uso. Los bienes complementarios se emplean conjuntamente.",
+        "id": "p05"
+      },
+      {
+        "topic": "Bien inferior",
+        "prompt": "Al aumentar el ingreso de un hogar, disminuye su demanda de un producto. Manteniendo lo demás constante, ese producto es:",
+        "options": [
+          "Necesariamente defectuoso.",
+          "Siempre Giffen.",
+          "Libre en cualquier lugar.",
+          "Normal por definición.",
+          "Inferior para ese hogar en el intervalo considerado."
+        ],
+        "answer": 4,
+        "solution": "Inferior describe la respuesta de demanda al ingreso. No determina la calidad del bien ni prueba el comportamiento excepcional de Giffen.",
+        "id": "p06"
+      },
+      {
+        "topic": "Fungibilidad",
+        "prompt": "¿Qué precisión evita una confusión del material escolar?",
+        "options": [
+          "Fungible se refiere a sustitución por equivalentes y no es sinónimo exacto de no duradero.",
+          "Todo bien duradero es necesariamente un inmueble.",
+          "Todo bien intangible carece de utilidad.",
+          "Todo bien final es un bien de consumo.",
+          "Todo bien natural es libre."
+        ],
+        "answer": 0,
+        "solution": "La fungibilidad es una propiedad jurídica distinta de la duración. Los criterios de clasificación deben mantenerse separados.",
+        "id": "p07"
+      },
+      {
+        "topic": "Valor agregado",
+        "prompt": "Sin otros insumos, una cadena vende materia prima por S/ 30, producto intermedio por S/ 50 y producto final por S/ 90. ¿Cuál es el valor agregado de la última etapa?",
+        "options": [
+          "S/ 140.",
+          "S/ 40.",
+          "S/ 90.",
+          "S/ 170.",
+          "S/ 50."
+        ],
+        "answer": 1,
+        "solution": "El valor agregado de esa etapa es 90 − 50 = S/ 40. Se resta el insumo adquirido, sin sumar repetidamente su valor.",
+        "id": "p08"
+      },
+      {
+        "topic": "Servicios",
+        "prompt": "Un taller municipal atiende a un grupo de vecinos. Por proveedor y destinatarios, se clasifica como:",
+        "options": [
+          "Intermedio y fungible como criterios de proveedor.",
+          "Exclusivamente industrial secundario.",
+          "Público y colectivo.",
+          "Privado e individual.",
+          "Libre e intangible necesariamente sin costos."
+        ],
+        "answer": 2,
+        "solution": "El proveedor es municipal y el servicio se dirige a un grupo. Estas categorías no prueban por sí solas que sea un bien público económico puro.",
+        "id": "p09"
+      },
+      {
+        "topic": "Giffen",
+        "prompt": "¿Qué afirmación sobre bienes inferiores y Giffen es correcta?",
+        "options": [
+          "Giffen significa que el bien es gratuito.",
+          "Un bien es Giffen solo por ser un alimento básico.",
+          "Giffen e inferior describen exactamente la misma relación.",
+          "No todo bien inferior presenta comportamiento Giffen.",
+          "Todo bien inferior es automáticamente Giffen."
+        ],
+        "answer": 3,
+        "solution": "Inferior relaciona demanda con ingreso; Giffen se refiere a una respuesta excepcional al precio propio. Son propiedades distintas.",
+        "id": "p10"
+      }
+    ]
+  },
+  "economia-capitulo-05": {
+    "title": "Proceso económico y sectores productivos",
+    "problems": [
+      {
+        "topic": "Fases",
+        "prompt": "¿Qué secuencia contiene las cinco fases del esquema estudiado?",
+        "options": [
+          "Producción, circulación, distribución, consumo e inversión.",
+          "Producción, inflación, desempleo, comercio y pobreza.",
+          "Oferta, ley, moral, ciudadanía y capital.",
+          "Ahorro, ahorro, consumo, consumo y precio.",
+          "Interpelación, censura, producción, consumo y elección."
+        ],
+        "answer": 0,
+        "solution": "El esquema del material distingue esas cinco fases, que se relacionan y pueden desarrollarse simultáneamente.",
+        "id": "p01"
+      },
+      {
+        "topic": "Producción",
+        "prompt": "Una docente presta una clase. ¿Qué afirmación es correcta?",
+        "options": [
+          "La clase no puede satisfacer necesidades.",
+          "Produce un servicio que puede generar valor económico.",
+          "Solo se produce cuando se fabrica un objeto.",
+          "Los servicios no utilizan factores productivos.",
+          "La docencia pertenece siempre al sector primario."
+        ],
+        "answer": 1,
+        "solution": "La producción incluye bienes y servicios. Enseñar utiliza recursos y trabajo para atender una necesidad educativa.",
+        "id": "p02"
+      },
+      {
+        "topic": "Circulación",
+        "prompt": "La venta de un servicio digital sin traslado de objetos muestra que circulación significa:",
+        "options": [
+          "Eliminación de todos los mercados.",
+          "Consumo de capital fijo necesariamente.",
+          "Intercambio y conexión entre agentes, además del movimiento físico cuando lo hay.",
+          "Únicamente transporte en camiones.",
+          "Pago de salarios exclusivamente."
+        ],
+        "answer": 2,
+        "solution": "La circulación económica incluye transacciones. Puede existir intercambio sin transporte de un objeto material.",
+        "id": "p03"
+      },
+      {
+        "topic": "Distribución",
+        "prompt": "¿Qué caso corresponde a distribución del ingreso?",
+        "options": [
+          "La colocación de productos en una estantería.",
+          "El embalaje físico de un pedido.",
+          "El recorrido de un camión sin pagos.",
+          "El pago de remuneraciones por el trabajo realizado.",
+          "El traslado de cajas de un almacén a otro."
+        ],
+        "answer": 3,
+        "solution": "Distribuir ingreso es asignar recursos monetarios a participantes. No equivale al reparto físico de mercaderías.",
+        "id": "p04"
+      },
+      {
+        "topic": "Ahorro",
+        "prompt": "Un hogar tiene ingreso disponible de S/ 2700 y consumo de S/ 2300. ¿Cuál es su ahorro?",
+        "options": [
+          "S/ 5000.",
+          "S/ 2300.",
+          "S/ 2700.",
+          "−S/ 400.",
+          "S/ 400."
+        ],
+        "answer": 4,
+        "solution": "En la identidad simplificada, ahorro = ingreso disponible − consumo: 2700 − 2300 = S/ 400.",
+        "id": "p05"
+      },
+      {
+        "topic": "Inversión real",
+        "prompt": "¿Qué operación constituye más claramente inversión real?",
+        "options": [
+          "Comprar una máquina nueva para aumentar capacidad productiva.",
+          "Comprar una acción ya existente a otra persona.",
+          "Pagar una cena para consumo personal.",
+          "Cambiar billetes de igual valor.",
+          "Recibir una remuneración sin adquirir activos."
+        ],
+        "answer": 0,
+        "solution": "La máquina nueva amplía o renueva capacidad de producción. La compra de un título existente es una operación financiera y no crea por sí sola capital físico.",
+        "id": "p06"
+      },
+      {
+        "topic": "Sectores",
+        "prompt": "La elaboración industrial de conservas pertenece al sector:",
+        "options": [
+          "Doméstico sin producción.",
+          "Secundario.",
+          "Primario por vender alimentos.",
+          "Terciario por usar trabajadores.",
+          "Financiero exclusivamente."
+        ],
+        "answer": 1,
+        "solution": "Transformar materia prima mediante manufactura corresponde al sector secundario. El tipo de alimento no convierte la transformación en extracción.",
+        "id": "p07"
+      },
+      {
+        "topic": "Sectores",
+        "prompt": "El transporte de pasajeros y la atención educativa pertenecen al sector:",
+        "options": [
+          "Extractivo exclusivamente.",
+          "Agrícola por definición.",
+          "Terciario.",
+          "Primario.",
+          "Secundario en todos los casos."
+        ],
+        "answer": 2,
+        "solution": "Ambas actividades prestan servicios. En la clasificación de tres sectores corresponden al terciario.",
+        "id": "p08"
+      },
+      {
+        "topic": "Flujo circular",
+        "prompt": "En el modelo simple, cuando hogares ofrecen trabajo a empresas y reciben salarios, se observa:",
+        "options": [
+          "Solo circulación de productos finales.",
+          "Una ausencia total de intercambio.",
+          "Una inversión física obligatoria de cada hogar.",
+          "Un flujo real de trabajo y otro monetario en sentido contrario.",
+          "Dos flujos monetarios idénticos."
+        ],
+        "answer": 3,
+        "solution": "El trabajo es el flujo real que va a las empresas; la remuneración es el flujo monetario que vuelve a los hogares.",
+        "id": "p09"
+      },
+      {
+        "topic": "Valor agregado",
+        "prompt": "Una empresa vende producción por S/ 900 y utiliza insumos intermedios por S/ 500. ¿Cuál es su valor agregado en el ejercicio?",
+        "options": [
+          "S/ 1400.",
+          "S/ 900.",
+          "S/ 500.",
+          "S/ 1800.",
+          "S/ 400."
+        ],
+        "answer": 4,
+        "solution": "El valor agregado se obtiene restando consumo intermedio al valor de producción: 900 − 500 = S/ 400. No equivale automáticamente a ganancia.",
+        "id": "p10"
+      }
+    ]
+  },
+  "economia-capitulo-06": {
+    "title": "Teoría de la producción y costos de producción",
+    "problems": [
+      {
+        "topic": "Factores",
+        "prompt": "¿Cuál es un ejemplo de capital físico productivo?",
+        "options": [
+          "La necesidad de alimentación.",
+          "Una máquina utilizada en una fábrica.",
+          "La habilidad adquirida por una trabajadora.",
+          "Una hora de esfuerzo laboral.",
+          "Un recurso natural sin transformar."
+        ],
+        "answer": 1,
+        "solution": "Una máquina producida para generar otros bienes es capital físico. Las habilidades son capital humano y el esfuerzo constituye trabajo.",
+        "id": "p01"
+      },
+      {
+        "topic": "Horizonte temporal",
+        "prompt": "El corto plazo se define porque:",
+        "options": [
+          "La producción debe ser cero.",
+          "Los costos variables desaparecen por definición.",
+          "Existe al menos un factor productivo fijo.",
+          "Siempre dura exactamente un año.",
+          "Todos los factores pueden ajustarse sin restricción."
+        ],
+        "answer": 2,
+        "solution": "La distinción depende de la posibilidad de ajustar factores, no de un número universal de meses o años.",
+        "id": "p02"
+      },
+      {
+        "topic": "Productividad media",
+        "prompt": "Cinco trabajadores producen 150 unidades durante una jornada. ¿Cuál es el producto medio del trabajo?",
+        "options": [
+          "145 unidades por trabajador.",
+          "5 unidades por trabajador.",
+          "150 unidades por trabajador.",
+          "30 unidades por trabajador.",
+          "750 unidades por trabajador."
+        ],
+        "answer": 3,
+        "solution": "PMe = Q/L = 150/5 = 30 unidades por trabajador en la jornada considerada.",
+        "id": "p03"
+      },
+      {
+        "topic": "Producto marginal",
+        "prompt": "Con 4 trabajadores se producen 80 unidades y con 5 se producen 95. Manteniendo lo demás constante, el producto marginal del quinto es:",
+        "options": [
+          "19 unidades.",
+          "20 unidades.",
+          "175 unidades.",
+          "95 unidades.",
+          "15 unidades."
+        ],
+        "answer": 4,
+        "solution": "PMg = ΔQ/ΔL = (95 − 80)/(5 − 4) = 15. No se confunde con el producto medio de 95/5.",
+        "id": "p04"
+      },
+      {
+        "topic": "Rendimientos",
+        "prompt": "Si el producto marginal disminuye de 12 a 7, pero sigue positivo, el producto total:",
+        "options": [
+          "Aumenta con un incremento menor.",
+          "Cae necesariamente.",
+          "Se vuelve negativo.",
+          "Permanece siempre constante.",
+          "Se iguala al costo total."
+        ],
+        "answer": 0,
+        "solution": "Un marginal positivo añade producto. Que disminuya implica un incremento menor; el total cae solo si el marginal es negativo.",
+        "id": "p05"
+      },
+      {
+        "topic": "Costo total",
+        "prompt": "Con CF = S/ 120 y CV = S/ 280, el costo total es:",
+        "options": [
+          "S/ 33 600.",
+          "S/ 400.",
+          "S/ 160.",
+          "S/ 280.",
+          "S/ 120."
+        ],
+        "answer": 1,
+        "solution": "CT = CF + CV = 120 + 280 = S/ 400. Los dos componentes corresponden al mismo nivel de producción y periodo.",
+        "id": "p06"
+      },
+      {
+        "topic": "Costo medio",
+        "prompt": "Una empresa produce 25 unidades con CT = S/ 500. Su costo total medio es:",
+        "options": [
+          "S/ 12 500 por unidad.",
+          "S/ 25 por unidad.",
+          "S/ 20 por unidad.",
+          "S/ 525 por unidad.",
+          "S/ 475 por unidad."
+        ],
+        "answer": 2,
+        "solution": "CMe = CT/Q = 500/25 = S/ 20 por unidad. El costo medio es una razón y no una suma.",
+        "id": "p07"
+      },
+      {
+        "topic": "Costo marginal",
+        "prompt": "CT aumenta de S/ 320 a S/ 380 cuando Q pasa de 20 a 25. El costo adicional medio del tramo es:",
+        "options": [
+          "S/ 15,20 por unidad.",
+          "S/ 16 por unidad.",
+          "S/ 700 por unidad.",
+          "S/ 12 por unidad.",
+          "S/ 60 por unidad."
+        ],
+        "answer": 3,
+        "solution": "CMg del tramo = ΔCT/ΔQ = (380 − 320)/(25 − 20) = 60/5 = S/ 12 por unidad adicional en promedio.",
+        "id": "p08"
+      },
+      {
+        "topic": "Producción cero",
+        "prompt": "En el modelo básico de corto plazo, si Q = 0, CF = S/ 100 y CV = 0, ¿qué afirmación es correcta?",
+        "options": [
+          "CT es cero y CMe es cero.",
+          "CT es S/ 100 y CMe es S/ 100.",
+          "CT es negativo y CMe es positivo.",
+          "CF desaparece automáticamente.",
+          "CT es S/ 100 y el costo medio no está definido."
+        ],
+        "answer": 4,
+        "solution": "El costo fijo persiste: CT = 100 + 0. CMe = CT/Q no se calcula dividiendo entre cero.",
+        "id": "p09"
+      },
+      {
+        "topic": "Costos medios",
+        "prompt": "Para Q = 20, CF = S/ 100 y CV = S/ 180. ¿Cuál es la combinación correcta?",
+        "options": [
+          "CFMe = 5; CVMe = 9; CMe = 14.",
+          "CFMe = 100; CVMe = 180; CMe = 280.",
+          "CFMe = 9; CVMe = 5; CMe = 4.",
+          "CFMe = 5; CVMe = 9; CMe = 45.",
+          "CFMe = 20; CVMe = 20; CMe = 40."
+        ],
+        "answer": 0,
+        "solution": "Al dividir cada componente entre 20 se obtiene 5 y 9. El costo medio total es (100 + 180)/20 = 14, igual a la suma de ambos promedios.",
+        "id": "p10"
+      }
+    ]
+  },
+  "educacion-civica-capitulo-01": {
+    "title": "Educación cívica y las normas",
+    "problems": [
+      {
+        "topic": "Formación cívica",
+        "prompt": "Una asamblea escucha críticas y exige argumentos antes de decidir. ¿Qué práctica cívica desarrolla?",
+        "options": [
+          "Concentración de decisiones sin explicación.",
+          "Deliberación democrática y respeto al disenso.",
+          "Obediencia sin posibilidad de preguntar.",
+          "Exclusión de toda posición minoritaria.",
+          "Sustitución de derechos por preferencias personales."
+        ],
+        "answer": 1,
+        "solution": "Deliberar supone escuchar, justificar y respetar a quienes discrepan. La participación democrática no se limita a contar votos.",
+        "id": "p01"
+      },
+      {
+        "topic": "Norma moral",
+        "prompt": "Una persona actúa honestamente por convicción de conciencia. ¿Qué fundamento normativo destaca el caso?",
+        "options": [
+          "Electoral exclusivamente.",
+          "Constituyente en todo caso.",
+          "Moral.",
+          "Reglamentario por definición.",
+          "Tributario necesariamente."
+        ],
+        "answer": 2,
+        "solution": "El caso destaca la convicción personal sobre lo correcto, propia del fundamento moral. La misma conducta puede tener además relevancia jurídica.",
+        "id": "p02"
+      },
+      {
+        "topic": "Norma religiosa",
+        "prompt": "Una regla de una comunidad basada en sus creencias pertenece principalmente al ámbito:",
+        "options": [
+          "Electoral.",
+          "De organización parlamentaria.",
+          "De jerarquía presupuestal.",
+          "Religioso.",
+          "Fiscal."
+        ],
+        "answer": 3,
+        "solution": "El criterio decisivo es el fundamento en la fe y en la comunidad religiosa. No implica que esa regla sea automáticamente ley estatal.",
+        "id": "p03"
+      },
+      {
+        "topic": "Norma jurídica",
+        "prompt": "¿Qué rasgo caracteriza principalmente a una norma jurídica?",
+        "options": [
+          "Que depende solo de la aprobación de amistades.",
+          "Que toda infracción recibe siempre prisión.",
+          "Que nunca crea facultades, solo castigos.",
+          "Que puede emitirse por cualquier persona con autoridad informal.",
+          "Su pertenencia al ordenamiento y la garantía institucional de cumplimiento."
+        ],
+        "answer": 4,
+        "solution": "La norma jurídica cuenta con reconocimiento institucional y mecanismos de exigibilidad. Sus consecuencias y autoridades competentes varían según la materia.",
+        "id": "p04"
+      },
+      {
+        "topic": "Bilateralidad",
+        "prompt": "Una norma reconoce una facultad a una persona y una obligación correlativa a otra. Esto expresa:",
+        "options": [
+          "Bilateralidad.",
+          "Ausencia de regulación.",
+          "Simple duración de la norma.",
+          "Unanimidad moral.",
+          "Supresión del procedimiento."
+        ],
+        "answer": 0,
+        "solution": "La bilateralidad relaciona derechos o facultades con deberes correlativos. No se refiere a que una regla deba tener dos artículos.",
+        "id": "p05"
+      },
+      {
+        "topic": "Coacción",
+        "prompt": "¿Qué diferencia la posibilidad institucional de exigir una regla de su ejecución efectiva?",
+        "options": [
+          "Ninguna necesita límites jurídicos.",
+          "La primera es coercibilidad; la segunda puede implicar coacción regulada.",
+          "La primera elimina derechos; la segunda nunca requiere competencia.",
+          "Ambas equivalen siempre a una condena penal.",
+          "La primera es un contrato y la segunda una costumbre."
+        ],
+        "answer": 1,
+        "solution": "El respaldo potencial y la ejecución efectiva son conceptos distintos. La actuación material debe respetar competencia, procedimiento y derechos.",
+        "id": "p06"
+      },
+      {
+        "topic": "Jerarquía",
+        "prompt": "Si un reglamento contradice una ley que debe desarrollar, ¿qué criterio permite cuestionarlo?",
+        "options": [
+          "La prioridad de la voluntad de quien firma el reglamento.",
+          "La derogación automática de la Constitución.",
+          "La subordinación jerárquica del reglamento a la ley.",
+          "La superioridad automática de todo decreto sobre toda ley.",
+          "La inexistencia de jerarquía normativa."
+        ],
+        "answer": 2,
+        "solution": "El artículo 51 establece jerarquía normativa. Un reglamento no puede transgredir la ley que desarrolla.",
+        "id": "p07"
+      },
+      {
+        "topic": "Leyes orgánicas",
+        "prompt": "¿Cuál es una precisión correcta sobre leyes orgánicas y ordinarias?",
+        "options": [
+          "Toda ley ordinaria puede desconocer las materias reservadas.",
+          "Las orgánicas son únicamente normas morales.",
+          "Las ordinarias carecen de fuerza obligatoria.",
+          "Tienen rango legal y se distinguen por materias y procedimientos.",
+          "Toda ley orgánica supera a la Constitución."
+        ],
+        "answer": 3,
+        "solution": "La distinción no crea una superioridad general de todas las leyes orgánicas. Importan la reserva material y los procedimientos de aprobación.",
+        "id": "p08"
+      },
+      {
+        "topic": "Competencia",
+        "prompt": "Una ordenanza municipal regula un asunto completamente ajeno a sus atribuciones. Además de jerarquía, debe examinarse:",
+        "options": [
+          "Solo el número de páginas de la ordenanza.",
+          "Únicamente la popularidad del alcalde.",
+          "El tamaño del edificio municipal.",
+          "La cantidad de copias impresas.",
+          "La competencia de la autoridad."
+        ],
+        "answer": 4,
+        "solution": "Tener capacidad normativa no habilita a regular cualquier materia. La competencia define el ámbito de actuación de la autoridad.",
+        "id": "p09"
+      },
+      {
+        "topic": "Debido procedimiento",
+        "prompt": "Una autoridad sanciona sin regla aplicable ni posibilidad de defensa. ¿Qué evaluación corresponde?",
+        "options": [
+          "El respaldo estatal no reemplaza legalidad, competencia y procedimiento.",
+          "La autoridad puede sancionar por mera incomodidad.",
+          "Toda sanción estatal es válida por definición.",
+          "La defensa solo importa cuando la autoridad lo desea.",
+          "La costumbre de sancionar elimina los límites."
+        ],
+        "answer": 0,
+        "solution": "El Estado de derecho exige fundamento jurídico y garantías. La existencia de una autoridad no convierte cualquier decisión en legítima.",
+        "id": "p10"
+      }
+    ]
+  },
+  "educacion-civica-capitulo-02": {
+    "title": "La Constitución Política",
+    "problems": [
+      {
+        "topic": "Constitución",
+        "prompt": "La Constitución cumple principalmente la función de:",
+        "options": [
+          "Ser un programa personal del gobierno de turno.",
+          "Eliminar la necesidad de instituciones de control.",
+          "Organizar el poder, reconocer derechos y fijar límites a las autoridades.",
+          "Administrar únicamente el presupuesto de una familia.",
+          "Reemplazar todas las decisiones judiciales concretas."
+        ],
+        "answer": 2,
+        "solution": "La Constitución establece estructura, competencias, derechos y garantías. Su supremacía limita a quienes ejercen poder público.",
+        "id": "p01"
+      },
+      {
+        "topic": "Parte dogmática",
+        "prompt": "Un artículo que reconoce libertad e igualdad se vincula especialmente con la parte:",
+        "options": [
+          "Administrativa contable.",
+          "Reglamentaria municipal.",
+          "De inventario patrimonial.",
+          "Dogmática.",
+          "Orgánica exclusivamente."
+        ],
+        "answer": 3,
+        "solution": "La parte dogmática reúne derechos, valores y principios. La orgánica se refiere principalmente a organización y competencias estatales.",
+        "id": "p02"
+      },
+      {
+        "topic": "Parte orgánica",
+        "prompt": "La regulación de las competencias de un poder del Estado corresponde especialmente a la parte:",
+        "options": [
+          "Dogmática como único ámbito.",
+          "De costumbres privadas.",
+          "De deseos personales.",
+          "De precios de mercado.",
+          "Orgánica."
+        ],
+        "answer": 4,
+        "solution": "La estructura y funciones de las instituciones integran el contenido orgánico. Deben servir a la protección de los derechos.",
+        "id": "p03"
+      },
+      {
+        "topic": "Historia constitucional",
+        "prompt": "¿Qué relación histórica es correcta?",
+        "options": [
+          "1823: primera Constitución de la República peruana.",
+          "1826: Constitución de vigencia ininterrumpida hasta hoy.",
+          "1860: texto elaborado en el año 1993.",
+          "1979: primera Constitución republicana.",
+          "1993: texto que nunca recibió reformas."
+        ],
+        "answer": 0,
+        "solution": "La primera Constitución republicana es la de 1823. Su aplicación debe estudiarse en el contexto de la independencia.",
+        "id": "p04"
+      },
+      {
+        "topic": "Poderes constituidos",
+        "prompt": "Un ministerio no puede sustituir la Constitución por resolución porque:",
+        "options": [
+          "Un cambio de ministro crea automáticamente un nuevo orden constitucional.",
+          "Actúa con competencias limitadas como órgano constituido.",
+          "Toda resolución tiene más jerarquía que la Constitución.",
+          "La Constitución solo obliga a particulares.",
+          "Las competencias públicas son ilimitadas."
+        ],
+        "answer": 1,
+        "solution": "Los órganos constituidos reciben competencias del ordenamiento. Una resolución ministerial no tiene poder ni jerarquía para reemplazar la Constitución.",
+        "id": "p05"
+      },
+      {
+        "topic": "Estructura",
+        "prompt": "¿Qué título de la Constitución se refiere a las garantías constitucionales?",
+        "options": [
+          "Título III.",
+          "Título VI.",
+          "Título V.",
+          "Título I.",
+          "Título II."
+        ],
+        "answer": 2,
+        "solution": "El título V trata las garantías constitucionales. El título VI regula la reforma constitucional.",
+        "id": "p06"
+      },
+      {
+        "topic": "Reforma ordinaria",
+        "prompt": "Según el artículo 206 reformado, la vía con referéndum exige inicialmente:",
+        "options": [
+          "Únicamente firmas sin votación parlamentaria.",
+          "Mayoría de una comisión municipal.",
+          "La firma de cualquier autoridad regional.",
+          "Mayoría absoluta del número legal de miembros de cada cámara.",
+          "Solo la aprobación de un ministerio."
+        ],
+        "answer": 3,
+        "solution": "La reforma exige aprobación de cada cámara con mayoría absoluta y ratificación por referéndum en esta vía. No basta un acto ejecutivo.",
+        "id": "p07"
+      },
+      {
+        "topic": "Reforma sin referéndum",
+        "prompt": "¿Qué condición permite omitir referéndum por la vía prevista en el artículo 206?",
+        "options": [
+          "Una votación simple en una sola cámara.",
+          "Dos reuniones de una comisión durante el mismo día.",
+          "Un acuerdo exclusivo del Consejo de Ministros.",
+          "Una resolución de cualquier gobierno local.",
+          "Más de dos tercios en cada cámara en dos legislaturas ordinarias sucesivas."
+        ],
+        "answer": 4,
+        "solution": "La regla exige votación superior a dos tercios del número legal en cada cámara y en dos legislaturas ordinarias sucesivas.",
+        "id": "p08"
+      },
+      {
+        "topic": "Iniciativa ciudadana",
+        "prompt": "El artículo 206 establece para la iniciativa ciudadana de reforma constitucional firmas verificadas equivalentes al:",
+        "options": [
+          "0,3% de la población electoral.",
+          "3% de todos los habitantes sin distinción.",
+          "30% del número de ministros.",
+          "50% de las empresas registradas.",
+          "100% del padrón de una escuela."
+        ],
+        "answer": 0,
+        "solution": "La iniciativa corresponde a ciudadanos equivalentes al 0,3% de la población electoral, con firmas comprobadas. Iniciativa no significa reforma ya aprobada.",
+        "id": "p09"
+      },
+      {
+        "topic": "Actualización normativa",
+        "prompt": "¿Qué afirmación refleja la reforma de la Ley 31988?",
+        "options": [
+          "La reforma constitucional pasó a depender de una sola alcaldía.",
+          "El Congreso se organiza en Senado y Cámara de Diputados.",
+          "La Constitución quedó reemplazada por un reglamento.",
+          "Se eliminaron todos los controles parlamentarios.",
+          "Los ministerios asumieron permanentemente toda la función legislativa."
+        ],
+        "answer": 1,
+        "solution": "La Ley 31988 restablece la bicameralidad y modifica competencias y procedimientos. El libro de 2021 describe el sistema anterior.",
+        "id": "p10"
+      }
+    ]
+  },
+  "educacion-civica-capitulo-03": {
+    "title": "Los derechos y mecanismos de protección",
+    "problems": [
+      {
+        "topic": "Universalidad",
+        "prompt": "Una persona extranjera conserva sus derechos humanos porque estos:",
+        "options": [
+          "Se compran mediante un pago al Estado.",
+          "Existen solo durante elecciones.",
+          "Desaparecen sin una cuenta bancaria.",
+          "Se fundamentan en la dignidad de toda persona.",
+          "Dependen exclusivamente de su nacionalidad."
+        ],
+        "answer": 3,
+        "solution": "La universalidad comprende a todas las personas. Algunos derechos políticos tienen requisitos específicos, pero ello no elimina los derechos humanos.",
+        "id": "p01"
+      },
+      {
+        "topic": "Indivisibilidad",
+        "prompt": "Negar educación con el argumento de que solo interesa la libertad civil desconoce principalmente:",
+        "options": [
+          "La obligación de clasificar por precios.",
+          "La exclusividad de los derechos para adultos.",
+          "La superioridad automática de una generación.",
+          "La inexistencia de derechos sociales.",
+          "La indivisibilidad e interdependencia de los derechos."
+        ],
+        "answer": 4,
+        "solution": "Los derechos se relacionan y no se sustituyen por generaciones. Educación y libertades contribuyen conjuntamente al ejercicio de la dignidad.",
+        "id": "p02"
+      },
+      {
+        "topic": "Iusnaturalismo",
+        "prompt": "¿Qué enfoque fundamenta derechos en la condición humana anterior al reconocimiento estatal?",
+        "options": [
+          "Iusnaturalismo.",
+          "Una equivalencia estricta entre precio y justicia.",
+          "La idea de que solo existen permisos temporales.",
+          "La negación de todo criterio de justicia.",
+          "Un cálculo de costos de producción."
+        ],
+        "answer": 0,
+        "solution": "El iusnaturalismo fundamenta derechos en la naturaleza humana o criterios de justicia anteriores a su reconocimiento por normas positivas.",
+        "id": "p03"
+      },
+      {
+        "topic": "Obligaciones estatales",
+        "prompt": "Actuar frente a abusos de particulares contra derechos corresponde a la obligación estatal de:",
+        "options": [
+          "Limitar derechos sin motivación.",
+          "Proteger.",
+          "Renunciar a toda supervisión.",
+          "Sustituir cualquier proceso por castigo inmediato.",
+          "Aceptar cualquier discriminación privada."
+        ],
+        "answer": 1,
+        "solution": "Proteger exige medidas frente a vulneraciones por terceros. Se distingue del deber de abstención estatal propio de respetar.",
+        "id": "p04"
+      },
+      {
+        "topic": "Instrumentos",
+        "prompt": "¿Qué afirmación sobre la Declaración Universal de 1948 es correcta?",
+        "options": [
+          "Fue emitida por la Corte Interamericana en 1969.",
+          "Deroga automáticamente todas las constituciones.",
+          "Es una declaración fundamental y no constituye por sí misma un tratado.",
+          "Es una sentencia penal contra todas las personas.",
+          "Es un reglamento municipal peruano."
+        ],
+        "answer": 2,
+        "solution": "La Declaración Universal fue adoptada por la ONU en 1948. Debe distinguirse de los tratados y de las decisiones judiciales.",
+        "id": "p05"
+      },
+      {
+        "topic": "Hábeas corpus",
+        "prompt": "En un caso educativo se denuncia una detención arbitraria. ¿Qué garantía se relaciona principalmente con el derecho afectado?",
+        "options": [
+          "Referéndum.",
+          "Revocatoria.",
+          "Iniciativa legislativa.",
+          "Hábeas corpus.",
+          "Acción popular como respuesta a toda detención."
+        ],
+        "answer": 3,
+        "solution": "El hábeas corpus protege la libertad individual y derechos conexos. Las otras opciones tienen objetos diferentes.",
+        "id": "p06"
+      },
+      {
+        "topic": "Hábeas data",
+        "prompt": "Un conflicto sobre acceso a información pública y protección de datos personales se relaciona especialmente con:",
+        "options": [
+          "Censura ministerial.",
+          "Revocatoria municipal.",
+          "Elección parlamentaria.",
+          "Indulto presidencial.",
+          "Hábeas data."
+        ],
+        "answer": 4,
+        "solution": "El hábeas data protege los derechos de los incisos 5 y 6 del artículo 2, conforme a las condiciones del proceso.",
+        "id": "p07"
+      },
+      {
+        "topic": "Control de normas",
+        "prompt": "¿Qué proceso se dirige contra normas con rango de ley que contravienen la Constitución?",
+        "options": [
+          "Acción de inconstitucionalidad.",
+          "Solicitud de indulto.",
+          "Revocatoria de una persona.",
+          "Demanda de rendición de cuentas como sustituto del proceso.",
+          "Interpelación de un ministro."
+        ],
+        "answer": 0,
+        "solution": "La acción de inconstitucionalidad examina normas con rango de ley. Se diferencia del control de determinadas normas infralegales mediante acción popular.",
+        "id": "p08"
+      },
+      {
+        "topic": "Sistema interamericano",
+        "prompt": "¿Cuál es la ruta correcta para una petición individual dentro del sistema interamericano?",
+        "options": [
+          "Denuncia exclusiva ante una municipalidad extranjera.",
+          "Presentación ante la Comisión, cumpliendo sus requisitos.",
+          "Demanda directa de cualquier persona ante la Corte como primera vía.",
+          "Solicitud ante la CIJ contra otra persona.",
+          "Votación del Senado peruano para toda petición."
+        ],
+        "answer": 1,
+        "solution": "Las personas presentan peticiones ante la Comisión. La eventual remisión contenciosa a la Corte sigue las reglas de la Convención Americana.",
+        "id": "p09"
+      },
+      {
+        "topic": "Corte Internacional de Justicia",
+        "prompt": "La CIJ se diferencia de la Corte Interamericana porque:",
+        "options": [
+          "Sustituye automáticamente a todos los jueces nacionales.",
+          "Organiza las elecciones de los Estados miembros.",
+          "Resuelve controversias entre Estados dentro de su jurisdicción y emite opiniones consultivas autorizadas.",
+          "Recibe cualquier denuncia penal individual del mundo.",
+          "Es una oficina municipal de San José."
+        ],
+        "answer": 2,
+        "solution": "La CIJ es el órgano judicial principal de la ONU, con sede en La Haya. No funciona como tribunal penal general ni recibe demandas individuales de derechos humanos.",
+        "id": "p10"
+      }
+    ]
+  },
+  "educacion-civica-capitulo-04": {
+    "title": "Ciudadanía y mecanismos de participación y de control ciudadanos",
+    "problems": [
+      {
+        "topic": "Nacionalidad y ciudadanía",
+        "prompt": "Una niña peruana tiene derechos humanos, pero todavía no vota en elecciones nacionales. Esto muestra que:",
+        "options": [
+          "Los menores carecen de todos los derechos.",
+          "La nacionalidad solo existe desde los 70 años.",
+          "Tener un derecho obliga a ejercer todos los cargos políticos.",
+          "Solo se pertenece a una comunidad al votar.",
+          "Nacionalidad, derechos humanos y ejercicio de ciudadanía electoral no son idénticos."
+        ],
+        "answer": 4,
+        "solution": "La nacionalidad y los derechos no dependen de la edad electoral. El sufragio exige condiciones específicas de ciudadanía.",
+        "id": "p01"
+      },
+      {
+        "topic": "Ciudadanía",
+        "prompt": "El artículo 30 de la Constitución vincula la ciudadanía peruana con:",
+        "options": [
+          "Ser peruano mayor de dieciocho años y la inscripción electoral para su ejercicio.",
+          "Ser propietario de una empresa.",
+          "Contar con estudios universitarios concluidos.",
+          "Pertenecer obligatoriamente a un partido.",
+          "Tener un ingreso superior a un umbral económico."
+        ],
+        "answer": 0,
+        "solution": "La ciudadanía y su ejercicio se rigen por edad, nacionalidad e inscripción electoral. No dependen de riqueza o educación universitaria.",
+        "id": "p02"
+      },
+      {
+        "topic": "Voto",
+        "prompt": "La expresión voto secreto significa que:",
+        "options": [
+          "La autoridad decide el voto del elector.",
+          "La opción electoral individual debe poder mantenerse reservada.",
+          "La fecha electoral nunca puede publicarse.",
+          "El conteo debe ocultarse a toda fiscalización.",
+          "Cada persona puede votar varias veces."
+        ],
+        "answer": 1,
+        "solution": "El secreto protege la libertad de la opción individual. No equivale a falta de transparencia en organización o resultados.",
+        "id": "p03"
+      },
+      {
+        "topic": "Instituciones electorales",
+        "prompt": "¿Qué entidad organiza los procesos electorales?",
+        "options": [
+          "Contraloría como organizadora electoral.",
+          "Consejo de Ministros como reemplazo permanente.",
+          "ONPE.",
+          "BCRP.",
+          "Defensoría del Pueblo."
+        ],
+        "answer": 2,
+        "solution": "La organización de los procesos corresponde a la ONPE. JNE y RENIEC cumplen funciones diferentes dentro del sistema electoral.",
+        "id": "p04"
+      },
+      {
+        "topic": "Iniciativa legislativa",
+        "prompt": "Un grupo quiere presentar una propuesta de ley. El mecanismo pertinente es:",
+        "options": [
+          "Remoción de una autoridad designada.",
+          "Indulto presidencial.",
+          "Hábeas corpus.",
+          "Iniciativa legislativa ciudadana.",
+          "Revocatoria de autoridades."
+        ],
+        "answer": 3,
+        "solution": "El objetivo es proponer una norma. La iniciativa legislativa es distinta de los mecanismos para controlar o retirar autoridades.",
+        "id": "p05"
+      },
+      {
+        "topic": "Referéndum",
+        "prompt": "¿Cuál de estas materias está excluida del referéndum por el artículo 32?",
+        "options": [
+          "Materias de descentralización permitidas.",
+          "Ordenanzas municipales conforme al procedimiento.",
+          "Reforma constitucional conforme a sus requisitos.",
+          "Aprobación de normas permitidas con rango de ley.",
+          "La supresión o disminución de derechos fundamentales."
+        ],
+        "answer": 4,
+        "solution": "El artículo 32 excluye reducir o suprimir derechos fundamentales, además de materias tributarias, presupuestales y tratados internacionales en vigor.",
+        "id": "p06"
+      },
+      {
+        "topic": "Revocatoria",
+        "prompt": "¿Qué describe mejor la revocatoria ciudadana?",
+        "options": [
+          "Control sobre continuidad de determinadas autoridades elegidas comprendidas por la ley.",
+          "Destitución automática de cualquier autoridad nacional por una firma.",
+          "Aprobación de una nueva Constitución sin trámite.",
+          "Intercambio de representantes entre ministerios.",
+          "Solicitud de una opinión sobre un tratado."
+        ],
+        "answer": 0,
+        "solution": "La revocatoria tiene autoridades, requisitos y calendario regulados. No constituye una facultad genérica de retirar a cualquier funcionario.",
+        "id": "p07"
+      },
+      {
+        "topic": "Remoción",
+        "prompt": "En el esquema de la Ley 26300, la remoción se diferencia de revocatoria por referirse a:",
+        "options": [
+          "La sustitución automática del padrón electoral.",
+          "Determinadas autoridades designadas en los supuestos legales.",
+          "Todos los electores que no votaron.",
+          "Cualquier docente por decisión informal.",
+          "Todo congresista por una petición vecinal."
+        ],
+        "answer": 1,
+        "solution": "La remoción se refiere a autoridades designadas comprendidas por la ley. Su ámbito no alcanza indiscriminadamente a todos los cargos públicos.",
+        "id": "p08"
+      },
+      {
+        "topic": "Rendición de cuentas",
+        "prompt": "Vecinos buscan respuestas sobre ejecución presupuestal y uso de recursos. Su objetivo se vincula principalmente con:",
+        "options": [
+          "La eliminación de toda representación.",
+          "Una sentencia penal ya emitida.",
+          "Rendición de cuentas.",
+          "Un indulto colectivo.",
+          "La aprobación automática de una ley."
+        ],
+        "answer": 2,
+        "solution": "La rendición de cuentas exige explicación sobre recursos en los supuestos legales. No equivale por sí sola a destitución o condena.",
+        "id": "p09"
+      },
+      {
+        "topic": "Participación responsable",
+        "prompt": "Antes de impulsar un mecanismo ciudadano, conviene:",
+        "options": [
+          "Suponer que todos los mecanismos tienen idéntico efecto.",
+          "Omitir a las personas afectadas.",
+          "Tratar las firmas como una sentencia automática.",
+          "Precisar el objetivo, la autoridad competente y los requisitos vigentes.",
+          "Difundir cualquier acusación sin verificarla."
+        ],
+        "answer": 3,
+        "solution": "La participación eficaz necesita evidencia, competencia y procedimiento. El mecanismo se elige según lo que se busca lograr.",
+        "id": "p10"
+      }
+    ]
+  },
+  "educacion-civica-capitulo-05": {
+    "title": "El Estado y el Gobierno",
+    "problems": [
+      {
+        "topic": "Estado y gobierno",
+        "prompt": "El cambio de autoridades después de unas elecciones modifica principalmente:",
+        "options": [
+          "El gobierno, sin extinguir por sí mismo al Estado.",
+          "La existencia de toda la población.",
+          "La nacionalidad de todas las personas automáticamente.",
+          "La totalidad del territorio por definición.",
+          "Todos los derechos humanos a voluntad."
+        ],
+        "answer": 0,
+        "solution": "El gobierno está integrado por autoridades temporales. El Estado tiene continuidad jurídica e institucional.",
+        "id": "p01"
+      },
+      {
+        "topic": "Nación",
+        "prompt": "¿Qué concepto remite principalmente a vínculos históricos, culturales y de pertenencia?",
+        "options": [
+          "Circunscripción presupuestal únicamente.",
+          "Nación.",
+          "Gabinete ministerial.",
+          "Costo de oportunidad.",
+          "Reglamento de una oficina."
+        ],
+        "answer": 1,
+        "solution": "La nación expresa vínculos de identidad y pertenencia. No es idéntica al conjunto de autoridades de un gobierno.",
+        "id": "p02"
+      },
+      {
+        "topic": "Elementos estatales",
+        "prompt": "¿Qué conjunto representa elementos de análisis del Estado?",
+        "options": [
+          "Exclusivamente símbolos y ceremonias.",
+          "Únicamente autoridades temporales.",
+          "Población, territorio, poder soberano y organización jurídica.",
+          "Precio, costo marginal, ingreso y ahorro.",
+          "Solo ministerios sin población ni territorio."
+        ],
+        "answer": 2,
+        "solution": "El Estado requiere una población y un ámbito territorial, con poder y organización jurídica. No se reduce a su gobierno temporal.",
+        "id": "p03"
+      },
+      {
+        "topic": "Soberanía",
+        "prompt": "En un Estado constitucional, soberanía significa:",
+        "options": [
+          "Permiso para eliminar derechos sin control.",
+          "Ausencia absoluta de normas.",
+          "Obligación de concentrar todos los poderes.",
+          "Poder estatal ejercido dentro del orden constitucional y sus obligaciones.",
+          "Facultad personal ilimitada de cualquier funcionario."
+        ],
+        "answer": 3,
+        "solution": "La soberanía no autoriza arbitrariedad. El poder emana del pueblo y se ejerce conforme a la Constitución y las leyes.",
+        "id": "p04"
+      },
+      {
+        "topic": "Características",
+        "prompt": "Según el artículo 43, el gobierno peruano es:",
+        "options": [
+          "Federal por definición constitucional.",
+          "Una suma de Estados soberanos municipales.",
+          "Patrimonio privado de los ministros.",
+          "Incompatible con toda autonomía local.",
+          "Unitario, representativo y descentralizado."
+        ],
+        "answer": 4,
+        "solution": "La unidad del Estado coexiste con descentralización y representación. No elimina la autonomía regional y local dentro de sus competencias.",
+        "id": "p05"
+      },
+      {
+        "topic": "Deberes estatales",
+        "prompt": "¿Cuál es un deber primordial del Estado?",
+        "options": [
+          "Garantizar la plena vigencia de los derechos humanos.",
+          "Impedir cualquier forma de control ciudadano.",
+          "Sustituir todos los tribunales por decisiones informales.",
+          "Proteger solo a quienes apoyan al gobierno.",
+          "Eliminar toda diversidad cultural."
+        ],
+        "answer": 0,
+        "solution": "El artículo 44 incluye garantizar derechos, proteger a la población y promover bienestar general, entre otros deberes.",
+        "id": "p06"
+      },
+      {
+        "topic": "Clasificaciones",
+        "prompt": "¿Qué pareja corresponde a niveles territoriales de gobierno y no a poderes estatales?",
+        "options": [
+          "Senado y Cámara de Diputados como niveles territoriales.",
+          "Regional y local.",
+          "Legislativo y Judicial.",
+          "Ejecutivo y Legislativo.",
+          "Judicial y Ejecutivo."
+        ],
+        "answer": 1,
+        "solution": "Regional y local describen niveles de gobierno. Los poderes estatales son una clasificación funcional e institucional distinta.",
+        "id": "p07"
+      },
+      {
+        "topic": "Descentralización",
+        "prompt": "La autonomía municipal significa que una municipalidad:",
+        "options": [
+          "Puede sustituir al Congreso en toda materia.",
+          "No tiene obligación de rendir cuentas.",
+          "Actúa en asuntos de su competencia dentro del ordenamiento.",
+          "Es un Estado soberano independiente.",
+          "Puede desconocer cualquier derecho fundamental."
+        ],
+        "answer": 2,
+        "solution": "La autonomía es una capacidad de decisión en competencias propias. No elimina unidad del Estado, legalidad ni controles.",
+        "id": "p08"
+      },
+      {
+        "topic": "Emergencia",
+        "prompt": "¿Cuál es el plazo máximo inicial del estado de emergencia previsto en el artículo 137?",
+        "options": [
+          "5 años.",
+          "206 días.",
+          "Sin límite temporal.",
+          "60 días.",
+          "45 días."
+        ],
+        "answer": 3,
+        "solution": "El estado de emergencia tiene un plazo máximo inicial de 60 días. No debe confundirse con los 45 días del estado de sitio.",
+        "id": "p09"
+      },
+      {
+        "topic": "Garantías",
+        "prompt": "Durante un régimen de excepción, hábeas corpus y amparo:",
+        "options": [
+          "Desaparecen automáticamente para todos los casos.",
+          "Solo existen si una autoridad decide crearlos nuevamente.",
+          "Se convierten en permisos para vulnerar derechos.",
+          "Son sustituidos siempre por una encuesta.",
+          "No quedan suspendidos por la sola declaración del régimen."
+        ],
+        "answer": 4,
+        "solution": "El artículo 200 mantiene estas garantías. Las restricciones y actuaciones estatales siguen sujetas a control dentro del marco constitucional.",
+        "id": "p10"
+      }
+    ]
+  },
+  "educacion-civica-capitulo-06": {
+    "title": "El Poder Legislativo y el Poder Ejecutivo",
+    "problems": [
+      {
+        "topic": "Bicameralidad",
+        "prompt": "La estructura del Congreso restablecida por la Ley 31988 comprende:",
+        "options": [
+          "Gobiernos regionales convertidos en Senado.",
+          "Senado y Cámara de Diputados.",
+          "Únicamente una cámara de 130 congresistas.",
+          "Consejo de Ministros y Poder Judicial.",
+          "ONPE y RENIEC como cámaras."
+        ],
+        "answer": 1,
+        "solution": "La reforma restablece dos cámaras legislativas. El esquema unicameral del libro corresponde al régimen anterior.",
+        "id": "p01"
+      },
+      {
+        "topic": "Composición",
+        "prompt": "El artículo 90 reformado fija los siguientes mínimos:",
+        "options": [
+          "60 senadores y 60 diputados.",
+          "130 senadores y 130 diputados.",
+          "60 senadores y 130 diputados.",
+          "130 senadores y 60 diputados.",
+          "30 senadores y 60 diputados."
+        ],
+        "answer": 2,
+        "solution": "Los mínimos constitucionales son 60 y 130. El artículo prevé condiciones para aumentar números mediante ley orgánica.",
+        "id": "p02"
+      },
+      {
+        "topic": "Diputados",
+        "prompt": "¿A qué cámara corresponde interpelar y censurar ministros?",
+        "options": [
+          "Consejo regional de cualquier departamento.",
+          "Junta Nacional de Justicia.",
+          "RENIEC.",
+          "Cámara de Diputados.",
+          "Senado como única cámara de control ministerial."
+        ],
+        "answer": 3,
+        "solution": "La reforma atribuye esos mecanismos de responsabilidad política a la Cámara de Diputados. Las competencias de las cámaras son diferenciadas.",
+        "id": "p03"
+      },
+      {
+        "topic": "Senado",
+        "prompt": "¿Qué atribución corresponde al Senado?",
+        "options": [
+          "Administrar todas las municipalidades.",
+          "Organizar materialmente cada elección nacional.",
+          "Dictar sentencias penales en todos los procesos comunes.",
+          "Sustituir permanentemente al Consejo de Ministros.",
+          "Revisar propuestas legislativas remitidas por Diputados."
+        ],
+        "answer": 4,
+        "solution": "El artículo 102-A atribuye al Senado aprobar, modificar o rechazar las propuestas remitidas por Diputados, además de otras competencias.",
+        "id": "p04"
+      },
+      {
+        "topic": "Formación de leyes",
+        "prompt": "En el esquema ordinario estudiado, después de aprobar una propuesta, Diputados la remite a:",
+        "options": [
+          "El Senado para su revisión.",
+          "Una municipalidad para reemplazar el procedimiento.",
+          "La ONPE para que la promulgue.",
+          "El RENIEC para que la convierta en sentencia.",
+          "Una empresa privada para que la haga obligatoria."
+        ],
+        "answer": 0,
+        "solution": "La revisión del Senado forma parte del procedimiento bicameral. Iniciativa, dictamen y aprobación de una cámara no equivalen por sí solos a ley vigente.",
+        "id": "p05"
+      },
+      {
+        "topic": "Decreto legislativo",
+        "prompt": "Un decreto legislativo se caracteriza por ser:",
+        "options": [
+          "Una propuesta que nunca requiere competencia.",
+          "Una norma con rango de ley emitida por el Ejecutivo bajo delegación de materia y plazo.",
+          "Una norma moral sin efectos jurídicos.",
+          "Una sentencia judicial sobre un caso privado.",
+          "Una ordenanza vecinal informal."
+        ],
+        "answer": 1,
+        "solution": "La delegación legislativa está limitada por materia y plazo. No autoriza al Ejecutivo a regular libremente cualquier asunto.",
+        "id": "p06"
+      },
+      {
+        "topic": "Poder Ejecutivo",
+        "prompt": "El presidente del Consejo de Ministros tiene entre sus funciones:",
+        "options": [
+          "Disolver libremente el Senado.",
+          "Modificar la Constitución mediante una firma.",
+          "Coordinar las funciones de los demás ministros.",
+          "Reemplazar a todos los jueces en sus causas.",
+          "Dirigir el padrón electoral como función exclusiva."
+        ],
+        "answer": 2,
+        "solution": "La coordinación ministerial es una función del presidente del Consejo. No supone asumir competencias de órganos autónomos o de otros poderes.",
+        "id": "p07"
+      },
+      {
+        "topic": "Refrendo",
+        "prompt": "El refrendo ministerial exigido para los actos presidenciales se relaciona con:",
+        "options": [
+          "La propiedad privada de la función pública.",
+          "La sustitución de la Constitución por costumbre.",
+          "La facultad de votar dos veces en elecciones.",
+          "La validez constitucional del acto y la responsabilidad ministerial.",
+          "La eliminación de todo control político."
+        ],
+        "answer": 3,
+        "solution": "El artículo 120 exige refrendación ministerial. El refrendo vincula al ministro con la responsabilidad por la actuación correspondiente.",
+        "id": "p08"
+      },
+      {
+        "topic": "Interpelación",
+        "prompt": "Interpelar a un ministro significa principalmente:",
+        "options": [
+          "Destituirlo siempre sin debate.",
+          "Condenarlo penalmente de manera automática.",
+          "Elegirlo como senador.",
+          "Aprobar una reforma constitucional.",
+          "Exigir que responda ante la cámara competente, sin equivaler automáticamente a censura."
+        ],
+        "answer": 4,
+        "solution": "La interpelación requiere respuestas y permite control político. Se distingue de censura, que tiene requisitos y consecuencias propias.",
+        "id": "p09"
+      },
+      {
+        "topic": "Disolución",
+        "prompt": "¿Qué límite establece el artículo 134 reformado?",
+        "options": [
+          "El Senado no puede ser disuelto por el presidente.",
+          "Ambas cámaras pueden disolverse por cualquier desacuerdo.",
+          "Diputados puede disolverse sin convocar elecciones.",
+          "La disolución elimina permanentemente el Parlamento.",
+          "El último año del mandato permite disolver sin condiciones."
+        ],
+        "answer": 0,
+        "solution": "El artículo permite, bajo condiciones, disolver la Cámara de Diputados. Mantiene al Senado y establece límites temporales y convocatoria electoral.",
+        "id": "p10"
+      }
+    ]
+  }
+});

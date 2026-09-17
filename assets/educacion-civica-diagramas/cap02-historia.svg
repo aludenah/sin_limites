@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1448" height="1086" viewBox="0 0 1448 1086" role="img"><title>Hitos constitucionales</title><desc>Una selección para ubicar cambios históricos.</desc><defs><marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L10 5 L0 10" fill="#587081"/></marker></defs>
+<rect width="1448" height="1086" fill="#f4f7f9"/><rect width="1448" height="14" fill="#ba3e45"/>
+<text x="74" y="74" font-family="DejaVu Sans,Arial,sans-serif" font-size="22" font-weight="700" text-anchor="start" fill="#587081">SIN LÍMITES  /  CÍVICA  /  02</text>
+<text x="74" y="149" font-family="DejaVu Sans,Arial,sans-serif" font-size="54" font-weight="800" text-anchor="start" fill="#102d48">Hitos constitucionales</text>
+<text x="74" y="260" font-family="DejaVu Sans,Arial,sans-serif" font-size="26" font-weight="400" text-anchor="start" fill="#587081">Una selección para ubicar cambios históricos.</text>
+<rect x="74" y="354" width="1300" height="93" rx="22" fill="#ffffff" stroke="#d9e3e9" stroke-width="2"/>
+<text x="113" y="412" font-family="DejaVu Sans,Arial,sans-serif" font-size="38" font-weight="800" text-anchor="start" fill="#0a7376">1823</text>
+<text x="330" y="411" font-family="DejaVu Sans,Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#203a4e">Primera Constitución republicana.</text>
+<rect x="74" y="467" width="1300" height="93" rx="22" fill="#ffffff" stroke="#d9e3e9" stroke-width="2"/>
+<text x="113" y="525" font-family="DejaVu Sans,Arial,sans-serif" font-size="38" font-weight="800" text-anchor="start" fill="#0a7376">1826</text>
+<text x="330" y="524" font-family="DejaVu Sans,Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#203a4e">Proyecto de Constitución vitalicia.</text>
+<rect x="74" y="580" width="1300" height="93" rx="22" fill="#ffffff" stroke="#d9e3e9" stroke-width="2"/>
+<text x="113" y="638" font-family="DejaVu Sans,Arial,sans-serif" font-size="38" font-weight="800" text-anchor="start" fill="#0a7376">1860</text>
+<text x="330" y="637" font-family="DejaVu Sans,Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#203a4e">Larga vigencia formal, con interrupciones.</text>
+<rect x="74" y="693" width="1300" height="93" rx="22" fill="#ffffff" stroke="#d9e3e9" stroke-width="2"/>
+<text x="113" y="751" font-family="DejaVu Sans,Arial,sans-serif" font-size="38" font-weight="800" text-anchor="start" fill="#0a7376">1979</text>
+<text x="330" y="750" font-family="DejaVu Sans,Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#203a4e">Retorno al gobierno constitucional.</text>
+<rect x="74" y="806" width="1300" height="93" rx="22" fill="#ffffff" stroke="#d9e3e9" stroke-width="2"/>
+<text x="113" y="864" font-family="DejaVu Sans,Arial,sans-serif" font-size="38" font-weight="800" text-anchor="start" fill="#0a7376">1993</text>
+<text x="330" y="863" font-family="DejaVu Sans,Arial,sans-serif" font-size="29" font-weight="400" text-anchor="start" fill="#203a4e">Texto vigente con reformas posteriores.</text>
+<line x1="74" y1="968" x2="1374" y2="968" stroke="#c6d6df" stroke-width="2"/>
+<text x="74" y="1010" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#587081">Cronología selectiva: no incluye las doce constituciones ni usa intervalos a escala.</text>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1448" height="1086" viewBox="0 0 1448 1086" role="img"><title>De la propuesta a la ley</title><desc>Esquema general del procedimiento legislativo ordinario.</desc><defs><marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L10 5 L0 10" fill="#587081"/></marker></defs>
+<rect width="1448" height="1086" fill="#f4f7f9"/><rect width="1448" height="14" fill="#ba3e45"/>
+<text x="74" y="74" font-family="DejaVu Sans,Arial,sans-serif" font-size="22" font-weight="700" text-anchor="start" fill="#587081">SIN LÍMITES  /  CÍVICA  /  06</text>
+<text x="74" y="149" font-family="DejaVu Sans,Arial,sans-serif" font-size="54" font-weight="800" text-anchor="start" fill="#102d48">De la propuesta a la ley</text>
+<text x="74" y="260" font-family="DejaVu Sans,Arial,sans-serif" font-size="26" font-weight="400" text-anchor="start" fill="#587081">Esquema general del procedimiento legislativo ordinario.</text>
+<rect x="74" y="330" width="622" height="250" rx="22" fill="#ffffff" stroke="#d9e3e9" stroke-width="2"/>
+<rect x="74" y="330" width="622" height="9" rx="0" fill="#0a7376" stroke="#0a7376" stroke-width="2"/>
+<text x="102" y="389" font-family="DejaVu Sans,Arial,sans-serif" font-size="33" font-weight="800" text-anchor="start" fill="#0a7376">Iniciativa y estudio</text>
+<text x="102" y="447" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" text-anchor="start" fill="#203a4e">Propuesta por sujeto legitimado y</text>
+<text x="102" y="486" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" text-anchor="start" fill="#203a4e">evaluación.</text>
+<rect x="752" y="330" width="622" height="250" rx="22" fill="#ffffff" stroke="#d9e3e9" stroke-width="2"/>
+<rect x="752" y="330" width="622" height="9" rx="0" fill="#2b67a3" stroke="#2b67a3" stroke-width="2"/>
+<text x="780" y="389" font-family="DejaVu Sans,Arial,sans-serif" font-size="33" font-weight="800" text-anchor="start" fill="#2b67a3">Diputados</text>
+<text x="780" y="447" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" text-anchor="start" fill="#203a4e">Debate, aprobación y remisión al</text>
+<text x="780" y="486" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" text-anchor="start" fill="#203a4e">Senado.</text>
+<rect x="752" y="660" width="622" height="250" rx="22" fill="#ffffff" stroke="#d9e3e9" stroke-width="2"/>
+<rect x="752" y="660" width="622" height="9" rx="0" fill="#a76812" stroke="#a76812" stroke-width="2"/>
+<text x="780" y="719" font-family="DejaVu Sans,Arial,sans-serif" font-size="33" font-weight="800" text-anchor="start" fill="#a76812">Senado</text>
+<text x="780" y="777" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" text-anchor="start" fill="#203a4e">Revisión conforme a sus</text>
+<text x="780" y="816" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" text-anchor="start" fill="#203a4e">competencias.</text>
+<rect x="74" y="660" width="622" height="250" rx="22" fill="#ffffff" stroke="#d9e3e9" stroke-width="2"/>
+<rect x="74" y="660" width="622" height="9" rx="0" fill="#ba3e45" stroke="#ba3e45" stroke-width="2"/>
+<text x="102" y="719" font-family="DejaVu Sans,Arial,sans-serif" font-size="33" font-weight="800" text-anchor="start" fill="#ba3e45">Promulgación y publicación</text>
+<text x="102" y="777" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" text-anchor="start" fill="#203a4e">Etapas posteriores según el</text>
+<text x="102" y="816" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" text-anchor="start" fill="#203a4e">procedimiento.</text>
+<line x1="700" y1="455" x2="744" y2="455" stroke="#587081" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="1063" y1="584" x2="1063" y2="650" stroke="#587081" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="746" y1="785" x2="704" y2="785" stroke="#587081" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="74" y1="968" x2="1374" y2="968" stroke="#c6d6df" stroke-width="2"/>
+<text x="74" y="1010" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#587081">Hay reglas especiales y observaciones. Un dictamen no es una ley vigente.</text>
+</svg>

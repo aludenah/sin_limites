@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1448" height="1086" viewBox="0 0 1448 1086" role="img"><title>Utilidad total y marginal</title><desc>Ejemplo hipotético: satisfacción al consumir vasos de agua.</desc><defs><marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L10 5 L0 10" fill="#587081"/></marker></defs>
+<rect width="1448" height="1086" fill="#f4f7f9"/><rect width="1448" height="14" fill="#ba3e45"/>
+<text x="74" y="74" font-family="DejaVu Sans,Arial,sans-serif" font-size="22" font-weight="700" text-anchor="start" fill="#587081">SIN LÍMITES  /  ECONOMÍA  /  03</text>
+<text x="74" y="149" font-family="DejaVu Sans,Arial,sans-serif" font-size="54" font-weight="800" text-anchor="start" fill="#102d48">Utilidad total y marginal</text>
+<text x="74" y="260" font-family="DejaVu Sans,Arial,sans-serif" font-size="26" font-weight="400" text-anchor="start" fill="#587081">Ejemplo hipotético: satisfacción al consumir vasos de agua.</text>
+<rect x="74" y="325" width="622" height="574" rx="22" fill="#ffffff" stroke="#d9e3e9" stroke-width="2"/>
+<rect x="752" y="325" width="622" height="574" rx="22" fill="#ffffff" stroke="#d9e3e9" stroke-width="2"/>
+<text x="110" y="382" font-family="DejaVu Sans,Arial,sans-serif" font-size="30" font-weight="800" text-anchor="start" fill="#0a7376">TOTAL</text>
+<text x="790" y="382" font-family="DejaVu Sans,Arial,sans-serif" font-size="30" font-weight="800" text-anchor="start" fill="#2b67a3">ADICIONAL</text>
+<line x1="146" y1="797" x2="146" y2="449" stroke="#587081" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="146" y1="797" x2="612" y2="797" stroke="#587081" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="128" y="803" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="400" text-anchor="end" fill="#587081">0</text>
+<text x="128" y="683" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="400" text-anchor="end" fill="#587081">10</text>
+<text x="128" y="563" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="400" text-anchor="end" fill="#587081">20</text>
+<text x="128" y="503" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="400" text-anchor="end" fill="#587081">25</text>
+<circle cx="158" cy="797" r="7" fill="#0a7376"/>
+<text x="158" y="781" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="700" text-anchor="middle" fill="#0a7376">0</text>
+<text x="158" y="831" font-family="DejaVu Sans,Arial,sans-serif" font-size="22" font-weight="400" text-anchor="middle" fill="#587081">0</text>
+<circle cx="259" cy="677" r="7" fill="#0a7376"/>
+<text x="259" y="661" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="700" text-anchor="middle" fill="#0a7376">10</text>
+<text x="259" y="831" font-family="DejaVu Sans,Arial,sans-serif" font-size="22" font-weight="400" text-anchor="middle" fill="#587081">1</text>
+<circle cx="360" cy="581" r="7" fill="#0a7376"/>
+<text x="360" y="565" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="700" text-anchor="middle" fill="#0a7376">18</text>
+<text x="360" y="831" font-family="DejaVu Sans,Arial,sans-serif" font-size="22" font-weight="400" text-anchor="middle" fill="#587081">2</text>
+<circle cx="461" cy="521" r="7" fill="#0a7376"/>
+<text x="461" y="505" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="700" text-anchor="middle" fill="#0a7376">23</text>
+<text x="461" y="831" font-family="DejaVu Sans,Arial,sans-serif" font-size="22" font-weight="400" text-anchor="middle" fill="#587081">3</text>
+<circle cx="562" cy="497" r="7" fill="#0a7376"/>
+<text x="562" y="481" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="700" text-anchor="middle" fill="#0a7376">25</text>
+<text x="562" y="831" font-family="DejaVu Sans,Arial,sans-serif" font-size="22" font-weight="400" text-anchor="middle" fill="#587081">4</text>
+<polyline points="158,797 259,677 360,581 461,521 562,497" fill="none" stroke="#0a7376" stroke-width="5"/>
+<text x="363" y="869" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" font-weight="400" text-anchor="middle" fill="#587081">Vasos</text>
+<line x1="826" y1="797" x2="826" y2="449" stroke="#587081" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="826" y1="797" x2="1292" y2="797" stroke="#587081" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="808" y="803" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="400" text-anchor="end" fill="#587081">0</text>
+<text x="808" y="683" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="400" text-anchor="end" fill="#587081">10</text>
+<text x="808" y="563" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="400" text-anchor="end" fill="#587081">20</text>
+<text x="808" y="503" font-family="DejaVu Sans,Arial,sans-serif" font-size="21" font-weight="400" text-anchor="end" fill="#587081">25</text>
+<rect x="856" y="677" width="65" height="120" rx="5" fill="#2b67a3" stroke="#2b67a3" stroke-width="2"/>
+<text x="888" y="663" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="700" text-anchor="middle" fill="#2b67a3">10</text>
+<text x="888" y="831" font-family="DejaVu Sans,Arial,sans-serif" font-size="22" font-weight="400" text-anchor="middle" fill="#587081">1</text>
+<rect x="959" y="701" width="65" height="96" rx="5" fill="#2b67a3" stroke="#2b67a3" stroke-width="2"/>
+<text x="991" y="687" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="700" text-anchor="middle" fill="#2b67a3">8</text>
+<text x="991" y="831" font-family="DejaVu Sans,Arial,sans-serif" font-size="22" font-weight="400" text-anchor="middle" fill="#587081">2</text>
+<rect x="1062" y="737" width="65" height="60" rx="5" fill="#2b67a3" stroke="#2b67a3" stroke-width="2"/>
+<text x="1094" y="723" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="700" text-anchor="middle" fill="#2b67a3">5</text>
+<text x="1094" y="831" font-family="DejaVu Sans,Arial,sans-serif" font-size="22" font-weight="400" text-anchor="middle" fill="#587081">3</text>
+<rect x="1165" y="773" width="65" height="24" rx="5" fill="#2b67a3" stroke="#2b67a3" stroke-width="2"/>
+<text x="1197" y="759" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="700" text-anchor="middle" fill="#2b67a3">2</text>
+<text x="1197" y="831" font-family="DejaVu Sans,Arial,sans-serif" font-size="22" font-weight="400" text-anchor="middle" fill="#587081">4</text>
+<text x="1043" y="869" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" font-weight="400" text-anchor="middle" fill="#587081">Vaso adicional</text>
+<line x1="74" y1="968" x2="1374" y2="968" stroke="#c6d6df" stroke-width="2"/>
+<text x="74" y="1010" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#587081">Cada vaso aporta menos utilidad adicional, pero la utilidad total sigue aumentando.</text>
+</svg>

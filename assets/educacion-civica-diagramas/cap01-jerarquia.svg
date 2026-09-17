@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1448" height="1086" viewBox="0 0 1448 1086" role="img"><title>Jerarquía y competencia</title><desc>La Constitución prevalece sobre las normas de inferior rango.</desc><defs><marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L10 5 L0 10" fill="#587081"/></marker></defs>
+<rect width="1448" height="1086" fill="#f4f7f9"/><rect width="1448" height="14" fill="#ba3e45"/>
+<text x="74" y="74" font-family="DejaVu Sans,Arial,sans-serif" font-size="22" font-weight="700" text-anchor="start" fill="#587081">SIN LÍMITES  /  CÍVICA  /  01</text>
+<text x="74" y="149" font-family="DejaVu Sans,Arial,sans-serif" font-size="54" font-weight="800" text-anchor="start" fill="#102d48">Jerarquía y competencia</text>
+<text x="74" y="260" font-family="DejaVu Sans,Arial,sans-serif" font-size="26" font-weight="400" text-anchor="start" fill="#587081">La Constitución prevalece sobre las normas de inferior rango.</text>
+<rect x="336" y="335" width="776" height="158" rx="22" fill="#ffffff" stroke="#d9e3e9" stroke-width="2"/>
+<rect x="336" y="335" width="776" height="9" rx="0" fill="#102d48" stroke="#102d48" stroke-width="2"/>
+<text x="364" y="394" font-family="DejaVu Sans,Arial,sans-serif" font-size="33" font-weight="800" text-anchor="start" fill="#102d48">Constitución</text>
+<text x="364" y="452" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" text-anchor="start" fill="#203a4e">Límite superior del ordenamiento.</text>
+<rect x="206" y="525" width="1036" height="158" rx="22" fill="#ffffff" stroke="#d9e3e9" stroke-width="2"/>
+<rect x="206" y="525" width="1036" height="9" rx="0" fill="#0a7376" stroke="#0a7376" stroke-width="2"/>
+<text x="234" y="584" font-family="DejaVu Sans,Arial,sans-serif" font-size="33" font-weight="800" text-anchor="start" fill="#0a7376">Rango legal</text>
+<text x="234" y="642" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" text-anchor="start" fill="#203a4e">Leyes y otras normas con rango de ley.</text>
+<rect x="74" y="715" width="1300" height="158" rx="22" fill="#ffffff" stroke="#d9e3e9" stroke-width="2"/>
+<rect x="74" y="715" width="1300" height="9" rx="0" fill="#2b67a3" stroke="#2b67a3" stroke-width="2"/>
+<text x="102" y="774" font-family="DejaVu Sans,Arial,sans-serif" font-size="33" font-weight="800" text-anchor="start" fill="#2b67a3">Nivel reglamentario</text>
+<text x="102" y="832" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" text-anchor="start" fill="#203a4e">Desarrolla la ley sin contradecirla.</text>
+<line x1="74" y1="968" x2="1374" y2="968" stroke="#c6d6df" stroke-width="2"/>
+<text x="74" y="1010" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#587081">Esquema general. La competencia y la materia también limitan a cada autoridad.</text>
+</svg>

@@ -60,7 +60,7 @@ const blockIndex=id=>SLIDES.findIndex(s=>s.id===id);
 const questionIndex=id=>SLIDES.findIndex(s=>s.question?.id===id);
 const blockTarget=i=>SLIDES[i]?.kind==='removed'?'activities':i===0?'chapter-top':i===1?'learning-goals':i===SLIDES.length-1?'chapter-finish':'block-'+SLIDES[i].id;
 
-function header(){return `<header class="topbar"><a class="brand" href="index.html?v=20260918-language1"><img src="assets/logo-sin-limites.jpg" width="40" height="40" alt="Logo de SIN LÍMITES"><span>SIN <em>LÍMITES</em></span></a><span class="course-label">Historia Universal · Capítulo 1</span><a class="button secondary" href="index.html?course=12&v=20260918-language1">${icon('back')} Volver al temario</a></header>`;}
+function header(){return `<header class="topbar"><a class="brand" href="index.html?v=20260918-social1"><img src="assets/logo-sin-limites.jpg" width="40" height="40" alt="Logo de SIN LÍMITES"><span>SIN <em>LÍMITES</em></span></a><span class="course-label">Historia Universal · Capítulo 1</span><a class="button secondary" href="index.html?course=12&v=20260918-social1">${icon('back')} Volver al temario</a></header>`;}
 function contents(){return `<aside class="lesson-sidebar"><details class="lesson-index" open><summary>En este capítulo</summary><nav aria-label="Temas del capítulo"><a href="#learning-goals">Antes de empezar</a>${GROUPS.map((group,i)=>`<a href="#section-${i+1}"><span>${String(i+1).padStart(2,'0')}</span>${esc(group)}</a>`).join('')}<a class="activities-link" href="#activities">${icon('check')} Práctica · 10 problemas</a></nav></details><p class="index-hint">Lee a tu ritmo y vuelve al tema que necesites consultar.</p></aside>`;}
 function cards(block){return `<div class="concept-grid count-${block.cards.length}">${block.cards.map(c=>`<section class="concept-card">${c.tag?`<span class="tag">${esc(c.tag)}</span>`:''}<h4>${esc(c.title)}</h4><p>${esc(c.text)}</p></section>`).join('')}</div>`;}
 function body(block){
@@ -77,7 +77,7 @@ function topic(block){
  return `<section class="topic kind-${block.kind}" id="block-${block.id}" data-reading-block="${blockIndex(block.id)}" tabindex="-1"><h3>${esc(block.title)}</h3>${block.lead?`<p class="topic-lead">${esc(block.lead)}</p>`:''}<div class="topic-layout ${block.illustration?'with-image':''}"><div>${body(block)}</div>${illustration(block)}</div><p class="topic-explanation">${esc(block.notes)}</p>${block.takeaway?`<p class="takeaway">${esc(block.takeaway)}</p>`:''}</section>`;
 }
 
-function finishContent(){return '<div><h2>'+(P.practice10.mastered.length===10?'¡Completaste la práctica!':'Tu avance en el capítulo')+'</h2><p>'+P.practice10.mastered.length+' de 10 problemas resueltos correctamente.</p></div><div class="finish-actions"><a class="button secondary" href="#activities">Repasar la práctica</a><a class="button" href="historia-universal-capitulo-02.html?v=20260918-language1">Capítulo 2 '+icon('next')+'</a></div>';}
+function finishContent(){return '<div><h2>'+(P.practice10.mastered.length===10?'¡Completaste la práctica!':'Tu avance en el capítulo')+'</h2><p>'+P.practice10.mastered.length+' de 10 problemas resueltos correctamente.</p></div><div class="finish-actions"><a class="button secondary" href="#activities">Repasar la práctica</a><a class="button" href="historia-universal-capitulo-02.html?v=20260918-social1">Capítulo 2 '+icon('next')+'</a></div>';}
 function render(){
  if(!user)return;
  ROOT.setAttribute('aria-busy','false');
@@ -87,7 +87,7 @@ function render(){
 }
 function guest(message='Inicia sesión para estudiar el capítulo y guardar tu avance.'){
  readingObserver?.disconnect();ROOT.setAttribute('aria-busy','false');
- ROOT.innerHTML=`${header()}<main class="guest-view" id="chapter-content"><p class="eyebrow">Historia Universal · Capítulo 01</p><h1>${esc(DECK.title)}</h1><p>Teoría organizada por temas, imágenes didácticas y actividades con explicación.</p><p>${esc(message)}</p><a class="button" href="index.html?chapter=historia-universal-capitulo-01&v=20260918-language1">Continuar con Google ${icon('next')}</a></main>`;
+ ROOT.innerHTML=`${header()}<main class="guest-view" id="chapter-content"><p class="eyebrow">Historia Universal · Capítulo 01</p><h1>${esc(DECK.title)}</h1><p>Teoría organizada por temas, imágenes didácticas y actividades con explicación.</p><p>${esc(message)}</p><a class="button" href="index.html?chapter=historia-universal-capitulo-01&v=20260918-social1">Continuar con Google ${icon('next')}</a></main>`;
 }
 function rememberBlock(i){
  if(!user||!allowedSlide(i))return;

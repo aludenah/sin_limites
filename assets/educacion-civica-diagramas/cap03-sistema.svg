@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1448" height="1086" viewBox="0 0 1448 1086" role="img"><title>Comisión y Corte Interamericanas</title><desc>Ruta simplificada de una petición individual.</desc><defs><marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L10 5 L0 10" fill="#587081"/></marker></defs>
+<rect width="1448" height="1086" fill="#f4f7f9"/><rect width="1448" height="14" fill="#ba3e45"/>
+<text x="74" y="74" font-family="DejaVu Sans,Arial,sans-serif" font-size="22" font-weight="700" text-anchor="start" fill="#587081">SIN LÍMITES  /  CÍVICA  /  03</text>
+<text x="74" y="149" font-family="DejaVu Sans,Arial,sans-serif" font-size="54" font-weight="800" text-anchor="start" fill="#102d48">Comisión y Corte Interamericanas</text>
+<text x="74" y="260" font-family="DejaVu Sans,Arial,sans-serif" font-size="26" font-weight="400" text-anchor="start" fill="#587081">Ruta simplificada de una petición individual.</text>
+<rect x="74" y="420" width="412" height="365" rx="22" fill="#ffffff" stroke="#d9e3e9" stroke-width="2"/>
+<rect x="74" y="420" width="412" height="9" rx="0" fill="#0a7376" stroke="#0a7376" stroke-width="2"/>
+<text x="102" y="479" font-family="DejaVu Sans,Arial,sans-serif" font-size="30" font-weight="800" text-anchor="start" fill="#0a7376">1</text>
+<text x="102" y="527" font-family="DejaVu Sans,Arial,sans-serif" font-size="33" font-weight="800" text-anchor="start" fill="#0a7376">Persona</text>
+<text x="102" y="585" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" text-anchor="start" fill="#203a4e">Presenta una petición</text>
+<text x="102" y="624" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" text-anchor="start" fill="#203a4e">conforme a los</text>
+<text x="102" y="663" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" text-anchor="start" fill="#203a4e">requisitos.</text>
+<rect x="518" y="420" width="412" height="365" rx="22" fill="#ffffff" stroke="#d9e3e9" stroke-width="2"/>
+<rect x="518" y="420" width="412" height="9" rx="0" fill="#2b67a3" stroke="#2b67a3" stroke-width="2"/>
+<text x="546" y="479" font-family="DejaVu Sans,Arial,sans-serif" font-size="30" font-weight="800" text-anchor="start" fill="#2b67a3">2</text>
+<text x="546" y="527" font-family="DejaVu Sans,Arial,sans-serif" font-size="33" font-weight="800" text-anchor="start" fill="#2b67a3">Comisión</text>
+<text x="546" y="585" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" text-anchor="start" fill="#203a4e">Examina la petición y</text>
+<text x="546" y="624" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" text-anchor="start" fill="#203a4e">sigue el</text>
+<text x="546" y="663" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" text-anchor="start" fill="#203a4e">procedimiento.</text>
+<rect x="962" y="420" width="412" height="365" rx="22" fill="#ffffff" stroke="#d9e3e9" stroke-width="2"/>
+<rect x="962" y="420" width="412" height="9" rx="0" fill="#a76812" stroke="#a76812" stroke-width="2"/>
+<text x="990" y="479" font-family="DejaVu Sans,Arial,sans-serif" font-size="30" font-weight="800" text-anchor="start" fill="#a76812">3</text>
+<text x="990" y="527" font-family="DejaVu Sans,Arial,sans-serif" font-size="33" font-weight="800" text-anchor="start" fill="#a76812">Corte</text>
+<text x="990" y="585" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" text-anchor="start" fill="#203a4e">Puede intervenir si el</text>
+<text x="990" y="624" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" text-anchor="start" fill="#203a4e">caso llega conforme a</text>
+<text x="990" y="663" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" font-weight="400" text-anchor="start" fill="#203a4e">la Convención.</text>
+<line x1="488" y1="602" x2="511" y2="602" stroke="#587081" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="932" y1="602" x2="955" y2="602" stroke="#587081" stroke-width="3" marker-end="url(#arrow)"/>
+<line x1="74" y1="968" x2="1374" y2="968" stroke="#c6d6df" stroke-width="2"/>
+<text x="74" y="1010" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#587081">La Corte no recibe peticiones individuales directas. La remisión no es automática.</text>
+</svg>

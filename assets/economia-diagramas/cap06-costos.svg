@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1448" height="1086" viewBox="0 0 1448 1086" role="img"><title>Componer el costo total</title><desc>Ejemplo hipotético · CF = S/ 100 en el corto plazo.</desc><defs><marker id="arrow" markerWidth="12" markerHeight="12" refX="9" refY="5" orient="auto" markerUnits="userSpaceOnUse"><path d="M0 0 L10 5 L0 10" fill="#587081"/></marker></defs>
+<rect width="1448" height="1086" fill="#f4f7f9"/><rect width="1448" height="14" fill="#ba3e45"/>
+<text x="74" y="74" font-family="DejaVu Sans,Arial,sans-serif" font-size="22" font-weight="700" text-anchor="start" fill="#587081">SIN LÍMITES  /  ECONOMÍA  /  06</text>
+<text x="74" y="149" font-family="DejaVu Sans,Arial,sans-serif" font-size="54" font-weight="800" text-anchor="start" fill="#102d48">Componer el costo total</text>
+<text x="74" y="260" font-family="DejaVu Sans,Arial,sans-serif" font-size="26" font-weight="400" text-anchor="start" fill="#587081">Ejemplo hipotético · CF = S/ 100 en el corto plazo.</text>
+<rect x="250" y="638" width="160" height="80" rx="6" fill="#0a7376" stroke="#0a7376" stroke-width="2"/>
+<rect x="250" y="718" width="160" height="100" rx="5" fill="#2b67a3" stroke="#2b67a3" stroke-width="2"/>
+<text x="330" y="610" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="800" text-anchor="middle" fill="#102d48">CT = 180</text>
+<text x="330" y="860" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="700" text-anchor="middle" fill="#203a4e">Q = 10</text>
+<text x="330" y="901" font-family="DejaVu Sans,Arial,sans-serif" font-size="25" font-weight="400" text-anchor="middle" fill="#587081">CMe = 18</text>
+<rect x="645" y="538" width="160" height="180" rx="6" fill="#0a7376" stroke="#0a7376" stroke-width="2"/>
+<rect x="645" y="718" width="160" height="100" rx="5" fill="#2b67a3" stroke="#2b67a3" stroke-width="2"/>
+<text x="725" y="510" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="800" text-anchor="middle" fill="#102d48">CT = 280</text>
+<text x="725" y="860" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="700" text-anchor="middle" fill="#203a4e">Q = 20</text>
+<text x="725" y="901" font-family="DejaVu Sans,Arial,sans-serif" font-size="25" font-weight="400" text-anchor="middle" fill="#587081">CMe = 14</text>
+<rect x="1040" y="388" width="160" height="330" rx="6" fill="#0a7376" stroke="#0a7376" stroke-width="2"/>
+<rect x="1040" y="718" width="160" height="100" rx="5" fill="#2b67a3" stroke="#2b67a3" stroke-width="2"/>
+<text x="1120" y="360" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="800" text-anchor="middle" fill="#102d48">CT = 430</text>
+<text x="1120" y="860" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" font-weight="700" text-anchor="middle" fill="#203a4e">Q = 30</text>
+<text x="1120" y="901" font-family="DejaVu Sans,Arial,sans-serif" font-size="25" font-weight="400" text-anchor="middle" fill="#587081">CMe = 14,33</text>
+<rect x="90" y="335" width="23" height="23" rx="3" fill="#2b67a3" stroke="#2b67a3" stroke-width="2"/>
+<text x="128" y="356" font-family="DejaVu Sans,Arial,sans-serif" font-size="25" font-weight="400" text-anchor="start" fill="#203a4e">Fijo: 100</text>
+<rect x="450" y="335" width="23" height="23" rx="3" fill="#0a7376" stroke="#0a7376" stroke-width="2"/>
+<text x="488" y="356" font-family="DejaVu Sans,Arial,sans-serif" font-size="25" font-weight="400" text-anchor="start" fill="#203a4e">Variable: 80 / 180 / 330</text>
+<line x1="74" y1="968" x2="1374" y2="968" stroke="#c6d6df" stroke-width="2"/>
+<text x="74" y="1010" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" font-weight="400" text-anchor="start" fill="#587081">CT = CF + CV. CMe = CT/Q. El costo marginal se calcula comparando cambios.</text>
+</svg>
