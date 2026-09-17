@@ -204,10 +204,12 @@ window.HISTORY_CHAPTERS = [
   {
     "number": 1,
     "title": "La ciencia histórica",
-    "intro": "Concepto, método, fuentes, ciencias auxiliares y tiempo histórico.",
-    "items": 5,
-    "progressId": "historia-universal-capitulo-01",
-    "legacySources": []
+    "intro": "Presentación del capítulo del libro: ocho apartados, 33 diapositivas y siete actividades con solución.",
+    "items": 7,
+    "progressId": "historia-universal-presentacion-01",
+    "legacySources": [],
+    "format": "presentation",
+    "itemLabel": "actividades"
   },
   {
     "number": 2,
