@@ -18,7 +18,7 @@ function harness(files,{local=new Map(),cloud=new Map(),search=''}={}){
  for(const file of ['practice-bank.js','chapter-practice.js','study-mode.js',...files])vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),context);
  return {run:s=>vm.runInContext(s,context),signIn:u=>callback(u),cloud,local,elements,redirects,events,setOffline:value=>offline=value};
 }
-const appFiles=['courses.js','history-catalog.js','history-progress.js','app.js'];
+const appFiles=['courses.js','history-catalog.js','peru-catalog.js','history-progress.js','app.js'];
 const presentations=['historia-universal-capitulo-01-content.js','history-reading.js'];
 const physics=n=>[`fisica-capitulo-0${n}-data.js`,`fisica-capitulo-0${n}.js`];
 const history=n=>['history-catalog.js','history-progress.js',`historia-universal-capitulo-0${n}-data.js`,'history-chapter.js'];
@@ -59,10 +59,10 @@ async function test(){
  }
  // A direct link asks first, then resumes the requested chapter after the choice.
  const direct=harness(presentations);await direct.signIn({uid:'new'});
- assert.deepEqual(direct.redirects,['index.html?chapter=historia-universal-capitulo-01&v=20260917-practice6']);
+ assert.deepEqual(direct.redirects,['index.html?chapter=historia-universal-capitulo-01&v=20260917-peru7']);
  const entry=harness(appFiles,{search:'?chapter=historia-universal-capitulo-01'});await entry.signIn({uid:'new'});
  assert.equal(entry.redirects.length,0);assert.equal(entry.run('state.view'),'mode');
- entry.run("selectStudyMode('progressive')");assert.deepEqual(entry.redirects,['historia-universal-capitulo-01.html?v=20260917-practice6']);
+ entry.run("selectStudyMode('progressive')");assert.deepEqual(entry.redirects,['historia-universal-capitulo-01.html?v=20260917-peru7']);
  await entry.run("window.StudyMode.save('new',db)");
  const nextDevice=harness(physics(1),{cloud:entry.cloud});await nextDevice.signIn({uid:'new'});
  assert.equal(nextDevice.run('P.studyMode'),'progressive','Preference also loads on another device');

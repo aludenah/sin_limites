@@ -1,0 +1,79 @@
+{
+  "created": "2026-09-17",
+  "purpose": "Historia del Perú, capítulos 1 al 6",
+  "type": "AI-generated educational reconstructions; not documentary photographs or exact archaeological plans",
+  "images": [
+    {
+      "file": "cap01-fuentes.webp",
+      "prompt": "A contemporary Peruvian historian in a modest bright archival study, studying a colonial manuscript beside an old black-and-white photograph and a small ceramic fragment resting safely on a padded tray. Hands clean, respectful careful handling, papers with indistinct unreadsble writing, no recognizable real person. Focus on how different historical sources are compared, detailed rich materials, warm side light."
+    },
+    {
+      "file": "cap01-comunidad.webp",
+      "prompt": "Present-day Andean Peruvian community in a mountain valley, several adults and youths cooperatively repairing a small irrigation ditch, with cultivated plots and an ordinary village in the distance. Dignified varied people in practical everyday rural clothing, no exoticizing costumes, realistic teamwork, broad human perspective showing ordinary people as historical protagonists."
+    },
+    {
+      "file": "cap01-investigacion.webp",
+      "prompt": "A Peruvian woman archaeologist kneeling at a careful small excavation in a dry coastal valley, using a soft brush beside pottery fragments embedded in their original soil, a second researcher recording observations in notebook, measuring cord grid and excavated earth layers in background. Contemporary realistic archaeological methods, no text, no treasure or human remains. Focus on preserving context rather than collecting valuables."
+    },
+    {
+      "file": "cap02-beringia.webp",
+      "prompt": "Pleistocene Beringia conceptual reconstruction: broad ice-free cold grassy steppe under immense northern sky, low distant snowy hills, a small Homo sapiens family group with children walking in sewn hide clothing carrying simple bundles and wooden spears, distant caribou. The land bridge is a huge inhabited landscape, NOT narrow bridge, not solid ice, no sea crossing, no igloos, no dinosaurs, no cultivated crops, no maps."
+    },
+    {
+      "file": "cap02-costa.webp",
+      "prompt": "Conceptual Pleistocene Pacific coastal foraging scene: small family group of Homo sapiens gathering shellfish on a rocky shore beside kelp-rich water, sheltered camp farther up the beach, simple hide clothing, coastal hills, misty pale light. A practical livelihood that could support movement along coasts, no assertion of exact site or date, no wooden ships, no metal, no later Peruvian monumental architecture."
+    },
+    {
+      "file": "cap02-huellas.webp",
+      "prompt": "Conceptual Ice Age lake shore in North America: an adult and child walking away across wet firm mud leave a natural trail of human footprints. Grassy lake margin, distant mammoths very small in background, warm sunset, expansive landscape. Scene illustrates how everyday traces can survive; no excavation or readable dates, not a photograph of an actual archaeological discovery. No modern dunes, no dinosaurs."
+    },
+    {
+      "file": "cap03-cazadores.webp",
+      "prompt": "Early Holocene Peruvian high Andes, small mobile hunter-gatherer camp at a rock shelter overlooking a puna grassland with wild guanacos in distance. People knap small stone tools and prepare plant foods near tiny fire; natural hide clothing, simple baskets, no pottery, no farming, no stone temples, no bows. Respectful realistic group activities not violent hunting."
+    },
+    {
+      "file": "cap03-cultivos.webp",
+      "prompt": "Early village in northern Peruvian inter-Andean dry valley, around early Holocene: adults tend a small squash garden using wooden digging sticks and select seeds in gourds, with simple woven baskets and modest organic shelters in distance. Illustrate gradual cultivation alongside gathering; no modern maize plantation, no metal tools, no pottery wheel, no Inca masonry. Dry tropical foothills, warm greens and earth."
+    },
+    {
+      "file": "cap03-caral.webp",
+      "prompt": "Educational reconstruction inspired by ancient Caral in Peru's Supe valley circa 2500 BCE, panoramic low viewpoint showing broad earthen stepped platform mound and sunken circular plaza, small people carrying fiber bags of stones, dry coastal desert surrounding a green river valley. Wide low platforms built stone and earth, NOT Mayan pyramids, no stairs flanked by snakes, no Inca masonry, no metal tools, no pottery, no text. A conceptual reconstruction not exact archaeological plan."
+    },
+    {
+      "file": "cap04-laboratorio.webp",
+      "prompt": "Contemporary archaeological research laboratory in Peru: two archaeologists compare pottery sherds on padded table, use calipers and magnification, numbered sample tags blurred unreadable; material examination and open notebooks, window with soft daylight. Main emphasis on comparison of manufacture and composition, not treasure display. No recognizable real scholar, no legible text."
+    },
+    {
+      "file": "cap04-excavacion.webp",
+      "prompt": "Early twentieth-century archaeological fieldwork in Peru conceptual scene, a careful researcher in plain khaki clothing drawing an earthen temple wall in a notebook while local workers expose layers methodically, no likeness of named actual scientist. Different construction layers visibly embedded in trench background, dry coastal valley, no human remains, no gold or treasure. Shows research changing knowledge over time, not a scientific stratigraphy diagram."
+    },
+    {
+      "file": "cap04-intercambio.webp",
+      "prompt": "Prehispanic Andean valley meeting place: small groups exchange dried fish in baskets, cotton fiber bundles, gourds and bright tropical bird feathers under simple woven shade, mountains receding toward green eastern slope. Show exchange and local choices, no coins, no wheeled vehicles, no metal weapons, no giant pyramids. Conceptual ancient cultural contact scene, a single natural composition, no map, no arrows."
+    },
+    {
+      "file": "cap05-cupisnique.webp",
+      "prompt": "Ancient north-coast Peru ceramic artisan in an earth-walled workshop shaping a dark stirrup-spout vessel by hand, incised modest feline motifs, a few unfired and finished pots on straw mat, warm gentle daylight. Formative period Cupisnique inspired, no potter's wheel, no European kiln, no metal hand tools, no invented inscriptions. Precise fingers, dignified quiet craftsmanship."
+    },
+    {
+      "file": "cap05-chavin.webp",
+      "prompt": "Conceptual reconstruction inspired by Chavin de Huantar ancient Andean ceremonial center in a narrow mountain valley: imposing rectangular stone-faced platform temple, sunken circular plaza foreground, people in simple woven tunics arriving along path. Massive but human-scale architectural stonework and deep galleries suggested by dark entrance. No Inca trapezoidal masonry, no Maya pyramids, no literal copy of sacred carved artifacts, no labels."
+    },
+    {
+      "file": "cap05-paracas.webp",
+      "prompt": "Ancient Paracas textile workshop on Peru's dry southern coast: seated skilled woman embroidering a richly colored rectangular textile with geometric bird and feline motifs using fine camelid fibers over a cotton ground, close view of hands and textile with two other workers farther away. Indigo red ochre cream palette, simple adobe shelter, wooden spindles, no modern machinery, no readable text, not an exact replica of any museum object."
+    },
+    {
+      "file": "cap06-moche.webp",
+      "prompt": "Moche north coast Peru circa 500 CE pottery workshop: skilled adult artisan paints red-brown fine-line decoration on cream ceramic stirrup-spout bottle with a human face, several restrained portrait vessels nearby, adobe walls and distant broad adobe platform temple. Natural respectful daily labor, no potter's wheel, no European tools, no fake readable writing, no crowns of Inca royalty."
+    },
+    {
+      "file": "cap06-nasca.webp",
+      "prompt": "Ancient Nasca southern Peruvian desert valley conceptual reconstruction: agricultural community maintains an open irrigation channel feeding green small plots, dry ochre hills contrast with narrow cultivated corridor, people using wood and stone tools, simple adobe structures far away. Show water management under aridity, no modern concrete, no metal pipes, no later spiral puquios as definitive Nasca invention, no geoglyph diagram."
+    },
+    {
+      "file": "cap06-altiplano.webp",
+      "prompt": "Tiwanaku region ancient Lake Titicaca altiplano farming, broad low landscape of long raised earthen crop beds separated by water channels, families tending crops, small herd of domestic llamas on dry edge, blue mountains and lake horizon. Cold clear high-altitude morning, woven tunics and mantles, no Inca terraces, no rice paddies, no modern machinery. Scenic conceptual reconstruction of raised-field agriculture, not labeled technical diagram."
+    }
+  ]
+}

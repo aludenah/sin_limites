@@ -46,7 +46,7 @@
     const mode=read(uid)?.mode||await load(uid,db);
     if(!isCurrent())return false;
     if(mode)return true;
-    global.location.replace('index.html?chapter='+encodeURIComponent(chapter)+'&v=20260917-practice6');
+    global.location.replace('index.html?chapter='+encodeURIComponent(chapter)+'&v=20260917-peru7');
     return false;
   }
   global.StudyMode={valid,get:uid=>read(uid)?.mode||null,choose,save,load,requireChoice,key};

@@ -2,11 +2,12 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
 const {harness}=require('./study-entry.test.cjs');
 const root=path.join(__dirname,'..');
 const chapters=[
+ ...[1,2,3,4,5,6].map(n=>({id:`historia-del-peru-capitulo-0${n}`,files:['peru-catalog.js','history-progress.js',`historia-del-peru-capitulo-0${n}-data.js`,'history-chapter.js'],number:n,course:11})),
  ...[1,2].map(n=>({id:`fisica-capitulo-0${n}`,files:[`fisica-capitulo-0${n}-data.js`,`fisica-capitulo-0${n}.js`],number:n,course:16})),
  {id:'historia-universal-presentacion-01',files:['historia-universal-capitulo-01-content.js','history-reading.js'],number:1,course:12,reading:true},
  ...[2,3,4,5,6].map(n=>({id:`historia-universal-pdf-0${n}`,files:['history-catalog.js','history-progress.js',`historia-universal-capitulo-0${n}-data.js`,'history-chapter.js'],number:n,course:12}))
 ];
-function sourceProgress(q){const s=q.source,p={updatedMs:50,examBest:8};if(s.kind==='practice'){p.practiceAnswers={[s.id]:q.answer};p.practiceResults={[s.id]:q.answer};p.practiceMastered=[s.id];}if(s.kind==='reading'){p.answers={[s.id]:q.answer};p.results={[s.id]:q.answer};p.completedItems=[s.index];p.currentSlide=14;}if(s.kind==='quiz'){p.quizAnswers={[s.lesson]:{[s.id]:q.answer}};p.quizResults={[s.lesson]:{[s.id]:q.answer}};}return p;}
+function sourceProgress(q){const s=q.source||{},p={updatedMs:50,examBest:8};if(!q.source)p.practice10={version:1,answers:{[q.id]:q.answer},results:{[q.id]:q.answer},mastered:[q.id],attempts:{[q.id]:1}};if(s.kind==='practice'){p.practiceAnswers={[s.id]:q.answer};p.practiceResults={[s.id]:q.answer};p.practiceMastered=[s.id];}if(s.kind==='reading'){p.answers={[s.id]:q.answer};p.results={[s.id]:q.answer};p.completedItems=[s.index];p.currentSlide=14;}if(s.kind==='quiz'){p.quizAnswers={[s.lesson]:{[s.id]:q.answer}};p.quizResults={[s.lesson]:{[s.id]:q.answer}};}return p;}
 async function testChapters(ids=chapters.map(c=>c.id)){
  for(const chapter of chapters.filter(c=>ids.includes(c.id))){
   const cloud=new Map(),local=new Map(),h=harness(chapter.files,{cloud,local}),run=h.run;

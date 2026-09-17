@@ -1580,3 +1580,876 @@ window.CHAPTER_PRACTICES = {
     ]
   }
 };
+
+Object.assign(window.CHAPTER_PRACTICES,{
+  "historia-del-peru-capitulo-01": {
+    "title": "Historia del Perú: conceptos básicos y periodización",
+    "problems": [
+      {
+        "id": "p01",
+        "options": [
+          "Ordenar gobernantes sin examinar sus sociedades.",
+          "Relacionar cambios en la producción, el poder y la vida de distintos grupos.",
+          "Considerar que las fronteras actuales existieron siempre.",
+          "Aceptar cualquier tradición como una descripción literal.",
+          "Explicar todos los cambios únicamente por el clima."
+        ],
+        "answer": 1,
+        "topic": "Objeto de estudio",
+        "prompt": "¿Qué investigación corresponde mejor a una explicación histórica del Perú?",
+        "solution": "La historia explica procesos sociales mediante evidencias. Incluye decisiones, economía, cultura y relaciones de poder; no se limita a una lista de autoridades ni a una sola causa."
+      },
+      {
+        "id": "p02",
+        "options": [
+          "La primera es una interpretación y el segundo una fecha exacta.",
+          "Ambos términos designan solamente una ceremonia en Lima.",
+          "El proceso excluye campañas militares y decisiones regionales.",
+          "La primera es un acontecimiento; el segundo incluye cambios y acciones de mayor duración.",
+          "La proclamación demuestra que todas las relaciones sociales cambiaron ese día."
+        ],
+        "answer": 3,
+        "topic": "Hecho y proceso",
+        "prompt": "La proclamación de 1821 y el proceso de independencia se diferencian porque:",
+        "solution": "Un acontecimiento puede formar parte de un proceso sin agotarlo. La independencia involucró territorios, actores y etapas diferentes, además de continuidades sociales."
+      },
+      {
+        "id": "p03",
+        "options": [
+          "Examinar su propósito y contrastarla con testimonios y registros de otros grupos.",
+          "Aceptarla por ser un documento de la época.",
+          "Descartarla sin leerla por proceder de una autoridad.",
+          "Usarla como prueba directa de la opinión de cada habitante.",
+          "Decidir su veracidad solo por la antigüedad del papel."
+        ],
+        "answer": 0,
+        "topic": "Crítica de fuentes",
+        "prompt": "Un funcionario colonial asegura que una medida fue aceptada por toda la población. ¿Cómo evaluar su afirmación?",
+        "solution": "Ser una fuente contemporánea no garantiza imparcialidad. El documento informa sobre la posición del funcionario; la aceptación general requiere evidencias adicionales."
+      },
+      {
+        "id": "p04",
+        "options": [
+          "Excluir a los gobernantes de cualquier explicación.",
+          "Probar que la geografía determina una única organización.",
+          "Sustituir las evidencias por recuerdos personales.",
+          "Suponer que todos los miembros tenían el mismo poder.",
+          "Reconocer la participación de actores colectivos en los procesos históricos."
+        ],
+        "answer": 4,
+        "topic": "Protagonistas",
+        "prompt": "Estudiar el trabajo de comunidades en el mantenimiento de canales permite:",
+        "solution": "Las decisiones y el trabajo colectivos también transforman la sociedad. Reconocerlos no elimina diferencias internas ni impide estudiar a las autoridades."
+      },
+      {
+        "id": "p05",
+        "options": [
+          "José de la Riva Agüero y Osma.",
+          "Fernando Silva Santisteban.",
+          "José Carlos Mariátegui.",
+          "Max Uhle.",
+          "Rafael Larco Hoyle."
+        ],
+        "answer": 2,
+        "topic": "Historiografía",
+        "prompt": "¿Qué autor se asocia especialmente con el análisis de la tierra, la cuestión indígena y las relaciones económicas desde una perspectiva marxista?",
+        "solution": "Mariátegui dio un lugar central a esos problemas en su interpretación de la realidad peruana. Identificar su enfoque no significa confundir todas sus interpretaciones con hechos indiscutibles."
+      },
+      {
+        "id": "p06",
+        "options": [
+          "Jorge Basadre.",
+          "Florentino Ameghino.",
+          "Aleš Hrdlička.",
+          "Julio C. Tello.",
+          "Paul Rivet."
+        ],
+        "answer": 0,
+        "topic": "Historia republicana",
+        "prompt": "Un estudio analiza las posibilidades y oportunidades desaprovechadas de la república. ¿Con qué historiador se relaciona mejor ese énfasis?",
+        "solution": "Basadre dedicó una parte central de su obra a la república, sus dificultades y posibilidades. Los otros autores se asocian con problemas de arqueología o poblamiento."
+      },
+      {
+        "id": "p07",
+        "options": [
+          "La independencia jurídica elimina cualquier influencia económica.",
+          "Toda deuda convierte automáticamente a un país en colonia.",
+          "La soberanía jurídica y las relaciones económicas son dimensiones diferentes.",
+          "La dependencia solo puede existir antes de 1821.",
+          "La autonomía significa ausencia absoluta de intercambio."
+        ],
+        "answer": 2,
+        "topic": "Periodización de Macera",
+        "prompt": "En el esquema de autonomía y dependencia, una república puede ser políticamente independiente y económicamente dependiente porque:",
+        "solution": "Macera utiliza la dependencia como criterio interpretativo. El poder económico externo no equivale necesariamente a dominio colonial ni anula por sí mismo la soberanía jurídica."
+      },
+      {
+        "id": "p08",
+        "options": [
+          "Autonomía, dependencia y aislamiento.",
+          "Perú antiguo, Perú colonial y Perú republicano.",
+          "Lítico, Arcaico y República Aristocrática.",
+          "Horizonte Temprano, Horizonte Medio y república.",
+          "Conquista, Formativo e independencia."
+        ],
+        "answer": 1,
+        "topic": "Silva Santisteban",
+        "prompt": "¿Qué secuencia corresponde a la periodización general de Fernando Silva Santisteban?",
+        "solution": "El esquema distingue tres grandes etapas. Es útil para ubicarse, pero dentro de cada una hubo sociedades, regiones y ritmos de cambio diferentes."
+      },
+      {
+        "id": "p09",
+        "options": [
+          "Los centros de Chavín mantuvieron relaciones con otras regiones.",
+          "Las fronteras actuales ayudan a localizar sitios antiguos.",
+          "Una crónica puede estudiarse como fuente escrita.",
+          "Una misma región tuvo diferentes organizaciones a lo largo del tiempo.",
+          "Los habitantes de Chavín ejercían ciudadanía en la república peruana."
+        ],
+        "answer": 4,
+        "topic": "Anacronismo",
+        "prompt": "¿Cuál de las siguientes afirmaciones contiene un anacronismo?",
+        "solution": "La ciudadanía republicana pertenece a un contexto muy posterior a Chavín. Aplicarla a sus habitantes traslada una institución fuera de su época."
+      },
+      {
+        "id": "p10",
+        "options": [
+          "Modificar la fecha del hallazgo para que coincida.",
+          "Considerar que los periodos son divisiones naturales inmutables.",
+          "Ignorar toda evidencia que contradiga el esquema.",
+          "Verificar el hallazgo y revisar el esquema si las evidencias lo requieren.",
+          "Descartar la periodización sin examinar el nuevo contexto."
+        ],
+        "answer": 3,
+        "topic": "Evidencia y periodización",
+        "prompt": "Un nuevo hallazgo no encaja en una periodización aceptada. ¿Qué procedimiento es más adecuado?",
+        "solution": "Las periodizaciones son herramientas explicativas. La revisión debe apoyarse en evidencias comprobadas, no en acomodar los datos ni en rechazar un esquema sin análisis."
+      }
+    ]
+  },
+  "historia-del-peru-capitulo-02": {
+    "title": "Poblamiento americano",
+    "problems": [
+      {
+        "id": "p01",
+        "options": [
+          "El origen de todas las especies humanas en América.",
+          "La formación del Estado peruano republicano.",
+          "El comienzo de la alfarería en Chavín.",
+          "La expansión de los primeros imperios andinos.",
+          "La llegada y dispersión de Homo sapiens en América."
+        ],
+        "answer": 4,
+        "topic": "Pregunta central",
+        "prompt": "¿Qué estudia específicamente el poblamiento americano?",
+        "solution": "Poblamiento y origen de la especie son preguntas distintas. Los grupos que ingresaron a América ya eran Homo sapiens y poseían conocimientos y formas de cooperación."
+      },
+      {
+        "id": "p02",
+        "options": [
+          "La elevación del nivel del mar por deshielo.",
+          "El descenso del nivel del mar al quedar agua retenida en grandes masas de hielo.",
+          "La construcción de un paso artificial.",
+          "La desaparición de todas las plantas de Asia.",
+          "El desplazamiento de la Antártida hasta Alaska."
+        ],
+        "answer": 1,
+        "topic": "Beringia",
+        "prompt": "¿Qué cambio favoreció la exposición de Beringia durante fases frías del Pleistoceno?",
+        "solution": "La retención de agua en los hielos redujo el nivel marino y dejó expuestas tierras. Beringia era una región extensa, no un puente angosto de hielo."
+      },
+      {
+        "id": "p03",
+        "options": [
+          "El ingreso exclusivo por un corredor de Panamá.",
+          "La llegada austral mediante la Antártida.",
+          "Una raíz americana demostrada por el viaje Kon-Tiki.",
+          "El origen de la humanidad en las pampas argentinas.",
+          "La difusión de Chavín desde la costa norte."
+        ],
+        "answer": 3,
+        "topic": "Autoctonismo",
+        "prompt": "¿Qué propuesta se asocia con Florentino Ameghino?",
+        "solution": "Ameghino defendió un origen americano de la humanidad. La revisión de restos y contextos dejó esa propuesta sin sustento; se estudia como parte de la historia de la investigación."
+      },
+      {
+        "id": "p04",
+        "options": [
+          "Reconociendo su énfasis asiático y revisando su cronología y simplificaciones.",
+          "Aceptando sus antiguas clasificaciones raciales como prueba suficiente.",
+          "Suponiendo que toda su propuesta conserva validez sin cambios.",
+          "Confundiéndola con un origen humano en Argentina.",
+          "Afirmando que se basó en la cerámica de Valdivia."
+        ],
+        "answer": 0,
+        "topic": "Hrdlička",
+        "prompt": "¿Cómo debe valorarse la propuesta de Hrdlička?",
+        "solution": "La conexión con el noreste de Asia es importante. Eso no valida automáticamente una única migración tardía ni las antiguas clasificaciones físicas usadas por el autor."
+      },
+      {
+        "id": "p05",
+        "options": [
+          "Rivet — origen de Homo sapiens en las pampas.",
+          "Ameghino — ingreso asiático por Beringia.",
+          "Mendes Correia — propuesta de una ruta austral mediante la Antártida.",
+          "Hrdlička — civilización andina originada en Valdivia.",
+          "Heyerdahl — excavación de Monte Verde II."
+        ],
+        "answer": 2,
+        "topic": "Comparación de teorías",
+        "prompt": "¿Qué asociación es correcta?",
+        "solution": "Mendes Correia planteó la ruta austral. La asociación identifica una propuesta histórica, que no cuenta con evidencia suficiente para explicar el poblamiento inicial."
+      },
+      {
+        "id": "p06",
+        "options": [
+          "Que los primeros americanos llegaron necesariamente de Polinesia.",
+          "Que toda semejanza cultural prueba una migración.",
+          "Que Beringia nunca fue transitable.",
+          "Que una travesía determinada desde Sudamérica hacia Polinesia era viable.",
+          "Que la humanidad se originó en América del Sur."
+        ],
+        "answer": 3,
+        "topic": "Prueba experimental",
+        "prompt": "La expedición Kon-Tiki demuestra principalmente:",
+        "solution": "La expedición prueba viabilidad bajo ciertas condiciones. No demuestra que esa migración ocurriera en la antigüedad y su dirección fue desde América hacia Polinesia."
+      },
+      {
+        "id": "p07",
+        "options": [
+          "La idea de que Clovis representa la primera presencia humana en todo el continente.",
+          "La existencia de seres humanos antes de la alfarería.",
+          "La necesidad de fechar materiales arqueológicos.",
+          "La existencia de ocupaciones en Sudamérica.",
+          "La importancia de conservar contextos de excavación."
+        ],
+        "answer": 0,
+        "topic": "Monte Verde",
+        "prompt": "La ocupación de Monte Verde II, cercana a 14 500 años de antigüedad, cuestiona principalmente:",
+        "solution": "Monte Verde II es anterior a Clovis y se encuentra muy al sur. Demuestra presencia previa en ese lugar, pero no fija por sí solo la primera llegada al continente."
+      },
+      {
+        "id": "p08",
+        "options": [
+          "Una roca antigua y una fotografía sin procedencia.",
+          "Una semejanza física y una tradición sin fecha.",
+          "Un objeto llamativo sin registro y una fecha estimada a simple vista.",
+          "Una hipótesis popular y ausencia de análisis del sitio.",
+          "Huellas humanas identificables, contexto conservado y dataciones compatibles."
+        ],
+        "answer": 4,
+        "topic": "Evaluación de hallazgos",
+        "prompt": "¿Qué combinación fortalece una afirmación de presencia humana muy antigua?",
+        "solution": "La antigüedad necesita vincularse de manera segura con actividad humana. Contexto y datación permiten evaluar esa relación y contrastar los resultados."
+      },
+      {
+        "id": "p09",
+        "options": [
+          "14 500 años de antigüedad significa exactamente 14 500 a. n. e.",
+          "Una edad expresada en años AP debe distinguirse de una fecha a. n. e.",
+          "AP usa cada año una referencia distinta según la fecha de lectura.",
+          "La fecha de una roca equivale siempre a la de su talla.",
+          "La calibración elimina toda incertidumbre arqueológica."
+        ],
+        "answer": 1,
+        "topic": "Sistemas de fechas",
+        "prompt": "¿Qué afirmación interpreta correctamente las fechas arqueológicas?",
+        "solution": "AP o BP usa convencionalmente 1950 como referencia. Las fechas de calendario y las edades no son expresiones equivalentes, y el radiocarbono requiere calibración."
+      },
+      {
+        "id": "p10",
+        "options": [
+          "Elegir siempre el trayecto más corto en un mapa actual.",
+          "Suponer que toda costa antigua está hoy expuesta.",
+          "Comprobar que sus condiciones de uso sean compatibles con las fechas de ocupación.",
+          "Considerar que cualquier paso terrestre fue habitable en todo momento.",
+          "Descartar recursos marinos por no ser agricultura."
+        ],
+        "answer": 2,
+        "topic": "Rutas de dispersión",
+        "prompt": "Para evaluar una posible ruta costera o interior, lo más importante es:",
+        "solution": "Una ruta necesita condiciones de tránsito y subsistencia en el periodo estudiado. Un trazado posible hoy no demuestra que fuera utilizable durante la primera dispersión."
+      }
+    ]
+  },
+  "historia-del-peru-capitulo-03": {
+    "title": "Comunidad primitiva en el Perú",
+    "problems": [
+      {
+        "id": "p01",
+        "options": [
+          "Ausencia total de conocimiento del territorio.",
+          "Una prueba de agricultura intensiva en todos los lugares.",
+          "Una estrategia de aprovechamiento de recursos conocidos y variables.",
+          "Una consecuencia inevitable de no tener cultura.",
+          "La existencia de un gobierno centralizado de toda la costa."
+        ],
+        "answer": 2,
+        "topic": "Ambiente y movilidad",
+        "prompt": "El traslado estacional entre lomas, valles y litoral puede explicarse como:",
+        "solution": "La movilidad podía organizarse según ciclos de recursos. No implica desorientación ni permite deducir por sí sola la forma de gobierno."
+      },
+      {
+        "id": "p02",
+        "options": [
+          "Que pertenece a una secuencia anterior a la presencia habitual de alfarería.",
+          "Que carece de cualquier conocimiento técnico.",
+          "Que nunca tuvo arquitectura colectiva.",
+          "Que todos sus habitantes eran cazadores nómadas.",
+          "Que su población no mantuvo intercambios."
+        ],
+        "answer": 0,
+        "topic": "Categorías arqueológicas",
+        "prompt": "¿Qué significa principalmente llamar precerámico a un contexto?",
+        "solution": "Precerámico es una categoría vinculada a una tecnología. La ausencia de vasijas no impide textiles, edificios, sedentarismo ni organización compleja."
+      },
+      {
+        "id": "p03",
+        "options": [
+          "Caral — cerámica moche del valle de Supe.",
+          "Toquepala — mantos funerarios de Paracas.",
+          "Lauricocha — geoglifos de la costa sur.",
+          "Paiján — arquitectura inca de Cusco.",
+          "Chivateros — aprovisionamiento y trabajo de piedra en el valle del Chillón."
+        ],
+        "answer": 4,
+        "topic": "Sitios del Lítico",
+        "prompt": "¿Qué asociación entre sitio y evidencia es correcta?",
+        "solution": "Chivateros permite estudiar obtención y talla de materia prima lítica. Los demás pares mezclan sitios, periodos o evidencias diferentes."
+      },
+      {
+        "id": "p04",
+        "options": [
+          "La administración escrita del Estado Wari.",
+          "Representaciones vinculadas a la caza y actividades colectivas.",
+          "Las genealogías exactas de todos los habitantes.",
+          "La fecha de invención de la metalurgia en América.",
+          "La organización de los talleres textiles paracas."
+        ],
+        "answer": 1,
+        "topic": "Arte rupestre",
+        "prompt": "Las escenas de Toquepala permiten investigar principalmente:",
+        "solution": "Las pinturas muestran figuras y relaciones que pueden interpretarse en conexión con la caza. No revelan automáticamente todos los significados rituales de sus autores."
+      },
+      {
+        "id": "p05",
+        "options": [
+          "Recoger únicamente frutos silvestres sin intervenir.",
+          "Encontrar una llama domesticada en un rebaño.",
+          "Observar cambios heredables asociados a selección prolongada.",
+          "Sembrar y cuidar plantas sin haber comprobado cambios heredables en ellas.",
+          "Identificar una población vegetal domesticada en varios contextos."
+        ],
+        "answer": 3,
+        "topic": "Producción de alimentos",
+        "prompt": "¿Qué situación describe cultivo, pero no demuestra por sí sola domesticación?",
+        "solution": "Cultivar es intervenir en el crecimiento. La domesticación implica cambios heredables en poblaciones; ambos procesos se relacionan, pero no son idénticos."
+      },
+      {
+        "id": "p06",
+        "options": [
+          "El origen del Estado inca.",
+          "El cultivo temprano y el uso de plantas como zapallo, maní y algodón.",
+          "La expansión de los geoglifos nasca.",
+          "La construcción de la Portada del Sol.",
+          "La administración republicana de las haciendas."
+        ],
+        "answer": 1,
+        "topic": "Nanchoc",
+        "prompt": "Nanchoc es una referencia importante para estudiar:",
+        "solution": "Las evidencias de Nanchoc ayudan a reconstruir producción vegetal temprana y dieta. El algodón recuerda que cultivar también podía proporcionar fibras y materiales."
+      },
+      {
+        "id": "p07",
+        "options": [
+          "Cahuachi, en la costa sur.",
+          "Garagay, en Lima.",
+          "Sipán, en Lambayeque.",
+          "Maranga, en el valle del Rímac.",
+          "Telarmachay, en Junín."
+        ],
+        "answer": 4,
+        "topic": "Pastoreo",
+        "prompt": "¿Qué sitio es especialmente relevante para investigar la relación entre cazadores de camélidos y el desarrollo del pastoreo?",
+        "solution": "Telarmachay es un abrigo altoandino estudiado en relación con el manejo de camélidos. La domesticación se reconstruye como proceso prolongado, no como un hecho instantáneo."
+      },
+      {
+        "id": "p08",
+        "options": [
+          "Que la agricultura eliminó necesariamente toda pesca.",
+          "Que la presencia de plantas impide hablar de sedentarismo.",
+          "Que pesca y cultivo pudieron coexistir en su economía.",
+          "Que todos los alimentos eran importados.",
+          "Que el sitio pertenece obligatoriamente al periodo Inca."
+        ],
+        "answer": 2,
+        "topic": "Economías combinadas",
+        "prompt": "Una aldea contiene restos de pescado, redes y plantas cultivadas. La conclusión más adecuada es:",
+        "solution": "Las actividades de subsistencia no se reemplazaron siempre de manera completa. Su combinación podía diversificar recursos y reducir riesgos."
+      },
+      {
+        "id": "p09",
+        "options": [
+          "Distinguir la fase precerámica Mito de fases posteriores con cerámica.",
+          "Atribuir todas sus ocupaciones a un mismo año.",
+          "Considerar que las manos cruzadas son una escritura descifrada.",
+          "Trasladar sus rasgos a todos los sitios de la costa norte.",
+          "Afirmar que toda fase del sitio careció de edificios rituales."
+        ],
+        "answer": 0,
+        "topic": "Kotosh",
+        "prompt": "¿Qué precaución es correcta al estudiar Kotosh?",
+        "solution": "Un sitio puede contener varias fases. Distinguirlas evita atribuir cerámica o arquitectura de un momento a toda la secuencia de ocupación."
+      },
+      {
+        "id": "p10",
+        "options": [
+          "Demuestra que Chavín fue anterior a todas las aldeas.",
+          "Prueba que la alfarería es indispensable para cualquier centro complejo.",
+          "Permite conocer con certeza los nombres de todos sus gobernantes.",
+          "Combina organización compleja y arquitectura monumental en un contexto precerámico.",
+          "Muestra que pesca y agricultura no podían relacionarse."
+        ],
+        "answer": 3,
+        "topic": "Caral",
+        "prompt": "¿Por qué Caral es importante para discutir el origen de la civilización andina?",
+        "solution": "Caral obliga a ampliar los criterios usados para reconocer complejidad social. Sus obras y relaciones económicas no dependen de la presencia de cerámica."
+      }
+    ]
+  },
+  "historia-del-peru-capitulo-04": {
+    "title": "Teorías sobre el origen de la cultura peruana",
+    "problems": [
+      {
+        "id": "p01",
+        "options": [
+          "Las comunidades cazadoras y recolectoras ya poseían conocimientos y prácticas culturales.",
+          "La cultura apareció únicamente con la cerámica.",
+          "Solo las sociedades con Estado tienen cultura.",
+          "La cultura depende de escribir con alfabeto.",
+          "Las sociedades sin templos carecen de aprendizaje social."
+        ],
+        "answer": 0,
+        "topic": "Cultura y complejidad",
+        "prompt": "¿Qué afirmación utiliza correctamente el concepto de cultura?",
+        "solution": "Cultura es un concepto amplio. El capítulo estudia el origen de sociedades complejas, no el inicio de toda capacidad cultural."
+      },
+      {
+        "id": "p02",
+        "options": [
+          "Desde Caral hacia Egipto y después a México.",
+          "Desde la república peruana hacia Chavín.",
+          "Desde Australia por la Antártida hasta la costa norte.",
+          "Desde Tiahuanaco hacia las pampas para originar Homo sapiens.",
+          "Desde Mesoamérica hacia la costa peruana y luego hacia la sierra."
+        ],
+        "answer": 4,
+        "topic": "Uhle",
+        "prompt": "¿Qué recorrido de influencia propuso el inmigracionismo de Max Uhle?",
+        "solution": "Uhle defendió un impulso externo mesoamericano que llegaría a la costa. La propuesta es histórica: no se considera demostrada como origen de la civilización andina."
+      },
+      {
+        "id": "p03",
+        "options": [
+          "Cupisnique como colonia maya.",
+          "Valdivia como capital de los incas.",
+          "Chavín como cultura matriz y una explicación con raíces amazónicas.",
+          "Moche como origen de Homo sapiens.",
+          "Caral como centro derivado de la república."
+        ],
+        "answer": 2,
+        "topic": "Tello",
+        "prompt": "¿Qué combinación corresponde a la propuesta de Julio C. Tello?",
+        "solution": "Tello destacó el desarrollo autóctono y relacionó la iconografía chavín con la Amazonía. Los centros anteriores a Chavín obligaron a revisar su condición de matriz inicial absoluta."
+      },
+      {
+        "id": "p04",
+        "options": [
+          "Niega la existencia de cerámica fuera de Chavín.",
+          "Sostiene que los primeros humanos surgieron en Argentina.",
+          "Identifica únicamente el clima como causa de toda cultura.",
+          "Propone antecedentes exteriores comunes, en vez de una simple derivación maya del Perú.",
+          "Afirma que no hubo relaciones entre regiones."
+        ],
+        "answer": 3,
+        "topic": "Kauffmann Doig",
+        "prompt": "¿Qué distingue el aloctonismo de la explicación de Uhle?",
+        "solution": "En una formulación conocida, Kauffmann Doig destacó Valdivia como antecedente. La antigüedad cerámica no demuestra por sí sola una raíz única de toda organización social."
+      },
+      {
+        "id": "p05",
+        "options": [
+          "Clovis.",
+          "Cupisnique.",
+          "Monte Verde.",
+          "Lauricocha.",
+          "Tiahuanaco."
+        ],
+        "answer": 1,
+        "topic": "Larco Hoyle",
+        "prompt": "¿Qué tradición ocupó un lugar central en la defensa de un origen costeño formulada por Larco Hoyle?",
+        "solution": "Larco Hoyle destacó Cupisnique y la costa norte al discutir la primacía de Chavín. Su énfasis permite reconocer trayectorias costeñas propias."
+      },
+      {
+        "id": "p06",
+        "options": [
+          "Un origen humano en las pampas.",
+          "Un aislamiento absoluto y permanente.",
+          "El hologenismo, que relaciona procesos internos y aportes externos.",
+          "La idea de que toda semejanza implica conquista.",
+          "Una explicación que elimina la capacidad de decisión local."
+        ],
+        "answer": 2,
+        "topic": "Hologenismo",
+        "prompt": "Una comunidad adopta una técnica externa y la transforma según recursos locales. ¿Qué enfoque permite explicar mejor ambas dimensiones?",
+        "solution": "El enfoque de Luis G. Lumbreras destaca el desarrollo interno y la adaptación de aportes. Recibir una técnica no convierte a una población en receptora pasiva de toda su cultura."
+      },
+      {
+        "id": "p07",
+        "options": [
+          "Solo cuál de las dos resulta más vistosa.",
+          "El país actual donde se exhiben.",
+          "La popularidad de la hipótesis en redes sociales.",
+          "Fechas, técnicas, materias primas y contextos de circulación.",
+          "La nacionalidad del primer coleccionista."
+        ],
+        "answer": 3,
+        "topic": "Pruebas de contacto",
+        "prompt": "Dos vasijas de regiones distintas se parecen. ¿Qué conviene investigar antes de afirmar una transmisión directa?",
+        "solution": "Una semejanza admite varias explicaciones, como intercambio, imitación o soluciones similares. Las evidencias adicionales permiten distinguirlas."
+      },
+      {
+        "id": "p08",
+        "options": [
+          "La cerámica es una condición indispensable para la complejidad social.",
+          "Toda sociedad posee cultura.",
+          "La arquitectura requiere trabajo.",
+          "Las teorías deben contrastarse con evidencias.",
+          "Las poblaciones pueden intercambiar recursos."
+        ],
+        "answer": 0,
+        "topic": "Caral y los criterios",
+        "prompt": "El estudio de Caral cuestiona principalmente la idea de que:",
+        "solution": "Caral presenta organización y arquitectura complejas en un contexto precerámico. Por ello no basta usar la alfarería como único indicador de civilización."
+      },
+      {
+        "id": "p09",
+        "options": [
+          "Control político permanente del lugar de origen.",
+          "Migración de toda la población del lugar receptor.",
+          "Ausencia de producción local en la región.",
+          "Identidad completa de las religiones de ambos lugares.",
+          "Circulación de bienes entre lugares."
+        ],
+        "answer": 4,
+        "topic": "Difusión y poder",
+        "prompt": "Un objeto importado, con procedencia bien identificada, demuestra de manera más directa:",
+        "solution": "La procedencia apoya la existencia de circulación. Conquista, migración y adopción religiosa requieren evidencias específicas adicionales."
+      },
+      {
+        "id": "p10",
+        "options": [
+          "Aceptar la conclusión por la fama de su autor.",
+          "Revisar esa conclusión y evaluar por separado los demás aportes del investigador.",
+          "Eliminar toda la obra del autor sin examinarla.",
+          "Cambiar las fechas para conservar la teoría.",
+          "Suponer que todas las hipótesis son igualmente válidas."
+        ],
+        "answer": 1,
+        "topic": "Evaluación de teorías",
+        "prompt": "Si nuevos fechados contradicen una conclusión clásica, el procedimiento más adecuado es:",
+        "solution": "El conocimiento se revisa mediante evidencias. Una conclusión refutada no invalida automáticamente todas las observaciones o métodos de quien la formuló."
+      }
+    ]
+  },
+  "historia-del-peru-capitulo-05": {
+    "title": "Formativo andino",
+    "problems": [
+      {
+        "id": "p01",
+        "options": [
+          "Inicio de toda cultura y desaparición de la cooperación.",
+          "Generalización de la ciudadanía republicana.",
+          "Abandono completo de la agricultura por la ganadería.",
+          "Ampliación agrícola, especialización y consolidación de centros ceremoniales.",
+          "Sustitución inmediata de todas las regiones por un Estado único."
+        ],
+        "answer": 3,
+        "topic": "Formativo",
+        "prompt": "¿Qué conjunto de procesos caracteriza mejor el Formativo andino?",
+        "solution": "El Formativo reúne transformaciones productivas, sociales y rituales. No es el comienzo de toda cultura ni de toda arquitectura, pues existen antecedentes precerámicos."
+      },
+      {
+        "id": "p02",
+        "options": [
+          "Son nombres idénticos para fechas fijas en toda América.",
+          "Pertenecen a esquemas con criterios distintos y sus límites no son equivalencias exactas.",
+          "El Horizonte Temprano es posterior a la república.",
+          "El Formativo solo estudia monumentos incas.",
+          "Ambos excluyen cualquier referencia a Chavín."
+        ],
+        "answer": 1,
+        "topic": "Periodizaciones",
+        "prompt": "¿Qué relación es más precisa entre Formativo y Horizonte Temprano?",
+        "solution": "El esquema del Formativo resalta transformaciones sociales; el Horizonte Temprano se relaciona con difusión amplia de estilos. Deben compararse sin igualar automáticamente todas sus fases."
+      },
+      {
+        "id": "p03",
+        "options": [
+          "Kuntur Wasi — Titicaca — geoglifos.",
+          "Sechín — Nasca — mantos funerarios.",
+          "Pacopampa — Paracas — puquios.",
+          "Kotosh Wairajirca — Cusco — palacios incas.",
+          "Garagay — Lima — disposición monumental en U y frisos."
+        ],
+        "answer": 4,
+        "topic": "Centros ceremoniales",
+        "prompt": "¿Qué asociación es correcta?",
+        "solution": "Garagay es un centro del valle limeño con arquitectura en U y frisos. Las otras opciones mezclan regiones y manifestaciones culturales."
+      },
+      {
+        "id": "p04",
+        "options": [
+          "Demostrar que ambos centros tuvieron siempre un mismo gobernante.",
+          "Afirmar que toda la cerámica fue producida en un solo taller.",
+          "Plantear preguntas sobre contactos y circulación de estilos.",
+          "Eliminar la necesidad de fechar las piezas.",
+          "Concluir que la costa no tuvo procesos propios."
+        ],
+        "answer": 2,
+        "topic": "Cupisnique",
+        "prompt": "La semejanza entre cerámicas de Cupisnique y Chavín permite inicialmente:",
+        "solution": "Las semejanzas orientan hipótesis que deben contrastarse con contextos y cronologías. No demuestran por sí mismas subordinación política ni producción en un único lugar."
+      },
+      {
+        "id": "p05",
+        "options": [
+          "Centro ceremonial en Áncash, cerca de los ríos Mosna y Huachecsa.",
+          "Capital republicana situada en el valle del Rímac.",
+          "Centro de geoglifos en la pampa de Nasca.",
+          "Puerto colonial en el lago Titicaca.",
+          "Cantera lítica ubicada junto al río Chillón."
+        ],
+        "answer": 0,
+        "topic": "Chavín",
+        "prompt": "¿Qué descripción corresponde a Chavín de Huántar?",
+        "solution": "Chavín de Huántar se ubica en el Callejón de Conchucos y fue un centro ceremonial de gran importancia. Su localización favoreció contactos interregionales."
+      },
+      {
+        "id": "p06",
+        "options": [
+          "Portada del Sol, monolito Bennett y Akapana.",
+          "Geoglifos, Cantalloc y Cahuachi.",
+          "Señor de Sipán, Señora de Cao y Huaca Rajada.",
+          "Huaca Pucllana, Maranga y decoración interlocking.",
+          "Lanzón, Estela de Raimondi y Obelisco Tello."
+        ],
+        "answer": 4,
+        "topic": "Escultura lítica",
+        "prompt": "¿Qué conjunto está asociado con Chavín?",
+        "solution": "Las tres piezas son referencias de la litoescultura chavín. Los otros conjuntos pertenecen a Tiahuanaco, Nasca, Moche o Lima."
+      },
+      {
+        "id": "p07",
+        "options": [
+          "Que todas estuvieron bajo una misma administración política.",
+          "Que hubo semejanzas culturales.",
+          "Que existieron motivos comparables.",
+          "Que conviene investigar contactos.",
+          "Que es necesario estudiar la procedencia de los objetos."
+        ],
+        "answer": 0,
+        "topic": "Influencia cultural",
+        "prompt": "La presencia de estilos chavín en regiones alejadas no basta para demostrar:",
+        "solution": "Un horizonte cultural puede abarcar un espacio mayor que el control directo de un centro. Para afirmar dominación política se necesitan evidencias administrativas y territoriales."
+      },
+      {
+        "id": "p08",
+        "options": [
+          "Afirmar que todas aparecieron el mismo año.",
+          "Considerar que existieron únicamente para crear Moche.",
+          "Negar que sus cronologías puedan superponerse.",
+          "Estudiar tradiciones con continuidades y cambios entre periodos, sin negar su historia propia.",
+          "Clasificarlas como sociedades sin manifestaciones culturales."
+        ],
+        "answer": 3,
+        "topic": "Culturas de transición",
+        "prompt": "¿Qué significa usar la expresión «culturas puente»?",
+        "solution": "Es una categoría didáctica de transición. Cada tradición posee una trayectoria propia y puede atravesar límites convencionales, como ocurre con parte de Vicús."
+      },
+      {
+        "id": "p09",
+        "options": [
+          "Trepanación y modificación de la forma son siempre el mismo procedimiento.",
+          "La cicatrización demuestra la muerte inmediata en todos los casos.",
+          "Trepanar abre parte del cráneo; modificar su forma durante el crecimiento es otra práctica.",
+          "Un cráneo permite conocer con certeza todos los medicamentos empleados.",
+          "La modificación craneal demuestra por sí sola una intervención terapéutica."
+        ],
+        "answer": 2,
+        "topic": "Paracas",
+        "prompt": "¿Qué distinción es correcta al estudiar prácticas craneales en Paracas?",
+        "solution": "Las prácticas tienen técnicas y propósitos diferentes. La cicatrización puede indicar supervivencia, pero no identifica automáticamente sustancias o causas de la operación."
+      },
+      {
+        "id": "p10",
+        "options": [
+          "Todos los habitantes vestían diariamente el mismo conjunto.",
+          "Aporta evidencia de trabajo especializado y tratamiento funerario que debe compararse con otros contextos.",
+          "La cantidad de mantos revela el nombre exacto del gobernante.",
+          "Los textiles no pueden informar sobre diferencias sociales.",
+          "El hallazgo demuestra que toda la costa sur tuvo una única capital."
+        ],
+        "answer": 1,
+        "topic": "Textiles y contexto",
+        "prompt": "Un fardo funerario conserva numerosos textiles finos. ¿Cuál es la conclusión más prudente?",
+        "solution": "Los textiles permiten estudiar técnica, identidad y diferencias de acceso. Un contexto funerario particular no representa automáticamente la vida cotidiana de toda la población."
+      }
+    ]
+  },
+  "historia-del-peru-capitulo-06": {
+    "title": "Primer Desarrollo Regional",
+    "problems": [
+      {
+        "id": "p01",
+        "options": [
+          "El Intermedio Tardío posterior a Wari.",
+          "El Intermedio Temprano, con cronologías regionales parcialmente superpuestas.",
+          "El Horizonte Tardío de expansión inca.",
+          "La etapa colonial temprana.",
+          "El Arcaico inferior anterior a los centros ceremoniales."
+        ],
+        "answer": 1,
+        "topic": "Periodización",
+        "prompt": "El Primer Desarrollo Regional se relaciona principalmente con:",
+        "solution": "Intermedio Temprano e Intermedio Tardío son etapas diferentes. El temario incluye además Tiahuanaco, cuyo apogeo se superpone con el Horizonte Medio."
+      },
+      {
+        "id": "p02",
+        "options": [
+          "Altiplano, Portada del Sol y camellones.",
+          "Costa sur, Cahuachi y geoglifos.",
+          "Huánuco, manos cruzadas y Kotosh Mito.",
+          "Casma, relieves líticos del Formativo inicial.",
+          "Costa norte, huacas del Sol y la Luna, cerámica escultórica y metalurgia."
+        ],
+        "answer": 4,
+        "topic": "Moche",
+        "prompt": "¿Qué conjunto corresponde a Moche?",
+        "solution": "Moche se desarrolló en valles de la costa norte. Las huacas y la producción especializada son referencias centrales; las demás opciones corresponden a otras sociedades o sitios."
+      },
+      {
+        "id": "p03",
+        "options": [
+          "Suponer una única capital invariable sin contrastar evidencias.",
+          "Negar toda diferenciación social en Moche.",
+          "Investigar diversidad de autoridades y centros a lo largo de la historia moche.",
+          "Excluir a las mujeres de cualquier pregunta sobre autoridad.",
+          "Considerar que todos los entierros tuvieron idéntico tratamiento."
+        ],
+        "answer": 2,
+        "topic": "Poder regional",
+        "prompt": "Los hallazgos de Sipán, Cao y otros centros aconsejan:",
+        "solution": "Los contextos revelan jerarquías y distintos centros. La Señora de Cao también amplía el estudio de la participación femenina en posiciones de autoridad y ritual."
+      },
+      {
+        "id": "p04",
+        "options": [
+          "Cahuachi, cerámica policroma y geoglifos de la costa sur.",
+          "Maranga, cerámica interlocking y valle del Rímac.",
+          "Lanzón, galerías y confluencia del Mosna y Huachecsa.",
+          "Kalasasaya, monolitos y altiplano.",
+          "Sipán, Huaca Rajada y costa norte."
+        ],
+        "answer": 0,
+        "topic": "Nasca",
+        "prompt": "¿Qué asociación identifica mejor a Nasca?",
+        "solution": "Cahuachi fue un centro ceremonial nasca. La policromía y los geoglifos son referencias de su tradición y paisaje cultural, sin reducir toda su historia a esos rasgos."
+      },
+      {
+        "id": "p05",
+        "options": [
+          "La primera es una escultura y el segundo una vasija.",
+          "Ambos designan exclusivamente una plaza ceremonial.",
+          "La primera siempre elimina heladas y el segundo siempre capta agua subterránea.",
+          "La primera capta o conduce agua subterránea; el segundo eleva la superficie cultivada.",
+          "Ambos prueban por sí solos la misma forma de gobierno."
+        ],
+        "answer": 3,
+        "topic": "Tecnología hidráulica",
+        "prompt": "¿Qué diferencia distingue una galería filtrante de un camellón?",
+        "solution": "Son soluciones técnicas diferentes. Su funcionamiento y administración deben estudiarse en cada contexto; ninguna obra revela por sí sola toda la organización política."
+      },
+      {
+        "id": "p06",
+        "options": [
+          "Aceptar una sola explicación para todas sin contrastar datos.",
+          "Considerarlas rutas modernas por aparecer en mapas actuales.",
+          "Evaluar hipótesis rituales, paisajísticas y astronómicas según cada conjunto.",
+          "Afirmar que una alineación explica la totalidad de las figuras.",
+          "Excluir su relación con actividades humanas por su gran tamaño."
+        ],
+        "answer": 2,
+        "topic": "Geoglifos",
+        "prompt": "¿Cuál es una forma adecuada de interpretar las líneas de Nasca y Palpa?",
+        "solution": "Los geoglifos son diversos y fueron realizados durante siglos. Las hipótesis deben relacionarse con fechas, formas y contextos, evitando una explicación única no demostrada."
+      },
+      {
+        "id": "p07",
+        "options": [
+          "La cultura Lima y los valles de la costa central.",
+          "Paracas y la península de Ica.",
+          "Recuay y la sierra de Áncash.",
+          "Pucará y el norte del Titicaca.",
+          "Moche y todos los valles de la costa norte."
+        ],
+        "answer": 0,
+        "topic": "Lima",
+        "prompt": "Maranga, Huaca Pucllana y la decoración interlocking se asocian con:",
+        "solution": "Estos centros y estilos son referencias para estudiar Lima. El interlocking incluye seres estilizados entrelazados, pero no representa toda la diversidad de su cerámica."
+      },
+      {
+        "id": "p08",
+        "options": [
+          "Su centro principal fue Cahuachi en Ica.",
+          "Solo se desarrolló durante el Lítico peruano.",
+          "Su apogeo coincidió con la formación de la república.",
+          "Fue necesariamente una colonia gobernada desde Chavín.",
+          "Su centro principal está en la actual Bolivia y su influencia alcanzó los Andes meridionales."
+        ],
+        "answer": 4,
+        "topic": "Tiahuanaco",
+        "prompt": "¿Qué afirmación ubica correctamente a Tiahuanaco?",
+        "solution": "Tiahuanaco se desarrolló en la cuenca del Titicaca y articuló redes amplias. Su apogeo entre los siglos VI y IX se superpone con el Horizonte Medio."
+      },
+      {
+        "id": "p09",
+        "options": [
+          "Eliminar todo riesgo climático sin mantenimiento.",
+          "Transportar agua exclusivamente por túneles subterráneos.",
+          "Sustituir cualquier forma de agricultura por pastoreo.",
+          "Favorecer drenaje y manejo del agua, y moderar ciertas heladas bajo condiciones adecuadas.",
+          "Funcionar únicamente como caminos ceremoniales."
+        ],
+        "answer": 3,
+        "topic": "Campos elevados",
+        "prompt": "¿Qué explicación describe mejor una función de los waru waru?",
+        "solution": "Los campos elevados y sus canales tienen funciones hidráulicas y pueden ofrecer ventajas térmicas. Sus resultados dependen de las condiciones y del trabajo de mantenimiento."
+      },
+      {
+        "id": "p10",
+        "options": [
+          "Recuay, Moche y Nasca fueron nombres de una única capital.",
+          "Recuay aporta una trayectoria serrana de Áncash; Moche y Nasca permiten comparar distintas regiones costeñas.",
+          "Moche apareció solo después de la desaparición de todos los nasca.",
+          "Todas las culturas regionales quedaron aisladas sin intercambios.",
+          "La expansión Wari reemplazó todas las tradiciones en una misma fecha."
+        ],
+        "answer": 1,
+        "topic": "Comparación regional",
+        "prompt": "¿Qué comparación es correcta?",
+        "solution": "El periodo reúne trayectorias diversas, parcialmente contemporáneas y conectadas. La expansión Wari se superpuso con procesos regionales, sin un reemplazo instantáneo general."
+      }
+    ]
+  }
+});
