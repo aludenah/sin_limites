@@ -477,7 +477,7 @@ window.HISTORY_CONTENT = {
       "Imperios asirio y neobabilónico; conquista persa de Babilonia en 539 a. C."
     ]
   ],
-  "resources": "<p class=\"resource-note\"><b>Temario de referencia:</b> <cite>Historia Universal</cite>, Lumbreras Editores, capítulo 4, páginas impresas 32–39. Las explicaciones y actividades de esta web son una adaptación didáctica original.</p><h2>Materiales del capítulo</h2><p>Repasa los términos, procesos y fechas de las lecciones. Utiliza la cronología para relacionar los cambios políticos con las evidencias culturales.</p>",
+  "resources": "<h2>Materiales del capítulo</h2><p>Repasa los términos, procesos y fechas de las lecciones. Utiliza la cronología para relacionar los cambios políticos con las evidencias culturales.</p>",
   "progressId": "historia-universal-pdf-04",
   "legacySources": [
     {

@@ -4,25 +4,27 @@ window.HISTORY_PRESENTATION = {
   "courseId": 12,
   "id": "historia-universal-presentacion-01",
   "version": 1,
-  "source": "Historia Universal · Lumbreras · capítulo 1, pp. 9–17",
   "slides": [
     {
       "id": "s1",
       "kind": "cover",
       "title": "La ciencia histórica",
       "section": "Inicio",
-      "page": "9",
       "lead": "Comprender el pasado. Interpretar el presente. Pensar el futuro.",
-      "notes": "Esta presentación desarrolla los ocho apartados de La ciencia histórica del libro Historia Universal de Lumbreras (pp. 9–17). Las explicaciones están reorganizadas para estudiar una idea a la vez. Los ejemplos y las soluciones amplían el contenido y distinguen hechos, interpretaciones y modelos. Puedes recorrer las diapositivas con los botones o las flechas del teclado; abre el índice para ir a un tema concreto."
+      "notes": "Esta presentación desarrolla los ocho apartados de la ciencia histórica. Las explicaciones están reorganizadas para estudiar una idea a la vez. Los ejemplos y las soluciones amplían el contenido y distinguen hechos, interpretaciones y modelos. Puedes recorrer las diapositivas con los botones o las flechas del teclado; abre el índice para ir a un tema concreto.",
+      "illustration": {
+        "src": "assets/history-cap1-ai/concepto.webp",
+        "alt": "Historiadora y estudiante comparan una vasija, una carta, una moneda y una fotografía.",
+        "caption": "Investigar el pasado significa comparar evidencias."
+      }
     },
     {
       "id": "s2",
       "kind": "cards",
       "title": "¿Qué aprenderás?",
       "section": "Inicio",
-      "page": "9",
       "lead": "",
-      "notes": "El propósito es comprender cómo se construye el conocimiento histórico. Al terminar, podrás elegir fuentes para investigar un problema, reconocer la diferencia entre un hecho breve y un proceso prolongado y comparar los criterios de las periodizaciones tradicional y materialista. Las siete actividades finales retoman los temas de las preguntas del libro.",
+      "notes": "El propósito es comprender cómo se construye el conocimiento histórico. Al terminar, podrás elegir fuentes para investigar un problema, reconocer la diferencia entre un hecho breve y un proceso prolongado y comparar los criterios de las periodizaciones tradicional y materialista. Las siete actividades finales permiten aplicar estos conceptos.",
       "cards": [
         {
           "title": "Reconstruir",
@@ -42,16 +44,20 @@ window.HISTORY_PRESENTATION = {
           "tag": "03",
           "icon": "compare"
         }
-      ]
+      ],
+      "illustration": {
+        "src": "assets/history-cap1-ai/concepto.webp",
+        "alt": "Historiadora y estudiante comparan una vasija, una carta, una moneda y una fotografía.",
+        "caption": "Investigar el pasado significa comparar evidencias."
+      }
     },
     {
       "id": "s3",
       "kind": "definition",
       "title": "¿Qué estudia la historia?",
       "section": "Concepto e importancia",
-      "page": "9",
       "lead": "La historia es una ciencia social que investiga a las sociedades humanas a través del tiempo.",
-      "notes": "El libro destaca el desarrollo de la humanidad y sus dimensiones económicas, sociales, políticas y culturales. Estas dimensiones se relacionan entre sí: una guerra, por ejemplo, modifica la autoridad, el trabajo, las familias y las ideas. El historiador analiza cambios y continuidades, establece relaciones y argumenta con evidencias. No se limita a reunir fechas o biografías.",
+      "notes": "La historia estudia el desarrollo de la humanidad y sus dimensiones económicas, sociales, políticas y culturales. Estas dimensiones se relacionan entre sí: una guerra, por ejemplo, modifica la autoridad, el trabajo, las familias y las ideas. El historiador analiza cambios y continuidades, establece relaciones y argumenta con evidencias. No se limita a reunir fechas o biografías.",
       "cards": [
         {
           "title": "Economía",
@@ -77,16 +83,20 @@ window.HISTORY_PRESENTATION = {
           "tag": "",
           "icon": "book"
         }
-      ]
+      ],
+      "illustration": {
+        "src": "assets/history-cap1-ai/concepto.webp",
+        "alt": "Historiadora y estudiante comparan una vasija, una carta, una moneda y una fotografía.",
+        "caption": "Investigar el pasado significa comparar evidencias."
+      }
     },
     {
       "id": "s4",
       "kind": "flow",
       "title": "¿Para qué sirve estudiar historia?",
       "section": "Concepto e importancia",
-      "page": "9–10",
       "lead": "",
-      "notes": "El estudio histórico contribuye a la memoria colectiva, a la reflexión sobre las identidades y a la comprensión crítica de los problemas actuales. Conocer experiencias anteriores puede ayudar a transformar la sociedad, pero no proporciona recetas infalibles: los contextos cambian. El libro relaciona esta utilidad con el trabajo de otras ciencias sociales, que recurren a la historia para comprender la formación de sus objetos de estudio.",
+      "notes": "El estudio histórico contribuye a la memoria colectiva, a la reflexión sobre las identidades y a la comprensión crítica de los problemas actuales. Conocer experiencias anteriores puede ayudar a transformar la sociedad, pero no proporciona recetas infalibles: los contextos cambian. Esta utilidad se relaciona con el trabajo de otras ciencias sociales, que recurren a la historia para comprender la formación de sus objetos de estudio.",
       "cards": [
         {
           "title": "Pasado",
@@ -107,16 +117,20 @@ window.HISTORY_PRESENTATION = {
           "icon": "compass"
         }
       ],
-      "takeaway": "La historia orienta nuestras decisiones; no predice el futuro con exactitud."
+      "takeaway": "La historia orienta nuestras decisiones; no predice el futuro con exactitud.",
+      "illustration": {
+        "src": "assets/history-cap1-ai/concepto.webp",
+        "alt": "Historiadora y estudiante comparan una vasija, una carta, una moneda y una fotografía.",
+        "caption": "Investigar el pasado significa comparar evidencias."
+      }
     },
     {
       "id": "s5",
       "kind": "duration",
       "title": "El pasado tiene distintas duraciones",
       "section": "Tiempo histórico",
-      "page": "10",
       "lead": "",
-      "notes": "El libro diferencia acontecimiento, coyuntura y estructura por su duración. La mejora consiste en atender también a su naturaleza: una estructura es un conjunto de relaciones relativamente persistentes, no simplemente cualquier hecho que dure mucho. Un acontecimiento puede ocurrir en horas o días; una coyuntura reúne procesos de varios años; una estructura puede mantenerse durante generaciones. Estas escalas se superponen y ayudan a explicar un mismo proceso.",
+      "notes": "Distinguimos acontecimiento, coyuntura y estructura por su duración. La mejora consiste en atender también a su naturaleza: una estructura es un conjunto de relaciones relativamente persistentes, no simplemente cualquier hecho que dure mucho. Un acontecimiento puede ocurrir en horas o días; una coyuntura reúne procesos de varios años; una estructura puede mantenerse durante generaciones. Estas escalas se superponen y ayudan a explicar un mismo proceso.",
       "cards": [
         {
           "title": "Acontecimiento",
@@ -137,14 +151,18 @@ window.HISTORY_PRESENTATION = {
           "icon": "column"
         }
       ],
-      "takeaway": "La escala depende del problema que investigamos; no es una lista rígida de años."
+      "takeaway": "La escala depende del problema que investigamos; no es una lista rígida de años.",
+      "illustration": {
+        "src": "assets/history-cap1-ai/tiempo.webp",
+        "alt": "Plaza con arquitectura antigua, trabajos de restauración y una reunión cívica.",
+        "caption": "Un mismo espacio reúne hechos y procesos de distinta duración."
+      }
     },
     {
       "id": "s6",
       "kind": "reveal",
       "title": "Un proceso, tres escalas",
       "section": "Tiempo histórico",
-      "page": "10",
       "lead": "Piensa en la independencia del Perú. ¿Qué escala corresponde a cada caso?",
       "notes": "La proclamación es un acontecimiento dentro de un proceso de independencia más amplio. Las campañas constituyen una coyuntura; las jerarquías sociales ayudan a estudiar continuidades de larga duración. Una fecha importante no cambia automáticamente todas las relaciones económicas y sociales. Este ejemplo ilustra cómo combinar las tres escalas sin confundirlas.",
       "cards": [
@@ -166,16 +184,20 @@ window.HISTORY_PRESENTATION = {
           "tag": "Ver explicación",
           "icon": "column"
         }
-      ]
+      ],
+      "illustration": {
+        "src": "assets/history-cap1-ai/tiempo.webp",
+        "alt": "Plaza con arquitectura antigua, trabajos de restauración y una reunión cívica.",
+        "caption": "Un mismo espacio reúne hechos y procesos de distinta duración."
+      }
     },
     {
       "id": "s7",
       "kind": "actors",
       "title": "¿Quiénes hacen la historia?",
       "section": "Protagonistas",
-      "page": "10",
       "lead": "Las acciones individuales y la vida colectiva se influyen mutuamente.",
-      "notes": "El libro cuestiona las explicaciones centradas exclusivamente en grandes personajes y recupera el papel de los grupos sociales. También advierte que los individuos sí tienen importancia. Para explicar un cambio político, una huelga o una construcción monumental hay que relacionar decisiones personales con instituciones, recursos y acción colectiva. Evitamos atribuir una obra entera a una sola persona o suponer que todos sus trabajadores tuvieron la misma condición social.",
+      "notes": "Este enfoque cuestiona las explicaciones centradas exclusivamente en grandes personajes y recupera el papel de los grupos sociales. También advierte que los individuos sí tienen importancia. Para explicar un cambio político, una huelga o una construcción monumental hay que relacionar decisiones personales con instituciones, recursos y acción colectiva. Evitamos atribuir una obra entera a una sola persona o suponer que todos sus trabajadores tuvieron la misma condición social.",
       "cards": [
         {
           "title": "Individuos",
@@ -190,16 +212,20 @@ window.HISTORY_PRESENTATION = {
           "icon": "people"
         }
       ],
-      "takeaway": "Una gran obra requiere decisiones, conocimientos, recursos y trabajo colectivo."
+      "takeaway": "Una gran obra requiere decisiones, conocimientos, recursos y trabajo colectivo.",
+      "illustration": {
+        "src": "assets/history-cap1-ai/protagonistas.webp",
+        "alt": "Personas con distintas tareas colaboran en la construcción de un puente.",
+        "caption": "Las decisiones individuales se relacionan con el trabajo colectivo."
+      }
     },
     {
       "id": "s8",
       "kind": "method",
       "title": "¿Cómo reconstruimos el pasado?",
       "section": "Fuentes históricas",
-      "page": "11",
       "lead": "Una explicación histórica parte de preguntas y se sostiene en evidencias.",
-      "notes": "Este esquema amplía la definición de fuente del libro. No podemos volver al pasado para observarlo directamente, pero sí investigar sus huellas. La selección de fuentes depende de la pregunta. Comparar testimonios permite detectar acuerdos, diferencias y silencios. Las conclusiones se revisan cuando aparecen nuevas evidencias o mejores argumentos: eso no vuelve arbitraria la historia, sino que forma parte de su método crítico.",
+      "notes": "Este esquema amplía la definición de fuente histórica. No podemos volver al pasado para observarlo directamente, pero sí investigar sus huellas. La selección de fuentes depende de la pregunta. Comparar testimonios permite detectar acuerdos, diferencias y silencios. Las conclusiones se revisan cuando aparecen nuevas evidencias o mejores argumentos: eso no vuelve arbitraria la historia, sino que forma parte de su método crítico.",
       "cards": [
         {
           "title": "Preguntar",
@@ -225,16 +251,20 @@ window.HISTORY_PRESENTATION = {
           "tag": "4",
           "icon": "book"
         }
-      ]
+      ],
+      "illustration": {
+        "src": "assets/history-cap1-ai/concepto.webp",
+        "alt": "Historiadora y estudiante comparan una vasija, una carta, una moneda y una fotografía.",
+        "caption": "Investigar el pasado significa comparar evidencias."
+      }
     },
     {
       "id": "s9",
       "kind": "sources",
       "title": "Las huellas del pasado",
       "section": "Fuentes históricas",
-      "page": "11",
       "lead": "Una fuente histórica es un testimonio o resto que permite investigar una sociedad.",
-      "notes": "La clasificación sigue las cinco categorías presentadas en el libro. No son compartimentos completamente separados: una moneda es un objeto material y puede llevar escritura e imágenes; una entrevista grabada es un testimonio oral conservado en un soporte audiovisual. Ningún tipo de fuente es automáticamente verdadero ni suficiente para responder todas las preguntas.",
+      "notes": "Distinguimos cinco categorías de fuentes históricas. No son compartimentos completamente separados: una moneda es un objeto material y puede llevar escritura e imágenes; una entrevista grabada es un testimonio oral conservado en un soporte audiovisual. Ningún tipo de fuente es automáticamente verdadero ni suficiente para responder todas las preguntas.",
       "cards": [
         {
           "title": "Escritas",
@@ -267,14 +297,18 @@ window.HISTORY_PRESENTATION = {
           "icon": "camera"
         }
       ],
-      "takeaway": "El valor de una fuente depende de la pregunta y de su análisis crítico."
+      "takeaway": "El valor de una fuente depende de la pregunta y de su análisis crítico.",
+      "illustration": {
+        "src": "assets/history-cap1-ai/fuentes.webp",
+        "alt": "Ilustración con documentos, objetos, testimonios, danzas y registros audiovisuales.",
+        "caption": "Las fuentes conservan distintas huellas de la vida social."
+      }
     },
     {
       "id": "s10",
       "kind": "compare",
       "title": "Textos y objetos: dos entradas al pasado",
       "section": "Fuentes históricas",
-      "page": "11",
       "lead": "",
       "notes": "La escritura puede conservarse sobre papel, pergamino, papiro, piedra o arcilla, entre otros soportes. La arqueología estudia los objetos en su contexto, no como piezas aisladas: ubicación, asociación con otros restos y condiciones del hallazgo son decisivas. Una crónica puede favorecer a determinados actores; una vasija no permite deducir por sí sola toda una organización política. Lo pertinente es contrastar evidencias.",
       "cards": [
@@ -291,14 +325,18 @@ window.HISTORY_PRESENTATION = {
           "icon": "vase"
         }
       ],
-      "takeaway": "Un texto necesita contexto. Un objeto necesita interpretación."
+      "takeaway": "Un texto necesita contexto. Un objeto necesita interpretación.",
+      "illustration": {
+        "src": "assets/history-cap1-ai/fuentes.webp",
+        "alt": "Ilustración con documentos, objetos, testimonios, danzas y registros audiovisuales.",
+        "caption": "Las fuentes conservan distintas huellas de la vida social."
+      }
     },
     {
       "id": "s11",
       "kind": "cards",
       "title": "Voces, prácticas e imágenes",
       "section": "Fuentes históricas",
-      "page": "11",
       "lead": "",
       "notes": "Las fuentes orales incluyen testimonios de participantes y tradiciones transmitidas entre generaciones. Las etnológicas permiten estudiar prácticas culturales, pero no debemos suponer que se han mantenido intactas desde su origen. Una fotografía depende del encuadre, del momento y del uso posterior. Los mitos y las leyendas informan sobre creencias y memorias, aunque no deban tomarse literalmente como una crónica de hechos comprobados.",
       "cards": [
@@ -321,14 +359,18 @@ window.HISTORY_PRESENTATION = {
           "icon": "camera"
         }
       ],
-      "takeaway": "Recordar, transmitir o registrar también implica seleccionar."
+      "takeaway": "Recordar, transmitir o registrar también implica seleccionar.",
+      "illustration": {
+        "src": "assets/history-cap1-ai/fuentes.webp",
+        "alt": "Ilustración con documentos, objetos, testimonios, danzas y registros audiovisuales.",
+        "caption": "Las fuentes conservan distintas huellas de la vida social."
+      }
     },
     {
       "id": "s12",
       "kind": "cards",
       "title": "Antes de creer una fuente, interrógala",
       "section": "Fuentes históricas",
-      "page": "11–12",
       "lead": "",
       "notes": "La crítica externa examina procedencia, autenticidad y soporte; la interna analiza el contenido, el propósito y la credibilidad. Una fuente primaria tiene una relación directa con el problema o la época investigada; una secundaria interpreta otras fuentes. Esta distinción es diferente de la clasificación por tipo. Un diario de un testigo puede ser primario y escrito, pero aun así requiere contraste. La crítica permite justificar las conclusiones sin prometer una neutralidad absoluta.",
       "cards": [
@@ -351,16 +393,20 @@ window.HISTORY_PRESENTATION = {
           "icon": "compare"
         }
       ],
-      "takeaway": "Una fuente cercana a los hechos también puede contener errores o intereses."
+      "takeaway": "Una fuente cercana a los hechos también puede contener errores o intereses.",
+      "illustration": {
+        "src": "assets/history-cap1-ai/concepto.webp",
+        "alt": "Historiadora y estudiante comparan una vasija, una carta, una moneda y una fotografía.",
+        "caption": "Investigar el pasado significa comparar evidencias."
+      }
     },
     {
       "id": "s13",
       "kind": "table",
       "title": "Ciencias que colaboran con la historia",
       "section": "Ciencias y disciplinas",
-      "page": "12",
       "lead": "Cada campo aporta preguntas y métodos para comprender el pasado.",
-      "notes": "La lista sigue el cuadro del libro. La arqueología no se limita a sociedades sin escritura y no debe confundirse con paleontología. Esta última estudia organismos del pasado a partir de fósiles y contribuye al conocimiento de ambientes y evolución. Las otras ciencias tampoco funcionan solo como auxiliares: tienen objetivos propios y colaboran con la historia mediante un trabajo interdisciplinario.",
+      "notes": "Estas ciencias aportan métodos para estudiar el pasado. La arqueología no se limita a sociedades sin escritura y no debe confundirse con paleontología. Esta última estudia organismos del pasado a partir de fósiles y contribuye al conocimiento de ambientes y evolución. Las otras ciencias tampoco funcionan solo como auxiliares: tienen objetivos propios y colaboran con la historia mediante un trabajo interdisciplinario.",
       "rows": [
         [
           "Arqueología",
@@ -392,16 +438,20 @@ window.HISTORY_PRESENTATION = {
         "Ciencia",
         "Qué estudia",
         "Qué ayuda a investigar"
-      ]
+      ],
+      "illustration": {
+        "src": "assets/history-cap1-ai/auxiliares.webp",
+        "alt": "Especialistas examinan cerámica, un manuscrito, una moneda, un fósil y un mapa.",
+        "caption": "Cada especialidad aporta una forma de estudiar la evidencia."
+      }
     },
     {
       "id": "s14",
       "kind": "table",
       "title": "Disciplinas para leer las evidencias",
       "section": "Ciencias y disciplinas",
-      "page": "12",
       "lead": "Elige la especialidad según la evidencia que deseas analizar.",
-      "notes": "El libro presenta estas disciplinas como herramientas para el examen de las fuentes. Algunas se complementan: una moneda con un retrato y una inscripción puede interesar a numismática, iconografía y epigrafía. La paleografía estudia la escritura y sus formas, no es sinónimo de tipografía. Estas asociaciones te ayudarán a resolver preguntas de aplicación sin depender solo de la memorización de nombres.",
+      "notes": "Estas disciplinas ofrecen herramientas para examinar las fuentes. Algunas se complementan: una moneda con un retrato y una inscripción puede interesar a numismática, iconografía y epigrafía. La paleografía estudia la escritura y sus formas, no es sinónimo de tipografía. Estas asociaciones te ayudarán a resolver preguntas de aplicación sin depender solo de la memorización de nombres.",
       "rows": [
         [
           "Paleografía",
@@ -433,16 +483,20 @@ window.HISTORY_PRESENTATION = {
         "Disciplina",
         "Objeto de estudio",
         "Ejemplo"
-      ]
+      ],
+      "illustration": {
+        "src": "assets/history-cap1-ai/auxiliares.webp",
+        "alt": "Especialistas examinan cerámica, un manuscrito, una moneda, un fósil y un mapa.",
+        "caption": "Cada especialidad aporta una forma de estudiar la evidencia."
+      }
     },
     {
       "id": "s15",
       "kind": "definition",
       "title": "También cambia la forma de escribir historia",
       "section": "Historiografía",
-      "page": "13–14",
       "lead": "La historiografía estudia cómo se ha investigado e interpretado el pasado.",
-      "notes": "Las corrientes historiográficas se desarrollan en contextos diferentes y no forman una sucesión en la que cada una borra por completo a la anterior. El libro resume siete aportes: grecorromano, cristiano-medieval, humanismo, Ilustración, positivismo, marxismo y Annales. Compararlos requiere identificar sus preguntas, sus fuentes y los factores que priorizan. Las diapositivas siguientes sintetizan sus contribuciones sin presentarlas como verdades excluyentes.",
+      "notes": "Las corrientes historiográficas se desarrollan en contextos diferentes y no forman una sucesión en la que cada una borra por completo a la anterior. Aquí comparamos siete aportes: grecorromano, cristiano-medieval, humanismo, Ilustración, positivismo, marxismo y Annales. Compararlos requiere identificar sus preguntas, sus fuentes y los factores que priorizan. Las diapositivas siguientes sintetizan sus contribuciones sin presentarlas como verdades excluyentes.",
       "cards": [
         {
           "title": "Preguntas",
@@ -468,16 +522,20 @@ window.HISTORY_PRESENTATION = {
           "tag": "",
           "icon": "layers"
         }
-      ]
+      ],
+      "illustration": {
+        "src": "assets/history-cap1-ai/historiografia.webp",
+        "alt": "Escenas de un estudioso antiguo, un escriba medieval y una historiadora contemporánea.",
+        "caption": "Las preguntas y los métodos de investigación cambian."
+      }
     },
     {
       "id": "s16",
       "kind": "compare",
       "title": "El aporte grecorromano",
       "section": "Historiografía",
-      "page": "13",
       "lead": "La investigación sobre el pasado combinó testimonios, narraciones y explicaciones políticas.",
-      "notes": "Entre las obras citadas en el libro están las Historias de Herodoto, la Historia de la guerra del Peloponeso de Tucídides, los Comentarios sobre la guerra de las Galias de César y la Historia de Roma de Tito Livio. No todas utilizan los mismos procedimientos ni conceden el mismo papel a lo divino. La denominación tradicional de Herodoto no significa que otros pueblos carecieran de registros o memoria histórica.",
+      "notes": "Entre las obras representativas están las Historias de Herodoto, la Historia de la guerra del Peloponeso de Tucídides, los Comentarios sobre la guerra de las Galias de César y la Historia de Roma de Tito Livio. No todas utilizan los mismos procedimientos ni conceden el mismo papel a lo divino. La denominación tradicional de Herodoto no significa que otros pueblos carecieran de registros o memoria histórica.",
       "cards": [
         {
           "title": "Grecia",
@@ -492,16 +550,20 @@ window.HISTORY_PRESENTATION = {
           "icon": "book"
         }
       ],
-      "takeaway": "Herodoto es llamado tradicionalmente «padre de la historia» en la tradición occidental."
+      "takeaway": "Herodoto es llamado tradicionalmente «padre de la historia» en la tradición occidental.",
+      "illustration": {
+        "src": "assets/history-cap1-ai/historiografia.webp",
+        "alt": "Escenas de un estudioso antiguo, un escriba medieval y una historiadora contemporánea.",
+        "caption": "Las preguntas y los métodos de investigación cambian."
+      }
     },
     {
       "id": "s17",
       "kind": "compare",
       "title": "Providencia y protagonismo humano",
       "section": "Historiografía",
-      "page": "13",
       "lead": "",
-      "notes": "El enfoque providencialista cristiano interpreta la historia desde una concepción religiosa de su sentido. El libro menciona La ciudad de Dios, de Agustín, e Historias contra los paganos, de Orosio. Los humanistas recuperaron textos clásicos y reforzaron la atención a la política y a la acción humana. Bruni escribió la Historia del pueblo florentino; Maquiavelo es presentado mediante El príncipe, obra de reflexión política. Estas síntesis no describen toda la diversidad de la historiografía medieval o renacentista.",
+      "notes": "El enfoque providencialista cristiano interpreta la historia desde una concepción religiosa de su sentido. Entre las obras representativas encontramos La ciudad de Dios, de Agustín, e Historias contra los paganos, de Orosio. Los humanistas recuperaron textos clásicos y reforzaron la atención a la política y a la acción humana. Bruni escribió la Historia del pueblo florentino; Maquiavelo es presentado mediante El príncipe, obra de reflexión política. Estas síntesis no describen toda la diversidad de la historiografía medieval o renacentista.",
       "cards": [
         {
           "title": "Aporte cristiano-medieval",
@@ -516,16 +578,20 @@ window.HISTORY_PRESENTATION = {
           "icon": "person"
         }
       ],
-      "takeaway": "San Agustín y Orosio · Maquiavelo y Leonardo Bruni"
+      "takeaway": "San Agustín y Orosio · Maquiavelo y Leonardo Bruni",
+      "illustration": {
+        "src": "assets/history-cap1-ai/historiografia.webp",
+        "alt": "Escenas de un estudioso antiguo, un escriba medieval y una historiadora contemporánea.",
+        "caption": "Las preguntas y los métodos de investigación cambian."
+      }
     },
     {
       "id": "s18",
       "kind": "compare",
       "title": "Razón y crítica documental",
       "section": "Historiografía",
-      "page": "13",
       "lead": "",
-      "notes": "El libro asocia a Voltaire con El siglo de Luis XIV y a Hume con Historia de Inglaterra. En el siglo XIX destacó la crítica sistemática de documentos; Langlois y Seignobos son autores de Introducción a los estudios históricos. El cuadro del libro agrupa también a Ranke, ligado al historicismo y al trabajo de archivo; no conviene identificar sin matices todos estos enfoques. Su aporte documental fue decisivo, aunque privilegiar solo fuentes escritas deja fuera numerosas experiencias humanas.",
+      "notes": "Voltaire escribió El siglo de Luis XIV y Hume, Historia de Inglaterra. En el siglo XIX destacó la crítica sistemática de documentos; Langlois y Seignobos son autores de Introducción a los estudios históricos. En esta comparación se incluye también a Ranke, ligado al historicismo y al trabajo de archivo; no conviene identificar sin matices todos estos enfoques. Su aporte documental fue decisivo, aunque privilegiar solo fuentes escritas deja fuera numerosas experiencias humanas.",
       "cards": [
         {
           "title": "Ilustración",
@@ -540,16 +606,20 @@ window.HISTORY_PRESENTATION = {
           "icon": "archive"
         }
       ],
-      "takeaway": "Voltaire y Hume · Langlois, Seignobos y Ranke"
+      "takeaway": "Voltaire y Hume · Langlois, Seignobos y Ranke",
+      "illustration": {
+        "src": "assets/history-cap1-ai/historiografia.webp",
+        "alt": "Escenas de un estudioso antiguo, un escriba medieval y una historiadora contemporánea.",
+        "caption": "Las preguntas y los métodos de investigación cambian."
+      }
     },
     {
       "id": "s19",
       "kind": "compare",
       "title": "Sociedad, economía e historia total",
       "section": "Historiografía",
-      "page": "13–14",
       "lead": "",
-      "notes": "En la interpretación marxista, las relaciones económicas y los conflictos de clase tienen un papel central en el cambio histórico. No basta nombrar personajes: hay que investigar cómo se produce y cómo se distribuyen recursos y poder. Annales promueve la colaboración con otras ciencias y la ampliación de objetos y fuentes. El libro menciona Introducción a la historia, de Marc Bloch; Combates por la historia, de Lucien Febvre; y El Mediterráneo y el mundo mediterráneo en la época de Felipe II, de Fernand Braudel. Historia total designa una aspiración a relacionar dimensiones, no a conocer absolutamente todo.",
+      "notes": "En la interpretación marxista, las relaciones económicas y los conflictos de clase tienen un papel central en el cambio histórico. No basta nombrar personajes: hay que investigar cómo se produce y cómo se distribuyen recursos y poder. Annales promueve la colaboración con otras ciencias y la ampliación de objetos y fuentes. Entre las obras representativas encontramos Introducción a la historia, de Marc Bloch; Combates por la historia, de Lucien Febvre; y El Mediterráneo y el mundo mediterráneo en la época de Felipe II, de Fernand Braudel. Historia total designa una aspiración a relacionar dimensiones, no a conocer absolutamente todo.",
       "cards": [
         {
           "title": "Marxismo",
@@ -564,16 +634,20 @@ window.HISTORY_PRESENTATION = {
           "icon": "layers"
         }
       ],
-      "takeaway": "Marx y Engels · Bloch, Febvre y Braudel"
+      "takeaway": "Marx y Engels · Bloch, Febvre y Braudel",
+      "illustration": {
+        "src": "assets/history-cap1-ai/historiografia.webp",
+        "alt": "Escenas de un estudioso antiguo, un escriba medieval y una historiadora contemporánea.",
+        "caption": "Las preguntas y los métodos de investigación cambian."
+      }
     },
     {
       "id": "s20",
       "kind": "eras",
       "title": "Periodización tradicional",
       "section": "Periodización",
-      "page": "14",
       "lead": "Organiza el pasado en edades y utiliza acontecimientos como límites convencionales.",
-      "notes": "El libro atribuye a Cristóbal Keller (Cellarius) la división en Antigua, Media y Moderna durante el siglo XVII; la categoría Contemporánea se incorporó posteriormente. La escritura apareció en lugares y fechas diferentes: aquí se usa el IV milenio a. C. para las primeras experiencias conocidas, sin imponer un único año universal. Para el inicio de la Edad Moderna también se emplea a veces 1492; en la secuencia principal seguimos el hito de 1453 del libro. «Prehistoria» no significa que aquellas sociedades carezcan de historia.",
+      "notes": "Se atribuye a Cristóbal Keller (Cellarius) la división en Antigua, Media y Moderna durante el siglo XVII; la categoría Contemporánea se incorporó posteriormente. La escritura apareció en lugares y fechas diferentes: aquí se usa el IV milenio a. C. para las primeras experiencias conocidas, sin imponer un único año universal. Para el inicio de la Edad Moderna también se emplea a veces 1492; en la secuencia principal seguimos el hito convencional de 1453. «Prehistoria» no significa que aquellas sociedades carezcan de historia.",
       "cards": [
         {
           "title": "Prehistoria",
@@ -606,14 +680,18 @@ window.HISTORY_PRESENTATION = {
           "icon": "people"
         }
       ],
-      "takeaway": "Son referencias para estudiar procesos; las sociedades no cambian todas al mismo tiempo."
+      "takeaway": "Son referencias para estudiar procesos; las sociedades no cambian todas al mismo tiempo.",
+      "illustration": {
+        "src": "assets/history-cap1-ai/periodizacion.webp",
+        "alt": "Recreación conceptual de una ciudad antigua, un poblado medieval, un puerto y una ciudad industrial.",
+        "caption": "Las edades ayudan a organizar sociedades y procesos diferentes."
+      }
     },
     {
       "id": "s21",
       "kind": "compare",
       "title": "Un límite: el eurocentrismo",
       "section": "Periodización",
-      "page": "14",
       "lead": "Las edades tradicionales toman como referencia muchos acontecimientos europeos.",
       "notes": "El eurocentrismo aparece cuando una trayectoria europea se convierte en medida única de toda la humanidad. La periodización tradicional es útil si sabemos qué procesos organiza y reconocemos sus límites. Para estudiar sociedades andinas, africanas o asiáticas hay que atender a sus propias transformaciones y cronologías. Las fechas no son fronteras rígidas: cambios y continuidades pueden atravesarlas.",
       "cards": [
@@ -630,16 +708,20 @@ window.HISTORY_PRESENTATION = {
           "icon": "globe"
         }
       ],
-      "takeaway": "1453 no transformó de la misma manera a Europa, los Andes y Asia oriental."
+      "takeaway": "1453 no transformó de la misma manera a Europa, los Andes y Asia oriental.",
+      "illustration": {
+        "src": "assets/history-cap1-ai/periodizacion.webp",
+        "alt": "Recreación conceptual de una ciudad antigua, un poblado medieval, un puerto y una ciudad industrial.",
+        "caption": "Las edades ayudan a organizar sociedades y procesos diferentes."
+      }
     },
     {
       "id": "s22",
       "kind": "material",
       "title": "Periodización materialista",
       "section": "Periodización",
-      "page": "15",
       "lead": "Distingue etapas según la organización económica y las relaciones sociales.",
-      "notes": "El libro vincula esta propuesta con Marx y Engels. Su criterio no es una fecha aislada o la aparición de escritura, sino las relaciones económicas y sociales y sus transformaciones. Ello no vuelve irrelevante la cronología: las fechas siguen siendo necesarias para ubicar y comprobar procesos. La interpretación materialista propone explicaciones históricas que deben discutirse con evidencia. No debe presentarse como el único enfoque científico posible.",
+      "notes": "Esta propuesta se vincula con Marx y Engels. Su criterio no es una fecha aislada o la aparición de escritura, sino las relaciones económicas y sociales y sus transformaciones. Ello no vuelve irrelevante la cronología: las fechas siguen siendo necesarias para ubicar y comprobar procesos. La interpretación materialista propone explicaciones históricas que deben discutirse con evidencia. No debe presentarse como el único enfoque científico posible.",
       "cards": [
         {
           "title": "Fuerzas productivas",
@@ -654,16 +736,20 @@ window.HISTORY_PRESENTATION = {
           "icon": "people"
         }
       ],
-      "takeaway": "La pregunta central: ¿cómo se produce y quién controla los recursos y el excedente?"
+      "takeaway": "La pregunta central: ¿cómo se produce y quién controla los recursos y el excedente?",
+      "illustration": {
+        "src": "assets/history-cap1-ai/produccion.webp",
+        "alt": "Escenas de trabajo agrícola, alfarería y producción textil.",
+        "caption": "Herramientas, recursos y relaciones de trabajo organizan la producción."
+      }
     },
     {
       "id": "s23",
       "kind": "table",
       "title": "Cuatro formas de organización social",
       "section": "Periodización",
-      "page": "15",
-      "lead": "Esquema materialista que presenta el libro.",
-      "notes": "El esquema simplifica sociedades diversas para destacar relaciones dominantes. En una misma sociedad pueden coexistir varias formas de trabajo, propiedad y dependencia. No toda persona de la Antigüedad fue esclava ni todo campesino medieval tuvo idéntica condición. El libro señala la expectativa marxista de una superación del capitalismo por el comunismo; debe entenderse como una propuesta teórica y política, no como un desenlace histórico comprobado o inevitable.",
+      "lead": "Esquema de las relaciones económicas y sociales.",
+      "notes": "El esquema simplifica sociedades diversas para destacar relaciones dominantes. En una misma sociedad pueden coexistir varias formas de trabajo, propiedad y dependencia. No toda persona de la Antigüedad fue esclava ni todo campesino medieval tuvo idéntica condición. El marxismo plantea la expectativa de una superación del capitalismo por el comunismo; debe entenderse como una propuesta teórica y política, no como un desenlace histórico comprobado o inevitable.",
       "rows": [
         [
           "Comunidad primitiva",
@@ -691,14 +777,18 @@ window.HISTORY_PRESENTATION = {
         "Relación destacada",
         "Grupos considerados"
       ],
-      "takeaway": "Es un modelo explicativo: no todos los pueblos recorrieron una secuencia idéntica."
+      "takeaway": "Es un modelo explicativo: no todos los pueblos recorrieron una secuencia idéntica.",
+      "illustration": {
+        "src": "assets/history-cap1-ai/produccion.webp",
+        "alt": "Escenas de trabajo agrícola, alfarería y producción textil.",
+        "caption": "Herramientas, recursos y relaciones de trabajo organizan la producción."
+      }
     },
     {
       "id": "s24",
       "kind": "compare",
       "title": "Dos criterios para ordenar el pasado",
       "section": "Periodización",
-      "page": "14–15",
       "lead": "",
       "notes": "Ambas son herramientas de organización y explicación. La tradicional facilita una secuencia cronológica, pero puede generalizar indebidamente referencias europeas. La materialista centra la atención en economía y relaciones sociales, pero se vuelve insuficiente si se aplica como una escalera universal rígida. Una explicación histórica sólida explicita el criterio utilizado y lo contrasta con el caso investigado.",
       "cards": [
@@ -715,14 +805,18 @@ window.HISTORY_PRESENTATION = {
           "icon": "people"
         }
       ],
-      "takeaway": "Compara el criterio de clasificación antes de memorizar los nombres de las etapas."
+      "takeaway": "Compara el criterio de clasificación antes de memorizar los nombres de las etapas.",
+      "illustration": {
+        "src": "assets/history-cap1-ai/periodizacion.webp",
+        "alt": "Recreación conceptual de una ciudad antigua, un poblado medieval, un puerto y una ciudad industrial.",
+        "caption": "Las edades ayudan a organizar sociedades y procesos diferentes."
+      }
     },
     {
       "id": "s25",
       "kind": "cards",
       "title": "Las cuatro ideas que te llevas",
       "section": "Síntesis",
-      "page": "9–15",
       "lead": "",
       "notes": "Repasa estas cuatro relaciones antes de las actividades: sociedad y tiempo; fuente y crítica; historiografía y enfoque; periodización y criterio. Si una pregunta parece tener dos respuestas posibles, revisa qué está pidiendo exactamente y distingue el hecho concreto del proceso más amplio. En las siguientes siete diapositivas encontrarás actividades adaptadas de los temas de evaluación del capítulo, con cinco alternativas y explicación.",
       "cards": [
@@ -750,16 +844,20 @@ window.HISTORY_PRESENTATION = {
           "tag": "04",
           "icon": "layers"
         }
-      ]
+      ],
+      "illustration": {
+        "src": "assets/history-cap1-ai/concepto.webp",
+        "alt": "Historiadora y estudiante comparan una vasija, una carta, una moneda y una fotografía.",
+        "caption": "Investigar el pasado significa comparar evidencias."
+      }
     },
     {
       "id": "s26",
       "kind": "question",
       "title": "Actividad 1 de 7",
       "section": "Comprueba lo aprendido",
-      "page": "16",
       "lead": "",
-      "notes": "Actividad reformulada a partir del tema de la pregunta correspondiente del capítulo. Lee el enunciado completo, elige una alternativa y comprueba tu respuesta. Puedes volver a intentarlo; los aciertos se conservan.",
+      "notes": "Actividad de aplicación de los conceptos estudiados. Lee el enunciado completo, elige una alternativa y comprueba tu respuesta. Puedes volver a intentarlo; los aciertos se conservan.",
       "question": {
         "id": "q1",
         "index": 0,
@@ -781,9 +879,8 @@ window.HISTORY_PRESENTATION = {
       "kind": "question",
       "title": "Actividad 2 de 7",
       "section": "Comprueba lo aprendido",
-      "page": "16",
       "lead": "",
-      "notes": "Actividad reformulada a partir del tema de la pregunta correspondiente del capítulo. Lee el enunciado completo, elige una alternativa y comprueba tu respuesta. Puedes volver a intentarlo; los aciertos se conservan.",
+      "notes": "Actividad de aplicación de los conceptos estudiados. Lee el enunciado completo, elige una alternativa y comprueba tu respuesta. Puedes volver a intentarlo; los aciertos se conservan.",
       "question": {
         "id": "q2",
         "index": 1,
@@ -805,9 +902,8 @@ window.HISTORY_PRESENTATION = {
       "kind": "question",
       "title": "Actividad 3 de 7",
       "section": "Comprueba lo aprendido",
-      "page": "16",
       "lead": "",
-      "notes": "Actividad reformulada a partir del tema de la pregunta correspondiente del capítulo. Lee el enunciado completo, elige una alternativa y comprueba tu respuesta. Puedes volver a intentarlo; los aciertos se conservan.",
+      "notes": "Actividad de aplicación de los conceptos estudiados. Lee el enunciado completo, elige una alternativa y comprueba tu respuesta. Puedes volver a intentarlo; los aciertos se conservan.",
       "question": {
         "id": "q3",
         "index": 2,
@@ -829,9 +925,8 @@ window.HISTORY_PRESENTATION = {
       "kind": "question",
       "title": "Actividad 4 de 7",
       "section": "Comprueba lo aprendido",
-      "page": "16",
       "lead": "",
-      "notes": "Actividad reformulada a partir del tema de la pregunta correspondiente del capítulo. Lee el enunciado completo, elige una alternativa y comprueba tu respuesta. Puedes volver a intentarlo; los aciertos se conservan.",
+      "notes": "Actividad de aplicación de los conceptos estudiados. Lee el enunciado completo, elige una alternativa y comprueba tu respuesta. Puedes volver a intentarlo; los aciertos se conservan.",
       "question": {
         "id": "q4",
         "index": 3,
@@ -853,9 +948,8 @@ window.HISTORY_PRESENTATION = {
       "kind": "question",
       "title": "Actividad 5 de 7",
       "section": "Comprueba lo aprendido",
-      "page": "16",
       "lead": "",
-      "notes": "Actividad reformulada a partir del tema de la pregunta correspondiente del capítulo. Lee el enunciado completo, elige una alternativa y comprueba tu respuesta. Puedes volver a intentarlo; los aciertos se conservan.",
+      "notes": "Actividad de aplicación de los conceptos estudiados. Lee el enunciado completo, elige una alternativa y comprueba tu respuesta. Puedes volver a intentarlo; los aciertos se conservan.",
       "question": {
         "id": "q5",
         "index": 4,
@@ -883,9 +977,8 @@ window.HISTORY_PRESENTATION = {
       "kind": "question",
       "title": "Actividad 6 de 7",
       "section": "Comprueba lo aprendido",
-      "page": "17",
       "lead": "",
-      "notes": "Actividad reformulada a partir del tema de la pregunta correspondiente del capítulo. Lee el enunciado completo, elige una alternativa y comprueba tu respuesta. Puedes volver a intentarlo; los aciertos se conservan.",
+      "notes": "Actividad de aplicación de los conceptos estudiados. Lee el enunciado completo, elige una alternativa y comprueba tu respuesta. Puedes volver a intentarlo; los aciertos se conservan.",
       "question": {
         "id": "q6",
         "index": 5,
@@ -907,9 +1000,8 @@ window.HISTORY_PRESENTATION = {
       "kind": "question",
       "title": "Actividad 7 de 7",
       "section": "Comprueba lo aprendido",
-      "page": "17",
       "lead": "",
-      "notes": "Actividad reformulada a partir del tema de la pregunta correspondiente del capítulo. Lee el enunciado completo, elige una alternativa y comprueba tu respuesta. Puedes volver a intentarlo; los aciertos se conservan.",
+      "notes": "Actividad de aplicación de los conceptos estudiados. Lee el enunciado completo, elige una alternativa y comprueba tu respuesta. Puedes volver a intentarlo; los aciertos se conservan.",
       "question": {
         "id": "q7",
         "index": 6,
@@ -931,9 +1023,13 @@ window.HISTORY_PRESENTATION = {
       "kind": "finish",
       "title": "El pasado se investiga",
       "section": "Cierre",
-      "page": "9–17",
       "lead": "Pregunta. Contrasta. Explica.",
-      "notes": "Fuente de base: Historia Universal, Lumbreras Editores, capítulo 1 «La ciencia histórica», páginas impresas 9–17. Presentación didáctica adaptada: explicaciones sintetizadas, ejemplos ampliados y preguntas revisadas. Los ocho apartados del capítulo están representados. Puedes volver a cualquier diapositiva desde el índice y repasar las actividades pendientes."
+      "notes": "Repasa los conceptos de la ciencia histórica con estas explicaciones, ejemplos y actividades. Puedes volver a cualquier diapositiva desde el índice y resolver las actividades pendientes. Relaciona las fuentes con sus contextos y compara los enfoques y criterios de periodización.",
+      "illustration": {
+        "src": "assets/history-cap1-ai/concepto.webp",
+        "alt": "Historiadora y estudiante comparan una vasija, una carta, una moneda y una fotografía.",
+        "caption": "Investigar el pasado significa comparar evidencias."
+      }
     }
   ]
 };

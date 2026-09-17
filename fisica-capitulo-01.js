@@ -98,7 +98,7 @@ async function retrySync(){
 function renderMath(){
   if(typeof window.renderMathInElement==='function')window.renderMathInElement(root,{delimiters:[{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false}],throwOnError:false,trust:false});
 }
-function header(){return '<a class="skip" href="#chapter-content">Ir al contenido</a><header class="top"><div class="wrap"><a class="brand" href="index.html"><span class="logo">SL</span><span>SIN <em>LÍMITES</em><small>ACADEMIA VIRTUAL</small></span></a><a class="back" href="index.html?course=16">← Los 25 capítulos de Física</a></div></header>';}
+function header(){return '<a class="skip" href="#chapter-content">Ir al contenido</a><header class="top"><div class="wrap"><a class="brand" href="index.html"><span class="logo"><img src="assets/logo-sin-limites.jpg" alt="Logo de SIN LÍMITES" width="56" height="56" style="display:block;width:100%;height:100%;object-fit:contain;border-radius:inherit"></span><span>SIN <em>LÍMITES</em><small>ACADEMIA VIRTUAL</small></span></a><a class="back" href="index.html?course=16">← Los 25 capítulos de Física</a></div></header>';}
 function modePicker(){return `${header()}<main id="chapter-content" class="access card"><p class="eyebrow">Física · Capítulo 01 de 25</p><h1>Análisis dimensional</h1><p>Aprende a leer las dimensiones de una fórmula y a comprobar si tiene sentido físico.</p><p class="muted">Elige tu recorrido. Puedes cambiarlo después sin perder tus resultados.</p><div class="modes"><button class="mode-card" data-action="mode" data-value="progressive"><b>Estudio progresivo</b><span>Aprueba las dos preguntas de cada tema para abrir el siguiente. Después accede a la práctica y la evaluación.</span></button><button class="mode-card free" data-action="mode" data-value="free"><b>Estudio libre</b><span>Explora cualquier tema, la práctica y la evaluación desde el inicio. Avanza en el orden que prefieras.</span></button></div><p class="resource-note" style="margin-top:24px">El avance cuenta los 6 temas aprobados y una evaluación con al menos 7 de 10 respuestas correctas. La práctica es de entrenamiento.</p><p class="save-line" id="save-status" role="status">${escapeHTML(saveMessage)}</p></main>`;}
 function chooseMode(mode){
   if(!['free','progressive'].includes(mode))return;
@@ -214,3 +214,4 @@ async function signedIn(u){
 }
 if(!window.firebase){root.innerHTML='<main class="access card"><h1>No se pudo cargar la sesión</h1><p>Revisa tu conexión y vuelve a abrir este capítulo.</p><a class="button" href="fisica-capitulo-01.html">Reintentar</a></main>';}
 else{firebase.initializeApp(CONFIG);db=firebase.firestore();firebase.auth().onAuthStateChanged(signedIn);}
+
