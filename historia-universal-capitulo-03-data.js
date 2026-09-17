@@ -1,481 +1,790 @@
 window.HISTORY_CONTENT = {
   "number": 3,
   "id": "historia-universal-capitulo-03",
-  "title": "Hominización",
-  "intro": "Reconstruye la evolución humana a partir de fósiles, herramientas y ADN. Comprende un proceso ramificado, con distintas especies y formas de vida.",
+  "title": "Comunidad primitiva en el mundo",
+  "intro": "Del Paleolítico a la producción de alimentos y la metalurgia: estudia las formas de vida, cooperación y transformación de las primeras comunidades.",
   "lessons": [
     {
-      "title": "Una evolución ramificada",
-      "subtitle": "Ancestros comunes y diversidad",
-      "goal": "Explica la evolución humana sin convertirla en una escalera de progreso.",
-      "body": "<p>La <strong>hominización</strong> es el conjunto de transformaciones evolutivas que dieron lugar al linaje humano. Se desarrolló durante millones de años, en poblaciones y ambientes diversos. No ocurrió porque un individuo decidiera cambiar, sino mediante variaciones heredables, selección natural y otros procesos evolutivos.</p><p>Los seres humanos somos primates. Compartimos ancestros con los demás grandes simios, pero <strong>no descendemos de los chimpancés actuales</strong>. Ambos linajes tienen una historia evolutiva propia. Un árbol con ramas representa mejor este proceso que una fila de figuras que culmina en una supuesta perfección.</p><p>Durante largos periodos coexistieron diferentes especies humanas. Muchas se extinguieron y sus relaciones exactas siguen investigándose. La evolución no tiene una meta predeterminada. Tampoco ordena a los pueblos actuales en grados de humanidad: todas las personas actuales pertenecemos a <em>Homo sapiens</em>.</p>",
-      "key": "Compartimos ancestros; la evolución humana tuvo ramificaciones y coexistencias.",
+      "title": "Estudiar sociedades sin escritura",
+      "subtitle": "Arqueología y periodos regionales",
+      "goal": "Comprende el alcance del término Prehistoria y evita imaginar un pasado uniforme.",
+      "body": "<p>El término <b>comunidad primitiva</b> procede de una interpretación materialista de la historia que destaca la cooperación y el acceso comunitario a recursos. Es un modelo de análisis, no una afirmación de que todas las sociedades sin escritura fueran iguales o inferiores.</p><p>La <strong>Prehistoria</strong> es una categoría convencional para estudiar sociedades anteriores a la escritura en una región. No significa ausencia de historia, pensamiento o cultura. Su reconstrucción depende especialmente de objetos, restos humanos, viviendas, paisajes y residuos de alimentación.</p><p>El <strong>Paleolítico</strong>, o antigua Edad de Piedra, comprende una larguísima diversidad de sociedades que emplearon tecnologías de piedra tallada. También trabajaron madera, fibras, pieles y hueso, materiales que se conservan de manera desigual. Una colección arqueológica es solo una parte de lo que existió.</p><p>Sus divisiones en Inferior, Medio y Superior se utilizan sobre todo en Eurasia y tienen fechas regionales. En África se emplean también otras denominaciones. El Mesolítico identifica ciertas sociedades de cazadores y recolectores posteriores al final de la última glaciación y anteriores a la expansión agrícola local. No es una etapa universal obligatoria.</p>",
+      "key": "Los periodos son herramientas regionales; la ausencia de escritura no implica ausencia de cultura.",
       "examples": [
         {
           "title": "Analiza el caso",
-          "question": "Un afiche muestra un chimpancé actual que se transforma, paso a paso, en una persona moderna. ¿Qué corregirías?",
+          "question": "Caso hipotético: en un campamento se conservan piedras talladas, pero no cestas ni ropa. ¿Podemos afirmar que sus habitantes nunca las usaron?",
           "steps": [
-            "Reemplaza la fila por un esquema ramificado con un ancestro común.",
-            "Separa el linaje de los chimpancés actuales del linaje humano.",
-            "Indica que hubo especies contemporáneas y que ninguna población humana actual representa un peldaño inferior."
+            "La piedra se conserva mejor que muchos materiales orgánicos.",
+            "La ausencia de restos puede deberse a la descomposición o a la excavación parcial.",
+            "Para sostener una afirmación se necesitan más indicios; lo conservado no representa toda la vida del grupo."
           ]
         }
       ],
       "quiz": [
         {
-          "prompt": "La relación evolutiva entre humanos y chimpancés actuales se explica por…",
-          "solution": "Los dos linajes comparten ancestros y han seguido evolucionando.",
+          "prompt": "¿Qué caracteriza al Paleolítico en la clasificación tecnológica tradicional?",
+          "solution": "La talla lítica es un rasgo tecnológico, aunque se usaron otros materiales.",
           "level": "Básico",
           "id": "u1a",
           "options": [
-            "la transformación reciente de chimpancés en humanos",
-            "la ausencia de parentesco",
-            "la descendencia de humanos a partir de gorilas actuales",
-            "un ancestro común",
-            "una decisión de cambiar de especie"
+            "El uso universal de hierro",
+            "La escritura alfabética",
+            "La agricultura mecanizada",
+            "Las ciudades industriales",
+            "El amplio uso de piedra tallada"
           ],
-          "answer": 3
+          "answer": 4
         },
         {
-          "prompt": "¿Qué representación describe mejor la evolución humana?",
-          "solution": "La evidencia muestra diversidad de especies, extinciones y coexistencias.",
+          "prompt": "Que una sociedad no haya dejado escritura significa que…",
+          "solution": "Los restos materiales y ambientales permiten investigar sociedades sin escritura.",
           "level": "Básico",
           "id": "u1b",
           "options": [
-            "Una escalera con una meta obligatoria",
-            "Un árbol con ramas, algunas coexistentes",
-            "Una sola especie sin cambios",
-            "Una lista de pueblos actuales de inferior a superior",
-            "Un cambio ocurrido en una generación"
-          ],
-          "answer": 1
-        }
-      ]
-    },
-    {
-      "title": "Cómo se investiga la hominización",
-      "subtitle": "Fósiles, contextos y datación",
-      "goal": "Relaciona cada tipo de evidencia con las preguntas que puede responder.",
-      "body": "<p>La <strong>paleoantropología</strong> estudia la evolución humana mediante fósiles y otras evidencias. Huesos y dientes informan sobre anatomía y alimentación; herramientas y marcas de corte ayudan a investigar actividades. El lugar y la capa donde aparecen son parte esencial de la evidencia.</p><p>La datación <strong>relativa</strong> establece qué es anterior o posterior. En estratos no alterados, las capas inferiores suelen ser más antiguas. La datación <strong>radiométrica</strong> estima edades o intervalos mediante procesos físicos, siempre con márgenes de incertidumbre. No todos los métodos sirven para todo material o antigüedad.</p><p>El carbono 14 se aplica a materiales orgánicos relativamente recientes en términos geológicos; no es adecuado para fechar directamente fósiles de millones de años. En contextos más antiguos pueden estudiarse capas volcánicas con otros métodos. El ADN antiguo, cuando se conserva, permite comparar parentescos y contactos entre poblaciones.</p>",
-      "key": "Una conclusión sólida relaciona el fósil, su contexto y un método de datación adecuado.",
-      "examples": [
-        {
-          "title": "Analiza el caso",
-          "question": "Caso hipotético: un fósil aparece entre dos capas volcánicas fechadas en unos 1,8 y 1,6 millones de años, sin señales de alteración.",
-          "steps": [
-            "Su posición permite proponer una antigüedad comprendida entre las capas.",
-            "Las fechas corresponden a materiales volcánicos asociados, no a una lectura automática del hueso.",
-            "Nuevas excavaciones y análisis pueden afinar o revisar la estimación."
-          ]
-        }
-      ],
-      "quiz": [
-        {
-          "prompt": "En un conjunto de estratos no alterados, una capa inferior suele ser…",
-          "solution": "La superposición permite establecer relaciones de anterioridad, si no hubo alteraciones.",
-          "level": "Básico",
-          "id": "u2a",
-          "options": [
-            "siempre del mismo año",
-            "más reciente por definición",
-            "imposible de estudiar",
-            "una prueba de escritura",
-            "más antigua que la situada encima"
-          ],
-          "answer": 4
-        },
-        {
-          "prompt": "¿Qué afirmación sobre la datación es correcta?",
-          "solution": "Cada técnica tiene materiales, rangos y márgenes de incertidumbre específicos.",
-          "level": "Básico",
-          "id": "u2b",
-          "options": [
-            "El carbono 14 fecha cualquier roca",
-            "Un hueso revela siempre un año exacto",
-            "El método debe elegirse según material y antigüedad",
-            "El contexto nunca importa",
-            "Todos los fósiles tienen menos de mil años"
+            "careció de historia",
+            "no tuvo conocimientos",
+            "debe estudiarse también mediante otras evidencias",
+            "no modificó su ambiente",
+            "no mantuvo relaciones sociales"
           ],
           "answer": 2
         }
       ]
     },
     {
-      "title": "Bipedismo y cambios anatómicos",
-      "subtitle": "Caminar sobre dos extremidades",
-      "goal": "Reconoce que los rasgos humanos aparecieron en momentos distintos.",
-      "body": "<p>El <strong>bipedismo habitual</strong> consiste en desplazarse normalmente sobre dos extremidades inferiores. Se estudia mediante la pelvis, el fémur, la columna, el pie y las huellas. La combinación de rasgos es más informativa que un hueso aislado.</p><p>Caminar erguido apareció antes del gran aumento del tamaño cerebral característico de varias especies posteriores. Los australopitecos combinaban locomoción bípeda con rasgos útiles para trepar. <em>Australopithecus afarensis</em>, especie a la que pertenece el fósil conocido como Lucy, vivió en África hace aproximadamente entre 3,9 y 2,9 millones de años.</p><p>El bipedismo modificó la relación entre locomoción, transporte y uso de las manos. No significa que en ese mismo momento aparecieran la agricultura, la escritura o todas las tecnologías humanas. La evolución fue un <strong>mosaico de cambios</strong>, asociado a ambientes y modos de vida variados.</p>",
-      "key": "El bipedismo y el aumento cerebral no fueron un único cambio simultáneo.",
+      "title": "Subsistencia y movilidad",
+      "subtitle": "Conocer los recursos del territorio",
+      "goal": "Relaciona caza, recolección, pesca y desplazamientos con el ambiente.",
+      "body": "<p>Las sociedades paleolíticas obtuvieron alimentos mediante <strong>recolección, caza, pesca</strong> y otras estrategias, como aprovechar animales muertos. Su combinación dependía del lugar, la estación y los conocimientos del grupo. No todas vivían principalmente de grandes presas.</p><p>La movilidad permitía acceder a recursos distribuidos en distintos lugares. Podían alternar campamentos, volver a sitios conocidos y organizar desplazamientos estacionales. <strong>Nomadismo</strong> no equivale a caminar sin rumbo: exige conocer agua, refugios, plantas y animales.</p><p>La cooperación y el intercambio ayudaban a reducir riesgos. Los grupos podían compartir alimentos y mantener contactos más allá de un campamento. La división del trabajo debió variar; no es correcto asignar todas las tareas a hombres o mujeres de manera universal sin evidencias. Los restos alimentarios y las herramientas permiten formular hipótesis concretas.</p>",
+      "key": "La movilidad fue una estrategia de adaptación basada en conocimientos, no una ausencia de organización.",
       "examples": [
         {
           "title": "Analiza el caso",
-          "question": "Un fósil presenta adaptaciones para caminar erguido y un cráneo de tamaño reducido respecto del humano actual. ¿Es contradictorio?",
+          "question": "Caso hipotético: un grupo ocupa una costa durante la temporada de mariscos y un valle cuando maduran frutos silvestres.",
           "steps": [
-            "No: distintos rasgos evolucionaron en momentos y ritmos diferentes.",
-            "El bipedismo temprano no requiere un cerebro del tamaño actual.",
-            "La combinación ayuda a reconstruir una etapa evolutiva sin atribuirle tecnologías que no están documentadas."
+            "Reconoce una combinación de recolección y aprovechamiento costero.",
+            "Relaciona los desplazamientos con la disponibilidad estacional.",
+            "La ruta puede ser planificada y repetirse; no demuestra falta de conocimientos."
           ]
         }
       ],
       "quiz": [
         {
-          "prompt": "¿Qué evidencia es especialmente útil para estudiar locomoción bípeda?",
-          "solution": "La anatomía y las huellas permiten inferir cómo se desplazaba un organismo.",
+          "prompt": "Un desplazamiento estacional hacia recursos conocidos indica…",
+          "solution": "La movilidad puede responder a conocimientos del ambiente y de sus ciclos.",
           "level": "Básico",
-          "id": "u3a",
+          "id": "u2a",
           "options": [
-            "La forma de la pelvis y las huellas",
-            "La presencia de un alfabeto",
-            "Un calendario escrito",
-            "Una moneda",
-            "Un templo de piedra"
+            "una estrategia organizada de movilidad",
+            "ausencia de planificación",
+            "agricultura necesariamente",
+            "escritura obligatoria",
+            "vida urbana"
           ],
           "answer": 0
         },
         {
-          "prompt": "¿Qué relación temporal está mejor respaldada?",
-          "solution": "Los homininos bípedos tempranos conservaban cerebros relativamente pequeños.",
+          "prompt": "¿Qué afirmación sobre la subsistencia paleolítica es adecuada?",
+          "solution": "Las dietas y actividades fueron diversas y deben estudiarse con evidencia local.",
           "level": "Básico",
-          "id": "u3b",
+          "id": "u2b",
           "options": [
-            "La escritura precedió al bipedismo",
-            "La agricultura produjo los primeros primates",
-            "Todos los rasgos humanos surgieron a la vez",
-            "El bipedismo precedió a grandes aumentos cerebrales posteriores",
-            "El bipedismo apareció después de las ciudades"
+            "Solo se consumía carne de mamut",
+            "Todos los grupos cultivaban trigo",
+            "La pesca era imposible",
+            "Las estrategias variaron según recursos y regiones",
+            "La recolección no aportaba alimentos"
           ],
           "answer": 3
         }
       ]
     },
     {
-      "title": "Diversidad del género Homo",
-      "subtitle": "Tecnología, dispersión y coexistencia",
-      "goal": "Distingue especies sin atribuirles inventos exclusivos de forma automática.",
-      "body": "<p>En el género <em>Homo</em> se reconocen distintas especies, definidas a partir de conjuntos de rasgos y evidencias. <em>Homo habilis</em> se asocia en muchos contextos con herramientas tempranas, pero no debe afirmarse que toda herramienta antigua fue fabricada por esa especie: existen tecnologías anteriores y problemas de atribución.</p><p><em>Homo erectus</em> tuvo una larga presencia y participó en dispersiones tempranas fuera de África. Diversos grupos desarrollaron herramientas y formas de cooperación. El aprovechamiento del fuego se reconstruye caso por caso; no conocemos una única fecha universal de su descubrimiento.</p><p>Los neandertales habitaron regiones de Europa y Asia y fabricaron herramientas, cazaron y cuidaron a algunos individuos con lesiones. Coexistieron con <em>Homo sapiens</em>. La evidencia genética muestra intercambios reproductivos entre poblaciones; no fueron simplemente una etapa obligatoria que se transformó por completo en nosotros.</p>",
-      "key": "Una especie no equivale a un invento, y distintas especies humanas pudieron coexistir.",
+      "title": "Tecnología y aprovechamiento del fuego",
+      "subtitle": "Tallar, combinar y transmitir",
+      "goal": "Relaciona herramientas y aprendizaje sin atribuir una función por su aspecto solamente.",
+      "body": "<p>La <strong>talla</strong> consiste en extraer fragmentos de piedra para producir bordes u otras formas útiles. Núcleos, lascas, bifaces y raspadores pertenecen a distintas técnicas y contextos. Su fabricación requiere seleccionar materiales, controlar golpes y aprender de la experiencia.</p><p>Las herramientas sirvieron para procesar alimentos, trabajar pieles o madera y realizar otras tareas. Algunas combinaron piezas de piedra con mangos, adhesivos o fibras. Para estudiar su función se analizan huellas de uso y residuos: la forma por sí sola no siempre basta.</p><p>El aprovechamiento del fuego pudo aportar calor, luz, protección y cocción. Su control fue un proceso prolongado, con evidencias diferentes según el sitio. Un sedimento quemado puede proceder de un incendio natural; hogares organizados y restos asociados ayudan a reconocer actividad humana. No existe una única fecha de invención válida para todo el mundo.</p>",
+      "key": "Tecnología es conocimiento aplicado; una herramienta se comprende por su fabricación, uso y contexto.",
       "examples": [
         {
           "title": "Analiza el caso",
-          "question": "Un museo encuentra una herramienta, pero ningún fósil humano asociado. ¿Puede asignarla con certeza a Homo habilis?",
+          "question": "Caso hipotético: junto a un raspador aparecen residuos de piel y marcas microscópicas compatibles con raspado.",
           "steps": [
-            "La forma y la antigüedad permiten compararla con una tradición tecnológica.",
-            "Sin evidencias adicionales, no basta para identificar con certeza la especie fabricante.",
-            "Hay que distinguir una asociación probable de una atribución demostrada."
+            "La forma sugiere una función, pero no la demuestra sola.",
+            "Los residuos y las huellas refuerzan la interpretación del trabajo de pieles.",
+            "Compara con experimentos y otras piezas del sitio para evaluar la hipótesis."
           ]
         }
       ],
       "quiz": [
         {
-          "prompt": "¿Qué especie participó en dispersiones humanas tempranas fuera de África?",
-          "solution": "Homo erectus está documentado en África y Eurasia mucho antes de las migraciones recientes de nuestra especie.",
+          "prompt": "¿Qué aporta mayor sustento para conocer la función de una herramienta?",
+          "solution": "Distintos indicios permiten contrastar la función propuesta.",
           "level": "Básico",
-          "id": "u4a",
+          "id": "u3a",
           "options": [
-            "Homo sapiens como única posibilidad",
-            "Homo erectus",
-            "Un chimpancé actual",
-            "Un gorila actual",
-            "Una especie nacida después de la agricultura"
+            "Usar solo su color",
+            "Combinar huellas de uso, residuos y contexto",
+            "Suponer que toda piedra era un arma",
+            "Ignorar dónde apareció",
+            "Asignarle un nombre moderno"
           ],
           "answer": 1
         },
         {
-          "prompt": "La relación entre neandertales y Homo sapiens incluye…",
-          "solution": "Fósiles y ADN permiten reconstruir coexistencia y mezcla entre algunas poblaciones.",
+          "prompt": "¿Por qué una mancha quemada no prueba por sí sola el control humano del fuego?",
+          "solution": "Hay que distinguir incendios naturales de hogares y actividades humanas.",
           "level": "Básico",
-          "id": "u4b",
+          "id": "u3b",
           "options": [
-            "ausencia total de contacto",
-            "una transformación instantánea de todos los neandertales",
-            "convivencia con dinosaurios no avianos",
-            "el mismo origen que la escritura",
-            "coexistencia e intercambios genéticos"
+            "Porque el fuego no deja huellas",
+            "Porque solo existió desde la escritura",
+            "Porque todos los fuegos son modernos",
+            "Porque la piedra no puede alterarse",
+            "También puede proceder de un incendio natural"
           ],
           "answer": 4
         }
       ]
     },
     {
-      "title": "Homo sapiens y cultura acumulativa",
-      "subtitle": "Origen africano y expansión",
-      "goal": "Relaciona evolución biológica, aprendizaje y diversidad cultural.",
-      "body": "<p><em>Homo sapiens</em> surgió en África hace aproximadamente <strong>300 000 años</strong>. El origen de nuestra especie fue un proceso poblacional complejo, no un acontecimiento que pueda reducirse a una sola pareja o a una fecha exacta. Posteriormente hubo distintas dispersiones y contactos entre poblaciones.</p><p>La <strong>cultura acumulativa</strong> permite aprender, transmitir y modificar conocimientos entre generaciones. Herramientas compuestas, adornos, representaciones y redes de intercambio muestran capacidades diversas. Su presencia no autoriza a deducir automáticamente el contenido exacto de una lengua o creencia.</p><p>Diferencia cambios biológicos heredables de cambios culturales aprendidos. La difusión de una técnica no exige que aparezca una nueva especie. La agricultura y las ciudades son muy posteriores al origen de Homo sapiens. Todas las poblaciones humanas actuales pertenecen a la misma especie y comparten una historia evolutiva conectada.</p>",
-      "key": "Nuestra especie es mucho más antigua que la agricultura; cultura y biología se relacionan, pero no son lo mismo.",
+      "title": "Expresión simbólica y vida social",
+      "subtitle": "Arte, adornos y cuidado",
+      "goal": "Distingue las evidencias de actividad simbólica de interpretaciones no comprobadas.",
+      "body": "<p>Pinturas, grabados, objetos decorados y adornos muestran diversas formas de <strong>expresión simbólica</strong>. El arte rupestre aparece sobre superficies rocosas; el arte mobiliar se realiza en objetos transportables. Cuevas como Altamira y Lascaux conservan conjuntos conocidos, pero no representan toda la creatividad prehistórica.</p><p>Las imágenes pueden mostrar animales, signos o figuras humanas. Se han propuesto funciones rituales, sociales o narrativas, pero no conocemos siempre su significado. Una explicación debe contrastarse con fechas, distribución, técnicas y contexto; no basta con afirmar que todas las pinturas tenían la misma finalidad.</p><p>Algunos entierros y restos de individuos que sobrevivieron a lesiones aportan información sobre prácticas funerarias y cuidado. Debemos valorar cada caso y evitar deducir automáticamente una religión idéntica a la actual. La cooperación, el aprendizaje y las relaciones sociales fueron componentes importantes de estas sociedades.</p>",
+      "key": "Podemos reconocer actividad simbólica sin conocer con certeza cada significado o creencia.",
       "examples": [
         {
           "title": "Analiza el caso",
-          "question": "Caso hipotético: una comunidad aprende de sus vecinos a fabricar una nueva punta de piedra. ¿Se ha producido una nueva especie?",
+          "question": "Una pintura representa un bisonte. Un visitante afirma que demuestra una ceremonia concreta con palabras exactas. ¿Qué responderías?",
           "steps": [
-            "El aprendizaje y la difusión de la técnica son cambios culturales.",
-            "Una innovación no demuestra por sí sola un cambio de especie.",
-            "Para investigar evolución biológica se necesitan evidencias de poblaciones, anatomía y herencia."
+            "La imagen es evidencia de representación, pero no conserva las palabras de una ceremonia.",
+            "El significado propuesto es una hipótesis que necesita más contexto.",
+            "Se pueden comparar ubicación, técnica y otras imágenes sin convertir una posibilidad en certeza."
           ]
         }
       ],
       "quiz": [
         {
-          "prompt": "¿Dónde se originó Homo sapiens según la evidencia disponible?",
-          "solution": "Los fósiles y los estudios genéticos sitúan el origen de nuestra especie en África.",
+          "prompt": "Una figura grabada en una pequeña pieza transportable pertenece al…",
+          "solution": "El arte mobiliar se realiza sobre objetos que pueden transportarse.",
           "level": "Básico",
-          "id": "u5a",
+          "id": "u4a",
           "options": [
-            "En la Europa medieval",
-            "En América durante el Neolítico",
-            "En África",
-            "En Australia después de la escritura",
-            "En Mesopotamia con las ciudades"
+            "arte rupestre necesariamente",
+            "alfabeto cuneiforme",
+            "arte mobiliar",
+            "registro fiscal",
+            "sistema industrial"
           ],
           "answer": 2
         },
         {
-          "prompt": "Transmitir una técnica y mejorarla entre generaciones es un ejemplo de…",
-          "solution": "La cultura acumulativa combina transmisión social e innovación.",
+          "prompt": "¿Qué conclusión es prudente ante una pintura prehistórica?",
+          "solution": "Las imágenes son evidencia, pero su interpretación requiere contexto.",
+          "level": "Básico",
+          "id": "u4b",
+          "options": [
+            "Su significado debe investigarse y puede ser incierto",
+            "Todas tuvieron una única función conocida",
+            "Permite conocer palabras exactas",
+            "Demuestra una religión moderna concreta",
+            "No aporta información alguna"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "title": "Mesolítico y nuevos ambientes",
+      "subtitle": "Adaptaciones tras la última glaciación",
+      "goal": "Explica cambios y continuidades sin confundirlos con agricultura universal.",
+      "body": "<p>El inicio del <strong>Holoceno</strong>, hace unos 11 700 años, estuvo asociado a cambios climáticos y ambientales después de la última glaciación. Bosques, costas y recursos se transformaron de manera regional. El término Mesolítico se aplica a ciertas sociedades cazadoras y recolectoras de este contexto.</p><p>En diversos lugares se ampliaron la pesca, el marisqueo y la explotación de plantas. Son frecuentes los <strong>microlitos</strong>, pequeñas piezas de piedra que podían integrarse en herramientas compuestas. Su tamaño reducido no significa menor capacidad técnica. Algunos grupos permanecían más tiempo en asentamientos con recursos abundantes.</p><p>La transición al Neolítico no sucedió en todas partes al mismo tiempo. La presencia de asentamientos relativamente estables no demuestra, por sí sola, agricultura. Hubo contactos entre cazadores-recolectores y agricultores, migraciones y cambios graduales. Es necesario distinguir clima, economía y tecnología, que no siempre cambian a la vez.</p>",
+      "key": "La estabilidad residencial puede preceder a la agricultura; la transición fue diversa y regional.",
+      "examples": [
+        {
+          "title": "Analiza el caso",
+          "question": "Caso hipotético: un poblado cercano a un lago tiene abundantes espinas de pescado, frutos silvestres y casas reparadas varias veces, sin cultivos documentados.",
+          "steps": [
+            "Las reparaciones sugieren permanencia o reocupación.",
+            "Los restos indican aprovechamiento de recursos silvestres.",
+            "No debe clasificarse automáticamente como agrícola: hacen falta evidencias de cultivo o domesticación."
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Los microlitos son…",
+          "solution": "Las piezas pequeñas podían insertarse en mangos para fabricar instrumentos.",
+          "level": "Básico",
+          "id": "u5a",
+          "options": [
+            "pequeños textos cuneiformes",
+            "aleaciones de cobre y estaño",
+            "semillas domesticadas",
+            "pequeñas piezas de piedra usadas también en herramientas compuestas",
+            "templos mesopotámicos"
+          ],
+          "answer": 3
+        },
+        {
+          "prompt": "Un asentamiento estable junto a recursos silvestres abundantes demuestra que…",
+          "solution": "Algunas comunidades podían reducir su movilidad sin cultivar.",
           "level": "Básico",
           "id": "u5b",
           "options": [
-            "cultura acumulativa",
-            "cambio de especie inmediato",
-            "ausencia de aprendizaje",
-            "fósil sin contexto",
-            "datación radiométrica"
+            "todo poblado ya tenía escritura",
+            "sedentarismo y agricultura no son conceptos idénticos",
+            "la pesca exige metalurgia",
+            "no existió recolección",
+            "la agricultura surgió simultáneamente en el mundo"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "title": "Producir alimentos",
+      "subtitle": "Cultivo, domesticación y ganadería",
+      "goal": "Distingue obtener recursos silvestres de intervenir en su reproducción.",
+      "body": "<p>El <strong>Neolítico</strong> se relaciona con la expansión de formas de producción de alimentos, especialmente agricultura y ganadería, junto con cambios en asentamientos y tecnologías. En el sudoeste asiático las transformaciones agrícolas comenzaron hace unos 12 000 años. No aparecieron al mismo tiempo en todo el mundo.</p><p><strong>Cultivar</strong> es intervenir en el crecimiento de plantas. La <strong>domesticación</strong> es un proceso de cambios heredables en poblaciones de plantas o animales asociado a su relación prolongada con los seres humanos. No equivale a capturar o amansar un individuo. Cultivo y domesticación tampoco tienen que comenzar exactamente a la vez.</p><p>Se desarrollaron distintos focos: trigo y cebada en el sudoeste asiático, arroz y mijo en regiones de China, maíz en Mesoamérica y diversos cultivos en los Andes, como la papa. Hubo invenciones locales, difusión e intercambios. Los agricultores continuaron recurriendo también a recursos silvestres.</p>",
+      "key": "La producción de alimentos fue un conjunto de procesos regionales, no un invento único y repentino.",
+      "examples": [
+        {
+          "title": "Analiza el caso",
+          "question": "Caso hipotético: una familia captura una cría de animal silvestre y la acostumbra a su presencia. ¿Ya existe domesticación de la especie?",
+          "steps": [
+            "El amansamiento afecta a ese individuo.",
+            "La domesticación implica cambios en poblaciones a lo largo de generaciones.",
+            "Para demostrarla se estudian anatomía, reproducción, genética y contexto arqueológico."
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "La domesticación se diferencia del amansamiento porque involucra…",
+          "solution": "La domesticación es un proceso poblacional y heredable, no solo conductual individual.",
+          "level": "Básico",
+          "id": "u6a",
+          "options": [
+            "cambios en poblaciones a lo largo de generaciones",
+            "solo acostumbrar un individuo",
+            "únicamente construir una casa",
+            "fabricar una herramienta de hierro",
+            "aprender a escribir"
           ],
           "answer": 0
+        },
+        {
+          "prompt": "¿Qué asociación es correcta?",
+          "solution": "Mesoamérica fue un centro de domesticación del maíz.",
+          "level": "Básico",
+          "id": "u6b",
+          "options": [
+            "Trigo — origen exclusivo en los Andes",
+            "Papa — origen exclusivo en Mesopotamia",
+            "Arroz — origen exclusivo en Egipto",
+            "Maíz — Mesoamérica",
+            "Cebada — origen exclusivo en América"
+          ],
+          "answer": 3
+        }
+      ]
+    },
+    {
+      "title": "Aldeas y sedentarismo",
+      "subtitle": "Viviendas, reservas y cooperación",
+      "goal": "Relaciona residencia estable y producción sin convertirlas en sinónimos.",
+      "body": "<p>El <strong>sedentarismo</strong> es la residencia relativamente estable en un lugar. La agricultura favoreció muchas aldeas, pero existieron comunidades estables que aprovecharon recursos silvestres abundantes. A su vez, los pastores podían mantener una movilidad importante. Por ello, agricultor, pastor y sedentario no son etiquetas equivalentes.</p><p>Vivir de forma más estable permitió construir viviendas duraderas, almacenar reservas y organizar trabajos colectivos. Los graneros protegían alimentos para épocas de escasez y para la siguiente siembra. Las reservas requerían cuidado y podían perderse por plagas, humedad o conflictos.</p><p>La cercanía entre personas y animales, la concentración de desechos y la dependencia de pocas cosechas introdujeron nuevos riesgos. Una aldea más grande no implica bienestar igual para todos. La arqueología compara viviendas, alimentación y entierros para investigar diferencias internas. Çatalhöyük, en Anatolia, es un ejemplo importante de asentamiento neolítico.</p>",
+      "key": "Las aldeas ampliaron oportunidades de cooperación y también crearon nuevos problemas.",
+      "examples": [
+        {
+          "title": "Analiza el caso",
+          "question": "Caso hipotético: una aldea conserva semillas en un depósito común. Una mala cosecha reduce las reservas disponibles.",
+          "steps": [
+            "El almacenamiento puede amortiguar la escasez.",
+            "La comunidad necesita decidir cómo repartir alimentos y conservar semillas para sembrar.",
+            "Las reservas no eliminan los riesgos y su control puede generar tensiones."
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "El sedentarismo se refiere principalmente a…",
+          "solution": "Describe un patrón residencial, no una tecnología o forma política específica.",
+          "level": "Básico",
+          "id": "u7a",
+          "options": [
+            "la fabricación obligatoria de metales",
+            "la residencia relativamente estable",
+            "la existencia de un alfabeto",
+            "la formación automática de un imperio",
+            "la desaparición de toda recolección"
+          ],
+          "answer": 1
+        },
+        {
+          "prompt": "¿Qué riesgo puede aumentar al depender mucho de pocas cosechas?",
+          "solution": "Una producción concentrada puede resultar vulnerable a sequías, plagas u otros problemas.",
+          "level": "Básico",
+          "id": "u7b",
+          "options": [
+            "La imposibilidad de almacenar",
+            "La desaparición de enfermedades",
+            "La eliminación de conflictos",
+            "La ausencia de plagas",
+            "La vulnerabilidad ante una mala temporada"
+          ],
+          "answer": 4
+        }
+      ]
+    },
+    {
+      "title": "Tecnologías e intercambio",
+      "subtitle": "Cerámica, tejido y excedentes",
+      "goal": "Explica cómo se relacionan producción, especialización e intercambio.",
+      "body": "<p>El pulimento permitió fabricar ciertas herramientas de piedra, como hachas útiles para trabajar madera. La cerámica facilitó diversas tareas de almacenamiento y cocción; el tejido permitió elaborar prendas y recipientes. Estas tecnologías tuvieron cronologías propias: no toda comunidad neolítica usó todas ellas y algunas aparecieron entre cazadores-recolectores.</p><p>Un <strong>excedente</strong> es la parte de la producción que supera las necesidades definidas de consumo o reposición en un contexto. Puede sostener reservas, intercambio y trabajo especializado. Sin embargo, no todo aumento de cosechas genera automáticamente una clase de especialistas o un Estado.</p><p>El intercambio vinculó comunidades mediante alimentos, obsidiana, piedras, conchas y otros bienes. Algunos materiales recorrieron grandes distancias. Su presencia indica contactos o circulación, pero no prueba por sí sola un mercado con monedas. Para conocer la organización del trabajo debemos combinar herramientas, talleres, distribución de objetos y restos de producción.</p>",
+      "key": "La especialización y el intercambio se investigan con evidencias; no son consecuencias automáticas de una sola innovación.",
+      "examples": [
+        {
+          "title": "Analiza el caso",
+          "question": "Caso hipotético: en una aldea aparecen piezas de obsidiana cuya fuente geológica se encuentra lejos.",
+          "steps": [
+            "La procedencia del material sugiere circulación o contactos entre grupos.",
+            "No sabemos solo con eso si hubo trueque directo, regalos o intermediarios.",
+            "La distribución de piezas y otros indicios ayudan a reconstruir las redes."
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "¿Qué evidencia sugiere contactos entre regiones?",
+          "solution": "Los materiales no locales permiten estudiar circulación e intercambio.",
+          "level": "Básico",
+          "id": "u8a",
+          "options": [
+            "Solo una piedra local común",
+            "La ausencia de objetos",
+            "Un material cuya fuente geológica está lejos del asentamiento",
+            "Un único hoyo sin contexto",
+            "La forma circular del poblado"
+          ],
+          "answer": 2
+        },
+        {
+          "prompt": "La existencia de excedentes puede favorecer…",
+          "solution": "Los excedentes abren posibilidades, pero sus consecuencias dependen de la organización social.",
+          "level": "Básico",
+          "id": "u8b",
+          "options": [
+            "reservas y actividades especializadas",
+            "obligatoriamente un imperio",
+            "la desaparición de la agricultura",
+            "una única lengua mundial",
+            "la extinción de toda desigualdad"
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "title": "Cobre, bronce y hierro",
+      "subtitle": "Metalurgia y cronologías regionales",
+      "goal": "Distingue materiales, técnicas y periodizaciones sin confundir aleaciones.",
+      "body": "<p>La <strong>metalurgia</strong> comprende técnicas para obtener y trabajar metales. El cobre nativo pudo ser trabajado antes de que se dominaran procedimientos de extracción desde minerales. Fundir, moldear y forjar requieren conocimientos diferentes. La incorporación del metal no eliminó el uso de piedra, hueso o madera.</p><p>El <strong>bronce</strong> es una aleación basada en cobre; el bronce de estaño combina principalmente cobre y estaño. Sus propiedades favorecieron diversos útiles, armas y objetos de prestigio. La necesidad de materias primas impulsó redes de intercambio. El hierro exigió otras técnicas de reducción y forja; su expansión fue posterior en muchas regiones del Viejo Mundo.</p><p>Las denominaciones Edad del Cobre, del Bronce y del Hierro son útiles para ciertas secuencias regionales. No forman una escalera universal que todos los pueblos deban recorrer. En los Andes existió una importante metalurgia propia, cuya historia no debe ajustarse sin más a la cronología europea.</p>",
+      "key": "Bronce no es un metal puro; las edades de los metales tienen alcances regionales.",
+      "examples": [
+        {
+          "title": "Analiza el caso",
+          "question": "Se analiza una herramienta compuesta principalmente por cobre y estaño. ¿Cómo la clasificarías y qué no puedes deducir solo de ello?",
+          "steps": [
+            "Es un bronce de estaño, una aleación.",
+            "Su fabricación supone conocimientos y acceso a materias primas.",
+            "No permite asignar una fecha mundial única ni demostrar por sí sola la existencia de un imperio."
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "El bronce de estaño combina principalmente…",
+          "solution": "Es una aleación de cobre y estaño.",
+          "level": "Básico",
+          "id": "u9a",
+          "options": [
+            "hierro y carbono",
+            "oro y plata",
+            "cobre y oxígeno únicamente",
+            "cobre y estaño",
+            "piedra y arcilla"
+          ],
+          "answer": 3
+        },
+        {
+          "prompt": "¿Qué afirmación sobre las edades de los metales es correcta?",
+          "solution": "Son categorías para comparar procesos regionales, no una obligación mundial.",
+          "level": "Básico",
+          "id": "u9b",
+          "options": [
+            "Todos los pueblos tuvieron las mismas fechas",
+            "Su secuencia y cronología dependen de la región",
+            "El metal eliminó toda herramienta de piedra",
+            "El cobre apareció después de la industria moderna",
+            "El bronce es siempre hierro puro"
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "title": "De las aldeas a sociedades complejas",
+      "subtitle": "Diferenciación y poder",
+      "goal": "Analiza cómo pueden formarse jerarquías sin suponer un destino inevitable.",
+      "body": "<p>El crecimiento de asentamientos, la gestión de reservas, el intercambio y los conflictos pudieron favorecer nuevas diferencias de riqueza y autoridad. Un entierro con muchos objetos puede indicar distinción social, aunque su interpretación exige conocer costumbres funerarias y contexto.</p><p>La <strong>especialización</strong> implica dedicación a tareas particulares. La <strong>jerarquización</strong> supone posiciones desiguales de autoridad o acceso a recursos. No son lo mismo: puede haber especialistas sin un Estado. Para identificar instituciones políticas se estudian edificios, administración, tributos, obras y relaciones entre asentamientos.</p><p>La formación de ciudades y Estados fue desigual y no inevitable. Algunas sociedades mantuvieron otras formas de organización durante mucho tiempo. La llamada revolución neolítica designa la profundidad de los cambios, no su velocidad ni una mejora uniforme. Sus beneficios, costos y desigualdades variaron entre lugares y grupos.</p>",
+      "key": "La complejidad social debe explicarse históricamente; agricultura no equivale automáticamente a Estado.",
+      "examples": [
+        {
+          "title": "Analiza el caso",
+          "question": "Caso hipotético: una aldea tiene agricultores y alfareros, pero no hay indicios claros de autoridades permanentes ni tributos.",
+          "steps": [
+            "La distribución de tareas sugiere especialización.",
+            "No basta para afirmar que existía un Estado.",
+            "Se requieren evidencias adicionales de organización y poder institucionalizado."
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "La especialización del trabajo significa…",
+          "solution": "Describe diferenciación de tareas, no una forma política necesaria.",
+          "level": "Básico",
+          "id": "u10a",
+          "options": [
+            "siempre gobierno imperial",
+            "igualdad absoluta de riqueza",
+            "ausencia de intercambio",
+            "uso exclusivo de hierro",
+            "dedicación a tareas particulares"
+          ],
+          "answer": 4
+        },
+        {
+          "prompt": "¿Qué afirmación interpreta mejor la revolución neolítica?",
+          "solution": "La expresión destaca su alcance; los procesos fueron regionales y graduales.",
+          "level": "Básico",
+          "id": "u10b",
+          "options": [
+            "Una mejora instantánea para todos",
+            "Una única fecha mundial",
+            "Cambios profundos y prolongados, con efectos diversos",
+            "La aparición inmediata de todos los imperios",
+            "El fin completo de la caza"
+          ],
+          "answer": 2
         }
       ]
     }
   ],
   "practice": [
     {
-      "prompt": "¿Por qué no se debe representar a pueblos actuales como etapas de la hominización?",
-      "solution": "La diversidad cultural no establece peldaños biológicos de humanidad.",
+      "prompt": "¿Qué material suele conservarse mejor en un sitio antiguo?",
+      "solution": "La conservación diferencial favorece materiales resistentes, como la piedra.",
       "level": "Básico",
       "id": "p1",
       "options": [
-        "Porque carecen de cultura",
-        "Porque la evolución empezó con la escritura",
-        "Porque hay especies humanas superiores actuales",
-        "Todos pertenecen a Homo sapiens y son poblaciones contemporáneas",
-        "Porque no existen diferencias culturales"
-      ],
-      "answer": 3
-    },
-    {
-      "prompt": "Un hallazgo combina bipedismo y rasgos para trepar. La mejor interpretación es…",
-      "solution": "Los australopitecos muestran combinaciones de rasgos y no una transformación en bloque.",
-      "level": "Intermedio",
-      "id": "p2",
-      "options": [
-        "una prueba de agricultura",
-        "una combinación de adaptaciones locomotoras",
-        "un error inevitable del fósil",
-        "un individuo sin locomoción",
-        "la existencia de ciudades"
-      ],
-      "answer": 1
-    },
-    {
-      "prompt": "¿Qué método sería inadecuado para fechar directamente un fósil de dos millones de años?",
-      "solution": "El carbono 14 no alcanza antigüedades de millones de años.",
-      "level": "Intermedio",
-      "id": "p3",
-      "options": [
-        "Estudio del contexto estratigráfico",
-        "Comparación de capas asociadas",
-        "Datación de depósitos volcánicos adecuados",
-        "Integración de varias evidencias",
-        "Carbono 14"
+        "Las hojas frescas",
+        "La ropa de fibras sin condiciones especiales",
+        "Los alimentos blandos",
+        "Las cuerdas vegetales en cualquier ambiente",
+        "La piedra"
       ],
       "answer": 4
     },
     {
-      "prompt": "Una herramienta aislada sin fósiles asociados permite estudiar principalmente…",
-      "solution": "La atribución de una especie requiere más evidencia que la herramienta por sí sola.",
+      "prompt": "Un campamento se ocupa cada temporada de pesca. ¿Qué explicación es más adecuada?",
+      "solution": "La ocupación estacional puede ser parte de una estrategia planificada.",
       "level": "Intermedio",
-      "id": "p4",
+      "id": "p2",
       "options": [
-        "el nombre de su fabricante",
-        "su lengua exacta",
-        "una tecnología, con cautela sobre su autoría biológica",
-        "una especie con certeza automática",
-        "el sistema político completo"
+        "Desplazamiento sin conocimiento",
+        "Cultivo de cereales demostrado",
+        "Movilidad vinculada al ciclo de recursos",
+        "Vida industrial",
+        "Ausencia de cooperación"
       ],
       "answer": 2
     },
     {
-      "prompt": "ADN compartido entre linajes humanos antiguos puede apoyar la hipótesis de…",
-      "solution": "El ADN antiguo permite investigar parentescos y mezcla de poblaciones.",
-      "level": "Avanzado",
-      "id": "p5",
+      "prompt": "Recolectar frutos silvestres y cultivar plantas se diferencian porque el cultivo…",
+      "solution": "El cultivo supone intervención sostenida en la producción de plantas.",
+      "level": "Básico",
+      "id": "p3",
       "options": [
-        "cruces entre poblaciones",
-        "invención simultánea de la escritura",
-        "identidad completa de todas las culturas",
-        "ausencia de evolución",
-        "fabricación de metales"
+        "interviene en su crecimiento y producción",
+        "no requiere conocimientos",
+        "solo existe con hierro",
+        "es idéntico a recoger cualquier fruto",
+        "impide usar recursos silvestres"
       ],
       "answer": 0
+    },
+    {
+      "prompt": "Un poblado estable vive de abundante pesca sin agricultura demostrada. Esto indica…",
+      "solution": "Residencia y economía deben distinguirse.",
+      "level": "Intermedio",
+      "id": "p4",
+      "options": [
+        "ausencia de organización",
+        "metalurgia obligatoria",
+        "ganadería segura",
+        "sedentarismo sin agricultura necesariamente",
+        "vida imperial"
+      ],
+      "answer": 3
+    },
+    {
+      "prompt": "¿Qué pareja asocia correctamente región y cultivo?",
+      "solution": "Los Andes fueron un centro de domesticación de la papa.",
+      "level": "Básico",
+      "id": "p5",
+      "options": [
+        "Mesoamérica — trigo como origen exclusivo",
+        "Andes — papa",
+        "China — papa como origen exclusivo",
+        "Egipto — maíz como origen exclusivo",
+        "Mesopotamia — arroz como origen exclusivo"
+      ],
+      "answer": 1
     }
   ],
   "exam": [
     {
-      "prompt": "La hominización se estudia principalmente como…",
-      "solution": "Los cambios evolutivos se desarrollan en poblaciones a lo largo de generaciones.",
+      "prompt": "El estudio de sociedades anteriores a la escritura se apoya especialmente en…",
+      "solution": "La arqueología permite investigar distintas dimensiones de esas sociedades.",
       "level": "Básico",
       "id": "e1",
       "options": [
-        "una decisión individual",
-        "una historia de monarcas",
-        "un cambio ocurrido en un siglo",
-        "un proceso evolutivo de poblaciones",
-        "una clasificación de pueblos por valor"
+        "solo crónicas escritas",
+        "únicamente leyendas modernas",
+        "registros digitales antiguos",
+        "documentos notariales obligatorios",
+        "restos materiales y ambientales"
       ],
-      "answer": 3
+      "answer": 4
     },
     {
-      "prompt": "El parentesco con otros primates implica…",
-      "solution": "El parentesco evolutivo no significa descender de una especie actual.",
+      "prompt": "El término Paleolítico se relaciona tradicionalmente con…",
+      "solution": "La talla lítica caracteriza esta clasificación, sin excluir otros materiales.",
       "level": "Básico",
       "id": "e2",
       "options": [
-        "descendencia de chimpancés actuales",
-        "ancestros compartidos",
-        "ausencia de diferencias",
-        "que la evolución terminó",
-        "que solo Homo sapiens usa objetos"
-      ],
-      "answer": 1
-    },
-    {
-      "prompt": "Lucy pertenece a la especie…",
-      "solution": "Lucy es un fósil de Australopithecus afarensis hallado en Etiopía.",
-      "level": "Básico",
-      "id": "e3",
-      "options": [
-        "Homo neanderthalensis",
-        "Homo sapiens",
-        "Homo erectus",
-        "Pan troglodytes",
-        "Australopithecus afarensis"
-      ],
-      "answer": 4
-    },
-    {
-      "prompt": "¿Qué rasgo apareció antes que la gran expansión cerebral de especies posteriores?",
-      "solution": "El bipedismo está documentado en homininos tempranos.",
-      "level": "Básico",
-      "id": "e4",
-      "options": [
-        "La metalurgia",
-        "La escritura",
-        "El bipedismo habitual",
-        "La ganadería",
-        "El Estado"
+        "uso general del acero",
+        "alfabetos impresos",
+        "tecnologías de piedra tallada",
+        "fabricación de motores",
+        "monedas de plata"
       ],
       "answer": 2
     },
     {
-      "prompt": "Una datación relativa permite establecer…",
-      "solution": "La datación relativa ordena evidencias sin exigir una edad numérica exacta.",
+      "prompt": "La subsistencia cazadora-recolectora puede incluir…",
+      "solution": "La caza y la recolección se combinaron con diversas fuentes alimentarias.",
       "level": "Básico",
-      "id": "e5",
+      "id": "e3",
       "options": [
-        "anterioridad o posterioridad",
-        "siempre un año exacto",
-        "la lengua del individuo",
-        "la identidad de todo fabricante",
-        "su religión"
+        "pesca y aprovechamiento de plantas silvestres",
+        "solo cereales domesticados",
+        "solo ganadería intensiva",
+        "tributos obligatorios de un imperio",
+        "producción fabril"
       ],
       "answer": 0
     },
     {
-      "prompt": "La dispersión de Homo erectus demuestra que…",
-      "solution": "Erectus se expandió por regiones de Eurasia mucho antes de las dispersiones de nuestra especie.",
+      "prompt": "El nomadismo implica necesariamente…",
+      "solution": "Los desplazamientos pueden seguir rutas y ciclos conocidos.",
       "level": "Básico",
-      "id": "e6",
+      "id": "e4",
       "options": [
-        "solo sapiens pudo caminar",
-        "la agricultura ya era universal",
-        "la escritura comenzó en el Paleolítico",
-        "hubo salidas de África anteriores a las de Homo sapiens",
-        "los fósiles no tienen contexto"
+        "desconocimiento del territorio",
+        "ausencia de cooperación",
+        "incapacidad de fabricar herramientas",
+        "movilidad residencial, no falta de planificación",
+        "agricultura permanente"
       ],
       "answer": 3
     },
     {
-      "prompt": "¿Cuál es una afirmación correcta sobre neandertales?",
-      "solution": "La coexistencia está documentada y hubo contactos entre poblaciones.",
+      "prompt": "Una herramienta compuesta combina…",
+      "solution": "Una pieza de piedra puede unirse a un mango mediante fibras o adhesivos.",
       "level": "Básico",
-      "id": "e7",
+      "id": "e5",
       "options": [
-        "Fueron chimpancés actuales",
-        "Coexistieron con Homo sapiens",
-        "Vivieron después de las primeras fábricas",
-        "Nunca usaron herramientas",
-        "Fueron el único ancestro directo seguro de toda persona"
+        "solo signos alfabéticos",
+        "piezas o materiales con funciones complementarias",
+        "dos imperios vecinos",
+        "siempre hierro y acero",
+        "únicamente semillas"
       ],
       "answer": 1
     },
     {
-      "prompt": "El origen de Homo sapiens se sitúa aproximadamente hace…",
-      "solution": "La evidencia sitúa el origen de nuestra especie en África, hace unos 300 000 años.",
+      "prompt": "Una transformación económica vinculada al Neolítico es…",
+      "solution": "Agricultura y ganadería se desarrollaron o difundieron en distintas regiones.",
+      "level": "Básico",
+      "id": "e6",
+      "options": [
+        "la producción de alimentos mediante agricultura y ganadería",
+        "la desaparición de toda recolección",
+        "la invención de motores",
+        "la agricultura industrial",
+        "el uso universal de monedas"
+      ],
+      "answer": 0
+    },
+    {
+      "prompt": "Amansar un animal silvestre individual…",
+      "solution": "La domesticación implica un proceso poblacional de varias generaciones.",
+      "level": "Básico",
+      "id": "e7",
+      "options": [
+        "transforma instantáneamente toda la especie",
+        "demuestra ganadería mundial",
+        "exige escritura",
+        "no equivale por sí solo a domesticar su especie",
+        "origina un Estado"
+      ],
+      "answer": 3
+    },
+    {
+      "prompt": "El sudoeste asiático se asocia tempranamente con…",
+      "solution": "Trigo y cebada fueron cultivos tempranos importantes en esa región.",
       "level": "Básico",
       "id": "e8",
       "options": [
-        "300 años",
-        "3 000 años",
-        "30 millones de años",
-        "300 millones de años",
-        "300 000 años"
+        "papa y quinua como origen exclusivo",
+        "trigo y cebada",
+        "maíz y cacao como origen exclusivo",
+        "cultivos industriales transgénicos",
+        "arroz andino"
+      ],
+      "answer": 1
+    },
+    {
+      "prompt": "Una función del almacenamiento de granos fue…",
+      "solution": "Las reservas ayudaban a afrontar necesidades futuras, aunque podían perderse.",
+      "level": "Básico",
+      "id": "e9",
+      "options": [
+        "eliminar cualquier mala cosecha",
+        "hacer innecesario el trabajo",
+        "garantizar igualdad social",
+        "reemplazar todas las herramientas",
+        "mantener reservas para consumo y siembra"
       ],
       "answer": 4
     },
     {
-      "prompt": "Aprender una nueva técnica constituye principalmente un cambio…",
-      "solution": "Las técnicas pueden transmitirse mediante aprendizaje social.",
-      "level": "Básico",
-      "id": "e9",
-      "options": [
-        "de especie automático",
-        "radiométrico",
-        "cultural",
-        "del estrato geológico",
-        "del código genético necesariamente"
-      ],
-      "answer": 2
-    },
-    {
-      "prompt": "¿Qué afirmación evita una interpretación lineal de la evolución?",
-      "solution": "La evolución humana fue ramificada y sus relaciones se investigan con evidencia.",
+      "prompt": "El sedentarismo describe…",
+      "solution": "Se refiere a la permanencia residencial.",
       "level": "Básico",
       "id": "e10",
       "options": [
-        "Varias especies coexistieron y algunas ramas se extinguieron",
-        "Cada especie fue reemplazada de inmediato por otra",
-        "Toda evolución tiene una meta",
-        "Los pueblos actuales son fósiles vivos",
-        "Cada herramienta pertenece a una única especie"
+        "una aleación metálica",
+        "un tipo de escritura",
+        "un patrón de residencia relativamente estable",
+        "una especie humana",
+        "un imperio territorial"
       ],
-      "answer": 0
+      "answer": 2
     }
   ],
   "timeline": [
     [
-      "Hace 3,9–2,9 millones de años",
-      "Australopithecus afarensis en África; bipedismo y rasgos para trepar."
+      "Paleolítico",
+      "Larga diversidad de cazadores, recolectores y pescadores; fechas regionales."
     ],
     [
-      "Hace alrededor de 1,9 millones de años",
-      "Primeros registros de Homo erectus; posteriores dispersiones por Eurasia."
+      "Hace unos 11 700 años",
+      "Inicio del Holoceno; cambios climáticos y ambientales."
     ],
     [
-      "Hace unos 300 000 años",
-      "Homo sapiens en África."
+      "Mesolítico en ciertas regiones",
+      "Adaptación de cazadores-recolectores a nuevos ambientes."
     ],
     [
-      "Decenas de miles de años atrás",
-      "Coexistencia y contactos entre sapiens y otros linajes humanos."
+      "Transiciones locales al Neolítico",
+      "Agricultura y ganadería se desarrollan o difunden en fechas diferentes."
+    ],
+    [
+      "Hace unos 12 000 años",
+      "Transformaciones agrícolas tempranas en el sudoeste asiático."
+    ],
+    [
+      "Neolíticos regionales",
+      "Domesticación, aldeas y tecnologías con ritmos diferentes."
+    ],
+    [
+      "Metalurgias del cobre y bronce",
+      "Especialización y circulación de materias primas en diversas regiones."
+    ],
+    [
+      "Expansión del hierro",
+      "Proceso posterior en muchas zonas del Viejo Mundo; sin fecha mundial única."
     ]
   ],
-  "resources": "<p class=\"eyebrow\">Repasa y consulta</p><h2>Materiales del capítulo</h2><h3>Vocabulario esencial</h3><dl class=\"glossary\"><dt>Hominización</dt><dd>Proceso evolutivo del linaje humano.</dd><dt>Bipedismo</dt><dd>Desplazamiento habitual sobre dos extremidades inferiores.</dd><dt>Fósil</dt><dd>Resto o huella de un organismo del pasado preservado.</dd><dt>Cultura acumulativa</dt><dd>Conocimientos transmitidos y modificados entre generaciones.</dd><dt>Ancestro común</dt><dd>Población ancestral compartida por distintos linajes.</dd></dl><h3>Lecturas y evidencias</h3><ul class=\"resource-list\"><li><a href=\"https://humanorigins.si.edu/evidence/human-fossils/species/homo-sapiens\" target=\"_blank\" rel=\"noopener noreferrer\">Smithsonian · Homo sapiens</a></li><li><a href=\"https://humanorigins.si.edu/evidence/human-fossils/species/australopithecus-afarensis\" target=\"_blank\" rel=\"noopener noreferrer\">Smithsonian · Australopithecus afarensis</a></li><li><a href=\"https://humanorigins.si.edu/evidence\" target=\"_blank\" rel=\"noopener noreferrer\">Smithsonian · Evidencias de la evolución humana</a></li></ul><p class=\"resource-note\">Las lecturas pueden estar en inglés. Los casos y las preguntas son actividades didácticas originales; los casos hipotéticos no son transcripciones de documentos antiguos. Las fechas prehistóricas y los límites de las etapas son aproximados y dependen de la región.</p>"
+  "resources": "<p class=\"resource-note\"><b>Temario de referencia:</b> <cite>Historia Universal</cite>, Lumbreras Editores, capítulo 3, páginas impresas 24–31. Las explicaciones y actividades de esta web son una adaptación didáctica original.</p><p class=\"eyebrow\">Repasa y consulta</p><h2>Materiales del capítulo</h2><h3>Vocabulario esencial</h3><dl class=\"glossary\"><dt>Paleolítico</dt><dd>Periodo asociado tradicionalmente a tecnologías de piedra tallada.</dd><dt>Subsistencia</dt><dd>Actividades para obtener los recursos necesarios para vivir.</dd><dt>Microlito</dt><dd>Pequeña pieza lítica, a menudo integrada en un instrumento compuesto.</dd><dt>Arte rupestre</dt><dd>Representación realizada en una superficie rocosa.</dd><dt>Mesolítico</dt><dd>Categoría regional para ciertos cazadores-recolectores posteriores a la última glaciación.</dd></dl><h3>Lecturas y evidencias</h3><ul class=\"resource-list\"><li><a href=\"https://whc.unesco.org/en/list/85/\" target=\"_blank\" rel=\"noopener noreferrer\">UNESCO · Cuevas decoradas del valle de Vézère, incluida Lascaux</a></li><li><a href=\"https://whc.unesco.org/en/list/310/\" target=\"_blank\" rel=\"noopener noreferrer\">UNESCO · Altamira y arte rupestre paleolítico del norte de España</a></li><li><a href=\"https://www.britishmuseum.org/collection/term/x14235\" target=\"_blank\" rel=\"noopener noreferrer\">British Museum · Mesolítico</a></li></ul><p class=\"resource-note\">Las lecturas pueden estar en inglés. Los casos y las preguntas son actividades didácticas originales; los casos hipotéticos no son transcripciones de documentos antiguos. Las fechas prehistóricas y los límites de las etapas son aproximados y dependen de la región.</p><p class=\"eyebrow\">Repasa y consulta</p><h2>Materiales del capítulo</h2><h3>Vocabulario esencial</h3><dl class=\"glossary\"><dt>Domesticación</dt><dd>Cambios heredables en poblaciones vinculados a su relación prolongada con humanos.</dd><dt>Sedentarismo</dt><dd>Residencia relativamente estable en un lugar.</dd><dt>Excedente</dt><dd>Producción que supera determinadas necesidades de consumo o reposición.</dd><dt>Metalurgia</dt><dd>Conjunto de técnicas para obtener y trabajar metales.</dd><dt>Jerarquización</dt><dd>Diferenciación de posiciones de autoridad o acceso a recursos.</dd></dl><h3>Lecturas y evidencias</h3><ul class=\"resource-list\"><li><a href=\"https://whc.unesco.org/en/list/1405/\" target=\"_blank\" rel=\"noopener noreferrer\">UNESCO · Asentamiento neolítico de Çatalhöyük</a></li><li><a href=\"https://www.britishmuseum.org/learn/schools/ages-7-11/ancient-britain/classroom-resource-neolithic-britain\" target=\"_blank\" rel=\"noopener noreferrer\">British Museum · La vida en el Neolítico británico</a></li><li><a href=\"https://www.nhm.ac.uk/discover/news/2019/april/neolithic-britain-where-did-the-first-farmers-come-from.html\" target=\"_blank\" rel=\"noopener noreferrer\">Natural History Museum · La llegada de la agricultura a Gran Bretaña</a></li></ul><p class=\"resource-note\">Las lecturas pueden estar en inglés. Los casos y las preguntas son actividades didácticas originales; los casos hipotéticos no son transcripciones de documentos antiguos. Las fechas prehistóricas y los límites de las etapas son aproximados y dependen de la región.</p>",
+  "progressId": "historia-universal-pdf-03",
+  "legacySources": [
+    {
+      "id": "historia-universal-capitulo-04",
+      "items": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ]
+    },
+    {
+      "id": "historia-universal-capitulo-05",
+      "items": [
+        [
+          0,
+          5
+        ],
+        [
+          1,
+          6
+        ],
+        [
+          2,
+          7
+        ],
+        [
+          3,
+          8
+        ],
+        [
+          4,
+          9
+        ]
+      ]
+    }
+  ]
 };

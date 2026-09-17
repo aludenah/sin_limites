@@ -1,481 +1,510 @@
 window.HISTORY_CONTENT = {
   "number": 2,
   "id": "historia-universal-capitulo-02",
-  "title": "Fuentes históricas y periodización",
-  "intro": "Aprende a interrogar las evidencias, contrastar interpretaciones y ubicar los procesos en el tiempo.",
+  "title": "Antropogénesis",
+  "intro": "Reconstruye la evolución humana a partir de fósiles, herramientas y ADN. Comprende un proceso ramificado, con distintas especies y formas de vida.",
   "lessons": [
     {
-      "title": "Las fuentes y la pregunta histórica",
-      "subtitle": "Clasificar con un propósito",
-      "goal": "Distingue fuentes primarias y secundarias según lo que deseas investigar.",
-      "body": "<p>Una <strong>fuente histórica</strong> es una huella de la actividad humana que podemos estudiar para responder preguntas sobre el pasado. Una carta, un edificio, un relato oral o una fotografía aportan información distinta. Antes de clasificarlos, define qué quieres conocer: ¿la alimentación, las relaciones de poder o la memoria de una guerra?</p><p>Una <strong>fuente primaria</strong> ofrece evidencia directa del asunto investigado; una <strong>secundaria</strong> interpreta y organiza otras evidencias. La clasificación depende de la pregunta. Un manual actual es secundario para investigar Roma, pero puede ser primario para estudiar cómo se enseña Roma hoy.</p><p>El soporte es otro criterio: fuentes escritas, materiales, orales, visuales y audiovisuales. Ambos criterios se combinan. Una moneda antigua es material y puede ser primaria. Una fotografía no muestra necesariamente todo lo que ocurrió: también tiene encuadre, autor y propósito.</p>",
-      "key": "La fuente se clasifica por su relación con la investigación y por su soporte; su antigüedad no garantiza su confiabilidad.",
+      "title": "Una evolución ramificada",
+      "subtitle": "Ancestros comunes y diversidad",
+      "goal": "Explica la evolución humana sin convertirla en una escalera de progreso.",
+      "body": "<p>La <strong>hominización</strong> es el conjunto de transformaciones evolutivas que dieron lugar al linaje humano. Se desarrolló durante millones de años, en poblaciones y ambientes diversos. No ocurrió porque un individuo decidiera cambiar, sino mediante variaciones heredables, selección natural y otros procesos evolutivos.</p><p>Los seres humanos somos primates. Compartimos ancestros con los demás grandes simios, pero <strong>no descendemos de los chimpancés actuales</strong>. Ambos linajes tienen una historia evolutiva propia. Un árbol con ramas representa mejor este proceso que una fila de figuras que culmina en una supuesta perfección.</p><p>Durante largos periodos coexistieron diferentes especies humanas. Muchas se extinguieron y sus relaciones exactas siguen investigándose. La evolución no tiene una meta predeterminada. Tampoco ordena a los pueblos actuales en grados de humanidad: todas las personas actuales pertenecemos a <em>Homo sapiens</em>.</p>",
+      "key": "Compartimos ancestros; la evolución humana tuvo ramificaciones y coexistencias.",
       "examples": [
         {
           "title": "Analiza el caso",
-          "question": "Caso hipotético: investigas el precio del pan en una ciudad en 1900. Tienes una factura de 1900 y un artículo académico de 2020 sobre esa economía.",
+          "question": "Un afiche muestra un chimpancé actual que se transforma, paso a paso, en una persona moderna. ¿Qué corregirías?",
           "steps": [
-            "La factura registra una transacción de la época: es primaria para esta pregunta.",
-            "El artículo interpreta datos: es secundario. Puede ayudar a entender las unidades y el contexto.",
-            "Una sola factura no demuestra el precio de toda la ciudad; conviene reunir más registros."
+            "Reemplaza la fila por un esquema ramificado con un ancestro común.",
+            "Separa el linaje de los chimpancés actuales del linaje humano.",
+            "Indica que hubo especies contemporáneas y que ninguna población humana actual representa un peldaño inferior."
           ]
         }
       ],
       "quiz": [
         {
-          "prompt": "Para estudiar una compraventa de 1900, ¿cuál es una fuente primaria?",
-          "solution": "La factura registra directamente la operación investigada.",
+          "prompt": "La relación evolutiva entre humanos y chimpancés actuales se explica por…",
+          "solution": "Los dos linajes comparten ancestros y han seguido evolucionando.",
           "level": "Básico",
           "id": "u1a",
           "options": [
-            "Una novela actual ambientada en 1900",
-            "Un resumen escolar reciente",
-            "La factura original de esa operación",
-            "Un artículo que compara facturas",
-            "Una enciclopedia contemporánea"
+            "la transformación reciente de chimpancés en humanos",
+            "la ausencia de parentesco",
+            "la descendencia de humanos a partir de gorilas actuales",
+            "un ancestro común",
+            "una decisión de cambiar de especie"
           ],
-          "answer": 2
+          "answer": 3
         },
         {
-          "prompt": "Un manual de 2025 se usa para investigar la enseñanza escolar en 2025. ¿Cómo puede clasificarse?",
-          "solution": "El manual es una evidencia directa de lo que se enseñaba en ese momento.",
+          "prompt": "¿Qué representación describe mejor la evolución humana?",
+          "solution": "La evidencia muestra diversidad de especies, extinciones y coexistencias.",
           "level": "Básico",
           "id": "u1b",
           "options": [
-            "Como fuente primaria para esa pregunta",
-            "Siempre como fuente secundaria",
-            "Como fuente sin valor por ser reciente",
-            "Como resto biológico",
-            "Como testimonio de la Roma antigua"
-          ],
-          "answer": 0
-        }
-      ]
-    },
-    {
-      "title": "Crítica de fuentes",
-      "subtitle": "Procedencia, intención y contraste",
-      "goal": "Evalúa qué permite afirmar una fuente y cuáles son sus límites.",
-      "body": "<p>La <strong>crítica externa</strong> examina la procedencia, la fecha, el soporte y la autenticidad. Pregunta si el objeto es original, copia o falsificación, y cómo llegó al archivo o museo. La <strong>crítica interna</strong> estudia el contenido: quién habla, a quién se dirige, qué conoce y qué intenta conseguir.</p><p>Un texto auténtico puede exagerar o callar información. Un gobernante que describe su victoria puede buscar prestigio. Esa intención no vuelve inútil al documento: permite estudiar también cómo se justificaba el poder. Debemos separar lo que el documento afirma de lo que podemos comprobar.</p><p>La <strong>corroboración</strong> compara evidencias independientes. Tres libros que repiten una misma crónica no equivalen a tres testimonios independientes. También interesa buscar voces poco representadas: habitantes comunes, mujeres, grupos sometidos o personas que no dejaron escritos.</p>",
-      "key": "Autenticidad, exactitud y representatividad son cuestiones distintas.",
-      "examples": [
-        {
-          "title": "Analiza el caso",
-          "question": "Caso hipotético: una inscripción real declara que el monarca nunca perdió una batalla. En un archivo vecino aparece una derrota del mismo ejército.",
-          "steps": [
-            "Identifica la finalidad de exaltación del poder en la inscripción.",
-            "Comprueba fechas, autores y si ambos registros se refieren a la misma campaña.",
-            "Contrasta evidencias antes de concluir; la propaganda también informa sobre la imagen que el rey quería transmitir."
-          ]
-        }
-      ],
-      "quiz": [
-        {
-          "prompt": "Comprobar si una carta es original o una falsificación corresponde principalmente a…",
-          "solution": "La crítica externa examina autenticidad, soporte y procedencia.",
-          "level": "Básico",
-          "id": "u2a",
-          "options": [
-            "la periodización económica",
-            "la crítica de su argumento",
-            "la división en siglos",
-            "la crítica externa",
-            "la explicación de consecuencias"
-          ],
-          "answer": 3
-        },
-        {
-          "prompt": "¿Qué mejora más una investigación sobre una batalla?",
-          "solution": "La comparación de evidencias independientes permite evaluar acuerdos y contradicciones.",
-          "level": "Básico",
-          "id": "u2b",
-          "options": [
-            "Repetir la versión más popular",
-            "Contrastar testimonios independientes y su contexto",
-            "Aceptar al vencedor como imparcial",
-            "Contar copias del mismo relato como testimonios distintos",
-            "Descartar cualquier fuente interesada"
+            "Una escalera con una meta obligatoria",
+            "Un árbol con ramas, algunas coexistentes",
+            "Una sola especie sin cambios",
+            "Una lista de pueblos actuales de inferior a superior",
+            "Un cambio ocurrido en una generación"
           ],
           "answer": 1
         }
       ]
     },
     {
-      "title": "Cronología: años, siglos y milenios",
-      "subtitle": "Ordenar antes de explicar",
-      "goal": "Ubica fechas y calcula intervalos sin confundir las eras.",
-      "body": "<p>La <strong>cronología</strong> ordena los acontecimientos. Usamos a. C. y d. C.; también encontrarás a. e. c. y e. c. para los mismos años de esta escala. En la cronología histórica convencional se pasa de 1 a. C. a 1 d. C.: <strong>no existe año cero</strong>. Cuanto mayor es un número a. C., más antiguo es el año.</p><p>Un siglo reúne cien años. El siglo I d. C. abarca del 1 al 100; el II, del 101 al 200. Por eso, 1492 pertenece al siglo XV y 2000 al XX. En a. C., el siglo V comprende del 500 al 401 a. C. Un milenio comprende mil años.</p><p>Para intervalos entre fechas de la misma era, resta sus números. Si cruzas de a. C. a d. C., suma y resta uno, comparando el mismo momento del año. De 10 a. C. a 10 d. C. transcurren 19 años. La fecha ordena; por sí sola no explica causas.</p>",
-      "key": "Antes de calcular, reconoce la era, la unidad de tiempo y la ausencia de año cero.",
+      "title": "Cómo se investiga la hominización",
+      "subtitle": "Fósiles, contextos y datación",
+      "goal": "Relaciona cada tipo de evidencia con las preguntas que puede responder.",
+      "body": "<p>La <strong>paleoantropología</strong> estudia la evolución humana mediante fósiles y otras evidencias. Huesos y dientes informan sobre anatomía y alimentación; herramientas y marcas de corte ayudan a investigar actividades. El lugar y la capa donde aparecen son parte esencial de la evidencia.</p><p>La datación <strong>relativa</strong> establece qué es anterior o posterior. En estratos no alterados, las capas inferiores suelen ser más antiguas. La datación <strong>radiométrica</strong> estima edades o intervalos mediante procesos físicos, siempre con márgenes de incertidumbre. No todos los métodos sirven para todo material o antigüedad.</p><p>El carbono 14 se aplica a materiales orgánicos relativamente recientes en términos geológicos; no es adecuado para fechar directamente fósiles de millones de años. En contextos más antiguos pueden estudiarse capas volcánicas con otros métodos. El ADN antiguo, cuando se conserva, permite comparar parentescos y contactos entre poblaciones.</p>",
+      "key": "Una conclusión sólida relaciona el fósil, su contexto y un método de datación adecuado.",
       "examples": [
         {
           "title": "Analiza el caso",
-          "question": "¿A qué siglo pertenece 476 d. C. y cuántos años separan 5 a. C. de 5 d. C., tomando el mismo día del año?",
+          "question": "Caso hipotético: un fósil aparece entre dos capas volcánicas fechadas en unos 1,8 y 1,6 millones de años, sin señales de alteración.",
           "steps": [
-            "476 está entre 401 y 500: corresponde al siglo V.",
-            "El intervalo cruza las eras: 5 + 5 − 1 = 9 años.",
-            "La resta de uno evita contar un año cero inexistente en esta convención."
+            "Su posición permite proponer una antigüedad comprendida entre las capas.",
+            "Las fechas corresponden a materiales volcánicos asociados, no a una lectura automática del hueso.",
+            "Nuevas excavaciones y análisis pueden afinar o revisar la estimación."
           ]
         }
       ],
       "quiz": [
         {
-          "prompt": "¿A qué siglo pertenece 1789?",
-          "solution": "Los años 1701 a 1800 forman el siglo XVIII.",
+          "prompt": "En un conjunto de estratos no alterados, una capa inferior suele ser…",
+          "solution": "La superposición permite establecer relaciones de anterioridad, si no hubo alteraciones.",
           "level": "Básico",
-          "id": "u3a",
+          "id": "u2a",
           "options": [
-            "Al siglo XVII",
-            "Al siglo XIX",
-            "Al siglo XVI",
-            "Al siglo XX",
-            "Al siglo XVIII"
+            "siempre del mismo año",
+            "más reciente por definición",
+            "imposible de estudiar",
+            "una prueba de escritura",
+            "más antigua que la situada encima"
           ],
           "answer": 4
         },
         {
-          "prompt": "¿Cuál es el orden de más antiguo a más reciente?",
-          "solution": "En a. C. los números mayores son más antiguos; después vienen los años d. C.",
+          "prompt": "¿Qué afirmación sobre la datación es correcta?",
+          "solution": "Cada técnica tiene materiales, rangos y márgenes de incertidumbre específicos.",
           "level": "Básico",
-          "id": "u3b",
+          "id": "u2b",
           "options": [
-            "100 a. C.; 500 a. C.; 50 d. C.",
-            "50 d. C.; 100 a. C.; 500 a. C.",
-            "500 a. C.; 100 a. C.; 50 d. C.",
-            "500 a. C.; 50 d. C.; 100 a. C.",
-            "100 a. C.; 50 d. C.; 500 a. C."
+            "El carbono 14 fecha cualquier roca",
+            "Un hueso revela siempre un año exacto",
+            "El método debe elegirse según material y antigüedad",
+            "El contexto nunca importa",
+            "Todos los fósiles tienen menos de mil años"
           ],
           "answer": 2
         }
       ]
     },
     {
-      "title": "Periodizar el pasado",
-      "subtitle": "Criterios y límites de las etapas",
-      "goal": "Reconoce la utilidad y los límites de la periodización tradicional.",
-      "body": "<p>La <strong>periodización</strong> divide el tiempo en etapas según cambios que el investigador considera relevantes. Puede usar criterios políticos, económicos, tecnológicos o culturales. La división tradicional europea comprende Edad Antigua, Media, Moderna y Contemporánea; antes de la escritura se habla convencionalmente de Prehistoria.</p><p>Los límites más usados en el esquema escolar son el desarrollo de la escritura para el inicio de la Edad Antigua; 476 para el comienzo de la Media; 1453 o 1492 para la Moderna; y 1789 para la Contemporánea. Son <strong>convenciones de estudio</strong>, no transformaciones instantáneas de toda la humanidad.</p><p>La escritura surgió y se difundió en fechas diferentes. Las sociedades sin escritura también tienen historia, reconstruida con otras fuentes. Asimismo, China, África o los Andes no siguieron exactamente las etapas europeas. Por eso es necesario indicar a qué región y criterio se aplica una división.</p>",
-      "key": "Una periodización organiza procesos; no impone el mismo ritmo histórico a todas las sociedades.",
+      "title": "Bipedismo y cambios anatómicos",
+      "subtitle": "Caminar sobre dos extremidades",
+      "goal": "Reconoce que los rasgos humanos aparecieron en momentos distintos.",
+      "body": "<p>El <strong>bipedismo habitual</strong> consiste en desplazarse normalmente sobre dos extremidades inferiores. Se estudia mediante la pelvis, el fémur, la columna, el pie y las huellas. La combinación de rasgos es más informativa que un hueso aislado.</p><p>Caminar erguido apareció antes del gran aumento del tamaño cerebral característico de varias especies posteriores. Los australopitecos combinaban locomoción bípeda con rasgos útiles para trepar. <em>Australopithecus afarensis</em>, especie a la que pertenece el fósil conocido como Lucy, vivió en África hace aproximadamente entre 3,9 y 2,9 millones de años.</p><p>El bipedismo modificó la relación entre locomoción, transporte y uso de las manos. No significa que en ese mismo momento aparecieran la agricultura, la escritura o todas las tecnologías humanas. La evolución fue un <strong>mosaico de cambios</strong>, asociado a ambientes y modos de vida variados.</p>",
+      "key": "El bipedismo y el aumento cerebral no fueron un único cambio simultáneo.",
       "examples": [
         {
           "title": "Analiza el caso",
-          "question": "Dos libros usan 1453 y 1492 como inicio de la Edad Moderna. ¿Uno necesariamente está equivocado?",
+          "question": "Un fósil presenta adaptaciones para caminar erguido y un cráneo de tamaño reducido respecto del humano actual. ¿Es contradictorio?",
           "steps": [
-            "1453 alude a la toma de Constantinopla; 1492 a la llegada de Colón a América.",
-            "Ambos pueden funcionar como hitos de transformaciones diferentes.",
-            "Compara el criterio de cada libro y recuerda que los procesos abarcan más tiempo que una fecha."
+            "No: distintos rasgos evolucionaron en momentos y ritmos diferentes.",
+            "El bipedismo temprano no requiere un cerebro del tamaño actual.",
+            "La combinación ayuda a reconstruir una etapa evolutiva sin atribuirle tecnologías que no están documentadas."
           ]
         }
       ],
       "quiz": [
         {
-          "prompt": "En la periodización europea tradicional, 476 se usa como hito de…",
-          "solution": "Se emplea convencionalmente la deposición de Rómulo Augústulo en 476.",
+          "prompt": "¿Qué evidencia es especialmente útil para estudiar locomoción bípeda?",
+          "solution": "La anatomía y las huellas permiten inferir cómo se desplazaba un organismo.",
           "level": "Básico",
-          "id": "u4a",
+          "id": "u3a",
           "options": [
-            "el fin del Imperio romano de Occidente y el inicio de la Edad Media",
-            "la invención de la escritura",
-            "la Revolución francesa",
-            "el inicio del Neolítico",
-            "la caída de Constantinopla"
+            "La forma de la pelvis y las huellas",
+            "La presencia de un alfabeto",
+            "Un calendario escrito",
+            "Una moneda",
+            "Un templo de piedra"
           ],
           "answer": 0
         },
         {
-          "prompt": "¿Por qué no debe aplicarse mecánicamente la periodización europea a los Andes?",
-          "solution": "Las periodizaciones responden a criterios y contextos, no a una secuencia mundial obligatoria.",
+          "prompt": "¿Qué relación temporal está mejor respaldada?",
+          "solution": "Los homininos bípedos tempranos conservaban cerebros relativamente pequeños.",
           "level": "Básico",
-          "id": "u4b",
+          "id": "u3b",
           "options": [
-            "Porque en los Andes no hubo historia",
-            "Porque no es posible estudiar objetos",
-            "Porque todas las fechas son falsas",
-            "Porque las regiones desarrollaron procesos y ritmos propios",
-            "Porque la cronología solo sirve para Europa"
+            "La escritura precedió al bipedismo",
+            "La agricultura produjo los primeros primates",
+            "Todos los rasgos humanos surgieron a la vez",
+            "El bipedismo precedió a grandes aumentos cerebrales posteriores",
+            "El bipedismo apareció después de las ciudades"
           ],
           "answer": 3
         }
       ]
     },
     {
-      "title": "Tiempo histórico y explicación",
-      "subtitle": "Cambio, permanencia y multicausalidad",
-      "goal": "Construye una explicación que relacione evidencias, causas y consecuencias.",
-      "body": "<p>El <strong>tiempo histórico</strong> no es solo una lista de años. Permite reconocer sucesión, simultaneidad y duraciones distintas. Una guerra puede durar pocos años, mientras que ciertas formas de propiedad persisten durante siglos. El cambio y la permanencia pueden coexistir.</p><p>Las explicaciones suelen ser <strong>multicausales</strong>: combinan condiciones económicas, políticas, sociales y culturales. Conviene distinguir una condición de largo plazo de un desencadenante inmediato. Que un hecho ocurra antes que otro no demuestra que lo haya causado.</p><p>Para argumentar, formula una afirmación, identifica evidencia que la sostenga y explica la relación. Revisa también datos que podrían cuestionarla. Evita el <strong>anacronismo</strong>: atribuir a una sociedad objetos o ideas que no corresponden a su época, o juzgar sus opciones sin conocer su contexto.</p>",
-      "key": "Una explicación histórica une afirmaciones y evidencias; la sucesión temporal no basta para probar causalidad.",
+      "title": "Diversidad del género Homo",
+      "subtitle": "Tecnología, dispersión y coexistencia",
+      "goal": "Distingue especies sin atribuirles inventos exclusivos de forma automática.",
+      "body": "<p>En el género <em>Homo</em> se reconocen distintas especies, definidas a partir de conjuntos de rasgos y evidencias. <em>Homo habilis</em> se asocia en muchos contextos con herramientas tempranas, pero no debe afirmarse que toda herramienta antigua fue fabricada por esa especie: existen tecnologías anteriores y problemas de atribución.</p><p><em>Homo erectus</em> tuvo una larga presencia y participó en dispersiones tempranas fuera de África. Diversos grupos desarrollaron herramientas y formas de cooperación. El aprovechamiento del fuego se reconstruye caso por caso; no conocemos una única fecha universal de su descubrimiento.</p><p>Los neandertales habitaron regiones de Europa y Asia y fabricaron herramientas, cazaron y cuidaron a algunos individuos con lesiones. Coexistieron con <em>Homo sapiens</em>. La evidencia genética muestra intercambios reproductivos entre poblaciones; no fueron simplemente una etapa obligatoria que se transformó por completo en nosotros.</p>",
+      "key": "Una especie no equivale a un invento, y distintas especies humanas pudieron coexistir.",
       "examples": [
         {
           "title": "Analiza el caso",
-          "question": "Caso hipotético: una revuelta empieza tras subir un impuesto, pero los documentos muestran años de malas cosechas y conflictos políticos.",
+          "question": "Un museo encuentra una herramienta, pero ningún fósil humano asociado. ¿Puede asignarla con certeza a Homo habilis?",
           "steps": [
-            "El impuesto puede actuar como desencadenante.",
-            "Las malas cosechas y las tensiones políticas son condiciones previas que ayudan a explicar la respuesta.",
-            "La interpretación debe apoyarse en documentos y no reducir todo el proceso a una sola causa."
+            "La forma y la antigüedad permiten compararla con una tradición tecnológica.",
+            "Sin evidencias adicionales, no basta para identificar con certeza la especie fabricante.",
+            "Hay que distinguir una asociación probable de una atribución demostrada."
           ]
         }
       ],
       "quiz": [
         {
-          "prompt": "Atribuir teléfonos móviles a la Roma antigua es un ejemplo de…",
-          "solution": "Se introduce un objeto que no corresponde al periodo estudiado.",
+          "prompt": "¿Qué especie participó en dispersiones humanas tempranas fuera de África?",
+          "solution": "Homo erectus está documentado en África y Eurasia mucho antes de las migraciones recientes de nuestra especie.",
           "level": "Básico",
-          "id": "u5a",
+          "id": "u4a",
           "options": [
-            "simultaneidad",
-            "anacronismo",
-            "crítica externa",
-            "estratigrafía",
-            "fuente oral"
+            "Homo sapiens como única posibilidad",
+            "Homo erectus",
+            "Un chimpancé actual",
+            "Un gorila actual",
+            "Una especie nacida después de la agricultura"
           ],
           "answer": 1
         },
         {
-          "prompt": "Dos procesos que ocurren durante el mismo periodo muestran…",
-          "solution": "La simultaneidad significa coincidencia temporal; no prueba por sí sola causalidad.",
+          "prompt": "La relación entre neandertales y Homo sapiens incluye…",
+          "solution": "Fósiles y ADN permiten reconstruir coexistencia y mezcla entre algunas poblaciones.",
+          "level": "Básico",
+          "id": "u4b",
+          "options": [
+            "ausencia total de contacto",
+            "una transformación instantánea de todos los neandertales",
+            "convivencia con dinosaurios no avianos",
+            "el mismo origen que la escritura",
+            "coexistencia e intercambios genéticos"
+          ],
+          "answer": 4
+        }
+      ]
+    },
+    {
+      "title": "Homo sapiens y cultura acumulativa",
+      "subtitle": "Origen africano y expansión",
+      "goal": "Relaciona evolución biológica, aprendizaje y diversidad cultural.",
+      "body": "<p><em>Homo sapiens</em> surgió en África hace aproximadamente <strong>300 000 años</strong>. El origen de nuestra especie fue un proceso poblacional complejo, no un acontecimiento que pueda reducirse a una sola pareja o a una fecha exacta. Posteriormente hubo distintas dispersiones y contactos entre poblaciones.</p><p>La <strong>cultura acumulativa</strong> permite aprender, transmitir y modificar conocimientos entre generaciones. Herramientas compuestas, adornos, representaciones y redes de intercambio muestran capacidades diversas. Su presencia no autoriza a deducir automáticamente el contenido exacto de una lengua o creencia.</p><p>Diferencia cambios biológicos heredables de cambios culturales aprendidos. La difusión de una técnica no exige que aparezca una nueva especie. La agricultura y las ciudades son muy posteriores al origen de Homo sapiens. Todas las poblaciones humanas actuales pertenecen a la misma especie y comparten una historia evolutiva conectada.</p>",
+      "key": "Nuestra especie es mucho más antigua que la agricultura; cultura y biología se relacionan, pero no son lo mismo.",
+      "examples": [
+        {
+          "title": "Analiza el caso",
+          "question": "Caso hipotético: una comunidad aprende de sus vecinos a fabricar una nueva punta de piedra. ¿Se ha producido una nueva especie?",
+          "steps": [
+            "El aprendizaje y la difusión de la técnica son cambios culturales.",
+            "Una innovación no demuestra por sí sola un cambio de especie.",
+            "Para investigar evolución biológica se necesitan evidencias de poblaciones, anatomía y herencia."
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "¿Dónde se originó Homo sapiens según la evidencia disponible?",
+          "solution": "Los fósiles y los estudios genéticos sitúan el origen de nuestra especie en África.",
+          "level": "Básico",
+          "id": "u5a",
+          "options": [
+            "En la Europa medieval",
+            "En América durante el Neolítico",
+            "En África",
+            "En Australia después de la escritura",
+            "En Mesopotamia con las ciudades"
+          ],
+          "answer": 2
+        },
+        {
+          "prompt": "Transmitir una técnica y mejorarla entre generaciones es un ejemplo de…",
+          "solution": "La cultura acumulativa combina transmisión social e innovación.",
           "level": "Básico",
           "id": "u5b",
           "options": [
-            "necesariamente una relación causal",
-            "identidad cultural completa",
-            "ausencia de cambios",
-            "falsificación documental",
-            "simultaneidad"
+            "cultura acumulativa",
+            "cambio de especie inmediato",
+            "ausencia de aprendizaje",
+            "fósil sin contexto",
+            "datación radiométrica"
           ],
-          "answer": 4
+          "answer": 0
         }
       ]
     }
   ],
   "practice": [
     {
-      "prompt": "Un documental actual analiza cartas de 1914. Para investigar la guerra de 1914, el documental es…",
-      "solution": "El documental organiza e interpreta evidencias del periodo.",
+      "prompt": "¿Por qué no se debe representar a pueblos actuales como etapas de la hominización?",
+      "solution": "La diversidad cultural no establece peldaños biológicos de humanidad.",
       "level": "Básico",
       "id": "p1",
       "options": [
-        "una carta primaria",
-        "una fuente sin interpretación",
-        "una fuente secundaria",
-        "un resto arqueológico de 1914",
-        "una fuente necesariamente falsa"
-      ],
-      "answer": 2
-    },
-    {
-      "prompt": "¿Qué pregunta pertenece principalmente a la crítica interna de una proclama?",
-      "solution": "La intención, el destinatario y el contenido se examinan mediante crítica interna.",
-      "level": "Intermedio",
-      "id": "p2",
-      "options": [
-        "¿Qué buscaba lograr su autor ante sus lectores?",
-        "¿De qué material es el papel?",
-        "¿La tinta corresponde a la fecha atribuida?",
-        "¿Es original o copia?",
-        "¿En qué archivo se conservó?"
-      ],
-      "answer": 0
-    },
-    {
-      "prompt": "¿Cuántos años transcurren de 20 a. C. a 30 d. C., entre el mismo día del año?",
-      "solution": "20 + 30 − 1 = 49, porque no existe año cero.",
-      "level": "Intermedio",
-      "id": "p3",
-      "options": [
-        "50",
-        "51",
-        "10",
-        "49",
-        "19"
+        "Porque carecen de cultura",
+        "Porque la evolución empezó con la escritura",
+        "Porque hay especies humanas superiores actuales",
+        "Todos pertenecen a Homo sapiens y son poblaciones contemporáneas",
+        "Porque no existen diferencias culturales"
       ],
       "answer": 3
     },
     {
-      "prompt": "Un estudio usa 1789 para empezar la Edad Contemporánea. ¿Qué hito toma como referencia?",
-      "solution": "1789 es una fecha convencional vinculada a la Revolución francesa.",
-      "level": "Básico",
-      "id": "p4",
+      "prompt": "Un hallazgo combina bipedismo y rasgos para trepar. La mejor interpretación es…",
+      "solution": "Los australopitecos muestran combinaciones de rasgos y no una transformación en bloque.",
+      "level": "Intermedio",
+      "id": "p2",
       "options": [
-        "La toma de Constantinopla",
-        "La Revolución francesa",
-        "La caída de Roma occidental",
-        "La aparición de la agricultura",
-        "La unificación de Egipto"
+        "una prueba de agricultura",
+        "una combinación de adaptaciones locomotoras",
+        "un error inevitable del fósil",
+        "un individuo sin locomoción",
+        "la existencia de ciudades"
       ],
       "answer": 1
     },
     {
-      "prompt": "Un historiador encuentra un registro que contradice su hipótesis. ¿Qué corresponde hacer?",
-      "solution": "La investigación admite revisión y no selecciona solo datos favorables.",
+      "prompt": "¿Qué método sería inadecuado para fechar directamente un fósil de dos millones de años?",
+      "solution": "El carbono 14 no alcanza antigüedades de millones de años.",
+      "level": "Intermedio",
+      "id": "p3",
+      "options": [
+        "Estudio del contexto estratigráfico",
+        "Comparación de capas asociadas",
+        "Datación de depósitos volcánicos adecuados",
+        "Integración de varias evidencias",
+        "Carbono 14"
+      ],
+      "answer": 4
+    },
+    {
+      "prompt": "Una herramienta aislada sin fósiles asociados permite estudiar principalmente…",
+      "solution": "La atribución de una especie requiere más evidencia que la herramienta por sí sola.",
+      "level": "Intermedio",
+      "id": "p4",
+      "options": [
+        "el nombre de su fabricante",
+        "su lengua exacta",
+        "una tecnología, con cautela sobre su autoría biológica",
+        "una especie con certeza automática",
+        "el sistema político completo"
+      ],
+      "answer": 2
+    },
+    {
+      "prompt": "ADN compartido entre linajes humanos antiguos puede apoyar la hipótesis de…",
+      "solution": "El ADN antiguo permite investigar parentescos y mezcla de poblaciones.",
       "level": "Avanzado",
       "id": "p5",
       "options": [
-        "Ocultarlo",
-        "Declararlo falso sin examinarlo",
-        "Cambiarle la fecha",
-        "Sustituirlo por una opinión",
-        "Evaluarlo y revisar la explicación si la evidencia lo exige"
+        "cruces entre poblaciones",
+        "invención simultánea de la escritura",
+        "identidad completa de todas las culturas",
+        "ausencia de evolución",
+        "fabricación de metales"
       ],
-      "answer": 4
+      "answer": 0
     }
   ],
   "exam": [
     {
-      "prompt": "Para investigar una ley antigua, su inscripción original es una fuente…",
-      "solution": "Conserva un registro directo y utiliza escritura.",
+      "prompt": "La hominización se estudia principalmente como…",
+      "solution": "Los cambios evolutivos se desarrollan en poblaciones a lo largo de generaciones.",
       "level": "Básico",
       "id": "e1",
       "options": [
-        "secundaria y oral",
-        "secundaria y audiovisual",
-        "primaria y escrita",
-        "primaria exclusivamente oral",
-        "secundaria por estar en piedra"
+        "una decisión individual",
+        "una historia de monarcas",
+        "un cambio ocurrido en un siglo",
+        "un proceso evolutivo de poblaciones",
+        "una clasificación de pueblos por valor"
       ],
-      "answer": 2
+      "answer": 3
     },
     {
-      "prompt": "¿Qué significa corroborar una afirmación histórica?",
-      "solution": "La corroboración contrasta información, procedencia y contexto.",
+      "prompt": "El parentesco con otros primates implica…",
+      "solution": "El parentesco evolutivo no significa descender de una especie actual.",
       "level": "Básico",
       "id": "e2",
       "options": [
-        "Compararla con evidencias independientes",
-        "Copiarla muchas veces",
-        "Aceptar al autor más conocido",
-        "Cambiar su fecha",
-        "Excluir los desacuerdos"
-      ],
-      "answer": 0
-    },
-    {
-      "prompt": "¿A qué siglo pertenece el año 2000?",
-      "solution": "El siglo XX abarca de 1901 a 2000.",
-      "level": "Básico",
-      "id": "e3",
-      "options": [
-        "Al XXI",
-        "Al XIX",
-        "Al XVIII",
-        "Al XX",
-        "Al XXII"
-      ],
-      "answer": 3
-    },
-    {
-      "prompt": "¿Cuál de estas fechas es más antigua?",
-      "solution": "Dentro de a. C., el número mayor corresponde a una fecha más antigua.",
-      "level": "Básico",
-      "id": "e4",
-      "options": [
-        "200 a. C.",
-        "800 a. C.",
-        "1 a. C.",
-        "1 d. C.",
-        "100 d. C."
+        "descendencia de chimpancés actuales",
+        "ancestros compartidos",
+        "ausencia de diferencias",
+        "que la evolución terminó",
+        "que solo Homo sapiens usa objetos"
       ],
       "answer": 1
     },
     {
-      "prompt": "Del 2 a. C. al 2 d. C., tomando el mismo día del año, transcurren…",
-      "solution": "2 + 2 − 1 = 3 años: se resta uno porque no hay año cero en esta convención.",
+      "prompt": "Lucy pertenece a la especie…",
+      "solution": "Lucy es un fósil de Australopithecus afarensis hallado en Etiopía.",
       "level": "Básico",
-      "id": "e5",
+      "id": "e3",
       "options": [
-        "4 años",
-        "2 años",
-        "5 años",
-        "1 año",
-        "3 años"
+        "Homo neanderthalensis",
+        "Homo sapiens",
+        "Homo erectus",
+        "Pan troglodytes",
+        "Australopithecus afarensis"
       ],
       "answer": 4
     },
     {
-      "prompt": "La aparición de escritura en una región se usa convencionalmente para distinguir…",
-      "solution": "Es un criterio documental y regional; no significa que antes no existiera pasado humano.",
+      "prompt": "¿Qué rasgo apareció antes que la gran expansión cerebral de especies posteriores?",
+      "solution": "El bipedismo está documentado en homininos tempranos.",
       "level": "Básico",
-      "id": "e6",
+      "id": "e4",
       "options": [
-        "Edad Media y Moderna",
-        "Paleolítico y Mesolítico",
-        "Prehistoria e Historia con fuentes escritas",
-        "Edad del Cobre y del Bronce",
-        "Edad Moderna y Contemporánea"
+        "La metalurgia",
+        "La escritura",
+        "El bipedismo habitual",
+        "La ganadería",
+        "El Estado"
       ],
       "answer": 2
     },
     {
-      "prompt": "¿Cuál es una limitación del esquema Antigua–Media–Moderna–Contemporánea?",
-      "solution": "Es útil si se reconoce su contexto y se contrasta con otras periodizaciones.",
+      "prompt": "Una datación relativa permite establecer…",
+      "solution": "La datación relativa ordena evidencias sin exigir una edad numérica exacta.",
       "level": "Básico",
-      "id": "e7",
+      "id": "e5",
       "options": [
-        "Se construyó principalmente a partir de procesos europeos",
-        "Impide usar cualquier fecha",
-        "Solo describe fenómenos naturales",
-        "Carece de utilidad para estudiar",
-        "Establece etapas idénticas en todas las regiones"
+        "anterioridad o posterioridad",
+        "siempre un año exacto",
+        "la lengua del individuo",
+        "la identidad de todo fabricante",
+        "su religión"
       ],
       "answer": 0
     },
     {
-      "prompt": "Un texto auténtico que exagera las victorias de un rey…",
-      "solution": "La autenticidad no garantiza exactitud; su intención también es objeto de estudio.",
+      "prompt": "La dispersión de Homo erectus demuestra que…",
+      "solution": "Erectus se expandió por regiones de Eurasia mucho antes de las dispersiones de nuestra especie.",
       "level": "Básico",
-      "id": "e8",
+      "id": "e6",
       "options": [
-        "es inútil para cualquier pregunta",
-        "demuestra que todas sus cifras son exactas",
-        "deja de ser una fuente",
-        "puede servir para estudiar la propaganda real",
-        "se vuelve automáticamente secundario"
+        "solo sapiens pudo caminar",
+        "la agricultura ya era universal",
+        "la escritura comenzó en el Paleolítico",
+        "hubo salidas de África anteriores a las de Homo sapiens",
+        "los fósiles no tienen contexto"
       ],
       "answer": 3
     },
     {
-      "prompt": "Una institución permanece durante siglos mientras cambian sus autoridades. Esto muestra…",
-      "solution": "Las permanencias y los cambios pueden coexistir en escalas distintas.",
+      "prompt": "¿Cuál es una afirmación correcta sobre neandertales?",
+      "solution": "La coexistencia está documentada y hubo contactos entre poblaciones.",
       "level": "Básico",
-      "id": "e9",
+      "id": "e7",
       "options": [
-        "ausencia de tiempo histórico",
-        "permanencia junto con cambio",
-        "una sola causa universal",
-        "inexistencia de instituciones",
-        "un anacronismo necesario"
+        "Fueron chimpancés actuales",
+        "Coexistieron con Homo sapiens",
+        "Vivieron después de las primeras fábricas",
+        "Nunca usaron herramientas",
+        "Fueron el único ancestro directo seguro de toda persona"
       ],
       "answer": 1
     },
     {
-      "prompt": "Una explicación que relaciona cosechas, tributos y disputas políticas es…",
-      "solution": "Combina varios factores para explicar un proceso.",
+      "prompt": "El origen de Homo sapiens se sitúa aproximadamente hace…",
+      "solution": "La evidencia sitúa el origen de nuestra especie en África, hace unos 300 000 años.",
+      "level": "Básico",
+      "id": "e8",
+      "options": [
+        "300 años",
+        "3 000 años",
+        "30 millones de años",
+        "300 millones de años",
+        "300 000 años"
+      ],
+      "answer": 4
+    },
+    {
+      "prompt": "Aprender una nueva técnica constituye principalmente un cambio…",
+      "solution": "Las técnicas pueden transmitirse mediante aprendizaje social.",
+      "level": "Básico",
+      "id": "e9",
+      "options": [
+        "de especie automático",
+        "radiométrico",
+        "cultural",
+        "del estrato geológico",
+        "del código genético necesariamente"
+      ],
+      "answer": 2
+    },
+    {
+      "prompt": "¿Qué afirmación evita una interpretación lineal de la evolución?",
+      "solution": "La evolución humana fue ramificada y sus relaciones se investigan con evidencia.",
       "level": "Básico",
       "id": "e10",
       "options": [
-        "monocausal",
-        "solo cronológica",
-        "necesariamente legendaria",
-        "una crítica del soporte",
-        "multicausal"
+        "Varias especies coexistieron y algunas ramas se extinguieron",
+        "Cada especie fue reemplazada de inmediato por otra",
+        "Toda evolución tiene una meta",
+        "Los pueblos actuales son fósiles vivos",
+        "Cada herramienta pertenece a una única especie"
       ],
-      "answer": 4
+      "answer": 0
     }
   ],
   "timeline": [
     [
-      "1 a. C. → 1 d. C.",
-      "No hay año cero en la cronología histórica convencional."
+      "Hace 3,9–2,9 millones de años",
+      "Australopithecus afarensis en África; bipedismo y rasgos para trepar."
     ],
     [
-      "476",
-      "Hito tradicional entre Edad Antigua y Media en Europa."
+      "Hace alrededor de 1,9 millones de años",
+      "Primeros registros de Homo erectus; posteriores dispersiones por Eurasia."
     ],
     [
-      "1453 / 1492",
-      "Hitos alternativos para iniciar la Edad Moderna."
+      "Hace unos 300 000 años",
+      "Homo sapiens en África."
     ],
     [
-      "1789",
-      "Hito tradicional para iniciar la Edad Contemporánea."
+      "Decenas de miles de años atrás",
+      "Coexistencia y contactos entre sapiens y otros linajes humanos."
     ]
   ],
-  "resources": "<p class=\"eyebrow\">Repasa y consulta</p><h2>Materiales del capítulo</h2><h3>Vocabulario esencial</h3><dl class=\"glossary\"><dt>Fuente primaria</dt><dd>Evidencia directa en relación con una pregunta histórica.</dd><dt>Crítica de fuentes</dt><dd>Evaluación de procedencia, contenido, intención y límites.</dd><dt>Periodización</dt><dd>División del pasado en etapas según un criterio.</dd><dt>Anacronismo</dt><dd>Atribución a una época de elementos que no le corresponden.</dd><dt>Multicausalidad</dt><dd>Explicación que articula varios factores.</dd></dl><h3>Lecturas y evidencias</h3><ul class=\"resource-list\"><li><a href=\"https://www.loc.gov/programs/teachers/getting-started-with-primary-sources/\" target=\"_blank\" rel=\"noopener noreferrer\">Library of Congress · Analizar fuentes primarias</a></li><li><a href=\"https://www.archives.gov/education/research/primary-sources\" target=\"_blank\" rel=\"noopener noreferrer\">National Archives · Fuentes para investigar</a></li></ul><p class=\"resource-note\">Las lecturas pueden estar en inglés. Los casos y las preguntas son actividades didácticas originales; los casos hipotéticos no son transcripciones de documentos antiguos. Las fechas prehistóricas y los límites de las etapas son aproximados y dependen de la región.</p>"
+  "resources": "<p class=\"resource-note\"><b>Temario de referencia:</b> <cite>Historia Universal</cite>, Lumbreras Editores, capítulo 2, páginas impresas 18–23. Las explicaciones y actividades de esta web son una adaptación didáctica original.</p><p class=\"eyebrow\">Repasa y consulta</p><h2>Materiales del capítulo</h2><h3>Vocabulario esencial</h3><dl class=\"glossary\"><dt>Hominización</dt><dd>Proceso evolutivo del linaje humano.</dd><dt>Bipedismo</dt><dd>Desplazamiento habitual sobre dos extremidades inferiores.</dd><dt>Fósil</dt><dd>Resto o huella de un organismo del pasado preservado.</dd><dt>Cultura acumulativa</dt><dd>Conocimientos transmitidos y modificados entre generaciones.</dd><dt>Ancestro común</dt><dd>Población ancestral compartida por distintos linajes.</dd></dl><h3>Lecturas y evidencias</h3><ul class=\"resource-list\"><li><a href=\"https://humanorigins.si.edu/evidence/human-fossils/species/homo-sapiens\" target=\"_blank\" rel=\"noopener noreferrer\">Smithsonian · Homo sapiens</a></li><li><a href=\"https://humanorigins.si.edu/evidence/human-fossils/species/australopithecus-afarensis\" target=\"_blank\" rel=\"noopener noreferrer\">Smithsonian · Australopithecus afarensis</a></li><li><a href=\"https://humanorigins.si.edu/evidence\" target=\"_blank\" rel=\"noopener noreferrer\">Smithsonian · Evidencias de la evolución humana</a></li></ul><p class=\"resource-note\">Las lecturas pueden estar en inglés. Los casos y las preguntas son actividades didácticas originales; los casos hipotéticos no son transcripciones de documentos antiguos. Las fechas prehistóricas y los límites de las etapas son aproximados y dependen de la región.</p>",
+  "progressId": "historia-universal-pdf-02",
+  "legacySources": [
+    {
+      "id": "historia-universal-capitulo-03",
+      "items": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          4,
+          4
+        ]
+      ],
+      "sameAssessment": true
+    }
+  ]
 };

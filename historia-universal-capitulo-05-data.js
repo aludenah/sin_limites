@@ -1,481 +1,501 @@
 window.HISTORY_CONTENT = {
   "number": 5,
   "id": "historia-universal-capitulo-05",
-  "title": "Neolítico y Edad de los Metales",
-  "intro": "Comprende la producción de alimentos, la vida aldeana y las nuevas tecnologías, con sus ventajas, tensiones y ritmos regionales.",
+  "title": "Egipto",
+  "intro": "Recorre la historia del Egipto antiguo: el Nilo, el Estado faraónico, sus etapas, la organización social y su legado cultural.",
   "lessons": [
     {
-      "title": "Producir alimentos",
-      "subtitle": "Cultivo, domesticación y ganadería",
-      "goal": "Distingue obtener recursos silvestres de intervenir en su reproducción.",
-      "body": "<p>El <strong>Neolítico</strong> se relaciona con la expansión de formas de producción de alimentos, especialmente agricultura y ganadería, junto con cambios en asentamientos y tecnologías. En el sudoeste asiático las transformaciones agrícolas comenzaron hace unos 12 000 años. No aparecieron al mismo tiempo en todo el mundo.</p><p><strong>Cultivar</strong> es intervenir en el crecimiento de plantas. La <strong>domesticación</strong> es un proceso de cambios heredables en poblaciones de plantas o animales asociado a su relación prolongada con los seres humanos. No equivale a capturar o amansar un individuo. Cultivo y domesticación tampoco tienen que comenzar exactamente a la vez.</p><p>Se desarrollaron distintos focos: trigo y cebada en el sudoeste asiático, arroz y mijo en regiones de China, maíz en Mesoamérica y diversos cultivos en los Andes, como la papa. Hubo invenciones locales, difusión e intercambios. Los agricultores continuaron recurriendo también a recursos silvestres.</p>",
-      "key": "La producción de alimentos fue un conjunto de procesos regionales, no un invento único y repentino.",
+      "title": "Egipto: el Nilo y el Estado faraónico",
+      "subtitle": "Territorio, autoridad y periodos",
+      "goal": "Ubica Alto y Bajo Egipto y reconoce cambios en una historia extensa.",
+      "body": "<p>El Nilo fluye hacia el norte. Por eso, el <strong>Alto Egipto</strong> se sitúa al sur, en el valle, y el <strong>Bajo Egipto</strong> al norte, en el delta. Las crecidas históricas, los suelos fértiles y las rutas fluviales favorecieron la agricultura y las comunicaciones.</p><p>La unificación del territorio suele situarse hacia <strong>3100 a. C.</strong> y se asocia con el proceso político representado por Narmer. El faraón concentraba autoridad política y un papel religioso fundamental. Funcionarios, escribas, sacerdotes y autoridades locales participaron en la administración.</p><p>Se distinguen convencionalmente Reino Antiguo, Medio y Nuevo, separados por periodos intermedios de fragmentación y reorganización. Las grandes pirámides de Guiza pertenecen al Reino Antiguo. El Reino Nuevo destacó por una mayor expansión hacia territorios vecinos. La unidad y el poder central variaron: Egipto no permaneció idéntico durante tres milenios.</p>",
+      "key": "Alto y Bajo Egipto se definen por el curso del Nilo, no por la parte superior o inferior de un mapa.",
       "examples": [
         {
           "title": "Analiza el caso",
-          "question": "Caso hipotético: una familia captura una cría de animal silvestre y la acostumbra a su presencia. ¿Ya existe domesticación de la especie?",
+          "question": "En un mapa con el norte arriba, alguien coloca el Alto Egipto en el delta. ¿Cómo corregirías la ubicación?",
           "steps": [
-            "El amansamiento afecta a ese individuo.",
-            "La domesticación implica cambios en poblaciones a lo largo de generaciones.",
-            "Para demostrarla se estudian anatomía, reproducción, genética y contexto arqueológico."
+            "Sigue el río desde el sur hacia su desembocadura al norte.",
+            "El Alto Egipto corresponde al valle meridional, aguas arriba.",
+            "El Bajo Egipto se encuentra en el delta septentrional, aguas abajo."
           ]
         }
       ],
       "quiz": [
         {
-          "prompt": "La domesticación se diferencia del amansamiento porque involucra…",
-          "solution": "La domesticación es un proceso poblacional y heredable, no solo conductual individual.",
+          "prompt": "El Bajo Egipto se encontraba principalmente en…",
+          "solution": "Bajo se refiere a la parte final del curso del río.",
           "level": "Básico",
           "id": "u1a",
           "options": [
-            "cambios en poblaciones a lo largo de generaciones",
-            "solo acostumbrar un individuo",
-            "únicamente construir una casa",
-            "fabricar una herramienta de hierro",
-            "aprender a escribir"
+            "la zona sur del valle por definición",
+            "el valle del Éufrates",
+            "la península itálica",
+            "la región del Indo",
+            "el delta del Nilo, al norte"
           ],
-          "answer": 0
+          "answer": 4
         },
         {
-          "prompt": "¿Qué asociación es correcta?",
-          "solution": "Mesoamérica fue un centro de domesticación del maíz.",
+          "prompt": "Las pirámides de Guiza se vinculan principalmente con…",
+          "solution": "Su construcción corresponde al Reino Antiguo egipcio.",
           "level": "Básico",
           "id": "u1b",
           "options": [
-            "Trigo — origen exclusivo en los Andes",
-            "Papa — origen exclusivo en Mesopotamia",
-            "Arroz — origen exclusivo en Egipto",
-            "Maíz — Mesoamérica",
-            "Cebada — origen exclusivo en América"
+            "el Imperio romano de Occidente",
+            "la Edad Media europea",
+            "el Reino Antiguo",
+            "el reino neobabilónico",
+            "la Revolución industrial"
           ],
-          "answer": 3
+          "answer": 2
         }
       ]
     },
     {
-      "title": "Aldeas y sedentarismo",
-      "subtitle": "Viviendas, reservas y cooperación",
-      "goal": "Relaciona residencia estable y producción sin convertirlas en sinónimos.",
-      "body": "<p>El <strong>sedentarismo</strong> es la residencia relativamente estable en un lugar. La agricultura favoreció muchas aldeas, pero existieron comunidades estables que aprovecharon recursos silvestres abundantes. A su vez, los pastores podían mantener una movilidad importante. Por ello, agricultor, pastor y sedentario no son etiquetas equivalentes.</p><p>Vivir de forma más estable permitió construir viviendas duraderas, almacenar reservas y organizar trabajos colectivos. Los graneros protegían alimentos para épocas de escasez y para la siguiente siembra. Las reservas requerían cuidado y podían perderse por plagas, humedad o conflictos.</p><p>La cercanía entre personas y animales, la concentración de desechos y la dependencia de pocas cosechas introdujeron nuevos riesgos. Una aldea más grande no implica bienestar igual para todos. La arqueología compara viviendas, alimentación y entierros para investigar diferencias internas. Çatalhöyük, en Anatolia, es un ejemplo importante de asentamiento neolítico.</p>",
-      "key": "Las aldeas ampliaron oportunidades de cooperación y también crearon nuevos problemas.",
+      "title": "Periodos del Egipto faraónico",
+      "subtitle": "Ordenar los grandes periodos y reconocer cambios políticos.",
+      "goal": "Ordenar los grandes periodos y reconocer cambios políticos.",
+      "body": "<p>La unificación del valle y el delta suele situarse hacia 3100 a. C. A lo largo de su historia, Egipto alternó etapas de mayor centralización con periodos de fragmentación política. Las denominaciones <b>Imperio Antiguo, Medio y Nuevo</b> son herramientas modernas para organizar esa trayectoria; sus fechas son aproximadas.</p><p>El Imperio Antiguo, durante el tercer milenio a. C., se asocia a la monarquía centrada en Menfis y a las grandes pirámides. En el Imperio Medio se reconstruyó la autoridad estatal y se ampliaron vínculos comerciales y territoriales. Los periodos intermedios no significan una desaparición de la cultura egipcia: describen cambios en la organización del poder.</p><p>Tras el dominio hicso en parte del territorio durante el Segundo Periodo Intermedio, los gobernantes del Imperio Nuevo extendieron su influencia hacia Nubia y el Levante. Hatshepsut, Akhenatón y Ramsés II pertenecen a esta etapa, aunque sus políticas fueron diferentes. La expansión generó tributos y contactos, además de conflictos y gastos militares.</p>",
+      "key": "Centralización, fragmentación y expansión se alternaron; Egipto no permaneció inmutable.",
       "examples": [
         {
           "title": "Analiza el caso",
-          "question": "Caso hipotético: una aldea conserva semillas en un depósito común. Una mala cosecha reduce las reservas disponibles.",
+          "question": "Un alumno sitúa las pirámides de Guiza y el reinado de Ramsés II en la misma etapa. ¿Cómo corregirlo?",
           "steps": [
-            "El almacenamiento puede amortiguar la escasez.",
-            "La comunidad necesita decidir cómo repartir alimentos y conservar semillas para sembrar.",
-            "Las reservas no eliminan los riesgos y su control puede generar tensiones."
+            "Las grandes pirámides de Guiza corresponden al Imperio Antiguo.",
+            "Ramsés II gobernó durante el Imperio Nuevo.",
+            "Entre ambos transcurrieron muchos siglos y transformaciones políticas."
           ]
         }
       ],
       "quiz": [
         {
-          "prompt": "El sedentarismo se refiere principalmente a…",
-          "solution": "Describe un patrón residencial, no una tecnología o forma política específica.",
-          "level": "Básico",
-          "id": "u2a",
+          "prompt": "Las grandes pirámides de Guiza se asocian con el…",
           "options": [
-            "la fabricación obligatoria de metales",
-            "la residencia relativamente estable",
-            "la existencia de un alfabeto",
-            "la formación automática de un imperio",
-            "la desaparición de toda recolección"
+            "Imperio romano",
+            "Imperio Nuevo exclusivamente",
+            "Periodo ptolemaico",
+            "Reino persa aqueménida",
+            "Imperio Antiguo"
           ],
-          "answer": 1
+          "answer": 4,
+          "solution": "Su construcción corresponde al tercer milenio a. C., durante el Imperio Antiguo.",
+          "level": "Aplicación",
+          "id": "u2a"
         },
         {
-          "prompt": "¿Qué riesgo puede aumentar al depender mucho de pocas cosechas?",
-          "solution": "Una producción concentrada puede resultar vulnerable a sequías, plagas u otros problemas.",
-          "level": "Básico",
-          "id": "u2b",
+          "prompt": "La alternancia de imperios y periodos intermedios muestra…",
           "options": [
-            "La imposibilidad de almacenar",
-            "La desaparición de enfermedades",
-            "La eliminación de conflictos",
-            "La ausencia de plagas",
-            "La vulnerabilidad ante una mala temporada"
+            "cambios en el grado de centralización política",
+            "una cultura sin cambios",
+            "la ausencia de Estado",
+            "el fin permanente de la agricultura",
+            "que todos los faraones gobernaron juntos"
           ],
-          "answer": 4
+          "answer": 0,
+          "solution": "La autoridad estatal varió: hubo centralización y también fragmentación, sin desaparecer toda continuidad cultural.",
+          "level": "Aplicación",
+          "id": "u2b"
         }
       ]
     },
     {
-      "title": "Tecnologías e intercambio",
-      "subtitle": "Cerámica, tejido y excedentes",
-      "goal": "Explica cómo se relacionan producción, especialización e intercambio.",
-      "body": "<p>El pulimento permitió fabricar ciertas herramientas de piedra, como hachas útiles para trabajar madera. La cerámica facilitó diversas tareas de almacenamiento y cocción; el tejido permitió elaborar prendas y recipientes. Estas tecnologías tuvieron cronologías propias: no toda comunidad neolítica usó todas ellas y algunas aparecieron entre cazadores-recolectores.</p><p>Un <strong>excedente</strong> es la parte de la producción que supera las necesidades definidas de consumo o reposición en un contexto. Puede sostener reservas, intercambio y trabajo especializado. Sin embargo, no todo aumento de cosechas genera automáticamente una clase de especialistas o un Estado.</p><p>El intercambio vinculó comunidades mediante alimentos, obsidiana, piedras, conchas y otros bienes. Algunos materiales recorrieron grandes distancias. Su presencia indica contactos o circulación, pero no prueba por sí sola un mercado con monedas. Para conocer la organización del trabajo debemos combinar herramientas, talleres, distribución de objetos y restos de producción.</p>",
-      "key": "La especialización y el intercambio se investigan con evidencias; no son consecuencias automáticas de una sola innovación.",
+      "title": "Trabajo, creencias y escritura en Egipto",
+      "subtitle": "Sociedad y cultura",
+      "goal": "Relaciona producción, jerarquías y prácticas religiosas con evidencias.",
+      "body": "<p>La agricultura sostuvo buena parte de la economía. Campesinos, artesanos, transportistas y otros trabajadores producían alimentos y bienes, mientras funcionarios y escribas intervenían en registros y tributos. Existían diferencias de poder, riqueza y dependencia. Las grandes obras requirieron planificación, provisiones y conocimientos especializados.</p><p>La religión fue mayoritariamente <strong>politeísta</strong>. Divinidades como Ra, Osiris e Isis desempeñaron papeles importantes en distintos contextos. Las ideas sobre la continuidad después de la muerte se relacionaron con prácticas funerarias, conservación del cuerpo y ajuar. Las prácticas variaron según época y recursos; no todos recibían los mismos tratamientos.</p><p>Los <strong>jeroglíficos</strong> combinaban signos con valores diversos, incluidos sonidos e ideas. No eran simples dibujos decorativos. También existieron escrituras cursivas para distintos usos. La piedra, el papiro y otros soportes conservaron textos religiosos, administrativos y cotidianos. La alfabetización especializada dio a los escribas un papel relevante.</p>",
+      "key": "Monumentos y textos muestran religión y poder, pero también trabajo, técnicas y desigualdades.",
       "examples": [
         {
           "title": "Analiza el caso",
-          "question": "Caso hipotético: en una aldea aparecen piezas de obsidiana cuya fuente geológica se encuentra lejos.",
+          "question": "Una tumba contiene alimentos representados, objetos y textos funerarios. ¿Qué puedes investigar sin afirmar que todos los egipcios vivían igual?",
           "steps": [
-            "La procedencia del material sugiere circulación o contactos entre grupos.",
-            "No sabemos solo con eso si hubo trueque directo, regalos o intermediarios.",
-            "La distribución de piezas y otros indicios ayudan a reconstruir las redes."
+            "Relaciona el conjunto con prácticas y creencias funerarias.",
+            "Compara riqueza, periodo y posición social del entierro.",
+            "Evita generalizar una tumba privilegiada a toda la población."
           ]
         }
       ],
       "quiz": [
         {
-          "prompt": "¿Qué evidencia sugiere contactos entre regiones?",
-          "solution": "Los materiales no locales permiten estudiar circulación e intercambio.",
+          "prompt": "La función de los escribas incluía…",
+          "solution": "La formación en escritura era importante para administrar y comunicar.",
           "level": "Básico",
           "id": "u3a",
           "options": [
-            "Solo una piedra local común",
-            "La ausencia de objetos",
-            "Un material cuya fuente geológica está lejos del asentamiento",
-            "Un único hoyo sin contexto",
-            "La forma circular del poblado"
+            "elaborar registros administrativos y otros textos",
+            "solo combatir en todas las guerras",
+            "eliminar cualquier tributo",
+            "impedir toda actividad religiosa",
+            "fabricar exclusivamente armas"
           ],
-          "answer": 2
+          "answer": 0
         },
         {
-          "prompt": "La existencia de excedentes puede favorecer…",
-          "solution": "Los excedentes abren posibilidades, pero sus consecuencias dependen de la organización social.",
+          "prompt": "La momificación se relaciona principalmente con…",
+          "solution": "La conservación del cuerpo formó parte de ciertos tratamientos funerarios.",
           "level": "Básico",
           "id": "u3b",
           "options": [
-            "reservas y actividades especializadas",
-            "obligatoriamente un imperio",
-            "la desaparición de la agricultura",
-            "una única lengua mundial",
-            "la extinción de toda desigualdad"
-          ],
-          "answer": 0
-        }
-      ]
-    },
-    {
-      "title": "Cobre, bronce y hierro",
-      "subtitle": "Metalurgia y cronologías regionales",
-      "goal": "Distingue materiales, técnicas y periodizaciones sin confundir aleaciones.",
-      "body": "<p>La <strong>metalurgia</strong> comprende técnicas para obtener y trabajar metales. El cobre nativo pudo ser trabajado antes de que se dominaran procedimientos de extracción desde minerales. Fundir, moldear y forjar requieren conocimientos diferentes. La incorporación del metal no eliminó el uso de piedra, hueso o madera.</p><p>El <strong>bronce</strong> es una aleación basada en cobre; el bronce de estaño combina principalmente cobre y estaño. Sus propiedades favorecieron diversos útiles, armas y objetos de prestigio. La necesidad de materias primas impulsó redes de intercambio. El hierro exigió otras técnicas de reducción y forja; su expansión fue posterior en muchas regiones del Viejo Mundo.</p><p>Las denominaciones Edad del Cobre, del Bronce y del Hierro son útiles para ciertas secuencias regionales. No forman una escalera universal que todos los pueblos deban recorrer. En los Andes existió una importante metalurgia propia, cuya historia no debe ajustarse sin más a la cronología europea.</p>",
-      "key": "Bronce no es un metal puro; las edades de los metales tienen alcances regionales.",
-      "examples": [
-        {
-          "title": "Analiza el caso",
-          "question": "Se analiza una herramienta compuesta principalmente por cobre y estaño. ¿Cómo la clasificarías y qué no puedes deducir solo de ello?",
-          "steps": [
-            "Es un bronce de estaño, una aleación.",
-            "Su fabricación supone conocimientos y acceso a materias primas.",
-            "No permite asignar una fecha mundial única ni demostrar por sí sola la existencia de un imperio."
-          ]
-        }
-      ],
-      "quiz": [
-        {
-          "prompt": "El bronce de estaño combina principalmente…",
-          "solution": "Es una aleación de cobre y estaño.",
-          "level": "Básico",
-          "id": "u4a",
-          "options": [
-            "hierro y carbono",
-            "oro y plata",
-            "cobre y oxígeno únicamente",
-            "cobre y estaño",
-            "piedra y arcilla"
+            "el sistema democrático ateniense",
+            "la fabricación de monedas",
+            "el alfabeto romano",
+            "prácticas funerarias y creencias sobre la vida después de la muerte",
+            "la agricultura mecanizada"
           ],
           "answer": 3
-        },
-        {
-          "prompt": "¿Qué afirmación sobre las edades de los metales es correcta?",
-          "solution": "Son categorías para comparar procesos regionales, no una obligación mundial.",
-          "level": "Básico",
-          "id": "u4b",
-          "options": [
-            "Todos los pueblos tuvieron las mismas fechas",
-            "Su secuencia y cronología dependen de la región",
-            "El metal eliminó toda herramienta de piedra",
-            "El cobre apareció después de la industria moderna",
-            "El bronce es siempre hierro puro"
-          ],
-          "answer": 1
         }
       ]
     },
     {
-      "title": "De las aldeas a sociedades complejas",
-      "subtitle": "Diferenciación y poder",
-      "goal": "Analiza cómo pueden formarse jerarquías sin suponer un destino inevitable.",
-      "body": "<p>El crecimiento de asentamientos, la gestión de reservas, el intercambio y los conflictos pudieron favorecer nuevas diferencias de riqueza y autoridad. Un entierro con muchos objetos puede indicar distinción social, aunque su interpretación exige conocer costumbres funerarias y contexto.</p><p>La <strong>especialización</strong> implica dedicación a tareas particulares. La <strong>jerarquización</strong> supone posiciones desiguales de autoridad o acceso a recursos. No son lo mismo: puede haber especialistas sin un Estado. Para identificar instituciones políticas se estudian edificios, administración, tributos, obras y relaciones entre asentamientos.</p><p>La formación de ciudades y Estados fue desigual y no inevitable. Algunas sociedades mantuvieron otras formas de organización durante mucho tiempo. La llamada revolución neolítica designa la profundidad de los cambios, no su velocidad ni una mejora uniforme. Sus beneficios, costos y desigualdades variaron entre lugares y grupos.</p>",
-      "key": "La complejidad social debe explicarse históricamente; agricultura no equivale automáticamente a Estado.",
+      "title": "Escritura, conocimientos y monumentos",
+      "subtitle": "Comprender los usos sociales del saber egipcio.",
+      "goal": "Comprender los usos sociales del saber egipcio.",
+      "body": "<p>Los egipcios emplearon distintas formas de escritura. Los <b>jeroglíficos</b> aparecen en contextos monumentales y religiosos; la escritura hierática permitió usos más rápidos, y más tarde se difundió la demótica. Los escribas participaban en la administración, el registro de recursos y la transmisión de conocimientos. Leer y escribir era una formación especializada.</p><p>El papiro se elaboraba a partir de una planta del Nilo y servía como soporte de escritura. La medición de terrenos, la recaudación y la construcción exigían procedimientos matemáticos. La observación del ciclo anual contribuyó a organizar calendarios; la medicina combinó observaciones prácticas con creencias religiosas.</p><p>Las pirámides, tumbas y templos requieren estudiar tanto sus funciones como los recursos y el trabajo que los hicieron posibles. No todas las construcciones monumentales fueron tumbas, y no es correcto atribuir automáticamente la construcción de las pirámides solo a esclavos. La evidencia muestra organización estatal y equipos de trabajadores con diferentes responsabilidades.</p>",
+      "key": "El conocimiento se vinculaba con la administración, las creencias y las necesidades prácticas.",
       "examples": [
         {
           "title": "Analiza el caso",
-          "question": "Caso hipotético: una aldea tiene agricultores y alfareros, pero no hay indicios claros de autoridades permanentes ni tributos.",
+          "question": "Un registro enumera alimentos destinados a una cuadrilla de constructores. ¿Qué permite estudiar?",
           "steps": [
-            "La distribución de tareas sugiere especialización.",
-            "No basta para afirmar que existía un Estado.",
-            "Se requieren evidencias adicionales de organización y poder institucionalizado."
+            "Identifica cantidades, fechas y destinatarios.",
+            "Relaciona el abastecimiento con la organización del trabajo.",
+            "No deduzcas la condición jurídica de todos los trabajadores a partir de un solo listado."
           ]
         }
       ],
       "quiz": [
         {
-          "prompt": "La especialización del trabajo significa…",
-          "solution": "Describe diferenciación de tareas, no una forma política necesaria.",
-          "level": "Básico",
-          "id": "u5a",
+          "prompt": "¿Qué función cumplían los escribas?",
           "options": [
-            "siempre gobierno imperial",
-            "igualdad absoluta de riqueza",
-            "ausencia de intercambio",
-            "uso exclusivo de hierro",
-            "dedicación a tareas particulares"
+            "Dirigir exclusivamente ejércitos",
+            "Registrar y administrar información especializada",
+            "Construir todos los monumentos solos",
+            "Eliminar los impuestos",
+            "Sustituir al Nilo"
           ],
-          "answer": 4
+          "answer": 1,
+          "solution": "Los escribas intervenían en registros administrativos y en la conservación y transmisión de saberes.",
+          "level": "Aplicación",
+          "id": "u4a"
         },
         {
-          "prompt": "¿Qué afirmación interpreta mejor la revolución neolítica?",
-          "solution": "La expresión destaca su alcance; los procesos fueron regionales y graduales.",
-          "level": "Básico",
-          "id": "u5b",
+          "prompt": "¿Qué afirmación sobre las pirámides es más rigurosa?",
           "options": [
-            "Una mejora instantánea para todos",
-            "Una única fecha mundial",
-            "Cambios profundos y prolongados, con efectos diversos",
-            "La aparición inmediata de todos los imperios",
-            "El fin completo de la caza"
+            "Fueron construidas sin recursos",
+            "Todas fueron puertos",
+            "Su construcción exigió una organización compleja del trabajo",
+            "Prueban que todos los egipcios eran esclavos",
+            "Carecían de función funeraria"
           ],
-          "answer": 2
+          "answer": 2,
+          "solution": "La evidencia permite estudiar equipos, abastecimiento y organización estatal; no autoriza una generalización sobre esclavitud.",
+          "level": "Aplicación",
+          "id": "u4b"
+        }
+      ]
+    },
+    {
+      "title": "Egipto ante los imperios y su legado",
+      "subtitle": "Reconocer conquistas, contactos y continuidades culturales.",
+      "goal": "Reconocer conquistas, contactos y continuidades culturales.",
+      "body": "<p>Durante el primer milenio a. C., Egipto experimentó divisiones internas, reunificaciones y dominios extranjeros. Nubios, asirios y persas participaron de maneras distintas en su historia política. Estos procesos no borraron de inmediato las instituciones, las creencias o las prácticas locales.</p><p>Alejandro de Macedonia conquistó Egipto en 332 a. C. Tras su muerte, la dinastía ptolemaica gobernó un reino en el que se combinaron tradiciones egipcias y griegas. Alejandría se convirtió en un importante centro urbano y cultural. Cleopatra VII fue la última gobernante de esa dinastía.</p><p>Después de la derrota de Antonio y Cleopatra frente a Octavio, Egipto pasó a dominio romano en <b>30 a. C.</b>. Conviene distinguir esa incorporación de la batalla de Accio, ocurrida en 31 a. C. El legado egipcio incluye testimonios escritos y materiales que siguen siendo investigados: no es solo una colección de monumentos, sino evidencia sobre una sociedad de larga duración.</p>",
+      "key": "Una conquista cambia el poder político, pero las continuidades culturales deben investigarse por separado.",
+      "examples": [
+        {
+          "title": "Analiza el caso",
+          "question": "Dos fichas dicen «Accio: 31 a. C.» y «Egipto romano: 30 a. C.». ¿Se contradicen?",
+          "steps": [
+            "Las fichas se refieren a acontecimientos diferentes.",
+            "La batalla de Accio precedió al final del reino ptolemaico.",
+            "La incorporación a Roma ocurrió al año siguiente, en 30 a. C."
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Egipto pasó a dominio romano en…",
+          "options": [
+            "476 d. C.",
+            "1492 d. C.",
+            "3100 a. C.",
+            "30 a. C.",
+            "1789 d. C."
+          ],
+          "answer": 3,
+          "solution": "La incorporación a Roma ocurrió en 30 a. C., después de Accio y del final del gobierno de Cleopatra VII.",
+          "level": "Aplicación",
+          "id": "u5a"
+        },
+        {
+          "prompt": "La etapa ptolemaica permite estudiar…",
+          "options": [
+            "la ausencia de ciudades",
+            "una época anterior a las pirámides",
+            "el origen de la escritura china",
+            "la conquista de América",
+            "contactos entre tradiciones egipcias y griegas"
+          ],
+          "answer": 4,
+          "solution": "El reino ptolemaico reunió prácticas e instituciones de origen egipcio y griego en un nuevo contexto político.",
+          "level": "Aplicación",
+          "id": "u5b"
         }
       ]
     }
   ],
   "practice": [
     {
-      "prompt": "Recolectar frutos silvestres y cultivar plantas se diferencian porque el cultivo…",
-      "solution": "El cultivo supone intervención sostenida en la producción de plantas.",
+      "prompt": "Si navegas desde el valle sur del Nilo hacia el delta, te diriges…",
+      "solution": "El río fluye de sur a norte; alto y bajo se refieren a su curso.",
       "level": "Básico",
       "id": "p1",
       "options": [
-        "interviene en su crecimiento y producción",
-        "no requiere conocimientos",
-        "solo existe con hierro",
-        "es idéntico a recoger cualquier fruto",
-        "impide usar recursos silvestres"
-      ],
-      "answer": 0
-    },
-    {
-      "prompt": "Un poblado estable vive de abundante pesca sin agricultura demostrada. Esto indica…",
-      "solution": "Residencia y economía deben distinguirse.",
-      "level": "Intermedio",
-      "id": "p2",
-      "options": [
-        "ausencia de organización",
-        "metalurgia obligatoria",
-        "ganadería segura",
-        "sedentarismo sin agricultura necesariamente",
-        "vida imperial"
-      ],
-      "answer": 3
-    },
-    {
-      "prompt": "¿Qué pareja asocia correctamente región y cultivo?",
-      "solution": "Los Andes fueron un centro de domesticación de la papa.",
-      "level": "Básico",
-      "id": "p3",
-      "options": [
-        "Mesoamérica — trigo como origen exclusivo",
-        "Andes — papa",
-        "China — papa como origen exclusivo",
-        "Egipto — maíz como origen exclusivo",
-        "Mesopotamia — arroz como origen exclusivo"
+        "del Bajo al Alto, hacia el norte",
+        "del Alto al Bajo Egipto, hacia el norte",
+        "del Alto al Bajo, hacia el sur",
+        "del Éufrates al Tigris",
+        "de Egipto a China directamente"
       ],
       "answer": 1
     },
     {
-      "prompt": "¿Cuál es una inferencia prudente ante objetos de materiales lejanos?",
-      "solution": "La procedencia muestra circulación; su mecanismo requiere más evidencias.",
-      "level": "Intermedio",
-      "id": "p4",
+      "prompt": "Las grandes pirámides de Guiza se asocian con el…",
       "options": [
-        "Hubo necesariamente monedas",
-        "Todos sus dueños eran reyes",
-        "No había intercambios",
-        "Solo podían ser falsificaciones modernas",
-        "Existieron formas de circulación que deben investigarse"
+        "Imperio romano",
+        "Imperio Nuevo exclusivamente",
+        "Periodo ptolemaico",
+        "Reino persa aqueménida",
+        "Imperio Antiguo"
       ],
-      "answer": 4
+      "answer": 4,
+      "solution": "Su construcción corresponde al tercer milenio a. C., durante el Imperio Antiguo.",
+      "level": "Aplicación",
+      "id": "p2"
     },
     {
-      "prompt": "La aparición conjunta de talleres y diferencias funerarias permite proponer…",
-      "solution": "Los indicios permiten hipótesis que deben contrastarse, no conclusiones automáticas.",
-      "level": "Avanzado",
-      "id": "p5",
+      "prompt": "¿Qué función cumplían los escribas?",
       "options": [
-        "una monarquía mundial segura",
-        "igualdad absoluta demostrada",
-        "especialización y posibles desigualdades, sujetas a contraste",
-        "el fin de toda cooperación",
-        "una fecha universal exacta"
+        "Dirigir exclusivamente ejércitos",
+        "Registrar y administrar información especializada",
+        "Construir todos los monumentos solos",
+        "Eliminar los impuestos",
+        "Sustituir al Nilo"
       ],
-      "answer": 2
+      "answer": 1,
+      "solution": "Los escribas intervenían en registros administrativos y en la conservación y transmisión de saberes.",
+      "level": "Aplicación",
+      "id": "p3"
+    },
+    {
+      "prompt": "Egipto pasó a dominio romano en…",
+      "options": [
+        "476 d. C.",
+        "1492 d. C.",
+        "3100 a. C.",
+        "30 a. C.",
+        "1789 d. C."
+      ],
+      "answer": 3,
+      "solution": "La incorporación a Roma ocurrió en 30 a. C., después de Accio y del final del gobierno de Cleopatra VII.",
+      "level": "Aplicación",
+      "id": "p4"
+    },
+    {
+      "prompt": "La etapa ptolemaica permite estudiar…",
+      "options": [
+        "la ausencia de ciudades",
+        "una época anterior a las pirámides",
+        "el origen de la escritura china",
+        "la conquista de América",
+        "contactos entre tradiciones egipcias y griegas"
+      ],
+      "answer": 4,
+      "solution": "El reino ptolemaico reunió prácticas e instituciones de origen egipcio y griego en un nuevo contexto político.",
+      "level": "Aplicación",
+      "id": "p5"
     }
   ],
   "exam": [
     {
-      "prompt": "Una transformación económica vinculada al Neolítico es…",
-      "solution": "Agricultura y ganadería se desarrollaron o difundieron en distintas regiones.",
+      "prompt": "La civilización egipcia se desarrolló principalmente alrededor del…",
+      "solution": "El valle y el delta del Nilo articularon el territorio egipcio.",
       "level": "Básico",
       "id": "e1",
       "options": [
-        "la producción de alimentos mediante agricultura y ganadería",
-        "la desaparición de toda recolección",
-        "la invención de motores",
-        "la agricultura industrial",
-        "el uso universal de monedas"
+        "Tigris",
+        "Éufrates",
+        "Nilo",
+        "Ganges",
+        "Danubio"
       ],
-      "answer": 0
+      "answer": 2
     },
     {
-      "prompt": "Amansar un animal silvestre individual…",
-      "solution": "La domesticación implica un proceso poblacional de varias generaciones.",
+      "prompt": "Alto Egipto corresponde principalmente a…",
+      "solution": "Alto designa la región aguas arriba, al sur.",
       "level": "Básico",
       "id": "e2",
       "options": [
-        "transforma instantáneamente toda la especie",
-        "demuestra ganadería mundial",
-        "exige escritura",
-        "no equivale por sí solo a domesticar su especie",
-        "origina un Estado"
-      ],
-      "answer": 3
-    },
-    {
-      "prompt": "El sudoeste asiático se asocia tempranamente con…",
-      "solution": "Trigo y cebada fueron cultivos tempranos importantes en esa región.",
-      "level": "Básico",
-      "id": "e3",
-      "options": [
-        "papa y quinua como origen exclusivo",
-        "trigo y cebada",
-        "maíz y cacao como origen exclusivo",
-        "cultivos industriales transgénicos",
-        "arroz andino"
-      ],
-      "answer": 1
-    },
-    {
-      "prompt": "Una función del almacenamiento de granos fue…",
-      "solution": "Las reservas ayudaban a afrontar necesidades futuras, aunque podían perderse.",
-      "level": "Básico",
-      "id": "e4",
-      "options": [
-        "eliminar cualquier mala cosecha",
-        "hacer innecesario el trabajo",
-        "garantizar igualdad social",
-        "reemplazar todas las herramientas",
-        "mantener reservas para consumo y siembra"
-      ],
-      "answer": 4
-    },
-    {
-      "prompt": "El sedentarismo describe…",
-      "solution": "Se refiere a la permanencia residencial.",
-      "level": "Básico",
-      "id": "e5",
-      "options": [
-        "una aleación metálica",
-        "un tipo de escritura",
-        "un patrón de residencia relativamente estable",
-        "una especie humana",
-        "un imperio territorial"
+        "el delta del norte",
+        "Mesopotamia septentrional",
+        "el valle meridional del Nilo",
+        "la costa del mar Negro",
+        "el valle del Indo"
       ],
       "answer": 2
     },
     {
-      "prompt": "¿Cuál es una tecnología asociada con frecuencia al Neolítico?",
-      "solution": "El pulimento fue importante, sin reemplazar toda talla ni darse uniformemente.",
+      "prompt": "La unificación egipcia se sitúa convencionalmente hacia…",
+      "solution": "Se asocia con el proceso de formación estatal de comienzos del periodo dinástico.",
       "level": "Básico",
-      "id": "e6",
+      "id": "e3",
       "options": [
-        "El pulimento de ciertas herramientas de piedra",
-        "El motor de vapor",
-        "La imprenta industrial",
-        "El acero inoxidable",
-        "La electricidad doméstica"
+        "3100 a. C.",
+        "3100 d. C.",
+        "1789 d. C.",
+        "476 d. C.",
+        "1492 d. C."
       ],
       "answer": 0
     },
     {
-      "prompt": "El bronce de estaño es…",
-      "solution": "Combina dos metales y presenta propiedades diferentes de sus componentes.",
+      "prompt": "La autoridad faraónica combinó principalmente dimensiones…",
+      "solution": "El faraón ocupaba un papel central en el gobierno y en el orden religioso.",
       "level": "Básico",
-      "id": "e7",
+      "id": "e4",
       "options": [
-        "hierro puro",
-        "oro puro",
-        "una piedra volcánica",
-        "una aleación de cobre y estaño",
-        "arcilla cocida"
+        "solo deportivas",
+        "exclusivamente comerciales sin gobierno",
+        "democráticas modernas",
+        "políticas y religiosas",
+        "industriales y digitales"
       ],
       "answer": 3
     },
     {
-      "prompt": "La expansión de la metalurgia…",
-      "solution": "Las tecnologías se combinaron y sus ritmos fueron regionales.",
+      "prompt": "¿Qué afirmación sobre los jeroglíficos es adecuada?",
+      "solution": "Podían representar sonidos, palabras y funciones complementarias.",
       "level": "Básico",
-      "id": "e8",
+      "id": "e5",
       "options": [
-        "eliminó de inmediato toda piedra",
-        "coexistió con herramientas de otros materiales",
-        "se dio en el mismo año en todas partes",
-        "hizo desaparecer el comercio",
-        "impidió la especialización"
+        "Fueron únicamente decoración sin lenguaje",
+        "Constituyeron un sistema de escritura con signos de distintos valores",
+        "Eran letras latinas modernas",
+        "Solo representaban números decimales actuales",
+        "Se imprimían con tipos móviles"
       ],
       "answer": 1
     },
     {
-      "prompt": "¿Qué diferencia especialización de jerarquización?",
-      "solution": "Diferenciar tareas no implica automáticamente posiciones jerárquicas.",
-      "level": "Básico",
-      "id": "e9",
+      "prompt": "La alternancia de imperios y periodos intermedios muestra…",
       "options": [
-        "Son siempre idénticas",
-        "La primera solo existe en imperios",
-        "La segunda significa usar cerámica",
-        "Ninguna puede investigarse",
-        "La primera se refiere a tareas y la segunda a desigualdades de posición"
+        "cambios en el grado de centralización política",
+        "una cultura sin cambios",
+        "la ausencia de Estado",
+        "el fin permanente de la agricultura",
+        "que todos los faraones gobernaron juntos"
       ],
-      "answer": 4
+      "answer": 0,
+      "solution": "La autoridad estatal varió: hubo centralización y también fragmentación, sin desaparecer toda continuidad cultural.",
+      "level": "Aplicación",
+      "id": "e6"
     },
     {
-      "prompt": "¿Cuál evita una explicación determinista?",
-      "solution": "Las consecuencias dependen de contextos y decisiones sociales.",
-      "level": "Básico",
-      "id": "e10",
+      "prompt": "¿Qué afirmación sobre las pirámides es más rigurosa?",
       "options": [
-        "Toda aldea se convirtió en imperio",
-        "Todo excedente eliminó conflictos",
-        "La agricultura abrió posibilidades, pero no produjo Estados en todos los casos",
-        "Todo metal originó un rey",
-        "Todas las regiones siguieron fechas idénticas"
+        "Fueron construidas sin recursos",
+        "Todas fueron puertos",
+        "Su construcción exigió una organización compleja del trabajo",
+        "Prueban que todos los egipcios eran esclavos",
+        "Carecían de función funeraria"
       ],
-      "answer": 2
+      "answer": 2,
+      "solution": "La evidencia permite estudiar equipos, abastecimiento y organización estatal; no autoriza una generalización sobre esclavitud.",
+      "level": "Aplicación",
+      "id": "e7"
+    },
+    {
+      "prompt": "Egipto pasó a dominio romano en…",
+      "options": [
+        "476 d. C.",
+        "1492 d. C.",
+        "3100 a. C.",
+        "30 a. C.",
+        "1789 d. C."
+      ],
+      "answer": 3,
+      "solution": "La incorporación a Roma ocurrió en 30 a. C., después de Accio y del final del gobierno de Cleopatra VII.",
+      "level": "Aplicación",
+      "id": "e8"
+    },
+    {
+      "prompt": "El Nilo favoreció la agricultura, pero el Estado requirió además…",
+      "options": [
+        "organización humana del trabajo y de los recursos",
+        "solo la existencia del río",
+        "ausencia de autoridades",
+        "el abandono de la tierra",
+        "la eliminación de las aldeas"
+      ],
+      "answer": 0,
+      "solution": "El medio ofrecía condiciones; la administración y el trabajo explican cómo fueron aprovechadas.",
+      "level": "Aplicación",
+      "id": "e9"
+    },
+    {
+      "prompt": "¿Por qué una conquista no prueba la desaparición de toda cultura local?",
+      "options": [
+        "Porque las conquistas nunca cambiaron nada",
+        "Porque pueden continuar prácticas e instituciones bajo nuevas autoridades",
+        "Porque no existen fuentes",
+        "Porque todos los conquistados emigraron siempre",
+        "Porque la cultura es biológicamente invariable"
+      ],
+      "answer": 1,
+      "solution": "Los cambios de poder y los cambios culturales tienen ritmos distintos y requieren evidencia específica.",
+      "level": "Aplicación",
+      "id": "e10"
     }
   ],
   "timeline": [
     [
-      "Hace unos 12 000 años",
-      "Transformaciones agrícolas tempranas en el sudoeste asiático."
+      "c. 3100 a. C.",
+      "Unificación egipcia."
     ],
     [
-      "Neolíticos regionales",
-      "Domesticación, aldeas y tecnologías con ritmos diferentes."
+      "III milenio a. C.",
+      "Imperio Antiguo y grandes pirámides."
     ],
     [
-      "Metalurgias del cobre y bronce",
-      "Especialización y circulación de materias primas en diversas regiones."
+      "II milenio a. C.",
+      "Imperios Medio y Nuevo, separados por una etapa de fragmentación."
     ],
     [
-      "Expansión del hierro",
-      "Proceso posterior en muchas zonas del Viejo Mundo; sin fecha mundial única."
+      "332 a. C.",
+      "Conquista de Alejandro."
+    ],
+    [
+      "30 a. C.",
+      "Incorporación al dominio romano."
     ]
   ],
-  "resources": "<p class=\"eyebrow\">Repasa y consulta</p><h2>Materiales del capítulo</h2><h3>Vocabulario esencial</h3><dl class=\"glossary\"><dt>Domesticación</dt><dd>Cambios heredables en poblaciones vinculados a su relación prolongada con humanos.</dd><dt>Sedentarismo</dt><dd>Residencia relativamente estable en un lugar.</dd><dt>Excedente</dt><dd>Producción que supera determinadas necesidades de consumo o reposición.</dd><dt>Metalurgia</dt><dd>Conjunto de técnicas para obtener y trabajar metales.</dd><dt>Jerarquización</dt><dd>Diferenciación de posiciones de autoridad o acceso a recursos.</dd></dl><h3>Lecturas y evidencias</h3><ul class=\"resource-list\"><li><a href=\"https://whc.unesco.org/en/list/1405/\" target=\"_blank\" rel=\"noopener noreferrer\">UNESCO · Asentamiento neolítico de Çatalhöyük</a></li><li><a href=\"https://www.britishmuseum.org/learn/schools/ages-7-11/ancient-britain/classroom-resource-neolithic-britain\" target=\"_blank\" rel=\"noopener noreferrer\">British Museum · La vida en el Neolítico británico</a></li><li><a href=\"https://www.nhm.ac.uk/discover/news/2019/april/neolithic-britain-where-did-the-first-farmers-come-from.html\" target=\"_blank\" rel=\"noopener noreferrer\">Natural History Museum · La llegada de la agricultura a Gran Bretaña</a></li></ul><p class=\"resource-note\">Las lecturas pueden estar en inglés. Los casos y las preguntas son actividades didácticas originales; los casos hipotéticos no son transcripciones de documentos antiguos. Las fechas prehistóricas y los límites de las etapas son aproximados y dependen de la región.</p>"
+  "resources": "<p class=\"resource-note\"><b>Temario de referencia:</b> <cite>Historia Universal</cite>, Lumbreras Editores, capítulo 5, páginas impresas 40–47. Las explicaciones y actividades de esta web son una adaptación didáctica original.</p><h2>Materiales del capítulo</h2><p>Repasa los términos, procesos y fechas de las lecciones. Utiliza la cronología para relacionar los cambios políticos con las evidencias culturales.</p>",
+  "progressId": "historia-universal-pdf-05",
+  "legacySources": [
+    {
+      "id": "historia-universal-capitulo-06",
+      "items": [
+        [
+          3,
+          0
+        ],
+        [
+          4,
+          2
+        ]
+      ]
+    }
+  ]
 };

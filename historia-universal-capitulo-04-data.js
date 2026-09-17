@@ -1,481 +1,501 @@
 window.HISTORY_CONTENT = {
   "number": 4,
   "id": "historia-universal-capitulo-04",
-  "title": "Prehistoria: Paleolítico y Mesolítico",
-  "intro": "Explora cómo las sociedades cazadoras, recolectoras y pescadoras obtuvieron alimentos, crearon tecnologías y se adaptaron a ambientes cambiantes.",
+  "title": "Esclavismo y Mesopotamia",
+  "intro": "Comprende las formas de dependencia laboral y el desarrollo de ciudades, Estados y culturas entre el Tigris y el Éufrates.",
   "lessons": [
     {
-      "title": "Estudiar sociedades sin escritura",
-      "subtitle": "Arqueología y periodos regionales",
-      "goal": "Comprende el alcance del término Prehistoria y evita imaginar un pasado uniforme.",
-      "body": "<p>La <strong>Prehistoria</strong> es una categoría convencional para estudiar sociedades anteriores a la escritura en una región. No significa ausencia de historia, pensamiento o cultura. Su reconstrucción depende especialmente de objetos, restos humanos, viviendas, paisajes y residuos de alimentación.</p><p>El <strong>Paleolítico</strong>, o antigua Edad de Piedra, comprende una larguísima diversidad de sociedades que emplearon tecnologías de piedra tallada. También trabajaron madera, fibras, pieles y hueso, materiales que se conservan de manera desigual. Una colección arqueológica es solo una parte de lo que existió.</p><p>Sus divisiones en Inferior, Medio y Superior se utilizan sobre todo en Eurasia y tienen fechas regionales. En África se emplean también otras denominaciones. El Mesolítico identifica ciertas sociedades de cazadores y recolectores posteriores al final de la última glaciación y anteriores a la expansión agrícola local. No es una etapa universal obligatoria.</p>",
-      "key": "Los periodos son herramientas regionales; la ausencia de escritura no implica ausencia de cultura.",
+      "title": "Esclavismo y formas de dependencia",
+      "subtitle": "Distinguir esclavitud, tributo y trabajo libre.",
+      "goal": "Distinguir esclavitud, tributo y trabajo libre.",
+      "body": "<p>La esclavitud es una relación de dominación en la que una persona pierde su libertad y queda sometida al control de otra. En diferentes sociedades antiguas, las guerras, la compraventa y ciertas formas de endeudamiento podían producir situaciones de esclavitud. Sus condiciones y posibilidades de liberación variaron según la época y el lugar.</p><p>El temario utiliza el concepto de <b>esclavismo</b>, asociado a la interpretación materialista de la historia, que estudia quién controla los medios de producción y cómo se organiza el trabajo. Es un modelo de análisis: no significa que todas las sociedades antiguas fueran iguales ni que todos sus trabajadores fueran esclavos.</p><p>En Mesopotamia coexistían personas esclavizadas, campesinos libres, artesanos y trabajadores dependientes de templos y palacios. El tributo entregado al Estado y las prestaciones obligatorias de trabajo tampoco equivalen automáticamente a esclavitud. Para clasificar una relación laboral hay que investigar la libertad jurídica, la propiedad y las obligaciones concretas.</p>",
+      "key": "Una sociedad con esclavitud puede contener varias formas de trabajo y de dependencia.",
       "examples": [
         {
           "title": "Analiza el caso",
-          "question": "Caso hipotético: en un campamento se conservan piedras talladas, pero no cestas ni ropa. ¿Podemos afirmar que sus habitantes nunca las usaron?",
+          "question": "Un archivo menciona cautivos vendidos, campesinos que pagan tributos y artesanos remunerados. ¿Tienen todos la misma condición?",
           "steps": [
-            "La piedra se conserva mejor que muchos materiales orgánicos.",
-            "La ausencia de restos puede deberse a la descomposición o a la excavación parcial.",
-            "Para sostener una afirmación se necesitan más indicios; lo conservado no representa toda la vida del grupo."
+            "Los cautivos vendidos son tratados como personas esclavizadas.",
+            "Pagar tributos no demuestra por sí solo esclavitud.",
+            "La remuneración y la libertad deben examinarse en cada caso; no basta identificar trabajo manual."
           ]
         }
       ],
       "quiz": [
         {
-          "prompt": "¿Qué caracteriza al Paleolítico en la clasificación tecnológica tradicional?",
-          "solution": "La talla lítica es un rasgo tecnológico, aunque se usaron otros materiales.",
-          "level": "Básico",
-          "id": "u1a",
+          "prompt": "¿Qué dato permite reconocer con mayor claridad una situación de esclavitud?",
           "options": [
-            "El uso universal de hierro",
-            "La escritura alfabética",
-            "La agricultura mecanizada",
-            "Las ciudades industriales",
-            "El amplio uso de piedra tallada"
+            "La venta de una persona privada de libertad",
+            "El cultivo de cereales",
+            "El uso de herramientas",
+            "La residencia en una ciudad",
+            "La entrega de una ofrenda"
           ],
-          "answer": 4
+          "answer": 0,
+          "solution": "La privación de libertad y la posibilidad de vender a la persona indican una relación de esclavitud.",
+          "level": "Aplicación",
+          "id": "u1a"
         },
         {
-          "prompt": "Que una sociedad no haya dejado escritura significa que…",
-          "solution": "Los restos materiales y ambientales permiten investigar sociedades sin escritura.",
-          "level": "Básico",
-          "id": "u1b",
+          "prompt": "¿Qué afirmación describe mejor el trabajo en Mesopotamia?",
           "options": [
-            "careció de historia",
-            "no tuvo conocimientos",
-            "debe estudiarse también mediante otras evidencias",
-            "no modificó su ambiente",
-            "no mantuvo relaciones sociales"
+            "Todos eran esclavos",
+            "Coexistían distintas condiciones de libertad y dependencia",
+            "No existían campesinos",
+            "Nadie pagaba tributos",
+            "Todos tenían derechos iguales"
           ],
-          "answer": 2
+          "answer": 1,
+          "solution": "Templos, palacios y hogares articulaban trabajadores de condiciones diversas; no debe homogeneizarse la población.",
+          "level": "Aplicación",
+          "id": "u1b"
         }
       ]
     },
     {
-      "title": "Subsistencia y movilidad",
-      "subtitle": "Conocer los recursos del territorio",
-      "goal": "Relaciona caza, recolección, pesca y desplazamientos con el ambiente.",
-      "body": "<p>Las sociedades paleolíticas obtuvieron alimentos mediante <strong>recolección, caza, pesca</strong> y otras estrategias, como aprovechar animales muertos. Su combinación dependía del lugar, la estación y los conocimientos del grupo. No todas vivían principalmente de grandes presas.</p><p>La movilidad permitía acceder a recursos distribuidos en distintos lugares. Podían alternar campamentos, volver a sitios conocidos y organizar desplazamientos estacionales. <strong>Nomadismo</strong> no equivale a caminar sin rumbo: exige conocer agua, refugios, plantas y animales.</p><p>La cooperación y el intercambio ayudaban a reducir riesgos. Los grupos podían compartir alimentos y mantener contactos más allá de un campamento. La división del trabajo debió variar; no es correcto asignar todas las tareas a hombres o mujeres de manera universal sin evidencias. Los restos alimentarios y las herramientas permiten formular hipótesis concretas.</p>",
-      "key": "La movilidad fue una estrategia de adaptación basada en conocimientos, no una ausencia de organización.",
+      "title": "Ríos, agricultura y ciudades",
+      "subtitle": "Espacio y organización social",
+      "goal": "Relaciona el ambiente con el trabajo colectivo sin convertirlo en causa única.",
+      "body": "<p><strong>Mesopotamia</strong> se desarrolló en la región de los ríos Tigris y Éufrates, en Asia occidental. <strong>Egipto</strong> se articuló alrededor del Nilo, en el noreste de África. El agua, los sedimentos, los cultivos y las rutas fluviales facilitaron la concentración de población, pero exigieron conocimientos y organización.</p><p>Las ciudades reunieron habitantes, actividades especializadas y funciones políticas, religiosas y comerciales. Los <strong>Estados</strong> establecieron autoridades e instituciones capaces de organizar territorios, recaudar recursos y ejercer poder. Un poblado grande no es automáticamente una ciudad-Estado: deben estudiarse sus funciones y relaciones.</p><p>Las obras de riego y el almacenamiento favorecieron cooperación y control de recursos. Sin embargo, ningún río creó por sí solo un Estado. También intervinieron intercambios, conflictos, decisiones políticas y diferencias sociales. El término civilización se usa aquí para estudiar estas formas de organización, no para considerar inferiores a otras sociedades.</p>",
+      "key": "El ambiente ofrece posibilidades y límites; las sociedades construyen sus propias formas de organización.",
       "examples": [
         {
           "title": "Analiza el caso",
-          "question": "Caso hipotético: un grupo ocupa una costa durante la temporada de mariscos y un valle cuando maduran frutos silvestres.",
+          "question": "Caso hipotético: varias aldeas coordinan la reparación de un canal y reparten el agua. ¿Basta el canal para demostrar que existía un imperio?",
           "steps": [
-            "Reconoce una combinación de recolección y aprovechamiento costero.",
-            "Relaciona los desplazamientos con la disponibilidad estacional.",
-            "La ruta puede ser planificada y repetirse; no demuestra falta de conocimientos."
+            "El canal evidencia obras y coordinación.",
+            "Un imperio supone dominio sobre múltiples territorios y poblaciones, algo que requiere más pruebas.",
+            "Investiga autoridades, tributos, centros administrativos y relaciones entre asentamientos."
           ]
         }
       ],
       "quiz": [
         {
-          "prompt": "Un desplazamiento estacional hacia recursos conocidos indica…",
-          "solution": "La movilidad puede responder a conocimientos del ambiente y de sus ciclos.",
+          "prompt": "¿Qué asociación geográfica es correcta?",
+          "solution": "La región mesopotámica se vincula a las cuencas del Tigris y el Éufrates.",
           "level": "Básico",
           "id": "u2a",
           "options": [
-            "una estrategia organizada de movilidad",
-            "ausencia de planificación",
-            "agricultura necesariamente",
-            "escritura obligatoria",
-            "vida urbana"
-          ],
-          "answer": 0
-        },
-        {
-          "prompt": "¿Qué afirmación sobre la subsistencia paleolítica es adecuada?",
-          "solution": "Las dietas y actividades fueron diversas y deben estudiarse con evidencia local.",
-          "level": "Básico",
-          "id": "u2b",
-          "options": [
-            "Solo se consumía carne de mamut",
-            "Todos los grupos cultivaban trigo",
-            "La pesca era imposible",
-            "Las estrategias variaron según recursos y regiones",
-            "La recolección no aportaba alimentos"
-          ],
-          "answer": 3
-        }
-      ]
-    },
-    {
-      "title": "Tecnología y aprovechamiento del fuego",
-      "subtitle": "Tallar, combinar y transmitir",
-      "goal": "Relaciona herramientas y aprendizaje sin atribuir una función por su aspecto solamente.",
-      "body": "<p>La <strong>talla</strong> consiste en extraer fragmentos de piedra para producir bordes u otras formas útiles. Núcleos, lascas, bifaces y raspadores pertenecen a distintas técnicas y contextos. Su fabricación requiere seleccionar materiales, controlar golpes y aprender de la experiencia.</p><p>Las herramientas sirvieron para procesar alimentos, trabajar pieles o madera y realizar otras tareas. Algunas combinaron piezas de piedra con mangos, adhesivos o fibras. Para estudiar su función se analizan huellas de uso y residuos: la forma por sí sola no siempre basta.</p><p>El aprovechamiento del fuego pudo aportar calor, luz, protección y cocción. Su control fue un proceso prolongado, con evidencias diferentes según el sitio. Un sedimento quemado puede proceder de un incendio natural; hogares organizados y restos asociados ayudan a reconocer actividad humana. No existe una única fecha de invención válida para todo el mundo.</p>",
-      "key": "Tecnología es conocimiento aplicado; una herramienta se comprende por su fabricación, uso y contexto.",
-      "examples": [
-        {
-          "title": "Analiza el caso",
-          "question": "Caso hipotético: junto a un raspador aparecen residuos de piel y marcas microscópicas compatibles con raspado.",
-          "steps": [
-            "La forma sugiere una función, pero no la demuestra sola.",
-            "Los residuos y las huellas refuerzan la interpretación del trabajo de pieles.",
-            "Compara con experimentos y otras piezas del sitio para evaluar la hipótesis."
-          ]
-        }
-      ],
-      "quiz": [
-        {
-          "prompt": "¿Qué aporta mayor sustento para conocer la función de una herramienta?",
-          "solution": "Distintos indicios permiten contrastar la función propuesta.",
-          "level": "Básico",
-          "id": "u3a",
-          "options": [
-            "Usar solo su color",
-            "Combinar huellas de uso, residuos y contexto",
-            "Suponer que toda piedra era un arma",
-            "Ignorar dónde apareció",
-            "Asignarle un nombre moderno"
+            "Egipto — Indo y Ganges",
+            "Mesopotamia — Tigris y Éufrates",
+            "Mesopotamia — Nilo",
+            "Egipto — Huang He",
+            "Mesopotamia — Amazonas"
           ],
           "answer": 1
         },
         {
-          "prompt": "¿Por qué una mancha quemada no prueba por sí sola el control humano del fuego?",
-          "solution": "Hay que distinguir incendios naturales de hogares y actividades humanas.",
+          "prompt": "¿Qué afirmación explica mejor el surgimiento de Estados?",
+          "solution": "La formación estatal fue un proceso multicausal.",
           "level": "Básico",
-          "id": "u3b",
+          "id": "u2b",
           "options": [
-            "Porque el fuego no deja huellas",
-            "Porque solo existió desde la escritura",
-            "Porque todos los fuegos son modernos",
-            "Porque la piedra no puede alterarse",
-            "También puede proceder de un incendio natural"
+            "Los ríos los crearon automáticamente",
+            "Solo importó una invención aislada",
+            "Toda aldea fue un imperio",
+            "No hubo decisiones humanas",
+            "Intervinieron factores ambientales, económicos y políticos"
           ],
           "answer": 4
         }
       ]
     },
     {
-      "title": "Expresión simbólica y vida social",
-      "subtitle": "Arte, adornos y cuidado",
-      "goal": "Distingue las evidencias de actividad simbólica de interpretaciones no comprobadas.",
-      "body": "<p>Pinturas, grabados, objetos decorados y adornos muestran diversas formas de <strong>expresión simbólica</strong>. El arte rupestre aparece sobre superficies rocosas; el arte mobiliar se realiza en objetos transportables. Cuevas como Altamira y Lascaux conservan conjuntos conocidos, pero no representan toda la creatividad prehistórica.</p><p>Las imágenes pueden mostrar animales, signos o figuras humanas. Se han propuesto funciones rituales, sociales o narrativas, pero no conocemos siempre su significado. Una explicación debe contrastarse con fechas, distribución, técnicas y contexto; no basta con afirmar que todas las pinturas tenían la misma finalidad.</p><p>Algunos entierros y restos de individuos que sobrevivieron a lesiones aportan información sobre prácticas funerarias y cuidado. Debemos valorar cada caso y evitar deducir automáticamente una religión idéntica a la actual. La cooperación, el aprendizaje y las relaciones sociales fueron componentes importantes de estas sociedades.</p>",
-      "key": "Podemos reconocer actividad simbólica sin conocer con certeza cada significado o creencia.",
+      "title": "Sumer: ciudades y escritura",
+      "subtitle": "Templos, administración y registros",
+      "goal": "Relaciona la vida urbana con el desarrollo de sistemas de escritura.",
+      "body": "<p>En el sur de Mesopotamia surgieron ciudades como <strong>Uruk, Ur y Lagash</strong>. Las ciudades-Estado articulaban un núcleo urbano y su territorio agrícola. Sus autoridades, templos y, en distintos periodos, palacios organizaron actividades y recursos. Cooperaron y compitieron por tierras, agua y rutas.</p><p>En el cuarto milenio a. C. se desarrollaron registros que contribuyeron al surgimiento de la escritura mesopotámica. Numerosas tablillas tempranas se relacionan con cantidades y administración. Los signos evolucionaron hacia la escritura <strong>cuneiforme</strong>, realizada frecuentemente sobre arcilla con impresiones en forma de cuña.</p><p>La escritura permitió registrar operaciones, normas, correspondencia y relatos. No fue conocida por toda la población: la formación de escribas requería aprendizaje especializado. El <strong>zigurat</strong> era una construcción escalonada vinculada a un complejo religioso; no debe confundirse con la función funeraria característica de las pirámides reales egipcias.</p>",
+      "key": "La escritura se desarrolló en procesos prolongados y sirvió para administrar, comunicar y conservar conocimientos.",
       "examples": [
         {
           "title": "Analiza el caso",
-          "question": "Una pintura representa un bisonte. Un visitante afirma que demuestra una ceremonia concreta con palabras exactas. ¿Qué responderías?",
+          "question": "Caso hipotético: una tablilla anota entregas de cebada a trabajadores. ¿Qué aspectos de la ciudad permite investigar?",
           "steps": [
-            "La imagen es evidencia de representación, pero no conserva las palabras de una ceremonia.",
-            "El significado propuesto es una hipótesis que necesita más contexto.",
-            "Se pueden comparar ubicación, técnica y otras imágenes sin convertir una posibilidad en certeza."
+            "Puede informar sobre productos, cantidades y distribución.",
+            "Sugiere prácticas administrativas y personas formadas para registrar.",
+            "No representa por sí sola toda la economía ni la voz de todos los habitantes."
           ]
         }
       ],
       "quiz": [
         {
-          "prompt": "Una figura grabada en una pequeña pieza transportable pertenece al…",
-          "solution": "El arte mobiliar se realiza sobre objetos que pueden transportarse.",
+          "prompt": "¿Qué ciudad se asocia con el desarrollo urbano temprano del sur mesopotámico?",
+          "solution": "Uruk fue uno de los grandes centros urbanos tempranos de Mesopotamia.",
           "level": "Básico",
-          "id": "u4a",
+          "id": "u3a",
           "options": [
-            "arte rupestre necesariamente",
-            "alfabeto cuneiforme",
-            "arte mobiliar",
-            "registro fiscal",
-            "sistema industrial"
+            "Atenas",
+            "Roma",
+            "Uruk",
+            "Tenochtitlan",
+            "Cartago"
           ],
           "answer": 2
         },
         {
-          "prompt": "¿Qué conclusión es prudente ante una pintura prehistórica?",
-          "solution": "Las imágenes son evidencia, pero su interpretación requiere contexto.",
+          "prompt": "La escritura cuneiforme recibe su nombre de…",
+          "solution": "Muchos signos se producían presionando un instrumento sobre arcilla.",
           "level": "Básico",
-          "id": "u4b",
+          "id": "u3b",
           "options": [
-            "Su significado debe investigarse y puede ser incierto",
-            "Todas tuvieron una única función conocida",
-            "Permite conocer palabras exactas",
-            "Demuestra una religión moderna concreta",
-            "No aporta información alguna"
+            "las impresiones con forma de cuña",
+            "el uso exclusivo de letras latinas",
+            "la forma circular del papiro",
+            "los jeroglíficos del Nilo",
+            "la impresión con máquinas modernas"
           ],
           "answer": 0
         }
       ]
     },
     {
-      "title": "Mesolítico y nuevos ambientes",
-      "subtitle": "Adaptaciones tras la última glaciación",
-      "goal": "Explica cambios y continuidades sin confundirlos con agricultura universal.",
-      "body": "<p>El inicio del <strong>Holoceno</strong>, hace unos 11 700 años, estuvo asociado a cambios climáticos y ambientales después de la última glaciación. Bosques, costas y recursos se transformaron de manera regional. El término Mesolítico se aplica a ciertas sociedades cazadoras y recolectoras de este contexto.</p><p>En diversos lugares se ampliaron la pesca, el marisqueo y la explotación de plantas. Son frecuentes los <strong>microlitos</strong>, pequeñas piezas de piedra que podían integrarse en herramientas compuestas. Su tamaño reducido no significa menor capacidad técnica. Algunos grupos permanecían más tiempo en asentamientos con recursos abundantes.</p><p>La transición al Neolítico no sucedió en todas partes al mismo tiempo. La presencia de asentamientos relativamente estables no demuestra, por sí sola, agricultura. Hubo contactos entre cazadores-recolectores y agricultores, migraciones y cambios graduales. Es necesario distinguir clima, economía y tecnología, que no siempre cambian a la vez.</p>",
-      "key": "La estabilidad residencial puede preceder a la agricultura; la transición fue diversa y regional.",
+      "title": "Reinos e imperios mesopotámicos",
+      "subtitle": "Acadios, babilonios y asirios",
+      "goal": "Ordena grandes experiencias políticas y analiza normas y poder.",
+      "body": "<p>Mesopotamia no fue un único reino permanente. En el tercer milenio a. C., <strong>Sargón de Acad</strong> extendió su autoridad sobre diversos territorios. Más adelante, Babilonia alcanzó gran importancia. <strong>Hammurabi</strong>, en el siglo XVIII a. C., es conocido por una colección de disposiciones legales inscritas en una estela.</p><p>Las llamadas leyes de Hammurabi abordaban conflictos, propiedad, deudas, familia y trabajo. Las sanciones variaban según la condición social y las circunstancias: no establecían igualdad jurídica moderna. Tampoco fueron las primeras leyes de la historia; existieron colecciones anteriores. La estela comunicaba una imagen del rey como garante del orden.</p><p>El Imperio neoasirio amplió su dominio mediante campañas militares, administración y tributos; también recurrió a deportaciones. Después, el reino neobabilónico, asociado con Nabucodonosor II, volvió a convertir Babilonia en un centro destacado. Son etapas diferentes, con continuidades y cambios.</p>",
+      "key": "Un imperio domina diversos territorios; una ley antigua debe interpretarse en su propio contexto social.",
       "examples": [
         {
           "title": "Analiza el caso",
-          "question": "Caso hipotético: un poblado cercano a un lago tiene abundantes espinas de pescado, frutos silvestres y casas reparadas varias veces, sin cultivos documentados.",
+          "question": "Una colección legal establece sanciones distintas según la condición social de las personas. ¿Demuestra igualdad ante la ley?",
           "steps": [
-            "Las reparaciones sugieren permanencia o reocupación.",
-            "Los restos indican aprovechamiento de recursos silvestres.",
-            "No debe clasificarse automáticamente como agrícola: hacen falta evidencias de cultivo o domesticación."
+            "Compara a quién se aplica cada sanción y en qué condiciones.",
+            "La diferencia de trato revela jerarquías reconocidas por el orden jurídico.",
+            "El documento también informa sobre cómo el poder pretendía regular conflictos."
           ]
         }
       ],
       "quiz": [
         {
-          "prompt": "Los microlitos son…",
-          "solution": "Las piezas pequeñas podían insertarse en mangos para fabricar instrumentos.",
+          "prompt": "Hammurabi se vincula principalmente con…",
+          "solution": "Fue un rey de Babilonia conocido por la estela que contiene disposiciones legales.",
           "level": "Básico",
-          "id": "u5a",
+          "id": "u4a",
           "options": [
-            "pequeños textos cuneiformes",
-            "aleaciones de cobre y estaño",
-            "semillas domesticadas",
-            "pequeñas piezas de piedra usadas también en herramientas compuestas",
-            "templos mesopotámicos"
+            "la democracia ateniense",
+            "la unificación de Italia",
+            "la escritura latina",
+            "Babilonia y una colección de disposiciones legales",
+            "las pirámides de Guiza"
           ],
           "answer": 3
         },
         {
-          "prompt": "Un asentamiento estable junto a recursos silvestres abundantes demuestra que…",
-          "solution": "Algunas comunidades podían reducir su movilidad sin cultivar.",
+          "prompt": "¿Qué distingue un imperio de una ciudad-Estado?",
+          "solution": "La escala de dominación territorial es una diferencia importante.",
           "level": "Básico",
-          "id": "u5b",
+          "id": "u4b",
           "options": [
-            "todo poblado ya tenía escritura",
-            "sedentarismo y agricultura no son conceptos idénticos",
-            "la pesca exige metalurgia",
-            "no existió recolección",
-            "la agricultura surgió simultáneamente en el mundo"
+            "La ausencia de autoridades",
+            "El dominio de múltiples territorios y poblaciones",
+            "La inexistencia de tributos",
+            "El uso obligatorio de papiro",
+            "Tener solo un barrio urbano"
           ],
           "answer": 1
+        }
+      ]
+    },
+    {
+      "title": "Cultura y legado mesopotámicos",
+      "subtitle": "Relacionar escritura, religión y conocimientos con la vida social.",
+      "goal": "Relacionar escritura, religión y conocimientos con la vida social.",
+      "body": "<p>La escritura cuneiforme empleaba signos trazados sobre arcilla y fue utilizada para varias lenguas. Además de cuentas y contratos, conservó leyes, textos religiosos, correspondencia y obras literarias, como las tradiciones reunidas en la <i>Epopeya de Gilgamesh</i>. Su estudio permite conocer perspectivas de autores y grupos concretos, no una voz única de toda la sociedad.</p><p>Las ciudades veneraban diferentes divinidades. Los templos eran espacios religiosos y también participaban en la gestión de tierras y recursos. El zigurat era una construcción escalonada vinculada al ámbito sagrado; no cumplía la misma función que una pirámide funeraria egipcia.</p><p>El cálculo de superficies, los registros de bienes y la observación de los astros impulsaron conocimientos matemáticos y astronómicos. El sistema sexagesimal, de base sesenta, forma parte de un legado que se reconoce en la medición de horas y ángulos. Estos conocimientos se desarrollaron durante muchos siglos y no fueron obra de una sola persona.</p>",
+      "key": "Los aportes culturales responden a necesidades, creencias e instituciones de su contexto.",
+      "examples": [
+        {
+          "title": "Analiza el caso",
+          "question": "Una tablilla combina observaciones de astros y presagios. ¿Debe descartarse como fuente?",
+          "steps": [
+            "Identifica qué observaciones registró y cómo las organizó.",
+            "Distingue el registro de fenómenos de su interpretación religiosa.",
+            "Ambos aspectos informan sobre los conocimientos y creencias de aquella sociedad."
+          ]
+        }
+      ],
+      "quiz": [
+        {
+          "prompt": "Un zigurat se relaciona principalmente con…",
+          "options": [
+            "un anfiteatro romano",
+            "una fábrica moderna",
+            "un complejo religioso",
+            "una tumba imperial china",
+            "un puerto fenicio"
+          ],
+          "answer": 2,
+          "solution": "El zigurat era una construcción escalonada asociada al espacio sagrado mesopotámico.",
+          "level": "Aplicación",
+          "id": "u5a"
+        },
+        {
+          "prompt": "El sistema sexagesimal utiliza como base…",
+          "options": [
+            "diez",
+            "dos",
+            "cien",
+            "sesenta",
+            "doce"
+          ],
+          "answer": 3,
+          "solution": "La base sesenta se reconoce en herencias de la medición del tiempo y los ángulos.",
+          "level": "Aplicación",
+          "id": "u5b"
         }
       ]
     }
   ],
   "practice": [
     {
-      "prompt": "¿Qué material suele conservarse mejor en un sitio antiguo?",
-      "solution": "La conservación diferencial favorece materiales resistentes, como la piedra.",
+      "prompt": "Una tablilla registra raciones de cebada. ¿Qué función documenta directamente?",
+      "solution": "El contenido contable permite estudiar distribución y administración.",
       "level": "Básico",
       "id": "p1",
       "options": [
-        "Las hojas frescas",
-        "La ropa de fibras sin condiciones especiales",
-        "Los alimentos blandos",
-        "Las cuerdas vegetales en cualquier ambiente",
-        "La piedra"
-      ],
-      "answer": 4
-    },
-    {
-      "prompt": "Un campamento se ocupa cada temporada de pesca. ¿Qué explicación es más adecuada?",
-      "solution": "La ocupación estacional puede ser parte de una estrategia planificada.",
-      "level": "Intermedio",
-      "id": "p2",
-      "options": [
-        "Desplazamiento sin conocimiento",
-        "Cultivo de cereales demostrado",
-        "Movilidad vinculada al ciclo de recursos",
-        "Vida industrial",
-        "Ausencia de cooperación"
+        "Elección por sufragio universal",
+        "Una ceremonia egipcia concreta",
+        "Administración de recursos",
+        "Un alfabeto latino",
+        "Producción industrial"
       ],
       "answer": 2
     },
     {
-      "prompt": "Para identificar un hogar prehistórico conviene buscar…",
-      "solution": "La combinación de indicios ayuda a distinguir actividad humana de procesos naturales.",
+      "prompt": "Un monarca gobierna varias ciudades y pueblos tributarios. La organización se aproxima a…",
+      "solution": "El dominio de múltiples territorios y poblaciones caracteriza una organización imperial.",
       "level": "Intermedio",
-      "id": "p3",
+      "id": "p2",
       "options": [
-        "disposición, restos de combustión y actividades asociadas",
-        "solo un color oscuro aislado",
-        "una fecha escrita obligatoria",
-        "una moneda moderna",
-        "únicamente huesos de grandes animales"
+        "un imperio territorial",
+        "una familia sin autoridad",
+        "una aldea aislada sin vínculos",
+        "un taller artesanal únicamente",
+        "una asociación sin territorio"
       ],
       "answer": 0
     },
     {
-      "prompt": "Una pintura en la pared de una cueva y una figura tallada transportable son, respectivamente…",
-      "solution": "La diferencia se refiere al soporte de las representaciones.",
-      "level": "Básico",
-      "id": "p4",
+      "prompt": "¿Por qué es incorrecto presentar las leyes de Hammurabi como igualdad jurídica moderna?",
+      "solution": "El orden jurídico reflejaba jerarquías de su contexto.",
+      "level": "Intermedio",
+      "id": "p3",
       "options": [
-        "arte mobiliar y arte rupestre",
-        "escritura y metalurgia",
-        "agricultura y ganadería",
-        "arte rupestre y arte mobiliar",
-        "cronología y estratigrafía"
+        "Porque no estaban escritas",
+        "Porque proceden de Roma",
+        "Porque carecían de cualquier autoridad",
+        "Porque las sanciones dependían también de la condición social",
+        "Porque solo regulaban astronomía"
       ],
       "answer": 3
     },
     {
-      "prompt": "En un poblado con recursos silvestres no se hallan cultivos. ¿Qué afirmación excede la evidencia?",
-      "solution": "Una vivienda estable no demuestra agricultura por sí sola.",
-      "level": "Avanzado",
-      "id": "p5",
+      "prompt": "¿Qué dato permite reconocer con mayor claridad una situación de esclavitud?",
       "options": [
-        "Aprovechaban recursos locales",
-        "Sus habitantes eran agricultores porque tenían casas",
-        "Pudieron reocupar el sitio",
-        "Hace falta investigar restos botánicos",
-        "Su economía debe estudiarse con más datos"
+        "La venta de una persona privada de libertad",
+        "El cultivo de cereales",
+        "El uso de herramientas",
+        "La residencia en una ciudad",
+        "La entrega de una ofrenda"
       ],
-      "answer": 1
+      "answer": 0,
+      "solution": "La privación de libertad y la posibilidad de vender a la persona indican una relación de esclavitud.",
+      "level": "Aplicación",
+      "id": "p4"
+    },
+    {
+      "prompt": "Un zigurat se relaciona principalmente con…",
+      "options": [
+        "un anfiteatro romano",
+        "una fábrica moderna",
+        "un complejo religioso",
+        "una tumba imperial china",
+        "un puerto fenicio"
+      ],
+      "answer": 2,
+      "solution": "El zigurat era una construcción escalonada asociada al espacio sagrado mesopotámico.",
+      "level": "Aplicación",
+      "id": "p5"
     }
   ],
   "exam": [
     {
-      "prompt": "El estudio de sociedades anteriores a la escritura se apoya especialmente en…",
-      "solution": "La arqueología permite investigar distintas dimensiones de esas sociedades.",
+      "prompt": "Una ciudad-Estado mesopotámica comprendía…",
+      "solution": "La ciudad y su entorno agrícola formaban una unidad política.",
       "level": "Básico",
       "id": "e1",
       "options": [
-        "solo crónicas escritas",
-        "únicamente leyendas modernas",
-        "registros digitales antiguos",
-        "documentos notariales obligatorios",
-        "restos materiales y ambientales"
+        "un núcleo urbano y su territorio bajo una autoridad política",
+        "todo el planeta",
+        "solo un edificio religioso",
+        "una fábrica moderna",
+        "únicamente un ejército sin habitantes"
       ],
-      "answer": 4
+      "answer": 0
     },
     {
-      "prompt": "El término Paleolítico se relaciona tradicionalmente con…",
-      "solution": "La talla lítica caracteriza esta clasificación, sin excluir otros materiales.",
+      "prompt": "La cuneiforme se escribió frecuentemente en…",
+      "solution": "La arcilla fue un soporte común para impresiones con un instrumento.",
       "level": "Básico",
       "id": "e2",
       "options": [
-        "uso general del acero",
-        "alfabetos impresos",
-        "tecnologías de piedra tallada",
-        "fabricación de motores",
-        "monedas de plata"
-      ],
-      "answer": 2
-    },
-    {
-      "prompt": "La subsistencia cazadora-recolectora puede incluir…",
-      "solution": "La caza y la recolección se combinaron con diversas fuentes alimentarias.",
-      "level": "Básico",
-      "id": "e3",
-      "options": [
-        "pesca y aprovechamiento de plantas silvestres",
-        "solo cereales domesticados",
-        "solo ganadería intensiva",
-        "tributos obligatorios de un imperio",
-        "producción fabril"
-      ],
-      "answer": 0
-    },
-    {
-      "prompt": "El nomadismo implica necesariamente…",
-      "solution": "Los desplazamientos pueden seguir rutas y ciclos conocidos.",
-      "level": "Básico",
-      "id": "e4",
-      "options": [
-        "desconocimiento del territorio",
-        "ausencia de cooperación",
-        "incapacidad de fabricar herramientas",
-        "movilidad residencial, no falta de planificación",
-        "agricultura permanente"
+        "papel impreso industrial",
+        "pantallas digitales",
+        "rollos de plástico",
+        "tablillas de arcilla",
+        "únicamente láminas de acero"
       ],
       "answer": 3
     },
     {
-      "prompt": "Una herramienta compuesta combina…",
-      "solution": "Una pieza de piedra puede unirse a un mango mediante fibras o adhesivos.",
+      "prompt": "Sargón se relaciona con…",
+      "solution": "Sargón de Acad extendió su dominio en el tercer milenio a. C.",
       "level": "Básico",
-      "id": "e5",
+      "id": "e3",
       "options": [
-        "solo signos alfabéticos",
-        "piezas o materiales con funciones complementarias",
-        "dos imperios vecinos",
-        "siempre hierro y acero",
-        "únicamente semillas"
+        "la Revolución francesa",
+        "Acad y la expansión de un poder territorial",
+        "la fundación de Roma",
+        "la democracia de Atenas",
+        "la llegada de Colón a América"
       ],
       "answer": 1
     },
     {
-      "prompt": "¿Cuál fue una posibilidad abierta por el aprovechamiento del fuego?",
-      "solution": "El fuego aportó distintas ventajas, según usos y contextos.",
+      "prompt": "¿Qué afirmación sobre Hammurabi es correcta?",
+      "solution": "Las sanciones y situaciones reguladas permiten estudiar jerarquías sociales.",
       "level": "Básico",
-      "id": "e6",
+      "id": "e4",
       "options": [
-        "Crear automáticamente escritura",
-        "Eliminar todo riesgo natural",
-        "Originar de inmediato ciudades",
-        "Reemplazar cualquier herramienta",
-        "Cocinar alimentos y obtener calor"
+        "Fue el primer ser humano en crear cualquier ley",
+        "Estableció sufragio universal",
+        "Gobernó el Egipto del Reino Nuevo",
+        "Escribió exclusivamente sobre geometría",
+        "Sus disposiciones reflejan diferencias de condición social"
       ],
       "answer": 4
     },
     {
-      "prompt": "Altamira y Lascaux son conocidas por…",
-      "solution": "Conservan conjuntos importantes de arte rupestre paleolítico.",
-      "level": "Básico",
-      "id": "e7",
+      "prompt": "¿Qué afirmación describe mejor el trabajo en Mesopotamia?",
       "options": [
-        "la primera escritura alfabética",
-        "sus códigos legales mesopotámicos",
-        "sus representaciones paleolíticas",
-        "sus pirámides egipcias",
-        "sus fábricas de hierro modernas"
+        "Todos eran esclavos",
+        "Coexistían distintas condiciones de libertad y dependencia",
+        "No existían campesinos",
+        "Nadie pagaba tributos",
+        "Todos tenían derechos iguales"
       ],
-      "answer": 2
+      "answer": 1,
+      "solution": "Templos, palacios y hogares articulaban trabajadores de condiciones diversas; no debe homogeneizarse la población.",
+      "level": "Aplicación",
+      "id": "e5"
     },
     {
-      "prompt": "¿Qué debe evitarse al interpretar un entierro antiguo?",
-      "solution": "Los indicios funerarios no revelan automáticamente todas las creencias.",
-      "level": "Básico",
-      "id": "e8",
+      "prompt": "El sistema sexagesimal utiliza como base…",
       "options": [
-        "Atribuirle sin pruebas una creencia específica",
-        "Estudiar su contexto",
-        "Registrar la posición del cuerpo",
-        "Comparar otros entierros",
-        "Analizar objetos asociados"
+        "diez",
+        "dos",
+        "cien",
+        "sesenta",
+        "doce"
       ],
-      "answer": 0
+      "answer": 3,
+      "solution": "La base sesenta se reconoce en herencias de la medición del tiempo y los ángulos.",
+      "level": "Aplicación",
+      "id": "e6"
     },
     {
-      "prompt": "El inicio del Holoceno se sitúa aproximadamente hace…",
-      "solution": "Es una referencia climática aproximada para estudiar cambios posteriores a la última glaciación.",
-      "level": "Básico",
-      "id": "e9",
+      "prompt": "¿Qué dato permite reconocer con mayor claridad una situación de esclavitud?",
       "options": [
-        "117 años",
-        "1 170 millones de años",
-        "300 millones de años",
-        "11 700 años",
-        "500 años"
+        "La venta de una persona privada de libertad",
+        "El cultivo de cereales",
+        "El uso de herramientas",
+        "La residencia en una ciudad",
+        "La entrega de una ofrenda"
       ],
-      "answer": 3
+      "answer": 0,
+      "solution": "La privación de libertad y la posibilidad de vender a la persona indican una relación de esclavitud.",
+      "level": "Aplicación",
+      "id": "e7"
     },
     {
-      "prompt": "¿Cuál es una afirmación correcta sobre el Mesolítico?",
-      "solution": "Es una categoría regional, no una etapa mundial uniforme.",
-      "level": "Básico",
-      "id": "e10",
+      "prompt": "¿Qué diferencia existe entre pagar tributo y ser esclavizado?",
       "options": [
-        "Fue agrícola en todo el planeta",
-        "Su aplicación y duración dependen de la región",
-        "Empezó el mismo año en cada continente",
-        "Eliminó inmediatamente la recolección",
-        "Fue la edad de los alfabetos"
+        "Son siempre exactamente lo mismo",
+        "El tributo solo existió en China",
+        "El tributo no implica por sí mismo perder la libertad jurídica",
+        "La esclavitud no afecta la libertad",
+        "No hay que estudiar las fuentes"
       ],
-      "answer": 1
+      "answer": 2,
+      "solution": "Las obligaciones tributarias y la condición jurídica son aspectos distintos; deben comprobarse con evidencias.",
+      "level": "Aplicación",
+      "id": "e8"
+    },
+    {
+      "prompt": "Una ciudad controla campos y aldeas de su entorno. ¿Qué relación ilustra?",
+      "options": [
+        "La independencia total de la ciudad respecto del campo",
+        "La inexistencia de administración",
+        "El fin del intercambio",
+        "La articulación entre núcleo urbano y territorio agrícola",
+        "La ausencia de población rural"
+      ],
+      "answer": 3,
+      "solution": "Las ciudades dependían de la producción y el trabajo de su territorio, organizados mediante diferentes instituciones.",
+      "level": "Aplicación",
+      "id": "e9"
+    },
+    {
+      "prompt": "Un templo almacena grano y distribuye raciones. Esto muestra…",
+      "options": [
+        "que no existían agricultores",
+        "que el grano era una moneda romana",
+        "una fábrica industrial moderna",
+        "que todos sabían escribir",
+        "funciones económicas además de religiosas"
+      ],
+      "answer": 4,
+      "solution": "Los templos también participaron en la administración de bienes, tierras y trabajo. Así se relacionaban creencias y economía.",
+      "level": "Aplicación",
+      "id": "e10"
     }
   ],
   "timeline": [
     [
-      "Paleolítico",
-      "Larga diversidad de cazadores, recolectores y pescadores; fechas regionales."
+      "IV milenio a. C.",
+      "Urbanización y primeras escrituras en el sur de Mesopotamia."
     ],
     [
-      "Hace unos 11 700 años",
-      "Inicio del Holoceno; cambios climáticos y ambientales."
+      "III milenio a. C.",
+      "Ciudades sumerias y expansión de Acad."
     ],
     [
-      "Mesolítico en ciertas regiones",
-      "Adaptación de cazadores-recolectores a nuevos ambientes."
+      "II milenio a. C.",
+      "Babilonia de Hammurabi."
     ],
     [
-      "Transiciones locales al Neolítico",
-      "Agricultura y ganadería se desarrollan o difunden en fechas diferentes."
+      "I milenio a. C.",
+      "Imperios asirio y neobabilónico; conquista persa de Babilonia en 539 a. C."
     ]
   ],
-  "resources": "<p class=\"eyebrow\">Repasa y consulta</p><h2>Materiales del capítulo</h2><h3>Vocabulario esencial</h3><dl class=\"glossary\"><dt>Paleolítico</dt><dd>Periodo asociado tradicionalmente a tecnologías de piedra tallada.</dd><dt>Subsistencia</dt><dd>Actividades para obtener los recursos necesarios para vivir.</dd><dt>Microlito</dt><dd>Pequeña pieza lítica, a menudo integrada en un instrumento compuesto.</dd><dt>Arte rupestre</dt><dd>Representación realizada en una superficie rocosa.</dd><dt>Mesolítico</dt><dd>Categoría regional para ciertos cazadores-recolectores posteriores a la última glaciación.</dd></dl><h3>Lecturas y evidencias</h3><ul class=\"resource-list\"><li><a href=\"https://whc.unesco.org/en/list/85/\" target=\"_blank\" rel=\"noopener noreferrer\">UNESCO · Cuevas decoradas del valle de Vézère, incluida Lascaux</a></li><li><a href=\"https://whc.unesco.org/en/list/310/\" target=\"_blank\" rel=\"noopener noreferrer\">UNESCO · Altamira y arte rupestre paleolítico del norte de España</a></li><li><a href=\"https://www.britishmuseum.org/collection/term/x14235\" target=\"_blank\" rel=\"noopener noreferrer\">British Museum · Mesolítico</a></li></ul><p class=\"resource-note\">Las lecturas pueden estar en inglés. Los casos y las preguntas son actividades didácticas originales; los casos hipotéticos no son transcripciones de documentos antiguos. Las fechas prehistóricas y los límites de las etapas son aproximados y dependen de la región.</p>"
+  "resources": "<p class=\"resource-note\"><b>Temario de referencia:</b> <cite>Historia Universal</cite>, Lumbreras Editores, capítulo 4, páginas impresas 32–39. Las explicaciones y actividades de esta web son una adaptación didáctica original.</p><h2>Materiales del capítulo</h2><p>Repasa los términos, procesos y fechas de las lecciones. Utiliza la cronología para relacionar los cambios políticos con las evidencias culturales.</p>",
+  "progressId": "historia-universal-pdf-04",
+  "legacySources": [
+    {
+      "id": "historia-universal-capitulo-06",
+      "items": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ]
+      ]
+    }
+  ]
 };

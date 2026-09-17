@@ -1,533 +1,535 @@
 window.HISTORY_CONTENT = {
   "number": 6,
   "id": "historia-universal-capitulo-06",
-  "title": "Primeras civilizaciones: Mesopotamia y Egipto",
-  "intro": "Compara dos grandes experiencias de urbanización: sus ríos, formas de poder, trabajo, escritura, creencias y legados.",
+  "title": "India y China antiguas",
+  "intro": "Estudia el Indo, la sociedad védica y el budismo; conoce los valles chinos, sus tradiciones de pensamiento y la unificación Qin.",
   "lessons": [
     {
-      "title": "Ríos, agricultura y ciudades",
-      "subtitle": "Espacio y organización social",
-      "goal": "Relaciona el ambiente con el trabajo colectivo sin convertirlo en causa única.",
-      "body": "<p><strong>Mesopotamia</strong> se desarrolló en la región de los ríos Tigris y Éufrates, en Asia occidental. <strong>Egipto</strong> se articuló alrededor del Nilo, en el noreste de África. El agua, los sedimentos, los cultivos y las rutas fluviales facilitaron la concentración de población, pero exigieron conocimientos y organización.</p><p>Las ciudades reunieron habitantes, actividades especializadas y funciones políticas, religiosas y comerciales. Los <strong>Estados</strong> establecieron autoridades e instituciones capaces de organizar territorios, recaudar recursos y ejercer poder. Un poblado grande no es automáticamente una ciudad-Estado: deben estudiarse sus funciones y relaciones.</p><p>Las obras de riego y el almacenamiento favorecieron cooperación y control de recursos. Sin embargo, ningún río creó por sí solo un Estado. También intervinieron intercambios, conflictos, decisiones políticas y diferencias sociales. El término civilización se usa aquí para estudiar estas formas de organización, no para considerar inferiores a otras sociedades.</p>",
-      "key": "El ambiente ofrece posibilidades y límites; las sociedades construyen sus propias formas de organización.",
+      "title": "El medio geográfico y la civilización del Indo",
+      "subtitle": "Relacionar territorio, urbanismo y fuentes arqueológicas.",
+      "goal": "Relacionar territorio, urbanismo y fuentes arqueológicas.",
+      "body": "<p>El subcontinente indio presenta montañas, llanuras fluviales y mesetas. Los Himalayas influyen en el clima y las comunicaciones, sin impedir todos los contactos. Los ríos Indo y Ganges articulan regiones diferentes; no deben confundirse ni suponerse que toda la historia de la India ocurrió en un único valle.</p><p>Durante el tercer milenio a. C., la civilización del Indo desarrolló grandes centros urbanos, entre ellos Harappa y Mohenjo-daro. Sus restos muestran calles organizadas, construcciones de ladrillo y sistemas de drenaje. La agricultura, la artesanía y las redes de intercambio sostenían estas ciudades y sus vínculos con otras regiones.</p><p>Los sellos conservan signos cuya escritura aún no se ha descifrado de manera aceptada. Por ello, no podemos atribuir con seguridad nombres a todos sus gobernantes ni reconstruir sus instituciones como si existieran crónicas traducidas. La transformación de sus ciudades tuvo varias causas y no debe explicarse como una única invasión demostrada.</p>",
+      "key": "Las ciudades del Indo se conocen principalmente por la arqueología; hay límites en lo que podemos afirmar.",
       "examples": [
         {
           "title": "Analiza el caso",
-          "question": "Caso hipotético: varias aldeas coordinan la reparación de un canal y reparten el agua. ¿Basta el canal para demostrar que existía un imperio?",
+          "question": "Un sello tiene signos y la figura de un animal. Un visitante asegura conocer el nombre del rey. ¿Qué problema presenta esa afirmación?",
           "steps": [
-            "El canal evidencia obras y coordinación.",
-            "Un imperio supone dominio sobre múltiples territorios y poblaciones, algo que requiere más pruebas.",
-            "Investiga autoridades, tributos, centros administrativos y relaciones entre asentamientos."
+            "La imagen y los signos son evidencias materiales auténticas.",
+            "La escritura no cuenta con un desciframiento aceptado.",
+            "Identificar un rey exigiría pruebas adicionales; la interpretación no puede presentarse como certeza."
           ]
         }
       ],
       "quiz": [
         {
-          "prompt": "¿Qué asociación geográfica es correcta?",
-          "solution": "La región mesopotámica se vincula a las cuencas del Tigris y el Éufrates.",
-          "level": "Básico",
-          "id": "u1a",
+          "prompt": "Harappa y Mohenjo-daro pertenecen a la civilización del…",
           "options": [
-            "Egipto — Indo y Ganges",
-            "Mesopotamia — Tigris y Éufrates",
-            "Mesopotamia — Nilo",
-            "Egipto — Huang He",
-            "Mesopotamia — Amazonas"
+            "Indo",
+            "Nilo",
+            "Tíber",
+            "Éufrates",
+            "Danubio"
           ],
-          "answer": 1
+          "answer": 0,
+          "solution": "Son centros urbanos del valle del Indo, conocidos por sus restos arqueológicos.",
+          "level": "Aplicación",
+          "id": "u1a"
         },
         {
-          "prompt": "¿Qué afirmación explica mejor el surgimiento de Estados?",
-          "solution": "La formación estatal fue un proceso multicausal.",
-          "level": "Básico",
-          "id": "u1b",
+          "prompt": "¿Por qué hay límites para conocer las instituciones del Indo?",
           "options": [
-            "Los ríos los crearon automáticamente",
-            "Solo importó una invención aislada",
-            "Toda aldea fue un imperio",
-            "No hubo decisiones humanas",
-            "Intervinieron factores ambientales, económicos y políticos"
+            "No se han encontrado ciudades",
+            "Su escritura no tiene un desciframiento aceptado",
+            "Todos los restos son modernos",
+            "No existió comercio",
+            "Sus ríos estaban en Egipto"
           ],
-          "answer": 4
+          "answer": 1,
+          "solution": "La arqueología informa sobre su sociedad, pero la escritura no descifrada limita el acceso a sus propios registros.",
+          "level": "Aplicación",
+          "id": "u1b"
         }
       ]
     },
     {
-      "title": "Sumer: ciudades y escritura",
-      "subtitle": "Templos, administración y registros",
-      "goal": "Relaciona la vida urbana con el desarrollo de sistemas de escritura.",
-      "body": "<p>En el sur de Mesopotamia surgieron ciudades como <strong>Uruk, Ur y Lagash</strong>. Las ciudades-Estado articulaban un núcleo urbano y su territorio agrícola. Sus autoridades, templos y, en distintos periodos, palacios organizaron actividades y recursos. Cooperaron y compitieron por tierras, agua y rutas.</p><p>En el cuarto milenio a. C. se desarrollaron registros que contribuyeron al surgimiento de la escritura mesopotámica. Numerosas tablillas tempranas se relacionan con cantidades y administración. Los signos evolucionaron hacia la escritura <strong>cuneiforme</strong>, realizada frecuentemente sobre arcilla con impresiones en forma de cuña.</p><p>La escritura permitió registrar operaciones, normas, correspondencia y relatos. No fue conocida por toda la población: la formación de escribas requería aprendizaje especializado. El <strong>zigurat</strong> era una construcción escalonada vinculada a un complejo religioso; no debe confundirse con la función funeraria característica de las pirámides reales egipcias.</p>",
-      "key": "La escritura se desarrolló en procesos prolongados y sirvió para administrar, comunicar y conservar conocimientos.",
+      "title": "Sociedad y tradiciones de la India védica",
+      "subtitle": "Distinguir textos religiosos, jerarquías y cambios históricos.",
+      "goal": "Distinguir textos religiosos, jerarquías y cambios históricos.",
+      "body": "<p>En el segundo milenio a. C. se extendieron por el norte del subcontinente poblaciones y lenguas indoarias. El estudio de estas migraciones combina lingüística, arqueología y otras evidencias. La sociedad védica no surgió de la noche a la mañana ni puede reducirse a una oposición simple entre dos pueblos homogéneos.</p><p>Los <b>Vedas</b> son conjuntos de textos sagrados transmitidos primero de forma oral, ligados al sánscrito y a tradiciones rituales. Las prácticas y reflexiones religiosas cambiaron con el tiempo y forman parte de los antecedentes de tradiciones que hoy agrupamos bajo el nombre de hinduismo.</p><p>El esquema de los cuatro <b>varnas</b> distinguía brahmanes, asociados al sacerdocio; chatrias o kshatriyas, vinculados al poder guerrero; vaisias, productores y comerciantes; y sudras, subordinados en ese orden ideal. No describe por sí solo toda la diversidad social: las <i>jatis</i>, grupos de pertenencia más específicos, hacen el panorama más complejo. Estudiar esta jerarquía no implica justificar la desigualdad.</p>",
+      "key": "Las categorías de los textos deben contrastarse con la diversidad de la vida social.",
       "examples": [
         {
           "title": "Analiza el caso",
-          "question": "Caso hipotético: una tablilla anota entregas de cebada a trabajadores. ¿Qué aspectos de la ciudad permite investigar?",
+          "question": "Un cuadro de cuatro varnas afirma describir todos los oficios y grupos de la India. ¿Qué falta?",
           "steps": [
-            "Puede informar sobre productos, cantidades y distribución.",
-            "Sugiere prácticas administrativas y personas formadas para registrar.",
-            "No representa por sí sola toda la economía ni la voz de todos los habitantes."
+            "El cuadro resume un modelo normativo de jerarquía.",
+            "Las comunidades y ocupaciones reales eran más diversas.",
+            "Hay que considerar las jatis y los cambios regionales e históricos."
           ]
         }
       ],
       "quiz": [
         {
-          "prompt": "¿Qué ciudad se asocia con el desarrollo urbano temprano del sur mesopotámico?",
-          "solution": "Uruk fue uno de los grandes centros urbanos tempranos de Mesopotamia.",
-          "level": "Básico",
-          "id": "u2a",
+          "prompt": "Los Vedas son…",
           "options": [
-            "Atenas",
-            "Roma",
-            "Uruk",
-            "Tenochtitlan",
-            "Cartago"
+            "leyes romanas",
+            "mapas de América",
+            "conjuntos de textos sagrados de tradición védica",
+            "registros del Imperio inca",
+            "tratados militares chinos"
           ],
-          "answer": 2
+          "answer": 2,
+          "solution": "Los Vedas se vinculan con tradiciones religiosas transmitidas oralmente y con el sánscrito.",
+          "level": "Aplicación",
+          "id": "u2a"
         },
         {
-          "prompt": "La escritura cuneiforme recibe su nombre de…",
-          "solution": "Muchos signos se producían presionando un instrumento sobre arcilla.",
-          "level": "Básico",
-          "id": "u2b",
+          "prompt": "En el esquema de los varnas, los brahmanes se asocian al…",
           "options": [
-            "las impresiones con forma de cuña",
-            "el uso exclusivo de letras latinas",
-            "la forma circular del papiro",
-            "los jeroglíficos del Nilo",
-            "la impresión con máquinas modernas"
+            "gobierno romano",
+            "comercio fenicio exclusivamente",
+            "ejército persa",
+            "sacerdocio y los rituales",
+            "cultivo del Nilo"
           ],
-          "answer": 0
+          "answer": 3,
+          "solution": "Los brahmanes ocupaban la posición vinculada al saber ritual y sacerdotal en ese orden normativo.",
+          "level": "Aplicación",
+          "id": "u2b"
         }
       ]
     },
     {
-      "title": "Reinos e imperios mesopotámicos",
-      "subtitle": "Acadios, babilonios y asirios",
-      "goal": "Ordena grandes experiencias políticas y analiza normas y poder.",
-      "body": "<p>Mesopotamia no fue un único reino permanente. En el tercer milenio a. C., <strong>Sargón de Acad</strong> extendió su autoridad sobre diversos territorios. Más adelante, Babilonia alcanzó gran importancia. <strong>Hammurabi</strong>, en el siglo XVIII a. C., es conocido por una colección de disposiciones legales inscritas en una estela.</p><p>Las llamadas leyes de Hammurabi abordaban conflictos, propiedad, deudas, familia y trabajo. Las sanciones variaban según la condición social y las circunstancias: no establecían igualdad jurídica moderna. Tampoco fueron las primeras leyes de la historia; existieron colecciones anteriores. La estela comunicaba una imagen del rey como garante del orden.</p><p>El Imperio neoasirio amplió su dominio mediante campañas militares, administración y tributos; también recurrió a deportaciones. Después, el reino neobabilónico, asociado con Nabucodonosor II, volvió a convertir Babilonia en un centro destacado. Son etapas diferentes, con continuidades y cambios.</p>",
-      "key": "Un imperio domina diversos territorios; una ley antigua debe interpretarse en su propio contexto social.",
+      "title": "Budismo y unificación maurya",
+      "subtitle": "Relacionar nuevas ideas religiosas y procesos políticos.",
+      "goal": "Relacionar nuevas ideas religiosas y procesos políticos.",
+      "body": "<p>En el primer milenio a. C. surgieron corrientes que cuestionaron aspectos de las prácticas religiosas y sociales existentes. Siddhartha Gautama, conocido como Buda, enseñó un camino para comprender y superar el sufrimiento. Sus fechas exactas son objeto de debate, por lo que conviene situarlo en su contexto sin convertir una cronología discutida en certeza.</p><p>Las enseñanzas budistas relacionan el sufrimiento con el deseo y el apego, y proponen disciplina ética, meditación y comprensión. El nirvana se vincula con la liberación del sufrimiento y del ciclo de renacimientos. No debe explicarse como la inmortalidad de un alma individual eterna, pues esa idea no describe adecuadamente la doctrina budista.</p><p>El noroeste del subcontinente mantuvo contactos con el Imperio persa y recibió la expedición de Alejandro en el siglo IV a. C. Poco después, Chandragupta Maurya fundó un gran poder territorial. En el siglo III a. C., Ashoka amplió y gobernó el imperio; sus edictos promovieron normas éticas y su patrocinio favoreció la difusión del budismo. No toda la población adoptó una única religión.</p>",
+      "key": "El patrocinio de un gobernante ayuda a difundir una tradición, pero no elimina la diversidad religiosa.",
       "examples": [
         {
           "title": "Analiza el caso",
-          "question": "Una colección legal establece sanciones distintas según la condición social de las personas. ¿Demuestra igualdad ante la ley?",
+          "question": "Un edicto de Ashoka recomienda respeto entre comunidades. ¿Qué permite concluir?",
           "steps": [
-            "Compara a quién se aplica cada sanción y en qué condiciones.",
-            "La diferencia de trato revela jerarquías reconocidas por el orden jurídico.",
-            "El documento también informa sobre cómo el poder pretendía regular conflictos."
+            "Es una fuente sobre los ideales y las políticas que el soberano quiso comunicar.",
+            "Sugiere la importancia de la convivencia entre grupos.",
+            "No prueba por sí solo que todos sus súbditos obedecieran ni que compartieran una religión."
           ]
         }
       ],
       "quiz": [
         {
-          "prompt": "Hammurabi se vincula principalmente con…",
-          "solution": "Fue un rey de Babilonia conocido por la estela que contiene disposiciones legales.",
-          "level": "Básico",
-          "id": "u3a",
+          "prompt": "Ashoka se relaciona con…",
           "options": [
-            "la democracia ateniense",
-            "la unificación de Italia",
-            "la escritura latina",
-            "Babilonia y una colección de disposiciones legales",
-            "las pirámides de Guiza"
+            "la fundación de Roma",
+            "las pirámides de Guiza",
+            "el Imperio carolingio",
+            "la conquista de América",
+            "el Imperio maurya y el patrocinio del budismo"
           ],
-          "answer": 3
+          "answer": 4,
+          "solution": "Ashoka fue un soberano maurya del siglo III a. C. y favoreció la difusión budista.",
+          "level": "Aplicación",
+          "id": "u3a"
         },
         {
-          "prompt": "¿Qué distingue un imperio de una ciudad-Estado?",
-          "solution": "La escala de dominación territorial es una diferencia importante.",
-          "level": "Básico",
-          "id": "u3b",
+          "prompt": "¿Qué resume mejor una enseñanza budista?",
           "options": [
-            "La ausencia de autoridades",
-            "El dominio de múltiples territorios y poblaciones",
-            "La inexistencia de tributos",
-            "El uso obligatorio de papiro",
-            "Tener solo un barrio urbano"
+            "Superar el sufrimiento mediante un camino ético y de comprensión",
+            "Conquistar todos los territorios",
+            "Eliminar toda reflexión",
+            "Garantizar un alma individual eterna",
+            "Adorar obligatoriamente al emperador Qin"
           ],
-          "answer": 1
+          "answer": 0,
+          "solution": "El budismo propone un camino de liberación del sufrimiento; no se resume en la eternidad de un alma individual.",
+          "level": "Aplicación",
+          "id": "u3b"
         }
       ]
     },
     {
-      "title": "Egipto: el Nilo y el Estado faraónico",
-      "subtitle": "Territorio, autoridad y periodos",
-      "goal": "Ubica Alto y Bajo Egipto y reconoce cambios en una historia extensa.",
-      "body": "<p>El Nilo fluye hacia el norte. Por eso, el <strong>Alto Egipto</strong> se sitúa al sur, en el valle, y el <strong>Bajo Egipto</strong> al norte, en el delta. Las crecidas históricas, los suelos fértiles y las rutas fluviales favorecieron la agricultura y las comunicaciones.</p><p>La unificación del territorio suele situarse hacia <strong>3100 a. C.</strong> y se asocia con el proceso político representado por Narmer. El faraón concentraba autoridad política y un papel religioso fundamental. Funcionarios, escribas, sacerdotes y autoridades locales participaron en la administración.</p><p>Se distinguen convencionalmente Reino Antiguo, Medio y Nuevo, separados por periodos intermedios de fragmentación y reorganización. Las grandes pirámides de Guiza pertenecen al Reino Antiguo. El Reino Nuevo destacó por una mayor expansión hacia territorios vecinos. La unidad y el poder central variaron: Egipto no permaneció idéntico durante tres milenios.</p>",
-      "key": "Alto y Bajo Egipto se definen por el curso del Nilo, no por la parte superior o inferior de un mapa.",
+      "title": "China antigua: territorio y primeras sociedades",
+      "subtitle": "Relacionar los valles fluviales con la diversidad regional.",
+      "goal": "Relacionar los valles fluviales con la diversidad regional.",
+      "body": "<p>La historia de China se desarrolló en un territorio extenso y diverso. En el norte, la cuenca del <b>Huang He</b> o río Amarillo fue uno de los espacios de las primeras sociedades agrícolas. En el sur, la cuenca del Yangtsé tuvo gran importancia en el cultivo del arroz. En regiones septentrionales predominó tempranamente el mijo; no toda la agricultura china se basó en el mismo cereal.</p><p>Aldeas, centros políticos y redes de intercambio se transformaron durante largos periodos. Para estudiar las dinastías antiguas se contrastan tradiciones escritas y restos arqueológicos. Los testimonios Shang incluyen bronces y huesos oraculares inscritos; estos aportan evidencia sobre rituales, poder y escritura.</p><p>Los relatos de origen, como el de Pangu, expresan explicaciones culturales sobre el mundo. Deben estudiarse como mitos, sin confundirlos con pruebas científicas del origen humano. Del mismo modo, las listas tradicionales de gobernantes requieren evaluación crítica: la antigüedad de un relato no confirma automáticamente cada detalle.</p>",
+      "key": "Geografía, arqueología y textos ofrecen evidencias distintas que deben contrastarse.",
       "examples": [
         {
           "title": "Analiza el caso",
-          "question": "En un mapa con el norte arriba, alguien coloca el Alto Egipto en el delta. ¿Cómo corregirías la ubicación?",
+          "question": "Un mapa ubica mijo al norte y arroz al sur. ¿Qué error evita?",
           "steps": [
-            "Sigue el río desde el sur hacia su desembocadura al norte.",
-            "El Alto Egipto corresponde al valle meridional, aguas arriba.",
-            "El Bajo Egipto se encuentra en el delta septentrional, aguas abajo."
+            "Reconoce ambientes y tradiciones agrícolas diferentes.",
+            "Evita atribuir un solo cultivo a todo el territorio.",
+            "Permite investigar intercambios y cambios sin negar la diversidad regional."
           ]
         }
       ],
       "quiz": [
         {
-          "prompt": "El Bajo Egipto se encontraba principalmente en…",
-          "solution": "Bajo se refiere a la parte final del curso del río.",
-          "level": "Básico",
-          "id": "u4a",
+          "prompt": "El Huang He es conocido como el río…",
           "options": [
-            "la zona sur del valle por definición",
-            "el valle del Éufrates",
-            "la península itálica",
-            "la región del Indo",
-            "el delta del Nilo, al norte"
+            "Nilo",
+            "Amarillo",
+            "Tíber",
+            "Ganges",
+            "Jordán"
           ],
-          "answer": 4
+          "answer": 1,
+          "solution": "Huang He corresponde al río Amarillo, una de las grandes cuencas del norte de China.",
+          "level": "Aplicación",
+          "id": "u4a"
         },
         {
-          "prompt": "Las pirámides de Guiza se vinculan principalmente con…",
-          "solution": "Su construcción corresponde al Reino Antiguo egipcio.",
-          "level": "Básico",
-          "id": "u4b",
+          "prompt": "El relato de Pangu debe estudiarse como…",
           "options": [
-            "el Imperio romano de Occidente",
-            "la Edad Media europea",
-            "el Reino Antiguo",
-            "el reino neobabilónico",
-            "la Revolución industrial"
+            "una datación por radiocarbono",
+            "una prueba fósil",
+            "un mito de origen y una expresión cultural",
+            "un registro industrial moderno",
+            "un mapa político exacto"
           ],
-          "answer": 2
+          "answer": 2,
+          "solution": "Los mitos son fuentes para estudiar ideas y creencias, no evidencia científica directa del origen humano.",
+          "level": "Aplicación",
+          "id": "u4b"
         }
       ]
     },
     {
-      "title": "Trabajo, creencias y escritura en Egipto",
-      "subtitle": "Sociedad y cultura",
-      "goal": "Relaciona producción, jerarquías y prácticas religiosas con evidencias.",
-      "body": "<p>La agricultura sostuvo buena parte de la economía. Campesinos, artesanos, transportistas y otros trabajadores producían alimentos y bienes, mientras funcionarios y escribas intervenían en registros y tributos. Existían diferencias de poder, riqueza y dependencia. Las grandes obras requirieron planificación, provisiones y conocimientos especializados.</p><p>La religión fue mayoritariamente <strong>politeísta</strong>. Divinidades como Ra, Osiris e Isis desempeñaron papeles importantes en distintos contextos. Las ideas sobre la continuidad después de la muerte se relacionaron con prácticas funerarias, conservación del cuerpo y ajuar. Las prácticas variaron según época y recursos; no todos recibían los mismos tratamientos.</p><p>Los <strong>jeroglíficos</strong> combinaban signos con valores diversos, incluidos sonidos e ideas. No eran simples dibujos decorativos. También existieron escrituras cursivas para distintos usos. La piedra, el papiro y otros soportes conservaron textos religiosos, administrativos y cotidianos. La alfabetización especializada dio a los escribas un papel relevante.</p>",
-      "key": "Monumentos y textos muestran religión y poder, pero también trabajo, técnicas y desigualdades.",
+      "title": "Confucianismo y taoísmo",
+      "subtitle": "Comparar respuestas sobre conducta, sociedad y gobierno.",
+      "goal": "Comparar respuestas sobre conducta, sociedad y gobierno.",
+      "body": "<p>En épocas de conflictos y cambios políticos surgieron tradiciones de pensamiento que reflexionaron sobre la vida social. Confucio destacó la formación moral, el aprendizaje, los deberes en las relaciones humanas y el ejemplo de los gobernantes. La estabilidad, desde esta perspectiva, requería conducta virtuosa y responsabilidad, además de normas.</p><p>Las tradiciones taoístas, vinculadas a textos como el <i>Daodejing</i> y a la figura de Laozi, ponen el acento en el <b>dao</b>, el camino u orden de las cosas, y en una vida menos forzada por deseos y convenciones. El concepto <i>wu wei</i> suele interpretarse como acción sin imposición o sin forzamiento; no significa simplemente quedarse inmóvil ante cualquier problema.</p><p>Estas tradiciones no son idénticas ni fueron sistemas completamente uniformes. Sus textos tuvieron interpretaciones diferentes a lo largo del tiempo y convivieron con otras corrientes. Compararlas exige identificar la pregunta que responden: cómo actuar, cómo aprender o cómo gobernar, evitando convertirlas en caricaturas.</p>",
+      "key": "El confucianismo resalta la formación moral y las relaciones sociales; el taoísmo cuestiona el exceso de imposición.",
       "examples": [
         {
           "title": "Analiza el caso",
-          "question": "Una tumba contiene alimentos representados, objetos y textos funerarios. ¿Qué puedes investigar sin afirmar que todos los egipcios vivían igual?",
+          "question": "Un consejero pide al gobernante educar con el ejemplo; otro recomienda reducir intervenciones forzadas. ¿Cómo compararlos?",
           "steps": [
-            "Relaciona el conjunto con prácticas y creencias funerarias.",
-            "Compara riqueza, periodo y posición social del entierro.",
-            "Evita generalizar una tumba privilegiada a toda la población."
+            "La primera propuesta se aproxima al énfasis confuciano en la virtud.",
+            "La segunda recuerda reflexiones taoístas sobre actuar sin forzar.",
+            "La comparación identifica énfasis, no demuestra que las tradiciones respondieran igual a todos los problemas."
           ]
         }
       ],
       "quiz": [
         {
-          "prompt": "La función de los escribas incluía…",
-          "solution": "La formación en escritura era importante para administrar y comunicar.",
-          "level": "Básico",
-          "id": "u5a",
+          "prompt": "La educación moral y el ejemplo del gobernante son centrales en el…",
           "options": [
-            "elaborar registros administrativos y otros textos",
-            "solo combatir en todas las guerras",
-            "eliminar cualquier tributo",
-            "impedir toda actividad religiosa",
-            "fabricar exclusivamente armas"
+            "culto romano a Marte",
+            "código de Hammurabi exclusivamente",
+            "sistema feudal europeo",
+            "confucianismo",
+            "urbanismo del Indo"
           ],
-          "answer": 0
+          "answer": 3,
+          "solution": "Confucio atribuyó importancia al aprendizaje, la virtud y la responsabilidad en las relaciones sociales.",
+          "level": "Aplicación",
+          "id": "u5a"
         },
         {
-          "prompt": "La momificación se relaciona principalmente con…",
-          "solution": "La conservación del cuerpo formó parte de ciertos tratamientos funerarios.",
-          "level": "Básico",
-          "id": "u5b",
+          "prompt": "¿Cuál es una interpretación adecuada de wu wei?",
           "options": [
-            "el sistema democrático ateniense",
-            "la fabricación de monedas",
-            "el alfabeto romano",
-            "prácticas funerarias y creencias sobre la vida después de la muerte",
-            "la agricultura mecanizada"
+            "No actuar nunca bajo ninguna circunstancia",
+            "Conquistar mediante guerras continuas",
+            "Prohibir todo aprendizaje",
+            "Construir solo con bronce",
+            "Actuar sin forzar o imponer de manera excesiva"
           ],
-          "answer": 3
+          "answer": 4,
+          "solution": "Wu wei alude a la acción sin forzamiento; traducirlo como inactividad absoluta pierde su sentido filosófico.",
+          "level": "Aplicación",
+          "id": "u5b"
         }
       ]
     },
     {
-      "title": "Comparar para comprender",
-      "subtitle": "Semejanzas, diferencias y legados",
-      "goal": "Compara ambas civilizaciones con criterios comunes y evita generalizaciones.",
-      "body": "<p>Mesopotamia y Egipto combinaron agricultura, ciudades, instituciones políticas, jerarquías y religiones. Sus experiencias fueron distintas. En Mesopotamia se alternaron ciudades-Estado, reinos e imperios; Egipto tuvo prolongadas etapas de integración territorial, aunque también fragmentación.</p><p>La comparación debe usar <strong>los mismos criterios</strong>: ríos, organización política, escritura, edificios y formas de trabajo. No basta con enumerar un monumento de una sociedad y una ley de la otra. También conviene situar cada ejemplo en su periodo para no comparar como simultáneo lo que pertenece a siglos diferentes.</p><div class=\"table-scroll\"><table><thead><tr><th>Criterio</th><th>Mesopotamia</th><th>Egipto</th></tr></thead><tbody><tr><td>Ríos</td><td>Tigris y Éufrates</td><td>Nilo</td></tr><tr><td>Escritura destacada</td><td>Cuneiforme, frecuentemente en arcilla</td><td>Jeroglífica; piedra, papiro y otros soportes</td></tr><tr><td>Poder</td><td>Ciudades-Estado, reinos e imperios</td><td>Estado faraónico con etapas de unidad y fragmentación</td></tr><tr><td>Monumento característico</td><td>Zigurat: complejo religioso</td><td>Pirámide real: función funeraria</td></tr></tbody></table></div><p>Los aportes abarcaron administración, matemáticas, calendarios, astronomía y técnicas constructivas. Se transmitieron y transformaron mediante contactos posteriores. No todo conocimiento surgió de una sola sociedad. Estudiar estos legados exige reconocer tanto innovaciones como intercambios.</p>",
-      "key": "Compara con criterios comunes, ubica las fechas y distingue funciones de los monumentos.",
+      "title": "La unificación Qin y los aportes chinos",
+      "subtitle": "Distinguir unificación política y avances de distintas épocas.",
+      "goal": "Distinguir unificación política y avances de distintas épocas.",
+      "body": "<p>En <b>221 a. C.</b>, el gobernante de Qin unificó varios reinos y asumió el título de primer emperador, Qin Shi Huang. Su gobierno impulsó la centralización administrativa y la estandarización de escrituras, pesos y medidas. Estandarizar la escritura no equivale a imponer el chino mandarín moderno, que pertenece a otra historia lingüística.</p><p>La corte movilizó grandes recursos y trabajo para caminos, defensas y el complejo funerario imperial, conocido por su ejército de terracota. Existían murallas anteriores y hubo grandes ampliaciones posteriores: la Gran Muralla no fue construida completa en un único reinado. La dinastía Qin tuvo corta duración y fue sucedida por la Han.</p><p>La seda, el papel, la brújula, la pólvora y las técnicas de impresión forman parte de una larga historia de aportes chinos. No surgieron todos juntos ni bajo Qin. El desarrollo del papel se asocia especialmente al periodo Han, mientras que otros avances alcanzaron nuevas formas en siglos posteriores. Para explicar su influencia hay que estudiar también la circulación de saberes por redes de intercambio.</p>",
+      "key": "Unificación, estandarización e innovación son procesos distintos y tienen cronologías propias.",
       "examples": [
         {
           "title": "Analiza el caso",
-          "question": "Un estudiante escribe: «Mesopotamia tenía leyes y Egipto tenía pirámides; por eso solo la primera tuvo organización política». ¿Cómo mejorarías su argumento?",
+          "question": "Un cartel atribuye a Qin la pólvora, el papel y toda la Gran Muralla. ¿Cómo revisarlo?",
           "steps": [
-            "Está comparando aspectos distintos y obteniendo una conclusión que no se sigue de ellos.",
-            "Ambas sociedades tuvieron autoridades, administración y normas.",
-            "Usa criterios comunes y explica diferencias concretas de organización y periodo."
+            "Mantén la unificación de 221 a. C. y las medidas de estandarización.",
+            "Aclara que las murallas tuvieron varias fases antes y después de Qin.",
+            "Distribuye los inventos según sus épocas; no los atribuyas a un solo gobernante."
           ]
         }
       ],
       "quiz": [
         {
-          "prompt": "¿Qué comparación de funciones es correcta?",
-          "solution": "Las funciones principales permiten distinguir monumentos que no son equivalentes.",
-          "level": "Básico",
-          "id": "u6a",
+          "prompt": "La unificación imperial Qin se sitúa en…",
           "options": [
-            "Zigurat: fábrica moderna; pirámide: mercado",
-            "Zigurat: religioso; pirámide real egipcia: funeraria",
-            "Ambos eran siempre archivos exclusivamente",
-            "Pirámide: teatro; zigurat: puerto",
-            "Ambos fueron hospitales modernos"
+            "221 a. C.",
+            "1789 d. C.",
+            "476 d. C.",
+            "1492 d. C.",
+            "1917 d. C."
           ],
-          "answer": 1
+          "answer": 0,
+          "solution": "En 221 a. C., Qin Shi Huang culminó la conquista de los reinos rivales y encabezó un imperio unificado.",
+          "level": "Aplicación",
+          "id": "u6a"
         },
         {
-          "prompt": "Una comparación histórica bien construida requiere…",
-          "solution": "Comparar exige dimensiones equivalentes y contexto temporal.",
-          "level": "Básico",
-          "id": "u6b",
+          "prompt": "¿Qué afirmación sobre los aportes chinos es correcta?",
           "options": [
-            "comparar rasgos sin relación",
-            "suponer que todo ocurrió a la vez",
-            "elegir siempre una sociedad superior",
-            "ignorar las fuentes",
-            "criterios comunes y atención a los periodos"
+            "Todos fueron inventados por Qin",
+            "Se desarrollaron en distintas épocas y circularon mediante intercambios",
+            "Aparecieron en un mismo año",
+            "No tuvieron usos prácticos",
+            "La pólvora precedió siempre a la agricultura"
           ],
-          "answer": 4
+          "answer": 1,
+          "solution": "Los avances tienen cronologías diferentes; su influencia dependió también de transmisión y adaptación.",
+          "level": "Aplicación",
+          "id": "u6b"
         }
       ]
     }
   ],
   "practice": [
     {
-      "prompt": "Una tablilla registra raciones de cebada. ¿Qué función documenta directamente?",
-      "solution": "El contenido contable permite estudiar distribución y administración.",
-      "level": "Básico",
-      "id": "p1",
+      "prompt": "¿Qué comparación geográfica es correcta?",
       "options": [
-        "Elección por sufragio universal",
-        "Una ceremonia egipcia concreta",
-        "Administración de recursos",
-        "Un alfabeto latino",
-        "Producción industrial"
+        "Todos estos ríos están en Egipto",
+        "El Indo desemboca en el Nilo",
+        "Indo y Ganges se relacionan con el subcontinente indio; Huang He y Yangtsé, con China",
+        "El Huang He está en Roma",
+        "El Ganges está en Mesopotamia"
       ],
-      "answer": 2
+      "answer": 2,
+      "solution": "Ubicar las cuencas permite distinguir espacios y evitar trasladar procesos de una civilización a otra.",
+      "level": "Aplicación",
+      "id": "p1"
     },
     {
-      "prompt": "Un monarca gobierna varias ciudades y pueblos tributarios. La organización se aproxima a…",
-      "solution": "El dominio de múltiples territorios y poblaciones caracteriza una organización imperial.",
-      "level": "Intermedio",
-      "id": "p2",
+      "prompt": "¿Qué diferencia los edictos de Ashoka de los signos del Indo para una investigación?",
       "options": [
-        "un imperio territorial",
-        "una familia sin autoridad",
-        "una aldea aislada sin vínculos",
-        "un taller artesanal únicamente",
-        "una asociación sin territorio"
+        "Ninguno tiene soporte material",
+        "Ambos fueron escritos por Qin",
+        "Los signos del Indo narran con certeza la vida de Ashoka",
+        "Los primeros pueden leerse; los segundos carecen de un desciframiento aceptado",
+        "Los edictos son fósiles humanos"
       ],
-      "answer": 0
+      "answer": 3,
+      "solution": "El acceso al contenido escrito es diferente. Esto condiciona las preguntas que cada fuente puede responder.",
+      "level": "Aplicación",
+      "id": "p2"
     },
     {
-      "prompt": "¿Por qué es incorrecto presentar las leyes de Hammurabi como igualdad jurídica moderna?",
-      "solution": "El orden jurídico reflejaba jerarquías de su contexto.",
-      "level": "Intermedio",
-      "id": "p3",
+      "prompt": "Un estudiante dice que Qin impuso el mandarín moderno. La corrección adecuada es…",
       "options": [
-        "Porque no estaban escritas",
-        "Porque proceden de Roma",
-        "Porque carecían de cualquier autoridad",
-        "Porque las sanciones dependían también de la condición social",
-        "Porque solo regulaban astronomía"
+        "Qin gobernó la India",
+        "Qin eliminó toda escritura",
+        "El mandarín moderno surgió en Roma",
+        "No hubo medidas de unificación",
+        "Qin impulsó la estandarización de la escritura, no del mandarín moderno"
       ],
-      "answer": 3
+      "answer": 4,
+      "solution": "La estandarización de formas escritas no equivale a la imposición de una lengua moderna.",
+      "level": "Aplicación",
+      "id": "p3"
     },
     {
-      "prompt": "Si navegas desde el valle sur del Nilo hacia el delta, te diriges…",
-      "solution": "El río fluye de sur a norte; alto y bajo se refieren a su curso.",
-      "level": "Básico",
-      "id": "p4",
+      "prompt": "¿Qué compara adecuadamente budismo y confucianismo?",
       "options": [
-        "del Bajo al Alto, hacia el norte",
-        "del Alto al Bajo Egipto, hacia el norte",
-        "del Alto al Bajo, hacia el sur",
-        "del Éufrates al Tigris",
-        "de Egipto a China directamente"
+        "El primero aborda la liberación del sufrimiento; el segundo destaca la formación moral y las relaciones sociales",
+        "Ambos fueron fundados por Ashoka",
+        "Ambos son sistemas de drenaje",
+        "Ninguno reflexiona sobre la conducta",
+        "Ambos surgieron durante la Revolución francesa"
       ],
-      "answer": 1
+      "answer": 0,
+      "solution": "La comparación debe identificar los problemas y énfasis de cada tradición sin confundir sus contextos.",
+      "level": "Aplicación",
+      "id": "p4"
     },
     {
-      "prompt": "Un zigurat y una pirámide son grandes construcciones. ¿Qué falta para compararlos históricamente?",
-      "solution": "El tamaño por sí solo no explica significado ni función.",
-      "level": "Avanzado",
-      "id": "p5",
+      "prompt": "¿Qué criterio permite ordenar los aportes de una civilización?",
       "options": [
-        "Declarar que eran idénticos",
-        "Suponer la misma fecha",
-        "Ignorar sus materiales",
-        "Reducir todo a su altura",
-        "Analizar función, contexto y organización del trabajo"
+        "Atribuirlos todos al primer gobernante",
+        "Situarlos en periodos y estudiar sus transformaciones",
+        "Suponer que surgieron juntos",
+        "Ignorar las fuentes materiales",
+        "Usar solo leyendas como cronología exacta"
       ],
-      "answer": 4
+      "answer": 1,
+      "solution": "Las innovaciones deben situarse mediante evidencias; una lista de inventos no representa una única etapa histórica.",
+      "level": "Aplicación",
+      "id": "p5"
     }
   ],
   "exam": [
     {
-      "prompt": "La civilización egipcia se desarrolló principalmente alrededor del…",
-      "solution": "El valle y el delta del Nilo articularon el territorio egipcio.",
-      "level": "Básico",
-      "id": "e1",
+      "prompt": "Harappa y Mohenjo-daro pertenecen a la civilización del…",
       "options": [
-        "Tigris",
-        "Éufrates",
+        "Indo",
         "Nilo",
-        "Ganges",
+        "Tíber",
+        "Éufrates",
         "Danubio"
       ],
-      "answer": 2
+      "answer": 0,
+      "solution": "Son centros urbanos del valle del Indo, conocidos por sus restos arqueológicos.",
+      "level": "Aplicación",
+      "id": "e1"
     },
     {
-      "prompt": "Una ciudad-Estado mesopotámica comprendía…",
-      "solution": "La ciudad y su entorno agrícola formaban una unidad política.",
-      "level": "Básico",
-      "id": "e2",
+      "prompt": "En el esquema de los varnas, los brahmanes se asocian al…",
       "options": [
-        "un núcleo urbano y su territorio bajo una autoridad política",
-        "todo el planeta",
-        "solo un edificio religioso",
-        "una fábrica moderna",
-        "únicamente un ejército sin habitantes"
+        "gobierno romano",
+        "comercio fenicio exclusivamente",
+        "ejército persa",
+        "sacerdocio y los rituales",
+        "cultivo del Nilo"
       ],
-      "answer": 0
+      "answer": 3,
+      "solution": "Los brahmanes ocupaban la posición vinculada al saber ritual y sacerdotal en ese orden normativo.",
+      "level": "Aplicación",
+      "id": "e2"
     },
     {
-      "prompt": "La cuneiforme se escribió frecuentemente en…",
-      "solution": "La arcilla fue un soporte común para impresiones con un instrumento.",
-      "level": "Básico",
-      "id": "e3",
+      "prompt": "Ashoka se relaciona con…",
       "options": [
-        "papel impreso industrial",
-        "pantallas digitales",
-        "rollos de plástico",
-        "tablillas de arcilla",
-        "únicamente láminas de acero"
-      ],
-      "answer": 3
-    },
-    {
-      "prompt": "Sargón se relaciona con…",
-      "solution": "Sargón de Acad extendió su dominio en el tercer milenio a. C.",
-      "level": "Básico",
-      "id": "e4",
-      "options": [
-        "la Revolución francesa",
-        "Acad y la expansión de un poder territorial",
         "la fundación de Roma",
-        "la democracia de Atenas",
-        "la llegada de Colón a América"
+        "las pirámides de Guiza",
+        "el Imperio carolingio",
+        "la conquista de América",
+        "el Imperio maurya y el patrocinio del budismo"
       ],
-      "answer": 1
+      "answer": 4,
+      "solution": "Ashoka fue un soberano maurya del siglo III a. C. y favoreció la difusión budista.",
+      "level": "Aplicación",
+      "id": "e3"
     },
     {
-      "prompt": "¿Qué afirmación sobre Hammurabi es correcta?",
-      "solution": "Las sanciones y situaciones reguladas permiten estudiar jerarquías sociales.",
-      "level": "Básico",
-      "id": "e5",
+      "prompt": "El relato de Pangu debe estudiarse como…",
       "options": [
-        "Fue el primer ser humano en crear cualquier ley",
-        "Estableció sufragio universal",
-        "Gobernó el Egipto del Reino Nuevo",
-        "Escribió exclusivamente sobre geometría",
-        "Sus disposiciones reflejan diferencias de condición social"
+        "una datación por radiocarbono",
+        "una prueba fósil",
+        "un mito de origen y una expresión cultural",
+        "un registro industrial moderno",
+        "un mapa político exacto"
       ],
-      "answer": 4
+      "answer": 2,
+      "solution": "Los mitos son fuentes para estudiar ideas y creencias, no evidencia científica directa del origen humano.",
+      "level": "Aplicación",
+      "id": "e4"
     },
     {
-      "prompt": "Alto Egipto corresponde principalmente a…",
-      "solution": "Alto designa la región aguas arriba, al sur.",
-      "level": "Básico",
-      "id": "e6",
+      "prompt": "La educación moral y el ejemplo del gobernante son centrales en el…",
       "options": [
-        "el delta del norte",
-        "Mesopotamia septentrional",
-        "el valle meridional del Nilo",
-        "la costa del mar Negro",
-        "el valle del Indo"
+        "culto romano a Marte",
+        "código de Hammurabi exclusivamente",
+        "sistema feudal europeo",
+        "confucianismo",
+        "urbanismo del Indo"
       ],
-      "answer": 2
+      "answer": 3,
+      "solution": "Confucio atribuyó importancia al aprendizaje, la virtud y la responsabilidad en las relaciones sociales.",
+      "level": "Aplicación",
+      "id": "e5"
     },
     {
-      "prompt": "La unificación egipcia se sitúa convencionalmente hacia…",
-      "solution": "Se asocia con el proceso de formación estatal de comienzos del periodo dinástico.",
-      "level": "Básico",
-      "id": "e7",
+      "prompt": "¿Qué comparación geográfica es correcta?",
       "options": [
-        "3100 a. C.",
-        "3100 d. C.",
-        "1789 d. C.",
-        "476 d. C.",
-        "1492 d. C."
+        "Todos estos ríos están en Egipto",
+        "El Indo desemboca en el Nilo",
+        "Indo y Ganges se relacionan con el subcontinente indio; Huang He y Yangtsé, con China",
+        "El Huang He está en Roma",
+        "El Ganges está en Mesopotamia"
       ],
-      "answer": 0
+      "answer": 2,
+      "solution": "Ubicar las cuencas permite distinguir espacios y evitar trasladar procesos de una civilización a otra.",
+      "level": "Aplicación",
+      "id": "e6"
     },
     {
-      "prompt": "La autoridad faraónica combinó principalmente dimensiones…",
-      "solution": "El faraón ocupaba un papel central en el gobierno y en el orden religioso.",
-      "level": "Básico",
-      "id": "e8",
+      "prompt": "¿Qué diferencia los edictos de Ashoka de los signos del Indo para una investigación?",
       "options": [
-        "solo deportivas",
-        "exclusivamente comerciales sin gobierno",
-        "democráticas modernas",
-        "políticas y religiosas",
-        "industriales y digitales"
+        "Ninguno tiene soporte material",
+        "Ambos fueron escritos por Qin",
+        "Los signos del Indo narran con certeza la vida de Ashoka",
+        "Los primeros pueden leerse; los segundos carecen de un desciframiento aceptado",
+        "Los edictos son fósiles humanos"
       ],
-      "answer": 3
+      "answer": 3,
+      "solution": "El acceso al contenido escrito es diferente. Esto condiciona las preguntas que cada fuente puede responder.",
+      "level": "Aplicación",
+      "id": "e7"
     },
     {
-      "prompt": "¿Qué afirmación sobre los jeroglíficos es adecuada?",
-      "solution": "Podían representar sonidos, palabras y funciones complementarias.",
-      "level": "Básico",
-      "id": "e9",
+      "prompt": "Un estudiante dice que Qin impuso el mandarín moderno. La corrección adecuada es…",
       "options": [
-        "Fueron únicamente decoración sin lenguaje",
-        "Constituyeron un sistema de escritura con signos de distintos valores",
-        "Eran letras latinas modernas",
-        "Solo representaban números decimales actuales",
-        "Se imprimían con tipos móviles"
+        "Qin gobernó la India",
+        "Qin eliminó toda escritura",
+        "El mandarín moderno surgió en Roma",
+        "No hubo medidas de unificación",
+        "Qin impulsó la estandarización de la escritura, no del mandarín moderno"
       ],
-      "answer": 1
+      "answer": 4,
+      "solution": "La estandarización de formas escritas no equivale a la imposición de una lengua moderna.",
+      "level": "Aplicación",
+      "id": "e8"
     },
     {
-      "prompt": "¿Qué rasgo compartieron Mesopotamia y Egipto?",
-      "solution": "Compartieron rasgos de organización sin ser sociedades idénticas.",
-      "level": "Básico",
-      "id": "e10",
+      "prompt": "¿Qué compara adecuadamente budismo y confucianismo?",
       "options": [
-        "Una misma lengua y único gobierno permanente",
-        "Ausencia completa de escritura",
-        "Identidad de todos sus monumentos",
-        "Las mismas dinastías",
-        "Agricultura, jerarquías y administración estatal"
+        "El primero aborda la liberación del sufrimiento; el segundo destaca la formación moral y las relaciones sociales",
+        "Ambos fueron fundados por Ashoka",
+        "Ambos son sistemas de drenaje",
+        "Ninguno reflexiona sobre la conducta",
+        "Ambos surgieron durante la Revolución francesa"
       ],
-      "answer": 4
+      "answer": 0,
+      "solution": "La comparación debe identificar los problemas y énfasis de cada tradición sin confundir sus contextos.",
+      "level": "Aplicación",
+      "id": "e9"
+    },
+    {
+      "prompt": "¿Qué criterio permite ordenar los aportes de una civilización?",
+      "options": [
+        "Atribuirlos todos al primer gobernante",
+        "Situarlos en periodos y estudiar sus transformaciones",
+        "Suponer que surgieron juntos",
+        "Ignorar las fuentes materiales",
+        "Usar solo leyendas como cronología exacta"
+      ],
+      "answer": 1,
+      "solution": "Las innovaciones deben situarse mediante evidencias; una lista de inventos no representa una única etapa histórica.",
+      "level": "Aplicación",
+      "id": "e10"
     }
   ],
   "timeline": [
     [
-      "IV milenio a. C.",
-      "Crecimiento urbano y desarrollo de registros escritos en Mesopotamia."
-    ],
-    [
-      "Hacia 3100 a. C.",
-      "Unificación del territorio egipcio y comienzos del periodo dinástico."
-    ],
-    [
       "III milenio a. C.",
-      "Pirámides del Reino Antiguo; expansión acadia en Mesopotamia."
+      "Ciudades de la civilización del Indo."
     ],
     [
-      "Siglo XVIII a. C.",
-      "Hammurabi en Babilonia."
+      "II milenio a. C.",
+      "Tradiciones védicas; sociedades Shang en China."
     ],
     [
-      "II y I milenios a. C.",
-      "Reorganizaciones egipcias y distintos reinos e imperios mesopotámicos."
+      "I milenio a. C.",
+      "Budismo, confucianismo y tradiciones taoístas."
+    ],
+    [
+      "Siglo III a. C.",
+      "Gobierno de Ashoka en el Imperio maurya."
+    ],
+    [
+      "221 a. C.",
+      "Unificación Qin."
     ]
   ],
-  "resources": "<p class=\"eyebrow\">Repasa y consulta</p><h2>Materiales del capítulo</h2><h3>Vocabulario esencial</h3><dl class=\"glossary\"><dt>Ciudad-Estado</dt><dd>Unidad política formada por una ciudad y su territorio.</dd><dt>Imperio</dt><dd>Dominio político sobre múltiples territorios y poblaciones.</dd><dt>Cuneiforme</dt><dd>Sistema de escritura asociado con signos en forma de cuña.</dd><dt>Faraón</dt><dd>Monarca del Egipto antiguo, con funciones políticas y religiosas.</dd><dt>Tributo</dt><dd>Recursos o trabajo exigidos por una autoridad.</dd><dt>Zigurat</dt><dd>Construcción escalonada vinculada a un complejo religioso mesopotámico.</dd></dl><h3>Lecturas y evidencias</h3><ul class=\"resource-list\"><li><a href=\"https://www.metmuseum.org/essays/the-origins-of-writing\" target=\"_blank\" rel=\"noopener noreferrer\">The Met · Los orígenes de la escritura</a></li><li><a href=\"https://www.britishmuseum.org/learn/schools/ages-7-11/ancient-egypt\" target=\"_blank\" rel=\"noopener noreferrer\">British Museum · Recursos sobre el antiguo Egipto</a></li><li><a href=\"https://www.metmuseum.org/met-publications/egyptian-art-in-the-age-of-the-pyramids\" target=\"_blank\" rel=\"noopener noreferrer\">The Met · El arte egipcio en la época de las pirámides</a></li></ul><p class=\"resource-note\">Las lecturas pueden estar en inglés. Los casos y las preguntas son actividades didácticas originales; los casos hipotéticos no son transcripciones de documentos antiguos. Las fechas prehistóricas y los límites de las etapas son aproximados y dependen de la región.</p>"
+  "resources": "<p class=\"resource-note\"><b>Temario de referencia:</b> <cite>Historia Universal</cite>, Lumbreras Editores, capítulo 6, páginas impresas 48–55. Las explicaciones y actividades de esta web son una adaptación didáctica original.</p><h2>Materiales del capítulo</h2><h3>Vocabulario para repasar</h3><dl class=\"glossary\"><dt>Varna</dt><dd>Categoría de un esquema tradicional de jerarquía social de la India.</dd><dt>Nirvana</dt><dd>Liberación del sufrimiento y del ciclo de renacimientos en las tradiciones budistas.</dd><dt>Dao</dt><dd>Concepto de camino u orden, central en las tradiciones taoístas.</dd><dt>Estandarización</dt><dd>Adopción de normas comunes para facilitar administración e intercambios.</dd></dl><h3>Evidencias y patrimonio</h3><ul class=\"resource-list\"><li><a href=\"https://whc.unesco.org/en/list/138/\" target=\"_blank\" rel=\"noopener noreferrer\">UNESCO: restos arqueológicos de Mohenjo-daro</a></li><li><a href=\"https://whc.unesco.org/en/list/441/\" target=\"_blank\" rel=\"noopener noreferrer\">UNESCO: mausoleo del primer emperador Qin</a></li><li><a href=\"https://whc.unesco.org/en/list/438/\" target=\"_blank\" rel=\"noopener noreferrer\">UNESCO: la Gran Muralla y sus distintas etapas</a></li></ul>",
+  "progressId": "historia-universal-pdf-06",
+  "legacySources": []
 };
