@@ -125,7 +125,7 @@ async function signedIn(u){
   try{localStorage.setItem('academia-sm-state',JSON.stringify({catalogVersion:2,activeCourseId:16,activeTopicIndex:0,activeTopicName:CONTENT.title}));}catch{}
   if(cloudReady)try{await db.collection('users').doc(u.uid).collection('progress').doc('navigation').set({...navigation,updatedAt:firebase.firestore.FieldValue.serverTimestamp()},{merge:true});}catch(error){console.error('Navigation save:',error);}
 }
-if(!window.firebase){root.innerHTML='<main class="access card"><h1>No se pudo cargar la sesión</h1><p>Revisa tu conexión y vuelve a abrir este capítulo.</p><a class="button" href="fisica-capitulo-01.html?v=20260917-peru7">Reintentar</a></main>';}
+if(!window.firebase){root.innerHTML='<main class="access card"><h1>No se pudo cargar la sesión</h1><p>Revisa tu conexión y vuelve a abrir este capítulo.</p><a class="button" href="fisica-capitulo-01.html?v=20260918-language1">Reintentar</a></main>';}
 else{firebase.initializeApp(CONFIG);db=firebase.firestore();firebase.auth().onAuthStateChanged(signedIn);}
 
 

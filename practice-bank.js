@@ -2453,3 +2453,879 @@ Object.assign(window.CHAPTER_PRACTICES,{
     ]
   }
 });
+
+Object.assign(window.CHAPTER_PRACTICES, {
+  "lenguaje-capitulo-01": {
+    "title": "La comunicación",
+    "problems": [
+      {
+        "id": "p01",
+        "topic": "Concepto de comunicación",
+        "prompt": "¿Qué definición describe mejor la comunicación humana?",
+        "options": [
+          "La copia exacta de información desde una mente hacia otra.",
+          "Un proceso situado en el que se producen e interpretan significados.",
+          "La transmisión exclusiva de palabras mediante la voz.",
+          "La reacción automática de un organismo ante cualquier estímulo.",
+          "El envío de datos que siempre genera la misma interpretación."
+        ],
+        "answer": 1,
+        "solution": "La comunicación humana construye e interpreta significados en una situación concreta; no garantiza una copia exacta ni se limita a la voz."
+      },
+      {
+        "id": "p02",
+        "topic": "Elementos de la comunicación",
+        "prompt": "Lucía avisa por audio: «La reunión será en la biblioteca». ¿Cuál es el mensaje?",
+        "options": [
+          "Lucía, porque inicia el intercambio.",
+          "La aplicación con la que envía el audio.",
+          "La reunión real a la que se refiere.",
+          "La información de que la reunión será en la biblioteca.",
+          "El español compartido por los participantes."
+        ],
+        "answer": 3,
+        "solution": "El mensaje es el contenido comunicado: que la reunión será en la biblioteca. Lucía es la emisora y el español es parte del código."
+      },
+      {
+        "id": "p03",
+        "topic": "Código y canal",
+        "prompt": "En una conversación presencial en español, ¿qué relación entre código y canal es correcta?",
+        "options": [
+          "El español es el canal y el aire es el código.",
+          "La voz es el referente y el español es el soporte.",
+          "El español es el código y las ondas sonoras viajan por el aire como canal físico.",
+          "El aire es el mensaje y las palabras constituyen el ruido.",
+          "Código y canal son dos nombres para el mismo elemento."
+        ],
+        "answer": 2,
+        "solution": "El código es el sistema de signos y reglas compartido, mientras que el canal físico permite que la señal llegue a quien la recibe."
+      },
+      {
+        "id": "p04",
+        "topic": "Modalidades lingüísticas",
+        "prompt": "¿Cómo debe clasificarse un texto escrito en braille?",
+        "options": [
+          "Como comunicación no lingüística, porque no emplea sonidos.",
+          "Como comunicación lingüística escrita y percibida mediante el tacto.",
+          "Como señal animal, porque depende de una respuesta sensorial.",
+          "Como comunicación oral, porque representa directamente la voz.",
+          "Como ruido táctil sin un código convencional."
+        ],
+        "answer": 1,
+        "solution": "El braille representa una lengua mediante convenciones gráficas en relieve; por eso es una modalidad lingüística escrita de acceso táctil."
+      },
+      {
+        "id": "p05",
+        "topic": "Lenguas de señas",
+        "prompt": "¿Cuál afirmación sobre las lenguas de señas es correcta?",
+        "options": [
+          "Son repertorios universales de gestos idénticos en todos los países.",
+          "Solo acompañan a las lenguas orales y carecen de gramática propia.",
+          "Son códigos improvisados que no permiten hablar de ideas abstractas.",
+          "Son lenguas naturales completas, con léxico y organización gramatical.",
+          "Son formas no humanas de comunicación visual."
+        ],
+        "answer": 3,
+        "solution": "Las lenguas de señas son lenguas naturales plenas. Poseen reglas, vocabulario y recursos para expresar contenidos concretos y abstractos."
+      },
+      {
+        "id": "p06",
+        "topic": "Ruido comunicativo",
+        "prompt": "Durante una videollamada, la imagen se congela y varias palabras se oyen entrecortadas. ¿Qué elemento describe mejor el problema?",
+        "options": [
+          "La retroalimentación, porque confirma que todo fue entendido.",
+          "El referente, porque cambia el tema de la conversación.",
+          "El ruido, porque una interferencia dificulta recibir la señal.",
+          "El código, porque deja de existir la lengua compartida.",
+          "El emisor, porque necesariamente formuló mal el mensaje."
+        ],
+        "answer": 2,
+        "solution": "Los cortes funcionan como ruido técnico: interfieren con la señal y dificultan la comprensión, aunque el código y el tema sigan siendo los mismos."
+      },
+      {
+        "id": "p07",
+        "topic": "Retroalimentación",
+        "prompt": "Una estudiante reformula su explicación después de que un compañero dice «no entendí el último paso». Esa respuesta funciona como:",
+        "options": [
+          "retroalimentación, porque permite ajustar el intercambio.",
+          "referente, porque reemplaza aquello de lo que se habla.",
+          "canal, porque transporta físicamente todas las señales.",
+          "código, porque crea una lengua nueva para la conversación.",
+          "ruido, porque toda pregunta impide la comunicación."
+        ],
+        "answer": 0,
+        "solution": "La respuesta del compañero informa cómo fue interpretado el mensaje y permite que la emisora lo aclare; por ello constituye retroalimentación."
+      },
+      {
+        "id": "p08",
+        "topic": "Participantes",
+        "prompt": "¿Qué ejemplo corresponde principalmente a comunicación intrapersonal?",
+        "options": [
+          "Dos amigas coordinan una tarea por teléfono.",
+          "Una locutora presenta noticias a una audiencia amplia.",
+          "Un docente responde preguntas de su clase.",
+          "Una persona organiza mentalmente los argumentos antes de exponer.",
+          "Un equipo debate una propuesta en una reunión."
+        ],
+        "answer": 3,
+        "solution": "La comunicación intrapersonal ocurre en el procesamiento interno de una misma persona, como ordenar mentalmente ideas antes de expresarlas."
+      },
+      {
+        "id": "p09",
+        "topic": "Comunicación directa y mediada",
+        "prompt": "¿Cuál situación combina comunicación mediada e interactiva?",
+        "options": [
+          "Una videollamada en la que ambas personas responden en tiempo real.",
+          "Una reflexión silenciosa antes de tomar una decisión.",
+          "Un cartel fijo que nadie puede contestar por ese medio.",
+          "Una conversación cara a cara sin dispositivo intermediario.",
+          "Una sirena automática que emite siempre la misma alerta."
+        ],
+        "answer": 0,
+        "solution": "La videollamada requiere mediación tecnológica y permite alternar los papeles de emisor y receptor, de modo que también es interactiva."
+      },
+      {
+        "id": "p10",
+        "topic": "Análisis de una situación",
+        "prompt": "En un museo, una guía explica una vasija antigua a visitantes que conocen español. ¿Cuál asociación es correcta?",
+        "options": [
+          "Referente: la guía; código: la vasija; canal: los visitantes.",
+          "Emisor: los visitantes; mensaje: el aire; contexto: el español.",
+          "Código: el español; referente: la vasija; contexto: la visita al museo.",
+          "Canal: la vasija; referente: el español; mensaje: la guía.",
+          "Mensaje: los visitantes; código: el museo; emisor: el contexto."
+        ],
+        "answer": 2,
+        "solution": "El español es el código compartido, la vasija es aquello a lo que se refiere la explicación y la visita al museo aporta el contexto situacional."
+      }
+    ]
+  },
+  "lenguaje-capitulo-02": {
+    "title": "El lenguaje",
+    "problems": [
+      {
+        "id": "p01",
+        "topic": "Facultad del lenguaje",
+        "prompt": "En lingüística, el lenguaje humano se entiende principalmente como:",
+        "options": [
+          "una lista cerrada de palabras memorizadas.",
+          "la facultad biológica, cognitiva y social que permite adquirir y usar lenguas.",
+          "la capacidad exclusiva de producir sonidos articulados.",
+          "un sistema idéntico en todas las comunidades humanas.",
+          "cualquier reacción automática ante un estímulo."
+        ],
+        "answer": 1,
+        "solution": "El lenguaje es una capacidad humana sustentada biológicamente y desarrollada en interacción social, que se concreta en distintas lenguas."
+      },
+      {
+        "id": "p02",
+        "topic": "Diversidad de lenguas",
+        "prompt": "¿Qué hecho demuestra que el lenguaje humano no depende exclusivamente de la voz?",
+        "options": [
+          "Las lenguas de señas organizan significados con recursos visuales y espaciales.",
+          "Todas las lenguas de señas traducen palabra por palabra el español.",
+          "Los gestos espontáneos son iguales a una lengua natural completa.",
+          "La escritura apareció antes que cualquier lengua hablada o signada.",
+          "Solo las señales acústicas pueden combinar unidades."
+        ],
+        "answer": 0,
+        "solution": "Las lenguas de señas muestran que una lengua natural puede emplear la modalidad visual-gestual y poseer una gramática plenamente desarrollada."
+      },
+      {
+        "id": "p03",
+        "topic": "Convencionalidad",
+        "prompt": "Que distintas lenguas nombren de modo diferente un mismo objeto ejemplifica principalmente la:",
+        "options": [
+          "inmutabilidad absoluta de los signos.",
+          "dependencia natural entre cada sonido y su significado.",
+          "convencionalidad de las asociaciones lingüísticas.",
+          "imposibilidad de traducir entre lenguas.",
+          "ausencia de reglas compartidas."
+        ],
+        "answer": 2,
+        "solution": "La relación entre una forma lingüística y su significado se establece por convenciones compartidas en una comunidad, no por un vínculo natural obligatorio."
+      },
+      {
+        "id": "p04",
+        "topic": "Productividad",
+        "prompt": "Una niña comprende una oración que nunca había escuchado antes. ¿Qué propiedad del lenguaje destaca?",
+        "options": [
+          "La productividad, porque reglas finitas permiten crear e interpretar expresiones nuevas.",
+          "La imitación, porque toda oración debe repetirse literalmente.",
+          "La rigidez, porque el repertorio posible permanece cerrado.",
+          "La iconicidad, porque cada palabra se parece a su referente.",
+          "La falta de estructura, porque cualquier orden produce el mismo sentido."
+        ],
+        "answer": 0,
+        "solution": "La productividad permite generar y comprender una cantidad abierta de enunciados mediante la combinación sistemática de unidades y reglas."
+      },
+      {
+        "id": "p05",
+        "topic": "Doble articulación",
+        "prompt": "¿Qué opción ilustra la doble articulación del lenguaje?",
+        "options": [
+          "Cada sonido aislado comunica siempre una idea completa.",
+          "Las unidades con significado se forman combinando unidades menores que pueden distinguir significados.",
+          "Todos los mensajes humanos deben incluir simultáneamente voz y escritura.",
+          "Una misma oración solo puede analizarse de una manera.",
+          "Las palabras carecen de partes y no admiten combinaciones."
+        ],
+        "answer": 1,
+        "solution": "La doble articulación relaciona unidades significativas, como morfemas, con unidades distintivas menores, como fonemas, que se combinan sistemáticamente."
+      },
+      {
+        "id": "p06",
+        "topic": "Desplazamiento",
+        "prompt": "Hablar sobre una civilización desaparecida o planear el próximo año manifiesta la propiedad de:",
+        "options": [
+          "retroalimentación.",
+          "canalización vocal.",
+          "desplazamiento.",
+          "imitación refleja.",
+          "sinonimia."
+        ],
+        "answer": 2,
+        "solution": "El desplazamiento permite referirse a entidades, tiempos y lugares que no están presentes en la situación inmediata de comunicación."
+      },
+      {
+        "id": "p07",
+        "topic": "Adquisición del lenguaje",
+        "prompt": "¿Cuál explicación integra mejor la adquisición de una lengua?",
+        "options": [
+          "Depende solo de memorizar un diccionario durante la infancia.",
+          "Es completamente innata: el entorno lingüístico no cumple ninguna función.",
+          "Es únicamente cultural y no intervienen capacidades biológicas humanas.",
+          "Articula predisposiciones biológicas con exposición e interacción social.",
+          "Ocurre de igual manera aunque una persona nunca tenga acceso a una lengua."
+        ],
+        "answer": 3,
+        "solution": "La capacidad humana tiene bases biológicas, pero adquirir una lengua concreta requiere acceso a datos lingüísticos e interacción con otras personas."
+      },
+      {
+        "id": "p08",
+        "topic": "Función referencial",
+        "prompt": "¿En cuál enunciado predomina la función referencial?",
+        "options": [
+          "«La Tierra tarda aproximadamente un año en orbitar el Sol». ",
+          "«¡Qué alegría volver a verte!». ",
+          "«Por favor, cierra la ventana». ",
+          "«¿Aló?, ¿me escuchas?». ",
+          "«La palabra árbol es un sustantivo». "
+        ],
+        "answer": 0,
+        "solution": "Predomina la función referencial porque el enunciado informa sobre un hecho. Las demás opciones destacan emoción, apelación, contacto o metalenguaje."
+      },
+      {
+        "id": "p09",
+        "topic": "Función metalingüística",
+        "prompt": "¿En qué caso predomina la función metalingüística?",
+        "options": [
+          "«Guarda silencio durante el examen». ",
+          "«Tus ojos son dos luceros». ",
+          "«¿Qué significa la palabra “evidencia”?». ",
+          "«Me preocupa el resultado». ",
+          "«Buenos días, ¿sigues en línea?». "
+        ],
+        "answer": 2,
+        "solution": "La función metalingüística aparece cuando se usa el lenguaje para preguntar, explicar o reflexionar acerca del propio código lingüístico."
+      },
+      {
+        "id": "p10",
+        "topic": "Funciones concurrentes",
+        "prompt": "En «¿Me oyes? Por favor, acércate», ¿cuál análisis es más preciso?",
+        "options": [
+          "Solo hay función poética porque el mensaje tiene dos partes.",
+          "Las funciones no pueden coexistir dentro de un mismo enunciado.",
+          "Aparecen funciones fática y apelativa, con predominio según la intención de cada parte.",
+          "Predomina únicamente la función referencial porque describe un hecho científico.",
+          "Es metalingüístico porque define una palabra."
+        ],
+        "answer": 2,
+        "solution": "«¿Me oyes?» comprueba el contacto y «acércate» busca influir en el receptor. Varias funciones pueden concurrir en un mismo intercambio."
+      }
+    ]
+  },
+  "lenguaje-capitulo-03": {
+    "title": "Planos del lenguaje",
+    "problems": [
+      {
+        "id": "p01",
+        "topic": "Lengua",
+        "prompt": "En la distinción de Saussure, la lengua es:",
+        "options": [
+          "cada pronunciación individual producida en un momento concreto.",
+          "el sistema social compartido de signos y reglas que posibilita los usos.",
+          "la lista de errores que una comunidad debe evitar.",
+          "una capacidad biológica idéntica a cualquier idioma particular.",
+          "solo el registro formal empleado en textos académicos."
+        ],
+        "answer": 1,
+        "solution": "La lengua es el sistema compartido por una comunidad; ofrece convenciones y relaciones que hacen posibles los actos concretos de habla."
+      },
+      {
+        "id": "p02",
+        "topic": "Habla",
+        "prompt": "¿Cuál ejemplo corresponde al habla en el sentido saussureano?",
+        "options": [
+          "El inventario abstracto de fonemas del español.",
+          "Las reglas compartidas para formar el plural.",
+          "La oración concreta que una estudiante pronuncia durante su exposición.",
+          "La totalidad del sistema lingüístico de una comunidad.",
+          "La facultad humana general de adquirir lenguas."
+        ],
+        "answer": 2,
+        "solution": "El habla es la realización concreta e individual del sistema en una situación determinada, como un enunciado efectivamente pronunciado."
+      },
+      {
+        "id": "p03",
+        "topic": "Relación lengua-habla",
+        "prompt": "¿Cómo se relacionan lengua y habla?",
+        "options": [
+          "Son planos independientes que nunca se influyen.",
+          "La lengua existe solo en diccionarios y el habla carece de reglas.",
+          "El habla elimina el sistema cada vez que introduce una variación.",
+          "El sistema posibilita los usos concretos y estos lo realizan y pueden contribuir a sus cambios.",
+          "Son sinónimos exactos de escritura y pronunciación."
+        ],
+        "answer": 3,
+        "solution": "Los dos planos son interdependientes: se usa un sistema compartido al hablar, y los usos sostenidos de la comunidad pueden favorecer cambios en ese sistema."
+      },
+      {
+        "id": "p04",
+        "topic": "Variación diatópica",
+        "prompt": "El uso habitual de palabras distintas para un mismo alimento según la región es un caso de variación:",
+        "options": [
+          "diatópica o geográfica.",
+          "diafásica o de registro.",
+          "diacrónica o histórica.",
+          "exclusivamente idiolectal.",
+          "metalingüística."
+        ],
+        "answer": 0,
+        "solution": "La variación diatópica comprende diferencias asociadas con áreas geográficas, como preferencias regionales de vocabulario o pronunciación."
+      },
+      {
+        "id": "p05",
+        "topic": "Variación diastrática",
+        "prompt": "¿Qué factor se relaciona principalmente con la variación diastrática?",
+        "options": [
+          "La época histórica en la que se documenta un texto.",
+          "La ubicación geográfica de dos comunidades alejadas.",
+          "La pertenencia a grupos sociales, educativos o profesionales.",
+          "El cambio de formalidad de una misma persona ante su audiencia.",
+          "Los rasgos únicos de un solo hablante."
+        ],
+        "answer": 2,
+        "solution": "La variación diastrática se vincula con grupos y redes sociales, niveles educativos, profesiones u otras dimensiones de la organización social."
+      },
+      {
+        "id": "p06",
+        "topic": "Variación diafásica",
+        "prompt": "Una joven conversa informalmente con sus amistades y luego emplea un registro formal al exponer. ¿Qué variación muestra?",
+        "options": [
+          "Diatópica, porque necesariamente cambió de región.",
+          "Diastrática, porque pasó a pertenecer a otro grupo social.",
+          "Diacrónica, porque transcurrieron varios siglos.",
+          "Diafásica, porque adapta el registro a la situación comunicativa.",
+          "Fonológica, porque dejó de compartir el español."
+        ],
+        "answer": 3,
+        "solution": "La variación diafásica consiste en adecuar el registro al propósito, la relación entre participantes, el medio y el grado de formalidad."
+      },
+      {
+        "id": "p07",
+        "topic": "Idiolecto",
+        "prompt": "¿Qué describe mejor el idiolecto?",
+        "options": [
+          "La variedad oficial obligatoria de un país.",
+          "El conjunto particular de hábitos lingüísticos de una persona.",
+          "Cualquier registro formal usado ante desconocidos.",
+          "La lengua ancestral de toda una familia lingüística.",
+          "Una diferencia que depende solo del lugar de nacimiento."
+        ],
+        "answer": 1,
+        "solution": "El idiolecto reúne rasgos relativamente característicos del uso individual. No equivale al registro, que una misma persona ajusta según la situación."
+      },
+      {
+        "id": "p08",
+        "topic": "Variación diacrónica",
+        "prompt": "Comparar el vocabulario de documentos del siglo XV con el español actual permite estudiar variación:",
+        "options": [
+          "diafásica.",
+          "diastrática.",
+          "diatópica.",
+          "diacrónica.",
+          "intrapersonal."
+        ],
+        "answer": 3,
+        "solution": "La variación diacrónica examina cómo cambian las lenguas a lo largo del tiempo mediante la comparación de usos de distintos periodos."
+      },
+      {
+        "id": "p09",
+        "topic": "Variedad estándar",
+        "prompt": "¿Cuál afirmación sobre la variedad estándar es adecuada?",
+        "options": [
+          "Es lingüísticamente superior y las demás variedades carecen de reglas.",
+          "Coincide siempre con la manera espontánea de hablar de toda la población.",
+          "Es una variedad codificada para ciertos usos amplios y formales, no una lengua más lógica.",
+          "Elimina por completo la diversidad regional y social.",
+          "Solo puede existir si la ley la declara lengua oficial."
+        ],
+        "answer": 2,
+        "solution": "El estándar se selecciona y codifica para facilitar usos públicos, educativos o administrativos; esa función no vuelve inferiores a las demás variedades."
+      },
+      {
+        "id": "p10",
+        "topic": "Lengua y oficialidad",
+        "prompt": "¿Qué diferencia hay entre que una variedad sea una lengua y que tenga estatus oficial?",
+        "options": [
+          "Ninguna: toda lengua natural es oficial en todos los territorios donde se usa.",
+          "La condición de lengua depende de su sistema y uso social; la oficialidad es un reconocimiento jurídico o político.",
+          "Una lengua sin estatus oficial no posee gramática ni hablantes nativos.",
+          "La oficialidad se determina únicamente por la cantidad de palabras del diccionario.",
+          "Solo las variedades escritas pueden ser lenguas, pero todas son oficiales."
+        ],
+        "answer": 1,
+        "solution": "La existencia lingüística de una lengua no depende de una declaración legal. La oficialidad es un estatus institucional definido para determinados territorios o ámbitos."
+      }
+    ]
+  }
+});
+
+Object.assign(window.CHAPTER_PRACTICES, {
+  "lenguaje-capitulo-04": {
+    "title": "La realidad lingüística del Perú",
+    "problems": [
+      {
+        "id": "p01",
+        "topic": "Diversidad lingüística",
+        "prompt": "Según el registro oficial vigente, ¿cómo se distribuyen las lenguas indígenas u originarias del Perú?",
+        "options": [
+          "48 en total: 4 andinas y 44 amazónicas.",
+          "48 en total: 44 andinas y 4 amazónicas.",
+          "47 en total: 3 andinas y 44 amazónicas.",
+          "50 en total: 5 andinas y 45 amazónicas.",
+          "34 en total: 4 andinas y 30 amazónicas."
+        ],
+        "answer": 0,
+        "solution": "El registro oficial reconoce 48 lenguas indígenas u originarias: cuatro se agrupan como andinas y cuarenta y cuatro como amazónicas."
+      },
+      {
+        "id": "p02",
+        "topic": "Oficialidad",
+        "prompt": "¿Qué afirmación describe correctamente la oficialidad de las lenguas en el Perú?",
+        "options": [
+          "Solo el castellano puede emplearse ante cualquier institución pública.",
+          "Todas las lenguas indígenas son cooficiales de igual modo en cada distrito del país.",
+          "El castellano es oficial y las lenguas indígenas también lo son en las zonas donde predominan.",
+          "Una lengua se vuelve oficial automáticamente cuando posee más de mil hablantes.",
+          "La oficialidad depende de que la lengua use el alfabeto latino."
+        ],
+        "answer": 2,
+        "solution": "La Constitución reconoce el castellano como idioma oficial y también las lenguas originarias en las zonas donde predominan, según la ley."
+      },
+      {
+        "id": "p03",
+        "topic": "Familias lingüísticas",
+        "prompt": "¿Qué es una familia lingüística?",
+        "options": [
+          "Una lista de lenguas que se escriben con las mismas letras.",
+          "Un conjunto de lenguas emparentadas históricamente por un origen común.",
+          "Cualquier grupo de dialectos hablados dentro de una sola provincia.",
+          "Una lengua oficial y todas las traducciones de sus documentos.",
+          "Un repertorio de palabras prestadas entre pueblos vecinos."
+        ],
+        "answer": 1,
+        "solution": "Una familia reúne lenguas cuyo parentesco histórico puede demostrarse. Compartir territorio, escritura o préstamos no basta para establecer ese origen común."
+      },
+      {
+        "id": "p04",
+        "topic": "Diversidad quechua",
+        "prompt": "¿Cuál es la descripción lingüística más adecuada del quechua?",
+        "options": [
+          "Es una variedad idéntica en todos los países andinos y carece de diferencias regionales.",
+          "Es únicamente un alfabeto empleado para escribir otras lenguas de los Andes.",
+          "Es una familia o conjunto de variedades emparentadas cuya diversidad interna debe reconocerse.",
+          "Es una lengua amazónica sin presencia histórica en la región andina.",
+          "Es un dialecto del castellano formado después de la independencia."
+        ],
+        "answer": 2,
+        "solution": "Quechua designa variedades históricamente emparentadas, con diferencias regionales relevantes. Reconocerlas evita presentar su compleja diversidad como una forma única e invariable."
+      },
+      {
+        "id": "p05",
+        "topic": "Escritura del quechua",
+        "prompt": "¿Por qué muchos alfabetos normalizados del quechua emplean las vocales a, i, u?",
+        "options": [
+          "Porque sus hablantes son incapaces de pronunciar sonidos cercanos a e u o.",
+          "Porque representan un sistema de tres fonemas vocálicos, aunque ciertas realizaciones puedan sonar próximas a [e] o [o].",
+          "Porque e y o fueron prohibidas en todas las lenguas originarias del Perú.",
+          "Porque el quechua no tuvo ninguna tradición oral antes de adoptar ese alfabeto.",
+          "Porque cada letra del castellano debe eliminarse de la escritura quechua."
+        ],
+        "answer": 1,
+        "solution": "La escritura a, i, u representa el sistema fonológico de numerosas variedades quechuas. La pronunciación puede incluir realizaciones cercanas a [e] y [o] en ciertos contextos."
+      },
+      {
+        "id": "p06",
+        "topic": "Lenguas andinas",
+        "prompt": "¿Cuál lista contiene las cuatro lenguas indígenas clasificadas oficialmente como andinas?",
+        "options": [
+          "Quechua, aimara, jaqaru y kawki.",
+          "Quechua, shipibo-konibo, awajún y asháninka.",
+          "Aimara, kukama kukamiria, matsigenka y shawi.",
+          "Jaqaru, bora, ticuna y yine.",
+          "Kawki, castellano, portugués y quechua."
+        ],
+        "answer": 0,
+        "solution": "El registro oficial clasifica como andinas al quechua, aimara, jaqaru y kawki. Las demás lenguas originarias reconocidas se clasifican como amazónicas."
+      },
+      {
+        "id": "p07",
+        "topic": "Familia Aru",
+        "prompt": "¿Qué relación existe entre el aimara, el jaqaru y el kawki?",
+        "options": [
+          "Son tres nombres oficiales del castellano andino.",
+          "Pertenecen a la familia lingüística Aru.",
+          "Son variedades de una lengua amazónica de la familia Pano.",
+          "Carecen de parentesco y solo comparten el alfabeto latino.",
+          "Son las únicas lenguas quechuas reconocidas por el Estado."
+        ],
+        "answer": 1,
+        "solution": "Aimara, jaqaru y kawki se vinculan históricamente dentro de la familia Aru. Familia lingüística y lengua individual no son categorías equivalentes."
+      },
+      {
+        "id": "p08",
+        "topic": "Lengua materna",
+        "prompt": "En un censo, una persona declara que aprendió primero asháninka en su hogar. ¿Qué indica ese dato?",
+        "options": [
+          "Que el asháninka es su lengua materna o primera lengua.",
+          "Que no puede aprender castellano como segunda lengua.",
+          "Que todas las personas de su distrito hablan únicamente asháninka.",
+          "Que su primera lengua tiene menor complejidad gramatical.",
+          "Que debe abandonar esa lengua para acceder a servicios públicos."
+        ],
+        "answer": 0,
+        "solution": "La lengua materna o primera lengua es la adquirida inicialmente, con frecuencia en el entorno familiar. El dato no determina inferioridad, monolingüismo ni capacidad futura."
+      },
+      {
+        "id": "p09",
+        "topic": "Contacto de lenguas",
+        "prompt": "Una hablante bilingüe traslada al castellano un patrón frecuente de su lengua originaria. ¿Cómo conviene analizarlo?",
+        "options": [
+          "Como prueba de que ninguna de las dos lenguas posee reglas.",
+          "Como interferencia que debe atribuirse siempre a falta de inteligencia.",
+          "Como transferencia lingüística propia del contacto entre sistemas.",
+          "Como evidencia de que las dos lenguas pertenecen necesariamente a la misma familia.",
+          "Como un cambio que convierte de inmediato esa forma en norma oficial."
+        ],
+        "answer": 2,
+        "solution": "La transferencia ocurre cuando rasgos de una lengua influyen en el uso de otra. Es un fenómeno sistemático de contacto, no un déficit intelectual del hablante."
+      },
+      {
+        "id": "p10",
+        "topic": "Revitalización",
+        "prompt": "¿Qué medida favorece mejor la continuidad de una lengua originaria amenazada?",
+        "options": [
+          "Restringirla a ceremonias y evitar que la aprendan niñas y niños.",
+          "Sustituirla por castellano en la escuela y en los servicios de salud.",
+          "Documentarla sin consultar ni involucrar a sus comunidades hablantes.",
+          "Fortalecer su transmisión intergeneracional y su uso en educación, medios y servicios públicos.",
+          "Reducir sus variedades a una sola pronunciación sin participación comunitaria."
+        ],
+        "answer": 3,
+        "solution": "La revitalización requiere hablantes, transmisión entre generaciones y ámbitos reales de uso. La educación y los servicios pertinentes deben desarrollarse con participación comunitaria."
+      }
+    ]
+  },
+  "lenguaje-capitulo-05": {
+    "title": "Historia de la lengua española",
+    "problems": [
+      {
+        "id": "p01",
+        "topic": "Origen del español",
+        "prompt": "Desde el punto de vista genealógico, ¿de qué procede principalmente el español?",
+        "options": [
+          "Del árabe clásico llevado a Roma.",
+          "Del latín hablado que evolucionó en la península ibérica.",
+          "De una mezcla planificada de vasco y griego.",
+          "Del germánico visigodo sin influencia latina.",
+          "Del castellano americano medieval."
+        ],
+        "answer": 1,
+        "solution": "El español es una lengua iberorromance: deriva históricamente del latín hablado. Otras lenguas aportaron contacto e influencia, pero no reemplazan esa genealogía."
+      },
+      {
+        "id": "p02",
+        "topic": "Romanización",
+        "prompt": "¿Qué hecho iniciado en 218 a. C. fue decisivo para la formación posterior de las lenguas romances hispánicas?",
+        "options": [
+          "La llegada de los visigodos a Toledo.",
+          "La publicación de la gramática de Nebrija.",
+          "El inicio de la conquista romana de la península ibérica.",
+          "La conquista musulmana de al-Ándalus.",
+          "La fundación de la Real Academia Española."
+        ],
+        "answer": 2,
+        "solution": "La intervención romana comenzó en 218 a. C. y extendió el latín mediante un proceso prolongado de romanización, base histórica de los romances peninsulares."
+      },
+      {
+        "id": "p03",
+        "topic": "Sustrato prerromano",
+        "prompt": "¿Cuál afirmación sobre las lenguas prerromanas de la península ibérica es correcta?",
+        "options": [
+          "Todas desaparecieron antes del contacto con el latín y no dejaron huellas.",
+          "El vasco sobrevivió, y otras lenguas pudieron dejar influencias de sustrato.",
+          "Eran dialectos escritos del latín clásico.",
+          "Originaron el árabe andalusí durante el siglo XIII.",
+          "Fueron introducidas por la Real Academia Española."
+        ],
+        "answer": 1,
+        "solution": "Antes de Roma existían varias lenguas en la península. El vasco continuó vivo y el contacto con otras lenguas prerromanas dejó posibles huellas de sustrato."
+      },
+      {
+        "id": "p04",
+        "topic": "Migraciones germánicas",
+        "prompt": "¿Qué formulación corrige adecuadamente un relato sobre las migraciones del siglo V en Hispania?",
+        "options": [
+          "En 409 entraron suevos, vándalos y alanos; después los visigodos alcanzaron una posición dominante.",
+          "En 409 los tártaros y mongoles fundaron el reino visigodo de Toledo.",
+          "En 409 desapareció el latín y toda la población empezó a hablar gótico.",
+          "Los visigodos llegaron en 1492 junto con la expedición de Colón.",
+          "Los hunos crearon directamente la lengua castellana mediante un decreto."
+        ],
+        "answer": 0,
+        "solution": "Suevos, vándalos y alanos atravesaron los Pirineos en 409. Los visigodos se consolidaron después; tártaros y mongoles no corresponden a este proceso."
+      },
+      {
+        "id": "p05",
+        "topic": "Conquista de 711",
+        "prompt": "¿Cuál descripción de la conquista iniciada en 711 es históricamente más precisa?",
+        "options": [
+          "Un ejército romano recuperó Hispania para hablar latín clásico.",
+          "Fuerzas musulmanas bajo autoridad omeya, integradas en gran parte por bereberes, cruzaron el estrecho.",
+          "Los reyes visigodos invitaron pacíficamente a toda la población árabe para fundar Castilla.",
+          "Los pueblos americanos ocuparon al-Ándalus antes de la llegada europea.",
+          "La Real Academia organizó una campaña militar para unificar la ortografía."
+        ],
+        "answer": 1,
+        "solution": "En 711 comenzó una conquista militar vinculada al poder omeya, con contingentes mayoritariamente bereberes. No fue simplemente una invitación general de los visigodos."
+      },
+      {
+        "id": "p06",
+        "topic": "Contacto con el árabe",
+        "prompt": "¿Cómo se relaciona el árabe con la historia del español?",
+        "options": [
+          "Es el antepasado genealógico exclusivo del español.",
+          "No tuvo ninguna relación con las hablas romances peninsulares.",
+          "Influyó por contacto, sobre todo en el léxico, mientras el español siguió siendo una lengua romance.",
+          "Reemplazó definitivamente al latín en todas las áreas de la península.",
+          "Fue creado a partir del castellano en el siglo XV."
+        ],
+        "answer": 2,
+        "solution": "El contacto prolongado aportó numerosos arabismos y otras influencias. Sin embargo, la filiación del español sigue siendo romance, derivada del latín hablado."
+      },
+      {
+        "id": "p07",
+        "topic": "Alfonso X",
+        "prompt": "¿Qué papel se asocia con Alfonso X en el siglo XIII?",
+        "options": [
+          "Impulsó el uso escrito del castellano en obras jurídicas, científicas e históricas.",
+          "Dirigió la conquista romana iniciada en 218 a. C.",
+          "Fundó la Real Academia Española en 1713.",
+          "Escribió la primera gramática castellana publicada en 1492.",
+          "Introdujo las lenguas prerromanas después de la Reconquista."
+        ],
+        "answer": 0,
+        "solution": "La corte de Alfonso X promovió en el siglo XIII una amplia producción escrita en castellano, importante para su elaboración cultural y administrativa."
+      },
+      {
+        "id": "p08",
+        "topic": "Nebrija",
+        "prompt": "¿Qué obra vinculada con Antonio de Nebrija apareció en 1492?",
+        "options": [
+          "La primera edición del diccionario académico del siglo XVIII.",
+          "Una gramática de la lengua castellana.",
+          "La traducción visigoda de todas las leyes romanas.",
+          "El primer texto latino conocido en la península.",
+          "Un decreto que prohibió todas las variedades americanas."
+        ],
+        "answer": 1,
+        "solution": "Nebrija publicó en 1492 su Gramática de la lengua castellana, obra clave de la tradición gramatical europea aplicada a una lengua romance vernácula."
+      },
+      {
+        "id": "p09",
+        "topic": "Español en América",
+        "prompt": "¿Qué efecto tuvo el contacto del español con lenguas americanas?",
+        "options": [
+          "Eliminó toda diversidad regional del español.",
+          "Produjo préstamos como papa, canoa o chocolate y nuevas configuraciones dialectales.",
+          "Convirtió al español en una lengua no romance.",
+          "Impuso una pronunciación idéntica en todo el continente.",
+          "Hizo desaparecer de inmediato todas las lenguas originarias."
+        ],
+        "answer": 1,
+        "solution": "El contacto incorporó voces de distintas lenguas americanas y participó en historias dialectales diversas. No anuló la genealogía romance ni uniformó el continente."
+      },
+      {
+        "id": "p10",
+        "topic": "Secuencia histórica",
+        "prompt": "¿Cuál secuencia está ordenada de la más antigua a la más reciente?",
+        "options": [
+          "711 → 218 a. C. → 1492 → Alfonso X → 409.",
+          "409 → 218 a. C. → Alfonso X → 711 → 1492.",
+          "218 a. C. → 409 → 711 → Alfonso X → 1492.",
+          "Alfonso X → 711 → 409 → 218 a. C. → 1492.",
+          "1492 → Alfonso X → 711 → 409 → 218 a. C."
+        ],
+        "answer": 2,
+        "solution": "La secuencia correcta va de la romanización iniciada en 218 a. C. a las entradas de 409, la conquista de 711, Alfonso X y 1492."
+      }
+    ]
+  },
+  "lenguaje-capitulo-06": {
+    "title": "Fonología y Fonética",
+    "problems": [
+      {
+        "id": "p01",
+        "topic": "Fonética",
+        "prompt": "¿Qué estudia principalmente la fonética?",
+        "options": [
+          "La organización de los sonidos como unidades distintivas abstractas.",
+          "La producción, las propiedades acústicas y la percepción física de los sonidos del habla.",
+          "Solo las reglas ortográficas para usar mayúsculas.",
+          "El origen histórico de todas las palabras del diccionario.",
+          "La estructura narrativa de los textos literarios."
+        ],
+        "answer": 1,
+        "solution": "La fonética examina cómo se producen, transmiten y perciben físicamente los sonidos del habla; puede estudiar dimensiones articulatorias, acústicas y auditivas."
+      },
+      {
+        "id": "p02",
+        "topic": "Fonología",
+        "prompt": "¿Cuál es el objeto central de la fonología?",
+        "options": [
+          "Las características físicas de cualquier ruido ambiental.",
+          "El sistema de contrastes sonoros que permite distinguir significados en una lengua.",
+          "La forma visual de las letras manuscritas.",
+          "La traducción automática entre dos idiomas.",
+          "La biografía de quienes elaboran diccionarios."
+        ],
+        "answer": 1,
+        "solution": "La fonología analiza cómo una lengua organiza fonemas y otros patrones sonoros con función distintiva, no solamente sus propiedades físicas observables."
+      },
+      {
+        "id": "p03",
+        "topic": "Notación",
+        "prompt": "¿Qué correspondencia entre unidad y notación es correcta?",
+        "options": [
+          "Fonema [p], sonido ⟨p⟩ y grafema /p/.",
+          "Fonema /p/, sonido [p] y grafema ⟨p⟩.",
+          "Fonema ⟨p⟩, sonido /p/ y grafema [p].",
+          "Fonema (p), sonido {p} y grafema //p//.",
+          "Fonema «p», sonido /p/ y grafema [p]."
+        ],
+        "answer": 1,
+        "solution": "Por convención, los fonemas se escriben entre barras / /, las realizaciones fonéticas entre corchetes [ ] y los grafemas entre ángulos ⟨ ⟩."
+      },
+      {
+        "id": "p04",
+        "topic": "Pares mínimos",
+        "prompt": "¿Qué muestra el contraste entre pala y bala en una variedad que distingue ambas palabras?",
+        "options": [
+          "Que /p/ y /b/ son fonemas diferentes porque el cambio puede distinguir significados.",
+          "Que p y b son dos nombres para un mismo grafema.",
+          "Que toda diferencia de escritura carece de efecto sonoro.",
+          "Que pala y bala son alófonos de una palabra única.",
+          "Que el acento es el único rasgo capaz de cambiar significados."
+        ],
+        "answer": 0,
+        "solution": "Pala y bala forman un par mínimo: difieren en un segmento y tienen significados distintos. Por ello, /p/ y /b/ contrastan como fonemas."
+      },
+      {
+        "id": "p05",
+        "topic": "Alófonos",
+        "prompt": "En gran parte del español, [b] y [β̞] pueden realizar el fonema /b/ según el contexto. ¿Qué son entre sí?",
+        "options": [
+          "Dos grafemas del alfabeto oficial.",
+          "Dos fonemas que siempre distinguen palabras.",
+          "Dos alófonos o realizaciones fonéticas de un mismo fonema.",
+          "Dos sílabas con diferente acento léxico.",
+          "Dos signos de puntuación equivalentes."
+        ],
+        "answer": 2,
+        "solution": "[b] y [β̞] son realizaciones condicionadas del fonema /b/ en muchas variedades. Alternar entre ellas no suele crear una diferencia léxica."
+      },
+      {
+        "id": "p06",
+        "topic": "Sonido y escritura",
+        "prompt": "¿Qué demuestra que /k/ pueda escribirse con c en casa, qu en queso y k en kilo?",
+        "options": [
+          "Que el español carece de fonemas consonánticos.",
+          "Que siempre existe una correspondencia exacta de una letra por fonema.",
+          "Que la relación entre fonemas y grafemas no es necesariamente uno a uno.",
+          "Que c, qu y k son tres vocales del español.",
+          "Que toda diferencia ortográfica produce un significado distinto."
+        ],
+        "answer": 2,
+        "solution": "Un mismo fonema puede representarse mediante grafías diferentes según la palabra y el contexto. Escritura y sistema sonoro se relacionan, pero no coinciden punto por punto."
+      },
+      {
+        "id": "p07",
+        "topic": "Letras y dígrafos",
+        "prompt": "¿Cuál afirmación distingue correctamente letras y dígrafos en la ortografía española actual?",
+        "options": [
+          "El alfabeto tiene 27 letras; ch, ll, rr, gu y qu son combinaciones de dos letras.",
+          "El alfabeto tiene 32 letras porque todo dígrafo cuenta como letra independiente.",
+          "Ch y ll son letras, pero a, e, i, o y u son dígrafos.",
+          "Gu y qu son fonemas, nunca secuencias ortográficas.",
+          "La h representa siempre un fonema consonántico en español general."
+        ],
+        "answer": 0,
+        "solution": "El abecedario español consta de 27 letras. Ch, ll, rr, gu y qu funcionan como dígrafos en determinados usos, no como letras adicionales."
+      },
+      {
+        "id": "p08",
+        "topic": "Variación dialectal",
+        "prompt": "¿Por qué no se fija un único número de fonemas consonánticos para todas las variedades del español?",
+        "options": [
+          "Porque cada hablante inventa un alfabeto nuevo al conversar.",
+          "Porque fenómenos como seseo y yeísmo modifican los contrastes presentes en cada sistema dialectal.",
+          "Porque los fonemas se cuentan según la cantidad de palabras de un texto.",
+          "Porque la fonología excluye cualquier diferencia entre dialectos.",
+          "Porque las vocales se transforman en letras al cambiar de región."
+        ],
+        "answer": 1,
+        "solution": "El seseo elimina el contraste /s/–/θ/ y el yeísmo el de /ʝ/–/ʎ/ en muchas variedades. Por eso los inventarios fonológicos dialectales pueden diferir."
+      },
+      {
+        "id": "p09",
+        "topic": "Articulación",
+        "prompt": "¿Cómo se clasifica fonéticamente [p] en una pronunciación habitual del español?",
+        "options": [
+          "Vocal abierta, posterior y sonora.",
+          "Consonante oclusiva, bilabial y sorda.",
+          "Consonante fricativa, dental y sonora.",
+          "Consonante nasal, palatal y sonora.",
+          "Vocal cerrada, anterior y átona."
+        ],
+        "answer": 1,
+        "solution": "[p] se articula cerrando ambos labios, interrumpiendo el aire y sin vibración laríngea: es una consonante oclusiva bilabial sorda."
+      },
+      {
+        "id": "p10",
+        "topic": "Acento prosódico",
+        "prompt": "¿Qué evidencia aporta la serie término, termino y terminó?",
+        "options": [
+          "Que la posición del acento puede participar en distinciones de significado y categoría gramatical.",
+          "Que las tres formas se pronuncian y significan exactamente lo mismo.",
+          "Que el español solo permite el acento en la última sílaba.",
+          "Que cada tilde representa un fonema consonántico diferente.",
+          "Que la entonación convierte siempre un sustantivo en verbo."
+        ],
+        "answer": 0,
+        "solution": "El desplazamiento del acento distingue término, termino y terminó. Es un fenómeno prosódico capaz de diferenciar palabras o formas gramaticales."
+      }
+    ]
+  }
+});

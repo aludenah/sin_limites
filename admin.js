@@ -18,6 +18,7 @@ const ADMIN_EMAIL='alexludenah@gmail.com';
 const app=document.getElementById('adminApp');
 let allStudents=[];
 const TRACKED_CHAPTERS={
+  ...Object.fromEntries((window.LANGUAGE_CHAPTERS||[]).map(c=>[c.progressId,{label:'Lenguaje · Capítulo '+c.number+' · '+c.title,items:10}])),
   ...Object.fromEntries((window.PERU_CHAPTERS||[]).map(c=>[c.progressId,{history:c,label:'Historia del Perú · Capítulo '+c.number+' · '+c.title,items:10}])),
   ...Object.fromEntries((window.HISTORY_CHAPTERS||[]).map(c=>[c.progressId,{history:c,label:'Historia Universal · Capítulo '+c.number+' · '+c.title,items:10}])),
   'fisica-capitulo-01':{label:'Física · Capítulo 1 · Análisis dimensional',items:10},
@@ -188,7 +189,6 @@ auth.onAuthStateChanged(async user=>{
   renderShell(user);
   await reloadDashboard();
 });
-
 
 
 

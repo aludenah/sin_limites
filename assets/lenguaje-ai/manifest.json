@@ -1,0 +1,25 @@
+{
+  "created": "2026-09-17",
+  "purpose": "Lenguaje, capítulos 1 al 6",
+  "type": "Imágenes educativas generadas con IA; escenas conceptuales y no fotografías documentales",
+  "images": [
+    {"file": "cap01-comunicacion.webp", "alt": "Estudiantes se comunican mediante conversación, escritura y lengua de señas en un aula."},
+    {"file": "cap01-elementos.webp", "alt": "Estudiantes producen un pódcast escolar y coordinan mensaje, código, canal y soporte."},
+    {"file": "cap01-ruido.webp", "alt": "Videollamada escolar con interferencia que obliga a comprobar la recepción del mensaje."},
+    {"file": "cap02-lenguaje.webp", "alt": "Jóvenes usan habla, escritura y señas para realizar una tarea colaborativa."},
+    {"file": "cap02-articulacion.webp", "alt": "Estudiantes combinan unidades lingüísticas para formar palabras y enunciados."},
+    {"file": "cap02-funciones.webp", "alt": "Producción de radio escolar en la que el lenguaje cumple distintas funciones."},
+    {"file": "cap03-planos.webp", "alt": "Grupo de estudiantes comparte un sistema lingüístico y cada persona lo usa de modo concreto."},
+    {"file": "cap03-variedades.webp", "alt": "Jóvenes peruanos de distintas regiones conversan y muestran diversidad lingüística."},
+    {"file": "cap03-registros.webp", "alt": "Una estudiante adapta su registro entre una exposición académica y una conversación informal."},
+    {"file": "cap04-diversidad.webp", "alt": "Encuentro intercultural de hablantes de diversas lenguas originarias del Perú."},
+    {"file": "cap04-quechua.webp", "alt": "Clase de alfabetización en quechua con participación de personas de distintas edades."},
+    {"file": "cap04-radio.webp", "alt": "Comunicadora amazónica realiza un programa de radio en una lengua originaria."},
+    {"file": "cap05-romanizacion.webp", "alt": "Mercado de la Hispania romana donde el latín hablado convive con lenguas locales."},
+    {"file": "cap05-visigodos.webp", "alt": "Administración urbana de época visigoda en la península ibérica."},
+    {"file": "cap05-alandalus.webp", "alt": "Mercado de al-Ándalus que representa el contacto entre árabe, romance y otras lenguas."},
+    {"file": "cap06-laboratorio.webp", "alt": "Laboratorio de fonética con micrófono y visualización de una onda sonora."},
+    {"file": "cap06-aparato-fonador.webp", "alt": "Estudiantes observan un modelo del aparato fonador y practican la articulación."},
+    {"file": "cap06-contrastes.webp", "alt": "Actividad de laboratorio sobre pares mínimos y contrastes entre sonidos."}
+  ]
+}
