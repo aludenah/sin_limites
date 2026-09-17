@@ -15,7 +15,7 @@ function harness(files,{local=new Map(),cloud=new Map(),search=''}={}){
  const window={location:{search,replace:url=>redirects.push(url),assign:url=>redirects.push(url)},localStorage:storage,scrollTo(){},addEventListener:(event,fn)=>events.set(event,fn)};
  const context=vm.createContext({window,document,localStorage:storage,URLSearchParams,firebase:{initializeApp(){},auth:authFactory,firestore},lucide:{createIcons(){}},console:{error(){}},setTimeout:()=>1,clearTimeout(){}});
  window.firebase=context.firebase;
- for(const file of ['study-mode.js',...files])vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),context);
+ for(const file of ['practice-bank.js','chapter-practice.js','study-mode.js',...files])vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),context);
  return {run:s=>vm.runInContext(s,context),signIn:u=>callback(u),cloud,local,elements,redirects,events,setOffline:value=>offline=value};
 }
 const appFiles=['courses.js','history-catalog.js','history-progress.js','app.js'];
@@ -47,26 +47,26 @@ async function test(){
   assert.doesNotMatch(chapterHTML,/id="study-mode"|data-action="mode"|Cambiar diapositiva|Pantalla completa/);
   assert.equal(chapter.run('P.completedItems.includes(0)'),true,'Existing achievements remain');
   if(files===presentations){assert.equal(chapter.run('allowedSlide(32)'),true);chapter.run('visit(32)');}
-  else{assert.equal(chapter.run('canOpen(LESSONS.length-1)'),true);assert.equal(chapter.run('canApply()'),true);chapter.run("goTab('exam')");}
+  else{assert.equal(chapter.run('canOpen(LESSONS.length-1)'),true);assert.equal(chapter.run('canApply()'),true);chapter.run("goTab('practice')");}
   home.run("window.StudyMode.choose('student','progressive')");
   chapter.events.get('storage')({key:'sin-limites:student:study-mode'});
   assert.equal(chapter.run('P.studyMode'),'progressive');
   assert.equal(chapter.run('P.completedItems.includes(0)'),true);
-  if(files===presentations){assert.equal(chapter.run('allowedSlide(32)'),false);assert.equal(chapter.run('P.currentSlide'),26);}
-  else{assert.equal(chapter.run('canApply()'),false);assert.equal(chapter.run('P.activeTab'),'theory');assert.equal(chapter.run('P.examBest'),7);}
+  if(files===presentations){assert.equal(chapter.run('allowedSlide(32)'),true);assert.equal(chapter.run('P.currentSlide'),32);}
+  else{assert.equal(chapter.run('canApply()'),true);assert.equal(chapter.run('P.activeTab'),'practice');assert.equal(chapter.run('P.examBest'),7);}
   await chapter.run('saveChain');
   home.run("window.StudyMode.choose('student','free')");
  }
  // A direct link asks first, then resumes the requested chapter after the choice.
  const direct=harness(presentations);await direct.signIn({uid:'new'});
- assert.deepEqual(direct.redirects,['index.html?chapter=historia-universal-capitulo-01&v=20260917-six5']);
+ assert.deepEqual(direct.redirects,['index.html?chapter=historia-universal-capitulo-01&v=20260917-practice6']);
  const entry=harness(appFiles,{search:'?chapter=historia-universal-capitulo-01'});await entry.signIn({uid:'new'});
  assert.equal(entry.redirects.length,0);assert.equal(entry.run('state.view'),'mode');
- entry.run("selectStudyMode('progressive')");assert.deepEqual(entry.redirects,['historia-universal-capitulo-01.html?v=20260917-six5']);
+ entry.run("selectStudyMode('progressive')");assert.deepEqual(entry.redirects,['historia-universal-capitulo-01.html?v=20260917-practice6']);
  await entry.run("window.StudyMode.save('new',db)");
  const nextDevice=harness(physics(1),{cloud:entry.cloud});await nextDevice.signIn({uid:'new'});
  assert.equal(nextDevice.run('P.studyMode'),'progressive','Preference also loads on another device');
- assert.equal(nextDevice.run('canOpen(1)'),false);
+ assert.equal(nextDevice.run('canOpen(1)'),true);assert.equal(nextDevice.run("window.ChapterPractice.canOpen(CHAPTER_ID,P.practice10,1,P.studyMode)"),false);
  // Changing courses/account does not silently reuse another student's preference.
  await home.signIn({uid:'other'});assert.equal(home.run('state.studyMode'),null);
  assert.match(home.elements.get('app').innerHTML,/¿Cómo quieres estudiar\?/);
@@ -81,7 +81,7 @@ async function test(){
  const slides=home.run('window.COURSES.length');assert.ok(slides>2);
  const check=harness(presentations);const visuals=JSON.parse(check.run('JSON.stringify(SLIDES.filter(s=>s.illustration).map(s=>s.illustration.src))'));
  assert.equal(visuals.length,8);assert.equal(new Set(visuals).size,8,'Each illustration is used once');
- assert.equal(check.run('SLIDES.filter(s=>s.question).length'),7);
+ assert.equal(check.run('QUESTIONS.length'),10);assert.equal(check.run('SLIDES.filter(s=>s.question).length'),0);
  console.log('PASS: mode before courses, all eight chapters inherit the choice, direct links, account isolation, offline use, cross-device preference, preserved scores and eight unique illustrations.');
 }
 module.exports={harness};

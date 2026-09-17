@@ -21,36 +21,6 @@ window.HISTORY_CONTENT = {
           ]
         }
       ],
-      "quiz": [
-        {
-          "prompt": "¿Qué dato permite reconocer con mayor claridad una situación de esclavitud?",
-          "options": [
-            "La venta de una persona privada de libertad",
-            "El cultivo de cereales",
-            "El uso de herramientas",
-            "La residencia en una ciudad",
-            "La entrega de una ofrenda"
-          ],
-          "answer": 0,
-          "solution": "La privación de libertad y la posibilidad de vender a la persona indican una relación de esclavitud.",
-          "level": "Aplicación",
-          "id": "u1a"
-        },
-        {
-          "prompt": "¿Qué afirmación describe mejor el trabajo en Mesopotamia?",
-          "options": [
-            "Todos eran esclavos",
-            "Coexistían distintas condiciones de libertad y dependencia",
-            "No existían campesinos",
-            "Nadie pagaba tributos",
-            "Todos tenían derechos iguales"
-          ],
-          "answer": 1,
-          "solution": "Templos, palacios y hogares articulaban trabajadores de condiciones diversas; no debe homogeneizarse la población.",
-          "level": "Aplicación",
-          "id": "u1b"
-        }
-      ],
       "blocks": [
         {
           "title": "Personas privadas de libertad",
@@ -116,36 +86,6 @@ window.HISTORY_CONTENT = {
           ]
         }
       ],
-      "quiz": [
-        {
-          "prompt": "¿Qué asociación geográfica es correcta?",
-          "solution": "La región mesopotámica se vincula a las cuencas del Tigris y el Éufrates.",
-          "level": "Básico",
-          "id": "u2a",
-          "options": [
-            "Egipto — Indo y Ganges",
-            "Mesopotamia — Tigris y Éufrates",
-            "Mesopotamia — Nilo",
-            "Egipto — Huang He",
-            "Mesopotamia — Amazonas"
-          ],
-          "answer": 1
-        },
-        {
-          "prompt": "¿Qué afirmación explica mejor el surgimiento de Estados?",
-          "solution": "La formación estatal fue un proceso multicausal.",
-          "level": "Básico",
-          "id": "u2b",
-          "options": [
-            "Los ríos los crearon automáticamente",
-            "Solo importó una invención aislada",
-            "Toda aldea fue un imperio",
-            "No hubo decisiones humanas",
-            "Intervinieron factores ambientales, económicos y políticos"
-          ],
-          "answer": 4
-        }
-      ],
       "blocks": [
         {
           "title": "Entre el Tigris y el Éufrates",
@@ -209,36 +149,6 @@ window.HISTORY_CONTENT = {
           ]
         }
       ],
-      "quiz": [
-        {
-          "prompt": "¿Qué ciudad se asocia con el desarrollo urbano temprano del sur mesopotámico?",
-          "solution": "Uruk fue uno de los grandes centros urbanos tempranos de Mesopotamia.",
-          "level": "Básico",
-          "id": "u3a",
-          "options": [
-            "Atenas",
-            "Roma",
-            "Uruk",
-            "Tenochtitlan",
-            "Cartago"
-          ],
-          "answer": 2
-        },
-        {
-          "prompt": "La escritura cuneiforme recibe su nombre de…",
-          "solution": "Muchos signos se producían presionando un instrumento sobre arcilla.",
-          "level": "Básico",
-          "id": "u3b",
-          "options": [
-            "las impresiones con forma de cuña",
-            "el uso exclusivo de letras latinas",
-            "la forma circular del papiro",
-            "los jeroglíficos del Nilo",
-            "la impresión con máquinas modernas"
-          ],
-          "answer": 0
-        }
-      ],
       "blocks": [
         {
           "title": "Sumer y la vida urbana",
@@ -286,36 +196,6 @@ window.HISTORY_CONTENT = {
             "La diferencia de trato revela jerarquías reconocidas por el orden jurídico.",
             "El documento también informa sobre cómo el poder pretendía regular conflictos."
           ]
-        }
-      ],
-      "quiz": [
-        {
-          "prompt": "Hammurabi se vincula principalmente con…",
-          "solution": "Fue un rey de Babilonia conocido por la estela que contiene disposiciones legales.",
-          "level": "Básico",
-          "id": "u4a",
-          "options": [
-            "la democracia ateniense",
-            "la unificación de Italia",
-            "la escritura latina",
-            "Babilonia y una colección de disposiciones legales",
-            "las pirámides de Guiza"
-          ],
-          "answer": 3
-        },
-        {
-          "prompt": "¿Qué distingue un imperio de una ciudad-Estado?",
-          "solution": "La escala de dominación territorial es una diferencia importante.",
-          "level": "Básico",
-          "id": "u4b",
-          "options": [
-            "La ausencia de autoridades",
-            "El dominio de múltiples territorios y poblaciones",
-            "La inexistencia de tributos",
-            "El uso obligatorio de papiro",
-            "Tener solo un barrio urbano"
-          ],
-          "answer": 1
         }
       ],
       "blocks": [
@@ -388,36 +268,6 @@ window.HISTORY_CONTENT = {
           ]
         }
       ],
-      "quiz": [
-        {
-          "prompt": "Un zigurat se relaciona principalmente con…",
-          "options": [
-            "un anfiteatro romano",
-            "una fábrica moderna",
-            "un complejo religioso",
-            "una tumba imperial china",
-            "un puerto fenicio"
-          ],
-          "answer": 2,
-          "solution": "El zigurat era una construcción escalonada asociada al espacio sagrado mesopotámico.",
-          "level": "Aplicación",
-          "id": "u5a"
-        },
-        {
-          "prompt": "El sistema sexagesimal utiliza como base…",
-          "options": [
-            "diez",
-            "dos",
-            "cien",
-            "sesenta",
-            "doce"
-          ],
-          "answer": 3,
-          "solution": "La base sesenta se reconoce en herencias de la medición del tiempo y los ángulos.",
-          "level": "Aplicación",
-          "id": "u5b"
-        }
-      ],
       "blocks": [
         {
           "title": "Conservar y transmitir conocimientos",
@@ -470,220 +320,6 @@ window.HISTORY_CONTENT = {
           "id": "c4-t5-b3"
         }
       ]
-    }
-  ],
-  "practice": [
-    {
-      "prompt": "Una tablilla registra raciones de cebada. ¿Qué función documenta directamente?",
-      "solution": "El contenido contable permite estudiar distribución y administración.",
-      "level": "Básico",
-      "id": "p1",
-      "options": [
-        "Elección por sufragio universal",
-        "Una ceremonia egipcia concreta",
-        "Administración de recursos",
-        "Un alfabeto latino",
-        "Producción industrial"
-      ],
-      "answer": 2
-    },
-    {
-      "prompt": "Un monarca gobierna varias ciudades y pueblos tributarios. La organización se aproxima a…",
-      "solution": "El dominio de múltiples territorios y poblaciones caracteriza una organización imperial.",
-      "level": "Intermedio",
-      "id": "p2",
-      "options": [
-        "un imperio territorial",
-        "una familia sin autoridad",
-        "una aldea aislada sin vínculos",
-        "un taller artesanal únicamente",
-        "una asociación sin territorio"
-      ],
-      "answer": 0
-    },
-    {
-      "prompt": "¿Por qué es incorrecto presentar las leyes de Hammurabi como igualdad jurídica moderna?",
-      "solution": "El orden jurídico reflejaba jerarquías de su contexto.",
-      "level": "Intermedio",
-      "id": "p3",
-      "options": [
-        "Porque no estaban escritas",
-        "Porque proceden de Roma",
-        "Porque carecían de cualquier autoridad",
-        "Porque las sanciones dependían también de la condición social",
-        "Porque solo regulaban astronomía"
-      ],
-      "answer": 3
-    },
-    {
-      "prompt": "¿Qué dato permite reconocer con mayor claridad una situación de esclavitud?",
-      "options": [
-        "La venta de una persona privada de libertad",
-        "El cultivo de cereales",
-        "El uso de herramientas",
-        "La residencia en una ciudad",
-        "La entrega de una ofrenda"
-      ],
-      "answer": 0,
-      "solution": "La privación de libertad y la posibilidad de vender a la persona indican una relación de esclavitud.",
-      "level": "Aplicación",
-      "id": "p4"
-    },
-    {
-      "prompt": "Un zigurat se relaciona principalmente con…",
-      "options": [
-        "un anfiteatro romano",
-        "una fábrica moderna",
-        "un complejo religioso",
-        "una tumba imperial china",
-        "un puerto fenicio"
-      ],
-      "answer": 2,
-      "solution": "El zigurat era una construcción escalonada asociada al espacio sagrado mesopotámico.",
-      "level": "Aplicación",
-      "id": "p5"
-    }
-  ],
-  "exam": [
-    {
-      "prompt": "Una ciudad-Estado mesopotámica comprendía…",
-      "solution": "La ciudad y su entorno agrícola formaban una unidad política.",
-      "level": "Básico",
-      "id": "e1",
-      "options": [
-        "un núcleo urbano y su territorio bajo una autoridad política",
-        "todo el planeta",
-        "solo un edificio religioso",
-        "una fábrica moderna",
-        "únicamente un ejército sin habitantes"
-      ],
-      "answer": 0
-    },
-    {
-      "prompt": "La cuneiforme se escribió frecuentemente en…",
-      "solution": "La arcilla fue un soporte común para impresiones con un instrumento.",
-      "level": "Básico",
-      "id": "e2",
-      "options": [
-        "papel impreso industrial",
-        "pantallas digitales",
-        "rollos de plástico",
-        "tablillas de arcilla",
-        "únicamente láminas de acero"
-      ],
-      "answer": 3
-    },
-    {
-      "prompt": "Sargón se relaciona con…",
-      "solution": "Sargón de Acad extendió su dominio en el tercer milenio a. C.",
-      "level": "Básico",
-      "id": "e3",
-      "options": [
-        "la Revolución francesa",
-        "Acad y la expansión de un poder territorial",
-        "la fundación de Roma",
-        "la democracia de Atenas",
-        "la llegada de Colón a América"
-      ],
-      "answer": 1
-    },
-    {
-      "prompt": "¿Qué afirmación sobre Hammurabi es correcta?",
-      "solution": "Las sanciones y situaciones reguladas permiten estudiar jerarquías sociales.",
-      "level": "Básico",
-      "id": "e4",
-      "options": [
-        "Fue el primer ser humano en crear cualquier ley",
-        "Estableció sufragio universal",
-        "Gobernó el Egipto del Reino Nuevo",
-        "Escribió exclusivamente sobre geometría",
-        "Sus disposiciones reflejan diferencias de condición social"
-      ],
-      "answer": 4
-    },
-    {
-      "prompt": "¿Qué afirmación describe mejor el trabajo en Mesopotamia?",
-      "options": [
-        "Todos eran esclavos",
-        "Coexistían distintas condiciones de libertad y dependencia",
-        "No existían campesinos",
-        "Nadie pagaba tributos",
-        "Todos tenían derechos iguales"
-      ],
-      "answer": 1,
-      "solution": "Templos, palacios y hogares articulaban trabajadores de condiciones diversas; no debe homogeneizarse la población.",
-      "level": "Aplicación",
-      "id": "e5"
-    },
-    {
-      "prompt": "El sistema sexagesimal utiliza como base…",
-      "options": [
-        "diez",
-        "dos",
-        "cien",
-        "sesenta",
-        "doce"
-      ],
-      "answer": 3,
-      "solution": "La base sesenta se reconoce en herencias de la medición del tiempo y los ángulos.",
-      "level": "Aplicación",
-      "id": "e6"
-    },
-    {
-      "prompt": "¿Qué dato permite reconocer con mayor claridad una situación de esclavitud?",
-      "options": [
-        "La venta de una persona privada de libertad",
-        "El cultivo de cereales",
-        "El uso de herramientas",
-        "La residencia en una ciudad",
-        "La entrega de una ofrenda"
-      ],
-      "answer": 0,
-      "solution": "La privación de libertad y la posibilidad de vender a la persona indican una relación de esclavitud.",
-      "level": "Aplicación",
-      "id": "e7"
-    },
-    {
-      "prompt": "¿Qué diferencia existe entre pagar tributo y ser esclavizado?",
-      "options": [
-        "Son siempre exactamente lo mismo",
-        "El tributo solo existió en China",
-        "El tributo no implica por sí mismo perder la libertad jurídica",
-        "La esclavitud no afecta la libertad",
-        "No hay que estudiar las fuentes"
-      ],
-      "answer": 2,
-      "solution": "Las obligaciones tributarias y la condición jurídica son aspectos distintos; deben comprobarse con evidencias.",
-      "level": "Aplicación",
-      "id": "e8"
-    },
-    {
-      "prompt": "Una ciudad controla campos y aldeas de su entorno. ¿Qué relación ilustra?",
-      "options": [
-        "La independencia total de la ciudad respecto del campo",
-        "La inexistencia de administración",
-        "El fin del intercambio",
-        "La articulación entre núcleo urbano y territorio agrícola",
-        "La ausencia de población rural"
-      ],
-      "answer": 3,
-      "solution": "Las ciudades dependían de la producción y el trabajo de su territorio, organizados mediante diferentes instituciones.",
-      "level": "Aplicación",
-      "id": "e9"
-    },
-    {
-      "prompt": "Un templo almacena grano y distribuye raciones. Esto muestra…",
-      "options": [
-        "que no existían agricultores",
-        "que el grano era una moneda romana",
-        "una fábrica industrial moderna",
-        "que todos sabían escribir",
-        "funciones económicas además de religiosas"
-      ],
-      "answer": 4,
-      "solution": "Los templos también participaron en la administración de bienes, tierras y trabajo. Así se relacionaban creencias y economía.",
-      "level": "Aplicación",
-      "id": "e10"
     }
   ],
   "timeline": [
@@ -740,5 +376,6 @@ window.HISTORY_CONTENT = {
       "title": "Explicar",
       "text": "Comparar ciudades-Estado, imperios y aportes culturales mesopotámicos."
     }
-  ]
+  ],
+  "assessmentFormat": "practice-10"
 };

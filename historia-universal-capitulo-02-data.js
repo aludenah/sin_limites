@@ -21,36 +21,6 @@ window.HISTORY_CONTENT = {
           ]
         }
       ],
-      "quiz": [
-        {
-          "prompt": "La relación evolutiva entre humanos y chimpancés actuales se explica por…",
-          "solution": "Los dos linajes comparten ancestros y han seguido evolucionando.",
-          "level": "Básico",
-          "id": "u1a",
-          "options": [
-            "la transformación reciente de chimpancés en humanos",
-            "la ausencia de parentesco",
-            "la descendencia de humanos a partir de gorilas actuales",
-            "un ancestro común",
-            "una decisión de cambiar de especie"
-          ],
-          "answer": 3
-        },
-        {
-          "prompt": "¿Qué representación describe mejor la evolución humana?",
-          "solution": "La evidencia muestra diversidad de especies, extinciones y coexistencias.",
-          "level": "Básico",
-          "id": "u1b",
-          "options": [
-            "Una escalera con una meta obligatoria",
-            "Un árbol con ramas, algunas coexistentes",
-            "Una sola especie sin cambios",
-            "Una lista de pueblos actuales de inferior a superior",
-            "Un cambio ocurrido en una generación"
-          ],
-          "answer": 1
-        }
-      ],
       "blocks": [
         {
           "title": "¿Qué estudia la antropogénesis?",
@@ -133,36 +103,6 @@ window.HISTORY_CONTENT = {
             "Las fechas corresponden a materiales volcánicos asociados, no a una lectura automática del hueso.",
             "Nuevas excavaciones y análisis pueden afinar o revisar la estimación."
           ]
-        }
-      ],
-      "quiz": [
-        {
-          "prompt": "En un conjunto de estratos no alterados, una capa inferior suele ser…",
-          "solution": "La superposición permite establecer relaciones de anterioridad, si no hubo alteraciones.",
-          "level": "Básico",
-          "id": "u2a",
-          "options": [
-            "siempre del mismo año",
-            "más reciente por definición",
-            "imposible de estudiar",
-            "una prueba de escritura",
-            "más antigua que la situada encima"
-          ],
-          "answer": 4
-        },
-        {
-          "prompt": "¿Qué afirmación sobre la datación es correcta?",
-          "solution": "Cada técnica tiene materiales, rangos y márgenes de incertidumbre específicos.",
-          "level": "Básico",
-          "id": "u2b",
-          "options": [
-            "El carbono 14 fecha cualquier roca",
-            "Un hueso revela siempre un año exacto",
-            "El método debe elegirse según material y antigüedad",
-            "El contexto nunca importa",
-            "Todos los fósiles tienen menos de mil años"
-          ],
-          "answer": 2
         }
       ],
       "blocks": [
@@ -249,36 +189,6 @@ window.HISTORY_CONTENT = {
           ]
         }
       ],
-      "quiz": [
-        {
-          "prompt": "¿Qué evidencia es especialmente útil para estudiar locomoción bípeda?",
-          "solution": "La anatomía y las huellas permiten inferir cómo se desplazaba un organismo.",
-          "level": "Básico",
-          "id": "u3a",
-          "options": [
-            "La forma de la pelvis y las huellas",
-            "La presencia de un alfabeto",
-            "Un calendario escrito",
-            "Una moneda",
-            "Un templo de piedra"
-          ],
-          "answer": 0
-        },
-        {
-          "prompt": "¿Qué relación temporal está mejor respaldada?",
-          "solution": "Los homininos bípedos tempranos conservaban cerebros relativamente pequeños.",
-          "level": "Básico",
-          "id": "u3b",
-          "options": [
-            "La escritura precedió al bipedismo",
-            "La agricultura produjo los primeros primates",
-            "Todos los rasgos humanos surgieron a la vez",
-            "El bipedismo precedió a grandes aumentos cerebrales posteriores",
-            "El bipedismo apareció después de las ciudades"
-          ],
-          "answer": 3
-        }
-      ],
       "blocks": [
         {
           "title": "Caminar sobre dos extremidades",
@@ -363,36 +273,6 @@ window.HISTORY_CONTENT = {
           ]
         }
       ],
-      "quiz": [
-        {
-          "prompt": "¿Qué especie participó en dispersiones humanas tempranas fuera de África?",
-          "solution": "Homo erectus está documentado en África y Eurasia mucho antes de las migraciones recientes de nuestra especie.",
-          "level": "Básico",
-          "id": "u4a",
-          "options": [
-            "Homo sapiens como única posibilidad",
-            "Homo erectus",
-            "Un chimpancé actual",
-            "Un gorila actual",
-            "Una especie nacida después de la agricultura"
-          ],
-          "answer": 1
-        },
-        {
-          "prompt": "La relación entre neandertales y Homo sapiens incluye…",
-          "solution": "Fósiles y ADN permiten reconstruir coexistencia y mezcla entre algunas poblaciones.",
-          "level": "Básico",
-          "id": "u4b",
-          "options": [
-            "ausencia total de contacto",
-            "una transformación instantánea de todos los neandertales",
-            "convivencia con dinosaurios no avianos",
-            "el mismo origen que la escritura",
-            "coexistencia e intercambios genéticos"
-          ],
-          "answer": 4
-        }
-      ],
       "blocks": [
         {
           "title": "Homo habilis y las primeras tecnologías",
@@ -438,36 +318,6 @@ window.HISTORY_CONTENT = {
           ]
         }
       ],
-      "quiz": [
-        {
-          "prompt": "¿Dónde se originó Homo sapiens según la evidencia disponible?",
-          "solution": "Los fósiles y los estudios genéticos sitúan el origen de nuestra especie en África.",
-          "level": "Básico",
-          "id": "u5a",
-          "options": [
-            "En la Europa medieval",
-            "En América durante el Neolítico",
-            "En África",
-            "En Australia después de la escritura",
-            "En Mesopotamia con las ciudades"
-          ],
-          "answer": 2
-        },
-        {
-          "prompt": "Transmitir una técnica y mejorarla entre generaciones es un ejemplo de…",
-          "solution": "La cultura acumulativa combina transmisión social e innovación.",
-          "level": "Básico",
-          "id": "u5b",
-          "options": [
-            "cultura acumulativa",
-            "cambio de especie inmediato",
-            "ausencia de aprendizaje",
-            "fósil sin contexto",
-            "datación radiométrica"
-          ],
-          "answer": 0
-        }
-      ],
       "blocks": [
         {
           "title": "El origen africano de Homo sapiens",
@@ -499,220 +349,6 @@ window.HISTORY_CONTENT = {
           "id": "c2-t5-b3"
         }
       ]
-    }
-  ],
-  "practice": [
-    {
-      "prompt": "¿Por qué no se debe representar a pueblos actuales como etapas de la hominización?",
-      "solution": "La diversidad cultural no establece peldaños biológicos de humanidad.",
-      "level": "Básico",
-      "id": "p1",
-      "options": [
-        "Porque carecen de cultura",
-        "Porque la evolución empezó con la escritura",
-        "Porque hay especies humanas superiores actuales",
-        "Todos pertenecen a Homo sapiens y son poblaciones contemporáneas",
-        "Porque no existen diferencias culturales"
-      ],
-      "answer": 3
-    },
-    {
-      "prompt": "Un hallazgo combina bipedismo y rasgos para trepar. La mejor interpretación es…",
-      "solution": "Los australopitecos muestran combinaciones de rasgos y no una transformación en bloque.",
-      "level": "Intermedio",
-      "id": "p2",
-      "options": [
-        "una prueba de agricultura",
-        "una combinación de adaptaciones locomotoras",
-        "un error inevitable del fósil",
-        "un individuo sin locomoción",
-        "la existencia de ciudades"
-      ],
-      "answer": 1
-    },
-    {
-      "prompt": "¿Qué método sería inadecuado para fechar directamente un fósil de dos millones de años?",
-      "solution": "El carbono 14 no alcanza antigüedades de millones de años.",
-      "level": "Intermedio",
-      "id": "p3",
-      "options": [
-        "Estudio del contexto estratigráfico",
-        "Comparación de capas asociadas",
-        "Datación de depósitos volcánicos adecuados",
-        "Integración de varias evidencias",
-        "Carbono 14"
-      ],
-      "answer": 4
-    },
-    {
-      "prompt": "Una herramienta aislada sin fósiles asociados permite estudiar principalmente…",
-      "solution": "La atribución de una especie requiere más evidencia que la herramienta por sí sola.",
-      "level": "Intermedio",
-      "id": "p4",
-      "options": [
-        "el nombre de su fabricante",
-        "su lengua exacta",
-        "una tecnología, con cautela sobre su autoría biológica",
-        "una especie con certeza automática",
-        "el sistema político completo"
-      ],
-      "answer": 2
-    },
-    {
-      "prompt": "ADN compartido entre linajes humanos antiguos puede apoyar la hipótesis de…",
-      "solution": "El ADN antiguo permite investigar parentescos y mezcla de poblaciones.",
-      "level": "Avanzado",
-      "id": "p5",
-      "options": [
-        "cruces entre poblaciones",
-        "invención simultánea de la escritura",
-        "identidad completa de todas las culturas",
-        "ausencia de evolución",
-        "fabricación de metales"
-      ],
-      "answer": 0
-    }
-  ],
-  "exam": [
-    {
-      "prompt": "La hominización se estudia principalmente como…",
-      "solution": "Los cambios evolutivos se desarrollan en poblaciones a lo largo de generaciones.",
-      "level": "Básico",
-      "id": "e1",
-      "options": [
-        "una decisión individual",
-        "una historia de monarcas",
-        "un cambio ocurrido en un siglo",
-        "un proceso evolutivo de poblaciones",
-        "una clasificación de pueblos por valor"
-      ],
-      "answer": 3
-    },
-    {
-      "prompt": "El parentesco con otros primates implica…",
-      "solution": "El parentesco evolutivo no significa descender de una especie actual.",
-      "level": "Básico",
-      "id": "e2",
-      "options": [
-        "descendencia de chimpancés actuales",
-        "ancestros compartidos",
-        "ausencia de diferencias",
-        "que la evolución terminó",
-        "que solo Homo sapiens usa objetos"
-      ],
-      "answer": 1
-    },
-    {
-      "prompt": "Lucy pertenece a la especie…",
-      "solution": "Lucy es un fósil de Australopithecus afarensis hallado en Etiopía.",
-      "level": "Básico",
-      "id": "e3",
-      "options": [
-        "Homo neanderthalensis",
-        "Homo sapiens",
-        "Homo erectus",
-        "Pan troglodytes",
-        "Australopithecus afarensis"
-      ],
-      "answer": 4
-    },
-    {
-      "prompt": "¿Qué rasgo apareció antes que la gran expansión cerebral de especies posteriores?",
-      "solution": "El bipedismo está documentado en homininos tempranos.",
-      "level": "Básico",
-      "id": "e4",
-      "options": [
-        "La metalurgia",
-        "La escritura",
-        "El bipedismo habitual",
-        "La ganadería",
-        "El Estado"
-      ],
-      "answer": 2
-    },
-    {
-      "prompt": "Una datación relativa permite establecer…",
-      "solution": "La datación relativa ordena evidencias sin exigir una edad numérica exacta.",
-      "level": "Básico",
-      "id": "e5",
-      "options": [
-        "anterioridad o posterioridad",
-        "siempre un año exacto",
-        "la lengua del individuo",
-        "la identidad de todo fabricante",
-        "su religión"
-      ],
-      "answer": 0
-    },
-    {
-      "prompt": "La dispersión de Homo erectus demuestra que…",
-      "solution": "Erectus se expandió por regiones de Eurasia mucho antes de las dispersiones de nuestra especie.",
-      "level": "Básico",
-      "id": "e6",
-      "options": [
-        "solo sapiens pudo caminar",
-        "la agricultura ya era universal",
-        "la escritura comenzó en el Paleolítico",
-        "hubo salidas de África anteriores a las de Homo sapiens",
-        "los fósiles no tienen contexto"
-      ],
-      "answer": 3
-    },
-    {
-      "prompt": "¿Cuál es una afirmación correcta sobre neandertales?",
-      "solution": "La coexistencia está documentada y hubo contactos entre poblaciones.",
-      "level": "Básico",
-      "id": "e7",
-      "options": [
-        "Fueron chimpancés actuales",
-        "Coexistieron con Homo sapiens",
-        "Vivieron después de las primeras fábricas",
-        "Nunca usaron herramientas",
-        "Fueron el único ancestro directo seguro de toda persona"
-      ],
-      "answer": 1
-    },
-    {
-      "prompt": "El origen de Homo sapiens se sitúa aproximadamente hace…",
-      "solution": "La evidencia sitúa el origen de nuestra especie en África, hace unos 300 000 años.",
-      "level": "Básico",
-      "id": "e8",
-      "options": [
-        "300 años",
-        "3 000 años",
-        "30 millones de años",
-        "300 millones de años",
-        "300 000 años"
-      ],
-      "answer": 4
-    },
-    {
-      "prompt": "Aprender una nueva técnica constituye principalmente un cambio…",
-      "solution": "Las técnicas pueden transmitirse mediante aprendizaje social.",
-      "level": "Básico",
-      "id": "e9",
-      "options": [
-        "de especie automático",
-        "radiométrico",
-        "cultural",
-        "del estrato geológico",
-        "del código genético necesariamente"
-      ],
-      "answer": 2
-    },
-    {
-      "prompt": "¿Qué afirmación evita una interpretación lineal de la evolución?",
-      "solution": "La evolución humana fue ramificada y sus relaciones se investigan con evidencia.",
-      "level": "Básico",
-      "id": "e10",
-      "options": [
-        "Varias especies coexistieron y algunas ramas se extinguieron",
-        "Cada especie fue reemplazada de inmediato por otra",
-        "Toda evolución tiene una meta",
-        "Los pueblos actuales son fósiles vivos",
-        "Cada herramienta pertenece a una única especie"
-      ],
-      "answer": 0
     }
   ],
   "timeline": [
@@ -778,5 +414,6 @@ window.HISTORY_CONTENT = {
       "title": "Comparar",
       "text": "Reconocer diversidad, coexistencia y cambios en el linaje humano."
     }
-  ]
+  ],
+  "assessmentFormat": "practice-10"
 };

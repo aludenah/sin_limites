@@ -21,36 +21,6 @@ window.HISTORY_CONTENT = {
           ]
         }
       ],
-      "quiz": [
-        {
-          "prompt": "¿Qué caracteriza al Paleolítico en la clasificación tecnológica tradicional?",
-          "solution": "La talla lítica es un rasgo tecnológico, aunque se usaron otros materiales.",
-          "level": "Básico",
-          "id": "u1a",
-          "options": [
-            "El uso universal de hierro",
-            "La escritura alfabética",
-            "La agricultura mecanizada",
-            "Las ciudades industriales",
-            "El amplio uso de piedra tallada"
-          ],
-          "answer": 4
-        },
-        {
-          "prompt": "Que una sociedad no haya dejado escritura significa que…",
-          "solution": "Los restos materiales y ambientales permiten investigar sociedades sin escritura.",
-          "level": "Básico",
-          "id": "u1b",
-          "options": [
-            "careció de historia",
-            "no tuvo conocimientos",
-            "debe estudiarse también mediante otras evidencias",
-            "no modificó su ambiente",
-            "no mantuvo relaciones sociales"
-          ],
-          "answer": 2
-        }
-      ],
       "blocks": [
         {
           "title": "Historia antes de la escritura",
@@ -108,36 +78,6 @@ window.HISTORY_CONTENT = {
           ]
         }
       ],
-      "quiz": [
-        {
-          "prompt": "Un desplazamiento estacional hacia recursos conocidos indica…",
-          "solution": "La movilidad puede responder a conocimientos del ambiente y de sus ciclos.",
-          "level": "Básico",
-          "id": "u2a",
-          "options": [
-            "una estrategia organizada de movilidad",
-            "ausencia de planificación",
-            "agricultura necesariamente",
-            "escritura obligatoria",
-            "vida urbana"
-          ],
-          "answer": 0
-        },
-        {
-          "prompt": "¿Qué afirmación sobre la subsistencia paleolítica es adecuada?",
-          "solution": "Las dietas y actividades fueron diversas y deben estudiarse con evidencia local.",
-          "level": "Básico",
-          "id": "u2b",
-          "options": [
-            "Solo se consumía carne de mamut",
-            "Todos los grupos cultivaban trigo",
-            "La pesca era imposible",
-            "Las estrategias variaron según recursos y regiones",
-            "La recolección no aportaba alimentos"
-          ],
-          "answer": 3
-        }
-      ],
       "blocks": [
         {
           "title": "Conocer los recursos del entorno",
@@ -177,36 +117,6 @@ window.HISTORY_CONTENT = {
             "Los residuos y las huellas refuerzan la interpretación del trabajo de pieles.",
             "Compara con experimentos y otras piezas del sitio para evaluar la hipótesis."
           ]
-        }
-      ],
-      "quiz": [
-        {
-          "prompt": "¿Qué aporta mayor sustento para conocer la función de una herramienta?",
-          "solution": "Distintos indicios permiten contrastar la función propuesta.",
-          "level": "Básico",
-          "id": "u3a",
-          "options": [
-            "Usar solo su color",
-            "Combinar huellas de uso, residuos y contexto",
-            "Suponer que toda piedra era un arma",
-            "Ignorar dónde apareció",
-            "Asignarle un nombre moderno"
-          ],
-          "answer": 1
-        },
-        {
-          "prompt": "¿Por qué una mancha quemada no prueba por sí sola el control humano del fuego?",
-          "solution": "Hay que distinguir incendios naturales de hogares y actividades humanas.",
-          "level": "Básico",
-          "id": "u3b",
-          "options": [
-            "Porque el fuego no deja huellas",
-            "Porque solo existió desde la escritura",
-            "Porque todos los fuegos son modernos",
-            "Porque la piedra no puede alterarse",
-            "También puede proceder de un incendio natural"
-          ],
-          "answer": 4
         }
       ],
       "blocks": [
@@ -259,36 +169,6 @@ window.HISTORY_CONTENT = {
           ]
         }
       ],
-      "quiz": [
-        {
-          "prompt": "Una figura grabada en una pequeña pieza transportable pertenece al…",
-          "solution": "El arte mobiliar se realiza sobre objetos que pueden transportarse.",
-          "level": "Básico",
-          "id": "u4a",
-          "options": [
-            "arte rupestre necesariamente",
-            "alfabeto cuneiforme",
-            "arte mobiliar",
-            "registro fiscal",
-            "sistema industrial"
-          ],
-          "answer": 2
-        },
-        {
-          "prompt": "¿Qué conclusión es prudente ante una pintura prehistórica?",
-          "solution": "Las imágenes son evidencia, pero su interpretación requiere contexto.",
-          "level": "Básico",
-          "id": "u4b",
-          "options": [
-            "Su significado debe investigarse y puede ser incierto",
-            "Todas tuvieron una única función conocida",
-            "Permite conocer palabras exactas",
-            "Demuestra una religión moderna concreta",
-            "No aporta información alguna"
-          ],
-          "answer": 0
-        }
-      ],
       "blocks": [
         {
           "title": "Arte que permanece y arte que se transporta",
@@ -325,36 +205,6 @@ window.HISTORY_CONTENT = {
           ]
         }
       ],
-      "quiz": [
-        {
-          "prompt": "Los microlitos son…",
-          "solution": "Las piezas pequeñas podían insertarse en mangos para fabricar instrumentos.",
-          "level": "Básico",
-          "id": "u5a",
-          "options": [
-            "pequeños textos cuneiformes",
-            "aleaciones de cobre y estaño",
-            "semillas domesticadas",
-            "pequeñas piezas de piedra usadas también en herramientas compuestas",
-            "templos mesopotámicos"
-          ],
-          "answer": 3
-        },
-        {
-          "prompt": "Un asentamiento estable junto a recursos silvestres abundantes demuestra que…",
-          "solution": "Algunas comunidades podían reducir su movilidad sin cultivar.",
-          "level": "Básico",
-          "id": "u5b",
-          "options": [
-            "todo poblado ya tenía escritura",
-            "sedentarismo y agricultura no son conceptos idénticos",
-            "la pesca exige metalurgia",
-            "no existió recolección",
-            "la agricultura surgió simultáneamente en el mundo"
-          ],
-          "answer": 1
-        }
-      ],
       "blocks": [
         {
           "title": "Después de la última glaciación",
@@ -389,36 +239,6 @@ window.HISTORY_CONTENT = {
             "La domesticación implica cambios en poblaciones a lo largo de generaciones.",
             "Para demostrarla se estudian anatomía, reproducción, genética y contexto arqueológico."
           ]
-        }
-      ],
-      "quiz": [
-        {
-          "prompt": "La domesticación se diferencia del amansamiento porque involucra…",
-          "solution": "La domesticación es un proceso poblacional y heredable, no solo conductual individual.",
-          "level": "Básico",
-          "id": "u6a",
-          "options": [
-            "cambios en poblaciones a lo largo de generaciones",
-            "solo acostumbrar un individuo",
-            "únicamente construir una casa",
-            "fabricar una herramienta de hierro",
-            "aprender a escribir"
-          ],
-          "answer": 0
-        },
-        {
-          "prompt": "¿Qué asociación es correcta?",
-          "solution": "Mesoamérica fue un centro de domesticación del maíz.",
-          "level": "Básico",
-          "id": "u6b",
-          "options": [
-            "Trigo — origen exclusivo en los Andes",
-            "Papa — origen exclusivo en Mesopotamia",
-            "Arroz — origen exclusivo en Egipto",
-            "Maíz — Mesoamérica",
-            "Cebada — origen exclusivo en América"
-          ],
-          "answer": 3
         }
       ],
       "blocks": [
@@ -487,36 +307,6 @@ window.HISTORY_CONTENT = {
           ]
         }
       ],
-      "quiz": [
-        {
-          "prompt": "El sedentarismo se refiere principalmente a…",
-          "solution": "Describe un patrón residencial, no una tecnología o forma política específica.",
-          "level": "Básico",
-          "id": "u7a",
-          "options": [
-            "la fabricación obligatoria de metales",
-            "la residencia relativamente estable",
-            "la existencia de un alfabeto",
-            "la formación automática de un imperio",
-            "la desaparición de toda recolección"
-          ],
-          "answer": 1
-        },
-        {
-          "prompt": "¿Qué riesgo puede aumentar al depender mucho de pocas cosechas?",
-          "solution": "Una producción concentrada puede resultar vulnerable a sequías, plagas u otros problemas.",
-          "level": "Básico",
-          "id": "u7b",
-          "options": [
-            "La imposibilidad de almacenar",
-            "La desaparición de enfermedades",
-            "La eliminación de conflictos",
-            "La ausencia de plagas",
-            "La vulnerabilidad ante una mala temporada"
-          ],
-          "answer": 4
-        }
-      ],
       "blocks": [
         {
           "title": "Vivir en aldeas",
@@ -563,36 +353,6 @@ window.HISTORY_CONTENT = {
           ]
         }
       ],
-      "quiz": [
-        {
-          "prompt": "¿Qué evidencia sugiere contactos entre regiones?",
-          "solution": "Los materiales no locales permiten estudiar circulación e intercambio.",
-          "level": "Básico",
-          "id": "u8a",
-          "options": [
-            "Solo una piedra local común",
-            "La ausencia de objetos",
-            "Un material cuya fuente geológica está lejos del asentamiento",
-            "Un único hoyo sin contexto",
-            "La forma circular del poblado"
-          ],
-          "answer": 2
-        },
-        {
-          "prompt": "La existencia de excedentes puede favorecer…",
-          "solution": "Los excedentes abren posibilidades, pero sus consecuencias dependen de la organización social.",
-          "level": "Básico",
-          "id": "u8b",
-          "options": [
-            "reservas y actividades especializadas",
-            "obligatoriamente un imperio",
-            "la desaparición de la agricultura",
-            "una única lengua mundial",
-            "la extinción de toda desigualdad"
-          ],
-          "answer": 0
-        }
-      ],
       "blocks": [
         {
           "title": "Almacenar, tejer y transformar",
@@ -627,36 +387,6 @@ window.HISTORY_CONTENT = {
             "Su fabricación supone conocimientos y acceso a materias primas.",
             "No permite asignar una fecha mundial única ni demostrar por sí sola la existencia de un imperio."
           ]
-        }
-      ],
-      "quiz": [
-        {
-          "prompt": "El bronce de estaño combina principalmente…",
-          "solution": "Es una aleación de cobre y estaño.",
-          "level": "Básico",
-          "id": "u9a",
-          "options": [
-            "hierro y carbono",
-            "oro y plata",
-            "cobre y oxígeno únicamente",
-            "cobre y estaño",
-            "piedra y arcilla"
-          ],
-          "answer": 3
-        },
-        {
-          "prompt": "¿Qué afirmación sobre las edades de los metales es correcta?",
-          "solution": "Son categorías para comparar procesos regionales, no una obligación mundial.",
-          "level": "Básico",
-          "id": "u9b",
-          "options": [
-            "Todos los pueblos tuvieron las mismas fechas",
-            "Su secuencia y cronología dependen de la región",
-            "El metal eliminó toda herramienta de piedra",
-            "El cobre apareció después de la industria moderna",
-            "El bronce es siempre hierro puro"
-          ],
-          "answer": 1
         }
       ],
       "blocks": [
@@ -721,36 +451,6 @@ window.HISTORY_CONTENT = {
           ]
         }
       ],
-      "quiz": [
-        {
-          "prompt": "La especialización del trabajo significa…",
-          "solution": "Describe diferenciación de tareas, no una forma política necesaria.",
-          "level": "Básico",
-          "id": "u10a",
-          "options": [
-            "siempre gobierno imperial",
-            "igualdad absoluta de riqueza",
-            "ausencia de intercambio",
-            "uso exclusivo de hierro",
-            "dedicación a tareas particulares"
-          ],
-          "answer": 4
-        },
-        {
-          "prompt": "¿Qué afirmación interpreta mejor la revolución neolítica?",
-          "solution": "La expresión destaca su alcance; los procesos fueron regionales y graduales.",
-          "level": "Básico",
-          "id": "u10b",
-          "options": [
-            "Una mejora instantánea para todos",
-            "Una única fecha mundial",
-            "Cambios profundos y prolongados, con efectos diversos",
-            "La aparición inmediata de todos los imperios",
-            "El fin completo de la caza"
-          ],
-          "answer": 2
-        }
-      ],
       "blocks": [
         {
           "title": "De aldeas a centros urbanos",
@@ -794,220 +494,6 @@ window.HISTORY_CONTENT = {
           "id": "c3-t10-b3"
         }
       ]
-    }
-  ],
-  "practice": [
-    {
-      "prompt": "¿Qué material suele conservarse mejor en un sitio antiguo?",
-      "solution": "La conservación diferencial favorece materiales resistentes, como la piedra.",
-      "level": "Básico",
-      "id": "p1",
-      "options": [
-        "Las hojas frescas",
-        "La ropa de fibras sin condiciones especiales",
-        "Los alimentos blandos",
-        "Las cuerdas vegetales en cualquier ambiente",
-        "La piedra"
-      ],
-      "answer": 4
-    },
-    {
-      "prompt": "Un campamento se ocupa cada temporada de pesca. ¿Qué explicación es más adecuada?",
-      "solution": "La ocupación estacional puede ser parte de una estrategia planificada.",
-      "level": "Intermedio",
-      "id": "p2",
-      "options": [
-        "Desplazamiento sin conocimiento",
-        "Cultivo de cereales demostrado",
-        "Movilidad vinculada al ciclo de recursos",
-        "Vida industrial",
-        "Ausencia de cooperación"
-      ],
-      "answer": 2
-    },
-    {
-      "prompt": "Recolectar frutos silvestres y cultivar plantas se diferencian porque el cultivo…",
-      "solution": "El cultivo supone intervención sostenida en la producción de plantas.",
-      "level": "Básico",
-      "id": "p3",
-      "options": [
-        "interviene en su crecimiento y producción",
-        "no requiere conocimientos",
-        "solo existe con hierro",
-        "es idéntico a recoger cualquier fruto",
-        "impide usar recursos silvestres"
-      ],
-      "answer": 0
-    },
-    {
-      "prompt": "Un poblado estable vive de abundante pesca sin agricultura demostrada. Esto indica…",
-      "solution": "Residencia y economía deben distinguirse.",
-      "level": "Intermedio",
-      "id": "p4",
-      "options": [
-        "ausencia de organización",
-        "metalurgia obligatoria",
-        "ganadería segura",
-        "sedentarismo sin agricultura necesariamente",
-        "vida imperial"
-      ],
-      "answer": 3
-    },
-    {
-      "prompt": "¿Qué pareja asocia correctamente región y cultivo?",
-      "solution": "Los Andes fueron un centro de domesticación de la papa.",
-      "level": "Básico",
-      "id": "p5",
-      "options": [
-        "Mesoamérica — trigo como origen exclusivo",
-        "Andes — papa",
-        "China — papa como origen exclusivo",
-        "Egipto — maíz como origen exclusivo",
-        "Mesopotamia — arroz como origen exclusivo"
-      ],
-      "answer": 1
-    }
-  ],
-  "exam": [
-    {
-      "prompt": "El estudio de sociedades anteriores a la escritura se apoya especialmente en…",
-      "solution": "La arqueología permite investigar distintas dimensiones de esas sociedades.",
-      "level": "Básico",
-      "id": "e1",
-      "options": [
-        "solo crónicas escritas",
-        "únicamente leyendas modernas",
-        "registros digitales antiguos",
-        "documentos notariales obligatorios",
-        "restos materiales y ambientales"
-      ],
-      "answer": 4
-    },
-    {
-      "prompt": "El término Paleolítico se relaciona tradicionalmente con…",
-      "solution": "La talla lítica caracteriza esta clasificación, sin excluir otros materiales.",
-      "level": "Básico",
-      "id": "e2",
-      "options": [
-        "uso general del acero",
-        "alfabetos impresos",
-        "tecnologías de piedra tallada",
-        "fabricación de motores",
-        "monedas de plata"
-      ],
-      "answer": 2
-    },
-    {
-      "prompt": "La subsistencia cazadora-recolectora puede incluir…",
-      "solution": "La caza y la recolección se combinaron con diversas fuentes alimentarias.",
-      "level": "Básico",
-      "id": "e3",
-      "options": [
-        "pesca y aprovechamiento de plantas silvestres",
-        "solo cereales domesticados",
-        "solo ganadería intensiva",
-        "tributos obligatorios de un imperio",
-        "producción fabril"
-      ],
-      "answer": 0
-    },
-    {
-      "prompt": "El nomadismo implica necesariamente…",
-      "solution": "Los desplazamientos pueden seguir rutas y ciclos conocidos.",
-      "level": "Básico",
-      "id": "e4",
-      "options": [
-        "desconocimiento del territorio",
-        "ausencia de cooperación",
-        "incapacidad de fabricar herramientas",
-        "movilidad residencial, no falta de planificación",
-        "agricultura permanente"
-      ],
-      "answer": 3
-    },
-    {
-      "prompt": "Una herramienta compuesta combina…",
-      "solution": "Una pieza de piedra puede unirse a un mango mediante fibras o adhesivos.",
-      "level": "Básico",
-      "id": "e5",
-      "options": [
-        "solo signos alfabéticos",
-        "piezas o materiales con funciones complementarias",
-        "dos imperios vecinos",
-        "siempre hierro y acero",
-        "únicamente semillas"
-      ],
-      "answer": 1
-    },
-    {
-      "prompt": "Una transformación económica vinculada al Neolítico es…",
-      "solution": "Agricultura y ganadería se desarrollaron o difundieron en distintas regiones.",
-      "level": "Básico",
-      "id": "e6",
-      "options": [
-        "la producción de alimentos mediante agricultura y ganadería",
-        "la desaparición de toda recolección",
-        "la invención de motores",
-        "la agricultura industrial",
-        "el uso universal de monedas"
-      ],
-      "answer": 0
-    },
-    {
-      "prompt": "Amansar un animal silvestre individual…",
-      "solution": "La domesticación implica un proceso poblacional de varias generaciones.",
-      "level": "Básico",
-      "id": "e7",
-      "options": [
-        "transforma instantáneamente toda la especie",
-        "demuestra ganadería mundial",
-        "exige escritura",
-        "no equivale por sí solo a domesticar su especie",
-        "origina un Estado"
-      ],
-      "answer": 3
-    },
-    {
-      "prompt": "El sudoeste asiático se asocia tempranamente con…",
-      "solution": "Trigo y cebada fueron cultivos tempranos importantes en esa región.",
-      "level": "Básico",
-      "id": "e8",
-      "options": [
-        "papa y quinua como origen exclusivo",
-        "trigo y cebada",
-        "maíz y cacao como origen exclusivo",
-        "cultivos industriales transgénicos",
-        "arroz andino"
-      ],
-      "answer": 1
-    },
-    {
-      "prompt": "Una función del almacenamiento de granos fue…",
-      "solution": "Las reservas ayudaban a afrontar necesidades futuras, aunque podían perderse.",
-      "level": "Básico",
-      "id": "e9",
-      "options": [
-        "eliminar cualquier mala cosecha",
-        "hacer innecesario el trabajo",
-        "garantizar igualdad social",
-        "reemplazar todas las herramientas",
-        "mantener reservas para consumo y siembra"
-      ],
-      "answer": 4
-    },
-    {
-      "prompt": "El sedentarismo describe…",
-      "solution": "Se refiere a la permanencia residencial.",
-      "level": "Básico",
-      "id": "e10",
-      "options": [
-        "una aleación metálica",
-        "un tipo de escritura",
-        "un patrón de residencia relativamente estable",
-        "una especie humana",
-        "un imperio territorial"
-      ],
-      "answer": 2
     }
   ],
   "timeline": [
@@ -1105,5 +591,6 @@ window.HISTORY_CONTENT = {
       "title": "Relacionar",
       "text": "Analizar cómo tecnología, excedentes e intercambio transformaron las comunidades."
     }
-  ]
+  ],
+  "assessmentFormat": "practice-10"
 };

@@ -21,8 +21,7 @@ const CATALOG_VERSION=3;
 const CATEGORIES=['Todos',...new Set(COURSES.map(c=>c.category))];
 const TAB_INFO={
   Teoría:{icon:'book-open',title:'Teoría del capítulo',text:'Aquí se incorporará el desarrollo conceptual, definiciones, propiedades, ejemplos y fórmulas esenciales de este capítulo.'},
-  Práctica:{icon:'pencil-ruler',title:'Práctica dirigida',text:'Aquí se incorporarán ejercicios graduados, problemas tipo admisión y actividades de aplicación.'},
-  Evaluación:{icon:'badge-check',title:'Evaluación',text:'Aquí se incorporará una evaluación breve con retroalimentación y registro de progreso.'},
+  Práctica:{icon:'pencil-ruler',title:'Práctica · 10 problemas',text:'Este capítulo tendrá una práctica de 10 problemas con alternativas, explicación de las respuestas y registro de avance.'},
   Materiales:{icon:'folder-open',title:'Materiales',text:'Aquí se podrán enlazar PDFs, videos, infografías, solucionarios y recursos complementarios.'}
 };
 
@@ -134,35 +133,17 @@ async function loadCloudProgress(){
   }catch(e){console.error('Firestore progress load:',e)}
 }
 
-function applyChapterProgress(data={}){
-  const total=HISTORY_CHAPTERS.find(c=>c.number===1)?.items||7;
-  chapterProgress={
-    percent:clamp(data.percent,0,100),
-    completedItems:Array.isArray(data.completedItems)?data.completedItems:[],
-    unlockedItem:clamp(data.unlockedItem,0,total-1),
-    currentItem:clamp(data.currentItem,0,total-1),
-    chapterCompleted:Boolean(data.chapterCompleted),
-    attempts:data.attempts&&typeof data.attempts==='object'?data.attempts:{},
-    itemScores:data.itemScores&&typeof data.itemScores==='object'?data.itemScores:{}
-  };
-}
+function practiceProgress(id,data={}){let local={};try{if(currentUser?.uid)local=JSON.parse(localStorage.getItem('sin-limites:'+currentUser.uid+':'+id)||'null')?.progress||{};}catch{}const merged=window.ChapterPractice.merge(id,data,local);return {...merged,...window.ChapterPractice.summary(id,merged)};}
+function applyChapterProgress(data={}){chapterProgress=practiceProgress('historia-universal-presentacion-01',data);}
 
-function applyPhysicsProgress(data={}){
-  physicsProgress={...data,percent:clamp(data.percent,0,100),completedItems:Array.isArray(data.completedItems)?data.completedItems:[],unlockedItem:clamp(data.unlockedItem,0,5),chapterCompleted:Boolean(data.chapterCompleted),examBest:clamp(data.examBest,0,10)};
-}
+function applyPhysicsProgress(data={}){physicsProgress=practiceProgress('fisica-capitulo-01',data);}
 
-function applyVectorsProgress(data={}){
-  vectorsProgress={...data,percent:clamp(data.percent,0,100),completedItems:Array.isArray(data.completedItems)?data.completedItems:[],unlockedItem:clamp(data.unlockedItem,0,5),chapterCompleted:Boolean(data.chapterCompleted),examBest:clamp(data.examBest,0,10)};
-}
+function applyVectorsProgress(data={}){vectorsProgress=practiceProgress('fisica-capitulo-02',data);}
 function activePhysicsNumber(){
   return Number(navigationProgress.lastCourseId)===16&&(Number(navigationProgress.lastChapterNumber)===2||Number(navigationProgress.lastTopicIndex)===1||navigationProgress.lastChapterName==='Vectores')?2:1;
 }
 
-function applyHistoryProgress(number,data={}){
-  if(number===1){applyChapterProgress(data);return;}
-  const total=HISTORY_CHAPTERS.find(c=>c.number===number)?.items||5;
-  historyProgress[number]={...data,percent:clamp(data.percent,0,100),completedItems:Array.isArray(data.completedItems)?data.completedItems:[],unlockedItem:clamp(data.unlockedItem,0,total-1),chapterCompleted:Boolean(data.chapterCompleted),examBest:clamp(data.examBest,0,10)};
-}
+function applyHistoryProgress(number,data={}){if(number===1){applyChapterProgress(data);return;}const meta=HISTORY_CHAPTERS.find(c=>c.number===number);if(meta)historyProgress[number]=practiceProgress(meta.progressId,data);}
 function historyChapterProgress(number){return number===1?chapterProgress:(historyProgress[number]||{percent:0,completedItems:[],unlockedItem:0,chapterCompleted:false,examBest:0});}
 function activeHistoryNumber(){const n=Number(navigationProgress.lastChapterNumber)||Number(navigationProgress.lastTopicIndex)+1;return Number(navigationProgress.lastCourseId)===12&&HISTORY_CHAPTERS.some(c=>c.number===n)?n:1;}
 function applyHistoryRecord(id,data={}){
@@ -226,7 +207,7 @@ function entryDestination(){
 function continueStudyEntry(){
   if(!state.studyMode){state.view='mode';render();return;}
   const entry=pendingEntry;pendingEntry=null;state.view='catalog';
-  if(entry?.chapter){window.location.replace(entry.chapter+'.html?v=20260917-six5');return;}
+  if(entry?.chapter){window.location.replace(entry.chapter+'.html?v=20260917-practice6');return;}
   if(entry?.course){state.activeCourseId=entry.course;state.activeTopicIndex=entry.course===12?Math.max(0,activeHistoryNumber()-1):0;state.activeTab='Teoría';state.view='course';}
   window.scrollTo(0,0);render();
 }
@@ -247,14 +228,14 @@ function renderProgressPanel(){
   const activeProgress=physics?(chapterNumber===2?vectorsProgress:physicsProgress):historyChapterProgress(chapterNumber);
   const activeCourseName=physics?'Física':'Historia Universal';
   const activeChapterName=physics?(chapterNumber===2?'Vectores':'Análisis dimensional'):(HISTORY_CHAPTERS.find(c=>c.number===chapterNumber)?.title||'La ciencia histórica');
-  const total=physics?6:(HISTORY_CHAPTERS.find(c=>c.number===chapterNumber)?.items||5);
+  const total=10;
   const percent=clamp(activeProgress.percent,0,100);
-  const completed=[...new Set(activeProgress.completedItems)].length;
+  const completed=activeProgress.practiceCompleted||0;
   const status=activeProgress.chapterCompleted?'Completado':percent>0?'En progreso':'Por comenzar';
   const cta=activeProgress.chapterCompleted?'Repasar capítulo':percent>0?'Continuar estudiando':'Comenzar ruta';
   const lastCourse=navigationProgress.lastCourseName||'Aún sin actividad';
   const lastChapter=navigationProgress.lastChapterName||'Explora un curso para comenzar';
-  return `<section class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8"><div class="bg-white rounded-3xl border border-slate-200 shadow-xl shadow-slate-900/5 overflow-hidden"><div class="p-5 sm:p-7"><div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5"><div><div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[.18em] text-red-600"><i data-lucide="chart-no-axes-column-increasing" class="w-4 h-4"></i>Mi progreso</div><h2 class="mt-2 text-2xl sm:text-3xl font-black text-slate-900">Sigue desde donde te quedaste</h2><p class="mt-2 text-sm text-slate-500">Tu avance se guarda automáticamente en la nube y te acompaña en cualquier dispositivo.</p></div><div class="flex items-center gap-3 rounded-2xl bg-slate-50 border border-slate-200 px-4 py-3 min-w-[210px]"><div class="w-10 h-10 rounded-xl bg-blue-950 text-white flex items-center justify-center"><i data-lucide="history" class="w-5 h-5"></i></div><div class="min-w-0"><div class="text-[11px] uppercase tracking-wider font-bold text-slate-400">Última visita</div><div class="text-sm font-bold text-slate-800 truncate">${esc(lastCourse)}</div><div class="text-xs text-slate-500 truncate">${esc(lastChapter)}</div></div></div></div><div class="mt-6 grid lg:grid-cols-[1fr_auto] gap-5 items-stretch"><div class="rounded-3xl bg-gradient-to-br from-blue-950 to-blue-900 text-white p-5 sm:p-6"><div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4"><div><div class="text-xs font-bold uppercase tracking-[.18em] text-blue-200">Ruta activa</div><h3 class="mt-2 text-xl sm:text-2xl font-black">${activeCourseName} · Capítulo ${chapterNumber}</h3><p class="mt-1 text-sm text-blue-100">${activeChapterName}</p></div><div class="text-left sm:text-right"><div class="text-4xl font-black">${percent}%</div><div class="text-xs text-blue-200 mt-1">${status}${physics||chapterNumber>1?` · Evaluación: ${activeProgress.examBest}/10`:""}</div></div></div><div class="mt-5 h-3 rounded-full bg-white/15 overflow-hidden"><div class="h-full rounded-full bg-red-400 transition-all duration-500" style="width:${percent}%"></div></div><div class="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-xs text-blue-100"><span class="inline-flex items-center gap-1.5"><i data-lucide="circle-check-big" class="w-4 h-4 text-emerald-300"></i>${completed} de ${total} ${!physics&&chapterNumber===1?'actividades aprobadas':'temas aprobados'}</span><span class="inline-flex items-center gap-1.5"><i data-lucide="unlock" class="w-4 h-4 text-amber-300"></i>${!physics&&chapterNumber===1?'Actividad':'Ítem'} ${Math.min(activeProgress.unlockedItem+1,total)} disponible</span></div></div><div class="rounded-3xl border border-slate-200 bg-slate-50 p-5 sm:p-6 lg:w-72 flex flex-col justify-between"><div><div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center"><i data-lucide="graduation-cap" class="w-5 h-5"></i></div><h3 class="mt-4 font-extrabold text-slate-900">${cta}</h3><p class="mt-2 text-sm leading-relaxed text-slate-500">${state.studyMode==='free'?'Explora la teoría, practica y comprueba lo aprendido a tu ritmo.':'Continúa la ruta con teoría breve, actividades y desbloqueo progresivo.'}</p></div><button onclick="openProgressChapter()" class="mt-5 w-full inline-flex items-center justify-center gap-2 rounded-xl bg-blue-950 px-4 py-3 text-sm font-bold text-white hover:bg-blue-900">${cta}<i data-lucide="arrow-right" class="w-4 h-4"></i></button></div></div></div><div class="px-5 sm:px-7 py-3 border-t border-slate-100 bg-slate-50 text-xs text-slate-400">Seguimiento disponible en Historia Universal · Capítulos 1 al 6 y Física · Capítulos 1 y 2.</div></div></section>`;
+  return `<section class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8"><div class="bg-white rounded-3xl border border-slate-200 shadow-xl shadow-slate-900/5 overflow-hidden"><div class="p-5 sm:p-7"><div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-5"><div><div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[.18em] text-red-600"><i data-lucide="chart-no-axes-column-increasing" class="w-4 h-4"></i>Mi progreso</div><h2 class="mt-2 text-2xl sm:text-3xl font-black text-slate-900">Sigue desde donde te quedaste</h2><p class="mt-2 text-sm text-slate-500">Tu avance se guarda automáticamente en la nube y te acompaña en cualquier dispositivo.</p></div><div class="flex items-center gap-3 rounded-2xl bg-slate-50 border border-slate-200 px-4 py-3 min-w-[210px]"><div class="w-10 h-10 rounded-xl bg-blue-950 text-white flex items-center justify-center"><i data-lucide="history" class="w-5 h-5"></i></div><div class="min-w-0"><div class="text-[11px] uppercase tracking-wider font-bold text-slate-400">Última visita</div><div class="text-sm font-bold text-slate-800 truncate">${esc(lastCourse)}</div><div class="text-xs text-slate-500 truncate">${esc(lastChapter)}</div></div></div></div><div class="mt-6 grid lg:grid-cols-[1fr_auto] gap-5 items-stretch"><div class="rounded-3xl bg-gradient-to-br from-blue-950 to-blue-900 text-white p-5 sm:p-6"><div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4"><div><div class="text-xs font-bold uppercase tracking-[.18em] text-blue-200">Ruta activa</div><h3 class="mt-2 text-xl sm:text-2xl font-black">${activeCourseName} · Capítulo ${chapterNumber}</h3><p class="mt-1 text-sm text-blue-100">${activeChapterName}</p></div><div class="text-left sm:text-right"><div class="text-4xl font-black">${percent}%</div><div class="text-xs text-blue-200 mt-1">${status}</div></div></div><div class="mt-5 h-3 rounded-full bg-white/15 overflow-hidden"><div class="h-full rounded-full bg-red-400 transition-all duration-500" style="width:${percent}%"></div></div><div class="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-xs text-blue-100"><span class="inline-flex items-center gap-1.5"><i data-lucide="circle-check-big" class="w-4 h-4 text-emerald-300"></i>${completed} de ${total} problemas resueltos</span><span class="inline-flex items-center gap-1.5"><i data-lucide="unlock" class="w-4 h-4 text-amber-300"></i>Problema ${Math.min(activeProgress.unlockedItem+1,total)} disponible</span></div></div><div class="rounded-3xl border border-slate-200 bg-slate-50 p-5 sm:p-6 lg:w-72 flex flex-col justify-between"><div><div class="w-11 h-11 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center"><i data-lucide="graduation-cap" class="w-5 h-5"></i></div><h3 class="mt-4 font-extrabold text-slate-900">${cta}</h3><p class="mt-2 text-sm leading-relaxed text-slate-500">${state.studyMode==='free'?'Explora la teoría, practica y comprueba lo aprendido a tu ritmo.':'Continúa la ruta con teoría breve, actividades y desbloqueo progresivo.'}</p></div><button onclick="openProgressChapter()" class="mt-5 w-full inline-flex items-center justify-center gap-2 rounded-xl bg-blue-950 px-4 py-3 text-sm font-bold text-white hover:bg-blue-900">${cta}<i data-lucide="arrow-right" class="w-4 h-4"></i></button></div></div></div><div class="px-5 sm:px-7 py-3 border-t border-slate-100 bg-slate-50 text-xs text-slate-400">Seguimiento disponible en Historia Universal · Capítulos 1 al 6 y Física · Capítulos 1 y 2.</div></div></section>`;
 }
 
 function filteredCourses(){
@@ -274,12 +255,12 @@ function renderCatalog(){
 }
 
 function specialHistoryContent(course){
-  if(course.id===16&&state.activeTopicIndex===1)return `<section class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8"><p class="text-xs font-bold uppercase tracking-wider text-red-600">Capítulo 02 de 25 · Contenido desarrollado</p><h2 class="mt-3 text-3xl font-black text-blue-950">Vectores</h2><p class="mt-4 text-slate-600">Elementos de un vector: módulo y dirección; suma y resta, componentes, resultante y equilibrante, producto escalar y producto vectorial.</p><p class="mt-3 text-sm text-slate-500">6 temas · 12 ejemplos resueltos · laboratorio interactivo · 12 preguntas de control · 10 ejercicios · evaluación de 10 preguntas</p><a href="fisica-capitulo-02.html?v=20260917-six5" class="inline-flex mt-6 rounded-xl bg-blue-950 px-5 py-3 text-sm font-bold text-white">Estudiar Vectores →</a></section>`;
-  if(course.id===16&&state.activeTopicIndex===0)return `<section class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8"><p class="text-xs font-bold uppercase tracking-wider text-red-600">Capítulo 01 de 25 · Contenido desarrollado</p><h2 class="mt-3 text-3xl font-black text-blue-950">Análisis dimensional</h2><p class="mt-4 text-slate-600">Magnitudes y unidades, fórmulas dimensionales, álgebra dimensional, homogeneidad, coeficientes y cálculo de exponentes.</p><p class="mt-3 text-sm text-slate-500">6 temas · 8 ejemplos resueltos · 12 preguntas de control · 10 ejercicios · evaluación de 10 preguntas</p><a href="fisica-capitulo-01.html?v=20260917-six5" class="inline-flex mt-6 rounded-xl bg-blue-950 px-5 py-3 text-sm font-bold text-white">Estudiar el capítulo →</a></section>`;
-  if(course.id===12&&state.activeTopicIndex===0)return `<section class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8"><p class="text-xs font-bold uppercase tracking-wider text-red-600">Capítulo 1 de 40 · Teoría y actividades</p><h2 class="mt-3 text-3xl font-black text-blue-950">La ciencia histórica</h2><p class="mt-4 text-slate-600">Estudia la ciencia histórica con explicaciones, ejemplos e imágenes: concepto e importancia, tiempo histórico, protagonistas, fuentes, ciencias auxiliares, historiografía y periodización.</p><p class="mt-3 text-sm text-slate-500">Teoría organizada por temas · 8 ilustraciones · 7 actividades con solución · avance guardado</p><a href="historia-universal-capitulo-01.html?v=20260917-six5" class="inline-flex mt-6 rounded-xl bg-blue-950 px-5 py-3 text-sm font-bold text-white">Estudiar el capítulo →</a></section>`;
+  if(course.id===16&&state.activeTopicIndex===1)return `<section class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8"><p class="text-xs font-bold uppercase tracking-wider text-red-600">Capítulo 02 de 25 · Contenido desarrollado</p><h2 class="mt-3 text-3xl font-black text-blue-950">Vectores</h2><p class="mt-4 text-slate-600">Elementos de un vector: módulo y dirección; suma y resta, componentes, resultante y equilibrante, producto escalar y producto vectorial.</p><p class="mt-3 text-sm text-slate-500">Teoría y ejemplos resueltos · práctica de 10 problemas con explicación</p><a href="fisica-capitulo-02.html?v=20260917-practice6" class="inline-flex mt-6 rounded-xl bg-blue-950 px-5 py-3 text-sm font-bold text-white">Estudiar Vectores →</a></section>`;
+  if(course.id===16&&state.activeTopicIndex===0)return `<section class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8"><p class="text-xs font-bold uppercase tracking-wider text-red-600">Capítulo 01 de 25 · Contenido desarrollado</p><h2 class="mt-3 text-3xl font-black text-blue-950">Análisis dimensional</h2><p class="mt-4 text-slate-600">Magnitudes y unidades, fórmulas dimensionales, álgebra dimensional, homogeneidad, coeficientes y cálculo de exponentes.</p><p class="mt-3 text-sm text-slate-500">Teoría y ejemplos resueltos · práctica de 10 problemas con explicación</p><a href="fisica-capitulo-01.html?v=20260917-practice6" class="inline-flex mt-6 rounded-xl bg-blue-950 px-5 py-3 text-sm font-bold text-white">Estudiar el capítulo →</a></section>`;
+  if(course.id===12&&state.activeTopicIndex===0)return `<section class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8"><p class="text-xs font-bold uppercase tracking-wider text-red-600">Capítulo 1 de 40 · Teoría y actividades</p><h2 class="mt-3 text-3xl font-black text-blue-950">La ciencia histórica</h2><p class="mt-4 text-slate-600">Estudia la ciencia histórica con explicaciones, ejemplos e imágenes: concepto e importancia, tiempo histórico, protagonistas, fuentes, ciencias auxiliares, historiografía y periodización.</p><p class="mt-3 text-sm text-slate-500">Teoría e imágenes didácticas · práctica de 10 problemas con explicación · avance guardado</p><a href="historia-universal-capitulo-01.html?v=20260917-practice6" class="inline-flex mt-6 rounded-xl bg-blue-950 px-5 py-3 text-sm font-bold text-white">Estudiar el capítulo →</a></section>`;
   if(course.id===12&&state.activeTopicIndex>=1&&state.activeTopicIndex<=5){
     const c=HISTORY_CHAPTERS.find(h=>h.number===state.activeTopicIndex+1);
-    if(c)return `<section class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8"><p class="text-xs font-bold uppercase tracking-wider text-red-600">Capítulo ${c.number} de ${window.HISTORY_SYLLABUS.length} · Contenido desarrollado</p><h2 class="mt-3 text-3xl font-black text-blue-950">${esc(c.title)}</h2><p class="mt-4 text-slate-600">${esc(c.intro)}</p><p class="mt-3 text-sm text-slate-500">Teoría por temas · imágenes ampliables · casos guiados · actividades y evaluación</p><a href="historia-universal-capitulo-${String(c.number).padStart(2,'0')}.html?v=20260917-six5" class="inline-flex mt-6 rounded-xl bg-blue-950 px-5 py-3 text-sm font-bold text-white">Estudiar el capítulo →</a></section>`;
+    if(c)return `<section class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8"><p class="text-xs font-bold uppercase tracking-wider text-red-600">Capítulo ${c.number} de ${window.HISTORY_SYLLABUS.length} · Contenido desarrollado</p><h2 class="mt-3 text-3xl font-black text-blue-950">${esc(c.title)}</h2><p class="mt-4 text-slate-600">${esc(c.intro)}</p><p class="mt-3 text-sm text-slate-500">Teoría por temas · imágenes ampliables · práctica de 10 problemas con explicación</p><a href="historia-universal-capitulo-${String(c.number).padStart(2,'0')}.html?v=20260917-practice6" class="inline-flex mt-6 rounded-xl bg-blue-950 px-5 py-3 text-sm font-bold text-white">Estudiar el capítulo →</a></section>`;
   }
   return null;
 }
@@ -287,7 +268,7 @@ function specialHistoryContent(course){
 function renderCourse(){
   const course=COURSES.find(c=>c.id===state.activeCourseId)||COURSES[0];
   const topic=course.topics[state.activeTopicIndex];
-  const tab=TAB_INFO[state.activeTab];
+  const tab=TAB_INFO[state.activeTab]||TAB_INFO.Teoría;
   const syllabusNote=course.id===12?'<p class="mt-3 text-sm text-slate-500">Historia Universal: 40 capítulos; contenido desarrollado del 1 al 6.</p>':'';
   const chapterButtons=syllabusNote+course.topics.map((name,idx)=>`<button onclick="setTopic(${idx})" class="chapter-btn w-full flex items-center gap-3 px-3 py-3 rounded-xl text-left ${idx===state.activeTopicIndex?'bg-blue-950 text-white':'text-slate-600 hover:bg-slate-100'}"><span class="text-[11px] font-bold w-7 shrink-0 ${idx===state.activeTopicIndex?'text-red-300':'text-slate-400'}">${String(idx+1).padStart(2,'0')}</span><span class="text-sm font-medium leading-snug">${esc(name)}</span></button>`).join('');
   const special=specialHistoryContent(course);
@@ -314,9 +295,9 @@ function openCourse(id){
   render();
 }
 
-function openProgressChapter(){if(!readyToChooseCourse())return;const physics=Number(navigationProgress.lastCourseId)===16;window.location.assign(physics?'fisica-capitulo-0'+activePhysicsNumber()+'.html?v=20260917-six5':'historia-universal-capitulo-'+String(activeHistoryNumber()).padStart(2,'0')+'.html?v=20260917-six5')}
+function openProgressChapter(){if(!readyToChooseCourse())return;const physics=Number(navigationProgress.lastCourseId)===16;window.location.assign(physics?'fisica-capitulo-0'+activePhysicsNumber()+'.html?v=20260917-practice6':'historia-universal-capitulo-'+String(activeHistoryNumber()).padStart(2,'0')+'.html?v=20260917-practice6')}
 function goHome(){state.view='catalog';window.scrollTo(0,0);render()}
-function setTopic(i){if(!readyToChooseCourse())return;if(state.activeCourseId===12&&Number.isInteger(i)&&i>=0&&i<=5){window.location.assign('historia-universal-capitulo-'+String(i+1).padStart(2,'0')+'.html?v=20260917-six5');return}if(state.activeCourseId===16&&[0,1].includes(i)){window.location.assign('fisica-capitulo-0'+(i+1)+'.html?v=20260917-six5');return}state.activeTopicIndex=i;state.activeTab='Teoría';saveProgress();render();window.scrollTo({top:0,behavior:'smooth'})}
+function setTopic(i){if(!readyToChooseCourse())return;if(state.activeCourseId===12&&Number.isInteger(i)&&i>=0&&i<=5){window.location.assign('historia-universal-capitulo-'+String(i+1).padStart(2,'0')+'.html?v=20260917-practice6');return}if(state.activeCourseId===16&&[0,1].includes(i)){window.location.assign('fisica-capitulo-0'+(i+1)+'.html?v=20260917-practice6');return}state.activeTopicIndex=i;state.activeTab='Teoría';saveProgress();render();window.scrollTo({top:0,behavior:'smooth'})}
 function moveTopic(d){const c=COURSES.find(c=>c.id===state.activeCourseId),n=state.activeTopicIndex+d;if(n>=0&&n<c.topics.length)setTopic(n)}
 function setTab(t){if(TAB_INFO[t]){state.activeTab=t;render()}}
 function setCategory(c){state.category=c;render()}
@@ -375,7 +356,6 @@ auth.onAuthStateChanged(async user=>{
     lucide.createIcons();
   }
 });
-
 
 
 

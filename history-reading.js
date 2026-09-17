@@ -1,7 +1,7 @@
 'use strict';
 const DECK=window.HISTORY_READING;
 const SLIDES=DECK.blocks;
-const QUESTIONS=SLIDES.filter(s=>s.question).map(s=>s.question);
+const QUESTIONS=window.ChapterPractice.questions(DECK.id);
 const ROOT=document.getElementById('reading-app');
 const CFG={apiKey:'AIzaSyCurhmnJ21SMqGM6G54t8QM8jcqO8jV0OE',authDomain:'sin-limites-12f07.firebaseapp.com',projectId:'sin-limites-12f07',storageBucket:'sin-limites-12f07.firebasestorage.app',messagingSenderId:'757098079298',appId:'1:757098079298:web:068a9a7ea93149bfef79db'};
 const esc=v=>String(v??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;').replaceAll('"','&quot;').replaceAll("'",'&#039;');
@@ -30,38 +30,20 @@ const iconPaths={
 function icon(name){return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${iconPaths[name]||iconPaths.book}</svg>`;}
 
 let readingObserver=null;
-// These legacy field names preserve the reading position and seven saved activity results.
-function emptyProgress(){return {currentSlide:0,visitedSlides:[],answers:{},results:{},completedItems:[],attempts:{},itemScores:{},studyMode:'free',updatedMs:0};}
-function validAnswer(q,a){return Number.isInteger(a)&&a>=0&&a<q.options.length;}
-function allowedSlide(i,p=P){if(!Number.isInteger(i)||i<0||i>=SLIDES.length)return false;if(p.studyMode==='free')return true;return SLIDES.slice(0,i).every(s=>!s.question||p.completedItems.includes(s.question.index));}
-function normalized(data={}){
- const p={...emptyProgress(),studyMode:window.StudyMode?.get(user?.uid)||(data.studyMode==='progressive'?'progressive':'free')};
- p.currentSlide=Number.isInteger(data.currentSlide)?Math.min(SLIDES.length-1,Math.max(0,data.currentSlide)):0;
- p.visitedSlides=[...new Set(Array.isArray(data.visitedSlides)?data.visitedSlides:[])].filter(n=>Number.isInteger(n)&&n>=0&&n<SLIDES.length);
- p.completedItems=[...new Set(Array.isArray(data.completedItems)?data.completedItems:[])].filter(n=>Number.isInteger(n)&&n>=0&&n<QUESTIONS.length).sort((a,b)=>a-b);
- for(const q of QUESTIONS){
-  if(validAnswer(q,data.answers?.[q.id]))p.answers[q.id]=data.answers[q.id];
-  if(validAnswer(q,data.results?.[q.id]))p.results[q.id]=data.results[q.id];
-  const key='item_'+(q.index+1);p.attempts[key]=Math.max(0,Math.floor(Number(data.attempts?.[key])||0));p.itemScores[key]=Math.max(0,Math.min(100,Number(data.itemScores?.[key])||0));
- }
- p.updatedMs=Math.max(0,Number(data.updatedMs)||0);
- if(!allowedSlide(p.currentSlide,p))p.currentSlide=SLIDES.findIndex(s=>s.question&&!p.completedItems.includes(s.question.index));
- return p;
-}
-function mergeProgress(a={},b={}){
- a=normalized(a);b=normalized(b);const newer=b.updatedMs>a.updatedMs?b:a,older=newer===a?b:a;
- const m={...newer,answers:{...older.answers,...newer.answers},results:{...older.results,...newer.results},visitedSlides:[...new Set([...a.visitedSlides,...b.visitedSlides])],completedItems:[...new Set([...a.completedItems,...b.completedItems])],attempts:{},itemScores:{}};
- for(const q of QUESTIONS)for(const f of ['attempts','itemScores']){const k='item_'+(q.index+1);m[f][k]=Math.max(a[f][k]||0,b[f][k]||0);}
- return normalized(m);
-}
-function percent(){return Math.round(P.completedItems.length/QUESTIONS.length*100);}
+// Legacy fields retain previous achievements and reading positions.
+function emptyProgress(){return {currentSlide:0,visitedSlides:[],studyMode:'free',practice10:window.ChapterPractice.normalize(DECK.id),updatedMs:0};}
+
+function allowedSlide(i){return Number.isInteger(i)&&i>=0&&i<SLIDES.length;}
+function normalized(data={}){return {...data,...emptyProgress(),currentSlide:Number.isInteger(data.currentSlide)?Math.min(SLIDES.length-1,Math.max(0,data.currentSlide)):0,visitedSlides:[...new Set(Array.isArray(data.visitedSlides)?data.visitedSlides:[])].filter(n=>Number.isInteger(n)&&n>=0&&n<SLIDES.length),studyMode:window.StudyMode?.get(user?.uid)||(data.studyMode==='progressive'?'progressive':'free'),practice10:window.ChapterPractice.normalize(DECK.id,data),updatedMs:Math.max(0,Number(data.updatedMs)||0)};}
+function mergeProgress(a={},b={}){return normalized(window.ChapterPractice.merge(DECK.id,a,b));}
+function percent(){return P.practice10.mastered.length*10;}
 function key(uid=user.uid){return 'sin-limites:'+uid+':'+DECK.id;}
 function readLocal(){try{return JSON.parse(localStorage.getItem(key())||'null');}catch{return null;}}
 function writeLocal(pending){try{localStorage.setItem(key(),JSON.stringify({progress:P,pending}));return true;}catch{return false;}}
 function record(uid=user.uid){return db.collection('users').doc(uid).collection('progress').doc(DECK.id);}
 function setStatus(message){saveMessage=message;const s=document.getElementById('save-status');if(s)s.textContent=message;const r=document.getElementById('retry-sync');if(r)r.hidden=cloudReady;}
 function markChanged(){P.updatedMs=Date.now();saveVersion++;const saved=writeLocal(true);setStatus(cloudReady?'Guardando avance…':saved?'Guardado en este dispositivo · pendiente de sincronizar':'No se pudo guardar. Mantén esta página abierta y reintenta.');}
-function payload(){let next=0;while(next<QUESTIONS.length&&P.completedItems.includes(next))next++;return {...P,percent:percent(),currentItem:Math.min(next,QUESTIONS.length-1),unlockedItem:Math.min(next,QUESTIONS.length-1),chapterCompleted:P.completedItems.length===QUESTIONS.length,courseId:12,courseName:'Historia Universal',chapterNumber:1,chapterName:DECK.title,format:'reading',schemaVersion:2,updatedAt:firebase.firestore.FieldValue.serverTimestamp()};}
+function payload(){return {...P,...window.ChapterPractice.summary(DECK.id,P),courseId:12,courseName:'Historia Universal',chapterNumber:1,chapterName:DECK.title,format:'reading',schemaVersion:3,updatedAt:firebase.firestore.FieldValue.serverTimestamp()};}
 function persist(){
  clearTimeout(saveTimer);saveTimer=null;if(!user||!cloudReady)return Promise.resolve();
  const uid=user.uid,epoch=authEpoch,version=saveVersion,data=payload();
@@ -78,8 +60,8 @@ const blockIndex=id=>SLIDES.findIndex(s=>s.id===id);
 const questionIndex=id=>SLIDES.findIndex(s=>s.question?.id===id);
 const blockTarget=i=>SLIDES[i]?.kind==='removed'?'activities':i===0?'chapter-top':i===1?'learning-goals':i===SLIDES.length-1?'chapter-finish':'block-'+SLIDES[i].id;
 
-function header(){return `<header class="topbar"><a class="brand" href="index.html?v=20260917-six5"><img src="assets/logo-sin-limites.jpg" width="40" height="40" alt="Logo de SIN LÍMITES"><span>SIN <em>LÍMITES</em></span></a><span class="course-label">Historia Universal · Capítulo 1</span><a class="button secondary" href="index.html?course=12&v=20260917-six5">${icon('back')} Volver al temario</a></header>`;}
-function contents(){return `<aside class="lesson-sidebar"><details class="lesson-index" open><summary>En este capítulo</summary><nav aria-label="Temas del capítulo"><a href="#learning-goals">Antes de empezar</a>${GROUPS.map((group,i)=>`<a href="#section-${i+1}"><span>${String(i+1).padStart(2,'0')}</span>${esc(group)}</a>`).join('')}<a class="activities-link" href="#activities">${icon('check')} Actividades</a></nav></details><p class="index-hint">Lee a tu ritmo y vuelve al tema que necesites consultar.</p></aside>`;}
+function header(){return `<header class="topbar"><a class="brand" href="index.html?v=20260917-practice6"><img src="assets/logo-sin-limites.jpg" width="40" height="40" alt="Logo de SIN LÍMITES"><span>SIN <em>LÍMITES</em></span></a><span class="course-label">Historia Universal · Capítulo 1</span><a class="button secondary" href="index.html?course=12&v=20260917-practice6">${icon('back')} Volver al temario</a></header>`;}
+function contents(){return `<aside class="lesson-sidebar"><details class="lesson-index" open><summary>En este capítulo</summary><nav aria-label="Temas del capítulo"><a href="#learning-goals">Antes de empezar</a>${GROUPS.map((group,i)=>`<a href="#section-${i+1}"><span>${String(i+1).padStart(2,'0')}</span>${esc(group)}</a>`).join('')}<a class="activities-link" href="#activities">${icon('check')} Práctica · 10 problemas</a></nav></details><p class="index-hint">Lee a tu ritmo y vuelve al tema que necesites consultar.</p></aside>`;}
 function cards(block){return `<div class="concept-grid count-${block.cards.length}">${block.cards.map(c=>`<section class="concept-card">${c.tag?`<span class="tag">${esc(c.tag)}</span>`:''}<h4>${esc(c.title)}</h4><p>${esc(c.text)}</p></section>`).join('')}</div>`;}
 function body(block){
  if(block.kind==='table')return `<div class="table-wrap" tabindex="0" role="region" aria-label="${esc(block.title)}"><table><thead><tr>${block.headers.map(h=>`<th scope="col">${esc(h)}</th>`).join('')}</tr></thead><tbody>${block.rows.map(row=>`<tr>${row.map((cell,i)=>`<${i?'td':'th scope="row"'}>${esc(cell)}</${i?'td':'th'}>`).join('')}</tr>`).join('')}</tbody></table></div>`;
@@ -94,23 +76,18 @@ function illustration(block){
 function topic(block){
  return `<section class="topic kind-${block.kind}" id="block-${block.id}" data-reading-block="${blockIndex(block.id)}" tabindex="-1"><h3>${esc(block.title)}</h3>${block.lead?`<p class="topic-lead">${esc(block.lead)}</p>`:''}<div class="topic-layout ${block.illustration?'with-image':''}"><div>${body(block)}</div>${illustration(block)}</div><p class="topic-explanation">${esc(block.notes)}</p>${block.takeaway?`<p class="takeaway">${esc(block.takeaway)}</p>`:''}</section>`;
 }
-function questionCard(q){
- const i=questionIndex(q.id),available=allowedSlide(i),answered=validAnswer(q,P.results[q.id]),right=P.results[q.id]===q.answer,done=P.completedItems.includes(q.index);
- const title=`<header class="question-heading"><span class="question-number">${String(q.index+1).padStart(2,'0')}</span><div><p class="tag">Actividad ${q.index+1} de ${QUESTIONS.length}</p><h3>${esc(q.topic)}</h3></div>${done?'<span class="approved">Aprobada</span>':''}</header>`;
- if(!available)return `<section class="exercise-card locked" id="block-${SLIDES[i].id}" tabindex="-1" aria-label="Actividad ${q.index+1}, pendiente de desbloquear">${title}<p>Aprueba la actividad anterior para habilitar esta pregunta.</p></section>`;
- return `<section class="exercise-card" id="block-${SLIDES[i].id}" data-reading-block="${i}" tabindex="-1">${title}<p class="question-prompt">${esc(q.prompt)}</p>${q.statements?`<ul class="statements">${q.statements.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:''}<fieldset class="choices"><legend class="sr-only">${esc(q.prompt)}</legend>${q.options.map((o,n)=>`<label class="choice"><input type="radio" name="${q.id}" value="${n}" data-question="${q.id}" ${P.answers[q.id]===n?'checked':''} ${answered?'disabled':''}><span class="choice-letter">${String.fromCharCode(65+n)}.</span><span>${esc(o)}</span></label>`).join('')}</fieldset>${notice&&P.currentSlide===i?`<p class="answer-notice" role="alert">${esc(notice)}</p>`:''}${answered?`<div class="feedback ${right?'correct':''}" id="feedback-${q.id}" tabindex="-1" role="status"><strong>${right?'Respuesta correcta':'Revisa tu respuesta'} · Alternativa ${String.fromCharCode(65+q.answer)}</strong><p>${esc(q.solution)}</p></div><button class="button secondary" data-action="retry-question" data-question="${q.id}">Volver a responder</button>`:`<button class="button" data-action="check" data-question="${q.id}">Comprobar respuesta ${icon('check')}</button>`}<p class="question-note">${done?'Tu acierto se conserva aunque vuelvas a responder.':'Puedes volver a intentarlo; tus aciertos se guardan.'}</p></section>`;
-}
-function finishContent(){return `<div><p class="tag">Tu avance en el capítulo</p><h2>${P.completedItems.length===QUESTIONS.length?'¡Completaste las actividades!':'Comprueba lo aprendido'}</h2><p>${P.completedItems.length} de ${QUESTIONS.length} actividades aprobadas.</p></div><div class="finish-actions"><a class="button secondary" href="#activities">Repasar actividades</a><a class="button" href="historia-universal-capitulo-02.html?v=20260917-six5">Capítulo 2 ${icon('next')}</a></div>`;}
+
+function finishContent(){return '<div><h2>'+(P.practice10.mastered.length===10?'¡Completaste la práctica!':'Tu avance en el capítulo')+'</h2><p>'+P.practice10.mastered.length+' de 10 problemas resueltos correctamente.</p></div><div class="finish-actions"><a class="button secondary" href="#activities">Repasar la práctica</a><a class="button" href="historia-universal-capitulo-02.html?v=20260917-practice6">Capítulo 2 '+icon('next')+'</a></div>';}
 function render(){
  if(!user)return;
  ROOT.setAttribute('aria-busy','false');
  const goals=SLIDES.find(s=>s.id==='s2');
- ROOT.innerHTML=`${header()}<main id="chapter-content"><header class="chapter-hero" id="chapter-top"><div><p class="eyebrow">Historia Universal · Capítulo 01</p><h1>${esc(DECK.title)}</h1><p class="hero-intro">Comprender el pasado. Interpretar el presente. Pensar el futuro.</p></div><div class="hero-actions">${P.currentSlide>1?`<button class="button secondary" data-action="resume" data-index="${P.currentSlide}">${icon('book')} Retomar lectura</button>`:''}<a class="button" href="#activities">Ir a las actividades ${icon('next')}</a></div></header><section class="progress-panel" aria-label="Avance del capítulo"><div class="progress-heading"><span>Actividades aprobadas</span><strong id="progress-count">${P.completedItems.length} / ${QUESTIONS.length}</strong></div><progress id="chapter-progress" max="${QUESTIONS.length}" value="${P.completedItems.length}" aria-label="Actividades aprobadas"></progress><div class="save-state"><span id="save-status" role="status">${esc(saveMessage)}</span><button id="retry-sync" data-action="sync" ${cloudReady?'hidden':''}>Reintentar sincronización</button></div></section><div class="reading-layout">${contents()}<article class="chapter-article"><section class="learning-goals" id="learning-goals" data-reading-block="1" tabindex="-1"><p class="eyebrow">Antes de empezar</p><h2>${esc(goals.title)}</h2><ul>${goals.cards.map(c=>`<li><strong>${esc(c.title)}.</strong> ${esc(c.text)}</li>`).join('')}</ul></section>${GROUPS.map((group,n)=>`<section class="reading-section" id="section-${n+1}" aria-labelledby="section-heading-${n+1}"><header class="section-heading"><span>${String(n+1).padStart(2,'0')}</span><h2 id="section-heading-${n+1}">${esc(group)}</h2></header>${THEORY.filter(b=>b.section===group).map(topic).join('')}</section>`).join('')}<section class="activities-section" id="activities" aria-labelledby="activities-title"><header class="section-heading"><span>${icon('check')}</span><h2 id="activities-title">Comprueba lo aprendido</h2></header><p class="section-intro">Elige una alternativa en cada actividad y comprueba tu respuesta. La explicación te ayudará a revisar el tema.</p><div id="activities-list">${QUESTIONS.map(questionCard).join('')}</div></section><section class="chapter-finish" id="chapter-finish">${finishContent()}</section></article></div></main><footer class="page-footer">SIN LÍMITES · Historia Universal · La ciencia histórica</footer><dialog id="image-dialog" aria-labelledby="image-title"></dialog>`;
+ ROOT.innerHTML=`${header()}<main id="chapter-content"><header class="chapter-hero" id="chapter-top"><div><p class="eyebrow">Historia Universal · Capítulo 01</p><h1>${esc(DECK.title)}</h1><p class="hero-intro">Comprender el pasado. Interpretar el presente. Pensar el futuro.</p></div><div class="hero-actions">${P.currentSlide>1?`<button class="button secondary" data-action="resume" data-index="${P.currentSlide}">${icon('book')} Retomar lectura</button>`:''}<a class="button" href="#activities">Ir a la práctica ${icon('next')}</a></div></header><section class="progress-panel" aria-label="Avance del capítulo"><div class="progress-heading"><span>Problemas resueltos</span><strong id="progress-count">${P.practice10.mastered.length} / ${QUESTIONS.length}</strong></div><progress id="chapter-progress" max="${QUESTIONS.length}" value="${P.practice10.mastered.length}" aria-label="Problemas resueltos"></progress><div class="save-state"><span id="save-status" role="status">${esc(saveMessage)}</span><button id="retry-sync" data-action="sync" ${cloudReady?'hidden':''}>Reintentar sincronización</button></div></section><div class="reading-layout">${contents()}<article class="chapter-article"><section class="learning-goals" id="learning-goals" data-reading-block="1" tabindex="-1"><p class="eyebrow">Antes de empezar</p><h2>${esc(goals.title)}</h2><ul>${goals.cards.map(c=>`<li><strong>${esc(c.title)}.</strong> ${esc(c.text)}</li>`).join('')}</ul></section>${GROUPS.map((group,n)=>`<section class="reading-section" id="section-${n+1}" aria-labelledby="section-heading-${n+1}"><header class="section-heading"><span>${String(n+1).padStart(2,'0')}</span><h2 id="section-heading-${n+1}">${esc(group)}</h2></header>${THEORY.filter(b=>b.section===group).map(topic).join('')}</section>`).join('')}<section class="activities-section" id="activities"><div id="activities-list">${window.ChapterPractice.render(DECK.id,P.practice10,P.studyMode,notice)}</div></section><section class="chapter-finish" id="chapter-finish">${finishContent()}</section></article></div></main><footer class="page-footer">SIN LÍMITES · Historia Universal · La ciencia histórica</footer><dialog id="image-dialog" aria-labelledby="image-title"></dialog>`;
  observeReading();
 }
 function guest(message='Inicia sesión para estudiar el capítulo y guardar tu avance.'){
  readingObserver?.disconnect();ROOT.setAttribute('aria-busy','false');
- ROOT.innerHTML=`${header()}<main class="guest-view" id="chapter-content"><p class="eyebrow">Historia Universal · Capítulo 01</p><h1>${esc(DECK.title)}</h1><p>Teoría organizada por temas, imágenes didácticas y actividades con explicación.</p><p>${esc(message)}</p><a class="button" href="index.html?chapter=historia-universal-capitulo-01&v=20260917-six5">Continuar con Google ${icon('next')}</a></main>`;
+ ROOT.innerHTML=`${header()}<main class="guest-view" id="chapter-content"><p class="eyebrow">Historia Universal · Capítulo 01</p><h1>${esc(DECK.title)}</h1><p>Teoría organizada por temas, imágenes didácticas y actividades con explicación.</p><p>${esc(message)}</p><a class="button" href="index.html?chapter=historia-universal-capitulo-01&v=20260917-practice6">Continuar con Google ${icon('next')}</a></main>`;
 }
 function rememberBlock(i){
  if(!user||!allowedSlide(i))return;
@@ -131,47 +108,19 @@ function visit(i,focus=true){
  if(!user||!allowedSlide(i))return;notice='';rememberBlock(i);
  const target=document.getElementById(blockTarget(i));target?.scrollIntoView({block:'start',behavior:'instant'});if(focus)target?.focus({preventScroll:true});
 }
-function renderActivities(){
- const list=document.getElementById('activities-list');if(list)list.innerHTML=QUESTIONS.map(questionCard).join('');
- const count=document.getElementById('progress-count');if(count)count.textContent=`${P.completedItems.length} / ${QUESTIONS.length}`;
- const progress=document.getElementById('chapter-progress');if(progress)progress.value=P.completedItems.length;
- const finish=document.getElementById('chapter-finish');if(finish)finish.innerHTML=finishContent();
- observeReading();
-}
-function checkAnswer(id=SLIDES[P.currentSlide]?.question?.id){
- const q=QUESTIONS.find(q=>q.id===id),i=questionIndex(id);
- if(!user||!q||!allowedSlide(i)||validAnswer(q,P.results[q.id]))return;
- P.currentSlide=i;
- const answer=P.answers[q.id];
- if(!validAnswer(q,answer)){notice='Selecciona una alternativa antes de comprobar.';renderActivities();document.querySelector(`input[name="${q.id}"]`)?.focus();return;}
- P.results[q.id]=answer;const k='item_'+(q.index+1);P.attempts[k]=(P.attempts[k]||0)+1;
- if(answer===q.answer){if(!P.completedItems.includes(q.index))P.completedItems.push(q.index);P.itemScores[k]=100;}
- notice='';markChanged();renderActivities();persist();
- const feedback=document.getElementById('feedback-'+q.id);feedback?.focus({preventScroll:true});feedback?.scrollIntoView({block:'nearest',behavior:'instant'});
-}
-function retryQuestion(id){
- const q=QUESTIONS.find(q=>q.id===id),i=questionIndex(id);if(!user||!q||!allowedSlide(i))return;
- P.currentSlide=i;delete P.answers[id];delete P.results[id];notice='';saveSoon();renderActivities();document.querySelector(`input[name="${id}"]`)?.focus();
-}
+function renderActivities(){const list=document.getElementById('activities-list');if(list)list.innerHTML=window.ChapterPractice.render(DECK.id,P.practice10,P.studyMode,notice);const count=document.getElementById('progress-count');if(count)count.textContent=P.practice10.mastered.length+' / 10';const progress=document.getElementById('chapter-progress');if(progress)progress.value=P.practice10.mastered.length;const finish=document.getElementById('chapter-finish');if(finish)finish.innerHTML=finishContent();}
+function checkAnswer(id){if(!user)return;const result=window.ChapterPractice.check(DECK.id,P.practice10,id,P.studyMode);if(result==='locked'||result==='unchanged')return;notice=result==='missing'?'Selecciona una alternativa antes de comprobar.':'';if(result==='graded')markChanged();renderActivities();if(result==='graded'){persist();const feedback=document.getElementById('practice-feedback-'+id);feedback?.focus({preventScroll:true});feedback?.scrollIntoView({block:'nearest',behavior:'instant'});}else document.querySelector('input[name="practice10-'+id+'"]')?.focus();}
+
 function openImage(id){
  const block=SLIDES.find(s=>s.id===id),v=block?.illustration,d=document.getElementById('image-dialog');if(!v||!d)return;
  d.innerHTML=`<div class="dialog-heading"><h2 id="image-title">${esc(block.title)}</h2><button class="button secondary" data-action="close-image" aria-label="Cerrar imagen">${icon('close')}</button></div><img class="expanded-image" src="${esc(v.src)}" alt="${esc(v.alt)}"><p>${esc(v.caption)} · Ilustración creada con IA.</p>`;
  d.showModal();
 }
 ROOT.addEventListener('click',event=>{
- const button=event.target.closest('[data-action]');if(!button||button.disabled||!user)return;
- const {action,question,block,index}=button.dataset;
- if(action==='check')checkAnswer(question);
- else if(action==='retry-question')retryQuestion(question);
- else if(action==='resume')visit(Number(index));
- else if(action==='image')openImage(block);
- else if(action==='close-image')document.getElementById('image-dialog').close();
- else if(action==='sync')retrySync();
+const button=event.target.closest('[data-action]');if(!button||button.disabled||!user)return;const {action,id,block,index}=button.dataset;if(action==='check-practice10')checkAnswer(id);else if(action==='resume')visit(Number(index));else if(action==='image')openImage(block);else if(action==='close-image')document.getElementById('image-dialog').close();else if(action==='sync')retrySync();
 });
 ROOT.addEventListener('change',event=>{
- if(!user)return;const input=event.target,q=QUESTIONS.find(q=>q.id===input.dataset.question);
- if(!q||!allowedSlide(questionIndex(q.id))||validAnswer(q,P.results[q.id])||!validAnswer(q,Number(input.value)))return;
- P.currentSlide=questionIndex(q.id);P.answers[q.id]=Number(input.value);saveSoon();
+if(!user)return;const input=event.target;if(input.dataset.group==='practice10'&&window.ChapterPractice.choose(DECK.id,P.practice10,input.dataset.question,Number(input.value),P.studyMode))saveSoon();
 });
 window.addEventListener('pagehide',()=>{if(user){clearTimeout(saveTimer);persist();}});
 async function saveNavigation(uid,epoch){

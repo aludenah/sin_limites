@@ -21,36 +21,6 @@ window.HISTORY_CONTENT = {
           ]
         }
       ],
-      "quiz": [
-        {
-          "prompt": "Harappa y Mohenjo-daro pertenecen a la civilización del…",
-          "options": [
-            "Indo",
-            "Nilo",
-            "Tíber",
-            "Éufrates",
-            "Danubio"
-          ],
-          "answer": 0,
-          "solution": "Son centros urbanos del valle del Indo, conocidos por sus restos arqueológicos.",
-          "level": "Aplicación",
-          "id": "u1a"
-        },
-        {
-          "prompt": "¿Por qué hay límites para conocer las instituciones del Indo?",
-          "options": [
-            "No se han encontrado ciudades",
-            "Su escritura no tiene un desciframiento aceptado",
-            "Todos los restos son modernos",
-            "No existió comercio",
-            "Sus ríos estaban en Egipto"
-          ],
-          "answer": 1,
-          "solution": "La arqueología informa sobre su sociedad, pero la escritura no descifrada limita el acceso a sus propios registros.",
-          "level": "Aplicación",
-          "id": "u1b"
-        }
-      ],
       "blocks": [
         {
           "title": "Un subcontinente diverso",
@@ -98,36 +68,6 @@ window.HISTORY_CONTENT = {
             "Las comunidades y ocupaciones reales eran más diversas.",
             "Hay que considerar las jatis y los cambios regionales e históricos."
           ]
-        }
-      ],
-      "quiz": [
-        {
-          "prompt": "Los Vedas son…",
-          "options": [
-            "leyes romanas",
-            "mapas de América",
-            "conjuntos de textos sagrados de tradición védica",
-            "registros del Imperio inca",
-            "tratados militares chinos"
-          ],
-          "answer": 2,
-          "solution": "Los Vedas se vinculan con tradiciones religiosas transmitidas oralmente y con el sánscrito.",
-          "level": "Aplicación",
-          "id": "u2a"
-        },
-        {
-          "prompt": "En el esquema de los varnas, los brahmanes se asocian al…",
-          "options": [
-            "gobierno romano",
-            "comercio fenicio exclusivamente",
-            "ejército persa",
-            "sacerdocio y los rituales",
-            "cultivo del Nilo"
-          ],
-          "answer": 3,
-          "solution": "Los brahmanes ocupaban la posición vinculada al saber ritual y sacerdotal en ese orden normativo.",
-          "level": "Aplicación",
-          "id": "u2b"
         }
       ],
       "blocks": [
@@ -195,36 +135,6 @@ window.HISTORY_CONTENT = {
           ]
         }
       ],
-      "quiz": [
-        {
-          "prompt": "Ashoka se relaciona con…",
-          "options": [
-            "la fundación de Roma",
-            "las pirámides de Guiza",
-            "el Imperio carolingio",
-            "la conquista de América",
-            "el Imperio maurya y el patrocinio del budismo"
-          ],
-          "answer": 4,
-          "solution": "Ashoka fue un soberano maurya del siglo III a. C. y favoreció la difusión budista.",
-          "level": "Aplicación",
-          "id": "u3a"
-        },
-        {
-          "prompt": "¿Qué resume mejor una enseñanza budista?",
-          "options": [
-            "Superar el sufrimiento mediante un camino ético y de comprensión",
-            "Conquistar todos los territorios",
-            "Eliminar toda reflexión",
-            "Garantizar un alma individual eterna",
-            "Adorar obligatoriamente al emperador Qin"
-          ],
-          "answer": 0,
-          "solution": "El budismo propone un camino de liberación del sufrimiento; no se resume en la eternidad de un alma individual.",
-          "level": "Aplicación",
-          "id": "u3b"
-        }
-      ],
       "blocks": [
         {
           "title": "El budismo y la pregunta por el sufrimiento",
@@ -288,36 +198,6 @@ window.HISTORY_CONTENT = {
           ]
         }
       ],
-      "quiz": [
-        {
-          "prompt": "El Huang He es conocido como el río…",
-          "options": [
-            "Nilo",
-            "Amarillo",
-            "Tíber",
-            "Ganges",
-            "Jordán"
-          ],
-          "answer": 1,
-          "solution": "Huang He corresponde al río Amarillo, una de las grandes cuencas del norte de China.",
-          "level": "Aplicación",
-          "id": "u4a"
-        },
-        {
-          "prompt": "El relato de Pangu debe estudiarse como…",
-          "options": [
-            "una datación por radiocarbono",
-            "una prueba fósil",
-            "un mito de origen y una expresión cultural",
-            "un registro industrial moderno",
-            "un mapa político exacto"
-          ],
-          "answer": 2,
-          "solution": "Los mitos son fuentes para estudiar ideas y creencias, no evidencia científica directa del origen humano.",
-          "level": "Aplicación",
-          "id": "u4b"
-        }
-      ],
       "blocks": [
         {
           "title": "Dos grandes espacios fluviales",
@@ -373,36 +253,6 @@ window.HISTORY_CONTENT = {
             "La segunda recuerda reflexiones taoístas sobre actuar sin forzar.",
             "La comparación identifica énfasis, no demuestra que las tradiciones respondieran igual a todos los problemas."
           ]
-        }
-      ],
-      "quiz": [
-        {
-          "prompt": "La educación moral y el ejemplo del gobernante son centrales en el…",
-          "options": [
-            "culto romano a Marte",
-            "código de Hammurabi exclusivamente",
-            "sistema feudal europeo",
-            "confucianismo",
-            "urbanismo del Indo"
-          ],
-          "answer": 3,
-          "solution": "Confucio atribuyó importancia al aprendizaje, la virtud y la responsabilidad en las relaciones sociales.",
-          "level": "Aplicación",
-          "id": "u5a"
-        },
-        {
-          "prompt": "¿Cuál es una interpretación adecuada de wu wei?",
-          "options": [
-            "No actuar nunca bajo ninguna circunstancia",
-            "Conquistar mediante guerras continuas",
-            "Prohibir todo aprendizaje",
-            "Construir solo con bronce",
-            "Actuar sin forzar o imponer de manera excesiva"
-          ],
-          "answer": 4,
-          "solution": "Wu wei alude a la acción sin forzamiento; traducirlo como inactividad absoluta pierde su sentido filosófico.",
-          "level": "Aplicación",
-          "id": "u5b"
         }
       ],
       "blocks": [
@@ -466,36 +316,6 @@ window.HISTORY_CONTENT = {
           ]
         }
       ],
-      "quiz": [
-        {
-          "prompt": "La unificación imperial Qin se sitúa en…",
-          "options": [
-            "221 a. C.",
-            "1789 d. C.",
-            "476 d. C.",
-            "1492 d. C.",
-            "1917 d. C."
-          ],
-          "answer": 0,
-          "solution": "En 221 a. C., Qin Shi Huang culminó la conquista de los reinos rivales y encabezó un imperio unificado.",
-          "level": "Aplicación",
-          "id": "u6a"
-        },
-        {
-          "prompt": "¿Qué afirmación sobre los aportes chinos es correcta?",
-          "options": [
-            "Todos fueron inventados por Qin",
-            "Se desarrollaron en distintas épocas y circularon mediante intercambios",
-            "Aparecieron en un mismo año",
-            "No tuvieron usos prácticos",
-            "La pólvora precedió siempre a la agricultura"
-          ],
-          "answer": 1,
-          "solution": "Los avances tienen cronologías diferentes; su influencia dependió también de transmisión y adaptación.",
-          "level": "Aplicación",
-          "id": "u6b"
-        }
-      ],
       "blocks": [
         {
           "title": "Qin: unificar y administrar",
@@ -555,220 +375,6 @@ window.HISTORY_CONTENT = {
       ]
     }
   ],
-  "practice": [
-    {
-      "prompt": "¿Qué comparación geográfica es correcta?",
-      "options": [
-        "Todos estos ríos están en Egipto",
-        "El Indo desemboca en el Nilo",
-        "Indo y Ganges se relacionan con el subcontinente indio; Huang He y Yangtsé, con China",
-        "El Huang He está en Roma",
-        "El Ganges está en Mesopotamia"
-      ],
-      "answer": 2,
-      "solution": "Ubicar las cuencas permite distinguir espacios y evitar trasladar procesos de una civilización a otra.",
-      "level": "Aplicación",
-      "id": "p1"
-    },
-    {
-      "prompt": "¿Qué diferencia los edictos de Ashoka de los signos del Indo para una investigación?",
-      "options": [
-        "Ninguno tiene soporte material",
-        "Ambos fueron escritos por Qin",
-        "Los signos del Indo narran con certeza la vida de Ashoka",
-        "Los primeros pueden leerse; los segundos carecen de un desciframiento aceptado",
-        "Los edictos son fósiles humanos"
-      ],
-      "answer": 3,
-      "solution": "El acceso al contenido escrito es diferente. Esto condiciona las preguntas que cada fuente puede responder.",
-      "level": "Aplicación",
-      "id": "p2"
-    },
-    {
-      "prompt": "Un estudiante dice que Qin impuso el mandarín moderno. La corrección adecuada es…",
-      "options": [
-        "Qin gobernó la India",
-        "Qin eliminó toda escritura",
-        "El mandarín moderno surgió en Roma",
-        "No hubo medidas de unificación",
-        "Qin impulsó la estandarización de la escritura, no del mandarín moderno"
-      ],
-      "answer": 4,
-      "solution": "La estandarización de formas escritas no equivale a la imposición de una lengua moderna.",
-      "level": "Aplicación",
-      "id": "p3"
-    },
-    {
-      "prompt": "¿Qué compara adecuadamente budismo y confucianismo?",
-      "options": [
-        "El primero aborda la liberación del sufrimiento; el segundo destaca la formación moral y las relaciones sociales",
-        "Ambos fueron fundados por Ashoka",
-        "Ambos son sistemas de drenaje",
-        "Ninguno reflexiona sobre la conducta",
-        "Ambos surgieron durante la Revolución francesa"
-      ],
-      "answer": 0,
-      "solution": "La comparación debe identificar los problemas y énfasis de cada tradición sin confundir sus contextos.",
-      "level": "Aplicación",
-      "id": "p4"
-    },
-    {
-      "prompt": "¿Qué criterio permite ordenar los aportes de una civilización?",
-      "options": [
-        "Atribuirlos todos al primer gobernante",
-        "Situarlos en periodos y estudiar sus transformaciones",
-        "Suponer que surgieron juntos",
-        "Ignorar las fuentes materiales",
-        "Usar solo leyendas como cronología exacta"
-      ],
-      "answer": 1,
-      "solution": "Las innovaciones deben situarse mediante evidencias; una lista de inventos no representa una única etapa histórica.",
-      "level": "Aplicación",
-      "id": "p5"
-    }
-  ],
-  "exam": [
-    {
-      "prompt": "Harappa y Mohenjo-daro pertenecen a la civilización del…",
-      "options": [
-        "Indo",
-        "Nilo",
-        "Tíber",
-        "Éufrates",
-        "Danubio"
-      ],
-      "answer": 0,
-      "solution": "Son centros urbanos del valle del Indo, conocidos por sus restos arqueológicos.",
-      "level": "Aplicación",
-      "id": "e1"
-    },
-    {
-      "prompt": "En el esquema de los varnas, los brahmanes se asocian al…",
-      "options": [
-        "gobierno romano",
-        "comercio fenicio exclusivamente",
-        "ejército persa",
-        "sacerdocio y los rituales",
-        "cultivo del Nilo"
-      ],
-      "answer": 3,
-      "solution": "Los brahmanes ocupaban la posición vinculada al saber ritual y sacerdotal en ese orden normativo.",
-      "level": "Aplicación",
-      "id": "e2"
-    },
-    {
-      "prompt": "Ashoka se relaciona con…",
-      "options": [
-        "la fundación de Roma",
-        "las pirámides de Guiza",
-        "el Imperio carolingio",
-        "la conquista de América",
-        "el Imperio maurya y el patrocinio del budismo"
-      ],
-      "answer": 4,
-      "solution": "Ashoka fue un soberano maurya del siglo III a. C. y favoreció la difusión budista.",
-      "level": "Aplicación",
-      "id": "e3"
-    },
-    {
-      "prompt": "El relato de Pangu debe estudiarse como…",
-      "options": [
-        "una datación por radiocarbono",
-        "una prueba fósil",
-        "un mito de origen y una expresión cultural",
-        "un registro industrial moderno",
-        "un mapa político exacto"
-      ],
-      "answer": 2,
-      "solution": "Los mitos son fuentes para estudiar ideas y creencias, no evidencia científica directa del origen humano.",
-      "level": "Aplicación",
-      "id": "e4"
-    },
-    {
-      "prompt": "La educación moral y el ejemplo del gobernante son centrales en el…",
-      "options": [
-        "culto romano a Marte",
-        "código de Hammurabi exclusivamente",
-        "sistema feudal europeo",
-        "confucianismo",
-        "urbanismo del Indo"
-      ],
-      "answer": 3,
-      "solution": "Confucio atribuyó importancia al aprendizaje, la virtud y la responsabilidad en las relaciones sociales.",
-      "level": "Aplicación",
-      "id": "e5"
-    },
-    {
-      "prompt": "¿Qué comparación geográfica es correcta?",
-      "options": [
-        "Todos estos ríos están en Egipto",
-        "El Indo desemboca en el Nilo",
-        "Indo y Ganges se relacionan con el subcontinente indio; Huang He y Yangtsé, con China",
-        "El Huang He está en Roma",
-        "El Ganges está en Mesopotamia"
-      ],
-      "answer": 2,
-      "solution": "Ubicar las cuencas permite distinguir espacios y evitar trasladar procesos de una civilización a otra.",
-      "level": "Aplicación",
-      "id": "e6"
-    },
-    {
-      "prompt": "¿Qué diferencia los edictos de Ashoka de los signos del Indo para una investigación?",
-      "options": [
-        "Ninguno tiene soporte material",
-        "Ambos fueron escritos por Qin",
-        "Los signos del Indo narran con certeza la vida de Ashoka",
-        "Los primeros pueden leerse; los segundos carecen de un desciframiento aceptado",
-        "Los edictos son fósiles humanos"
-      ],
-      "answer": 3,
-      "solution": "El acceso al contenido escrito es diferente. Esto condiciona las preguntas que cada fuente puede responder.",
-      "level": "Aplicación",
-      "id": "e7"
-    },
-    {
-      "prompt": "Un estudiante dice que Qin impuso el mandarín moderno. La corrección adecuada es…",
-      "options": [
-        "Qin gobernó la India",
-        "Qin eliminó toda escritura",
-        "El mandarín moderno surgió en Roma",
-        "No hubo medidas de unificación",
-        "Qin impulsó la estandarización de la escritura, no del mandarín moderno"
-      ],
-      "answer": 4,
-      "solution": "La estandarización de formas escritas no equivale a la imposición de una lengua moderna.",
-      "level": "Aplicación",
-      "id": "e8"
-    },
-    {
-      "prompt": "¿Qué compara adecuadamente budismo y confucianismo?",
-      "options": [
-        "El primero aborda la liberación del sufrimiento; el segundo destaca la formación moral y las relaciones sociales",
-        "Ambos fueron fundados por Ashoka",
-        "Ambos son sistemas de drenaje",
-        "Ninguno reflexiona sobre la conducta",
-        "Ambos surgieron durante la Revolución francesa"
-      ],
-      "answer": 0,
-      "solution": "La comparación debe identificar los problemas y énfasis de cada tradición sin confundir sus contextos.",
-      "level": "Aplicación",
-      "id": "e9"
-    },
-    {
-      "prompt": "¿Qué criterio permite ordenar los aportes de una civilización?",
-      "options": [
-        "Atribuirlos todos al primer gobernante",
-        "Situarlos en periodos y estudiar sus transformaciones",
-        "Suponer que surgieron juntos",
-        "Ignorar las fuentes materiales",
-        "Usar solo leyendas como cronología exacta"
-      ],
-      "answer": 1,
-      "solution": "Las innovaciones deben situarse mediante evidencias; una lista de inventos no representa una única etapa histórica.",
-      "level": "Aplicación",
-      "id": "e10"
-    }
-  ],
   "timeline": [
     [
       "III milenio a. C.",
@@ -809,5 +415,6 @@ window.HISTORY_CONTENT = {
       "title": "Comparar",
       "text": "Situar aportes en su época y diferenciar hechos, creencias e interpretaciones."
     }
-  ]
+  ],
+  "assessmentFormat": "practice-10"
 };

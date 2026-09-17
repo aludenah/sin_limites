@@ -7,7 +7,7 @@ window.HistoryProgress=(()=>{
   function merge(a={},b={}){
     const newer=Number(b.updatedMs||0)>Number(a.updatedMs||0)?b:a;
     const older=newer===a?b:a;
-    return {...older,...newer,completedItems:union(a.completedItems,b.completedItems),
+    return {...older,...newer,...((a.practice10||b.practice10)?{practice10:{version:1,answers:{...older.practice10?.answers,...newer.practice10?.answers},results:{...older.practice10?.results,...newer.practice10?.results},mastered:union(a.practice10?.mastered,b.practice10?.mastered),attempts:maxMap(a.practice10?.attempts,b.practice10?.attempts)}}:{}),completedItems:union(a.completedItems,b.completedItems),
       attempts:maxMap(a.attempts,b.attempts),itemScores:maxMap(a.itemScores,b.itemScores),
       quizAnswers:mergeQuiz(older.quizAnswers,newer.quizAnswers),quizResults:mergeQuiz(older.quizResults,newer.quizResults),
       practiceMastered:union(a.practiceMastered,b.practiceMastered),
@@ -39,8 +39,9 @@ window.HistoryProgress=(()=>{
     const hasExam=meta.number>1;
     return {...p,completedItems,examBest,unlockedItem:Math.min(unlockedItem,meta.items-1),
       percent:Math.round((completedItems.length+(hasExam&&examBest>=7?1:0))/(meta.items+(hasExam?1:0))*100),
-      chapterCompleted:completedItems.length===meta.items&&(!hasExam||examBest>=7)};
+      chapterCompleted:completedItems.length===meta.items&&(!hasExam||examBest>=7),practice10:window.ChapterPractice.normalize(meta.progressId,{...p,completedItems}),...window.ChapterPractice.summary(meta.progressId,{...p,completedItems})};
   }
   function ids(meta){return [...new Set([meta.progressId,...(meta.legacySources||[]).map(s=>s.id)])];}
   return {merge,combine,ids};
 })();
+

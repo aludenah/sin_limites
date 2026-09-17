@@ -204,12 +204,14 @@ window.HISTORY_CHAPTERS = [
   {
     "number": 1,
     "title": "La ciencia histórica",
-    "intro": "Teoría organizada por temas, imágenes didácticas y siete actividades con solución.",
+    "intro": "Teoría organizada por temas, imágenes didácticas y una práctica de 10 problemas con solución.",
     "items": 7,
     "progressId": "historia-universal-presentacion-01",
     "legacySources": [],
     "format": "reading",
-    "itemLabel": "actividades"
+    "itemLabel": "problemas",
+    "practiceCount": 10,
+    "assessmentFormat": "practice-10"
   },
   {
     "number": 2,
@@ -245,7 +247,10 @@ window.HISTORY_CHAPTERS = [
       }
     ],
     "items": 5,
-    "format": "reading"
+    "format": "reading",
+    "practiceCount": 10,
+    "itemLabel": "problemas",
+    "assessmentFormat": "practice-10"
   },
   {
     "number": 3,
@@ -305,7 +310,10 @@ window.HISTORY_CHAPTERS = [
       }
     ],
     "items": 10,
-    "format": "reading"
+    "format": "reading",
+    "practiceCount": 10,
+    "itemLabel": "problemas",
+    "assessmentFormat": "practice-10"
   },
   {
     "number": 4,
@@ -332,7 +340,10 @@ window.HISTORY_CHAPTERS = [
       }
     ],
     "items": 5,
-    "format": "reading"
+    "format": "reading",
+    "practiceCount": 10,
+    "itemLabel": "problemas",
+    "assessmentFormat": "practice-10"
   },
   {
     "number": 5,
@@ -355,7 +366,10 @@ window.HISTORY_CHAPTERS = [
       }
     ],
     "items": 5,
-    "format": "reading"
+    "format": "reading",
+    "practiceCount": 10,
+    "itemLabel": "problemas",
+    "assessmentFormat": "practice-10"
   },
   {
     "number": 6,
@@ -364,6 +378,9 @@ window.HISTORY_CHAPTERS = [
     "progressId": "historia-universal-pdf-06",
     "legacySources": [],
     "items": 6,
-    "format": "reading"
+    "format": "reading",
+    "practiceCount": 10,
+    "itemLabel": "problemas",
+    "assessmentFormat": "practice-10"
   }
 ];

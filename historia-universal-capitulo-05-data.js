@@ -21,36 +21,6 @@ window.HISTORY_CONTENT = {
           ]
         }
       ],
-      "quiz": [
-        {
-          "prompt": "El Bajo Egipto se encontraba principalmente en…",
-          "solution": "Bajo se refiere a la parte final del curso del río.",
-          "level": "Básico",
-          "id": "u1a",
-          "options": [
-            "la zona sur del valle por definición",
-            "el valle del Éufrates",
-            "la península itálica",
-            "la región del Indo",
-            "el delta del Nilo, al norte"
-          ],
-          "answer": 4
-        },
-        {
-          "prompt": "Las pirámides de Guiza se vinculan principalmente con…",
-          "solution": "Su construcción corresponde al Reino Antiguo egipcio.",
-          "level": "Básico",
-          "id": "u1b",
-          "options": [
-            "el Imperio romano de Occidente",
-            "la Edad Media europea",
-            "el Reino Antiguo",
-            "el reino neobabilónico",
-            "la Revolución industrial"
-          ],
-          "answer": 2
-        }
-      ],
       "blocks": [
         {
           "title": "Un valle fértil en el desierto",
@@ -114,36 +84,6 @@ window.HISTORY_CONTENT = {
             "Ramsés II gobernó durante el Imperio Nuevo.",
             "Entre ambos transcurrieron muchos siglos y transformaciones políticas."
           ]
-        }
-      ],
-      "quiz": [
-        {
-          "prompt": "Las grandes pirámides de Guiza se asocian con el…",
-          "options": [
-            "Imperio romano",
-            "Imperio Nuevo exclusivamente",
-            "Periodo ptolemaico",
-            "Reino persa aqueménida",
-            "Imperio Antiguo"
-          ],
-          "answer": 4,
-          "solution": "Su construcción corresponde al tercer milenio a. C., durante el Imperio Antiguo.",
-          "level": "Aplicación",
-          "id": "u2a"
-        },
-        {
-          "prompt": "La alternancia de imperios y periodos intermedios muestra…",
-          "options": [
-            "cambios en el grado de centralización política",
-            "una cultura sin cambios",
-            "la ausencia de Estado",
-            "el fin permanente de la agricultura",
-            "que todos los faraones gobernaron juntos"
-          ],
-          "answer": 0,
-          "solution": "La autoridad estatal varió: hubo centralización y también fragmentación, sin desaparecer toda continuidad cultural.",
-          "level": "Aplicación",
-          "id": "u2b"
         }
       ],
       "blocks": [
@@ -214,36 +154,6 @@ window.HISTORY_CONTENT = {
             "Compara riqueza, periodo y posición social del entierro.",
             "Evita generalizar una tumba privilegiada a toda la población."
           ]
-        }
-      ],
-      "quiz": [
-        {
-          "prompt": "La función de los escribas incluía…",
-          "solution": "La formación en escritura era importante para administrar y comunicar.",
-          "level": "Básico",
-          "id": "u3a",
-          "options": [
-            "elaborar registros administrativos y otros textos",
-            "solo combatir en todas las guerras",
-            "eliminar cualquier tributo",
-            "impedir toda actividad religiosa",
-            "fabricar exclusivamente armas"
-          ],
-          "answer": 0
-        },
-        {
-          "prompt": "La momificación se relaciona principalmente con…",
-          "solution": "La conservación del cuerpo formó parte de ciertos tratamientos funerarios.",
-          "level": "Básico",
-          "id": "u3b",
-          "options": [
-            "el sistema democrático ateniense",
-            "la fabricación de monedas",
-            "el alfabeto romano",
-            "prácticas funerarias y creencias sobre la vida después de la muerte",
-            "la agricultura mecanizada"
-          ],
-          "answer": 3
         }
       ],
       "blocks": [
@@ -322,36 +232,6 @@ window.HISTORY_CONTENT = {
             "Relaciona el abastecimiento con la organización del trabajo.",
             "No deduzcas la condición jurídica de todos los trabajadores a partir de un solo listado."
           ]
-        }
-      ],
-      "quiz": [
-        {
-          "prompt": "¿Qué función cumplían los escribas?",
-          "options": [
-            "Dirigir exclusivamente ejércitos",
-            "Registrar y administrar información especializada",
-            "Construir todos los monumentos solos",
-            "Eliminar los impuestos",
-            "Sustituir al Nilo"
-          ],
-          "answer": 1,
-          "solution": "Los escribas intervenían en registros administrativos y en la conservación y transmisión de saberes.",
-          "level": "Aplicación",
-          "id": "u4a"
-        },
-        {
-          "prompt": "¿Qué afirmación sobre las pirámides es más rigurosa?",
-          "options": [
-            "Fueron construidas sin recursos",
-            "Todas fueron puertos",
-            "Su construcción exigió una organización compleja del trabajo",
-            "Prueban que todos los egipcios eran esclavos",
-            "Carecían de función funeraria"
-          ],
-          "answer": 2,
-          "solution": "La evidencia permite estudiar equipos, abastecimiento y organización estatal; no autoriza una generalización sobre esclavitud.",
-          "level": "Aplicación",
-          "id": "u4b"
         }
       ],
       "blocks": [
@@ -445,36 +325,6 @@ window.HISTORY_CONTENT = {
           ]
         }
       ],
-      "quiz": [
-        {
-          "prompt": "Egipto pasó a dominio romano en…",
-          "options": [
-            "476 d. C.",
-            "1492 d. C.",
-            "3100 a. C.",
-            "30 a. C.",
-            "1789 d. C."
-          ],
-          "answer": 3,
-          "solution": "La incorporación a Roma ocurrió en 30 a. C., después de Accio y del final del gobierno de Cleopatra VII.",
-          "level": "Aplicación",
-          "id": "u5a"
-        },
-        {
-          "prompt": "La etapa ptolemaica permite estudiar…",
-          "options": [
-            "la ausencia de ciudades",
-            "una época anterior a las pirámides",
-            "el origen de la escritura china",
-            "la conquista de América",
-            "contactos entre tradiciones egipcias y griegas"
-          ],
-          "answer": 4,
-          "solution": "El reino ptolemaico reunió prácticas e instituciones de origen egipcio y griego en un nuevo contexto político.",
-          "level": "Aplicación",
-          "id": "u5b"
-        }
-      ],
       "blocks": [
         {
           "title": "Fragmentaciones y nuevos dominios",
@@ -502,220 +352,6 @@ window.HISTORY_CONTENT = {
           "id": "c5-t5-b3"
         }
       ]
-    }
-  ],
-  "practice": [
-    {
-      "prompt": "Si navegas desde el valle sur del Nilo hacia el delta, te diriges…",
-      "solution": "El río fluye de sur a norte; alto y bajo se refieren a su curso.",
-      "level": "Básico",
-      "id": "p1",
-      "options": [
-        "del Bajo al Alto, hacia el norte",
-        "del Alto al Bajo Egipto, hacia el norte",
-        "del Alto al Bajo, hacia el sur",
-        "del Éufrates al Tigris",
-        "de Egipto a China directamente"
-      ],
-      "answer": 1
-    },
-    {
-      "prompt": "Las grandes pirámides de Guiza se asocian con el…",
-      "options": [
-        "Imperio romano",
-        "Imperio Nuevo exclusivamente",
-        "Periodo ptolemaico",
-        "Reino persa aqueménida",
-        "Imperio Antiguo"
-      ],
-      "answer": 4,
-      "solution": "Su construcción corresponde al tercer milenio a. C., durante el Imperio Antiguo.",
-      "level": "Aplicación",
-      "id": "p2"
-    },
-    {
-      "prompt": "¿Qué función cumplían los escribas?",
-      "options": [
-        "Dirigir exclusivamente ejércitos",
-        "Registrar y administrar información especializada",
-        "Construir todos los monumentos solos",
-        "Eliminar los impuestos",
-        "Sustituir al Nilo"
-      ],
-      "answer": 1,
-      "solution": "Los escribas intervenían en registros administrativos y en la conservación y transmisión de saberes.",
-      "level": "Aplicación",
-      "id": "p3"
-    },
-    {
-      "prompt": "Egipto pasó a dominio romano en…",
-      "options": [
-        "476 d. C.",
-        "1492 d. C.",
-        "3100 a. C.",
-        "30 a. C.",
-        "1789 d. C."
-      ],
-      "answer": 3,
-      "solution": "La incorporación a Roma ocurrió en 30 a. C., después de Accio y del final del gobierno de Cleopatra VII.",
-      "level": "Aplicación",
-      "id": "p4"
-    },
-    {
-      "prompt": "La etapa ptolemaica permite estudiar…",
-      "options": [
-        "la ausencia de ciudades",
-        "una época anterior a las pirámides",
-        "el origen de la escritura china",
-        "la conquista de América",
-        "contactos entre tradiciones egipcias y griegas"
-      ],
-      "answer": 4,
-      "solution": "El reino ptolemaico reunió prácticas e instituciones de origen egipcio y griego en un nuevo contexto político.",
-      "level": "Aplicación",
-      "id": "p5"
-    }
-  ],
-  "exam": [
-    {
-      "prompt": "La civilización egipcia se desarrolló principalmente alrededor del…",
-      "solution": "El valle y el delta del Nilo articularon el territorio egipcio.",
-      "level": "Básico",
-      "id": "e1",
-      "options": [
-        "Tigris",
-        "Éufrates",
-        "Nilo",
-        "Ganges",
-        "Danubio"
-      ],
-      "answer": 2
-    },
-    {
-      "prompt": "Alto Egipto corresponde principalmente a…",
-      "solution": "Alto designa la región aguas arriba, al sur.",
-      "level": "Básico",
-      "id": "e2",
-      "options": [
-        "el delta del norte",
-        "Mesopotamia septentrional",
-        "el valle meridional del Nilo",
-        "la costa del mar Negro",
-        "el valle del Indo"
-      ],
-      "answer": 2
-    },
-    {
-      "prompt": "La unificación egipcia se sitúa convencionalmente hacia…",
-      "solution": "Se asocia con el proceso de formación estatal de comienzos del periodo dinástico.",
-      "level": "Básico",
-      "id": "e3",
-      "options": [
-        "3100 a. C.",
-        "3100 d. C.",
-        "1789 d. C.",
-        "476 d. C.",
-        "1492 d. C."
-      ],
-      "answer": 0
-    },
-    {
-      "prompt": "La autoridad faraónica combinó principalmente dimensiones…",
-      "solution": "El faraón ocupaba un papel central en el gobierno y en el orden religioso.",
-      "level": "Básico",
-      "id": "e4",
-      "options": [
-        "solo deportivas",
-        "exclusivamente comerciales sin gobierno",
-        "democráticas modernas",
-        "políticas y religiosas",
-        "industriales y digitales"
-      ],
-      "answer": 3
-    },
-    {
-      "prompt": "¿Qué afirmación sobre los jeroglíficos es adecuada?",
-      "solution": "Podían representar sonidos, palabras y funciones complementarias.",
-      "level": "Básico",
-      "id": "e5",
-      "options": [
-        "Fueron únicamente decoración sin lenguaje",
-        "Constituyeron un sistema de escritura con signos de distintos valores",
-        "Eran letras latinas modernas",
-        "Solo representaban números decimales actuales",
-        "Se imprimían con tipos móviles"
-      ],
-      "answer": 1
-    },
-    {
-      "prompt": "La alternancia de imperios y periodos intermedios muestra…",
-      "options": [
-        "cambios en el grado de centralización política",
-        "una cultura sin cambios",
-        "la ausencia de Estado",
-        "el fin permanente de la agricultura",
-        "que todos los faraones gobernaron juntos"
-      ],
-      "answer": 0,
-      "solution": "La autoridad estatal varió: hubo centralización y también fragmentación, sin desaparecer toda continuidad cultural.",
-      "level": "Aplicación",
-      "id": "e6"
-    },
-    {
-      "prompt": "¿Qué afirmación sobre las pirámides es más rigurosa?",
-      "options": [
-        "Fueron construidas sin recursos",
-        "Todas fueron puertos",
-        "Su construcción exigió una organización compleja del trabajo",
-        "Prueban que todos los egipcios eran esclavos",
-        "Carecían de función funeraria"
-      ],
-      "answer": 2,
-      "solution": "La evidencia permite estudiar equipos, abastecimiento y organización estatal; no autoriza una generalización sobre esclavitud.",
-      "level": "Aplicación",
-      "id": "e7"
-    },
-    {
-      "prompt": "Egipto pasó a dominio romano en…",
-      "options": [
-        "476 d. C.",
-        "1492 d. C.",
-        "3100 a. C.",
-        "30 a. C.",
-        "1789 d. C."
-      ],
-      "answer": 3,
-      "solution": "La incorporación a Roma ocurrió en 30 a. C., después de Accio y del final del gobierno de Cleopatra VII.",
-      "level": "Aplicación",
-      "id": "e8"
-    },
-    {
-      "prompt": "El Nilo favoreció la agricultura, pero el Estado requirió además…",
-      "options": [
-        "organización humana del trabajo y de los recursos",
-        "solo la existencia del río",
-        "ausencia de autoridades",
-        "el abandono de la tierra",
-        "la eliminación de las aldeas"
-      ],
-      "answer": 0,
-      "solution": "El medio ofrecía condiciones; la administración y el trabajo explican cómo fueron aprovechadas.",
-      "level": "Aplicación",
-      "id": "e9"
-    },
-    {
-      "prompt": "¿Por qué una conquista no prueba la desaparición de toda cultura local?",
-      "options": [
-        "Porque las conquistas nunca cambiaron nada",
-        "Porque pueden continuar prácticas e instituciones bajo nuevas autoridades",
-        "Porque no existen fuentes",
-        "Porque todos los conquistados emigraron siempre",
-        "Porque la cultura es biológicamente invariable"
-      ],
-      "answer": 1,
-      "solution": "Los cambios de poder y los cambios culturales tienen ritmos distintos y requieren evidencia específica.",
-      "level": "Aplicación",
-      "id": "e10"
     }
   ],
   "timeline": [
@@ -772,5 +408,6 @@ window.HISTORY_CONTENT = {
       "title": "Interpretar",
       "text": "Relacionar monumentos, escritura y creencias con la vida social."
     }
-  ]
+  ],
+  "assessmentFormat": "practice-10"
 };

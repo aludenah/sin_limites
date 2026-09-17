@@ -11,7 +11,7 @@ window.HISTORY_READING = {
       "title": "La ciencia histórica",
       "section": "Inicio",
       "lead": "Comprender el pasado. Interpretar el presente. Pensar el futuro.",
-      "notes": "Este capítulo reúne explicaciones, ejemplos e imágenes para comprender cómo se construye el conocimiento histórico. Puedes leer los temas de forma continua, usar el índice para consultar un apartado y resolver las siete actividades del final."
+      "notes": "Este capítulo reúne explicaciones, ejemplos e imágenes para comprender cómo se construye el conocimiento histórico. Puedes leer los temas de forma continua, usar el índice para consultar un apartado y resolver los 10 problemas de la práctica final."
     },
     {
       "id": "s2",
@@ -19,7 +19,7 @@ window.HISTORY_READING = {
       "title": "¿Qué aprenderás?",
       "section": "Inicio",
       "lead": "",
-      "notes": "El propósito es comprender cómo se construye el conocimiento histórico. Al terminar, podrás elegir fuentes para investigar un problema, reconocer la diferencia entre un hecho breve y un proceso prolongado y comparar los criterios de las periodizaciones tradicional y materialista. Las siete actividades finales permiten aplicar estos conceptos.",
+      "notes": "El propósito es comprender cómo se construye el conocimiento histórico. Al terminar, podrás elegir fuentes para investigar un problema, reconocer la diferencia entre un hecho breve y un proceso prolongado y comparar los criterios de las periodizaciones tradicional y materialista. Los 10 problemas finales permiten aplicar estos conceptos.",
       "cards": [
         {
           "title": "Reconstruir",
@@ -738,170 +738,31 @@ window.HISTORY_READING = {
     },
     {
       "id": "s26",
-      "kind": "question",
-      "title": "Actividad 1 de 7",
-      "section": "Comprueba lo aprendido",
-      "lead": "",
-      "notes": "Actividad de aplicación de los conceptos estudiados. Lee el enunciado completo, elige una alternativa y comprueba tu respuesta. Puedes volver a intentarlo; los aciertos se conservan.",
-      "question": {
-        "id": "q1",
-        "index": 0,
-        "prompt": "La crisis económica iniciada en 1929 y la expansión del fascismo se estudian como un conjunto de procesos de varios años. ¿Qué escala temporal se está utilizando?",
-        "options": [
-          "Coyuntura",
-          "Un instante aislado",
-          "Una fecha conmemorativa",
-          "Una estructura permanente e inmutable",
-          "Una predicción"
-        ],
-        "answer": 0,
-        "solution": "Se analiza una coyuntura: procesos relacionados de mediana duración. Una sesión de la caída bursátil puede estudiarse como acontecimiento; la crisis y sus efectos requieren una escala más amplia.",
-        "topic": "Tiempo histórico"
-      }
+      "kind": "removed"
     },
     {
       "id": "s27",
-      "kind": "question",
-      "title": "Actividad 2 de 7",
-      "section": "Comprueba lo aprendido",
-      "lead": "",
-      "notes": "Actividad de aplicación de los conceptos estudiados. Lee el enunciado completo, elige una alternativa y comprueba tu respuesta. Puedes volver a intentarlo; los aciertos se conservan.",
-      "question": {
-        "id": "q2",
-        "index": 1,
-        "prompt": "¿Cuál expresa mejor la utilidad de estudiar historia?",
-        "options": [
-          "Predecir con exactitud todos los hechos futuros",
-          "Memorizar nombres sin explicar procesos",
-          "Comprender el presente y orientar decisiones sobre el futuro",
-          "Demostrar que ninguna sociedad cambia",
-          "Aceptar todos los testimonios sin contrastarlos"
-        ],
-        "answer": 2,
-        "solution": "La historia permite comprender cómo se formaron las sociedades y reflexionar sobre decisiones presentes. Ofrece experiencias y argumentos; no predice el futuro con exactitud.",
-        "topic": "Importancia"
-      }
+      "kind": "removed"
     },
     {
       "id": "s28",
-      "kind": "question",
-      "title": "Actividad 3 de 7",
-      "section": "Comprueba lo aprendido",
-      "lead": "",
-      "notes": "Actividad de aplicación de los conceptos estudiados. Lee el enunciado completo, elige una alternativa y comprueba tu respuesta. Puedes volver a intentarlo; los aciertos se conservan.",
-      "question": {
-        "id": "q3",
-        "index": 2,
-        "prompt": "Una investigadora contrasta una carta, una vasija y una entrevista para reconstruir un proceso social. En conjunto, estos testimonios son…",
-        "options": [
-          "disciplinas auxiliares",
-          "periodizaciones tradicionales",
-          "fuerzas productivas",
-          "fuentes históricas",
-          "escuelas historiográficas"
-        ],
-        "answer": 3,
-        "solution": "Son fuentes históricas: evidencias utilizadas para investigar el pasado. Las disciplinas auxiliares aportan herramientas para examinarlas; no son los testimonios mismos.",
-        "topic": "Fuentes"
-      }
+      "kind": "removed"
     },
     {
       "id": "s29",
-      "kind": "question",
-      "title": "Actividad 4 de 7",
-      "section": "Comprueba lo aprendido",
-      "lead": "",
-      "notes": "Actividad de aplicación de los conceptos estudiados. Lee el enunciado completo, elige una alternativa y comprueba tu respuesta. Puedes volver a intentarlo; los aciertos se conservan.",
-      "question": {
-        "id": "q4",
-        "index": 3,
-        "prompt": "Para leer las formas de escritura de un manuscrito antiguo, ¿qué disciplina resulta especialmente pertinente?",
-        "options": [
-          "Numismática",
-          "Paleografía",
-          "Heráldica",
-          "Economía",
-          "Paleontología"
-        ],
-        "answer": 1,
-        "solution": "La paleografía estudia escrituras antiguas y ayuda a leer manuscritos. La numismática se ocupa de monedas; la heráldica, de escudos; y la paleontología, de fósiles.",
-        "topic": "Disciplinas"
-      }
+      "kind": "removed"
     },
     {
       "id": "s30",
-      "kind": "question",
-      "title": "Actividad 5 de 7",
-      "section": "Comprueba lo aprendido",
-      "lead": "",
-      "notes": "Actividad de aplicación de los conceptos estudiados. Lee el enunciado completo, elige una alternativa y comprueba tu respuesta. Puedes volver a intentarlo; los aciertos se conservan.",
-      "question": {
-        "id": "q5",
-        "index": 4,
-        "prompt": "Selecciona la combinación de enunciados correctos.",
-        "options": [
-          "Solo I y II",
-          "Solo II y IV",
-          "I, II y III",
-          "Solo III",
-          "I, III y IV"
-        ],
-        "answer": 4,
-        "solution": "I es correcta: una crónica es una fuente escrita. II es falsa: la arqueología tiene como evidencia central los restos materiales en su contexto. III y IV corresponden a fuentes orales y etnológicas.",
-        "topic": "Clasificación de fuentes",
-        "statements": [
-          "I. Las crónicas son fuentes escritas.",
-          "II. Los documentos escritos son la principal evidencia arqueológica.",
-          "III. Las entrevistas a testigos son fuentes orales.",
-          "IV. Las costumbres vigentes pueden estudiarse como fuentes etnológicas."
-        ]
-      }
+      "kind": "removed"
     },
     {
       "id": "s31",
-      "kind": "question",
-      "title": "Actividad 6 de 7",
-      "section": "Comprueba lo aprendido",
-      "lead": "",
-      "notes": "Actividad de aplicación de los conceptos estudiados. Lee el enunciado completo, elige una alternativa y comprueba tu respuesta. Puedes volver a intentarlo; los aciertos se conservan.",
-      "question": {
-        "id": "q6",
-        "index": 5,
-        "prompt": "Si una periodización usa acontecimientos europeos como límites para explicar por igual a todas las sociedades, ¿qué problema presenta?",
-        "options": [
-          "Eurocentrismo",
-          "Interdisciplinariedad",
-          "Crítica documental",
-          "Diversidad de fuentes",
-          "Análisis de la duración"
-        ],
-        "answer": 0,
-        "solution": "El problema es el eurocentrismo: generalizar referencias europeas como si organizaran por igual todas las trayectorias históricas. Conviene contrastarlas con procesos y cronologías regionales.",
-        "topic": "Periodización tradicional"
-      }
+      "kind": "removed"
     },
     {
       "id": "s32",
-      "kind": "question",
-      "title": "Actividad 7 de 7",
-      "section": "Comprueba lo aprendido",
-      "lead": "",
-      "notes": "Actividad de aplicación de los conceptos estudiados. Lee el enunciado completo, elige una alternativa y comprueba tu respuesta. Puedes volver a intentarlo; los aciertos se conservan.",
-      "question": {
-        "id": "q7",
-        "index": 6,
-        "prompt": "En la periodización materialista, el criterio principal para distinguir etapas es…",
-        "options": [
-          "el nombre de los grandes gobernantes",
-          "la caída de capitales europeas",
-          "la organización económica y las relaciones sociales",
-          "el cambio de un calendario por otro",
-          "la existencia de fotografías"
-        ],
-        "answer": 2,
-        "solution": "El criterio central es cómo se organizan la producción, la propiedad y las relaciones entre grupos sociales. Las fechas ayudan a situar los procesos, pero no son el criterio principal de división.",
-        "topic": "Periodización materialista"
-      }
+      "kind": "removed"
     },
     {
       "id": "s33",
@@ -911,5 +772,6 @@ window.HISTORY_READING = {
       "lead": "Pregunta. Contrasta. Explica.",
       "notes": "Repasa los conceptos de la ciencia histórica con estas explicaciones, ejemplos y actividades. Puedes volver a cualquier tema desde el índice y resolver las actividades pendientes. Relaciona las fuentes con sus contextos y compara los enfoques y criterios de periodización."
     }
-  ]
+  ],
+  "assessmentFormat": "practice-10"
 };
