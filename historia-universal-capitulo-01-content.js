@@ -734,37 +734,7 @@ window.HISTORY_READING = {
     },
     {
       "id": "s25",
-      "kind": "cards",
-      "title": "Las cuatro ideas que te llevas",
-      "section": "Síntesis",
-      "lead": "",
-      "notes": "Repasa estas cuatro relaciones antes de las actividades: sociedad y tiempo; fuente y crítica; historiografía y enfoque; periodización y criterio. Si una pregunta parece tener dos respuestas posibles, revisa qué está pidiendo exactamente y distingue el hecho concreto del proceso más amplio. Al final del capítulo encontrarás siete actividades de aplicación, con cinco alternativas y explicación.",
-      "cards": [
-        {
-          "title": "Sociedades en el tiempo",
-          "text": "La historia relaciona cambios, continuidades y protagonistas.",
-          "tag": "01",
-          "icon": "people"
-        },
-        {
-          "title": "Evidencias con contexto",
-          "text": "Las fuentes necesitan preguntas y análisis crítico.",
-          "tag": "02",
-          "icon": "search"
-        },
-        {
-          "title": "Miradas que cambian",
-          "text": "Cada enfoque historiográfico destaca ciertos problemas.",
-          "tag": "03",
-          "icon": "book"
-        },
-        {
-          "title": "Etapas con criterio",
-          "text": "Las periodizaciones son modelos con utilidad y límites.",
-          "tag": "04",
-          "icon": "layers"
-        }
-      ]
+      "kind": "removed"
     },
     {
       "id": "s26",
