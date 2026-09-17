@@ -1,17 +1,17 @@
-window.HISTORY_PRESENTATION = {
+window.HISTORY_READING = {
   "title": "La ciencia histórica",
   "chapter": 1,
   "courseId": 12,
   "id": "historia-universal-presentacion-01",
   "version": 1,
-  "slides": [
+  "blocks": [
     {
       "id": "s1",
       "kind": "cover",
       "title": "La ciencia histórica",
       "section": "Inicio",
       "lead": "Comprender el pasado. Interpretar el presente. Pensar el futuro.",
-      "notes": "Esta presentación desarrolla los ocho apartados de la ciencia histórica. Las explicaciones están reorganizadas para estudiar una idea a la vez. Los ejemplos y las soluciones amplían el contenido y distinguen hechos, interpretaciones y modelos. Puedes recorrer las diapositivas con los botones o las flechas del teclado; abre el índice para ir a un tema concreto."
+      "notes": "Este capítulo reúne explicaciones, ejemplos e imágenes para comprender cómo se construye el conocimiento histórico. Puedes leer los temas de forma continua, usar el índice para consultar un apartado y resolver las siete actividades del final."
     },
     {
       "id": "s2",
@@ -110,7 +110,7 @@ window.HISTORY_PRESENTATION = {
       "title": "El pasado tiene distintas duraciones",
       "section": "Tiempo histórico",
       "lead": "",
-      "notes": "Distinguimos acontecimiento, coyuntura y estructura por su duración. La mejora consiste en atender también a su naturaleza: una estructura es un conjunto de relaciones relativamente persistentes, no simplemente cualquier hecho que dure mucho. Un acontecimiento puede ocurrir en horas o días; una coyuntura reúne procesos de varios años; una estructura puede mantenerse durante generaciones. Estas escalas se superponen y ayudan a explicar un mismo proceso.",
+      "notes": "Distinguimos acontecimiento, coyuntura y estructura por su duración. También atendemos a su naturaleza: una estructura es un conjunto de relaciones relativamente persistentes, no simplemente cualquier hecho que dure mucho. Un acontecimiento puede ocurrir en horas o días; una coyuntura reúne procesos de varios años; una estructura puede mantenerse durante generaciones. Estas escalas se superponen y ayudan a explicar un mismo proceso.",
       "cards": [
         {
           "title": "Acontecimiento",
@@ -451,7 +451,7 @@ window.HISTORY_PRESENTATION = {
       "title": "También cambia la forma de escribir historia",
       "section": "Historiografía",
       "lead": "La historiografía estudia cómo se ha investigado e interpretado el pasado.",
-      "notes": "Las corrientes historiográficas se desarrollan en contextos diferentes y no forman una sucesión en la que cada una borra por completo a la anterior. Aquí comparamos siete aportes: grecorromano, cristiano-medieval, humanismo, Ilustración, positivismo, marxismo y Annales. Compararlos requiere identificar sus preguntas, sus fuentes y los factores que priorizan. Las diapositivas siguientes sintetizan sus contribuciones sin presentarlas como verdades excluyentes.",
+      "notes": "Las corrientes historiográficas se desarrollan en contextos diferentes y no forman una sucesión en la que cada una borra por completo a la anterior. Aquí comparamos siete aportes: grecorromano, cristiano-medieval, humanismo, Ilustración, positivismo, marxismo y Annales. Compararlos requiere identificar sus preguntas, sus fuentes y los factores que priorizan. Los apartados siguientes sintetizan sus contribuciones sin presentarlas como verdades excluyentes.",
       "cards": [
         {
           "title": "Preguntas",
@@ -738,7 +738,7 @@ window.HISTORY_PRESENTATION = {
       "title": "Las cuatro ideas que te llevas",
       "section": "Síntesis",
       "lead": "",
-      "notes": "Repasa estas cuatro relaciones antes de las actividades: sociedad y tiempo; fuente y crítica; historiografía y enfoque; periodización y criterio. Si una pregunta parece tener dos respuestas posibles, revisa qué está pidiendo exactamente y distingue el hecho concreto del proceso más amplio. En las siguientes siete diapositivas encontrarás actividades adaptadas de los temas de evaluación del capítulo, con cinco alternativas y explicación.",
+      "notes": "Repasa estas cuatro relaciones antes de las actividades: sociedad y tiempo; fuente y crítica; historiografía y enfoque; periodización y criterio. Si una pregunta parece tener dos respuestas posibles, revisa qué está pidiendo exactamente y distingue el hecho concreto del proceso más amplio. Al final del capítulo encontrarás siete actividades de aplicación, con cinco alternativas y explicación.",
       "cards": [
         {
           "title": "Sociedades en el tiempo",
@@ -939,7 +939,7 @@ window.HISTORY_PRESENTATION = {
       "title": "El pasado se investiga",
       "section": "Cierre",
       "lead": "Pregunta. Contrasta. Explica.",
-      "notes": "Repasa los conceptos de la ciencia histórica con estas explicaciones, ejemplos y actividades. Puedes volver a cualquier diapositiva desde el índice y resolver las actividades pendientes. Relaciona las fuentes con sus contextos y compara los enfoques y criterios de periodización."
+      "notes": "Repasa los conceptos de la ciencia histórica con estas explicaciones, ejemplos y actividades. Puedes volver a cualquier tema desde el índice y resolver las actividades pendientes. Relaciona las fuentes con sus contextos y compara los enfoques y criterios de periodización."
     }
   ]
 };

@@ -12,6 +12,8 @@ function harness(number,local=new Map(),cloud=new Map()){
   const firestore=Object.assign(()=>db,{FieldValue:{serverTimestamp:()=>123}});
   const context=vm.createContext({document,window:{addEventListener(){}},firebase:{initializeApp(){},firestore,auth:()=>({onAuthStateChanged(){}})},localStorage:{getItem:k=>local.get(k)||null,setItem:(k,v)=>local.set(k,v)},console:{error(){}},setTimeout:()=>1,clearTimeout(){}});
   context.window.firebase=context.firebase;
+  const selectedModes=new Map();
+  context.window.StudyMode={get:uid=>selectedModes.get(uid)||'progressive',choose:(uid,mode)=>selectedModes.set(uid,mode),save:()=>Promise.resolve(),requireChoice:async()=>true,key:uid=>'mode:'+uid};
   const id='historia-universal-capitulo-'+String(number).padStart(2,'0');
   for(const file of ['history-catalog.js','history-progress.js',id+'-data.js','history-chapter.js'])vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),context);
   return {run:s=>vm.runInContext(s,context),elements,cloud,local,id,progressId:'historia-universal-pdf-'+String(number).padStart(2,'0'),setOffline:x=>offline=x,writes:()=>writes};
@@ -33,13 +35,13 @@ async function test(){
     for(const q of all){assert.equal(q.options.length,5);assert.equal(new Set(q.options).size,5);assert.ok(Number.isInteger(q.answer)&&q.answer>=0&&q.answer<5);assert.ok(q.solution.length>20);}
     await run('signedIn({uid:"student"})');
     assert.equal(run('P.completedItems.length'),0,'Chapters must be independent');
-    assert.match(h.elements.get('chapter-app').innerHTML,/Estudio progresivo/);
-    run("chooseMode('progressive');goLesson(3);goTab('exam')");
+    assert.doesNotMatch(h.elements.get('chapter-app').innerHTML,/id="study-mode"|data-action="mode"/);
+    run("window.StudyMode.choose(user.uid,'progressive');refreshStudyMode();goLesson(3);goTab('exam')");
     assert.equal(run('P.currentItem'),0);assert.equal(run('P.activeTab'),'theory');
     run('checkQuiz()');assert.equal(run('P.attempts.item_1'),undefined);
     run('P.quizAnswers[0]=Object.fromEntries(LESSONS[0].quiz.map(q=>[q.id,(q.answer+1)%5]));checkQuiz()');
     assert.equal(run('canOpen(1)'),false);
-    run("chooseMode('free');goLesson(LESSONS.length-1);P.quizAnswers[P.currentItem]=Object.fromEntries(LESSONS[P.currentItem].quiz.map(q=>[q.id,q.answer]));checkQuiz();chooseMode('progressive')");
+    run("window.StudyMode.choose(user.uid,'free');refreshStudyMode();goLesson(LESSONS.length-1);P.quizAnswers[P.currentItem]=Object.fromEntries(LESSONS[P.currentItem].quiz.map(q=>[q.id,q.answer]));checkQuiz();window.StudyMode.choose(user.uid,'progressive');refreshStudyMode()");
     assert.equal(run('P.currentItem'),0,'Later completion must not skip gaps');
     for(let i=0;i<content.lessons.length;i++){
       run(`goLesson(${i});P.quizAnswers[${i}]=Object.fromEntries(LESSONS[${i}].quiz.map(q=>[q.id,q.answer]));checkQuiz()`);
@@ -90,4 +92,5 @@ async function test(){
   console.log('PASS: 5 chapters, 137 questions, chapter/account isolation, progressive/free modes, grading, best scores, offline recovery and navigation.');
 }
 test().catch(e=>{console.error(e);process.exitCode=1});
+
 

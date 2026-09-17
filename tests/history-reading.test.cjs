@@ -6,13 +6,13 @@ const root=path.join(__dirname,'..');
 function harness(local=new Map(),cloud=new Map()){
  let offline=false,writes=0;const elements=new Map();
  const element=()=>({innerHTML:'',textContent:'',hidden:false,setAttribute(){},addEventListener(){},focus(){},scrollIntoView(){},close(){},showModal(){}});
- const document={getElementById:id=>{if(!elements.has(id))elements.set(id,element());return elements.get(id);},querySelector:s=>s==='dialog[open]'?null:element(),addEventListener(){},documentElement:{}};
+ const document={getElementById:id=>{if(!elements.has(id))elements.set(id,element());return elements.get(id);},querySelector:s=>s==='dialog[open]'?null:element(),querySelectorAll:()=>[],addEventListener(){},documentElement:{}};
  const ref=key=>({async get(){if(offline)throw Error('offline');return {exists:cloud.has(key),data:()=>cloud.get(key)};},async set(d){if(offline)throw Error('offline');cloud.set(key,structuredClone(d));writes++;}});
  const db={collection:()=>({doc:uid=>({collection:()=>({doc:id=>ref(uid+'/'+id)})})})};
  const firestore=Object.assign(()=>db,{FieldValue:{serverTimestamp:()=>123}});
  const c=vm.createContext({window:{addEventListener(){},scrollTo(){}},document,firebase:{initializeApp(){},firestore,auth:()=>({onAuthStateChanged(){}})},localStorage:{getItem:k=>local.get(k)||null,setItem:(k,v)=>local.set(k,v)},console:{error(){}},setTimeout:()=>1,clearTimeout(){}});
  c.window.firebase=c.firebase;
- for(const p of ['historia-universal-capitulo-01-slides.js','history-presentation.js'])vm.runInContext(fs.readFileSync(path.join(root,p),'utf8'),c);
+ for(const p of ['historia-universal-capitulo-01-content.js','history-reading.js'])vm.runInContext(fs.readFileSync(path.join(root,p),'utf8'),c);
  return {run:s=>vm.runInContext(s,c),local,cloud,setOffline:v=>offline=v,writes:()=>writes,elements};
 }
 async function test(){
@@ -40,9 +40,10 @@ async function test(){
  const writes=h.writes();await run('signedIn({uid:"student"})');assert.equal(run('P.currentSlide'),4);assert.equal(run('percent()'),100);assert.equal(h.writes(),writes);
  h.setOffline(false);await run('retrySync()');assert.equal(JSON.parse(local.get('sin-limites:student:historia-universal-presentacion-01')).pending,false);
  await run('signedIn({uid:"other"})');assert.equal(run('P.completedItems.length'),0);assert.equal(run('P.currentSlide'),0);
- await run('signedIn(null)');assert.match(h.elements.get('presentation-app').innerHTML,/chapter=historia-universal-capitulo-01/);
+ await run('signedIn(null)');assert.match(h.elements.get('reading-app').innerHTML,/chapter=historia-universal-capitulo-01/);
  assert.deepEqual(cloud.get('student/historia-universal-capitulo-01'),{completedItems:[0,1,2,3,4],percent:100});
- console.log('PASS: 33 slides, 7 revised activities, progression, grading, new progress identity, offline recovery and account isolation.');
+ console.log('PASS: Continuous theory, 7 retained activities, progression, grading, retained progress identity, offline recovery and account isolation.');
 }
 module.exports={harness,test};
 if(require.main===module)test().catch(e=>{console.error(e);process.exitCode=1;});
+

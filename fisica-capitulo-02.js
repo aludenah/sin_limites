@@ -99,12 +99,7 @@ function renderMath(){
   if(typeof window.renderMathInElement==='function')window.renderMathInElement(root,{delimiters:[{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false}],throwOnError:false,trust:false});
 }
 function header(){return '<a class="skip" href="#chapter-content">Ir al contenido</a><header class="top"><div class="wrap"><a class="brand" href="index.html"><span class="logo"><img src="assets/logo-sin-limites.jpg" alt="Logo de SIN LÍMITES" width="56" height="56" style="display:block;width:100%;height:100%;object-fit:contain;border-radius:inherit"></span><span>SIN <em>LÍMITES</em><small>ACADEMIA VIRTUAL</small></span></a><a class="back" href="index.html?course=16">← Los 25 capítulos de Física</a></div></header>';}
-function modePicker(){return `${header()}<main id="chapter-content" class="access card"><p class="eyebrow">Física · Capítulo 02 de 25</p><h1>Vectores</h1><p>Aprende a representar vectores, operar con sus componentes y resolver problemas de orientación y resultantes.</p><p class="muted">Elige tu recorrido. Puedes cambiarlo después sin perder tus resultados.</p><div class="modes"><button class="mode-card" data-action="mode" data-value="progressive"><b>Estudio progresivo</b><span>Aprueba las dos preguntas de cada tema para abrir el siguiente. Después accede a la práctica y la evaluación.</span></button><button class="mode-card free" data-action="mode" data-value="free"><b>Estudio libre</b><span>Explora cualquier tema, la práctica y la evaluación desde el inicio. Avanza en el orden que prefieras.</span></button></div><p class="resource-note" style="margin-top:24px">El avance cuenta los 6 temas aprobados y una evaluación con al menos 7 de 10 respuestas correctas. La práctica es de entrenamiento.</p><p class="save-line" id="save-status" role="status">${escapeHTML(saveMessage)}</p></main>`;}
-function chooseMode(mode){
-  if(!['free','progressive'].includes(mode))return;
-  if(window.StudyMode){window.StudyMode.choose(user.uid,mode);window.StudyMode.save(user.uid,db);}
-  P.studyMode=mode;P=normalized(P);notice='';markChanged();render();persist();
-}
+
 function side(){return LESSONS.map((lesson,i)=>{
   const done=P.completedItems.includes(i),active=P.activeTab==='theory'&&P.currentItem===i;
   return `<button data-action="lesson" data-index="${i}" ${!canOpen(i)?'disabled':''} ${active?'aria-current="step"':''} class="${active?'active ':''}${done?'done':''}"><span class="stepno">${done?'✓':!canOpen(i)?'🔒':String(i+1).padStart(2,'0')}</span><span>${lesson.title}</span></button>`;
@@ -154,9 +149,9 @@ function examView(){
 function resourcesView(){return CONTENT.resources;}
 function render(){
   if(!user)return;
-  if(!P.studyMode){root.innerHTML=modePicker();return;}
+  if(!P.studyMode){window.location.replace('index.html?chapter='+CHAPTER_ID);return;}
   const percent=progressPercent();
-  root.innerHTML=`${header()}<section class="hero"><div class="wrap"><div><p class="eyebrow">Física · Capítulo 02 de 25</p><h1>Vectores</h1><p>De una flecha a una ecuación. Representa, suma y descompón vectores; comprende sus productos y sus aplicaciones.</p><div class="badges"><span class="badge">6 temas</span><span class="badge">12 ejemplos resueltos</span><span class="badge">32 preguntas</span></div></div><div class="vector-hero">${CONTENT.hero}</div></div></section><div class="wrap"><section class="card overview"><div><div class="progress-head"><span>Mi avance en el capítulo</span><strong>${percent}%</strong></div><progress max="100" value="${percent}" aria-label="Avance del capítulo">${percent}%</progress><small>${P.completedItems.length}/6 temas aprobados · Evaluación: ${P.examBest>=PASS_SCORE?'aprobada':P.examAttempts?P.examBest+'/10 (mejor nota)':'pendiente'}</small><p id="save-status" class="save-line ${cloudReady?'':'warning'}" role="status">${escapeHTML(saveMessage)}</p><button id="retry-save" class="button secondary small" data-action="sync" ${cloudReady?'hidden':''}>Reintentar sincronización</button></div><div><label class="mode-label" for="study-mode">Modo de estudio</label><select id="study-mode"><option value="progressive" ${P.studyMode==='progressive'?'selected':''}>Progresivo · avanza tema a tema</option><option value="free" ${P.studyMode==='free'?'selected':''}>Libre · explora sin candados</option></select><small>${P.studyMode==='free'?'Los controles registran tu aprendizaje; puedes explorar todo.':'Aprueba 2 de 2 preguntas para abrir el siguiente tema.'}</small></div></section><div class="layout"><aside class="card sidebar"><p class="eyebrow">Tu ruta de aprendizaje</p><nav class="route" aria-label="Temas del capítulo">${side()}</nav><p class="hint">El 100% requiere los seis temas y al menos 7/10 en la evaluación. La práctica sirve para entrenar.</p></aside><main class="workspace" id="chapter-content"><nav class="card tabs" aria-label="Secciones del capítulo">${[['theory','Teoría'],['practice','Práctica'],['exam','Evaluación'],['resources','Materiales']].map(([id,title])=>`<button data-action="tab" data-value="${id}" class="${P.activeTab===id?'active':''}" ${P.activeTab===id?'aria-current="page"':''} ${['practice','exam'].includes(id)&&!canApply()?'disabled':''}>${title}${['practice','exam'].includes(id)&&!canApply()?' 🔒':''}</button>`).join('')}</nav><article class="card article">${notice?`<div role="alert" class="feedback" id="notice">${escapeHTML(notice)}</div>`:''}${P.activeTab==='theory'?lessonView():P.activeTab==='practice'?practiceView():P.activeTab==='exam'?examView():resourcesView()}</article></main></div></div><footer class="footer">SIN LÍMITES · Física · Vectores</footer>`;
+  root.innerHTML=`${header()}<section class="hero"><div class="wrap"><div><p class="eyebrow">Física · Capítulo 02 de 25</p><h1>Vectores</h1><p>De una flecha a una ecuación. Representa, suma y descompón vectores; comprende sus productos y sus aplicaciones.</p><div class="badges"><span class="badge">6 temas</span><span class="badge">12 ejemplos resueltos</span><span class="badge">32 preguntas</span></div></div><div class="vector-hero">${CONTENT.hero}</div></div></section><div class="wrap"><section class="card overview"><div><div class="progress-head"><span>Mi avance en el capítulo</span><strong>${percent}%</strong></div><progress max="100" value="${percent}" aria-label="Avance del capítulo">${percent}%</progress><small>${P.completedItems.length}/6 temas aprobados · Evaluación: ${P.examBest>=PASS_SCORE?'aprobada':P.examAttempts?P.examBest+'/10 (mejor nota)':'pendiente'}</small><p id="save-status" class="save-line ${cloudReady?'':'warning'}" role="status">${escapeHTML(saveMessage)}</p><button id="retry-save" class="button secondary small" data-action="sync" ${cloudReady?'hidden':''}>Reintentar sincronización</button></div></section><div class="layout"><aside class="card sidebar"><p class="eyebrow">Tu ruta de aprendizaje</p><nav class="route" aria-label="Temas del capítulo">${side()}</nav><p class="hint">El 100% requiere los seis temas y al menos 7/10 en la evaluación. La práctica sirve para entrenar.</p></aside><main class="workspace" id="chapter-content"><nav class="card tabs" aria-label="Secciones del capítulo">${[['theory','Teoría'],['practice','Práctica'],['exam','Evaluación'],['resources','Materiales']].map(([id,title])=>`<button data-action="tab" data-value="${id}" class="${P.activeTab===id?'active':''}" ${P.activeTab===id?'aria-current="page"':''} ${['practice','exam'].includes(id)&&!canApply()?'disabled':''}>${title}${['practice','exam'].includes(id)&&!canApply()?' 🔒':''}</button>`).join('')}</nav><article class="card article">${notice?`<div role="alert" class="feedback" id="notice">${escapeHTML(notice)}</div>`:''}${P.activeTab==='theory'?lessonView():P.activeTab==='practice'?practiceView():P.activeTab==='exam'?examView():resourcesView()}</article></main></div></div><footer class="footer">SIN LÍMITES · Física · Vectores</footer>`;
   renderMath();if(P.activeTab==='theory'&&P.currentItem===3)updateLab();
 }
 function scrollContent(){document.getElementById('chapter-content')?.scrollIntoView({behavior:'smooth',block:'start'});}
@@ -192,8 +187,7 @@ function retryExam(){if(!canApply()||!P.examResult)return;P.examDraft={};P.examR
 root.addEventListener('click',event=>{
   const button=event.target.closest('[data-action]');if(!button||button.disabled||!user)return;
   const {action,value,index,id}=button.dataset;
-  if(action==='mode')chooseMode(value);
-  else if(action==='lesson')goLesson(Number(index));
+  if(action==='lesson')goLesson(Number(index));
   else if(action==='tab')goTab(value);
   else if(action==='check-quiz')checkQuiz();
   else if(action==='check-practice')checkPractice(id);
@@ -203,7 +197,6 @@ root.addEventListener('click',event=>{
 });
 root.addEventListener('change',event=>{
   if(!user)return;const el=event.target;
-  if(el.id==='study-mode'){chooseMode(el.value);return;}
   const {group,question:id}=el.dataset;if(!id)return;
   const value=Number(el.value);
   const questions=group==='quiz'?LESSONS[P.currentItem].quiz:group==='practice'?CONTENT.practice:group==='exam'?CONTENT.exam:[];
@@ -236,7 +229,7 @@ async function signedIn(u){
   try{localStorage.setItem('academia-sm-state',JSON.stringify({catalogVersion:2,activeCourseId:16,activeTopicIndex:1,activeTopicName:CONTENT.title}));}catch{}
   if(cloudReady)try{await db.collection('users').doc(u.uid).collection('progress').doc('navigation').set({...navigation,updatedAt:firebase.firestore.FieldValue.serverTimestamp()},{merge:true});}catch(error){console.error('Navigation save:',error);}
 }
-if(!window.firebase){root.innerHTML='<main class="access card"><h1>No se pudo cargar la sesión</h1><p>Revisa tu conexión y vuelve a abrir este capítulo.</p><a class="button" href="fisica-capitulo-02.html">Reintentar</a></main>';}
+if(!window.firebase){root.innerHTML='<main class="access card"><h1>No se pudo cargar la sesión</h1><p>Revisa tu conexión y vuelve a abrir este capítulo.</p><a class="button" href="fisica-capitulo-02.html?v=20260917-reading3">Reintentar</a></main>';}
 else{firebase.initializeApp(CONFIG);db=firebase.firestore();firebase.auth().onAuthStateChanged(signedIn);}
 
 

@@ -1,5 +1,5 @@
 const assert=require('node:assert/strict');
-const {harness}=require('./history-presentation.test.cjs');
+const {harness}=require('./history-reading.test.cjs');
 async function test(){
  const h=harness(),run=h.run;
  await run('signedIn({uid:"student"})');
@@ -19,3 +19,4 @@ async function test(){
  console.log('PASS: switching free/progressive modes, gap-safe unlocks, retained achievements and resume.');
 }
 test().catch(e=>{console.error(e);process.exitCode=1;});
+

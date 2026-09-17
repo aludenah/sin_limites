@@ -204,11 +204,11 @@ window.HISTORY_CHAPTERS = [
   {
     "number": 1,
     "title": "La ciencia histórica",
-    "intro": "Presentación del capítulo del libro: ocho apartados, 33 diapositivas y siete actividades con solución.",
+    "intro": "Teoría organizada por temas, imágenes didácticas y siete actividades con solución.",
     "items": 7,
     "progressId": "historia-universal-presentacion-01",
     "legacySources": [],
-    "format": "presentation",
+    "format": "reading",
     "itemLabel": "actividades"
   },
   {
@@ -362,3 +362,4 @@ window.HISTORY_CHAPTERS = [
     "items": 6
   }
 ];
+

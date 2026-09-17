@@ -13,6 +13,8 @@ function harness(){
   const firestore=Object.assign(()=>db,{FieldValue:{serverTimestamp:()=>123}});
   const context=vm.createContext({document,window:{addEventListener(){}},firebase:{initializeApp(){},firestore,auth:()=>({onAuthStateChanged(){}})},localStorage:{getItem:k=>local.get(k)||null,setItem:(k,v)=>local.set(k,v)},console:{error(){}},setTimeout:()=>1,clearTimeout(){}});
   context.window.firebase=context.firebase;
+  const selectedModes=new Map();
+  context.window.StudyMode={get:uid=>selectedModes.get(uid)||'progressive',choose:(uid,mode)=>selectedModes.set(uid,mode),save:()=>Promise.resolve(),requireChoice:async()=>true,key:uid=>'mode:'+uid};
   for(const name of ['fisica-capitulo-01-data.js','fisica-capitulo-01.js'])vm.runInContext(fs.readFileSync(path.join(__dirname,'..',name),'utf8'),context);
   const run=s=>vm.runInContext(s,context);
   return {run,cloud,local,elements,setOffline:x=>offline=x,writes:()=>writes};
@@ -21,8 +23,8 @@ function harness(){
 async function test(){
   const h=harness(),run=h.run;
   await run('signedIn({uid:"student"})');
-  assert.match(h.elements.get('chapter-app').innerHTML,/Estudio progresivo/);
-  run("chooseMode('progressive')");await run('saveChain');
+  assert.doesNotMatch(h.elements.get('chapter-app').innerHTML,/id="study-mode"|data-action="mode"/);
+  run("window.StudyMode.choose(user.uid,'progressive');refreshStudyMode()");await run('saveChain');
   assert.equal(run('canOpen(1)'),false);
   run("goLesson(5);goTab('exam')");
   assert.equal(run('P.currentItem'),0);
@@ -36,13 +38,13 @@ async function test(){
   run('P.quizAnswers[0]={u1a:2,u1b:1};checkQuiz()');await run('saveChain');
   assert.equal(run('canOpen(1)'),true);
   assert.equal(run('progressPercent()'),14);
-  run("chooseMode('free');goLesson(5)");
+  run("window.StudyMode.choose(user.uid,'free');refreshStudyMode();goLesson(5)");
   run('P.quizAnswers[5]={u6a:1,u6b:3};checkQuiz()');await run('saveChain');
-  run("chooseMode('progressive')");
+  run("window.StudyMode.choose(user.uid,'progressive');refreshStudyMode()");
   assert.equal(run('P.currentItem'),1,'Switching back must honor the first gap');
   assert.equal(run('canOpen(4)'),false,'Passing a later topic cannot skip earlier ones');
   assert.equal(run('P.completedItems.includes(5)'),true);
-  run("chooseMode('free');goTab('exam');submitExam()");
+  run("window.StudyMode.choose(user.uid,'free');refreshStudyMode();goTab('exam');submitExam()");
   assert.equal(run('P.examAttempts'),0,'Incomplete exams cannot be submitted');
   // Independently reviewed answer key for the final exam.
   run('P.examDraft={e1:2,e2:0,e3:3,e4:1,e5:4,e6:2,e7:0,e8:3,e9:1,e10:4};submitExam()');await run('saveChain');
@@ -82,3 +84,4 @@ async function test(){
   console.log('PASS: progression, free study, grading, retakes, practice, cloud/local recovery, cross-device merge, account isolation and content structure.');
 }
 test().catch(error=>{console.error(error);process.exitCode=1;});
+

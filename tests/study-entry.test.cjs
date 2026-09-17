@@ -19,7 +19,7 @@ function harness(files,{local=new Map(),cloud=new Map(),search=''}={}){
  return {run:s=>vm.runInContext(s,context),signIn:u=>callback(u),cloud,local,elements,redirects,events,setOffline:value=>offline=value};
 }
 const appFiles=['courses.js','history-catalog.js','history-progress.js','app.js'];
-const presentations=['historia-universal-capitulo-01-slides.js','history-presentation.js'];
+const presentations=['historia-universal-capitulo-01-content.js','history-reading.js'];
 const physics=n=>[`fisica-capitulo-0${n}-data.js`,`fisica-capitulo-0${n}.js`];
 const history=n=>['history-catalog.js','history-progress.js',`historia-universal-capitulo-0${n}-data.js`,'history-chapter.js'];
 
@@ -33,6 +33,7 @@ async function test(){
  assert.equal(home.run('state.view'),'catalog');
  assert.match(home.elements.get('app').innerHTML,/class="course-card/);
  home.run('openCourse(16)');assert.equal(home.run('state.view'),'course');
+ assert.doesNotMatch(home.elements.get('app').innerHTML,/onclick="showStudyModes\(\)"/);
  await home.run("window.StudyMode.save('student',db)");
  assert.equal(cloud.get('users/student/progress/navigation').studyMode,'free');
  const oldProgress={studyMode:'progressive',currentItem:0,completedItems:[0],examBest:7,updatedMs:100};
@@ -42,6 +43,8 @@ async function test(){
  for(const files of [physics(1),physics(2),...Array.from({length:5},(_,i)=>history(i+2)),presentations]){
   const chapter=harness(files,{local,cloud});await chapter.signIn({uid:'student'});
   assert.equal(chapter.run('P.studyMode'),'free','The chosen mode overrides a previous chapter mode');
+  const chapterHTML=chapter.elements.get(files===presentations?'reading-app':'chapter-app').innerHTML;
+  assert.doesNotMatch(chapterHTML,/id="study-mode"|data-action="mode"|Cambiar diapositiva|Pantalla completa/);
   assert.equal(chapter.run('P.completedItems.includes(0)'),true,'Existing achievements remain');
   if(files===presentations){assert.equal(chapter.run('allowedSlide(32)'),true);chapter.run('visit(32)');}
   else{assert.equal(chapter.run('canOpen(LESSONS.length-1)'),true);assert.equal(chapter.run('canApply()'),true);chapter.run("goTab('exam')");}
@@ -56,10 +59,10 @@ async function test(){
  }
  // A direct link asks first, then resumes the requested chapter after the choice.
  const direct=harness(presentations);await direct.signIn({uid:'new'});
- assert.deepEqual(direct.redirects,['index.html?chapter=historia-universal-capitulo-01']);
+ assert.deepEqual(direct.redirects,['index.html?chapter=historia-universal-capitulo-01&v=20260917-reading3']);
  const entry=harness(appFiles,{search:'?chapter=historia-universal-capitulo-01'});await entry.signIn({uid:'new'});
  assert.equal(entry.redirects.length,0);assert.equal(entry.run('state.view'),'mode');
- entry.run("selectStudyMode('progressive')");assert.deepEqual(entry.redirects,['historia-universal-capitulo-01.html']);
+ entry.run("selectStudyMode('progressive')");assert.deepEqual(entry.redirects,['historia-universal-capitulo-01.html?v=20260917-reading3']);
  await entry.run("window.StudyMode.save('new',db)");
  const nextDevice=harness(physics(1),{cloud:entry.cloud});await nextDevice.signIn({uid:'new'});
  assert.equal(nextDevice.run('P.studyMode'),'progressive','Preference also loads on another device');
