@@ -8,11 +8,11 @@ window.HISTORY_CONTENT = {
       "title": "Una evolución ramificada",
       "subtitle": "Ancestros comunes y diversidad",
       "goal": "Explica la evolución humana sin convertirla en una escalera de progreso.",
-      "body": "<p>La <strong>hominización</strong> es el conjunto de transformaciones evolutivas que dieron lugar al linaje humano. Se desarrolló durante millones de años, en poblaciones y ambientes diversos. No ocurrió porque un individuo decidiera cambiar, sino mediante variaciones heredables, selección natural y otros procesos evolutivos.</p><p>Los seres humanos somos primates. Compartimos ancestros con los demás grandes simios, pero <strong>no descendemos de los chimpancés actuales</strong>. Ambos linajes tienen una historia evolutiva propia. Un árbol con ramas representa mejor este proceso que una fila de figuras que culmina en una supuesta perfección.</p><p>Durante largos periodos coexistieron diferentes especies humanas. Muchas se extinguieron y sus relaciones exactas siguen investigándose. La evolución no tiene una meta predeterminada. Tampoco ordena a los pueblos actuales en grados de humanidad: todas las personas actuales pertenecemos a <em>Homo sapiens</em>.</p>",
+      "body": "<h3>¿Qué estudia la antropogénesis?</h3><p>La antropogénesis estudia el origen y la evolución de los seres humanos. La hominización comprende transformaciones biológicas desarrolladas en poblaciones durante millones de años: cambios en la locomoción, la dentición, el cuerpo y el cerebro. Ningún individuo se transformó por voluntad propia en una nueva especie.</p><p>La evolución no tiene una meta predeterminada ni sitúa a una especie en la cima de una escala. Una población puede adaptarse a ciertas condiciones y resultar vulnerable si estas cambian. Los seres humanos pertenecemos a los primates y compartimos antepasados con otros grandes simios.</p><h3>Un árbol de parentescos</h3><p>Humanos y chimpancés actuales proceden de ancestros comunes; unos no son la versión antigua de los otros. Después de separarse sus linajes, ambos continuaron evolucionando. Dentro del linaje humano surgieron distintas ramas y varias especies coexistieron.</p><p>Ordenar fósiles por antigüedad es útil, pero no demuestra que cada especie sea antepasada directa de la siguiente. Para proponer parentescos se comparan muchos rasgos y, cuando se conserva, información genética. El registro es incompleto y las hipótesis se revisan con nuevos hallazgos.</p><h3>Ideas que cambiaron la investigación</h3><p>Los relatos religiosos de creación expresan creencias y significados culturales. La explicación científica de la evolución se apoya en evidencias contrastables y puede revisarse. Son formas distintas de plantear preguntas sobre el origen; aquí trabajaremos con el método científico.</p>",
       "key": "Compartimos ancestros; la evolución humana tuvo ramificaciones y coexistencias.",
       "examples": [
         {
-          "title": "Analiza el caso",
+          "title": "Corrige el afiche de la evolución",
           "question": "Un afiche muestra un chimpancé actual que se transforma, paso a paso, en una persona moderna. ¿Qué corregirías?",
           "steps": [
             "Reemplaza la fila por un esquema ramificado con un ancestro común.",
@@ -50,17 +50,83 @@ window.HISTORY_CONTENT = {
           ],
           "answer": 1
         }
+      ],
+      "blocks": [
+        {
+          "title": "¿Qué estudia la antropogénesis?",
+          "paragraphs": [
+            "La antropogénesis estudia el origen y la evolución de los seres humanos. La hominización comprende transformaciones biológicas desarrolladas en poblaciones durante millones de años: cambios en la locomoción, la dentición, el cuerpo y el cerebro. Ningún individuo se transformó por voluntad propia en una nueva especie.",
+            "La evolución no tiene una meta predeterminada ni sitúa a una especie en la cima de una escala. Una población puede adaptarse a ciertas condiciones y resultar vulnerable si estas cambian. Los seres humanos pertenecemos a los primates y compartimos antepasados con otros grandes simios."
+          ],
+          "cards": [
+            {
+              "title": "Cambio biológico",
+              "text": "Variaciones heredables que se transmiten y cambian de frecuencia entre generaciones."
+            },
+            {
+              "title": "Cambio cultural",
+              "text": "Conocimientos y prácticas aprendidos mediante convivencia, observación y enseñanza."
+            }
+          ],
+          "id": "c2-t1-b1"
+        },
+        {
+          "title": "Un árbol de parentescos",
+          "paragraphs": [
+            "Humanos y chimpancés actuales proceden de ancestros comunes; unos no son la versión antigua de los otros. Después de separarse sus linajes, ambos continuaron evolucionando. Dentro del linaje humano surgieron distintas ramas y varias especies coexistieron.",
+            "Ordenar fósiles por antigüedad es útil, pero no demuestra que cada especie sea antepasada directa de la siguiente. Para proponer parentescos se comparan muchos rasgos y, cuando se conserva, información genética. El registro es incompleto y las hipótesis se revisan con nuevos hallazgos."
+          ],
+          "takeaway": "Más antiguo no significa necesariamente antepasado directo.",
+          "id": "c2-t1-b2"
+        },
+        {
+          "title": "Ideas que cambiaron la investigación",
+          "paragraphs": [
+            "Los relatos religiosos de creación expresan creencias y significados culturales. La explicación científica de la evolución se apoya en evidencias contrastables y puede revisarse. Son formas distintas de plantear preguntas sobre el origen; aquí trabajaremos con el método científico."
+          ],
+          "headers": [
+            "Investigador",
+            "Aporte para comprender el problema"
+          ],
+          "rows": [
+            [
+              "Linneo",
+              "Clasificó a los seres humanos dentro de los primates."
+            ],
+            [
+              "Lamarck",
+              "Propuso un cambio de las especies; su explicación por uso, desuso y herencia de lo adquirido no equivale a la genética actual."
+            ],
+            [
+              "Lyell",
+              "Contribuyó a reconocer la gran antigüedad de la Tierra y la importancia de los procesos geológicos."
+            ],
+            [
+              "Darwin y Wallace",
+              "Explicaron la selección natural: algunas variaciones heredables favorecen supervivencia y reproducción en un ambiente."
+            ],
+            [
+              "Mendel",
+              "Estudió patrones de herencia; sus aportes ayudaron posteriormente a comprender la transmisión de caracteres."
+            ],
+            [
+              "Engels",
+              "Destacó el trabajo y la cooperación en una interpretación social de la humanización; no sustituyen la explicación biológica."
+            ]
+          ],
+          "id": "c2-t1-b3"
+        }
       ]
     },
     {
       "title": "Cómo se investiga la hominización",
       "subtitle": "Fósiles, contextos y datación",
       "goal": "Relaciona cada tipo de evidencia con las preguntas que puede responder.",
-      "body": "<p>La <strong>paleoantropología</strong> estudia la evolución humana mediante fósiles y otras evidencias. Huesos y dientes informan sobre anatomía y alimentación; herramientas y marcas de corte ayudan a investigar actividades. El lugar y la capa donde aparecen son parte esencial de la evidencia.</p><p>La datación <strong>relativa</strong> establece qué es anterior o posterior. En estratos no alterados, las capas inferiores suelen ser más antiguas. La datación <strong>radiométrica</strong> estima edades o intervalos mediante procesos físicos, siempre con márgenes de incertidumbre. No todos los métodos sirven para todo material o antigüedad.</p><p>El carbono 14 se aplica a materiales orgánicos relativamente recientes en términos geológicos; no es adecuado para fechar directamente fósiles de millones de años. En contextos más antiguos pueden estudiarse capas volcánicas con otros métodos. El ADN antiguo, cuando se conserva, permite comparar parentescos y contactos entre poblaciones.</p>",
+      "body": "<h3>El fósil y su contexto</h3><p>Un diente permite investigar alimentación; una pelvis ayuda a estudiar locomoción. Sin embargo, el valor de un fósil aumenta cuando sabemos dónde apareció, en qué estrato estaba y con qué otros restos se relacionaba. Por eso la excavación registra posiciones y asociaciones antes de retirar materiales.</p><p>La paleoantropología integra anatomía, arqueología, geología y otras especialidades. No basta con que un resto parezca humano: se comparan características y se evalúan explicaciones alternativas.</p><h3>¿Cómo sabemos cuándo vivieron?</h3><p>La datación debe elegirse según el material, el contexto y la antigüedad esperada. Ningún procedimiento sirve para cualquier objeto o periodo. Los resultados se expresan con márgenes de incertidumbre y se contrastan cuando es posible.</p><h3>Herramientas, huellas y ADN</h3><p>Una herramienta muestra acciones técnicas, pero no siempre permite identificar a su fabricante. Huellas de pisadas revelan desplazamientos; marcas de corte en huesos ayudan a estudiar alimentación. El ADN antiguo, cuando se conserva y se controla la contaminación, aporta información sobre parentescos e intercambios entre poblaciones.</p><p>La pregunta guía la selección de evidencia: para estudiar cómo caminaban resultan especialmente útiles huellas y anatomía; para investigar mezcla entre poblaciones, el ADN puede ser decisivo.</p>",
       "key": "Una conclusión sólida relaciona el fósil, su contexto y un método de datación adecuado.",
       "examples": [
         {
-          "title": "Analiza el caso",
+          "title": "Fecha un hallazgo",
           "question": "Caso hipotético: un fósil aparece entre dos capas volcánicas fechadas en unos 1,8 y 1,6 millones de años, sin señales de alteración.",
           "steps": [
             "Su posición permite proponer una antigüedad comprendida entre las capas.",
@@ -98,17 +164,83 @@ window.HISTORY_CONTENT = {
           ],
           "answer": 2
         }
+      ],
+      "blocks": [
+        {
+          "title": "El fósil y su contexto",
+          "paragraphs": [
+            "Un diente permite investigar alimentación; una pelvis ayuda a estudiar locomoción. Sin embargo, el valor de un fósil aumenta cuando sabemos dónde apareció, en qué estrato estaba y con qué otros restos se relacionaba. Por eso la excavación registra posiciones y asociaciones antes de retirar materiales.",
+            "La paleoantropología integra anatomía, arqueología, geología y otras especialidades. No basta con que un resto parezca humano: se comparan características y se evalúan explicaciones alternativas."
+          ],
+          "illustration": {
+            "src": "assets/history-ai/cap02-excavacion.webp",
+            "alt": "Dos investigadores registran y cepillan restos fósiles en una excavación de África oriental.",
+            "caption": "Los fósiles se estudian junto con el estrato y los materiales que los rodean."
+          },
+          "id": "c2-t2-b1"
+        },
+        {
+          "title": "¿Cómo sabemos cuándo vivieron?",
+          "paragraphs": [
+            "La datación debe elegirse según el material, el contexto y la antigüedad esperada. Ningún procedimiento sirve para cualquier objeto o periodo. Los resultados se expresan con márgenes de incertidumbre y se contrastan cuando es posible."
+          ],
+          "headers": [
+            "Procedimiento",
+            "Qué permite establecer",
+            "Precaución"
+          ],
+          "rows": [
+            [
+              "Estratigrafía",
+              "Una secuencia relativa de anterioridad y posterioridad.",
+              "En capas no alteradas, las inferiores suelen ser anteriores. Excavaciones o movimientos del terreno pueden modificar el orden."
+            ],
+            [
+              "Métodos radiométricos",
+              "Estimaciones de edad a partir de procesos físicos conocidos.",
+              "Se aplican a materiales apropiados; a veces se fecha una capa asociada y no el fósil directamente."
+            ],
+            [
+              "Comparación de evidencias",
+              "Coherencia entre edades, ambiente y materiales.",
+              "La semejanza de dos objetos por sí sola no ofrece una fecha exacta."
+            ]
+          ],
+          "id": "c2-t2-b2"
+        },
+        {
+          "title": "Herramientas, huellas y ADN",
+          "paragraphs": [
+            "Una herramienta muestra acciones técnicas, pero no siempre permite identificar a su fabricante. Huellas de pisadas revelan desplazamientos; marcas de corte en huesos ayudan a estudiar alimentación. El ADN antiguo, cuando se conserva y se controla la contaminación, aporta información sobre parentescos e intercambios entre poblaciones.",
+            "La pregunta guía la selección de evidencia: para estudiar cómo caminaban resultan especialmente útiles huellas y anatomía; para investigar mezcla entre poblaciones, el ADN puede ser decisivo."
+          ],
+          "cards": [
+            {
+              "title": "Observación",
+              "text": "La evidencia que se describe y registra."
+            },
+            {
+              "title": "Interpretación",
+              "text": "La explicación propuesta a partir de esa evidencia."
+            },
+            {
+              "title": "Contraste",
+              "text": "La comparación con otros datos para evaluar la explicación."
+            }
+          ],
+          "id": "c2-t2-b3"
+        }
       ]
     },
     {
       "title": "Bipedismo y cambios anatómicos",
       "subtitle": "Caminar sobre dos extremidades",
       "goal": "Reconoce que los rasgos humanos aparecieron en momentos distintos.",
-      "body": "<p>El <strong>bipedismo habitual</strong> consiste en desplazarse normalmente sobre dos extremidades inferiores. Se estudia mediante la pelvis, el fémur, la columna, el pie y las huellas. La combinación de rasgos es más informativa que un hueso aislado.</p><p>Caminar erguido apareció antes del gran aumento del tamaño cerebral característico de varias especies posteriores. Los australopitecos combinaban locomoción bípeda con rasgos útiles para trepar. <em>Australopithecus afarensis</em>, especie a la que pertenece el fósil conocido como Lucy, vivió en África hace aproximadamente entre 3,9 y 2,9 millones de años.</p><p>El bipedismo modificó la relación entre locomoción, transporte y uso de las manos. No significa que en ese mismo momento aparecieran la agricultura, la escritura o todas las tecnologías humanas. La evolución fue un <strong>mosaico de cambios</strong>, asociado a ambientes y modos de vida variados.</p>",
+      "body": "<h3>Caminar sobre dos extremidades</h3><p>El bipedismo habitual implica desplazarse de manera regular sobre las extremidades inferiores. Su evolución involucró cambios en pelvis, columna, piernas y pies. No apareció como un paquete completo ni eliminó inmediatamente todas las capacidades de trepar.</p><p>Las huellas de Laetoli, en Tanzania, de aproximadamente 3,6 millones de años, muestran locomoción bípeda en homininos antiguos. Evidencias como estas indican que el bipedismo precedió a los grandes aumentos del volumen cerebral de especies posteriores.</p><h3>Australopitecos: diversidad africana</h3><p>Los australopitecos combinaron rasgos vinculados a caminar erguidos con otros relacionados con la vida arbórea. No fueron todos iguales y no debe considerarse cada especie una etapa obligatoria hacia nosotros.</p><h3>Manos, cerebro y vida social</h3><p>Caminar erguido amplió las posibilidades de transportar materiales y manipular objetos durante el desplazamiento. Fabricar herramientas requirió coordinación y aprendizaje, pero no todo uso de objetos es exclusivo del linaje humano.</p><p>El cerebro, la dieta, el ambiente y la cooperación se relacionaron mediante procesos prolongados. Reducir toda la evolución a una sola causa —el trabajo, el fuego o el tamaño cerebral— impide comprender esa interacción. Un cerebro de mayor volumen tampoco permite, por sí solo, medir toda la capacidad de una especie.</p>",
       "key": "El bipedismo y el aumento cerebral no fueron un único cambio simultáneo.",
       "examples": [
         {
-          "title": "Analiza el caso",
+          "title": "Interpreta la anatomía",
           "question": "Un fósil presenta adaptaciones para caminar erguido y un cráneo de tamaño reducido respecto del humano actual. ¿Es contradictorio?",
           "steps": [
             "No: distintos rasgos evolucionaron en momentos y ritmos diferentes.",
@@ -146,17 +278,83 @@ window.HISTORY_CONTENT = {
           ],
           "answer": 3
         }
+      ],
+      "blocks": [
+        {
+          "title": "Caminar sobre dos extremidades",
+          "paragraphs": [
+            "El bipedismo habitual implica desplazarse de manera regular sobre las extremidades inferiores. Su evolución involucró cambios en pelvis, columna, piernas y pies. No apareció como un paquete completo ni eliminó inmediatamente todas las capacidades de trepar.",
+            "Las huellas de Laetoli, en Tanzania, de aproximadamente 3,6 millones de años, muestran locomoción bípeda en homininos antiguos. Evidencias como estas indican que el bipedismo precedió a los grandes aumentos del volumen cerebral de especies posteriores."
+          ],
+          "cards": [
+            {
+              "title": "Pelvis y piernas",
+              "text": "Su forma permite evaluar cómo se distribuye el peso y se sostiene el cuerpo."
+            },
+            {
+              "title": "Pies y huellas",
+              "text": "Informan sobre apoyos, pasos y desplazamiento."
+            },
+            {
+              "title": "Columna y cráneo",
+              "text": "Sus relaciones ayudan a reconstruir la postura."
+            }
+          ],
+          "id": "c2-t3-b1"
+        },
+        {
+          "title": "Australopitecos: diversidad africana",
+          "paragraphs": [
+            "Los australopitecos combinaron rasgos vinculados a caminar erguidos con otros relacionados con la vida arbórea. No fueron todos iguales y no debe considerarse cada especie una etapa obligatoria hacia nosotros."
+          ],
+          "headers": [
+            "Especie o hallazgo",
+            "Referencia para reconocerlo"
+          ],
+          "rows": [
+            [
+              "Australopithecus anamensis",
+              "Vivió en África oriental hace alrededor de cuatro millones de años."
+            ],
+            [
+              "Australopithecus afarensis",
+              "Incluye el esqueleto conocido como Lucy, hallado en Etiopía, de unos 3,2 millones de años."
+            ],
+            [
+              "Australopithecus africanus",
+              "Se relaciona con hallazgos sudafricanos, entre ellos el Niño de Taung."
+            ],
+            [
+              "Sahelanthropus y Orrorin",
+              "Son homininos aún más antiguos; sus rasgos y posiciones en el árbol evolutivo continúan investigándose."
+            ]
+          ],
+          "id": "c2-t3-b2"
+        },
+        {
+          "title": "Manos, cerebro y vida social",
+          "paragraphs": [
+            "Caminar erguido amplió las posibilidades de transportar materiales y manipular objetos durante el desplazamiento. Fabricar herramientas requirió coordinación y aprendizaje, pero no todo uso de objetos es exclusivo del linaje humano.",
+            "El cerebro, la dieta, el ambiente y la cooperación se relacionaron mediante procesos prolongados. Reducir toda la evolución a una sola causa —el trabajo, el fuego o el tamaño cerebral— impide comprender esa interacción. Un cerebro de mayor volumen tampoco permite, por sí solo, medir toda la capacidad de una especie."
+          ],
+          "id": "c2-t3-b3",
+          "illustration": {
+            "src": "assets/history-ai/cap02-herramientas.webp",
+            "alt": "Una persona talla una piedra mientras otra observa los gestos y las lascas obtenidas.",
+            "caption": "La talla de piedra exige elegir materiales, ejecutar gestos y aprender de otras personas."
+          }
+        }
       ]
     },
     {
       "title": "Diversidad del género Homo",
       "subtitle": "Tecnología, dispersión y coexistencia",
       "goal": "Distingue especies sin atribuirles inventos exclusivos de forma automática.",
-      "body": "<p>En el género <em>Homo</em> se reconocen distintas especies, definidas a partir de conjuntos de rasgos y evidencias. <em>Homo habilis</em> se asocia en muchos contextos con herramientas tempranas, pero no debe afirmarse que toda herramienta antigua fue fabricada por esa especie: existen tecnologías anteriores y problemas de atribución.</p><p><em>Homo erectus</em> tuvo una larga presencia y participó en dispersiones tempranas fuera de África. Diversos grupos desarrollaron herramientas y formas de cooperación. El aprovechamiento del fuego se reconstruye caso por caso; no conocemos una única fecha universal de su descubrimiento.</p><p>Los neandertales habitaron regiones de Europa y Asia y fabricaron herramientas, cazaron y cuidaron a algunos individuos con lesiones. Coexistieron con <em>Homo sapiens</em>. La evidencia genética muestra intercambios reproductivos entre poblaciones; no fueron simplemente una etapa obligatoria que se transformó por completo en nosotros.</p>",
+      "body": "<h3>Homo habilis y las primeras tecnologías</h3><p>Homo habilis vivió en África hace aproximadamente 2,4 a 1,4 millones de años. Se lo asocia con industrias de piedra tempranas, aunque no es correcto afirmar con seguridad que inventó todas las primeras herramientas: existen útiles muy antiguos cuya atribución a una especie sigue en discusión.</p><p>Tallar implica seleccionar una roca, golpearla de determinada manera y aprovechar filos. El estudio de los residuos y del desgaste permite proponer usos, como cortar o procesar materiales. Una herramienta no fue necesariamente un arma.</p><h3>Homo erectus y las dispersiones</h3><p>Homo erectus aparece en el registro desde hace cerca de 1,9 millones de años y se relaciona con dispersiones tempranas fuera de África. Los nombres tradicionales «hombre de Java» y «hombre de Pekín» remiten a importantes hallazgos asiáticos.</p><p>Su historia comprende una gran diversidad temporal y regional. Se lo vincula con cambios corporales, nuevas tecnologías y evidencias de uso del fuego en algunos yacimientos. No conocemos un único momento universal en el que toda la humanidad empezó a dominarlo.</p><h3>Neandertales: otra humanidad</h3><p>Los neandertales habitaron Europa y zonas de Asia aproximadamente entre 400 000 y 40 000 años atrás. Fabricaron herramientas variadas, aprovecharon el fuego y desarrollaron formas complejas de vida social. Las interpretaciones sobre entierros y comportamientos simbólicos se evalúan caso por caso.</p><p>No fueron una versión incompleta de nuestra especie ni una fase que todos debieron atravesar. Coexistieron con Homo sapiens y hubo intercambios genéticos. El aspecto robusto de un esqueleto no permite concluir que sus capacidades fueran «toscas» o inferiores.</p>",
       "key": "Una especie no equivale a un invento, y distintas especies humanas pudieron coexistir.",
       "examples": [
         {
-          "title": "Analiza el caso",
+          "title": "Atribuye una herramienta con cautela",
           "question": "Un museo encuentra una herramienta, pero ningún fósil humano asociado. ¿Puede asignarla con certeza a Homo habilis?",
           "steps": [
             "La forma y la antigüedad permiten compararla con una tradición tecnológica.",
@@ -194,17 +392,44 @@ window.HISTORY_CONTENT = {
           ],
           "answer": 4
         }
+      ],
+      "blocks": [
+        {
+          "title": "Homo habilis y las primeras tecnologías",
+          "paragraphs": [
+            "Homo habilis vivió en África hace aproximadamente 2,4 a 1,4 millones de años. Se lo asocia con industrias de piedra tempranas, aunque no es correcto afirmar con seguridad que inventó todas las primeras herramientas: existen útiles muy antiguos cuya atribución a una especie sigue en discusión.",
+            "Tallar implica seleccionar una roca, golpearla de determinada manera y aprovechar filos. El estudio de los residuos y del desgaste permite proponer usos, como cortar o procesar materiales. Una herramienta no fue necesariamente un arma."
+          ],
+          "id": "c2-t4-b1"
+        },
+        {
+          "title": "Homo erectus y las dispersiones",
+          "paragraphs": [
+            "Homo erectus aparece en el registro desde hace cerca de 1,9 millones de años y se relaciona con dispersiones tempranas fuera de África. Los nombres tradicionales «hombre de Java» y «hombre de Pekín» remiten a importantes hallazgos asiáticos.",
+            "Su historia comprende una gran diversidad temporal y regional. Se lo vincula con cambios corporales, nuevas tecnologías y evidencias de uso del fuego en algunos yacimientos. No conocemos un único momento universal en el que toda la humanidad empezó a dominarlo."
+          ],
+          "takeaway": "Hubo dispersiones fuera de África anteriores a las de Homo sapiens.",
+          "id": "c2-t4-b2"
+        },
+        {
+          "title": "Neandertales: otra humanidad",
+          "paragraphs": [
+            "Los neandertales habitaron Europa y zonas de Asia aproximadamente entre 400 000 y 40 000 años atrás. Fabricaron herramientas variadas, aprovecharon el fuego y desarrollaron formas complejas de vida social. Las interpretaciones sobre entierros y comportamientos simbólicos se evalúan caso por caso.",
+            "No fueron una versión incompleta de nuestra especie ni una fase que todos debieron atravesar. Coexistieron con Homo sapiens y hubo intercambios genéticos. El aspecto robusto de un esqueleto no permite concluir que sus capacidades fueran «toscas» o inferiores."
+          ],
+          "id": "c2-t4-b3"
+        }
       ]
     },
     {
       "title": "Homo sapiens y cultura acumulativa",
       "subtitle": "Origen africano y expansión",
       "goal": "Relaciona evolución biológica, aprendizaje y diversidad cultural.",
-      "body": "<p><em>Homo sapiens</em> surgió en África hace aproximadamente <strong>300 000 años</strong>. El origen de nuestra especie fue un proceso poblacional complejo, no un acontecimiento que pueda reducirse a una sola pareja o a una fecha exacta. Posteriormente hubo distintas dispersiones y contactos entre poblaciones.</p><p>La <strong>cultura acumulativa</strong> permite aprender, transmitir y modificar conocimientos entre generaciones. Herramientas compuestas, adornos, representaciones y redes de intercambio muestran capacidades diversas. Su presencia no autoriza a deducir automáticamente el contenido exacto de una lengua o creencia.</p><p>Diferencia cambios biológicos heredables de cambios culturales aprendidos. La difusión de una técnica no exige que aparezca una nueva especie. La agricultura y las ciudades son muy posteriores al origen de Homo sapiens. Todas las poblaciones humanas actuales pertenecen a la misma especie y comparten una historia evolutiva conectada.</p>",
+      "body": "<h3>El origen africano de Homo sapiens</h3><p>La evidencia disponible sitúa el origen de nuestra especie en África hace alrededor de 300 000 años. Su formación se investiga como una historia de poblaciones conectadas y diversas; no como el nacimiento instantáneo de un único individuo «moderno».</p><p>Más adelante, distintas dispersiones llevaron poblaciones a nuevas regiones. «Cromañón» es una denominación histórica de ciertos restos europeos de Homo sapiens: no es una especie separada ni el lugar donde comenzó toda la humanidad.</p><h3>Aprender, compartir y mejorar</h3><p>La cultura acumulativa permite conservar una técnica, transmitirla y modificarla en nuevas generaciones. La enseñanza, la cooperación y las redes sociales ayudan a explicar herramientas especializadas, adornos y expresiones simbólicas.</p><p>Una técnica aprendida no exige que cambien los genes de quien la usa. Por ejemplo, una comunidad puede mejorar una punta de proyectil mediante pruebas y enseñanza. Para estudiar estas transformaciones se investigan las secuencias de fabricación y la circulación de conocimientos.</p><h3>Una especie, muchas historias</h3><p>Todos los seres humanos actuales pertenecemos a Homo sapiens. La variación física entre poblaciones no constituye una escala de superioridad ni grupos que estén en etapas distintas de evolución.</p><p>Al resolver una pregunta, distingue cuatro relaciones: parentesco no es identidad; antigüedad no demuestra descendencia directa; diferencia biológica no implica jerarquía humana; aprendizaje cultural no equivale automáticamente a transformación genética.</p>",
       "key": "Nuestra especie es mucho más antigua que la agricultura; cultura y biología se relacionan, pero no son lo mismo.",
       "examples": [
         {
-          "title": "Analiza el caso",
+          "title": "Distingue evolución y aprendizaje",
           "question": "Caso hipotético: una comunidad aprende de sus vecinos a fabricar una nueva punta de piedra. ¿Se ha producido una nueva especie?",
           "steps": [
             "El aprendizaje y la difusión de la técnica son cambios culturales.",
@@ -241,6 +466,37 @@ window.HISTORY_CONTENT = {
             "datación radiométrica"
           ],
           "answer": 0
+        }
+      ],
+      "blocks": [
+        {
+          "title": "El origen africano de Homo sapiens",
+          "paragraphs": [
+            "La evidencia disponible sitúa el origen de nuestra especie en África hace alrededor de 300 000 años. Su formación se investiga como una historia de poblaciones conectadas y diversas; no como el nacimiento instantáneo de un único individuo «moderno».",
+            "Más adelante, distintas dispersiones llevaron poblaciones a nuevas regiones. «Cromañón» es una denominación histórica de ciertos restos europeos de Homo sapiens: no es una especie separada ni el lugar donde comenzó toda la humanidad."
+          ],
+          "id": "c2-t5-b1"
+        },
+        {
+          "title": "Aprender, compartir y mejorar",
+          "paragraphs": [
+            "La cultura acumulativa permite conservar una técnica, transmitirla y modificarla en nuevas generaciones. La enseñanza, la cooperación y las redes sociales ayudan a explicar herramientas especializadas, adornos y expresiones simbólicas.",
+            "Una técnica aprendida no exige que cambien los genes de quien la usa. Por ejemplo, una comunidad puede mejorar una punta de proyectil mediante pruebas y enseñanza. Para estudiar estas transformaciones se investigan las secuencias de fabricación y la circulación de conocimientos."
+          ],
+          "illustration": {
+            "src": "assets/history-ai/cap02-aprendizaje.webp",
+            "alt": "Personas de distintas edades preparan pigmentos y decoran conchas en un abrigo rocoso.",
+            "caption": "Los conocimientos compartidos pueden conservarse, combinarse y transmitirse entre generaciones."
+          },
+          "id": "c2-t5-b2"
+        },
+        {
+          "title": "Una especie, muchas historias",
+          "paragraphs": [
+            "Todos los seres humanos actuales pertenecemos a Homo sapiens. La variación física entre poblaciones no constituye una escala de superioridad ni grupos que estén en etapas distintas de evolución.",
+            "Al resolver una pregunta, distingue cuatro relaciones: parentesco no es identidad; antigüedad no demuestra descendencia directa; diferencia biológica no implica jerarquía humana; aprendizaje cultural no equivale automáticamente a transformación genética."
+          ],
+          "id": "c2-t5-b3"
         }
       ]
     }
@@ -477,7 +733,7 @@ window.HISTORY_CONTENT = {
       "Coexistencia y contactos entre sapiens y otros linajes humanos."
     ]
   ],
-  "resources": "<p class=\"eyebrow\">Repasa y consulta</p><h2>Materiales del capítulo</h2><h3>Vocabulario esencial</h3><dl class=\"glossary\"><dt>Hominización</dt><dd>Proceso evolutivo del linaje humano.</dd><dt>Bipedismo</dt><dd>Desplazamiento habitual sobre dos extremidades inferiores.</dd><dt>Fósil</dt><dd>Resto o huella de un organismo del pasado preservado.</dd><dt>Cultura acumulativa</dt><dd>Conocimientos transmitidos y modificados entre generaciones.</dd><dt>Ancestro común</dt><dd>Población ancestral compartida por distintos linajes.</dd></dl><h3>Lecturas y evidencias</h3><ul class=\"resource-list\"><li><a href=\"https://humanorigins.si.edu/evidence/human-fossils/species/homo-sapiens\" target=\"_blank\" rel=\"noopener noreferrer\">Smithsonian · Homo sapiens</a></li><li><a href=\"https://humanorigins.si.edu/evidence/human-fossils/species/australopithecus-afarensis\" target=\"_blank\" rel=\"noopener noreferrer\">Smithsonian · Australopithecus afarensis</a></li><li><a href=\"https://humanorigins.si.edu/evidence\" target=\"_blank\" rel=\"noopener noreferrer\">Smithsonian · Evidencias de la evolución humana</a></li></ul><p class=\"resource-note\">Las lecturas pueden estar en inglés. Los casos y las preguntas son actividades didácticas originales; los casos hipotéticos no son transcripciones de documentos antiguos. Las fechas prehistóricas y los límites de las etapas son aproximados y dependen de la región.</p>",
+  "resources": "",
   "progressId": "historia-universal-pdf-02",
   "legacySources": [
     {
@@ -505,6 +761,22 @@ window.HISTORY_CONTENT = {
         ]
       ],
       "sameAssessment": true
+    }
+  ],
+  "format": "reading",
+  "version": 4,
+  "goals": [
+    {
+      "title": "Explicar",
+      "text": "Distinguir evolución biológica, aprendizaje cultural y relatos de origen."
+    },
+    {
+      "title": "Investigar",
+      "text": "Relacionar fósiles, herramientas, estratos y ADN con las preguntas que permiten responder."
+    },
+    {
+      "title": "Comparar",
+      "text": "Reconocer diversidad, coexistencia y cambios en el linaje humano."
     }
   ]
 };

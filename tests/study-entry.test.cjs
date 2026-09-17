@@ -59,10 +59,10 @@ async function test(){
  }
  // A direct link asks first, then resumes the requested chapter after the choice.
  const direct=harness(presentations);await direct.signIn({uid:'new'});
- assert.deepEqual(direct.redirects,['index.html?chapter=historia-universal-capitulo-01&v=20260917-reading3']);
+ assert.deepEqual(direct.redirects,['index.html?chapter=historia-universal-capitulo-01&v=20260917-six5']);
  const entry=harness(appFiles,{search:'?chapter=historia-universal-capitulo-01'});await entry.signIn({uid:'new'});
  assert.equal(entry.redirects.length,0);assert.equal(entry.run('state.view'),'mode');
- entry.run("selectStudyMode('progressive')");assert.deepEqual(entry.redirects,['historia-universal-capitulo-01.html?v=20260917-reading3']);
+ entry.run("selectStudyMode('progressive')");assert.deepEqual(entry.redirects,['historia-universal-capitulo-01.html?v=20260917-six5']);
  await entry.run("window.StudyMode.save('new',db)");
  const nextDevice=harness(physics(1),{cloud:entry.cloud});await nextDevice.signIn({uid:'new'});
  assert.equal(nextDevice.run('P.studyMode'),'progressive','Preference also loads on another device');

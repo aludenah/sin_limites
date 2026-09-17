@@ -1,0 +1,158 @@
+{
+  "generator": "OpenAI image generation",
+  "created": "2026-09-17",
+  "purpose": "Ilustraciones didácticas para Historia Universal, capítulos 2 a 6. Son reconstrucciones, no documentos históricos.",
+  "images": [
+    {
+      "key": "cap02-excavacion",
+      "chapter": 2,
+      "file": "cap02-excavacion.webp",
+      "caption": "Los fósiles se estudian junto con el estrato y los materiales que los rodean.",
+      "prompt": "Use case: scientific-educational. A present-day paleoanthropology excavation in East Africa, adult African female scientist and male colleague gently brushing partially exposed small fossil bone fragments in layered soil, measuring grid and field notebook with unreadable marks. Show care and archaeological context, not a complete skeleton, not treasure hunting. Natural rocky Rift Valley landscape. Modern scientific field clothing and equipment are appropriate here. Create one original educational illustration for a secondary-school history website, landscape 4:3. Refined editorial 3D illustration with believable materials, warm natural light, muted teal, cream, terracotta and gold; engaging for teenagers, readable details, calm respectful people. One coherent scene, clear focal objects, no collage, no frame. No written text, no letters, no labels, no logos, no watermarks. This is a didactic reconstruction, not an archival photograph. No modern items in ancient scenes.",
+      "width": 1280,
+      "height": 960,
+      "bytes": 223026
+    },
+    {
+      "key": "cap03-campamento",
+      "chapter": 3,
+      "file": "cap03-campamento.webp",
+      "caption": "Caza, recolección, pesca y cooperación formaban parte de estrategias variadas.",
+      "prompt": "Use case: historical-scene. A small Upper Paleolithic hunter-gatherer community camp by a wooded river about 20000 years ago. Adult women and men sharing useful work: inspecting gathered edible plants, repairing a simple stone-tipped tool, tending a small hearth. Skin shelter on wooden poles, baskets, no ceramics, no metal, no agriculture, no domestic livestock, no dinosaurs. Respectful anatomically modern humans wearing practical modest animal-hide clothing. Emphasize cooperation and diverse food sources, no killing or gore. Create one original educational illustration for a secondary-school history website, landscape 4:3. Refined editorial 3D illustration with believable materials, warm natural light, muted teal, cream, terracotta and gold; engaging for teenagers, readable details, calm respectful people. One coherent scene, clear focal objects, no collage, no frame. No written text, no letters, no labels, no logos, no watermarks. This is a didactic reconstruction, not an archival photograph. No modern items in ancient scenes.",
+      "width": 1280,
+      "height": 960,
+      "bytes": 319400
+    },
+    {
+      "key": "cap04-ciudad",
+      "chapter": 4,
+      "file": "cap04-ciudad.webp",
+      "caption": "Campos, canales, viviendas y templos integraban el espacio de las ciudades mesopotámicas.",
+      "prompt": "Use case: historical-scene. A didactic reconstruction inspired by the ancient Mesopotamian city of Ur in the early second millennium BCE. Foreground irrigation canal, small reed boat and barley fields; middle ground compact mudbrick homes, marketplace and people in simple wool garments; background one prominent stepped mudbrick ziggurat with an upper shrine. Show relation between farming, water management and city. No Egyptian smooth pyramids, no classical columns, no fantastic skyscrapers, no gardens hanging from towers. Create one original educational illustration for a secondary-school history website, landscape 4:3. Refined editorial 3D illustration with believable materials, warm natural light, muted teal, cream, terracotta and gold; engaging for teenagers, readable details, calm respectful people. One coherent scene, clear focal objects, no collage, no frame. No written text, no letters, no labels, no logos, no watermarks. This is a didactic reconstruction, not an archival photograph. No modern items in ancient scenes.",
+      "width": 1280,
+      "height": 960,
+      "bytes": 294182
+    },
+    {
+      "key": "cap05-nilo",
+      "chapter": 5,
+      "file": "cap05-nilo.webp",
+      "caption": "El Nilo favorecía la agricultura; canales, reservas y trabajo organizado permitían aprovecharlo.",
+      "prompt": "Use case: historical-scene. Ancient Egyptian farmers in the Nile valley after the floodwater has receded, gently sowing or tending green plots beside low earthen irrigation channels. Nile river and small wooden sailing boat behind, narrow fertile strip contrasting with desert cliffs in distance. A female and male farmer in modest simple linen garments, baskets and hand tools. No pyramids as main focus, no modern dam, no machinery. Warm daylight showing why river farming required labor and coordination. Create one original educational illustration for a secondary-school history website, landscape 4:3. Refined editorial 3D illustration with believable materials, warm natural light, muted teal, cream, terracotta and gold; engaging for teenagers, readable details, calm respectful people. One coherent scene, clear focal objects, no collage, no frame. No written text, no letters, no labels, no logos, no watermarks. This is a didactic reconstruction, not an archival photograph. No modern items in ancient scenes.",
+      "width": 1280,
+      "height": 960,
+      "bytes": 263614
+    },
+    {
+      "key": "cap06-harappa",
+      "chapter": 6,
+      "file": "cap06-harappa.webp",
+      "caption": "Las calles, los pozos y los desagües permiten estudiar la organización urbana del Indo.",
+      "prompt": "Use case: historical-scene. Eye-level reconstruction of a street in the mature Indus civilization city of Mohenjo-daro about 2400 BCE: low fired-brick houses, straight street, covered brick drainage channel with one small open inspection point, circular brick well, potter and passersby in modest simple woven garments. Compact believable urban scale. No palaces, no pharaohs, no Greek columns, no modern plumbing fixtures, no spectacular fantasy buildings. Show water management and town planning. Create one original educational illustration for a secondary-school history website, landscape 4:3. Refined editorial 3D illustration with believable materials, warm natural light, muted teal, cream, terracotta and gold; engaging for teenagers, readable details, calm respectful people. One coherent scene, clear focal objects, no collage, no frame. No written text, no letters, no labels, no logos, no watermarks. This is a didactic reconstruction, not an archival photograph. No modern items in ancient scenes.",
+      "editPrompt": "Edit this didactic reconstruction of a street in the mature Indus civilization at Mohenjo-daro. Keep the foreground people, potter, brick well, brick houses, street and drainage unchanged. Remove the entire large stepped, pyramid-like monument in the distant background: it misleadingly resembles a Mesopotamian ziggurat. Replace it with a modest low horizontal skyline of ordinary flat-roofed brick dwellings, a few trees and pale sky. No pyramids, no ziggurats, no Buddhist stupas, no monumental towers or palaces. Preserve the landscape aspect ratio, lighting, colors and detailed photographic illustration style. No added text.",
+      "width": 1280,
+      "height": 960,
+      "bytes": 179406
+    },
+    {
+      "key": "cap02-herramientas",
+      "chapter": 2,
+      "file": "cap02-herramientas.webp",
+      "caption": "La talla de piedra exige elegir materiales, ejecutar gestos y aprender de otras personas.",
+      "prompt": "Use case: historical-scene. A carefully restrained didactic reconstruction of early humans making a simple bifacial stone handaxe at a shaded East African riverbank, one adult seated striking a stone with a hammerstone while another watches and learns. Main focus hands, flakes and tool-making gestures, not exact facial species identification. Modest plain skin coverings. Rocky savanna and a small hearth at a distance. No pottery, metal, agriculture, modern haircuts, cartoon ape-to-man lineup or dinosaurs. Create one original educational illustration for a secondary-school history website, landscape 4:3. Refined editorial 3D illustration with believable materials, warm natural light, muted teal, cream, terracotta and gold; engaging for teenagers, readable details, calm respectful people. One coherent scene, clear focal objects, no collage, no frame. No written text, no letters, no labels, no logos, no watermarks. This is a didactic reconstruction, not an archival photograph. No modern items in ancient scenes.",
+      "width": 1280,
+      "height": 960,
+      "bytes": 209426
+    },
+    {
+      "key": "cap02-aprendizaje",
+      "chapter": 2,
+      "file": "cap02-aprendizaje.webp",
+      "caption": "Los conocimientos compartidos pueden conservarse, combinarse y transmitirse entre generaciones.",
+      "prompt": "Use case: historical-scene. Three anatomically modern Upper Paleolithic humans at a sheltered rock face: an adult demonstrates mixing ochre pigment in a natural stone hollow while an adolescent watches and another adult decorates a small shell bead. Simple abstract pigment strokes on rock, no exact replica of a famous cave painting. Practical modest hide garments, shared attention, calm cooperation, warm reflected firelight. No metal, books or pottery. Show cultural learning across generations. Create one original educational illustration for a secondary-school history website, landscape 4:3. Refined editorial 3D illustration with believable materials, warm natural light, muted teal, cream, terracotta and gold; engaging for teenagers, readable details, calm respectful people. One coherent scene, clear focal objects, no collage, no frame. No written text, no letters, no labels, no logos, no watermarks. This is a didactic reconstruction, not an archival photograph. No modern items in ancient scenes.",
+      "width": 1280,
+      "height": 960,
+      "bytes": 196610
+    },
+    {
+      "key": "cap03-aldea",
+      "chapter": 3,
+      "file": "cap03-aldea.webp",
+      "caption": "Cultivar, criar animales y almacenar alimentos transformó el trabajo y los asentamientos.",
+      "prompt": "Use case: historical-scene. Early Neolithic village in southwest Asia about 8000 BCE, modest mudbrick houses beside small cultivated cereal plots, storage baskets and clay vessels, a few goats in a simple pen. Foreground two adults using grinding stones and carrying harvested grain, another tending crops. Show both labor and food storage, no grand temples, no wheels, no metal tools, no medieval clothing. Thoughtful clear teaching illustration. Create one original educational illustration for a secondary-school history website, landscape 4:3. Refined editorial 3D illustration with believable materials, warm natural light, muted teal, cream, terracotta and gold; engaging for teenagers, readable details, calm respectful people. One coherent scene, clear focal objects, no collage, no frame. No written text, no letters, no labels, no logos, no watermarks. This is a didactic reconstruction, not an archival photograph. No modern items in ancient scenes.",
+      "width": 1280,
+      "height": 960,
+      "bytes": 316846
+    },
+    {
+      "key": "cap03-metalurgia",
+      "chapter": 3,
+      "file": "cap03-metalurgia.webp",
+      "caption": "La metalurgia requería combustible, materias primas, técnicas y redes de intercambio.",
+      "prompt": "Use case: historical-scene. Bronze Age craft workshop with two adult artisans, safe small clay furnace, crucible held with simple long wooden tools, stone mold and finished bronze axehead on foreground workbench. Charcoal and copper-colored ore nearby. Show specialized skills and material transformation, not a chemistry diagram, no labels, no fantasy armor, no modern protective goggles or industrial machinery. Modest woven tunics, warm but clear lighting. Create one original educational illustration for a secondary-school history website, landscape 4:3. Refined editorial 3D illustration with believable materials, warm natural light, muted teal, cream, terracotta and gold; engaging for teenagers, readable details, calm respectful people. One coherent scene, clear focal objects, no collage, no frame. No written text, no letters, no labels, no logos, no watermarks. This is a didactic reconstruction, not an archival photograph. No modern items in ancient scenes.",
+      "width": 1280,
+      "height": 960,
+      "bytes": 224002
+    },
+    {
+      "key": "cap04-escritura",
+      "chapter": 4,
+      "file": "cap04-escritura.webp",
+      "caption": "Las tablillas ayudaron a registrar entregas, deudas y acuerdos; luego tuvieron muchos otros usos.",
+      "prompt": "Use case: historical-scene. Close view of a Mesopotamian scribe seated in an airy mudbrick storeroom, holding a small damp clay tablet and pressing wedge-like marks with a reed stylus. Grain jars and small plain counting tokens nearby. Marks must remain abstract and unreadable, no modern letters. Simple wool garment, warm side light, hands and tablet clearly visible. No papyrus, pen, books, Egyptian costume or modern furniture. Create one original educational illustration for a secondary-school history website, landscape 4:3. Refined editorial 3D illustration with believable materials, warm natural light, muted teal, cream, terracotta and gold; engaging for teenagers, readable details, calm respectful people. One coherent scene, clear focal objects, no collage, no frame. No written text, no letters, no labels, no logos, no watermarks. This is a didactic reconstruction, not an archival photograph. No modern items in ancient scenes.",
+      "width": 1280,
+      "height": 960,
+      "bytes": 179032
+    },
+    {
+      "key": "cap04-biblioteca",
+      "chapter": 4,
+      "file": "cap04-biblioteca.webp",
+      "caption": "Los archivos y bibliotecas reunían textos administrativos, literarios y de conocimientos.",
+      "prompt": "Use case: historical-scene. A restrained reconstruction of an Assyrian palace archive in seventh-century BCE Nineveh, two adult scribes sorting numerous small clay tablets in baskets and on low shelves; one seated compares two tablets. A small carved Assyrian-style rosette border in background, no giant fantasy hall. Abstract unreadable cuneiform impressions, no paper books or Roman scrolls. Focus preservation and organization of knowledge, no battle or violence. Create one original educational illustration for a secondary-school history website, landscape 4:3. Refined editorial 3D illustration with believable materials, warm natural light, muted teal, cream, terracotta and gold; engaging for teenagers, readable details, calm respectful people. One coherent scene, clear focal objects, no collage, no frame. No written text, no letters, no labels, no logos, no watermarks. This is a didactic reconstruction, not an archival photograph. No modern items in ancient scenes.",
+      "width": 1280,
+      "height": 960,
+      "bytes": 206310
+    },
+    {
+      "key": "cap05-piramides",
+      "chapter": 5,
+      "file": "cap05-piramides.webp",
+      "caption": "Las grandes obras exigían organizar trabajadores, piedra, transporte y abastecimiento.",
+      "prompt": "Use case: historical-scene. Educational reconstruction of organized construction work near a pyramid at Giza during Egypt's Old Kingdom. A small foreground team of adult workers in simple linen garments coordinates ropes around a limestone block on a wooden sledge on packed ground; water jar and overseer recording allocations on a board with unreadable marks. In middle distance a partially completed stone pyramid and work settlement. Respectful workers, no chains, no whips, no cranes, no wheels under stone, no impossible ramps, no modern machinery. Show coordinated logistics rather than spectacle. Create one original educational illustration for a secondary-school history website, landscape 4:3. Refined editorial 3D illustration with believable materials, warm natural light, muted teal, cream, terracotta and gold; engaging for teenagers, readable details, calm respectful people. One coherent scene, clear focal objects, no collage, no frame. No written text, no letters, no labels, no logos, no watermarks. This is a didactic reconstruction, not an archival photograph. No modern items in ancient scenes.",
+      "width": 1280,
+      "height": 960,
+      "bytes": 214784
+    },
+    {
+      "key": "cap05-escriba",
+      "chapter": 5,
+      "file": "cap05-escriba.webp",
+      "caption": "Los escribas registraban cuentas y también copiaban textos religiosos, literarios y de conocimientos.",
+      "prompt": "Use case: historical-scene. An ancient Egyptian scribe in simple white linen seated cross-legged beside a low wooden palette, carefully writing with a reed brush on a papyrus sheet resting across the lap. Behind are a few rolled papyri and two ceramic ink bowls, subtle temple column and cultivated valley through an opening. Papyrus signs indistinct and unreadable, no modern letters. Clear view of papyrus and tool, warm cream and teal tones, no pharaoh crown or fantasy costume. Create one original educational illustration for a secondary-school history website, landscape 4:3. Refined editorial 3D illustration with believable materials, warm natural light, muted teal, cream, terracotta and gold; engaging for teenagers, readable details, calm respectful people. One coherent scene, clear focal objects, no collage, no frame. No written text, no letters, no labels, no logos, no watermarks. This is a didactic reconstruction, not an archival photograph. No modern items in ancient scenes.",
+      "width": 1280,
+      "height": 960,
+      "bytes": 170822
+    },
+    {
+      "key": "cap06-ashoka",
+      "chapter": 6,
+      "file": "cap06-ashoka.webp",
+      "caption": "El patrocinio y las redes de comunicación favorecieron la difusión del budismo.",
+      "prompt": "Use case: historical-scene. A modest early Buddhist monastic setting inspired by third-century BCE India: a simple hemispherical brick stupa with plain timber railing, one polished stone pillar with a restrained lion capital to the side, travelers and monks in plain saffron and ochre robes speaking peacefully in foreground. Leafy warm landscape. No giant Buddha statues, no medieval East Asian pagodas, no modern Indian flag. Emphasize travel, communication and Buddhist patronage, no text or inscriptions. Create one original educational illustration for a secondary-school history website, landscape 4:3. Refined editorial 3D illustration with believable materials, warm natural light, muted teal, cream, terracotta and gold; engaging for teenagers, readable details, calm respectful people. One coherent scene, clear focal objects, no collage, no frame. No written text, no letters, no labels, no logos, no watermarks. This is a didactic reconstruction, not an archival photograph. No modern items in ancient scenes.",
+      "width": 1280,
+      "height": 960,
+      "bytes": 265040
+    },
+    {
+      "key": "cap06-qin",
+      "chapter": 6,
+      "file": "cap06-qin.webp",
+      "caption": "Unificar pesos, medidas y escritura facilitaba administrar territorios y recaudar recursos.",
+      "prompt": "Use case: historical-scene. Qin-dynasty administrative workshop in China around 220 BCE. Two adult officials and one craftsperson comparing bronze weights on a simple balance and organizing round bronze coins with square holes, bundled bamboo writing slips on a plain wooden table. Modest dark woven robes, tied hair, period-appropriate mudbrick and timber room. No paper books, no printed modern characters, no gunpowder, no Ming Great Wall visible. Focus standardized measurements as a practical tool of state integration. Create one original educational illustration for a secondary-school history website, landscape 4:3. Refined editorial 3D illustration with believable materials, warm natural light, muted teal, cream, terracotta and gold; engaging for teenagers, readable details, calm respectful people. One coherent scene, clear focal objects, no collage, no frame. No written text, no letters, no labels, no logos, no watermarks. This is a didactic reconstruction, not an archival photograph. No modern items in ancient scenes.",
+      "width": 1280,
+      "height": 960,
+      "bytes": 169554
+    }
+  ]
+}

@@ -244,7 +244,8 @@ window.HISTORY_CHAPTERS = [
         "sameAssessment": true
       }
     ],
-    "items": 5
+    "items": 5,
+    "format": "reading"
   },
   {
     "number": 3,
@@ -303,7 +304,8 @@ window.HISTORY_CHAPTERS = [
         ]
       }
     ],
-    "items": 10
+    "items": 10,
+    "format": "reading"
   },
   {
     "number": 4,
@@ -329,7 +331,8 @@ window.HISTORY_CHAPTERS = [
         ]
       }
     ],
-    "items": 5
+    "items": 5,
+    "format": "reading"
   },
   {
     "number": 5,
@@ -351,7 +354,8 @@ window.HISTORY_CHAPTERS = [
         ]
       }
     ],
-    "items": 5
+    "items": 5,
+    "format": "reading"
   },
   {
     "number": 6,
@@ -359,7 +363,7 @@ window.HISTORY_CHAPTERS = [
     "intro": "Estudia el Indo, la sociedad védica y el budismo; conoce los valles chinos, sus tradiciones de pensamiento y la unificación Qin.",
     "progressId": "historia-universal-pdf-06",
     "legacySources": [],
-    "items": 6
+    "items": 6,
+    "format": "reading"
   }
 ];
-
