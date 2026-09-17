@@ -15,7 +15,7 @@ function cleanAnswers(questions,answers={}){return Object.fromEntries(questions.
 function resultScore(questions,answers){return questions.reduce((score,q)=>score+(answers[q.id]===q.answer?1:0),0);}
 function normalized(data={}){
   const p={...emptyProgress()};
-  p.studyMode=['free','progressive'].includes(data.studyMode)?data.studyMode:null;
+  p.studyMode=window.StudyMode?.get(user?.uid)||(['free','progressive'].includes(data.studyMode)?data.studyMode:null);
   p.completedItems=[...new Set(Array.isArray(data.completedItems)?data.completedItems:[])].filter(n=>Number.isInteger(n)&&n>=0&&n<LESSONS.length).sort((a,b)=>a-b);
   for(const field of ['attempts','itemScores'])for(let i=0;i<LESSONS.length;i++){
     const key='item_'+(i+1),value=Number(data[field]?.[key]);
@@ -102,6 +102,7 @@ function header(){return '<a class="skip" href="#chapter-content">Ir al contenid
 function modePicker(){return `${header()}<main id="chapter-content" class="access card"><p class="eyebrow">Física · Capítulo 01 de 25</p><h1>Análisis dimensional</h1><p>Aprende a leer las dimensiones de una fórmula y a comprobar si tiene sentido físico.</p><p class="muted">Elige tu recorrido. Puedes cambiarlo después sin perder tus resultados.</p><div class="modes"><button class="mode-card" data-action="mode" data-value="progressive"><b>Estudio progresivo</b><span>Aprueba las dos preguntas de cada tema para abrir el siguiente. Después accede a la práctica y la evaluación.</span></button><button class="mode-card free" data-action="mode" data-value="free"><b>Estudio libre</b><span>Explora cualquier tema, la práctica y la evaluación desde el inicio. Avanza en el orden que prefieras.</span></button></div><p class="resource-note" style="margin-top:24px">El avance cuenta los 6 temas aprobados y una evaluación con al menos 7 de 10 respuestas correctas. La práctica es de entrenamiento.</p><p class="save-line" id="save-status" role="status">${escapeHTML(saveMessage)}</p></main>`;}
 function chooseMode(mode){
   if(!['free','progressive'].includes(mode))return;
+  if(window.StudyMode){window.StudyMode.choose(user.uid,mode);window.StudyMode.save(user.uid,db);}
   P.studyMode=mode;P=normalized(P);notice='';markChanged();render();persist();
 }
 function side(){return LESSONS.map((lesson,i)=>{
@@ -199,6 +200,8 @@ window.addEventListener('pagehide',()=>{if(user&&saveTimer){clearTimeout(saveTim
 async function signedIn(u){
   const epoch=++authEpoch;clearTimeout(saveTimer);user=u;P=emptyProgress();cloudReady=false;saveVersion=0;saveChain=Promise.resolve();notice='';
   if(!u){root.innerHTML=`${header()}<main id="chapter-content" class="access card"><p class="eyebrow">Física · Capítulo 1</p><h1>Análisis dimensional</h1><p>Inicia sesión en la academia para estudiar y guardar tu avance.</p><a class="button" href="index.html?chapter=fisica-capitulo-01">Continuar con Google</a></main>`;return;}
+ if(window.StudyMode&&!await window.StudyMode.requireChoice(u.uid,db,'fisica-capitulo-01',()=>epoch===authEpoch))return;
+ if(epoch!==authEpoch)return;
   const local=readLocal();P=normalized(local?.progress||{});
   try{
     const snap=await record().get();if(epoch!==authEpoch)return;
@@ -215,3 +218,11 @@ async function signedIn(u){
 if(!window.firebase){root.innerHTML='<main class="access card"><h1>No se pudo cargar la sesión</h1><p>Revisa tu conexión y vuelve a abrir este capítulo.</p><a class="button" href="fisica-capitulo-01.html">Reintentar</a></main>';}
 else{firebase.initializeApp(CONFIG);db=firebase.firestore();firebase.auth().onAuthStateChanged(signedIn);}
 
+
+function refreshStudyMode(){
+ if(!user||!window.StudyMode)return;
+ const mode=window.StudyMode.get(user.uid);
+ if(mode&&mode!==P.studyMode){P=normalized(P);notice='';markChanged();render();persist();}
+}
+window.addEventListener('pageshow',refreshStudyMode);
+window.addEventListener('storage',event=>{if(user&&window.StudyMode&&event.key===window.StudyMode.key(user.uid))refreshStudyMode();});

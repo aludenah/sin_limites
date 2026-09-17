@@ -18,7 +18,7 @@ function cleanAnswers(questions,answers={}){return Object.fromEntries(questions.
 function resultScore(questions,answers){return questions.reduce((score,q)=>score+(answers[q.id]===q.answer?1:0),0);}
 function normalized(data={}){
   const p={...emptyProgress()};
-  p.studyMode=['free','progressive'].includes(data.studyMode)?data.studyMode:null;
+  p.studyMode=window.StudyMode?.get(user?.uid)||(['free','progressive'].includes(data.studyMode)?data.studyMode:null);
   p.completedItems=[...new Set(Array.isArray(data.completedItems)?data.completedItems:[])].filter(n=>Number.isInteger(n)&&n>=0&&n<LESSONS.length).sort((a,b)=>a-b);
   for(const field of ['attempts','itemScores'])for(let i=0;i<LESSONS.length;i++){
     const key='item_'+(i+1),value=Number(data[field]?.[key]);
@@ -126,6 +126,7 @@ function render(){if(!user)return;if(!P.studyMode){root.innerHTML=modePicker();r
 
 function chooseMode(mode){
   if(!['free','progressive'].includes(mode))return;
+  if(window.StudyMode){window.StudyMode.choose(user.uid,mode);window.StudyMode.save(user.uid,db);}
   P.studyMode=mode;P=normalized(P);notice='';markChanged();render();persist();
 }
 function side(){return LESSONS.map((lesson,i)=>{
@@ -203,6 +204,8 @@ window.addEventListener('pagehide',()=>{if(user&&saveTimer){clearTimeout(saveTim
 async function signedIn(u){
   const epoch=++authEpoch;clearTimeout(saveTimer);user=u;P=emptyProgress();cloudReady=false;saveVersion=0;saveChain=Promise.resolve();notice='';
   if(!u){root.innerHTML=`${header()}<main id="chapter-content" class="access card"><p class="eyebrow">Historia Universal · Capítulo ${CHAPTER_NUMBER}</p><h1>${escapeHTML(CONTENT.title)}</h1><p>Inicia sesión en la academia para estudiar y guardar tu avance.</p><a class="button" href="index.html?chapter=${CONTENT.id}">Continuar con Google</a></main>`;return;}
+ if(window.StudyMode&&!await window.StudyMode.requireChoice(u.uid,db,CONTENT.id,()=>epoch===authEpoch))return;
+ if(epoch!==authEpoch)return;
   const local=readLocal();P=importLegacy(local?.progress||{},legacyLocal(u.uid));
   try{
     const [snap,legacy]=await Promise.all([record().get(),legacyCloud(user.uid)]);if(epoch!==authEpoch)return;
@@ -221,3 +224,11 @@ else{firebase.initializeApp(CONFIG);db=firebase.firestore();firebase.auth().onAu
 
 
 
+
+function refreshStudyMode(){
+ if(!user||!window.StudyMode)return;
+ const mode=window.StudyMode.get(user.uid);
+ if(mode&&mode!==P.studyMode){P=normalized(P);notice='';markChanged();render();persist();}
+}
+window.addEventListener('pageshow',refreshStudyMode);
+window.addEventListener('storage',event=>{if(user&&window.StudyMode&&event.key===window.StudyMode.key(user.uid))refreshStudyMode();});

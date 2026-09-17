@@ -1,0 +1,80 @@
+/* The slide fits its content; only the eight illustrated topics reserve an image column. */
+.slide-frame{aspect-ratio:auto;min-height:0}
+.slide-content{flex:none;padding:30px 40px 20px}
+.slide-body{flex:none;justify-content:flex-start;gap:20px}
+.slide-content h2{font-size:clamp(29px,3vw,42px);margin-bottom:16px}
+.lead{margin-bottom:22px}
+.slide-foot{padding:12px 40px 18px}
+.card-grid{gap:18px;align-items:stretch}
+.idea-card{padding:24px}
+.idea-card h3{font-size:24px;line-height:1.2}
+.idea-card p{font-size:21px;line-height:1.5}
+.text-slide .card-grid.count-4{grid-template-columns:repeat(2,minmax(0,1fr))}
+.text-slide .idea-card .icon{width:28px;height:28px;margin-bottom:12px}
+.text-slide.kind-definition .lead{font-size:27px;margin-bottom:22px}
+.text-slide.kind-definition .idea-card h3{font-size:22px}
+.text-slide.kind-definition .idea-card p{font-size:20px}
+.reveal-card,.has-visual .reveal-card{min-height:0}
+.reveal-card summary:after{margin-top:12px}
+.reveal-card:not([open])>p{display:none}
+.has-visual .card-grid.count-2,.has-visual .card-grid.count-3{grid-template-columns:1fr}
+.has-visual .card-grid.count-5,.has-visual .era-list{grid-template-columns:repeat(6,minmax(0,1fr))}
+.has-visual .card-grid.count-5>.idea-card,.has-visual .era-card{grid-column:span 2}
+.has-visual .card-grid.count-5>.idea-card:nth-child(n+4),.has-visual .era-card:nth-child(n+4){grid-column:span 3}
+.has-visual .idea-card{padding:18px}
+.has-visual .idea-card h3{font-size:22px;margin-bottom:9px}
+.has-visual .idea-card p{font-size:19px}
+.has-visual.kind-sources .idea-card h3{font-size:19px}
+.has-visual.kind-sources .idea-card p{font-size:17px}
+.has-visual .reveal-card summary{font-size:21px}
+.has-visual .theory-layout{gap:26px}
+.has-visual .takeaway{margin-top:0}
+.learning-visual figcaption{font-size:14px}
+.cover .slide-content{padding:38px 44px 24px}
+.cover-layout{grid-template-columns:1.1fr 1fr;gap:36px;align-items:center}
+.cover h1,.cover h2{font-size:clamp(40px,4.5vw,62px)}
+.cover .lead{margin:19px 0;font-size:21px}
+.cover-label{margin-bottom:21px}
+.cover .slide-foot{padding-left:44px;padding-right:44px}
+.guest .cover-layout{min-height:0}
+.opening-panel{padding:28px;border:1px solid #426477;border-radius:15px;background:#1a3d4e}
+.opening-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.13em;color:var(--gold);margin-bottom:22px}
+.opening-step{display:flex;gap:16px;align-items:flex-start}
+.opening-step+.opening-step{border-top:1px solid #426477;margin-top:19px;padding-top:19px}
+.opening-step>span{font-size:13px;font-weight:800;color:var(--gold);padding-top:4px}
+.opening-step h3{font-size:23px;margin-bottom:8px;letter-spacing:-.02em}
+.opening-step p{font-size:17px;line-height:1.5;color:#d7e5e8;margin:0}
+.finish-stats{font-size:32px}
+.finish .guest-message{font-size:17px}
+html:fullscreen .slide-frame{aspect-ratio:auto;min-height:0;max-width:1320px;width:100%}
+@media(min-width:1100px) and (max-height:850px){
+ .slide-content{padding:25px 34px 17px}.slide-foot{padding:10px 34px 15px}
+ .slide-content h2{font-size:34px}.lead{font-size:19px;margin-bottom:18px}
+ .idea-card{padding:21px}.idea-card h3{font-size:22px}.idea-card p{font-size:19px}
+ .has-visual .idea-card{padding:16px}.has-visual .idea-card p{font-size:18px}
+ .cover .slide-content{padding:30px 38px 20px}.cover h1,.cover h2{font-size:54px}
+ .opening-panel{padding:24px}.opening-step p{font-size:16px}
+}
+@media(max-width:1000px){
+ .slide-content{padding:27px}.slide-foot{padding:12px 27px 18px}
+ .idea-card p{font-size:19px}.has-visual .card-grid.count-5{grid-template-columns:1fr}
+ .has-visual .card-grid.count-5>.idea-card:nth-child(n){grid-column:auto}
+ .has-visual .theory-layout{align-items:flex-start}
+ .cover .slide-content{padding:30px}.cover-layout{gap:24px}
+ .opening-panel{padding:21px}.opening-step h3{font-size:21px}.opening-step p{font-size:16px}
+}
+@media(max-width:700px){
+ .slide-frame{min-height:0}.slide-content,.cover .slide-content{padding:24px 21px 17px}
+ .slide-body{gap:18px}.slide-content h2{font-size:29px}
+ .slide-foot,.cover .slide-foot{padding:12px 21px 17px}
+ .card-grid,.card-grid.count-2,.text-slide .card-grid.count-4,.kind-definition .card-grid{grid-template-columns:1fr}
+ .has-visual .card-grid.count-4,.has-visual .card-grid.count-5,.has-visual.kind-definition .card-grid.count-4,.has-visual .era-list{grid-template-columns:1fr}
+ .has-visual .card-grid.count-5>.idea-card:nth-child(n),.has-visual .era-card:nth-child(n){grid-column:auto}
+ .has-visual .theory-layout{gap:20px;align-items:stretch}.theory-layout>.learning-visual{width:100%}
+ .idea-card,.has-visual .idea-card{padding:20px}.idea-card p,.has-visual .idea-card p{font-size:18px}
+ .text-slide.kind-definition .lead{font-size:21px}.text-slide.kind-definition .idea-card p{font-size:18px}
+ .cover-layout{display:flex;flex-direction:column;align-items:stretch;gap:24px}
+ .cover h1,.cover h2{font-size:43px;max-width:none}.cover .lead{font-size:19px;max-width:none}
+ .opening-panel{width:100%;padding:23px}.opening-step h3{font-size:22px}.opening-step p{font-size:17px}
+ .guest .player-controls{justify-content:center}html:fullscreen .slide-frame{min-height:0}
+}

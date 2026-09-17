@@ -11,12 +11,7 @@ window.HISTORY_PRESENTATION = {
       "title": "La ciencia histórica",
       "section": "Inicio",
       "lead": "Comprender el pasado. Interpretar el presente. Pensar el futuro.",
-      "notes": "Esta presentación desarrolla los ocho apartados de la ciencia histórica. Las explicaciones están reorganizadas para estudiar una idea a la vez. Los ejemplos y las soluciones amplían el contenido y distinguen hechos, interpretaciones y modelos. Puedes recorrer las diapositivas con los botones o las flechas del teclado; abre el índice para ir a un tema concreto.",
-      "illustration": {
-        "src": "assets/history-cap1-ai/concepto.webp",
-        "alt": "Historiadora y estudiante comparan una vasija, una carta, una moneda y una fotografía.",
-        "caption": "Investigar el pasado significa comparar evidencias."
-      }
+      "notes": "Esta presentación desarrolla los ocho apartados de la ciencia histórica. Las explicaciones están reorganizadas para estudiar una idea a la vez. Los ejemplos y las soluciones amplían el contenido y distinguen hechos, interpretaciones y modelos. Puedes recorrer las diapositivas con los botones o las flechas del teclado; abre el índice para ir a un tema concreto."
     },
     {
       "id": "s2",
@@ -44,12 +39,7 @@ window.HISTORY_PRESENTATION = {
           "tag": "03",
           "icon": "compare"
         }
-      ],
-      "illustration": {
-        "src": "assets/history-cap1-ai/concepto.webp",
-        "alt": "Historiadora y estudiante comparan una vasija, una carta, una moneda y una fotografía.",
-        "caption": "Investigar el pasado significa comparar evidencias."
-      }
+      ]
     },
     {
       "id": "s3",
@@ -83,12 +73,7 @@ window.HISTORY_PRESENTATION = {
           "tag": "",
           "icon": "book"
         }
-      ],
-      "illustration": {
-        "src": "assets/history-cap1-ai/concepto.webp",
-        "alt": "Historiadora y estudiante comparan una vasija, una carta, una moneda y una fotografía.",
-        "caption": "Investigar el pasado significa comparar evidencias."
-      }
+      ]
     },
     {
       "id": "s4",
@@ -117,12 +102,7 @@ window.HISTORY_PRESENTATION = {
           "icon": "compass"
         }
       ],
-      "takeaway": "La historia orienta nuestras decisiones; no predice el futuro con exactitud.",
-      "illustration": {
-        "src": "assets/history-cap1-ai/concepto.webp",
-        "alt": "Historiadora y estudiante comparan una vasija, una carta, una moneda y una fotografía.",
-        "caption": "Investigar el pasado significa comparar evidencias."
-      }
+      "takeaway": "La historia orienta nuestras decisiones; no predice el futuro con exactitud."
     },
     {
       "id": "s5",
@@ -151,12 +131,7 @@ window.HISTORY_PRESENTATION = {
           "icon": "column"
         }
       ],
-      "takeaway": "La escala depende del problema que investigamos; no es una lista rígida de años.",
-      "illustration": {
-        "src": "assets/history-cap1-ai/tiempo.webp",
-        "alt": "Plaza con arquitectura antigua, trabajos de restauración y una reunión cívica.",
-        "caption": "Un mismo espacio reúne hechos y procesos de distinta duración."
-      }
+      "takeaway": "La escala depende del problema que investigamos; no es una lista rígida de años."
     },
     {
       "id": "s6",
@@ -325,12 +300,7 @@ window.HISTORY_PRESENTATION = {
           "icon": "vase"
         }
       ],
-      "takeaway": "Un texto necesita contexto. Un objeto necesita interpretación.",
-      "illustration": {
-        "src": "assets/history-cap1-ai/fuentes.webp",
-        "alt": "Ilustración con documentos, objetos, testimonios, danzas y registros audiovisuales.",
-        "caption": "Las fuentes conservan distintas huellas de la vida social."
-      }
+      "takeaway": "Un texto necesita contexto. Un objeto necesita interpretación."
     },
     {
       "id": "s11",
@@ -359,12 +329,7 @@ window.HISTORY_PRESENTATION = {
           "icon": "camera"
         }
       ],
-      "takeaway": "Recordar, transmitir o registrar también implica seleccionar.",
-      "illustration": {
-        "src": "assets/history-cap1-ai/fuentes.webp",
-        "alt": "Ilustración con documentos, objetos, testimonios, danzas y registros audiovisuales.",
-        "caption": "Las fuentes conservan distintas huellas de la vida social."
-      }
+      "takeaway": "Recordar, transmitir o registrar también implica seleccionar."
     },
     {
       "id": "s12",
@@ -393,12 +358,7 @@ window.HISTORY_PRESENTATION = {
           "icon": "compare"
         }
       ],
-      "takeaway": "Una fuente cercana a los hechos también puede contener errores o intereses.",
-      "illustration": {
-        "src": "assets/history-cap1-ai/concepto.webp",
-        "alt": "Historiadora y estudiante comparan una vasija, una carta, una moneda y una fotografía.",
-        "caption": "Investigar el pasado significa comparar evidencias."
-      }
+      "takeaway": "Una fuente cercana a los hechos también puede contener errores o intereses."
     },
     {
       "id": "s13",
@@ -483,12 +443,7 @@ window.HISTORY_PRESENTATION = {
         "Disciplina",
         "Objeto de estudio",
         "Ejemplo"
-      ],
-      "illustration": {
-        "src": "assets/history-cap1-ai/auxiliares.webp",
-        "alt": "Especialistas examinan cerámica, un manuscrito, una moneda, un fósil y un mapa.",
-        "caption": "Cada especialidad aporta una forma de estudiar la evidencia."
-      }
+      ]
     },
     {
       "id": "s15",
@@ -550,12 +505,7 @@ window.HISTORY_PRESENTATION = {
           "icon": "book"
         }
       ],
-      "takeaway": "Herodoto es llamado tradicionalmente «padre de la historia» en la tradición occidental.",
-      "illustration": {
-        "src": "assets/history-cap1-ai/historiografia.webp",
-        "alt": "Escenas de un estudioso antiguo, un escriba medieval y una historiadora contemporánea.",
-        "caption": "Las preguntas y los métodos de investigación cambian."
-      }
+      "takeaway": "Herodoto es llamado tradicionalmente «padre de la historia» en la tradición occidental."
     },
     {
       "id": "s17",
@@ -578,12 +528,7 @@ window.HISTORY_PRESENTATION = {
           "icon": "person"
         }
       ],
-      "takeaway": "San Agustín y Orosio · Maquiavelo y Leonardo Bruni",
-      "illustration": {
-        "src": "assets/history-cap1-ai/historiografia.webp",
-        "alt": "Escenas de un estudioso antiguo, un escriba medieval y una historiadora contemporánea.",
-        "caption": "Las preguntas y los métodos de investigación cambian."
-      }
+      "takeaway": "San Agustín y Orosio · Maquiavelo y Leonardo Bruni"
     },
     {
       "id": "s18",
@@ -606,12 +551,7 @@ window.HISTORY_PRESENTATION = {
           "icon": "archive"
         }
       ],
-      "takeaway": "Voltaire y Hume · Langlois, Seignobos y Ranke",
-      "illustration": {
-        "src": "assets/history-cap1-ai/historiografia.webp",
-        "alt": "Escenas de un estudioso antiguo, un escriba medieval y una historiadora contemporánea.",
-        "caption": "Las preguntas y los métodos de investigación cambian."
-      }
+      "takeaway": "Voltaire y Hume · Langlois, Seignobos y Ranke"
     },
     {
       "id": "s19",
@@ -634,12 +574,7 @@ window.HISTORY_PRESENTATION = {
           "icon": "layers"
         }
       ],
-      "takeaway": "Marx y Engels · Bloch, Febvre y Braudel",
-      "illustration": {
-        "src": "assets/history-cap1-ai/historiografia.webp",
-        "alt": "Escenas de un estudioso antiguo, un escriba medieval y una historiadora contemporánea.",
-        "caption": "Las preguntas y los métodos de investigación cambian."
-      }
+      "takeaway": "Marx y Engels · Bloch, Febvre y Braudel"
     },
     {
       "id": "s20",
@@ -708,12 +643,7 @@ window.HISTORY_PRESENTATION = {
           "icon": "globe"
         }
       ],
-      "takeaway": "1453 no transformó de la misma manera a Europa, los Andes y Asia oriental.",
-      "illustration": {
-        "src": "assets/history-cap1-ai/periodizacion.webp",
-        "alt": "Recreación conceptual de una ciudad antigua, un poblado medieval, un puerto y una ciudad industrial.",
-        "caption": "Las edades ayudan a organizar sociedades y procesos diferentes."
-      }
+      "takeaway": "1453 no transformó de la misma manera a Europa, los Andes y Asia oriental."
     },
     {
       "id": "s22",
@@ -777,12 +707,7 @@ window.HISTORY_PRESENTATION = {
         "Relación destacada",
         "Grupos considerados"
       ],
-      "takeaway": "Es un modelo explicativo: no todos los pueblos recorrieron una secuencia idéntica.",
-      "illustration": {
-        "src": "assets/history-cap1-ai/produccion.webp",
-        "alt": "Escenas de trabajo agrícola, alfarería y producción textil.",
-        "caption": "Herramientas, recursos y relaciones de trabajo organizan la producción."
-      }
+      "takeaway": "Es un modelo explicativo: no todos los pueblos recorrieron una secuencia idéntica."
     },
     {
       "id": "s24",
@@ -805,12 +730,7 @@ window.HISTORY_PRESENTATION = {
           "icon": "people"
         }
       ],
-      "takeaway": "Compara el criterio de clasificación antes de memorizar los nombres de las etapas.",
-      "illustration": {
-        "src": "assets/history-cap1-ai/periodizacion.webp",
-        "alt": "Recreación conceptual de una ciudad antigua, un poblado medieval, un puerto y una ciudad industrial.",
-        "caption": "Las edades ayudan a organizar sociedades y procesos diferentes."
-      }
+      "takeaway": "Compara el criterio de clasificación antes de memorizar los nombres de las etapas."
     },
     {
       "id": "s25",
@@ -844,12 +764,7 @@ window.HISTORY_PRESENTATION = {
           "tag": "04",
           "icon": "layers"
         }
-      ],
-      "illustration": {
-        "src": "assets/history-cap1-ai/concepto.webp",
-        "alt": "Historiadora y estudiante comparan una vasija, una carta, una moneda y una fotografía.",
-        "caption": "Investigar el pasado significa comparar evidencias."
-      }
+      ]
     },
     {
       "id": "s26",
@@ -1024,12 +939,7 @@ window.HISTORY_PRESENTATION = {
       "title": "El pasado se investiga",
       "section": "Cierre",
       "lead": "Pregunta. Contrasta. Explica.",
-      "notes": "Repasa los conceptos de la ciencia histórica con estas explicaciones, ejemplos y actividades. Puedes volver a cualquier diapositiva desde el índice y resolver las actividades pendientes. Relaciona las fuentes con sus contextos y compara los enfoques y criterios de periodización.",
-      "illustration": {
-        "src": "assets/history-cap1-ai/concepto.webp",
-        "alt": "Historiadora y estudiante comparan una vasija, una carta, una moneda y una fotografía.",
-        "caption": "Investigar el pasado significa comparar evidencias."
-      }
+      "notes": "Repasa los conceptos de la ciencia histórica con estas explicaciones, ejemplos y actividades. Puedes volver a cualquier diapositiva desde el índice y resolver las actividades pendientes. Relaciona las fuentes con sus contextos y compara los enfoques y criterios de periodización."
     }
   ]
 };

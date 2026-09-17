@@ -33,13 +33,24 @@ function illustrationMarkup(slide,cover=false){
  const img=`<img src="${esc(visual.src)}" alt="${esc(visual.alt)}" width="1456" height="1088" decoding="async" ${cover?'fetchpriority="high"':''}>`;
  return `<figure class="learning-visual ${cover?'cover-art':''}">${user?`<button class="visual-button" data-action="image" aria-label="Ampliar imagen: ${esc(visual.caption)}">${img}<span class="visual-zoom">${icon('search')} Ampliar</span></button>`:img}<figcaption>${esc(visual.caption)}<small>Ilustración creada con IA</small></figcaption></figure>`;
 }
-function coverArt(){return illustrationMarkup(SLIDES[0],true);}
+function coverArt(finish=false){
+ const items=finish?[
+  ['Fuentes','Reconoce qué evidencia ayuda a responder una pregunta.'],
+  ['Tiempo','Distingue acontecimientos, coyunturas y estructuras.'],
+  ['Interpretación','Compara distintas formas de explicar y ordenar el pasado.']
+ ]:[
+  ['Observa','Textos, objetos, testimonios e imágenes guardan huellas del pasado.'],
+  ['Compara','Pregunta quién creó cada fuente, cuándo y con qué intención.'],
+  ['Explica','Relaciona evidencias para comprender a las sociedades en el tiempo.']
+ ];
+ return `<aside class="opening-panel" aria-label="${finish?'Repaso del capítulo':'Ruta del capítulo'}"><p class="opening-label">${finish?'Comprueba lo aprendido':'Tu recorrido'}</p>${items.map(([title,text],i)=>`<div class="opening-step"><span>${String(i+1).padStart(2,'0')}</span><div><h3>${title}</h3><p>${text}</p></div></div>`).join('')}</aside>`;
+}
 
 function emptyProgress(){return {currentSlide:0,visitedSlides:[],answers:{},results:{},completedItems:[],attempts:{},itemScores:{},studyMode:'free',updatedMs:0};}
 function validAnswer(q,a){return Number.isInteger(a)&&a>=0&&a<q.options.length;}
 function allowedSlide(i,p=P){if(!Number.isInteger(i)||i<0||i>=SLIDES.length)return false;if(p.studyMode==='free')return true;return SLIDES.slice(0,i).every(s=>!s.question||p.completedItems.includes(s.question.index));}
 function normalized(data={}){
- const p={...emptyProgress(),studyMode:data.studyMode==='progressive'?'progressive':'free'};
+ const p={...emptyProgress(),studyMode:window.StudyMode?.get(user?.uid)||(data.studyMode==='progressive'?'progressive':'free')};
  p.currentSlide=Number.isInteger(data.currentSlide)?Math.min(SLIDES.length-1,Math.max(0,data.currentSlide)):0;
  p.visitedSlides=[...new Set(Array.isArray(data.visitedSlides)?data.visitedSlides:[])].filter(n=>Number.isInteger(n)&&n>=0&&n<SLIDES.length);
  p.completedItems=[...new Set(Array.isArray(data.completedItems)?data.completedItems:[])].filter(n=>Number.isInteger(n)&&n>=0&&n<QUESTIONS.length).sort((a,b)=>a-b);
@@ -88,9 +99,9 @@ function body(s){
 function slideMarkup(s,index=P.currentSlide){
  const cover=s.kind==='cover'||s.kind==='finish';
  let content;
- if(cover){const finish=s.kind==='finish';content=`<div class="cover-layout"><div><span class="cover-label">HISTORIA UNIVERSAL · CAPÍTULO 01</span><h${finish?'2':'1'} id="slide-title" tabindex="-1">${esc(s.title)}</h${finish?'2':'1'}><p class="lead">${esc(s.lead)}</p>${finish?`<p class="finish-stats">${P.completedItems.length} / ${QUESTIONS.length} actividades</p><p class="guest-message">${P.completedItems.length===QUESTIONS.length?'Completaste las siete actividades. Puedes volver a cualquier idea para repasarla.':'Revisa las actividades pendientes y comprueba lo aprendido.'}</p><div class="button-row"><button class="button light" data-action="review">Repasar actividades</button><a class="button light" href="historia-universal-capitulo-02.html">Capítulo 2 ${icon('next')}</a></div>`:`<button class="button light" data-action="next">Comenzar ${icon('next')}</button><p class="cover-meta">${SLIDES.length} diapositivas · 8 apartados · 7 actividades</p>`}</div>${coverArt()}</div>`;}
+ if(cover){const finish=s.kind==='finish';content=`<div class="cover-layout"><div><span class="cover-label">HISTORIA UNIVERSAL · CAPÍTULO 01</span><h${finish?'2':'1'} id="slide-title" tabindex="-1">${esc(s.title)}</h${finish?'2':'1'}><p class="lead">${esc(s.lead)}</p>${finish?`<p class="finish-stats">${P.completedItems.length} / ${QUESTIONS.length} actividades</p><p class="guest-message">${P.completedItems.length===QUESTIONS.length?'Completaste las siete actividades. Puedes volver a cualquier idea para repasarla.':'Revisa las actividades pendientes y comprueba lo aprendido.'}</p><div class="button-row"><button class="button light" data-action="review">Repasar actividades</button><a class="button light" href="historia-universal-capitulo-02.html">Capítulo 2 ${icon('next')}</a></div>`:`<button class="button light" data-action="next">Comenzar ${icon('next')}</button><p class="cover-meta">${SLIDES.length} diapositivas · 8 apartados · 7 actividades</p>`}</div>${coverArt(finish)}</div>`;}
  else content=`<p class="eyebrow">${esc(s.section)}</p><h2 id="slide-title" tabindex="-1">${esc(s.title)}</h2>${s.lead?`<p class="lead">${esc(s.lead)}</p>`:''}<div class="slide-body">${s.illustration?`<div class="theory-layout"><div class="theory-copy">${body(s)}</div>${illustrationMarkup(s)}</div>`:body(s)}${s.takeaway?`<p class="takeaway">${esc(s.takeaway)}</p>`:''}</div>`;
- return `<article class="slide-frame kind-${s.kind} ${s.illustration&&!cover?'has-visual':''} ${cover?'cover':''} ${s.kind==='finish'?'finish':''}" aria-labelledby="slide-title"><div class="slide-content">${content}</div><footer class="slide-foot"><span>Historia Universal · La ciencia histórica</span><span class="folio">${String(index+1).padStart(2,'0')} / ${SLIDES.length}</span></footer></article>`;
+ return `<article class="slide-frame kind-${s.kind} ${s.illustration&&!cover?'has-visual':'text-slide'} ${cover?'cover':''} ${s.kind==='finish'?'finish':''}" aria-labelledby="slide-title"><div class="slide-content">${content}</div><footer class="slide-foot"><span>Historia Universal · La ciencia histórica</span><span class="folio">${String(index+1).padStart(2,'0')} / ${SLIDES.length}</span></footer></article>`;
 }
 function render(){
  if(!user)return;const s=SLIDES[P.currentSlide];
@@ -132,7 +143,7 @@ ROOT.addEventListener('click',e=>{
 });
 ROOT.addEventListener('change',e=>{
  if(!user)return;const el=e.target;
- if(el.id==='study-mode'){P.studyMode=el.value==='progressive'?'progressive':'free';P=normalized(P);notice='';saveSoon();render();return;}
+ if(el.id==='study-mode'){if(window.StudyMode){window.StudyMode.choose(user.uid,el.value);window.StudyMode.save(user.uid,db);}P.studyMode=el.value==='progressive'?'progressive':'free';P=normalized(P);notice='';saveSoon();render();return;}
  const q=SLIDES[P.currentSlide].question;
  if(q&&el.dataset.question===q.id&&validAnswer(q,Number(el.value))&&!validAnswer(q,P.results[q.id])){P.answers[q.id]=Number(el.value);saveSoon();}
 });
@@ -152,6 +163,8 @@ async function saveNavigation(uid,epoch){
 async function signedIn(u){
  const epoch=++authEpoch;clearTimeout(saveTimer);user=u;P=emptyProgress();cloudReady=false;saveVersion=0;saveChain=Promise.resolve();notice='';
  if(!u){guest();return;}
+ if(window.StudyMode&&!await window.StudyMode.requireChoice(u.uid,db,'historia-universal-capitulo-01',()=>epoch===authEpoch))return;
+ if(epoch!==authEpoch)return;
  const local=readLocal();P=normalized(local?.progress||{});if(!P.visitedSlides.includes(P.currentSlide))P.visitedSlides.push(P.currentSlide);saveMessage='Cargando el avance guardado…';render();
  try{
   const snap=await record(u.uid).get();if(epoch!==authEpoch)return;
@@ -163,3 +176,11 @@ async function signedIn(u){
 if(!window.firebase)guest('No se pudo cargar la sesión. Revisa tu conexión y vuelve a abrir el capítulo.');
 else{firebase.initializeApp(CFG);db=firebase.firestore();firebase.auth().onAuthStateChanged(signedIn);}
 
+
+function refreshStudyMode(){
+ if(!user||!window.StudyMode)return;
+ const mode=window.StudyMode.get(user.uid);
+ if(mode&&mode!==P.studyMode){P=normalized(P);notice='';markChanged();render();persist();}
+}
+window.addEventListener('pageshow',refreshStudyMode);
+window.addEventListener('storage',event=>{if(user&&window.StudyMode&&event.key===window.StudyMode.key(user.uid))refreshStudyMode();});
