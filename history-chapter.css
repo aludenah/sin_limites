@@ -1,0 +1,11 @@
+.history-hero{background:linear-gradient(115deg,#142b49,#214968)}
+.history-hero .wrap{grid-template-columns:minmax(0,1fr) 240px;gap:35px}.history-hero h1{font-size:clamp(2rem,4vw,3.5rem)}
+.history-seal{border:1px solid #ffffff35;border-radius:24px;background:#ffffff09;padding:24px;text-align:center}
+.history-seal span{display:block;font-size:10px;letter-spacing:.2em;color:#dce6ef}.history-seal b{display:block;font:90px/1.3 Georgia,serif;color:#eed6aa}.history-seal small{display:block;color:#cddbea;font-size:11px}
+.chapter-picker{margin-top:22px;padding:16px 22px;display:grid;grid-template-columns:200px minmax(0,1fr);align-items:center;gap:15px}.chapter-picker label{font-size:13px;font-weight:750}.overview{margin-top:16px}
+.content p{line-height:1.85}.content table{white-space:normal;min-width:440px}.content td{vertical-align:top;min-width:110px}
+.glossary{display:grid;grid-template-columns:150px 1fr;border-top:1px solid var(--line);font-size:14px;margin-bottom:30px}.glossary dt,.glossary dd{margin:0;padding:14px 10px;border-bottom:1px solid var(--line)}.glossary dt{font-weight:750;color:var(--navy);background:#f3f6fa}
+.chronology{border-radius:16px;background:#f0f5f9;padding:24px;margin-bottom:30px}.chronology ol{list-style:none;padding:0 0 0 20px;border-left:2px solid #99b4ce}.chronology li{position:relative;margin:0 0 20px;font-size:14px}.chronology li:before{content:'';width:10px;height:10px;border-radius:50%;background:#a87038;position:absolute;left:-26px;top:7px;border:2px solid #f0f5f9}.chronology li b,.chronology li span{display:block}.chronology li b{color:#244e73;margin-bottom:4px}
+.chapter-links{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:22px 4px;font-size:13px;font-weight:750}.example details{background:#f5f8fc;border-radius:10px;padding:13px 16px}.example summary{font-size:14px;color:#265486}.resource-list a{overflow-wrap:anywhere}
+@media(max-width:850px){.history-hero .wrap{grid-template-columns:1fr}.history-seal{display:none}}
+@media(max-width:520px){.chapter-picker{grid-template-columns:1fr;padding:16px;gap:6px}.glossary{grid-template-columns:1fr}.glossary dt{padding-bottom:4px;border:0}.glossary dd{padding-top:6px}.chronology{padding:20px 16px}.history-hero h1{font-size:2.2rem}.chapter-picker select{font-size:13px}}

@@ -19,6 +19,7 @@ const app=document.getElementById('adminApp');
 let allStudents=[];
 const TRACKED_CHAPTERS={
   'historia-universal-capitulo-01':{label:'Historia Universal · Capítulo 1 · La historia como ciencia',items:5},
+  ...Object.fromEntries((window.HISTORY_CHAPTERS||[]).filter(c=>c.number>1).map(c=>['historia-universal-capitulo-'+String(c.number).padStart(2,'0'),{label:'Historia Universal · Capítulo '+c.number+' · '+c.title,items:c.items}])),
   'fisica-capitulo-01':{label:'Física · Capítulo 1 · Análisis dimensional',items:6},
   'fisica-capitulo-02':{label:'Física · Capítulo 2 · Vectores',items:6}
 };
@@ -89,7 +90,7 @@ function renderRows(students){
     body.innerHTML='<tr><td colspan="6" class="px-5 py-10 text-center text-slate-400">No hay estudiantes para mostrar.</td></tr>';
     return;
   }
-  body.innerHTML=students.map(s=>`<tr class="hover:bg-slate-50"><td class="px-5 py-4"><div class="font-bold text-slate-800">${esc(s.displayName||'Sin nombre')}</div><div class="mt-0.5 text-xs text-slate-400">${esc(s.email||'')}</div></td><td class="px-5 py-4 min-w-48"><div class="flex items-center justify-between gap-3"><span class="font-extrabold ${s.percent>=100?'text-emerald-600':s.percent>0?'text-blue-950':'text-slate-400'}">${s.percent}%</span><span class="text-[11px] font-bold text-slate-400">${s.percent>=100?'Completado':s.percent>0?'En progreso':'Sin iniciar'}</span></div><div class="mt-2 h-2 rounded-full bg-slate-100 overflow-hidden"><div class="h-full rounded-full ${s.percent>=100?'bg-emerald-500':'bg-red-500'}" style="width:${s.percent}%"></div></div></td><td class="px-5 py-4 font-bold text-slate-700">${s.completedItems}/${TRACKED_CHAPTERS[selectedChapter].items}${selectedChapter.startsWith('fisica-capitulo-')?`<div class="mt-1 text-xs text-slate-500">Evaluación: ${s.examBest}/10</div>`:''}</td><td class="px-5 py-4 font-bold text-slate-700">${s.attempts}</td><td class="px-5 py-4"><div class="font-semibold text-slate-700">${esc(s.lastCourse||'—')}</div><div class="text-xs text-slate-400 mt-0.5 max-w-56 truncate">${esc(s.lastChapter||'Sin actividad')}</div></td><td class="px-5 py-4 text-xs text-slate-500 whitespace-nowrap">${esc(formatDate(s.lastActivity))}</td></tr>`).join('');
+  body.innerHTML=students.map(s=>`<tr class="hover:bg-slate-50"><td class="px-5 py-4"><div class="font-bold text-slate-800">${esc(s.displayName||'Sin nombre')}</div><div class="mt-0.5 text-xs text-slate-400">${esc(s.email||'')}</div></td><td class="px-5 py-4 min-w-48"><div class="flex items-center justify-between gap-3"><span class="font-extrabold ${s.percent>=100?'text-emerald-600':s.percent>0?'text-blue-950':'text-slate-400'}">${s.percent}%</span><span class="text-[11px] font-bold text-slate-400">${s.percent>=100?'Completado':s.percent>0?'En progreso':'Sin iniciar'}</span></div><div class="mt-2 h-2 rounded-full bg-slate-100 overflow-hidden"><div class="h-full rounded-full ${s.percent>=100?'bg-emerald-500':'bg-red-500'}" style="width:${s.percent}%"></div></div></td><td class="px-5 py-4 font-bold text-slate-700">${s.completedItems}/${TRACKED_CHAPTERS[selectedChapter].items}${(selectedChapter.startsWith('fisica-capitulo-')||/^historia-universal-capitulo-0[2-6]$/.test(selectedChapter))?`<div class="mt-1 text-xs text-slate-500">Evaluación: ${s.examBest}/10</div>`:''}</td><td class="px-5 py-4 font-bold text-slate-700">${s.attempts}</td><td class="px-5 py-4"><div class="font-semibold text-slate-700">${esc(s.lastCourse||'—')}</div><div class="text-xs text-slate-400 mt-0.5 max-w-56 truncate">${esc(s.lastChapter||'Sin actividad')}</div></td><td class="px-5 py-4 text-xs text-slate-500 whitespace-nowrap">${esc(formatDate(s.lastActivity))}</td></tr>`).join('');
 }
 
 function filterStudents(){
@@ -149,7 +150,7 @@ async function reloadDashboard(){
 
 function exportCSV(){
   const header=['Nombre','Correo','Capítulo consultado','Avance (%)','Ítems aprobados','Mejor evaluación (/10)','Intentos','Último curso','Último capítulo','Última actividad'];
-  const rows=allStudents.map(s=>[s.displayName,s.email,TRACKED_CHAPTERS[selectedChapter].label,s.percent,s.completedItems,selectedChapter.startsWith('fisica-capitulo-')?s.examBest:'',s.attempts,s.lastCourse,s.lastChapter,formatDate(s.lastActivity)]);
+  const rows=allStudents.map(s=>[s.displayName,s.email,TRACKED_CHAPTERS[selectedChapter].label,s.percent,s.completedItems,(selectedChapter.startsWith('fisica-capitulo-')||/^historia-universal-capitulo-0[2-6]$/.test(selectedChapter))?s.examBest:'',s.attempts,s.lastCourse,s.lastChapter,formatDate(s.lastActivity)]);
   const csv=[header,...rows].map(row=>row.map(value=>`"${String(value??'').replaceAll('"','""')}"`).join(',')).join('\n');
   const blob=new Blob(['\ufeff'+csv],{type:'text/csv;charset=utf-8;'});
   const url=URL.createObjectURL(blob);
@@ -180,3 +181,4 @@ auth.onAuthStateChanged(async user=>{
   renderShell(user);
   await reloadDashboard();
 });
+

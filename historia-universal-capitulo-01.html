@@ -14,7 +14,7 @@
 html{scroll-behavior:smooth}body{font-family:Inter,system-ui,-apple-system,Segoe UI,sans-serif;background:#f8fafc}.card{box-shadow:0 12px 32px rgba(15,23,42,.07)}.ans.sel{border-color:#1e3a8a;background:#eff6ff}.step{transition:.15s}.step:not(:disabled):hover{transform:translateX(2px)}svg{display:block;width:100%;height:auto}
 </style>
 </head>
-<body class="text-slate-800"><div id="app"><main class="min-h-screen grid place-items-center"><p class="text-slate-500">Cargando tu progreso…</p></main></div>
+<body class="text-slate-800"><nav aria-label="Capítulos de Historia Universal" class="max-w-7xl mx-auto px-4 py-3 flex justify-between gap-4 text-sm font-bold text-blue-950"><a href="index.html?course=12">← Ver el temario de Historia Universal</a><a href="historia-universal-capitulo-02.html">Capítulo 2 →</a></nav><div id="app"><main class="min-h-screen grid place-items-center"><p class="text-slate-500">Cargando tu progreso…</p></main></div>
 <script>
 const CFG={apiKey:'AIzaSyCurhmnJ21SMqGM6G54t8QM8jcqO8jV0OE',authDomain:'sin-limites-12f07.firebaseapp.com',projectId:'sin-limites-12f07',storageBucket:'sin-limites-12f07.firebasestorage.app',messagingSenderId:'757098079298',appId:'1:757098079298:web:068a9a7ea93149bfef79db'};
 firebase.initializeApp(CFG);const auth=firebase.auth(),db=firebase.firestore(),DOC='historia-universal-capitulo-01';let user=null,cur=0,P={completedItems:[],unlockedItem:0,currentItem:0,attempts:{},itemScores:{},percent:0,chapterCompleted:false},selected={},modeChosen=false,saveMessage='';
