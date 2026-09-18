@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="750" height="185" viewBox="0 0 750 185" role="img" aria-labelledby="title desc">
+<title id="title">Conexión en serie</title>
+<desc id="desc">Tres resistores R1, R2 y R3 conectados uno a continuación del otro. Redibujo lineal sobre fondo blanco, basado en la página 221 del PDF proporcionado.</desc>
+<defs>
+  <pattern id="hatch" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M-3,3 L3,-3 M0,12 L12,0 M9,15 L15,9" fill="none" stroke="#172630" stroke-width="1"/></pattern>
+  <pattern id="hatch2" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M0,0 L16,16" fill="none" stroke="#172630" stroke-width="1"/></pattern>
+</defs>
+<rect id="background" width="750" height="185" fill="#ffffff"/>
+<g fill="none" stroke="#172630" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+<style>text{fill:#172630;stroke:none;font-family:'DejaVu Sans',Arial,sans-serif}</style>
+<polyline points="65,135 65,95 102,95"/>
+<polyline points="102.0,95.0 150.0,95.0 154.3,84.0 162.9,106.0 171.5,84.0 180.1,106.0 188.7,84.0 197.3,106.0 205.9,84.0 214.5,106.0 223.1,84.0 231.7,106.0 236.0,95.0 284.0,95.0"/>
+<text x="193.0" y="66.0" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" text-anchor="middle">R₁</text>
+<polyline points="284.0,95.0 332.0,95.0 336.3,84.0 344.9,106.0 353.5,84.0 362.1,106.0 370.7,84.0 379.3,106.0 387.9,84.0 396.5,106.0 405.1,84.0 413.7,106.0 418.0,95.0 466.0,95.0"/>
+<text x="375.0" y="66.0" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" text-anchor="middle">R₂</text>
+<polyline points="466.0,95.0 514.0,95.0 518.3,84.0 526.9,106.0 535.5,84.0 544.1,106.0 552.7,84.0 561.3,106.0 569.9,84.0 578.5,106.0 587.1,84.0 595.7,106.0 600.0,95.0 648.0,95.0"/>
+<text x="557.0" y="66.0" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" text-anchor="middle">R₃</text>
+<polyline points="648,95 685,95 685,135"/>
+<circle cx="65" cy="135" r="4" fill="#172630"/>
+<circle cx="685" cy="135" r="4" fill="#172630"/>
+</g>
+</svg>

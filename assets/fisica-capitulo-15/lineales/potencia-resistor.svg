@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="550" height="180" viewBox="0 0 550 180" role="img" aria-labelledby="title desc">
+<title id="title">Potencia en un resistor</title>
+<desc id="desc">Resistor R atravesado por la intensidad I. Redibujo lineal sobre fondo blanco, basado en la página 225 del PDF proporcionado.</desc>
+<defs>
+  <pattern id="hatch" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M-3,3 L3,-3 M0,12 L12,0 M9,15 L15,9" fill="none" stroke="#172630" stroke-width="1"/></pattern>
+  <pattern id="hatch2" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M0,0 L16,16" fill="none" stroke="#172630" stroke-width="1"/></pattern>
+</defs>
+<rect id="background" width="550" height="180" fill="#ffffff"/>
+<g fill="none" stroke="#172630" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+<style>text{fill:#172630;stroke:none;font-family:'DejaVu Sans',Arial,sans-serif}</style>
+<polyline points="57.0,102.0 232.0,102.0 236.3,91.0 244.9,113.0 253.5,91.0 262.1,113.0 270.7,91.0 279.3,113.0 287.9,91.0 296.5,113.0 305.1,91.0 313.7,113.0 318.0,102.0 493.0,102.0"/>
+<text x="275.0" y="73.0" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" text-anchor="middle">R</text>
+<circle cx="57" cy="102" r="4" fill="#172630"/>
+<circle cx="493" cy="102" r="4" fill="#172630"/>
+<line x1="83" y1="69" x2="178" y2="69"/>
+<path d="M178,69 L168.00,64.80 L168.00,73.20 Z" fill="#172630" stroke="none"/>
+<text x="131" y="47" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" text-anchor="middle">I</text>
+</g>
+</svg>

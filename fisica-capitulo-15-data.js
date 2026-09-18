@@ -7,7 +7,7 @@ window.HISTORY_CONTENT={
   "courseName": "Física",
   "title": "Electrodinámica",
   "intro": "Corriente eléctrica, resistencia, ley de Ohm, circuitos, reglas de Kirchhoff y potencia eléctrica. Teoría y aplicaciones resueltas del capítulo XV.",
-  "version": 2,
+  "version": 3,
   "format": "reading",
   "assessmentFormat": "practice-10",
   "math": true,
@@ -69,24 +69,26 @@ window.HISTORY_CONTENT={
           ],
           "figures": [
             {
-              "src": "assets/fisica-capitulo-15/originales/corriente-interruptor-abierto.webp",
-              "width": 667,
-              "height": 380,
+              "src": "assets/fisica-capitulo-15/lineales/corriente-interruptor-abierto.svg",
+              "width": 860,
+              "height": 395,
               "caption": "Interruptor abierto: movimiento desordenado de los electrones · p. 217",
               "alt": "Circuito de batería y foco apagado. La ampliación del conductor muestra electrones con movimiento desordenado en varias direcciones.",
-              "credit": "Física · Lumbreras Editores · 2021",
-              "original": true,
-              "afterParagraph": 2
+              "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+              "original": false,
+              "afterParagraph": 2,
+              "redrawn": true
             },
             {
-              "src": "assets/fisica-capitulo-15/originales/corriente-interruptor-cerrado.webp",
-              "width": 674,
-              "height": 353,
+              "src": "assets/fisica-capitulo-15/lineales/corriente-interruptor-cerrado.svg",
+              "width": 860,
+              "height": 395,
               "caption": "Interruptor cerrado: movimiento orientado · p. 217",
               "alt": "Batería y foco encendido. El conductor muestra el campo eléctrico E y el movimiento orientado de los portadores de carga.",
-              "credit": "Física · Lumbreras Editores · 2021",
-              "original": true,
-              "afterParagraph": 3
+              "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+              "original": false,
+              "afterParagraph": 3,
+              "redrawn": true
             }
           ]
         },
@@ -114,14 +116,15 @@ window.HISTORY_CONTENT={
           ],
           "figures": [
             {
-              "src": "assets/fisica-capitulo-15/originales/sentido-corriente.webp",
-              "width": 805,
-              "height": 357,
+              "src": "assets/fisica-capitulo-15/lineales/sentido-corriente.svg",
+              "width": 890,
+              "height": 335,
               "caption": "Corriente convencional y corriente de electrones · p. 218",
               "alt": "Conductor con menor potencial a la izquierda y mayor potencial a la derecha. La corriente convencional va a la izquierda y los electrones a la derecha.",
-              "credit": "Física · Lumbreras Editores · 2021",
-              "original": true,
-              "afterParagraph": 0
+              "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+              "original": false,
+              "afterParagraph": 0,
+              "redrawn": true
             }
           ]
         },
@@ -134,14 +137,15 @@ window.HISTORY_CONTENT={
           ],
           "figures": [
             {
-              "src": "assets/fisica-capitulo-15/originales/area-corriente-tiempo.webp",
-              "width": 763,
-              "height": 316,
+              "src": "assets/fisica-capitulo-15/lineales/area-corriente-tiempo.svg",
+              "width": 750,
+              "height": 350,
               "caption": "Área en la gráfica de intensidad frente al tiempo · p. 218",
               "alt": "Gráfica I frente a t con el área A entre t1 y t2. El recuadro indica A igual al valor absoluto de Q.",
-              "credit": "Física · Lumbreras Editores · 2021",
-              "original": true,
-              "afterParagraph": 0
+              "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+              "original": false,
+              "afterParagraph": 0,
+              "redrawn": true
             }
           ]
         }
@@ -171,24 +175,26 @@ window.HISTORY_CONTENT={
           ],
           "solutionFigures": [
             {
-              "src": "assets/fisica-capitulo-15/originales/aplicacion-02-areas.webp",
-              "width": 744,
-              "height": 527,
+              "src": "assets/fisica-capitulo-15/lineales/aplicacion-02-areas.svg",
+              "width": 850,
+              "height": 410,
               "caption": "Aplicación 2: áreas entre 0,1 s y 1,4 s · p. 219",
-              "alt": "Gráfica original con el trapecio A1 entre 0,1 y 0,2 s y el rectángulo A2 entre 0,2 y 1,4 s. En 0,1 s la intensidad es 0,7 A.",
-              "credit": "Física · Lumbreras Editores · 2021",
-              "original": true,
-              "afterStep": 0
+              "alt": "Gráfica con el trapecio A1 entre 0,1 y 0,2 s y el rectángulo A2 entre 0,2 y 1,4 s. En 0,1 s la intensidad es 0,7 A.",
+              "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+              "original": false,
+              "afterStep": 0,
+              "redrawn": true
             }
           ],
           "figure": {
-            "src": "assets/fisica-capitulo-15/originales/aplicacion-02-grafica.webp",
-            "width": 740,
-            "height": 537,
+            "src": "assets/fisica-capitulo-15/lineales/aplicacion-02-grafica.svg",
+            "width": 850,
+            "height": 410,
             "caption": "Aplicación 2: intensidad de corriente en función del tiempo · p. 219",
             "alt": "La corriente aumenta linealmente de 0,5 A en 0 s a 0,9 A en 0,2 s; luego permanece en 0,9 A hasta 1,4 s.",
-            "credit": "Física · Lumbreras Editores · 2021",
-            "original": true
+            "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+            "original": false,
+            "redrawn": true
           }
         }
       ]
@@ -209,14 +215,15 @@ window.HISTORY_CONTENT={
           ],
           "figures": [
             {
-              "src": "assets/fisica-capitulo-15/originales/resistividad.webp",
-              "width": 602,
-              "height": 237,
+              "src": "assets/fisica-capitulo-15/lineales/resistividad.svg",
+              "width": 710,
+              "height": 260,
               "caption": "Longitud y sección transversal de un conductor · p. 219",
               "alt": "Conductor cilíndrico de longitud L, área transversal A y resistividad rho.",
-              "credit": "Física · Lumbreras Editores · 2021",
-              "original": true,
-              "afterParagraph": 2
+              "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+              "original": false,
+              "afterParagraph": 2,
+              "redrawn": true
             }
           ]
         },
@@ -229,14 +236,15 @@ window.HISTORY_CONTENT={
           ],
           "figures": [
             {
-              "src": "assets/fisica-capitulo-15/originales/simbolos-resistores.webp",
-              "width": 590,
-              "height": 331,
+              "src": "assets/fisica-capitulo-15/lineales/simbolos-resistores.svg",
+              "width": 710,
+              "height": 270,
               "caption": "Símbolos de resistor fijo y variable · p. 219",
               "alt": "Símbolo de resistencia fija y símbolo de resistencia variable, con una flecha oblicua.",
-              "credit": "Física · Lumbreras Editores · 2021",
-              "original": true,
-              "afterParagraph": 0
+              "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+              "original": false,
+              "afterParagraph": 0,
+              "redrawn": true
             }
           ]
         },
@@ -252,14 +260,15 @@ window.HISTORY_CONTENT={
           ],
           "figures": [
             {
-              "src": "assets/fisica-capitulo-15/originales/ley-ohm.webp",
-              "width": 868,
-              "height": 508,
+              "src": "assets/fisica-capitulo-15/lineales/ley-ohm.svg",
+              "width": 830,
+              "height": 380,
               "caption": "Circuito y representación para la ley de Ohm · p. 220",
               "alt": "Batería conectada a un foco y su representación equivalente mediante una fuente de voltaje V y un resistor R, por el que circula I.",
-              "credit": "Física · Lumbreras Editores · 2021",
-              "original": true,
-              "afterParagraph": 0
+              "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+              "original": false,
+              "afterParagraph": 0,
+              "redrawn": true
             }
           ]
         }
@@ -289,24 +298,26 @@ window.HISTORY_CONTENT={
           ],
           "solutionFigures": [
             {
-              "src": "assets/fisica-capitulo-15/originales/aplicacion-04-frio.webp",
-              "width": 573,
-              "height": 413,
+              "src": "assets/fisica-capitulo-15/lineales/aplicacion-04-frio.svg",
+              "width": 780,
+              "height": 375,
               "caption": "Aplicación 4: filamento frío · p. 221",
               "alt": "Resistor de 20 ohmios conectado a 120 V. La corriente I1 es 120 entre 20, igual a 6 A.",
-              "credit": "Física · Lumbreras Editores · 2021",
-              "original": true,
-              "afterStep": 1
+              "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+              "original": false,
+              "afterStep": 1,
+              "redrawn": true
             },
             {
-              "src": "assets/fisica-capitulo-15/originales/aplicacion-04-caliente.webp",
-              "width": 610,
-              "height": 420,
+              "src": "assets/fisica-capitulo-15/lineales/aplicacion-04-caliente.svg",
+              "width": 780,
+              "height": 375,
               "caption": "Aplicación 4: filamento caliente · p. 221",
               "alt": "Resistor de 100 ohmios conectado a 120 V. La corriente I2 es 120 entre 100, igual a 1,2 A.",
-              "credit": "Física · Lumbreras Editores · 2021",
-              "original": true,
-              "afterStep": 2
+              "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+              "original": false,
+              "afterStep": 2,
+              "redrawn": true
             }
           ]
         }
@@ -338,24 +349,26 @@ window.HISTORY_CONTENT={
           ],
           "figures": [
             {
-              "src": "assets/fisica-capitulo-15/originales/serie-conexion.webp",
-              "width": 549,
-              "height": 204,
+              "src": "assets/fisica-capitulo-15/lineales/serie-conexion.svg",
+              "width": 750,
+              "height": 185,
               "caption": "Conexión en serie · p. 221",
               "alt": "Tres resistores R1, R2 y R3 conectados uno a continuación del otro.",
-              "credit": "Física · Lumbreras Editores · 2021",
-              "original": true,
-              "afterParagraph": 0
+              "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+              "original": false,
+              "afterParagraph": 0,
+              "redrawn": true
             },
             {
-              "src": "assets/fisica-capitulo-15/originales/serie-equivalente.webp",
-              "width": 874,
-              "height": 423,
+              "src": "assets/fisica-capitulo-15/lineales/serie-equivalente.svg",
+              "width": 930,
+              "height": 390,
               "caption": "Circuito en serie y resistor equivalente · p. 221",
               "alt": "Tres resistores en serie con corrientes I1, I2 e I3 y voltajes V1, V2 y V3. A la derecha, el resistor equivalente conectado a la misma fuente V.",
-              "credit": "Física · Lumbreras Editores · 2021",
-              "original": true,
-              "afterParagraph": 1
+              "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+              "original": false,
+              "afterParagraph": 1,
+              "redrawn": true
             }
           ]
         },
@@ -374,24 +387,26 @@ window.HISTORY_CONTENT={
           ],
           "figures": [
             {
-              "src": "assets/fisica-capitulo-15/originales/paralelo-conexion.webp",
-              "width": 845,
-              "height": 351,
+              "src": "assets/fisica-capitulo-15/lineales/paralelo-conexion.svg",
+              "width": 850,
+              "height": 350,
               "caption": "Conexión en paralelo · p. 222",
               "alt": "Resistores R1, R2 y R3 conectados entre los mismos terminales a y b.",
-              "credit": "Física · Lumbreras Editores · 2021",
-              "original": true,
-              "afterParagraph": 0
+              "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+              "original": false,
+              "afterParagraph": 0,
+              "redrawn": true
             },
             {
-              "src": "assets/fisica-capitulo-15/originales/paralelo-equivalente.webp",
-              "width": 873,
-              "height": 596,
+              "src": "assets/fisica-capitulo-15/lineales/paralelo-equivalente.svg",
+              "width": 900,
+              "height": 515,
               "caption": "Circuito en paralelo y resistor equivalente · p. 222",
               "alt": "Tres ramas con resistores R1, R2 y R3, intensidades I1, I2 e I3 y voltajes V1, V2 y V3; a la derecha, el circuito equivalente.",
-              "credit": "Física · Lumbreras Editores · 2021",
-              "original": true,
-              "afterParagraph": 1
+              "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+              "original": false,
+              "afterParagraph": 1,
+              "redrawn": true
             }
           ]
         }
@@ -409,34 +424,37 @@ window.HISTORY_CONTENT={
           ],
           "solutionFigures": [
             {
-              "src": "assets/fisica-capitulo-15/originales/aplicacion-05-paralelo.webp",
-              "width": 853,
-              "height": 460,
+              "src": "assets/fisica-capitulo-15/lineales/aplicacion-05-paralelo.svg",
+              "width": 820,
+              "height": 415,
               "caption": "Aplicación 5: reducción del paralelo · p. 223",
               "alt": "Se destaca el paralelo de dos resistores de 2 ohmios, cuya resistencia equivalente es 1 ohmio.",
-              "credit": "Física · Lumbreras Editores · 2021",
-              "original": true,
-              "afterStep": 0
+              "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+              "original": false,
+              "afterStep": 0,
+              "redrawn": true
             },
             {
-              "src": "assets/fisica-capitulo-15/originales/aplicacion-05-serie.webp",
-              "width": 624,
-              "height": 524,
+              "src": "assets/fisica-capitulo-15/lineales/aplicacion-05-serie.svg",
+              "width": 660,
+              "height": 415,
               "caption": "Aplicación 5: resistores resultantes en serie · p. 223",
               "alt": "Circuito reducido a tres resistores de 1, 4 y 3 ohmios en serie entre A y B.",
-              "credit": "Física · Lumbreras Editores · 2021",
-              "original": true,
-              "afterStep": 1
+              "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+              "original": false,
+              "afterStep": 1,
+              "redrawn": true
             }
           ],
           "figure": {
-            "src": "assets/fisica-capitulo-15/originales/aplicacion-05-circuito.webp",
-            "width": 586,
-            "height": 449,
+            "src": "assets/fisica-capitulo-15/lineales/aplicacion-05-circuito.svg",
+            "width": 660,
+            "height": 415,
             "caption": "Aplicación 5: resistencia equivalente entre A y B · p. 223",
             "alt": "Dos resistores de 2 ohmios en paralelo, conectados en serie con resistores de 4 y 3 ohmios entre A y B.",
-            "credit": "Física · Lumbreras Editores · 2021",
-            "original": true
+            "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+            "original": false,
+            "redrawn": true
           }
         }
       ]
@@ -455,24 +473,26 @@ window.HISTORY_CONTENT={
           ],
           "figures": [
             {
-              "src": "assets/fisica-capitulo-15/originales/circuito-componentes.webp",
-              "width": 858,
-              "height": 337,
+              "src": "assets/fisica-capitulo-15/lineales/circuito-componentes.svg",
+              "width": 830,
+              "height": 305,
               "caption": "Componentes de un circuito eléctrico · p. 223",
-              "alt": "Circuito formado por una fuente, un interruptor cerrado y un foco encendido, con las etiquetas originales.",
-              "credit": "Física · Lumbreras Editores · 2021",
-              "original": true,
-              "afterParagraph": 2
+              "alt": "Circuito formado por una fuente, un interruptor cerrado y un foco encendido, con las etiquetas del PDF.",
+              "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+              "original": false,
+              "afterParagraph": 2,
+              "redrawn": true
             },
             {
-              "src": "assets/fisica-capitulo-15/originales/circuito-representacion.webp",
-              "width": 640,
-              "height": 264,
+              "src": "assets/fisica-capitulo-15/lineales/circuito-representacion.svg",
+              "width": 790,
+              "height": 290,
               "caption": "Representación gráfica del circuito · p. 223",
               "alt": "Esquema con fuente, interruptor, resistor y una trayectoria cerrada marcada con la intensidad I.",
-              "credit": "Física · Lumbreras Editores · 2021",
-              "original": true,
-              "afterParagraph": 3
+              "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+              "original": false,
+              "afterParagraph": 3,
+              "redrawn": true
             }
           ]
         },
@@ -492,24 +512,26 @@ window.HISTORY_CONTENT={
           ],
           "figures": [
             {
-              "src": "assets/fisica-capitulo-15/originales/amperimetro.webp",
-              "width": 491,
-              "height": 175,
+              "src": "assets/fisica-capitulo-15/lineales/amperimetro.svg",
+              "width": 690,
+              "height": 200,
               "caption": "Amperímetro conectado en serie · p. 224",
               "alt": "Amperímetro en serie con un resistor R; una flecha indica la corriente I.",
-              "credit": "Física · Lumbreras Editores · 2021",
-              "original": true,
-              "afterParagraph": 1
+              "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+              "original": false,
+              "afterParagraph": 1,
+              "redrawn": true
             },
             {
-              "src": "assets/fisica-capitulo-15/originales/amperimetro-ideal.webp",
-              "width": 709,
-              "height": 102,
+              "src": "assets/fisica-capitulo-15/lineales/amperimetro-ideal.svg",
+              "width": 730,
+              "height": 145,
               "caption": "Modelo del amperímetro ideal · p. 224",
               "alt": "Un amperímetro ideal equivale a un alambre conductor.",
-              "credit": "Física · Lumbreras Editores · 2021",
-              "original": true,
-              "afterParagraph": 2
+              "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+              "original": false,
+              "afterParagraph": 2,
+              "redrawn": true
             }
           ]
         },
@@ -523,24 +545,26 @@ window.HISTORY_CONTENT={
           ],
           "figures": [
             {
-              "src": "assets/fisica-capitulo-15/originales/voltimetro.webp",
-              "width": 702,
-              "height": 277,
+              "src": "assets/fisica-capitulo-15/lineales/voltimetro.svg",
+              "width": 770,
+              "height": 315,
               "caption": "Voltímetro conectado en paralelo · p. 224",
               "alt": "Voltímetro entre A y B, en paralelo con el resistor R; se indica la corriente I por el resistor.",
-              "credit": "Física · Lumbreras Editores · 2021",
-              "original": true,
-              "afterParagraph": 1
+              "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+              "original": false,
+              "afterParagraph": 1,
+              "redrawn": true
             },
             {
-              "src": "assets/fisica-capitulo-15/originales/voltimetro-ideal.webp",
-              "width": 835,
-              "height": 143,
+              "src": "assets/fisica-capitulo-15/lineales/voltimetro-ideal.svg",
+              "width": 810,
+              "height": 215,
               "caption": "Modelo del voltímetro ideal · p. 224",
               "alt": "La rama del voltímetro ideal equivale a una rama abierta.",
-              "credit": "Física · Lumbreras Editores · 2021",
-              "original": true,
-              "afterParagraph": 2
+              "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+              "original": false,
+              "afterParagraph": 2,
+              "redrawn": true
             }
           ]
         },
@@ -553,14 +577,15 @@ window.HISTORY_CONTENT={
           ],
           "figures": [
             {
-              "src": "assets/fisica-capitulo-15/originales/kirchhoff-circuito.webp",
-              "width": 509,
-              "height": 568,
+              "src": "assets/fisica-capitulo-15/lineales/kirchhoff-circuito.svg",
+              "width": 625,
+              "height": 615,
               "caption": "Circuito para identificar nodos y mallas · p. 224",
               "alt": "Circuito con nodos M, A y N a la izquierda y B, C y D a la derecha, fuentes V0 y V1 y cinco resistores. En C confluyen I1 e I2 y sale I3.",
-              "credit": "Física · Lumbreras Editores · 2021",
-              "original": true,
-              "afterParagraph": 0
+              "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+              "original": false,
+              "afterParagraph": 0,
+              "redrawn": true
             }
           ]
         },
@@ -622,14 +647,15 @@ window.HISTORY_CONTENT={
           ],
           "figures": [
             {
-              "src": "assets/fisica-capitulo-15/originales/potencia-fuente.webp",
-              "width": 391,
-              "height": 421,
+              "src": "assets/fisica-capitulo-15/lineales/potencia-fuente.svg",
+              "width": 590,
+              "height": 440,
               "caption": "Potencia entregada por una fuente · p. 225",
               "alt": "Una batería de voltaje V suministra la corriente I a un resistor R que disipa energía.",
-              "credit": "Física · Lumbreras Editores · 2021",
-              "original": true,
-              "afterParagraph": 1
+              "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+              "original": false,
+              "afterParagraph": 1,
+              "redrawn": true
             }
           ]
         },
@@ -642,14 +668,15 @@ window.HISTORY_CONTENT={
           ],
           "figures": [
             {
-              "src": "assets/fisica-capitulo-15/originales/potencia-resistor.webp",
-              "width": 297,
-              "height": 128,
+              "src": "assets/fisica-capitulo-15/lineales/potencia-resistor.svg",
+              "width": 550,
+              "height": 180,
               "caption": "Potencia en un resistor · p. 225",
               "alt": "Resistor R atravesado por la intensidad I.",
-              "credit": "Física · Lumbreras Editores · 2021",
-              "original": true,
-              "afterParagraph": 0
+              "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+              "original": false,
+              "afterParagraph": 0,
+              "redrawn": true
             }
           ]
         }
@@ -668,24 +695,26 @@ window.HISTORY_CONTENT={
           ],
           "solutionFigures": [
             {
-              "src": "assets/fisica-capitulo-15/originales/aplicacion-06-corrientes.webp",
-              "width": 747,
-              "height": 401,
+              "src": "assets/fisica-capitulo-15/lineales/aplicacion-06-corrientes.svg",
+              "width": 760,
+              "height": 430,
               "caption": "Aplicación 6: corrientes y nodo inferior · p. 225",
-              "alt": "Circuito original con I1 descendiendo por 8 ohmios, I2 por la rama de 4 ohmios e I saliendo del nodo inferior hacia el resistor de 2 ohmios.",
-              "credit": "Física · Lumbreras Editores · 2021",
-              "original": true,
-              "afterStep": 0
+              "alt": "Circuito con I1 descendiendo por 8 ohmios, I2 por la rama de 4 ohmios e I saliendo del nodo inferior hacia el resistor de 2 ohmios.",
+              "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+              "original": false,
+              "afterStep": 0,
+              "redrawn": true
             }
           ],
           "figure": {
-            "src": "assets/fisica-capitulo-15/originales/aplicacion-06-circuito.webp",
-            "width": 683,
-            "height": 433,
+            "src": "assets/fisica-capitulo-15/lineales/aplicacion-06-circuito.svg",
+            "width": 760,
+            "height": 430,
             "caption": "Aplicación 6: corriente por el resistor de 2 Ω · p. 225",
             "alt": "Fuente epsilon y resistor de 2 ohmios en serie con el paralelo de 8 y 4 ohmios entre los puntos A y B.",
-            "credit": "Física · Lumbreras Editores · 2021",
-            "original": true
+            "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+            "original": false,
+            "redrawn": true
           }
         },
         {
@@ -700,24 +729,26 @@ window.HISTORY_CONTENT={
           ],
           "solutionFigures": [
             {
-              "src": "assets/fisica-capitulo-15/originales/aplicacion-07-recorrido.webp",
-              "width": 775,
-              "height": 401,
+              "src": "assets/fisica-capitulo-15/lineales/aplicacion-07-recorrido.svg",
+              "width": 880,
+              "height": 405,
               "caption": "Aplicación 7: recorrido horario de la malla · p. 226",
               "alt": "Circuito sin los instrumentos con las polaridades de las fuentes y resistores y corriente I en sentido horario, iniciando en M.",
-              "credit": "Física · Lumbreras Editores · 2021",
-              "original": true,
-              "afterStep": 0
+              "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+              "original": false,
+              "afterStep": 0,
+              "redrawn": true
             }
           ],
           "figure": {
-            "src": "assets/fisica-capitulo-15/originales/aplicacion-07-instrumentos.webp",
-            "width": 765,
-            "height": 329,
+            "src": "assets/fisica-capitulo-15/lineales/aplicacion-07-instrumentos.svg",
+            "width": 880,
+            "height": 405,
             "caption": "Aplicación 7: lecturas de los instrumentos · p. 226",
             "alt": "Fuentes de 12 V y 2 V en oposición, resistores de 2 y 3 ohmios en serie, amperímetro en serie y voltímetro en paralelo con el resistor de 2 ohmios.",
-            "credit": "Física · Lumbreras Editores · 2021",
-            "original": true
+            "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+            "original": false,
+            "redrawn": true
           }
         },
         {
@@ -732,13 +763,14 @@ window.HISTORY_CONTENT={
           ],
           "solutionFigures": [],
           "figure": {
-            "src": "assets/fisica-capitulo-15/originales/aplicacion-08-circuito.webp",
-            "width": 568,
-            "height": 352,
+            "src": "assets/fisica-capitulo-15/lineales/aplicacion-08-circuito.svg",
+            "width": 730,
+            "height": 350,
             "caption": "Aplicación 8: potencia disipada · p. 226",
             "alt": "Resistores de 2 y 16 ohmios en serie. El resistor de 16 ohmios tiene una diferencia de potencial de 48 V.",
-            "credit": "Física · Lumbreras Editores · 2021",
-            "original": true
+            "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+            "original": false,
+            "redrawn": true
           }
         },
         {
@@ -753,24 +785,26 @@ window.HISTORY_CONTENT={
           ],
           "solutionFigures": [
             {
-              "src": "assets/fisica-capitulo-15/originales/aplicacion-09-polaridades.webp",
-              "width": 789,
-              "height": 194,
+              "src": "assets/fisica-capitulo-15/lineales/aplicacion-09-polaridades.svg",
+              "width": 930,
+              "height": 260,
               "caption": "Aplicación 9: signos de las diferencias de potencial · p. 227",
               "alt": "Ramal de a hacia b con la corriente I y las polaridades anotadas en los dos resistores y en las fuentes de 12 y 8 V.",
-              "credit": "Física · Lumbreras Editores · 2021",
-              "original": true,
-              "afterStep": 0
+              "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+              "original": false,
+              "afterStep": 0,
+              "redrawn": true
             }
           ],
           "figure": {
-            "src": "assets/fisica-capitulo-15/originales/aplicacion-09-ramal.webp",
-            "width": 785,
-            "height": 322,
+            "src": "assets/fisica-capitulo-15/lineales/aplicacion-09-ramal.svg",
+            "width": 930,
+            "height": 260,
             "caption": "Aplicación 9: ramal eléctrico · p. 227",
             "alt": "Ramal de a hacia b con resistor de 5 ohmios, fuente de 12 V con positivo a la derecha, resistor de 2 ohmios y fuente de 8 V con positivo a la izquierda.",
-            "credit": "Física · Lumbreras Editores · 2021",
-            "original": true
+            "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+            "original": false,
+            "redrawn": true
           }
         },
         {
@@ -786,38 +820,41 @@ window.HISTORY_CONTENT={
           ],
           "solutionFigures": [
             {
-              "src": "assets/fisica-capitulo-15/originales/aplicacion-10-sin-instrumentos.webp",
-              "width": 706,
-              "height": 432,
+              "src": "assets/fisica-capitulo-15/lineales/aplicacion-10-sin-instrumentos.svg",
+              "width": 780,
+              "height": 390,
               "caption": "Aplicación 10: circuito sin instrumentos · p. 227",
               "alt": "Circuito con resistores de 4, 6 y 5 ohmios. Los puntos a y b delimitan el resistor de 6 ohmios por el que circula I.",
-              "credit": "Física · Lumbreras Editores · 2021",
-              "original": true,
-              "afterStep": 0
+              "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+              "original": false,
+              "afterStep": 0,
+              "redrawn": true
             },
             {
-              "src": "assets/fisica-capitulo-15/originales/aplicacion-10-equivalente.webp",
-              "width": 599,
-              "height": 295,
+              "src": "assets/fisica-capitulo-15/lineales/aplicacion-10-equivalente.svg",
+              "width": 780,
+              "height": 390,
               "caption": "Aplicación 10: resistencia equivalente · p. 228",
               "alt": "Fuente V conectada a un único resistor equivalente de 15 ohmios, con corriente I.",
-              "credit": "Física · Lumbreras Editores · 2021",
-              "original": true,
-              "afterStep": 3
+              "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+              "original": false,
+              "afterStep": 3,
+              "redrawn": true
             }
           ],
           "figure": {
-            "src": "assets/fisica-capitulo-15/originales/aplicacion-10-instrumentos.webp",
-            "width": 706,
-            "height": 385,
+            "src": "assets/fisica-capitulo-15/lineales/aplicacion-10-instrumentos.svg",
+            "width": 780,
+            "height": 390,
             "caption": "Aplicación 10: voltímetro y potencia de la fuente · p. 227",
             "alt": "Fuente V conectada a resistores de 4, 6 y 5 ohmios en serie. Amperímetro en la rama superior y voltímetro en paralelo con el resistor de 6 ohmios.",
-            "credit": "Física · Lumbreras Editores · 2021",
-            "original": true
+            "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+            "original": false,
+            "redrawn": true
           }
         }
       ]
     }
   ],
-  "sourceNote": "Fuente: Física, Peter Flores Escobal y José Luis Mateo Torres, Lumbreras Editores, primera edición, febrero de 2021, capítulo XV: Electrodinámica, pp. 217–228 (páginas impresas). Teoría y diez aplicaciones resueltas transcritas del PDF proporcionado; gráficos originales extraídos de esas páginas. La práctica interactiva de diez problemas se conserva al final."
+  "sourceNote": "Fuente: Física, Peter Flores Escobal y José Luis Mateo Torres, Lumbreras Editores, primera edición, febrero de 2021, capítulo XV: Electrodinámica, pp. 217–228 (páginas impresas). Teoría y diez aplicaciones resueltas transcritas del PDF proporcionado; gráficos redibujados en estilo lineal sobre fondo blanco a partir de esas páginas. La práctica interactiva de diez problemas se conserva al final."
 };

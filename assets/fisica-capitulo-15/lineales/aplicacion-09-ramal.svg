@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="930" height="260" viewBox="0 0 930 260" role="img" aria-labelledby="title desc">
+<title id="title">Aplicación 9: ramal eléctrico</title>
+<desc id="desc">Ramal de a hacia b con resistor de 5 ohmios, fuente de 12 V con positivo a la derecha, resistor de 2 ohmios y fuente de 8 V con positivo a la izquierda. Redibujo lineal sobre fondo blanco, basado en la página 227 del PDF proporcionado.</desc>
+<defs>
+  <pattern id="hatch" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M-3,3 L3,-3 M0,12 L12,0 M9,15 L15,9" fill="none" stroke="#172630" stroke-width="1"/></pattern>
+  <pattern id="hatch2" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M0,0 L16,16" fill="none" stroke="#172630" stroke-width="1"/></pattern>
+</defs>
+<rect id="background" width="930" height="260" fill="#ffffff"/>
+<g fill="none" stroke="#172630" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+<style>text{fill:#172630;stroke:none;font-family:'DejaVu Sans',Arial,sans-serif}</style>
+<polyline points="93.0,141.0 155.0,141.0 159.3,130.0 167.9,152.0 176.5,130.0 185.1,152.0 193.7,130.0 202.3,152.0 210.9,130.0 219.5,152.0 228.1,130.0 236.7,152.0 241.0,141.0 303.0,141.0"/>
+<text x="198" y="197" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" text-anchor="middle">5 Ω</text>
+<line x1="303" y1="141" x2="369.5" y2="141.0"/>
+<line x1="383.5" y1="141.0" x2="450" y2="141"/>
+<line x1="369.5" y1="127.0" x2="369.5" y2="155.0"/>
+<line x1="383.5" y1="114.0" x2="383.5" y2="168.0"/>
+<text x="376" y="75" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" text-anchor="middle">12 V</text>
+<polyline points="450.0,141.0 505.5,141.0 509.8,130.0 518.4,152.0 527.0,130.0 535.6,152.0 544.2,130.0 552.8,152.0 561.4,130.0 570.0,152.0 578.6,130.0 587.2,152.0 591.5,141.0 647.0,141.0"/>
+<text x="548" y="197" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" text-anchor="middle">2 Ω</text>
+<line x1="647" y1="141" x2="720.0" y2="141.0"/>
+<line x1="734.0" y1="141.0" x2="807" y2="141"/>
+<line x1="720.0" y1="114.0" x2="720.0" y2="168.0"/>
+<line x1="734.0" y1="127.0" x2="734.0" y2="155.0"/>
+<text x="727" y="75" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" text-anchor="middle">8 V</text>
+<line x1="807" y1="141" x2="850" y2="141"/>
+<circle cx="93" cy="141" r="4" fill="#172630"/>
+<text x="69" y="149" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" text-anchor="middle">a</text>
+<circle cx="850" cy="141" r="4" fill="#172630"/>
+<text x="874" y="149" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" text-anchor="middle">b</text>
+<line x1="93" y1="141" x2="29" y2="60" stroke-dasharray="7 7"/>
+<line x1="93" y1="141" x2="29" y2="222" stroke-dasharray="7 7"/>
+<line x1="850" y1="141" x2="914" y2="60" stroke-dasharray="7 7"/>
+<line x1="850" y1="141" x2="914" y2="222" stroke-dasharray="7 7"/>
+<line x1="110" y1="84" x2="181" y2="84"/>
+<path d="M181,84 L171.00,79.80 L171.00,88.20 Z" fill="#172630" stroke="none"/>
+<text x="142" y="61" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="26" text-anchor="middle">I</text>
+</g>
+</svg>

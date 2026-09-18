@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="405" viewBox="0 0 880 405" role="img" aria-labelledby="title desc">
+<title id="title">Aplicación 7: recorrido horario de la malla</title>
+<desc id="desc">Circuito sin los instrumentos con las polaridades de las fuentes y resistores y corriente I en sentido horario, iniciando en M. Redibujo lineal sobre fondo blanco, basado en la página 226 del PDF proporcionado.</desc>
+<defs>
+  <pattern id="hatch" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M-3,3 L3,-3 M0,12 L12,0 M9,15 L15,9" fill="none" stroke="#172630" stroke-width="1"/></pattern>
+  <pattern id="hatch2" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M0,0 L16,16" fill="none" stroke="#172630" stroke-width="1"/></pattern>
+</defs>
+<rect id="background" width="880" height="405" fill="#ffffff"/>
+<g fill="none" stroke="#172630" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+<style>text{fill:#172630;stroke:none;font-family:'DejaVu Sans',Arial,sans-serif}</style>
+<line x1="143" y1="158" x2="143.0" y2="234.0"/>
+<line x1="143.0" y1="248.0" x2="143" y2="324"/>
+<line x1="170.0" y1="234.0" x2="116.0" y2="234.0"/>
+<line x1="157.0" y1="248.0" x2="129.0" y2="248.0"/>
+<text x="185.0" y="219.0" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" text-anchor="middle">+</text>
+<text x="185.0" y="279.0" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" text-anchor="middle">−</text>
+<text x="73" y="250" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" text-anchor="middle">12 V</text>
+<line x1="143" y1="324" x2="770" y2="324"/>
+<polyline points="143.0,158.0 216.5,158.0 220.8,147.0 229.4,169.0 238.0,147.0 246.6,169.0 255.2,147.0 263.8,169.0 272.4,147.0 281.0,169.0 289.6,147.0 298.2,169.0 302.5,158.0 376.0,158.0"/>
+<text x="260" y="117" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" text-anchor="middle">2 Ω</text>
+<line x1="376" y1="158" x2="433.0" y2="158.0"/>
+<line x1="447.0" y1="158.0" x2="504" y2="158"/>
+<line x1="433.0" y1="131.0" x2="433.0" y2="185.0"/>
+<line x1="447.0" y1="144.0" x2="447.0" y2="172.0"/>
+<text x="440" y="111" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" text-anchor="middle">2 V</text>
+<polyline points="504.0,158.0 594.0,158.0 598.3,147.0 606.9,169.0 615.5,147.0 624.1,169.0 632.7,147.0 641.3,169.0 649.9,147.0 658.5,169.0 667.1,147.0 675.7,169.0 680.0,158.0 770.0,158.0"/>
+<text x="637" y="117" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" text-anchor="middle">3 Ω</text>
+<line x1="770" y1="158" x2="770" y2="324"/>
+<circle cx="172" cy="158" r="4" fill="#172630"/>
+<text x="172" y="202" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="26" text-anchor="middle">A</text>
+<circle cx="347" cy="158" r="4" fill="#172630"/>
+<text x="347" y="202" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="26" text-anchor="middle">B</text>
+<text x="172" y="130" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" text-anchor="middle">+</text>
+<text x="347" y="130" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" text-anchor="middle">−</text>
+<text x="555" y="143" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" text-anchor="middle">+</text>
+<text x="719" y="143" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" text-anchor="middle">−</text>
+<line x1="211" y1="277" x2="211" y2="225"/>
+<path d="M211,225 L206.80,235.00 L215.20,235.00 Z" fill="#172630" stroke="none"/>
+<text x="237" y="260" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="26" text-anchor="middle">I</text>
+<line x1="734" y1="298" x2="661" y2="298"/>
+<path d="M661,298 L671.00,302.20 L671.00,293.80 Z" fill="#172630" stroke="none"/>
+<text x="648" y="307" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="26" text-anchor="middle">I</text>
+<circle cx="143" cy="324" r="4" fill="#172630"/>
+<text x="126" y="364" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="26" text-anchor="middle">M</text>
+</g>
+</svg>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="590" height="440" viewBox="0 0 590 440" role="img" aria-labelledby="title desc">
+<title id="title">Potencia entregada por una fuente</title>
+<desc id="desc">Una batería de voltaje V suministra la corriente I a un resistor R que disipa energía. Redibujo lineal sobre fondo blanco, basado en la página 225 del PDF proporcionado.</desc>
+<defs>
+  <pattern id="hatch" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M-3,3 L3,-3 M0,12 L12,0 M9,15 L15,9" fill="none" stroke="#172630" stroke-width="1"/></pattern>
+  <pattern id="hatch2" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M0,0 L16,16" fill="none" stroke="#172630" stroke-width="1"/></pattern>
+</defs>
+<rect id="background" width="590" height="440" fill="#ffffff"/>
+<g fill="none" stroke="#172630" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+<style>text{fill:#172630;stroke:none;font-family:'DejaVu Sans',Arial,sans-serif}</style>
+<polyline points="105.0,141.0 252.0,141.0 256.3,130.0 264.9,152.0 273.5,130.0 282.1,152.0 290.7,130.0 299.3,152.0 307.9,130.0 316.5,152.0 325.1,130.0 333.7,152.0 338.0,141.0 485.0,141.0"/>
+<text x="295" y="103" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" text-anchor="middle">R</text>
+<polyline points="105,141 105,274 243,274 243,301"/>
+<polyline points="485,141 485,274 347,274 347,301"/>
+<rect x="219" y="313" width="152" height="67" rx="3" fill="none"/>
+<rect x="233" y="301" width="19" height="12" rx="0" fill="none"/>
+<rect x="338" y="301" width="19" height="12" rx="0" fill="none"/>
+<text x="202" y="293" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" text-anchor="middle">+</text>
+<text x="388" y="293" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" text-anchor="middle">−</text>
+<text x="295" y="355" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" text-anchor="middle">BATERÍA</text>
+<text x="295" y="286" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="29" text-anchor="middle">V</text>
+<line x1="75" y1="254" x2="75" y2="184"/>
+<path d="M75,184 L70.80,194.00 L79.20,194.00 Z" fill="#172630" stroke="none"/>
+<text x="52" y="225" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" text-anchor="middle">I</text>
+<polyline points="248,120 238,107 243,94 229,81 232,68"/>
+<line x1="232" y1="68" x2="224" y2="52"/>
+<path d="M224,52 L224.57,60.66 L230.58,57.65 Z" fill="#172630" stroke="none"/>
+<polyline points="337,120 347,107 342,94 356,81 353,68"/>
+<line x1="353" y1="68" x2="361" y2="52"/>
+<path d="M361,52 L354.42,57.65 L360.43,60.66 Z" fill="#172630" stroke="none"/>
+</g>
+</svg>

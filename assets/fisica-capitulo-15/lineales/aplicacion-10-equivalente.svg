@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="390" viewBox="0 0 780 390" role="img" aria-labelledby="title desc">
+<title id="title">Aplicación 10: resistencia equivalente</title>
+<desc id="desc">Fuente V conectada a un único resistor equivalente de 15 ohmios, con corriente I. Redibujo lineal sobre fondo blanco, basado en la página 228 del PDF proporcionado.</desc>
+<defs>
+  <pattern id="hatch" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M-3,3 L3,-3 M0,12 L12,0 M9,15 L15,9" fill="none" stroke="#172630" stroke-width="1"/></pattern>
+  <pattern id="hatch2" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M0,0 L16,16" fill="none" stroke="#172630" stroke-width="1"/></pattern>
+</defs>
+<rect id="background" width="780" height="390" fill="#ffffff"/>
+<g fill="none" stroke="#172630" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+<style>text{fill:#172630;stroke:none;font-family:'DejaVu Sans',Arial,sans-serif}</style>
+<line x1="143" y1="91" x2="143.0" y2="188.0"/>
+<line x1="143.0" y1="202.0" x2="143" y2="299"/>
+<line x1="170.0" y1="188.0" x2="116.0" y2="188.0"/>
+<line x1="157.0" y1="202.0" x2="129.0" y2="202.0"/>
+<text x="85.0" y="204.0" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" text-anchor="middle">V</text>
+<line x1="143" y1="91" x2="510" y2="91"/>
+<line x1="143" y1="299" x2="510" y2="299"/>
+<polyline points="510.0,91.0 510.0,152.0 521.0,156.3 499.0,164.9 521.0,173.5 499.0,182.1 521.0,190.7 499.0,199.3 521.0,207.9 499.0,216.5 521.0,225.1 499.0,233.7 510.0,238.0 510.0,299.0"/>
+<text x="634" y="204" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" text-anchor="middle">15 Ω = R<tspan font-size="70%" baseline-shift="sub">eq</tspan></text>
+<polyline points="178,158 178,120 260,120"/>
+<line x1="260" y1="120" x2="334" y2="120"/>
+<path d="M334,120 L324.00,115.80 L324.00,124.20 Z" fill="#172630" stroke="none"/>
+<text x="362" y="129" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" text-anchor="middle">I</text>
+</g>
+</svg>

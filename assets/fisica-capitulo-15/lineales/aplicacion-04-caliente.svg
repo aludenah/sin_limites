@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="375" viewBox="0 0 780 375" role="img" aria-labelledby="title desc">
+<title id="title">Aplicación 4: filamento caliente</title>
+<desc id="desc">Resistor de 100 ohmios conectado a 120 V. La corriente I2 es 120 entre 100, igual a 1,2 A. Redibujo lineal sobre fondo blanco, basado en la página 221 del PDF proporcionado.</desc>
+<defs>
+  <pattern id="hatch" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M-3,3 L3,-3 M0,12 L12,0 M9,15 L15,9" fill="none" stroke="#172630" stroke-width="1"/></pattern>
+  <pattern id="hatch2" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M0,0 L16,16" fill="none" stroke="#172630" stroke-width="1"/></pattern>
+</defs>
+<rect id="background" width="780" height="375" fill="#ffffff"/>
+<g fill="none" stroke="#172630" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+<style>text{fill:#172630;stroke:none;font-family:'DejaVu Sans',Arial,sans-serif}</style>
+<polyline points="83.0,91.0 191.0,91.0 195.3,80.0 203.9,102.0 212.5,80.0 221.1,102.0 229.7,80.0 238.3,102.0 246.9,80.0 255.5,102.0 264.1,80.0 272.7,102.0 277.0,91.0 385.0,91.0"/>
+<text x="234.0" y="62.0" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" text-anchor="middle">100 Ω</text>
+<line x1="83" y1="91" x2="83" y2="287"/>
+<line x1="385" y1="91" x2="385" y2="287"/>
+<line x1="83" y1="287" x2="227.0" y2="287.0"/>
+<line x1="241.0" y1="287.0" x2="385" y2="287"/>
+<line x1="227.0" y1="260.0" x2="227.0" y2="314.0"/>
+<line x1="241.0" y1="273.0" x2="241.0" y2="301.0"/>
+<text x="234.0" y="344.0" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" text-anchor="middle">120 V</text>
+<polyline points="116,197 116,132 177,132"/>
+<line x1="177" y1="132" x2="260" y2="132"/>
+<path d="M260,132 L250.00,127.80 L250.00,136.20 Z" fill="#172630" stroke="none"/>
+<text x="234" y="173" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="29" text-anchor="middle">I₂</text>
+<text x="567" y="162" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" text-anchor="middle">I₂ = 120 / 100</text>
+<text x="567" y="237" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="31" text-anchor="middle">I₂ = 1,2 A</text>
+</g>
+</svg>

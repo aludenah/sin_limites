@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="710" height="270" viewBox="0 0 710 270" role="img" aria-labelledby="title desc">
+<title id="title">Símbolos de resistor fijo y variable</title>
+<desc id="desc">Símbolo de resistencia fija y símbolo de resistencia variable, con una flecha oblicua. Redibujo lineal sobre fondo blanco, basado en la página 219 del PDF proporcionado.</desc>
+<defs>
+  <pattern id="hatch" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M-3,3 L3,-3 M0,12 L12,0 M9,15 L15,9" fill="none" stroke="#172630" stroke-width="1"/></pattern>
+  <pattern id="hatch2" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M0,0 L16,16" fill="none" stroke="#172630" stroke-width="1"/></pattern>
+</defs>
+<rect id="background" width="710" height="270" fill="#ffffff"/>
+<g fill="none" stroke="#172630" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+<style>text{fill:#172630;stroke:none;font-family:'DejaVu Sans',Arial,sans-serif}</style>
+<polyline points="80.0,77.0 204.0,77.0 208.3,66.0 216.9,88.0 225.5,66.0 234.1,88.0 242.7,66.0 251.3,88.0 259.9,66.0 268.5,88.0 277.1,66.0 285.7,88.0 290.0,77.0 414.0,77.0"/>
+<polyline points="80.0,196.0 204.0,196.0 208.3,185.0 216.9,207.0 225.5,185.0 234.1,207.0 242.7,185.0 251.3,207.0 259.9,185.0 268.5,207.0 277.1,185.0 285.7,207.0 290.0,196.0 414.0,196.0"/>
+<line x1="196" y1="245" x2="302" y2="144"/>
+<path d="M302,144 L291.86,147.86 L297.66,153.94 Z" fill="#172630" stroke="none"/>
+<text x="550" y="68" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="25" text-anchor="middle">Resistor</text>
+<text x="550" y="100" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="25" text-anchor="middle">fijo</text>
+<text x="550" y="186" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="25" text-anchor="middle">Resistor</text>
+<text x="550" y="218" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="25" text-anchor="middle">variable</text>
+</g>
+</svg>

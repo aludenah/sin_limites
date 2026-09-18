@@ -1,0 +1,2463 @@
+{
+  "source": {
+    "file": "Física(2).pdf",
+    "sha256": "43bb155499c5d1023fbe6d3c2a03ee0258f4372ee8f85b1a304220972c7eaa1b",
+    "chapter": 15,
+    "printedPages": [
+      217,
+      228
+    ]
+  },
+  "style": {
+    "background": "#ffffff",
+    "stroke": "#172630",
+    "format": "svg",
+    "rasterImages": false
+  },
+  "figures": [
+    {
+      "id": "corriente-interruptor-abierto",
+      "src": "assets/fisica-capitulo-15/lineales/corriente-interruptor-abierto.svg",
+      "width": 860,
+      "height": 395,
+      "caption": "Interruptor abierto: movimiento desordenado de los electrones · p. 217",
+      "alt": "Circuito de batería y foco apagado. La ampliación del conductor muestra electrones con movimiento desordenado en varias direcciones.",
+      "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+      "original": false,
+      "redrawn": true,
+      "sourceSrc": "assets/fisica-capitulo-15/originales/corriente-interruptor-abierto.webp",
+      "sourceSha256": "f548f914aefe141967094e7dee4a625fe8a91a9b95e3d832f2c18617bee734fe",
+      "pdfPage": 214,
+      "printedPage": 217,
+      "sha256": "bafd81105e225cf46c61b3e75469a95c98893b89a91acff67103f1409bb99298",
+      "labels": [
+        "+",
+        "−",
+        "BATERÍA",
+        "Foco apagado",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "−",
+        "Movimiento desordenado",
+        "de los electrones"
+      ],
+      "components": [],
+      "model": {}
+    },
+    {
+      "id": "corriente-interruptor-cerrado",
+      "src": "assets/fisica-capitulo-15/lineales/corriente-interruptor-cerrado.svg",
+      "width": 860,
+      "height": 395,
+      "caption": "Interruptor cerrado: movimiento orientado · p. 217",
+      "alt": "Batería y foco encendido. El conductor muestra el campo eléctrico E y el movimiento orientado de los portadores de carga.",
+      "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+      "original": false,
+      "redrawn": true,
+      "sourceSrc": "assets/fisica-capitulo-15/originales/corriente-interruptor-cerrado.webp",
+      "sourceSha256": "8b27eb05e11ccac52e0fbe9fde5e17b9b04fe3ab51e8621eb4e26621215f3ad4",
+      "pdfPage": 214,
+      "printedPage": 217,
+      "sha256": "7c899ccae82d64de2f5def1b3f476b1b4f24c41d3380e54d0b2d0be580ae8b3d",
+      "labels": [
+        "+",
+        "−",
+        "BATERÍA",
+        "Foco encendido",
+        "−",
+        "−",
+        "−",
+        "E",
+        "Movimiento orientado",
+        "de los electrones"
+      ],
+      "components": [],
+      "model": {}
+    },
+    {
+      "id": "sentido-corriente",
+      "src": "assets/fisica-capitulo-15/lineales/sentido-corriente.svg",
+      "width": 890,
+      "height": 335,
+      "caption": "Corriente convencional y corriente de electrones · p. 218",
+      "alt": "Conductor con menor potencial a la izquierda y mayor potencial a la derecha. La corriente convencional va a la izquierda y los electrones a la derecha.",
+      "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+      "original": false,
+      "redrawn": true,
+      "sourceSrc": "assets/fisica-capitulo-15/originales/sentido-corriente.webp",
+      "sourceSha256": "595f29ff1cc85bb0afbc0c76fb57d15ac37358fc01e5b824c3ccd176bbe91442",
+      "pdfPage": 215,
+      "printedPage": 218,
+      "sha256": "6329f26568666bb07f632b17acf3e6cb5c69711d69eadc4f0ba2488c843de0cc",
+      "labels": [
+        "Corriente convencional",
+        "Menor",
+        "potencial",
+        "(−)",
+        "Mayor",
+        "potencial",
+        "(+)",
+        "E",
+        "−",
+        "−",
+        "Corriente de electrones (real)"
+      ],
+      "components": [],
+      "model": {}
+    },
+    {
+      "id": "area-corriente-tiempo",
+      "src": "assets/fisica-capitulo-15/lineales/area-corriente-tiempo.svg",
+      "width": 750,
+      "height": 350,
+      "caption": "Área en la gráfica de intensidad frente al tiempo · p. 218",
+      "alt": "Gráfica I frente a t con el área A entre t1 y t2. El recuadro indica A igual al valor absoluto de Q.",
+      "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+      "original": false,
+      "redrawn": true,
+      "sourceSrc": "assets/fisica-capitulo-15/originales/area-corriente-tiempo.webp",
+      "sourceSha256": "283d6b0a9b0201a7337e81d51e7fd7b5fef297eb0704afcb8e93332139904661",
+      "pdfPage": 215,
+      "printedPage": 218,
+      "sha256": "03dbe117a754cafb4a3a1e27fd06383097aa5f7b58cf8023d819d4f6c9265ca0",
+      "labels": [
+        "I (A)",
+        "t (s)",
+        "t₁",
+        "t₂",
+        "A",
+        "A = |Q|"
+      ],
+      "components": [],
+      "model": {}
+    },
+    {
+      "id": "aplicacion-02-grafica",
+      "src": "assets/fisica-capitulo-15/lineales/aplicacion-02-grafica.svg",
+      "width": 850,
+      "height": 410,
+      "caption": "Aplicación 2: intensidad de corriente en función del tiempo · p. 219",
+      "alt": "La corriente aumenta linealmente de 0,5 A en 0 s a 0,9 A en 0,2 s; luego permanece en 0,9 A hasta 1,4 s.",
+      "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+      "original": false,
+      "redrawn": true,
+      "sourceSrc": "assets/fisica-capitulo-15/originales/aplicacion-02-grafica.webp",
+      "sourceSha256": "70a8e2b2d3d18830beb7d19f4ea1d52adbc4bbf2d656497700d933871391afa7",
+      "pdfPage": 216,
+      "printedPage": 219,
+      "sha256": "bc81ddec52feaa2814c4f7ca4d93e543c7886db9943c05ffef058cfcdeb30a67",
+      "labels": [
+        "I (A)",
+        "t (s)",
+        "0",
+        "0,5",
+        "0,9",
+        "0,2",
+        "1,4"
+      ],
+      "components": [],
+      "model": {
+        "points": [
+          [
+            0,
+            0.5
+          ],
+          [
+            0.2,
+            0.9
+          ],
+          [
+            1.4,
+            0.9
+          ]
+        ],
+        "axes": {
+          "x": "t (s)",
+          "y": "I (A)"
+        },
+        "linearScale": true
+      }
+    },
+    {
+      "id": "aplicacion-02-areas",
+      "src": "assets/fisica-capitulo-15/lineales/aplicacion-02-areas.svg",
+      "width": 850,
+      "height": 410,
+      "caption": "Aplicación 2: áreas entre 0,1 s y 1,4 s · p. 219",
+      "alt": "Gráfica con el trapecio A1 entre 0,1 y 0,2 s y el rectángulo A2 entre 0,2 y 1,4 s. En 0,1 s la intensidad es 0,7 A.",
+      "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+      "original": false,
+      "redrawn": true,
+      "sourceSrc": "assets/fisica-capitulo-15/originales/aplicacion-02-areas.webp",
+      "sourceSha256": "e67a79514727a641dfe31f9ae464fd9d6e2c4eb1faa0a13d9d6e31fe1877dc2d",
+      "pdfPage": 216,
+      "printedPage": 219,
+      "sha256": "2a83a72e94bd99d83b945847d118323fbb2ab7a3132d836c7ce80e5428aaa001",
+      "labels": [
+        "I (A)",
+        "t (s)",
+        "0",
+        "A₁",
+        "A₂",
+        "0,5",
+        "0,7",
+        "0,9",
+        "0,1",
+        "0,2",
+        "1,4"
+      ],
+      "components": [],
+      "model": {
+        "points": [
+          [
+            0,
+            0.5
+          ],
+          [
+            0.2,
+            0.9
+          ],
+          [
+            1.4,
+            0.9
+          ]
+        ],
+        "axes": {
+          "x": "t (s)",
+          "y": "I (A)"
+        },
+        "linearScale": true,
+        "areas": [
+          {
+            "label": "A₁",
+            "from": 0.1,
+            "to": 0.2
+          },
+          {
+            "label": "A₂",
+            "from": 0.2,
+            "to": 1.4
+          }
+        ]
+      }
+    },
+    {
+      "id": "resistividad",
+      "src": "assets/fisica-capitulo-15/lineales/resistividad.svg",
+      "width": 710,
+      "height": 260,
+      "caption": "Longitud y sección transversal de un conductor · p. 219",
+      "alt": "Conductor cilíndrico de longitud L, área transversal A y resistividad rho.",
+      "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+      "original": false,
+      "redrawn": true,
+      "sourceSrc": "assets/fisica-capitulo-15/originales/resistividad.webp",
+      "sourceSha256": "4d97d74cfce832df2e0bba1f88b098de6f1f968ccf70ee9ac4462fbc40327fdd",
+      "pdfPage": 216,
+      "printedPage": 219,
+      "sha256": "daca0be58e7f2cad59e15416ec56a7a21740271b2f68a2b7c558f908a52f7bb1",
+      "labels": [
+        "L",
+        "A",
+        "ρ"
+      ],
+      "components": [],
+      "model": {}
+    },
+    {
+      "id": "simbolos-resistores",
+      "src": "assets/fisica-capitulo-15/lineales/simbolos-resistores.svg",
+      "width": 710,
+      "height": 270,
+      "caption": "Símbolos de resistor fijo y variable · p. 219",
+      "alt": "Símbolo de resistencia fija y símbolo de resistencia variable, con una flecha oblicua.",
+      "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+      "original": false,
+      "redrawn": true,
+      "sourceSrc": "assets/fisica-capitulo-15/originales/simbolos-resistores.webp",
+      "sourceSha256": "83493b8e1cf1585e3eb413c5d76e56adfbc30ea94c53f9afd5c9a1fbd712ec50",
+      "pdfPage": 216,
+      "printedPage": 219,
+      "sha256": "fa49440783ef9ea3648b74073e4721011c7b3e78f62af6b01b21c5ab51ad7049",
+      "labels": [
+        "Resistor",
+        "fijo",
+        "Resistor",
+        "variable"
+      ],
+      "components": [
+        {
+          "type": "resistor",
+          "label": null,
+          "ports": [
+            [
+              80,
+              77
+            ],
+            [
+              414,
+              77
+            ]
+          ]
+        },
+        {
+          "type": "resistor",
+          "label": null,
+          "ports": [
+            [
+              80,
+              196
+            ],
+            [
+              414,
+              196
+            ]
+          ]
+        }
+      ],
+      "model": {}
+    },
+    {
+      "id": "ley-ohm",
+      "src": "assets/fisica-capitulo-15/lineales/ley-ohm.svg",
+      "width": 830,
+      "height": 380,
+      "caption": "Circuito y representación para la ley de Ohm · p. 220",
+      "alt": "Batería conectada a un foco y su representación equivalente mediante una fuente de voltaje V y un resistor R, por el que circula I.",
+      "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+      "original": false,
+      "redrawn": true,
+      "sourceSrc": "assets/fisica-capitulo-15/originales/ley-ohm.webp",
+      "sourceSha256": "2381b6b18ce7e1b4214eb75009d828698c7e125b905489dc47a7977a9a30bcfa",
+      "pdfPage": 217,
+      "printedPage": 220,
+      "sha256": "138811b9dff8f155dfb7dd50648a9be02b675752d9708aa98d743c7fe02e92e9",
+      "labels": [
+        "+",
+        "−",
+        "BATERÍA",
+        "I",
+        "R",
+        "+",
+        "−",
+        "V",
+        "I"
+      ],
+      "components": [
+        {
+          "type": "resistor",
+          "label": "R",
+          "ports": [
+            [
+              507,
+              105
+            ],
+            [
+              751,
+              105
+            ]
+          ]
+        },
+        {
+          "type": "source",
+          "label": "V",
+          "ports": [
+            [
+              507,
+              278
+            ],
+            [
+              751,
+              278
+            ]
+          ],
+          "positivePort": 0
+        }
+      ],
+      "model": {}
+    },
+    {
+      "id": "aplicacion-04-frio",
+      "src": "assets/fisica-capitulo-15/lineales/aplicacion-04-frio.svg",
+      "width": 780,
+      "height": 375,
+      "caption": "Aplicación 4: filamento frío · p. 221",
+      "alt": "Resistor de 20 ohmios conectado a 120 V. La corriente I1 es 120 entre 20, igual a 6 A.",
+      "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+      "original": false,
+      "redrawn": true,
+      "sourceSrc": "assets/fisica-capitulo-15/originales/aplicacion-04-frio.webp",
+      "sourceSha256": "e4bbd7e8ad9ba67d1a115c9c09e313ec923d88076a2b8923cf12ddd3ef1d311b",
+      "pdfPage": 218,
+      "printedPage": 221,
+      "sha256": "eac2ac16f0e1345af8fd33a375d1620f40ad00d352ae5531e605c27078dd6e85",
+      "labels": [
+        "20 Ω",
+        "120 V",
+        "I₁",
+        "I₁ = 120 / 20",
+        "I₁ = 6 A"
+      ],
+      "components": [
+        {
+          "type": "resistor",
+          "label": "20 Ω",
+          "ports": [
+            [
+              83,
+              91
+            ],
+            [
+              385,
+              91
+            ]
+          ]
+        },
+        {
+          "type": "source",
+          "label": "120 V",
+          "ports": [
+            [
+              83,
+              287
+            ],
+            [
+              385,
+              287
+            ]
+          ],
+          "positivePort": 0
+        }
+      ],
+      "model": {}
+    },
+    {
+      "id": "aplicacion-04-caliente",
+      "src": "assets/fisica-capitulo-15/lineales/aplicacion-04-caliente.svg",
+      "width": 780,
+      "height": 375,
+      "caption": "Aplicación 4: filamento caliente · p. 221",
+      "alt": "Resistor de 100 ohmios conectado a 120 V. La corriente I2 es 120 entre 100, igual a 1,2 A.",
+      "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+      "original": false,
+      "redrawn": true,
+      "sourceSrc": "assets/fisica-capitulo-15/originales/aplicacion-04-caliente.webp",
+      "sourceSha256": "13f4b8b3f27a0ab8285cd6ae79ef1a3634563b02e9600a24acc7eeebd7a16b9a",
+      "pdfPage": 218,
+      "printedPage": 221,
+      "sha256": "ccdb8974b7115c6e43ba9a08f6852940030ba1ed9ef1d07d140ab319d8ddb7a9",
+      "labels": [
+        "100 Ω",
+        "120 V",
+        "I₂",
+        "I₂ = 120 / 100",
+        "I₂ = 1,2 A"
+      ],
+      "components": [
+        {
+          "type": "resistor",
+          "label": "100 Ω",
+          "ports": [
+            [
+              83,
+              91
+            ],
+            [
+              385,
+              91
+            ]
+          ]
+        },
+        {
+          "type": "source",
+          "label": "120 V",
+          "ports": [
+            [
+              83,
+              287
+            ],
+            [
+              385,
+              287
+            ]
+          ],
+          "positivePort": 0
+        }
+      ],
+      "model": {}
+    },
+    {
+      "id": "serie-conexion",
+      "src": "assets/fisica-capitulo-15/lineales/serie-conexion.svg",
+      "width": 750,
+      "height": 185,
+      "caption": "Conexión en serie · p. 221",
+      "alt": "Tres resistores R1, R2 y R3 conectados uno a continuación del otro.",
+      "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+      "original": false,
+      "redrawn": true,
+      "sourceSrc": "assets/fisica-capitulo-15/originales/serie-conexion.webp",
+      "sourceSha256": "307d0725faf9e7d3cb73402e9ed33eef0393bc63faab240dceba7823b4627789",
+      "pdfPage": 218,
+      "printedPage": 221,
+      "sha256": "04769a7397413858843812d22751528ef76888caabd23f2f8c1a010f50c97c59",
+      "labels": [
+        "R₁",
+        "R₂",
+        "R₃"
+      ],
+      "components": [
+        {
+          "type": "resistor",
+          "label": "R₁",
+          "ports": [
+            [
+              102,
+              95
+            ],
+            [
+              284,
+              95
+            ]
+          ]
+        },
+        {
+          "type": "resistor",
+          "label": "R₂",
+          "ports": [
+            [
+              284,
+              95
+            ],
+            [
+              466,
+              95
+            ]
+          ]
+        },
+        {
+          "type": "resistor",
+          "label": "R₃",
+          "ports": [
+            [
+              466,
+              95
+            ],
+            [
+              648,
+              95
+            ]
+          ]
+        }
+      ],
+      "model": {}
+    },
+    {
+      "id": "serie-equivalente",
+      "src": "assets/fisica-capitulo-15/lineales/serie-equivalente.svg",
+      "width": 930,
+      "height": 390,
+      "caption": "Circuito en serie y resistor equivalente · p. 221",
+      "alt": "Tres resistores en serie con corrientes I1, I2 e I3 y voltajes V1, V2 y V3. A la derecha, el resistor equivalente conectado a la misma fuente V.",
+      "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+      "original": false,
+      "redrawn": true,
+      "sourceSrc": "assets/fisica-capitulo-15/originales/serie-equivalente.webp",
+      "sourceSha256": "14d4cba2ff2110b25508e3a4a66a226d63b48ef5d76d961d20ad949dd6881e70",
+      "pdfPage": 218,
+      "printedPage": 221,
+      "sha256": "25ca50b118bbb83a43f44391e79bea1a13c826e4ca9d124988f9f17dbc47fe16",
+      "labels": [
+        "R₁",
+        "I₁",
+        "+  V₁  −",
+        "R₂",
+        "I₂",
+        "+  V₂  −",
+        "R₃",
+        "I₃",
+        "+  V₃  −",
+        "V",
+        "I",
+        "R_eq",
+        "+",
+        "−",
+        "V",
+        "I"
+      ],
+      "components": [
+        {
+          "type": "resistor",
+          "label": "R₁",
+          "ports": [
+            [
+              55,
+              117
+            ],
+            [
+              225,
+              117
+            ]
+          ]
+        },
+        {
+          "type": "resistor",
+          "label": "R₂",
+          "ports": [
+            [
+              225,
+              117
+            ],
+            [
+              395,
+              117
+            ]
+          ]
+        },
+        {
+          "type": "resistor",
+          "label": "R₃",
+          "ports": [
+            [
+              395,
+              117
+            ],
+            [
+              565,
+              117
+            ]
+          ]
+        },
+        {
+          "type": "source",
+          "label": "V",
+          "ports": [
+            [
+              55,
+              287
+            ],
+            [
+              565,
+              287
+            ]
+          ],
+          "positivePort": 0
+        },
+        {
+          "type": "resistor",
+          "label": "R_eq",
+          "ports": [
+            [
+              698,
+              117
+            ],
+            [
+              866,
+              117
+            ]
+          ]
+        },
+        {
+          "type": "source",
+          "label": "V",
+          "ports": [
+            [
+              698,
+              287
+            ],
+            [
+              866,
+              287
+            ]
+          ],
+          "positivePort": 0
+        }
+      ],
+      "model": {}
+    },
+    {
+      "id": "paralelo-conexion",
+      "src": "assets/fisica-capitulo-15/lineales/paralelo-conexion.svg",
+      "width": 850,
+      "height": 350,
+      "caption": "Conexión en paralelo · p. 222",
+      "alt": "Resistores R1, R2 y R3 conectados entre los mismos terminales a y b.",
+      "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+      "original": false,
+      "redrawn": true,
+      "sourceSrc": "assets/fisica-capitulo-15/originales/paralelo-conexion.webp",
+      "sourceSha256": "f7ddc7b49e5495b94471e2653152aec48d34f5d4b3be2c1add8fc45b30140218",
+      "pdfPage": 219,
+      "printedPage": 222,
+      "sha256": "6d856fb9097f49e685efe986be20743475de171c5f5cdc44168c89c727ac7dee",
+      "labels": [
+        "R₁",
+        "R₂",
+        "R₃",
+        "a",
+        "b",
+        "a y b:",
+        "terminales",
+        "comunes"
+      ],
+      "components": [
+        {
+          "type": "resistor",
+          "label": "R₁",
+          "ports": [
+            [
+              176,
+              81
+            ],
+            [
+              494,
+              81
+            ]
+          ]
+        },
+        {
+          "type": "resistor",
+          "label": "R₂",
+          "ports": [
+            [
+              176,
+              181
+            ],
+            [
+              494,
+              181
+            ]
+          ]
+        },
+        {
+          "type": "resistor",
+          "label": "R₃",
+          "ports": [
+            [
+              176,
+              281
+            ],
+            [
+              494,
+              281
+            ]
+          ]
+        }
+      ],
+      "model": {}
+    },
+    {
+      "id": "paralelo-equivalente",
+      "src": "assets/fisica-capitulo-15/lineales/paralelo-equivalente.svg",
+      "width": 900,
+      "height": 515,
+      "caption": "Circuito en paralelo y resistor equivalente · p. 222",
+      "alt": "Tres ramas con resistores R1, R2 y R3, intensidades I1, I2 e I3 y voltajes V1, V2 y V3; a la derecha, el circuito equivalente.",
+      "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+      "original": false,
+      "redrawn": true,
+      "sourceSrc": "assets/fisica-capitulo-15/originales/paralelo-equivalente.webp",
+      "sourceSha256": "4f8a9420346cf7a6b451cb261a1611180c11aecc7fb950c00894940ee5190d21",
+      "pdfPage": 219,
+      "printedPage": 222,
+      "sha256": "8656fb4f4b2aa26b258d6017d8e596a202197ddada5e6d4a38e8c6ede0fca4c0",
+      "labels": [
+        "R₁",
+        "I₁",
+        "+  V₁  −",
+        "R₂",
+        "I₂",
+        "+  V₂  −",
+        "R₃",
+        "I₃",
+        "+  V₃  −",
+        "V",
+        "I",
+        "R_eq",
+        "V",
+        "I"
+      ],
+      "components": [
+        {
+          "type": "resistor",
+          "label": "R₁",
+          "ports": [
+            [
+              92,
+              91
+            ],
+            [
+              440,
+              91
+            ]
+          ]
+        },
+        {
+          "type": "resistor",
+          "label": "R₂",
+          "ports": [
+            [
+              92,
+              211
+            ],
+            [
+              440,
+              211
+            ]
+          ]
+        },
+        {
+          "type": "resistor",
+          "label": "R₃",
+          "ports": [
+            [
+              92,
+              331
+            ],
+            [
+              440,
+              331
+            ]
+          ]
+        },
+        {
+          "type": "source",
+          "label": "V",
+          "ports": [
+            [
+              92,
+              436
+            ],
+            [
+              440,
+              436
+            ]
+          ],
+          "positivePort": 0
+        },
+        {
+          "type": "resistor",
+          "label": "R_eq",
+          "ports": [
+            [
+              636,
+              211
+            ],
+            [
+              810,
+              211
+            ]
+          ]
+        },
+        {
+          "type": "source",
+          "label": "V",
+          "ports": [
+            [
+              636,
+              436
+            ],
+            [
+              810,
+              436
+            ]
+          ],
+          "positivePort": 0
+        }
+      ],
+      "model": {}
+    },
+    {
+      "id": "aplicacion-05-circuito",
+      "src": "assets/fisica-capitulo-15/lineales/aplicacion-05-circuito.svg",
+      "width": 660,
+      "height": 415,
+      "caption": "Aplicación 5: resistencia equivalente entre A y B · p. 223",
+      "alt": "Dos resistores de 2 ohmios en paralelo, conectados en serie con resistores de 4 y 3 ohmios entre A y B.",
+      "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+      "original": false,
+      "redrawn": true,
+      "sourceSrc": "assets/fisica-capitulo-15/originales/aplicacion-05-circuito.webp",
+      "sourceSha256": "fa0a22a8b55c94abd16805f2d2824493c7e9390e413da3d106410cd717f230c4",
+      "pdfPage": 220,
+      "printedPage": 223,
+      "sha256": "16897d66c80063d3705c1e8705bdc2a70d5ad86edb7e83f3646213dc88ae6e01",
+      "labels": [
+        "A",
+        "B",
+        "3 Ω",
+        "4 Ω",
+        "2 Ω",
+        "2 Ω"
+      ],
+      "components": [
+        {
+          "type": "resistor",
+          "label": "3 Ω",
+          "ports": [
+            [
+              93,
+              318
+            ],
+            [
+              336,
+              318
+            ]
+          ]
+        },
+        {
+          "type": "resistor",
+          "label": "4 Ω",
+          "ports": [
+            [
+              336,
+              318
+            ],
+            [
+              579,
+              318
+            ]
+          ]
+        },
+        {
+          "type": "resistor",
+          "label": "2 Ω",
+          "ports": [
+            [
+              274,
+              108
+            ],
+            [
+              579,
+              108
+            ]
+          ]
+        },
+        {
+          "type": "resistor",
+          "label": "2 Ω",
+          "ports": [
+            [
+              274,
+              201
+            ],
+            [
+              579,
+              201
+            ]
+          ]
+        }
+      ],
+      "model": {}
+    },
+    {
+      "id": "aplicacion-05-paralelo",
+      "src": "assets/fisica-capitulo-15/lineales/aplicacion-05-paralelo.svg",
+      "width": 820,
+      "height": 415,
+      "caption": "Aplicación 5: reducción del paralelo · p. 223",
+      "alt": "Se destaca el paralelo de dos resistores de 2 ohmios, cuya resistencia equivalente es 1 ohmio.",
+      "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+      "original": false,
+      "redrawn": true,
+      "sourceSrc": "assets/fisica-capitulo-15/originales/aplicacion-05-paralelo.webp",
+      "sourceSha256": "a653743bf63a364180dc0eaebe370f5094397888c5e9d552b9d5a0cd92b66eae",
+      "pdfPage": 220,
+      "printedPage": 223,
+      "sha256": "8db90a646a01ac67a3d3e42067490feb515a73a4037bedcfe98b81bcc3f4b9d6",
+      "labels": [
+        "A",
+        "B",
+        "3 Ω",
+        "4 Ω",
+        "2 Ω",
+        "2 Ω",
+        "R_eq =",
+        "2 × 2",
+        "2 + 2",
+        "= 1 Ω"
+      ],
+      "components": [
+        {
+          "type": "resistor",
+          "label": "3 Ω",
+          "ports": [
+            [
+              93,
+              318
+            ],
+            [
+              336,
+              318
+            ]
+          ]
+        },
+        {
+          "type": "resistor",
+          "label": "4 Ω",
+          "ports": [
+            [
+              336,
+              318
+            ],
+            [
+              579,
+              318
+            ]
+          ]
+        },
+        {
+          "type": "resistor",
+          "label": "2 Ω",
+          "ports": [
+            [
+              274,
+              108
+            ],
+            [
+              579,
+              108
+            ]
+          ]
+        },
+        {
+          "type": "resistor",
+          "label": "2 Ω",
+          "ports": [
+            [
+              274,
+              201
+            ],
+            [
+              579,
+              201
+            ]
+          ]
+        }
+      ],
+      "model": {}
+    },
+    {
+      "id": "aplicacion-05-serie",
+      "src": "assets/fisica-capitulo-15/lineales/aplicacion-05-serie.svg",
+      "width": 660,
+      "height": 415,
+      "caption": "Aplicación 5: resistores resultantes en serie · p. 223",
+      "alt": "Circuito reducido a tres resistores de 1, 4 y 3 ohmios en serie entre A y B.",
+      "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+      "original": false,
+      "redrawn": true,
+      "sourceSrc": "assets/fisica-capitulo-15/originales/aplicacion-05-serie.webp",
+      "sourceSha256": "5fc4cd1e4cbc0a8cd2a3c3473dd682aef90a59082b1f04b97a4619968e0f75e7",
+      "pdfPage": 220,
+      "printedPage": 223,
+      "sha256": "53c4d2014879d5ad3459fa1b77ca23e0cba64e51be882320466aae045c8636b5",
+      "labels": [
+        "A",
+        "B",
+        "3 Ω",
+        "4 Ω",
+        "1 Ω"
+      ],
+      "components": [
+        {
+          "type": "resistor",
+          "label": "3 Ω",
+          "ports": [
+            [
+              93,
+              318
+            ],
+            [
+              336,
+              318
+            ]
+          ]
+        },
+        {
+          "type": "resistor",
+          "label": "4 Ω",
+          "ports": [
+            [
+              336,
+              318
+            ],
+            [
+              579,
+              318
+            ]
+          ]
+        },
+        {
+          "type": "resistor",
+          "label": "1 Ω",
+          "ports": [
+            [
+              274,
+              108
+            ],
+            [
+              579,
+              108
+            ]
+          ]
+        }
+      ],
+      "model": {}
+    },
+    {
+      "id": "circuito-componentes",
+      "src": "assets/fisica-capitulo-15/lineales/circuito-componentes.svg",
+      "width": 830,
+      "height": 305,
+      "caption": "Componentes de un circuito eléctrico · p. 223",
+      "alt": "Circuito formado por una fuente, un interruptor cerrado y un foco encendido, con las etiquetas del PDF.",
+      "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+      "original": false,
+      "redrawn": true,
+      "sourceSrc": "assets/fisica-capitulo-15/originales/circuito-componentes.webp",
+      "sourceSha256": "6c879555c0922eb4650b635b5933fb6dacb4416403ab553e1f7be150a09beab7",
+      "pdfPage": 220,
+      "printedPage": 223,
+      "sha256": "a2aefd5e81b399e4bc9f3944f913e177b95a98a02572d06dabcb30fca1a07fc6",
+      "labels": [
+        "+",
+        "−",
+        "Fuente",
+        "Interruptor",
+        "Foco"
+      ],
+      "components": [],
+      "model": {}
+    },
+    {
+      "id": "circuito-representacion",
+      "src": "assets/fisica-capitulo-15/lineales/circuito-representacion.svg",
+      "width": 790,
+      "height": 290,
+      "caption": "Representación gráfica del circuito · p. 223",
+      "alt": "Esquema con fuente, interruptor, resistor y una trayectoria cerrada marcada con la intensidad I.",
+      "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+      "original": false,
+      "redrawn": true,
+      "sourceSrc": "assets/fisica-capitulo-15/originales/circuito-representacion.webp",
+      "sourceSha256": "ce4a6dcd0857f0a8a13eb8341b19f5bb91305cf772bd839aac3d476a597a58a2",
+      "pdfPage": 220,
+      "printedPage": 223,
+      "sha256": "4038b38c317938d4d8d1e12bfe9fc8164f7af4554cd1f309e1a8d461b157c786",
+      "labels": [
+        "Trayectoria",
+        "cerrada",
+        "I"
+      ],
+      "components": [
+        {
+          "type": "source",
+          "label": null,
+          "ports": [
+            [
+              73,
+              211
+            ],
+            [
+              287,
+              211
+            ]
+          ],
+          "positivePort": 0
+        },
+        {
+          "type": "resistor",
+          "label": null,
+          "ports": [
+            [
+              468,
+              211
+            ],
+            [
+              641,
+              211
+            ]
+          ]
+        }
+      ],
+      "model": {}
+    },
+    {
+      "id": "amperimetro",
+      "src": "assets/fisica-capitulo-15/lineales/amperimetro.svg",
+      "width": 690,
+      "height": 200,
+      "caption": "Amperímetro conectado en serie · p. 224",
+      "alt": "Amperímetro en serie con un resistor R; una flecha indica la corriente I.",
+      "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+      "original": false,
+      "redrawn": true,
+      "sourceSrc": "assets/fisica-capitulo-15/originales/amperimetro.webp",
+      "sourceSha256": "d2f7d14bb15f00a78dd645fcf17a6a34af012a9d1d2287c0382c82d70e72f9f1",
+      "pdfPage": 221,
+      "printedPage": 224,
+      "sha256": "0ad5e370221a4b06d5c831e0c731311e4683728a22cdf6e7c07f4aaf2159885f",
+      "labels": [
+        "A",
+        "R",
+        "I",
+        "Amperímetro"
+      ],
+      "components": [
+        {
+          "type": "instrument",
+          "label": "A",
+          "ports": [
+            [
+              69,
+              103
+            ],
+            [
+              347,
+              103
+            ]
+          ]
+        },
+        {
+          "type": "resistor",
+          "label": "R",
+          "ports": [
+            [
+              347,
+              103
+            ],
+            [
+              621,
+              103
+            ]
+          ]
+        }
+      ],
+      "model": {}
+    },
+    {
+      "id": "amperimetro-ideal",
+      "src": "assets/fisica-capitulo-15/lineales/amperimetro-ideal.svg",
+      "width": 730,
+      "height": 145,
+      "caption": "Modelo del amperímetro ideal · p. 224",
+      "alt": "Un amperímetro ideal equivale a un alambre conductor.",
+      "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+      "original": false,
+      "redrawn": true,
+      "sourceSrc": "assets/fisica-capitulo-15/originales/amperimetro-ideal.webp",
+      "sourceSha256": "b233db616a0bdcdc23ca6e397865df3af97fb6581c5042e6c320788fbe929476",
+      "pdfPage": 221,
+      "printedPage": 224,
+      "sha256": "fa75c21c356e3624d3826f0fb58d43aae3757831c4f64424e92a5851ca958ad5",
+      "labels": [
+        "A"
+      ],
+      "components": [
+        {
+          "type": "instrument",
+          "label": "A",
+          "ports": [
+            [
+              53,
+              73
+            ],
+            [
+              304,
+              73
+            ]
+          ]
+        }
+      ],
+      "model": {}
+    },
+    {
+      "id": "voltimetro",
+      "src": "assets/fisica-capitulo-15/lineales/voltimetro.svg",
+      "width": 770,
+      "height": 315,
+      "caption": "Voltímetro conectado en paralelo · p. 224",
+      "alt": "Voltímetro entre A y B, en paralelo con el resistor R; se indica la corriente I por el resistor.",
+      "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+      "original": false,
+      "redrawn": true,
+      "sourceSrc": "assets/fisica-capitulo-15/originales/voltimetro.webp",
+      "sourceSha256": "c4953c81f3296700a056bdc83d01308ff69159bfd23ac275ee4db750badfaa0d",
+      "pdfPage": 221,
+      "printedPage": 224,
+      "sha256": "2dc7c9319ae6013e459edf49e680c4dea74bc80e909956f593567a9e045a760a",
+      "labels": [
+        "R",
+        "V",
+        "Voltímetro",
+        "A",
+        "B",
+        "I"
+      ],
+      "components": [
+        {
+          "type": "resistor",
+          "label": "R",
+          "ports": [
+            [
+              212,
+              221
+            ],
+            [
+              558,
+              221
+            ]
+          ]
+        },
+        {
+          "type": "instrument",
+          "label": "V",
+          "ports": [
+            [
+              212,
+              96
+            ],
+            [
+              558,
+              96
+            ]
+          ]
+        }
+      ],
+      "model": {}
+    },
+    {
+      "id": "voltimetro-ideal",
+      "src": "assets/fisica-capitulo-15/lineales/voltimetro-ideal.svg",
+      "width": 810,
+      "height": 215,
+      "caption": "Modelo del voltímetro ideal · p. 224",
+      "alt": "La rama del voltímetro ideal equivale a una rama abierta.",
+      "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+      "original": false,
+      "redrawn": true,
+      "sourceSrc": "assets/fisica-capitulo-15/originales/voltimetro-ideal.webp",
+      "sourceSha256": "2c745c72c8c8f8a640dcc3c80252275aab87af29ca174c21c6279fcb9a4ce520",
+      "pdfPage": 221,
+      "printedPage": 224,
+      "sha256": "129664e3227ce0a620eea70446a555834614ba75b16b281effc161f3a1257a61",
+      "labels": [
+        "V"
+      ],
+      "components": [
+        {
+          "type": "instrument",
+          "label": "V",
+          "ports": [
+            [
+              98,
+              80
+            ],
+            [
+              282,
+              80
+            ]
+          ]
+        }
+      ],
+      "model": {}
+    },
+    {
+      "id": "kirchhoff-circuito",
+      "src": "assets/fisica-capitulo-15/lineales/kirchhoff-circuito.svg",
+      "width": 625,
+      "height": 615,
+      "caption": "Circuito para identificar nodos y mallas · p. 224",
+      "alt": "Circuito con nodos M, A y N a la izquierda y B, C y D a la derecha, fuentes V0 y V1 y cinco resistores. En C confluyen I1 e I2 y sale I3.",
+      "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+      "original": false,
+      "redrawn": true,
+      "sourceSrc": "assets/fisica-capitulo-15/originales/kirchhoff-circuito.webp",
+      "sourceSha256": "cf8632294a9054c4b02d1f7cad28c7b77850127d8307939b13e9c3d7e794e39f",
+      "pdfPage": 221,
+      "printedPage": 224,
+      "sha256": "d3e3d5d446a569e6cdbbb193ba4c215404781f09aa116390c1c59a94c5820dbe",
+      "labels": [
+        "R₁",
+        "R₃",
+        "R₅",
+        "V₀",
+        "V₁",
+        "R₂",
+        "R₄",
+        "M",
+        "A",
+        "N",
+        "B",
+        "C",
+        "D",
+        "I₁",
+        "I₂",
+        "I₃"
+      ],
+      "components": [
+        {
+          "type": "resistor",
+          "label": "R₁",
+          "ports": [
+            [
+              139,
+              95
+            ],
+            [
+              480,
+              95
+            ]
+          ]
+        },
+        {
+          "type": "resistor",
+          "label": "R₃",
+          "ports": [
+            [
+              139,
+              301
+            ],
+            [
+              480,
+              301
+            ]
+          ]
+        },
+        {
+          "type": "resistor",
+          "label": "R₅",
+          "ports": [
+            [
+              139,
+              507
+            ],
+            [
+              480,
+              507
+            ]
+          ]
+        },
+        {
+          "type": "source",
+          "label": "V₀",
+          "ports": [
+            [
+              139,
+              95
+            ],
+            [
+              139,
+              301
+            ]
+          ],
+          "positivePort": 0
+        },
+        {
+          "type": "source",
+          "label": "V₁",
+          "ports": [
+            [
+              139,
+              301
+            ],
+            [
+              139,
+              507
+            ]
+          ],
+          "positivePort": 0
+        },
+        {
+          "type": "resistor",
+          "label": "R₂",
+          "ports": [
+            [
+              480,
+              95
+            ],
+            [
+              480,
+              301
+            ]
+          ]
+        },
+        {
+          "type": "resistor",
+          "label": "R₄",
+          "ports": [
+            [
+              480,
+              301
+            ],
+            [
+              480,
+              507
+            ]
+          ]
+        }
+      ],
+      "model": {}
+    },
+    {
+      "id": "potencia-fuente",
+      "src": "assets/fisica-capitulo-15/lineales/potencia-fuente.svg",
+      "width": 590,
+      "height": 440,
+      "caption": "Potencia entregada por una fuente · p. 225",
+      "alt": "Una batería de voltaje V suministra la corriente I a un resistor R que disipa energía.",
+      "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+      "original": false,
+      "redrawn": true,
+      "sourceSrc": "assets/fisica-capitulo-15/originales/potencia-fuente.webp",
+      "sourceSha256": "64eb17631b35160956fe7bc96f8c8f3b00b3c8893645d70ac5e867d19bf2aaed",
+      "pdfPage": 222,
+      "printedPage": 225,
+      "sha256": "c493ac8cab70336bde76da6b249afd2f03cdde115b824acd247250d4ccd2ae09",
+      "labels": [
+        "R",
+        "+",
+        "−",
+        "BATERÍA",
+        "V",
+        "I"
+      ],
+      "components": [
+        {
+          "type": "resistor",
+          "label": "R",
+          "ports": [
+            [
+              105,
+              141
+            ],
+            [
+              485,
+              141
+            ]
+          ]
+        }
+      ],
+      "model": {}
+    },
+    {
+      "id": "potencia-resistor",
+      "src": "assets/fisica-capitulo-15/lineales/potencia-resistor.svg",
+      "width": 550,
+      "height": 180,
+      "caption": "Potencia en un resistor · p. 225",
+      "alt": "Resistor R atravesado por la intensidad I.",
+      "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+      "original": false,
+      "redrawn": true,
+      "sourceSrc": "assets/fisica-capitulo-15/originales/potencia-resistor.webp",
+      "sourceSha256": "704533c0841b9d7dda4e4cff997bc6492b216c849cc2d5521e3bc2ea70120dbf",
+      "pdfPage": 222,
+      "printedPage": 225,
+      "sha256": "1515e154162c80154311923a666fb95e09d5bd9146ab9f319e1b91d8f573f565",
+      "labels": [
+        "R",
+        "I"
+      ],
+      "components": [
+        {
+          "type": "resistor",
+          "label": "R",
+          "ports": [
+            [
+              57,
+              102
+            ],
+            [
+              493,
+              102
+            ]
+          ]
+        }
+      ],
+      "model": {}
+    },
+    {
+      "id": "aplicacion-06-circuito",
+      "src": "assets/fisica-capitulo-15/lineales/aplicacion-06-circuito.svg",
+      "width": 760,
+      "height": 430,
+      "caption": "Aplicación 6: corriente por el resistor de 2 Ω · p. 225",
+      "alt": "Fuente epsilon y resistor de 2 ohmios en serie con el paralelo de 8 y 4 ohmios entre los puntos A y B.",
+      "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+      "original": false,
+      "redrawn": true,
+      "sourceSrc": "assets/fisica-capitulo-15/originales/aplicacion-06-circuito.webp",
+      "sourceSha256": "28c8ce53b2de319aa6a5a71e670076fa61dc2e99d30fd43b8fc0ea4aabdccef6",
+      "pdfPage": 222,
+      "printedPage": 225,
+      "sha256": "c884a296308fcc498805fbc3e82a5d5d30843ec049f813a44f008bae68fd25e4",
+      "labels": [
+        "ε",
+        "2 Ω",
+        "8 Ω",
+        "4 Ω",
+        "A",
+        "B"
+      ],
+      "components": [
+        {
+          "type": "source",
+          "label": "ε",
+          "ports": [
+            [
+              123,
+              81
+            ],
+            [
+              123,
+              321
+            ]
+          ],
+          "positivePort": 1
+        },
+        {
+          "type": "resistor",
+          "label": "2 Ω",
+          "ports": [
+            [
+              123,
+              321
+            ],
+            [
+              430,
+              321
+            ]
+          ]
+        },
+        {
+          "type": "resistor",
+          "label": "8 Ω",
+          "ports": [
+            [
+              430,
+              81
+            ],
+            [
+              430,
+              321
+            ]
+          ]
+        },
+        {
+          "type": "resistor",
+          "label": "4 Ω",
+          "ports": [
+            [
+              642,
+              81
+            ],
+            [
+              642,
+              321
+            ]
+          ]
+        }
+      ],
+      "model": {}
+    },
+    {
+      "id": "aplicacion-06-corrientes",
+      "src": "assets/fisica-capitulo-15/lineales/aplicacion-06-corrientes.svg",
+      "width": 760,
+      "height": 430,
+      "caption": "Aplicación 6: corrientes y nodo inferior · p. 225",
+      "alt": "Circuito con I1 descendiendo por 8 ohmios, I2 por la rama de 4 ohmios e I saliendo del nodo inferior hacia el resistor de 2 ohmios.",
+      "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+      "original": false,
+      "redrawn": true,
+      "sourceSrc": "assets/fisica-capitulo-15/originales/aplicacion-06-corrientes.webp",
+      "sourceSha256": "ba7caad97a1a3f46a6436e5dac3313d80f94572c128d2e1d40fd2339d0b9d9ba",
+      "pdfPage": 222,
+      "printedPage": 225,
+      "sha256": "d549194e732292999fd32d2e7406cee0a1b98e678e564637afe09fbe107cb4da",
+      "labels": [
+        "ε",
+        "2 Ω",
+        "8 Ω",
+        "4 Ω",
+        "A",
+        "B",
+        "I₁",
+        "I₂",
+        "I",
+        "Nodo"
+      ],
+      "components": [
+        {
+          "type": "source",
+          "label": "ε",
+          "ports": [
+            [
+              123,
+              81
+            ],
+            [
+              123,
+              321
+            ]
+          ],
+          "positivePort": 1
+        },
+        {
+          "type": "resistor",
+          "label": "2 Ω",
+          "ports": [
+            [
+              123,
+              321
+            ],
+            [
+              430,
+              321
+            ]
+          ]
+        },
+        {
+          "type": "resistor",
+          "label": "8 Ω",
+          "ports": [
+            [
+              430,
+              81
+            ],
+            [
+              430,
+              321
+            ]
+          ]
+        },
+        {
+          "type": "resistor",
+          "label": "4 Ω",
+          "ports": [
+            [
+              642,
+              81
+            ],
+            [
+              642,
+              321
+            ]
+          ]
+        }
+      ],
+      "model": {}
+    },
+    {
+      "id": "aplicacion-07-instrumentos",
+      "src": "assets/fisica-capitulo-15/lineales/aplicacion-07-instrumentos.svg",
+      "width": 880,
+      "height": 405,
+      "caption": "Aplicación 7: lecturas de los instrumentos · p. 226",
+      "alt": "Fuentes de 12 V y 2 V en oposición, resistores de 2 y 3 ohmios en serie, amperímetro en serie y voltímetro en paralelo con el resistor de 2 ohmios.",
+      "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+      "original": false,
+      "redrawn": true,
+      "sourceSrc": "assets/fisica-capitulo-15/originales/aplicacion-07-instrumentos.webp",
+      "sourceSha256": "b74c2ebf3d6ddf3ed4da14ea00e49aaff05d0c53ab869f1922ca4bc7183fbd24",
+      "pdfPage": 223,
+      "printedPage": 226,
+      "sha256": "d10f3c237b9ac38ed4a0f7e0cb37ad2fffd6efce081e8255f176e69694faec8b",
+      "labels": [
+        "12 V",
+        "2 Ω",
+        "2 V",
+        "3 Ω",
+        "A",
+        "V"
+      ],
+      "components": [
+        {
+          "type": "source",
+          "label": "12 V",
+          "ports": [
+            [
+              143,
+              158
+            ],
+            [
+              143,
+              324
+            ]
+          ],
+          "positivePort": 0
+        },
+        {
+          "type": "resistor",
+          "label": "2 Ω",
+          "ports": [
+            [
+              143,
+              158
+            ],
+            [
+              376,
+              158
+            ]
+          ]
+        },
+        {
+          "type": "source",
+          "label": "2 V",
+          "ports": [
+            [
+              376,
+              158
+            ],
+            [
+              504,
+              158
+            ]
+          ],
+          "positivePort": 0
+        },
+        {
+          "type": "resistor",
+          "label": "3 Ω",
+          "ports": [
+            [
+              504,
+              158
+            ],
+            [
+              770,
+              158
+            ]
+          ]
+        },
+        {
+          "type": "instrument",
+          "label": "A",
+          "ports": [
+            [
+              770,
+              158
+            ],
+            [
+              770,
+              324
+            ]
+          ]
+        },
+        {
+          "type": "instrument",
+          "label": "V",
+          "ports": [
+            [
+              143,
+              64
+            ],
+            [
+              376,
+              64
+            ]
+          ]
+        }
+      ],
+      "model": {}
+    },
+    {
+      "id": "aplicacion-07-recorrido",
+      "src": "assets/fisica-capitulo-15/lineales/aplicacion-07-recorrido.svg",
+      "width": 880,
+      "height": 405,
+      "caption": "Aplicación 7: recorrido horario de la malla · p. 226",
+      "alt": "Circuito sin los instrumentos con las polaridades de las fuentes y resistores y corriente I en sentido horario, iniciando en M.",
+      "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+      "original": false,
+      "redrawn": true,
+      "sourceSrc": "assets/fisica-capitulo-15/originales/aplicacion-07-recorrido.webp",
+      "sourceSha256": "caba1f2dff96a53c0071f080346105773c3bb9a0f5d0931e106211c787a05921",
+      "pdfPage": 223,
+      "printedPage": 226,
+      "sha256": "58cd2a5cb63ac9abdc828f0300819728e13978d42ad884237ef0eed4175730c1",
+      "labels": [
+        "+",
+        "−",
+        "12 V",
+        "2 Ω",
+        "2 V",
+        "3 Ω",
+        "A",
+        "B",
+        "+",
+        "−",
+        "+",
+        "−",
+        "I",
+        "I",
+        "M"
+      ],
+      "components": [
+        {
+          "type": "source",
+          "label": "12 V",
+          "ports": [
+            [
+              143,
+              158
+            ],
+            [
+              143,
+              324
+            ]
+          ],
+          "positivePort": 0
+        },
+        {
+          "type": "resistor",
+          "label": "2 Ω",
+          "ports": [
+            [
+              143,
+              158
+            ],
+            [
+              376,
+              158
+            ]
+          ]
+        },
+        {
+          "type": "source",
+          "label": "2 V",
+          "ports": [
+            [
+              376,
+              158
+            ],
+            [
+              504,
+              158
+            ]
+          ],
+          "positivePort": 0
+        },
+        {
+          "type": "resistor",
+          "label": "3 Ω",
+          "ports": [
+            [
+              504,
+              158
+            ],
+            [
+              770,
+              158
+            ]
+          ]
+        }
+      ],
+      "model": {}
+    },
+    {
+      "id": "aplicacion-08-circuito",
+      "src": "assets/fisica-capitulo-15/lineales/aplicacion-08-circuito.svg",
+      "width": 730,
+      "height": 350,
+      "caption": "Aplicación 8: potencia disipada · p. 226",
+      "alt": "Resistores de 2 y 16 ohmios en serie. El resistor de 16 ohmios tiene una diferencia de potencial de 48 V.",
+      "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+      "original": false,
+      "redrawn": true,
+      "sourceSrc": "assets/fisica-capitulo-15/originales/aplicacion-08-circuito.webp",
+      "sourceSha256": "10cb716dd87499c6a9f2c3d78b453cb31dd465a06e4175a63a915d9a64e241c0",
+      "pdfPage": 223,
+      "printedPage": 226,
+      "sha256": "b86c7bd53ff63b687d499ea1ea8a1cab89e999920551bf2d9c3517ae57719a53",
+      "labels": [
+        "2 Ω",
+        "16 Ω",
+        "+  48 V  −",
+        "ε"
+      ],
+      "components": [
+        {
+          "type": "resistor",
+          "label": "2 Ω",
+          "ports": [
+            [
+              83,
+              109
+            ],
+            [
+              365,
+              109
+            ]
+          ]
+        },
+        {
+          "type": "resistor",
+          "label": "16 Ω",
+          "ports": [
+            [
+              365,
+              109
+            ],
+            [
+              647,
+              109
+            ]
+          ]
+        },
+        {
+          "type": "source",
+          "label": "ε",
+          "ports": [
+            [
+              83,
+              264
+            ],
+            [
+              647,
+              264
+            ]
+          ],
+          "positivePort": 0
+        }
+      ],
+      "model": {}
+    },
+    {
+      "id": "aplicacion-09-ramal",
+      "src": "assets/fisica-capitulo-15/lineales/aplicacion-09-ramal.svg",
+      "width": 930,
+      "height": 260,
+      "caption": "Aplicación 9: ramal eléctrico · p. 227",
+      "alt": "Ramal de a hacia b con resistor de 5 ohmios, fuente de 12 V con positivo a la derecha, resistor de 2 ohmios y fuente de 8 V con positivo a la izquierda.",
+      "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+      "original": false,
+      "redrawn": true,
+      "sourceSrc": "assets/fisica-capitulo-15/originales/aplicacion-09-ramal.webp",
+      "sourceSha256": "f357f5e60822ed9ac528dfc04964eb81425829a82639c3850024a737ea9018fa",
+      "pdfPage": 224,
+      "printedPage": 227,
+      "sha256": "729a9f15e12337179fa45d12bf823bed8486aa2cdc17f2fc6157ac458d7d6fb2",
+      "labels": [
+        "5 Ω",
+        "12 V",
+        "2 Ω",
+        "8 V",
+        "a",
+        "b",
+        "I"
+      ],
+      "components": [
+        {
+          "type": "resistor",
+          "label": "5 Ω",
+          "ports": [
+            [
+              93,
+              141
+            ],
+            [
+              303,
+              141
+            ]
+          ]
+        },
+        {
+          "type": "source",
+          "label": "12 V",
+          "ports": [
+            [
+              303,
+              141
+            ],
+            [
+              450,
+              141
+            ]
+          ],
+          "positivePort": 1
+        },
+        {
+          "type": "resistor",
+          "label": "2 Ω",
+          "ports": [
+            [
+              450,
+              141
+            ],
+            [
+              647,
+              141
+            ]
+          ]
+        },
+        {
+          "type": "source",
+          "label": "8 V",
+          "ports": [
+            [
+              647,
+              141
+            ],
+            [
+              807,
+              141
+            ]
+          ],
+          "positivePort": 0
+        }
+      ],
+      "model": {}
+    },
+    {
+      "id": "aplicacion-09-polaridades",
+      "src": "assets/fisica-capitulo-15/lineales/aplicacion-09-polaridades.svg",
+      "width": 930,
+      "height": 260,
+      "caption": "Aplicación 9: signos de las diferencias de potencial · p. 227",
+      "alt": "Ramal de a hacia b con la corriente I y las polaridades anotadas en los dos resistores y en las fuentes de 12 y 8 V.",
+      "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+      "original": false,
+      "redrawn": true,
+      "sourceSrc": "assets/fisica-capitulo-15/originales/aplicacion-09-polaridades.webp",
+      "sourceSha256": "62113b84b9d3a2526bbd837d22e4c3e5ebed76963b142366bdc06d862e76c1f7",
+      "pdfPage": 224,
+      "printedPage": 227,
+      "sha256": "3afe67e7d8b1f921bcda6a6ac8461fe0c8ff2fb942f6926a495891575a9ae130",
+      "labels": [
+        "5 Ω",
+        "−",
+        "+",
+        "12 V",
+        "2 Ω",
+        "+",
+        "−",
+        "8 V",
+        "a",
+        "b",
+        "+",
+        "−",
+        "+",
+        "−",
+        "I"
+      ],
+      "components": [
+        {
+          "type": "resistor",
+          "label": "5 Ω",
+          "ports": [
+            [
+              93,
+              141
+            ],
+            [
+              303,
+              141
+            ]
+          ]
+        },
+        {
+          "type": "source",
+          "label": "12 V",
+          "ports": [
+            [
+              303,
+              141
+            ],
+            [
+              450,
+              141
+            ]
+          ],
+          "positivePort": 1
+        },
+        {
+          "type": "resistor",
+          "label": "2 Ω",
+          "ports": [
+            [
+              450,
+              141
+            ],
+            [
+              647,
+              141
+            ]
+          ]
+        },
+        {
+          "type": "source",
+          "label": "8 V",
+          "ports": [
+            [
+              647,
+              141
+            ],
+            [
+              807,
+              141
+            ]
+          ],
+          "positivePort": 0
+        }
+      ],
+      "model": {}
+    },
+    {
+      "id": "aplicacion-10-instrumentos",
+      "src": "assets/fisica-capitulo-15/lineales/aplicacion-10-instrumentos.svg",
+      "width": 780,
+      "height": 390,
+      "caption": "Aplicación 10: voltímetro y potencia de la fuente · p. 227",
+      "alt": "Fuente V conectada a resistores de 4, 6 y 5 ohmios en serie. Amperímetro en la rama superior y voltímetro en paralelo con el resistor de 6 ohmios.",
+      "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+      "original": false,
+      "redrawn": true,
+      "sourceSrc": "assets/fisica-capitulo-15/originales/aplicacion-10-instrumentos.webp",
+      "sourceSha256": "7325b74cd77b899f1f70f2257c0c10f95cfd36ab9b59ee2c5c1e1bd693fb5974",
+      "pdfPage": 224,
+      "printedPage": 227,
+      "sha256": "f01f664c0f74d6139f52aaa49de442fa12f51de3f548663d7c4a69aa49a67519",
+      "labels": [
+        "V",
+        "4 Ω",
+        "A",
+        "6 Ω",
+        "5 Ω",
+        "V"
+      ],
+      "components": [
+        {
+          "type": "source",
+          "label": "V",
+          "ports": [
+            [
+              143,
+              91
+            ],
+            [
+              143,
+              299
+            ]
+          ],
+          "positivePort": 0
+        },
+        {
+          "type": "resistor",
+          "label": "4 Ω",
+          "ports": [
+            [
+              143,
+              91
+            ],
+            [
+              405,
+              91
+            ]
+          ]
+        },
+        {
+          "type": "instrument",
+          "label": "A",
+          "ports": [
+            [
+              405,
+              91
+            ],
+            [
+              535,
+              91
+            ]
+          ]
+        },
+        {
+          "type": "resistor",
+          "label": "6 Ω",
+          "ports": [
+            [
+              623,
+              91
+            ],
+            [
+              623,
+              299
+            ]
+          ]
+        },
+        {
+          "type": "resistor",
+          "label": "5 Ω",
+          "ports": [
+            [
+              143,
+              299
+            ],
+            [
+              623,
+              299
+            ]
+          ]
+        },
+        {
+          "type": "instrument",
+          "label": "V",
+          "ports": [
+            [
+              559,
+              91
+            ],
+            [
+              559,
+              299
+            ]
+          ]
+        }
+      ],
+      "model": {}
+    },
+    {
+      "id": "aplicacion-10-sin-instrumentos",
+      "src": "assets/fisica-capitulo-15/lineales/aplicacion-10-sin-instrumentos.svg",
+      "width": 780,
+      "height": 390,
+      "caption": "Aplicación 10: circuito sin instrumentos · p. 227",
+      "alt": "Circuito con resistores de 4, 6 y 5 ohmios. Los puntos a y b delimitan el resistor de 6 ohmios por el que circula I.",
+      "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+      "original": false,
+      "redrawn": true,
+      "sourceSrc": "assets/fisica-capitulo-15/originales/aplicacion-10-sin-instrumentos.webp",
+      "sourceSha256": "de37040675c0067d51d049cd3ab2ee21406dcf0014c0056a0165bd9036a9c4bf",
+      "pdfPage": 224,
+      "printedPage": 227,
+      "sha256": "4227dc579fad139246648d279ccb5d50310eda12276531b651e45d3555cd460d",
+      "labels": [
+        "V",
+        "4 Ω",
+        "6 Ω",
+        "5 Ω",
+        "a",
+        "b",
+        "I"
+      ],
+      "components": [
+        {
+          "type": "source",
+          "label": "V",
+          "ports": [
+            [
+              143,
+              91
+            ],
+            [
+              143,
+              299
+            ]
+          ],
+          "positivePort": 0
+        },
+        {
+          "type": "resistor",
+          "label": "4 Ω",
+          "ports": [
+            [
+              143,
+              91
+            ],
+            [
+              433,
+              91
+            ]
+          ]
+        },
+        {
+          "type": "resistor",
+          "label": "6 Ω",
+          "ports": [
+            [
+              623,
+              91
+            ],
+            [
+              623,
+              299
+            ]
+          ]
+        },
+        {
+          "type": "resistor",
+          "label": "5 Ω",
+          "ports": [
+            [
+              143,
+              299
+            ],
+            [
+              623,
+              299
+            ]
+          ]
+        }
+      ],
+      "model": {}
+    },
+    {
+      "id": "aplicacion-10-equivalente",
+      "src": "assets/fisica-capitulo-15/lineales/aplicacion-10-equivalente.svg",
+      "width": 780,
+      "height": 390,
+      "caption": "Aplicación 10: resistencia equivalente · p. 228",
+      "alt": "Fuente V conectada a un único resistor equivalente de 15 ohmios, con corriente I.",
+      "credit": "Redibujo lineal · SIN LÍMITES · Fuente: Física, Lumbreras Editores (2021)",
+      "original": false,
+      "redrawn": true,
+      "sourceSrc": "assets/fisica-capitulo-15/originales/aplicacion-10-equivalente.webp",
+      "sourceSha256": "94aaa3fa6c5867dabbc95a85acfb70203c3774b3856d58e48997aad43545d190",
+      "pdfPage": 225,
+      "printedPage": 228,
+      "sha256": "cd68ab01053ce98c3a389d7fff421d3924a116a1de74167d2731d490b98c86da",
+      "labels": [
+        "V",
+        "15 Ω = R_eq",
+        "I"
+      ],
+      "components": [
+        {
+          "type": "source",
+          "label": "V",
+          "ports": [
+            [
+              143,
+              91
+            ],
+            [
+              143,
+              299
+            ]
+          ],
+          "positivePort": 0
+        },
+        {
+          "type": "resistor",
+          "label": "15 Ω = R_eq",
+          "ports": [
+            [
+              510,
+              91
+            ],
+            [
+              510,
+              299
+            ]
+          ]
+        }
+      ],
+      "model": {}
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="830" height="305" viewBox="0 0 830 305" role="img" aria-labelledby="title desc">
+<title id="title">Componentes de un circuito eléctrico</title>
+<desc id="desc">Circuito formado por una fuente, un interruptor cerrado y un foco encendido, con las etiquetas del PDF. Redibujo lineal sobre fondo blanco, basado en la página 223 del PDF proporcionado.</desc>
+<defs>
+  <pattern id="hatch" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M-3,3 L3,-3 M0,12 L12,0 M9,15 L15,9" fill="none" stroke="#172630" stroke-width="1"/></pattern>
+  <pattern id="hatch2" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M0,0 L16,16" fill="none" stroke="#172630" stroke-width="1"/></pattern>
+</defs>
+<rect id="background" width="830" height="305" fill="#ffffff"/>
+<g fill="none" stroke="#172630" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+<style>text{fill:#172630;stroke:none;font-family:'DejaVu Sans',Arial,sans-serif}</style>
+<polyline points="102,191 66,191 66,64 754,64 754,191 674,191"/>
+<rect x="102" y="169" width="141" height="48" rx="12" fill="none"/>
+<line x1="130" y1="169" x2="130" y2="217"/>
+<text x="103" y="155" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="26" text-anchor="middle">+</text>
+<text x="241" y="155" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="26" text-anchor="middle">−</text>
+<line x1="243" y1="191" x2="369" y2="191"/>
+<line x1="369" y1="191" x2="434.45" y2="148.65"/>
+<circle cx="369" cy="191" r="4" fill="#ffffff"/>
+<circle cx="446" cy="191" r="4" fill="#ffffff"/>
+<path d="M397,123 Q443,115 455,160" fill="none"/>
+<line x1="452" y1="150" x2="455" y2="166"/>
+<path d="M455,166 L456.83,157.52 L450.22,158.76 Z" fill="#172630" stroke="none"/>
+<line x1="446" y1="191" x2="646" y2="191"/>
+<path d="M643,174 C643,158 629,152 629,132 A31,31 0 0 1 691,132 C691,152 677,158 677,174" fill="none"/>
+<polyline points="646,174 646,191 674,191 674,174 646,174"/>
+<line x1="646" y1="178" x2="674" y2="178" stroke-width="1.6"/>
+<line x1="646" y1="184" x2="674" y2="184" stroke-width="1.6"/>
+<polyline points="653,173 648,137 660,147 672,137 667,173"/>
+<line x1="703.0" y1="134.0" x2="718.0" y2="134.0" stroke-width="1.6"/>
+<line x1="697.2390923627308" y1="155.5" x2="710.2294734194975" y2="163.0" stroke-width="1.6"/>
+<line x1="622.7609076372692" y1="155.5" x2="609.7705265805025" y2="163.0" stroke-width="1.6"/>
+<line x1="617.0" y1="134.0" x2="602.0" y2="134.0" stroke-width="1.6"/>
+<line x1="622.7609076372692" y1="112.5" x2="609.7705265805025" y2="105.0" stroke-width="1.6"/>
+<line x1="638.5" y1="96.76090763726916" x2="631.0" y2="83.77052658050258" stroke-width="1.6"/>
+<line x1="660.0" y1="91.0" x2="660.0" y2="76.0" stroke-width="1.6"/>
+<line x1="681.5" y1="96.76090763726914" x2="689.0" y2="83.77052658050256" stroke-width="1.6"/>
+<line x1="697.2390923627308" y1="112.49999999999999" x2="710.2294734194975" y2="104.99999999999997" stroke-width="1.6"/>
+<text x="172" y="263" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="25" text-anchor="middle">Fuente</text>
+<text x="408" y="263" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="25" text-anchor="middle">Interruptor</text>
+<text x="663" y="263" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="25" text-anchor="middle">Foco</text>
+</g>
+</svg>

@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="390" viewBox="0 0 780 390" role="img" aria-labelledby="title desc">
+<title id="title">Aplicación 10: voltímetro y potencia de la fuente</title>
+<desc id="desc">Fuente V conectada a resistores de 4, 6 y 5 ohmios en serie. Amperímetro en la rama superior y voltímetro en paralelo con el resistor de 6 ohmios. Redibujo lineal sobre fondo blanco, basado en la página 227 del PDF proporcionado.</desc>
+<defs>
+  <pattern id="hatch" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M-3,3 L3,-3 M0,12 L12,0 M9,15 L15,9" fill="none" stroke="#172630" stroke-width="1"/></pattern>
+  <pattern id="hatch2" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M0,0 L16,16" fill="none" stroke="#172630" stroke-width="1"/></pattern>
+</defs>
+<rect id="background" width="780" height="390" fill="#ffffff"/>
+<g fill="none" stroke="#172630" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+<style>text{fill:#172630;stroke:none;font-family:'DejaVu Sans',Arial,sans-serif}</style>
+<line x1="143" y1="91" x2="143.0" y2="188.0"/>
+<line x1="143.0" y1="202.0" x2="143" y2="299"/>
+<line x1="170.0" y1="188.0" x2="116.0" y2="188.0"/>
+<line x1="157.0" y1="202.0" x2="129.0" y2="202.0"/>
+<text x="85.0" y="204.0" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" text-anchor="middle">V</text>
+<polyline points="143.0,91.0 231.0,91.0 235.3,80.0 243.9,102.0 252.5,80.0 261.1,102.0 269.7,80.0 278.3,102.0 286.9,80.0 295.5,102.0 304.1,80.0 312.7,102.0 317.0,91.0 405.0,91.0"/>
+<text x="274.0" y="62.0" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" text-anchor="middle">4 Ω</text>
+<line x1="405" y1="91" x2="443.0" y2="91.0"/>
+<line x1="497.0" y1="91.0" x2="535" y2="91"/>
+<circle cx="470.0" cy="91.0" r="27" fill="#ffffff"/>
+<text x="470.0" y="101.0" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="29" text-anchor="middle">A</text>
+<line x1="535" y1="91" x2="623" y2="91"/>
+<polyline points="623.0,91.0 623.0,152.0 634.0,156.3 612.0,164.9 634.0,173.5 612.0,182.1 634.0,190.7 612.0,199.3 634.0,207.9 612.0,216.5 634.0,225.1 612.0,233.7 623.0,238.0 623.0,299.0"/>
+<text x="685" y="205" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" text-anchor="middle">6 Ω</text>
+<polyline points="143.0,299.0 340.0,299.0 344.3,288.0 352.9,310.0 361.5,288.0 370.1,310.0 378.7,288.0 387.3,310.0 395.9,288.0 404.5,310.0 413.1,288.0 421.7,310.0 426.0,299.0 623.0,299.0"/>
+<text x="383" y="349" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" text-anchor="middle">5 Ω</text>
+<line x1="559" y1="91" x2="559.0" y2="168.0"/>
+<line x1="559.0" y1="222.0" x2="559" y2="299"/>
+<circle cx="559.0" cy="195.0" r="27" fill="#ffffff"/>
+<text x="559.0" y="205.0" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="29" text-anchor="middle">V</text>
+<circle cx="559" cy="91" r="4" fill="#172630"/>
+<circle cx="559" cy="299" r="4" fill="#172630"/>
+</g>
+</svg>

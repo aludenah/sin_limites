@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="850" height="410" viewBox="0 0 850 410" role="img" aria-labelledby="title desc">
+<title id="title">Aplicación 2: intensidad de corriente en función del tiempo</title>
+<desc id="desc">La corriente aumenta linealmente de 0,5 A en 0 s a 0,9 A en 0,2 s; luego permanece en 0,9 A hasta 1,4 s. Redibujo lineal sobre fondo blanco, basado en la página 219 del PDF proporcionado.</desc>
+<defs>
+  <pattern id="hatch" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M-3,3 L3,-3 M0,12 L12,0 M9,15 L15,9" fill="none" stroke="#172630" stroke-width="1"/></pattern>
+  <pattern id="hatch2" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M0,0 L16,16" fill="none" stroke="#172630" stroke-width="1"/></pattern>
+</defs>
+<rect id="background" width="850" height="410" fill="#ffffff"/>
+<g fill="none" stroke="#172630" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+<style>text{fill:#172630;stroke:none;font-family:'DejaVu Sans',Arial,sans-serif}</style>
+<line x1="100" y1="330" x2="100" y2="33"/>
+<path d="M100,33 L95.80,43.00 L104.20,43.00 Z" fill="#172630" stroke="none"/>
+<line x1="100" y1="330" x2="790" y2="330"/>
+<path d="M790,330 L780.00,325.80 L780.00,334.20 Z" fill="#172630" stroke="none"/>
+<text x="61" y="37" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="26" text-anchor="middle">I (A)</text>
+<text x="790" y="378" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="25" text-anchor="middle">t (s)</text>
+<text x="82" y="363" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" text-anchor="middle">0</text>
+<polyline points="100,187.5 190.0,73.5 730.0,73.5"/>
+<text x="79" y="195.5" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" text-anchor="end">0,5</text>
+<text x="79" y="81.5" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" text-anchor="end">0,9</text>
+<line x1="100" y1="73.5" x2="190.0" y2="73.5" stroke-dasharray="7 7" stroke-width="1.6"/>
+<line x1="190.0" y1="73.5" x2="190.0" y2="330" stroke-dasharray="7 7" stroke-width="1.6"/>
+<text x="190.0" y="363" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" text-anchor="middle">0,2</text>
+<line x1="730.0" y1="73.5" x2="730.0" y2="330" stroke-dasharray="7 7" stroke-width="1.6"/>
+<text x="730.0" y="363" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="23" text-anchor="middle">1,4</text>
+</g>
+</svg>

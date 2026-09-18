@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="750" height="350" viewBox="0 0 750 350" role="img" aria-labelledby="title desc">
+<title id="title">Área en la gráfica de intensidad frente al tiempo</title>
+<desc id="desc">Gráfica I frente a t con el área A entre t1 y t2. El recuadro indica A igual al valor absoluto de Q. Redibujo lineal sobre fondo blanco, basado en la página 218 del PDF proporcionado.</desc>
+<defs>
+  <pattern id="hatch" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M-3,3 L3,-3 M0,12 L12,0 M9,15 L15,9" fill="none" stroke="#172630" stroke-width="1"/></pattern>
+  <pattern id="hatch2" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M0,0 L16,16" fill="none" stroke="#172630" stroke-width="1"/></pattern>
+</defs>
+<rect id="background" width="750" height="350" fill="#ffffff"/>
+<g fill="none" stroke="#172630" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+<style>text{fill:#172630;stroke:none;font-family:'DejaVu Sans',Arial,sans-serif}</style>
+<line x1="92" y1="285" x2="92" y2="44"/>
+<path d="M92,44 L87.80,54.00 L96.20,54.00 Z" fill="#172630" stroke="none"/>
+<line x1="92" y1="285" x2="463" y2="285"/>
+<path d="M463,285 L453.00,280.80 L453.00,289.20 Z" fill="#172630" stroke="none"/>
+<text x="54" y="41" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="26" text-anchor="middle">I (A)</text>
+<text x="490" y="313" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="26" text-anchor="middle">t (s)</text>
+<path d="M180,285 L180,162 C218,105 278,165 334,93 L334,285 Z" fill="url(#hatch)"/>
+<path d="M112,196 C134,177 153,178 180,162 C218,105 278,165 334,93 C348,80 359,62 370,51" fill="none"/>
+<line x1="180" y1="162" x2="180" y2="285" stroke-dasharray="7 7"/>
+<text x="180" y="321" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" text-anchor="middle">t₁</text>
+<line x1="334" y1="93" x2="334" y2="285" stroke-dasharray="7 7"/>
+<text x="334" y="321" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" text-anchor="middle">t₂</text>
+<rect x="231" y="193" width="56" height="42" rx="4" fill="#ffffff"/>
+<text x="259" y="223" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="29" text-anchor="middle">A</text>
+<rect x="526" y="133" width="179" height="67" rx="8" fill="none"/>
+<text x="615" y="177" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" text-anchor="middle">A = |Q|</text>
+</g>
+</svg>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="710" height="260" viewBox="0 0 710 260" role="img" aria-labelledby="title desc">
+<title id="title">Longitud y sección transversal de un conductor</title>
+<desc id="desc">Conductor cilíndrico de longitud L, área transversal A y resistividad rho. Redibujo lineal sobre fondo blanco, basado en la página 219 del PDF proporcionado.</desc>
+<defs>
+  <pattern id="hatch" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M-3,3 L3,-3 M0,12 L12,0 M9,15 L15,9" fill="none" stroke="#172630" stroke-width="1"/></pattern>
+  <pattern id="hatch2" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M0,0 L16,16" fill="none" stroke="#172630" stroke-width="1"/></pattern>
+</defs>
+<rect id="background" width="710" height="260" fill="#ffffff"/>
+<g fill="none" stroke="#172630" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+<style>text{fill:#172630;stroke:none;font-family:'DejaVu Sans',Arial,sans-serif}</style>
+<line x1="206" y1="57" x2="593" y2="57"/>
+<line x1="206" y1="46" x2="206" y2="68"/>
+<line x1="593" y1="46" x2="593" y2="68"/>
+<rect x="378" y="36" width="40" height="38" fill="#ffffff" stroke="none"/>
+<text x="398" y="66" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="30" text-anchor="middle">L</text>
+<ellipse cx="206" cy="160" rx="24" ry="60"/>
+<line x1="206" y1="100" x2="593" y2="100"/>
+<line x1="206" y1="220" x2="593" y2="220"/>
+<path d="M593,100 C627,100 627,220 593,220" fill="none"/>
+<path d="M593,100 C560,100 560,220 593,220" fill="none" stroke-dasharray="7 7"/>
+<polyline points="117,100 117,160 177,160"/>
+<line x1="158" y1="160" x2="197" y2="160"/>
+<path d="M197,160 L189.00,156.64 L189.00,163.36 Z" fill="#172630" stroke="none"/>
+<text x="117" y="88" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="30" text-anchor="middle">A</text>
+<text x="266" y="171" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="33" text-anchor="middle">ρ</text>
+</g>
+</svg>

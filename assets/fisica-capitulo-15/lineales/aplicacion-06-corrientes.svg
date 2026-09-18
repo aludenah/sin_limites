@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="430" viewBox="0 0 760 430" role="img" aria-labelledby="title desc">
+<title id="title">Aplicación 6: corrientes y nodo inferior</title>
+<desc id="desc">Circuito con I1 descendiendo por 8 ohmios, I2 por la rama de 4 ohmios e I saliendo del nodo inferior hacia el resistor de 2 ohmios. Redibujo lineal sobre fondo blanco, basado en la página 225 del PDF proporcionado.</desc>
+<defs>
+  <pattern id="hatch" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M-3,3 L3,-3 M0,12 L12,0 M9,15 L15,9" fill="none" stroke="#172630" stroke-width="1"/></pattern>
+  <pattern id="hatch2" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M0,0 L16,16" fill="none" stroke="#172630" stroke-width="1"/></pattern>
+</defs>
+<rect id="background" width="760" height="430" fill="#ffffff"/>
+<g fill="none" stroke="#172630" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+<style>text{fill:#172630;stroke:none;font-family:'DejaVu Sans',Arial,sans-serif}</style>
+<line x1="123" y1="81" x2="642" y2="81"/>
+<line x1="123" y1="81" x2="123.0" y2="194.0"/>
+<line x1="123.0" y1="208.0" x2="123" y2="321"/>
+<line x1="137.0" y1="194.0" x2="109.0" y2="194.0"/>
+<line x1="150.0" y1="208.0" x2="96.0" y2="208.0"/>
+<text x="65.0" y="210.0" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" text-anchor="middle">ε</text>
+<polyline points="123.0,321.0 233.5,321.0 237.8,310.0 246.4,332.0 255.0,310.0 263.6,332.0 272.2,310.0 280.8,332.0 289.4,310.0 298.0,332.0 306.6,310.0 315.2,332.0 319.5,321.0 430.0,321.0"/>
+<text x="265" y="370" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" text-anchor="middle">2 Ω</text>
+<line x1="430" y1="321" x2="642" y2="321"/>
+<polyline points="430.0,81.0 430.0,158.0 441.0,162.3 419.0,170.9 441.0,179.5 419.0,188.1 441.0,196.7 419.0,205.3 441.0,213.9 419.0,222.5 441.0,231.1 419.0,239.7 430.0,244.0 430.0,321.0"/>
+<text x="372" y="209" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" text-anchor="middle">8 Ω</text>
+<polyline points="642.0,81.0 642.0,158.0 653.0,162.3 631.0,170.9 653.0,179.5 631.0,188.1 653.0,196.7 631.0,205.3 653.0,213.9 631.0,222.5 653.0,231.1 631.0,239.7 642.0,244.0 642.0,321.0"/>
+<text x="703" y="209" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" text-anchor="middle">4 Ω</text>
+<circle cx="430" cy="81" r="4" fill="#172630"/>
+<circle cx="430" cy="321" r="4" fill="#172630"/>
+<circle cx="642" cy="81" r="4" fill="#172630"/>
+<circle cx="642" cy="321" r="4" fill="#172630"/>
+<text x="667" y="66" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" text-anchor="middle">A</text>
+<text x="667" y="355" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="28" text-anchor="middle">B</text>
+<line x1="452" y1="236" x2="452" y2="296"/>
+<path d="M452,296 L456.20,286.00 L447.80,286.00 Z" fill="#172630" stroke="none"/>
+<text x="482" y="278" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="26" text-anchor="middle">I₁</text>
+<line x1="614" y1="298" x2="518" y2="298"/>
+<path d="M518,298 L528.00,302.20 L528.00,293.80 Z" fill="#172630" stroke="none"/>
+<text x="563" y="279" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="26" text-anchor="middle">I₂</text>
+<line x1="398" y1="298" x2="329" y2="298"/>
+<path d="M329,298 L339.00,302.20 L339.00,293.80 Z" fill="#172630" stroke="none"/>
+<text x="362" y="278" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="26" text-anchor="middle">I</text>
+<polyline points="430,339 430,375 467,375"/>
+<text x="478" y="383" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" text-anchor="start">Nodo</text>
+</g>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="730" height="145" viewBox="0 0 730 145" role="img" aria-labelledby="title desc">
+<title id="title">Modelo del amperímetro ideal</title>
+<desc id="desc">Un amperímetro ideal equivale a un alambre conductor. Redibujo lineal sobre fondo blanco, basado en la página 224 del PDF proporcionado.</desc>
+<defs>
+  <pattern id="hatch" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M-3,3 L3,-3 M0,12 L12,0 M9,15 L15,9" fill="none" stroke="#172630" stroke-width="1"/></pattern>
+  <pattern id="hatch2" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M0,0 L16,16" fill="none" stroke="#172630" stroke-width="1"/></pattern>
+</defs>
+<rect id="background" width="730" height="145" fill="#ffffff"/>
+<g fill="none" stroke="#172630" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+<style>text{fill:#172630;stroke:none;font-family:'DejaVu Sans',Arial,sans-serif}</style>
+<line x1="53" y1="73" x2="151.5" y2="73.0"/>
+<line x1="205.5" y1="73.0" x2="304" y2="73"/>
+<circle cx="178.5" cy="73.0" r="27" fill="#ffffff"/>
+<text x="178.5" y="83.0" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="29" text-anchor="middle">A</text>
+<circle cx="53" cy="73" r="4" fill="#172630"/>
+<circle cx="304" cy="73" r="4" fill="#172630"/>
+<line x1="341" y1="73" x2="387" y2="73"/>
+<path d="M387,73 L378.00,69.22 L378.00,76.78 Z" fill="#172630" stroke="none"/>
+<path d="M341,73 L350.00,76.78 L350.00,69.22 Z" fill="#172630" stroke="none"/>
+<line x1="432" y1="73" x2="677" y2="73"/>
+</g>
+</svg>

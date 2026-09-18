@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="810" height="215" viewBox="0 0 810 215" role="img" aria-labelledby="title desc">
+<title id="title">Modelo del voltímetro ideal</title>
+<desc id="desc">La rama del voltímetro ideal equivale a una rama abierta. Redibujo lineal sobre fondo blanco, basado en la página 224 del PDF proporcionado.</desc>
+<defs>
+  <pattern id="hatch" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M-3,3 L3,-3 M0,12 L12,0 M9,15 L15,9" fill="none" stroke="#172630" stroke-width="1"/></pattern>
+  <pattern id="hatch2" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M0,0 L16,16" fill="none" stroke="#172630" stroke-width="1"/></pattern>
+</defs>
+<rect id="background" width="810" height="215" fill="#ffffff"/>
+<g fill="none" stroke="#172630" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+<style>text{fill:#172630;stroke:none;font-family:'DejaVu Sans',Arial,sans-serif}</style>
+<polyline points="64,151 64,80 98,80"/>
+<line x1="98" y1="80" x2="163.0" y2="80.0"/>
+<line x1="217.0" y1="80.0" x2="282" y2="80"/>
+<circle cx="190.0" cy="80.0" r="27" fill="#ffffff"/>
+<text x="190.0" y="90.0" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="29" text-anchor="middle">V</text>
+<polyline points="282,80 315,80 315,151"/>
+<circle cx="64" cy="151" r="4" fill="#172630"/>
+<circle cx="315" cy="151" r="4" fill="#172630"/>
+<line x1="377" y1="89" x2="423" y2="89"/>
+<path d="M423,89 L414.00,85.22 L414.00,92.78 Z" fill="#172630" stroke="none"/>
+<path d="M377,89 L386.00,92.78 L386.00,85.22 Z" fill="#172630" stroke="none"/>
+<polyline points="489,151 489,80 580,80"/>
+<polyline points="643,80 746,80 746,151"/>
+<circle cx="580" cy="80" r="3" fill="#ffffff"/>
+<circle cx="643" cy="80" r="3" fill="#ffffff"/>
+<circle cx="489" cy="151" r="4" fill="#172630"/>
+<circle cx="746" cy="151" r="4" fill="#172630"/>
+</g>
+</svg>

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="930" height="390" viewBox="0 0 930 390" role="img" aria-labelledby="title desc">
+<title id="title">Circuito en serie y resistor equivalente</title>
+<desc id="desc">Tres resistores en serie con corrientes I1, I2 e I3 y voltajes V1, V2 y V3. A la derecha, el resistor equivalente conectado a la misma fuente V. Redibujo lineal sobre fondo blanco, basado en la página 221 del PDF proporcionado.</desc>
+<defs>
+  <pattern id="hatch" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M-3,3 L3,-3 M0,12 L12,0 M9,15 L15,9" fill="none" stroke="#172630" stroke-width="1"/></pattern>
+  <pattern id="hatch2" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M0,0 L16,16" fill="none" stroke="#172630" stroke-width="1"/></pattern>
+</defs>
+<rect id="background" width="930" height="390" fill="#ffffff"/>
+<g fill="none" stroke="#172630" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+<style>text{fill:#172630;stroke:none;font-family:'DejaVu Sans',Arial,sans-serif}</style>
+<polyline points="55.0,117.0 97.0,117.0 101.3,106.0 109.9,128.0 118.5,106.0 127.1,128.0 135.7,106.0 144.3,128.0 152.9,106.0 161.5,128.0 170.1,106.0 178.7,128.0 183.0,117.0 225.0,117.0"/>
+<text x="140.0" y="84" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" text-anchor="middle">R₁</text>
+<line x1="60" y1="49" x2="129" y2="49"/>
+<path d="M129,49 L121.00,45.64 L121.00,52.36 Z" fill="#172630" stroke="none"/>
+<text x="94" y="35" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" text-anchor="middle">I₁</text>
+<text x="140.0" y="168" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="25" text-anchor="middle">+  V₁  −</text>
+<polyline points="225.0,117.0 267.0,117.0 271.3,106.0 279.9,128.0 288.5,106.0 297.1,128.0 305.7,106.0 314.3,128.0 322.9,106.0 331.5,128.0 340.1,106.0 348.7,128.0 353.0,117.0 395.0,117.0"/>
+<text x="310.0" y="84" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" text-anchor="middle">R₂</text>
+<line x1="230" y1="49" x2="299" y2="49"/>
+<path d="M299,49 L291.00,45.64 L291.00,52.36 Z" fill="#172630" stroke="none"/>
+<text x="264" y="35" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" text-anchor="middle">I₂</text>
+<text x="310.0" y="168" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="25" text-anchor="middle">+  V₂  −</text>
+<polyline points="395.0,117.0 437.0,117.0 441.3,106.0 449.9,128.0 458.5,106.0 467.1,128.0 475.7,106.0 484.3,128.0 492.9,106.0 501.5,128.0 510.1,106.0 518.7,128.0 523.0,117.0 565.0,117.0"/>
+<text x="480.0" y="84" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" text-anchor="middle">R₃</text>
+<line x1="400" y1="49" x2="469" y2="49"/>
+<path d="M469,49 L461.00,45.64 L461.00,52.36 Z" fill="#172630" stroke="none"/>
+<text x="434" y="35" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="24" text-anchor="middle">I₃</text>
+<text x="480.0" y="168" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="25" text-anchor="middle">+  V₃  −</text>
+<line x1="55" y1="117" x2="55" y2="287"/>
+<line x1="565" y1="117" x2="565" y2="287"/>
+<line x1="55" y1="287" x2="303.0" y2="287.0"/>
+<line x1="317.0" y1="287.0" x2="565" y2="287"/>
+<line x1="303.0" y1="260.0" x2="303.0" y2="314.0"/>
+<line x1="317.0" y1="273.0" x2="317.0" y2="301.0"/>
+<text x="310.0" y="344.0" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" text-anchor="middle">V</text>
+<line x1="83" y1="263" x2="83" y2="201"/>
+<path d="M83,201 L78.80,211.00 L87.20,211.00 Z" fill="#172630" stroke="none"/>
+<text x="108" y="241" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="26" text-anchor="middle">I</text>
+<line x1="601" y1="194" x2="647" y2="194"/>
+<path d="M647,194 L638.00,190.22 L638.00,197.78 Z" fill="#172630" stroke="none"/>
+<path d="M601,194 L610.00,197.78 L610.00,190.22 Z" fill="#172630" stroke="none"/>
+<polyline points="698.0,117.0 739.0,117.0 743.3,106.0 751.9,128.0 760.5,106.0 769.1,128.0 777.7,106.0 786.3,128.0 794.9,106.0 803.5,128.0 812.1,106.0 820.7,128.0 825.0,117.0 866.0,117.0"/>
+<text x="782.0" y="88.0" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" text-anchor="middle">R<tspan font-size="70%" baseline-shift="sub">eq</tspan></text>
+<text x="741" y="168" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="25" text-anchor="middle">+</text>
+<text x="823" y="168" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="25" text-anchor="middle">−</text>
+<line x1="698" y1="117" x2="698" y2="287"/>
+<line x1="866" y1="117" x2="866" y2="287"/>
+<line x1="698" y1="287" x2="775.0" y2="287.0"/>
+<line x1="789.0" y1="287.0" x2="866" y2="287"/>
+<line x1="775.0" y1="260.0" x2="775.0" y2="314.0"/>
+<line x1="789.0" y1="273.0" x2="789.0" y2="301.0"/>
+<text x="782.0" y="344.0" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" text-anchor="middle">V</text>
+<line x1="725" y1="263" x2="725" y2="201"/>
+<path d="M725,201 L720.80,211.00 L729.20,211.00 Z" fill="#172630" stroke="none"/>
+<text x="750" y="241" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="26" text-anchor="middle">I</text>
+</g>
+</svg>

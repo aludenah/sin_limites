@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="790" height="290" viewBox="0 0 790 290" role="img" aria-labelledby="title desc">
+<title id="title">Representación gráfica del circuito</title>
+<desc id="desc">Esquema con fuente, interruptor, resistor y una trayectoria cerrada marcada con la intensidad I. Redibujo lineal sobre fondo blanco, basado en la página 223 del PDF proporcionado.</desc>
+<defs>
+  <pattern id="hatch" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M-3,3 L3,-3 M0,12 L12,0 M9,15 L15,9" fill="none" stroke="#172630" stroke-width="1"/></pattern>
+  <pattern id="hatch2" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M0,0 L16,16" fill="none" stroke="#172630" stroke-width="1"/></pattern>
+</defs>
+<rect id="background" width="790" height="290" fill="#ffffff"/>
+<g fill="none" stroke="#172630" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+<style>text{fill:#172630;stroke:none;font-family:'DejaVu Sans',Arial,sans-serif}</style>
+<polyline points="73,211 73,65 713,65 713,211 641,211"/>
+<line x1="73" y1="211" x2="173.0" y2="211.0"/>
+<line x1="187.0" y1="211.0" x2="287" y2="211"/>
+<line x1="173.0" y1="184.0" x2="173.0" y2="238.0"/>
+<line x1="187.0" y1="197.0" x2="187.0" y2="225.0"/>
+<line x1="287" y1="211" x2="354" y2="211"/>
+<line x1="354" y1="211" x2="405.0" y2="178.0"/>
+<circle cx="354" cy="211" r="4" fill="#ffffff"/>
+<circle cx="414" cy="211" r="4" fill="#ffffff"/>
+<line x1="414" y1="211" x2="468" y2="211"/>
+<polyline points="468.0,211.0 511.5,211.0 515.8,200.0 524.4,222.0 533.0,200.0 541.6,222.0 550.2,200.0 558.8,222.0 567.4,200.0 576.0,222.0 584.6,200.0 593.2,222.0 597.5,211.0 641.0,211.0"/>
+<text x="396" y="124" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="26" text-anchor="middle">Trayectoria</text>
+<text x="396" y="156" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="26" text-anchor="middle">cerrada</text>
+<path d="M372,172 Q401,170 412,195" fill="none"/>
+<line x1="408" y1="187" x2="413" y2="199"/>
+<path d="M413,199 L413.02,191.41 L407.59,193.67 Z" fill="#172630" stroke="none"/>
+<line x1="739" y1="89" x2="739" y2="154"/>
+<path d="M739,154 L743.20,144.00 L734.80,144.00 Z" fill="#172630" stroke="none"/>
+<text x="760" y="129" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" text-anchor="middle">I</text>
+</g>
+</svg>

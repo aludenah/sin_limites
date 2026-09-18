@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="730" height="350" viewBox="0 0 730 350" role="img" aria-labelledby="title desc">
+<title id="title">Aplicación 8: potencia disipada</title>
+<desc id="desc">Resistores de 2 y 16 ohmios en serie. El resistor de 16 ohmios tiene una diferencia de potencial de 48 V. Redibujo lineal sobre fondo blanco, basado en la página 226 del PDF proporcionado.</desc>
+<defs>
+  <pattern id="hatch" width="12" height="12" patternUnits="userSpaceOnUse"><path d="M-3,3 L3,-3 M0,12 L12,0 M9,15 L15,9" fill="none" stroke="#172630" stroke-width="1"/></pattern>
+  <pattern id="hatch2" width="16" height="16" patternUnits="userSpaceOnUse"><path d="M0,0 L16,16" fill="none" stroke="#172630" stroke-width="1"/></pattern>
+</defs>
+<rect id="background" width="730" height="350" fill="#ffffff"/>
+<g fill="none" stroke="#172630" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+<style>text{fill:#172630;stroke:none;font-family:'DejaVu Sans',Arial,sans-serif}</style>
+<polyline points="83.0,109.0 181.0,109.0 185.3,98.0 193.9,120.0 202.5,98.0 211.1,120.0 219.7,98.0 228.3,120.0 236.9,98.0 245.5,120.0 254.1,98.0 262.7,120.0 267.0,109.0 365.0,109.0"/>
+<text x="224.0" y="80.0" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" text-anchor="middle">2 Ω</text>
+<polyline points="365.0,109.0 463.0,109.0 467.3,98.0 475.9,120.0 484.5,98.0 493.1,120.0 501.7,98.0 510.3,120.0 518.9,98.0 527.5,120.0 536.1,98.0 544.7,120.0 549.0,109.0 647.0,109.0"/>
+<text x="506.0" y="80.0" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" text-anchor="middle">16 Ω</text>
+<text x="506" y="166" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" text-anchor="middle">+  48 V  −</text>
+<line x1="83" y1="109" x2="83" y2="264"/>
+<line x1="647" y1="109" x2="647" y2="264"/>
+<line x1="83" y1="264" x2="358.0" y2="264.0"/>
+<line x1="372.0" y1="264.0" x2="647" y2="264"/>
+<line x1="358.0" y1="237.0" x2="358.0" y2="291.0"/>
+<line x1="372.0" y1="250.0" x2="372.0" y2="278.0"/>
+<text x="365.0" y="321.0" fill="#172630" stroke="none" font-family="DejaVu Sans,Arial,sans-serif" font-size="27" text-anchor="middle">ε</text>
+</g>
+</svg>
