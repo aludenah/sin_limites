@@ -20,11 +20,12 @@ const LANGUAGE_CHAPTERS=window.LANGUAGE_CHAPTERS||[];
 const HISTORY_CHAPTERS=window.HISTORY_CHAPTERS||[];
 const PERU_CHAPTERS=window.PERU_CHAPTERS||[];
 const SOCIAL_COURSES={
+  2:{name:'Razonamiento Matemático',prefix:'razonamiento-matematico',chapters:window.MATH_REASONING_CHAPTERS||[],syllabus:window.MATH_REASONING_SYLLABUS||[]},
   1:{name:'Razonamiento Verbal',prefix:'razonamiento-verbal',chapters:window.VERBAL_CHAPTERS||[],syllabus:window.VERBAL_SYLLABUS||[]},
   10:{name:'Educación Cívica',prefix:'educacion-civica',chapters:window.CIVICS_CHAPTERS||[],syllabus:window.CIVICS_SYLLABUS||[]},
   14:{name:'Economía',prefix:'economia',chapters:window.ECONOMY_CHAPTERS||[],syllabus:window.ECONOMY_SYLLABUS||[]}
 };
-const CATALOG_VERSION=7;
+const CATALOG_VERSION=8;
 const CATEGORIES=['Todos',...new Set(COURSES.map(c=>c.category))];
 const TAB_INFO={
   Teoría:{icon:'book-open',title:'Teoría del capítulo',text:'Aquí se incorporará el desarrollo conceptual, definiciones, propiedades, ejemplos y fórmulas esenciales de este capítulo.'},
@@ -48,6 +49,11 @@ const esc=v=>String(v??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replac
 const clamp=(value,min,max)=>Math.min(Math.max(Number(value)||0,min),max);
 
 function restoredTopicIndex(course,index,topicName,catalogVersion){
+  // Catalog 8 aligns mathematical reasoning with the supplied Lumbreras volume.
+  if(course.id===2&&!(Number(catalogVersion)>=8)){
+    const previous=[22,1,4,3,0,5,1,16,9,13,11,20,14,15,17,20,19,19,19,19,23,1,2,6];
+    return previous[clamp(index,0,23)];
+  }
   // Catalog 7 replaces the Habilidad Verbal outline with the supplied Razonamiento Verbal volume.
   if(course.id===1&&!(Number(catalogVersion)>=7)){
     const previous=[13,12,7,5,5,5,5,6,6,6,6,0,0,0,0,7,7,7,7,7,7,7,7,7];
@@ -295,7 +301,7 @@ function renderCatalog(){
 
 function specialHistoryContent(course){
   const social=SOCIAL_COURSES[course.id],chapter=social?.chapters.find(c=>c.number===state.activeTopicIndex+1);
-  if(chapter)return `<section class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8"><p class="text-xs font-bold uppercase tracking-wider text-red-600">Capítulo ${chapter.number} de ${social.syllabus.length} · Contenido desarrollado</p><h2 class="mt-3 text-3xl font-black text-blue-950">${esc(chapter.title)}</h2><p class="mt-4 text-slate-600">${esc(chapter.intro)}</p><p class="mt-3 text-sm text-slate-500">Teoría por temas · imágenes referenciales ampliables · práctica de 10 problemas con explicación</p><a href="${chapter.progressId}.html?v=20260918-social1" class="inline-flex mt-6 rounded-xl bg-blue-950 px-5 py-3 text-sm font-bold text-white">Estudiar el capítulo →</a></section>`;
+  if(chapter)return `<section class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8"><p class="text-xs font-bold uppercase tracking-wider text-red-600">Capítulo ${chapter.number} de ${social.syllabus.length} · Contenido desarrollado</p><h2 class="mt-3 text-3xl font-black text-blue-950">${esc(chapter.title)}</h2><p class="mt-4 text-slate-600">${esc(chapter.intro)}</p><p class="mt-3 text-sm text-slate-500">Teoría por temas · ${course.id===2?'figuras matemáticas en los enunciados':'imágenes referenciales ampliables'} · práctica de 10 problemas con explicación</p><a href="${chapter.progressId}.html?v=20260918-social1" class="inline-flex mt-6 rounded-xl bg-blue-950 px-5 py-3 text-sm font-bold text-white">Estudiar el capítulo →</a></section>`;
   if(course.id===7&&state.activeTopicIndex>=0&&state.activeTopicIndex<6){
     const c=LANGUAGE_CHAPTERS.find(h=>h.number===state.activeTopicIndex+1);
     if(c)return `<section class="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8"><p class="text-xs font-bold uppercase tracking-wider text-red-600">Capítulo ${c.number} de ${window.LANGUAGE_SYLLABUS.length} · Contenido desarrollado</p><h2 class="mt-3 text-3xl font-black text-blue-950">${esc(c.title)}</h2><p class="mt-4 text-slate-600">${esc(c.intro)}</p><p class="mt-3 text-sm text-slate-500">Teoría por temas · imágenes ampliables · práctica de 10 problemas con explicación</p><a href="lenguaje-capitulo-${String(c.number).padStart(2,'0')}.html?v=20260918-social1" class="inline-flex mt-6 rounded-xl bg-blue-950 px-5 py-3 text-sm font-bold text-white">Estudiar el capítulo →</a></section>`;

@@ -5887,3 +5887,1168 @@ Object.assign(window.CHAPTER_PRACTICES,{
     ]
   }
 });
+
+// RAZONAMIENTO_MATEMATICO_1_6
+Object.assign(window.CHAPTER_PRACTICES,{
+  "razonamiento-matematico-capitulo-01": {
+    "title": "Elementos recreativos",
+    "problems": [
+      {
+        "id": "p01",
+        "prompt": "La figura está formada por cinco cuadrados iguales en una fila. Cada lado es un cerillo y los cuadrados vecinos comparten un lado. ¿Cuántos cerillos hay?",
+        "options": [
+          "20 cerillos",
+          "17 cerillos",
+          "15 cerillos",
+          "16 cerillos",
+          "21 cerillos"
+        ],
+        "answer": 3,
+        "solution": "<p>El primer cuadrado aporta 4 y cada uno de los otros cuatro aporta 3. Entonces \\(4+4\\times3=16\\). Los lados comunes se cuentan una sola vez.</p>",
+        "figure": {
+          "src": "assets/razonamiento-matematico-figuras/c01-p01-cerillos.svg",
+          "alt": "5 cuadrados iguales en una fila. Dos cuadrados vecinos comparten exactamente un cerillo.",
+          "caption": "Fila de 5 cuadrados",
+          "width": 690,
+          "height": 240,
+          "credit": "Esquema matemático · SIN LÍMITES"
+        },
+        "topic": "Cerillos compartidos"
+      },
+      {
+        "id": "p02",
+        "prompt": "En la igualdad de cerillos, mueve exactamente un cerillo. Debes conservar tres dígitos de siete segmentos, un signo + o − y el signo =. ¿Qué igualdad puedes obtener?",
+        "options": [
+          "6 + 4 = 9",
+          "8 − 4 = 6",
+          "9 − 4 = 5",
+          "8 − 4 = 4",
+          "6 − 4 = 2"
+        ],
+        "answer": 3,
+        "solution": "<p>Retira el cerillo vertical del signo +: queda −. Colócalo en el segmento superior derecho del 6: se convierte en 8. El resultado es 8 − 4 = 4 y se ha movido una sola pieza.</p>",
+        "figure": {
+          "src": "assets/razonamiento-matematico-figuras/c01-p02-igualdad.svg",
+          "alt": "Igualdad inicial hecha con cerillos: 6 + 4 = 4. Los dígitos tienen el patrón de siete segmentos.",
+          "caption": "Mueve exactamente un cerillo",
+          "width": 670,
+          "height": 240,
+          "credit": "Esquema matemático · SIN LÍMITES"
+        },
+        "topic": "Un movimiento permitido"
+      },
+      {
+        "id": "p03",
+        "prompt": "Se mantiene fija una moneda O. ¿Cuál es el mayor número de monedas iguales a ella que pueden tocar su borde, todas sobre el mismo plano y sin superponerse? La figura muestra solo el comienzo.",
+        "options": [
+          "4 monedas",
+          "6 monedas",
+          "8 monedas",
+          "7 monedas",
+          "5 monedas"
+        ],
+        "answer": 1,
+        "solution": "<p>Los centros de dos monedas vecinas necesitan una separación de al menos \\(60^\\circ\\) respecto de O. Como \\(360^\\circ/60^\\circ=6\\), caben como máximo seis. Se alcanza el máximo colocándolas alrededor de O en las seis direcciones de un hexágono regular.</p>",
+        "figure": {
+          "src": "assets/razonamiento-matematico-figuras/c01-p03-monedas.svg",
+          "alt": "Una moneda O y otra moneda A, iguales y tangentes exteriormente. Se busca completar el contorno de O.",
+          "caption": "Contacto entre monedas iguales",
+          "width": 760,
+          "height": 330,
+          "credit": "Esquema matemático · SIN LÍMITES"
+        },
+        "topic": "Tangencia de monedas"
+      },
+      {
+        "id": "p04",
+        "prompt": "El marco triangular tiene cinco monedas en cada lado, contando las monedas de los vértices. No hay monedas interiores. ¿Cuántas monedas distintas forman el marco?",
+        "options": [
+          "10 monedas",
+          "12 monedas",
+          "13 monedas",
+          "15 monedas",
+          "11 monedas"
+        ],
+        "answer": 1,
+        "solution": "<p>Al sumar por lados se obtiene \\(3\\times5=15\\). Las tres monedas de los vértices están contadas dos veces, por lo que se resta una repetición por vértice: \\(15-3=12\\).</p>",
+        "figure": {
+          "src": "assets/razonamiento-matematico-figuras/c01-p04-marco-triangular.svg",
+          "alt": "Marco triangular con cinco monedas por lado. Una moneda ocupa cada vértice y se comparte entre los dos lados vecinos. No hay monedas interiores.",
+          "caption": "Monedas en el perímetro",
+          "width": 760,
+          "height": 360,
+          "credit": "Esquema matemático · SIN LÍMITES"
+        },
+        "topic": "Vértices compartidos"
+      },
+      {
+        "id": "p05",
+        "prompt": "En este dado, las caras opuestas suman 7. ¿Qué número está en la cara opuesta a la que muestra 3 al frente?",
+        "options": [
+          "6",
+          "1",
+          "5",
+          "2",
+          "4"
+        ],
+        "answer": 4,
+        "solution": "<p>La cara opuesta a 3 tiene valor \\(7-3=4\\). El 2 y el 1 visibles son caras adyacentes al 3, no sus opuestas.</p>",
+        "figure": {
+          "src": "assets/razonamiento-matematico-figuras/c01-p05-dado.svg",
+          "alt": "Dado con 2 arriba, 3 al frente y 1 a la derecha. Las caras opuestas suman 7.",
+          "caption": "Tres caras de un dado",
+          "width": 760,
+          "height": 340,
+          "credit": "Esquema matemático · SIN LÍMITES"
+        },
+        "topic": "Caras opuestas"
+      },
+      {
+        "id": "p06",
+        "prompt": "Se apilan cuatro dados sobre una mesa. Las caras opuestas de cada dado suman 7 y la cara superior visible muestra 3. ¿Cuánto suman todas las caras horizontales ocultas, incluida la que toca la mesa?",
+        "options": [
+          "31",
+          "21",
+          "24",
+          "28",
+          "25"
+        ],
+        "answer": 4,
+        "solution": "<p>Cada dado aporta 7 entre sus dos caras horizontales. Las ocho caras suman \\(4\\times7=28\\). Al descontar la cara visible, quedan \\(28-3=25\\). En cada contacto se cuentan las dos caras, una de cada dado.</p>",
+        "figure": {
+          "src": "assets/razonamiento-matematico-figuras/c01-p06-pila-dados.svg",
+          "alt": "Cuatro dados apilados verticalmente, sin espacios, sobre una mesa. La cara superior del dado de arriba muestra 3.",
+          "caption": "Pila de cuatro dados",
+          "width": 650,
+          "height": 430,
+          "credit": "Esquema matemático · SIN LÍMITES"
+        },
+        "topic": "Dados apilados"
+      },
+      {
+        "id": "p07",
+        "prompt": "El dado tiene al inicio 1 arriba, 6 abajo, 2 al norte, 5 al sur, 3 al este y 4 al oeste. Rueda un cuarto de vuelta al este y luego otro al norte, sin deslizarse. ¿Qué número queda arriba?",
+        "options": [
+          "4",
+          "2",
+          "1",
+          "5",
+          "3"
+        ],
+        "answer": 3,
+        "solution": "<p>En el giro al este, la cara oeste 4 pasa arriba; las caras norte 2 y sur 5 mantienen esas posiciones. En el giro al norte, la cara sur 5 pasa arriba. Por tanto, arriba queda 5.</p>",
+        "figure": {
+          "src": "assets/razonamiento-matematico-figuras/c01-p07-rodar-dado.svg",
+          "alt": "Al inicio: arriba 1, sur 5, este 3; las opuestas son abajo 6, norte 2 y oeste 4. El recorrido tiene un paso al este y otro al norte, girando el dado sobre una arista en cada paso.",
+          "caption": "Dos giros de un cuarto de vuelta",
+          "width": 760,
+          "height": 375,
+          "credit": "Esquema matemático · SIN LÍMITES"
+        },
+        "topic": "Orientación tras dos giros"
+      },
+      {
+        "id": "p08",
+        "prompt": "Tres fichas verticales muestran, de izquierda a derecha, 1|5, 2|4 y 6|0; el primer valor está arriba. Si giras 180° solo la segunda ficha, ¿cuánto suman ahora las mitades superiores?",
+        "options": [
+          "9",
+          "13",
+          "7",
+          "10",
+          "11"
+        ],
+        "answer": 4,
+        "solution": "<p>La segunda ficha pasa de 2 arriba a 4 arriba. Las otras permanecen iguales. La nueva suma superior es \\(1+4+6=11\\).</p>"
+      },
+      {
+        "id": "p09",
+        "prompt": "En las fichas de la figura, ¿cuál debes girar 180° para que la suma de las mitades superiores sea igual a la de las inferiores?",
+        "options": [
+          "Ninguna de las tres",
+          "Cualquiera de las tres",
+          "La ficha A",
+          "La ficha B",
+          "La ficha C"
+        ],
+        "answer": 2,
+        "solution": "<p>Arriba hay \\(4+1+5=10\\) y abajo \\(2+3+1=6\\). Al girar A, arriba disminuye en 2 y abajo aumenta en 2: ambas sumas quedan en 8. B produciría 12 y 4; C produciría 6 y 10.</p>",
+        "figure": {
+          "src": "assets/razonamiento-matematico-figuras/c01-p09-domino.svg",
+          "alt": "Fichas verticales A: 4 arriba y 2 abajo, B: 1 arriba y 3 abajo, C: 5 arriba y 1 abajo.",
+          "caption": "Fichas antes del giro",
+          "width": 760,
+          "height": 340,
+          "credit": "Esquema matemático · SIN LÍMITES"
+        },
+        "topic": "Equilibrar sumas de dominó"
+      },
+      {
+        "id": "p10",
+        "prompt": "Traslada los tres discos de A a C usando B. En cada movimiento llevas solo un disco superior a otro poste; nunca puedes poner un disco grande sobre uno menor. ¿Cuál es el mínimo de movimientos?",
+        "options": [
+          "6 movimientos",
+          "3 movimientos",
+          "5 movimientos",
+          "8 movimientos",
+          "7 movimientos"
+        ],
+        "answer": 4,
+        "solution": "<p>Los dos discos menores deben ir de A a B: mínimo 3 movimientos. Después se mueve el mayor de A a C: 1. Finalmente, los dos menores van de B a C: otros 3. La secuencia mínima es A→C, A→B, C→B, A→C, B→A, B→C, A→C: \\(3+1+3=7\\).</p>",
+        "figure": {
+          "src": "assets/razonamiento-matematico-figuras/c01-p10-torres.svg",
+          "alt": "Tres postes A, B y C. En A hay tres discos: grande abajo, mediano en medio y pequeño arriba. B y C están vacíos.",
+          "caption": "Traslada la torre de A a C",
+          "width": 760,
+          "height": 350,
+          "credit": "Esquema matemático · SIN LÍMITES"
+        },
+        "topic": "Mínimo de movimientos"
+      }
+    ]
+  },
+  "razonamiento-matematico-capitulo-02": {
+    "title": "Situaciones lógicas",
+    "problems": [
+      {
+        "id": "p01",
+        "prompt": "Entre 27 monedas hay exactamente una más pesada; las otras pesan lo mismo. Dispones de una balanza de dos platillos. ¿Cuál es el mínimo de pesadas que garantiza identificarla?",
+        "options": [
+          "5 pesadas",
+          "4 pesadas",
+          "2 pesadas",
+          "3 pesadas",
+          "9 pesadas"
+        ],
+        "answer": 3,
+        "solution": "<p>Con dos pesadas solo hay \\(3^2=9\\) secuencias de resultados, insuficientes para 27 candidatas. Tres bastan: divide en grupos de 9, luego de 3 y finalmente de 1. Como \\(3^3=27\\), el mínimo es 3.</p>"
+      },
+      {
+        "id": "p02",
+        "prompt": "Hay 13 monedas y se sabe que exactamente una es más ligera que las otras. ¿Cuál es el mínimo de pesadas con una balanza de dos platillos que permite encontrarla en el peor caso?",
+        "options": [
+          "5 pesadas",
+          "6 pesadas",
+          "3 pesadas",
+          "2 pesadas",
+          "4 pesadas"
+        ],
+        "answer": 2,
+        "solution": "<p>Dos pesadas distinguen como máximo 9 casos, así que no bastan. Compara 4 con 4: si hay desequilibrio quedan 4 sospechosas; si hay equilibrio, quedan 5. Dos pesadas adicionales resuelven cualquiera de esos grupos, de modo que se necesitan y bastan 3.</p>"
+      },
+      {
+        "id": "p03",
+        "prompt": "La balanza está equilibrada. Los recipientes están tarados y todas las masas indicadas son exactas. ¿Cuánto pesa el objeto x?",
+        "options": [
+          "3 kg",
+          "10 kg",
+          "7 kg",
+          "6 kg",
+          "13 kg"
+        ],
+        "answer": 2,
+        "solution": "<p>El equilibrio da \\(x+3=1+9=10\\). Por tanto, \\(x=10-3=7\\) kg. La pesa de 3 kg está junto al objeto, por eso se resta al despejar.</p>",
+        "figure": {
+          "src": "assets/razonamiento-matematico-figuras/c02-p03-balanzas.svg",
+          "alt": "La balanza está equilibrada. En el platillo izquierdo hay un objeto de masa x y una pesa de 3 kg. En el derecho hay pesas de 1 kg y de 9 kg.",
+          "caption": "Compara las masas de ambos platillos",
+          "width": 760,
+          "height": 350,
+          "credit": "Esquema matemático · SIN LÍMITES"
+        },
+        "topic": "Pesas en ambos platillos"
+      },
+      {
+        "id": "p04",
+        "prompt": "Se reparten exactamente 20 kg de arroz entre dos platillos tarados. Con una pesa de 4 kg junto a la porción A, la balanza se equilibra con la porción B. ¿Cuánto arroz hay en B?",
+        "options": [
+          "10 kg",
+          "16 kg",
+          "8 kg",
+          "14 kg",
+          "12 kg"
+        ],
+        "answer": 4,
+        "solution": "<p>Las porciones cumplen \\(A+B=20\\) y \\(A+4=B\\). Al sumar la diferencia a la masa total, \\(2B=24\\), por lo que \\(B=12\\) kg. A contiene 8 kg, y \\(8+4=12\\).</p>",
+        "figure": {
+          "src": "assets/razonamiento-matematico-figuras/c02-p04-reparto.svg",
+          "alt": "Todo el arroz, 20 kg, se reparte en las porciones A y B. La balanza se equilibra con A más una pesa de 4 kg en un platillo y B en el otro. Las letras representan masas de arroz, sin la pesa.",
+          "caption": "Compara las masas de ambos platillos",
+          "width": 760,
+          "height": 350,
+          "credit": "Esquema matemático · SIN LÍMITES"
+        },
+        "topic": "Reparto de una masa total"
+      },
+      {
+        "id": "p05",
+        "prompt": "Las únicas deudas son las de la figura. Si las tres personas aceptan compensarlas mediante sus saldos netos, ¿cuánto dinero debe entregar A en total?",
+        "options": [
+          "S/ 30",
+          "S/ 50",
+          "S/ 15",
+          "S/ 40",
+          "S/ 25"
+        ],
+        "answer": 0,
+        "solution": "<p>A debe 40 y tiene 10 por cobrar, así que su saldo es \\(10-40=-30\\). B debe recibir \\(40-25=15\\) y C debe recibir \\(25-10=15\\). Basta con que A entregue S/ 15 a B y S/ 15 a C: en total, S/ 30.</p>",
+        "figure": {
+          "src": "assets/razonamiento-matematico-figuras/c02-p05-deudas.svg",
+          "alt": "A debe 40 soles a B; B debe 25 soles a C; C debe 10 soles a A. No existen otras deudas.",
+          "caption": "Red de deudas",
+          "width": 760,
+          "height": 435,
+          "credit": "Esquema matemático · SIN LÍMITES"
+        },
+        "topic": "Compensación de deudas"
+      },
+      {
+        "id": "p06",
+        "prompt": "Hay una caja de solo manzanas, otra de solo naranjas y otra con ambas frutas. Los tres rótulos son incorrectos. De la rotulada MIXTA se extrae una manzana. ¿Qué contiene la caja rotulada NARANJAS?",
+        "options": [
+          "Está vacía",
+          "Solo manzanas",
+          "Manzanas y naranjas",
+          "No puede determinarse",
+          "Solo naranjas"
+        ],
+        "answer": 2,
+        "solution": "<p>La caja rotulada MIXTA no puede ser mixta; al salir una manzana, contiene solo manzanas. Para las otras quedan solo naranjas y mezcla. La rotulada NARANJAS no puede contener solo naranjas, por lo que contiene ambas frutas.</p>",
+        "figure": {
+          "src": "assets/razonamiento-matematico-figuras/c02-p06-cajas.svg",
+          "alt": "Tres cajas cerradas rotuladas MANZANAS, NARANJAS y MIXTA. Todos los rótulos son incorrectos. De la caja rotulada MIXTA se extrae una manzana.",
+          "caption": "Rótulos y muestra extraída",
+          "width": 760,
+          "height": 390,
+          "credit": "Esquema matemático · SIN LÍMITES"
+        },
+        "topic": "Rótulos falsos"
+      },
+      {
+        "id": "p07",
+        "prompt": "Seis equipos juegan un torneo en el que cada pareja se enfrenta exactamente una vez. ¿Cuántos partidos se disputan?",
+        "options": [
+          "15 partidos",
+          "18 partidos",
+          "12 partidos",
+          "30 partidos",
+          "24 partidos"
+        ],
+        "answer": 0,
+        "solution": "<p>Cada uno de los 6 equipos tiene 5 rivales, pero \\(6\\times5\\) cuenta cada partido dos veces. El número de partidos es \\(6\\times5/2=15\\).</p>"
+      },
+      {
+        "id": "p08",
+        "prompt": "En este torneo, ganar otorga 3 puntos, empatar 1 y perder 0. Con los datos de la tabla, ¿cuántos partidos perdió el equipo?",
+        "options": [
+          "2 partidos",
+          "4 partidos",
+          "3 partidos",
+          "1 partido",
+          "0 partidos"
+        ],
+        "answer": 3,
+        "solution": "<p>Las 4 victorias producen \\(4\\times3=12\\) puntos. Faltan 3 puntos, que corresponden a 3 empates. Como jugó 8 partidos, perdió \\(8-4-3=1\\).</p>",
+        "figure": {
+          "src": "assets/razonamiento-matematico-figuras/c02-p08-tabla-deportiva.svg",
+          "alt": "Tabla de un equipo: 8 partidos jugados, 4 ganados, empates y derrotas desconocidos, 15 puntos. En el problema, ganar vale 3 y empatar vale 1.",
+          "caption": "Registro del equipo",
+          "width": 715,
+          "height": 326,
+          "credit": "Esquema matemático · SIN LÍMITES"
+        },
+        "topic": "Tabla de resultados"
+      },
+      {
+        "id": "p09",
+        "prompt": "A y B pesan 50 kg cada uno; C pesa 80 kg. Todos saben remar. La barca admite como máximo 100 kg, empieza junto a ellos y no puede volver sin una persona. ¿Cuál es el mínimo de cruces de una orilla a la otra para que los tres lleguen al destino?",
+        "options": [
+          "7 cruces",
+          "4 cruces",
+          "5 cruces",
+          "3 cruces",
+          "6 cruces"
+        ],
+        "answer": 2,
+        "solution": "<p>Una secuencia válida es: AB van, A vuelve, C va, B vuelve, AB van. Son 5 cruces. Con solo 3 cruces habría dos idas y un retorno: una ida tendría que transportar a C solo y la otra a AB; quien retornara quedaría sin transportar al final. Por eso hacen falta al menos tres idas y dos retornos.</p>",
+        "figure": {
+          "src": "assets/razonamiento-matematico-figuras/c02-p09-rio.svg",
+          "alt": "En la orilla inicial están A de 50 kg, B de 50 kg y C de 80 kg. Una barca inicialmente en esa orilla soporta como máximo 100 kg. La orilla de destino está vacía.",
+          "caption": "Personas y capacidad de la barca",
+          "width": 760,
+          "height": 425,
+          "credit": "Esquema matemático · SIN LÍMITES"
+        },
+        "topic": "Capacidad y retornos"
+      },
+      {
+        "id": "p10",
+        "prompt": "Cuatro personas tardan 1, 2, 5 y 10 minutos en cruzar un puente. Pueden ir como máximo dos a la vez, siempre con la única linterna. Una pareja tarda lo que su integrante más lento. Todos empiezan del mismo lado. ¿Cuál es el mínimo de tiempo total para pasar al otro lado?",
+        "options": [
+          "18 minutos",
+          "20 minutos",
+          "15 minutos",
+          "17 minutos",
+          "19 minutos"
+        ],
+        "answer": 3,
+        "solution": "<p>Cruzan 1 y 2 (2 min); vuelve 1 (1); cruzan 5 y 10 (10); vuelve 2 (2); cruzan 1 y 2 (2). Total: \\(2+1+10+2+2=17\\). Si los dos lentos van separados, solo sus idas suman 15, y hacen falta otra ida de al menos 2 y dos retornos de al menos 1: como mínimo 19. Si van juntos, para disponer de la linterna antes y después se requieren, como mínimo, las otras dos idas de 2 y los retornos de 1 y 2; se alcanza 17.</p>",
+        "figure": {
+          "src": "assets/razonamiento-matematico-figuras/c02-p10-puente.svg",
+          "alt": "Cuatro personas están al inicio de un puente: A tarda 1 minuto, B 2, C 5 y D 10. Pueden cruzar como máximo dos juntas y cada cruce requiere llevar la única linterna.",
+          "caption": "Cruces con una linterna",
+          "width": 760,
+          "height": 415,
+          "credit": "Esquema matemático · SIN LÍMITES"
+        },
+        "topic": "Tiempo mínimo de cruces"
+      }
+    ]
+  },
+  "razonamiento-matematico-capitulo-03": {
+    "title": "Ordenamiento de información",
+    "problems": [
+      {
+        "id": "p01",
+        "prompt": "Cinco personas A, B, C, D y E ocupan una fila. E está en el extremo izquierdo; A está inmediatamente a la izquierda de C; B está inmediatamente a la derecha de C; D está a la derecha de B. ¿Quién ocupa el lugar central?",
+        "options": [
+          "C",
+          "D",
+          "E",
+          "A",
+          "B"
+        ],
+        "answer": 0,
+        "solution": "<p>A, C y B forman el bloque A–C–B. E ocupa el primer lugar y D debe quedar después del bloque. El único orden es E–A–C–B–D, por lo que C ocupa el tercer lugar.</p>",
+        "figure": {
+          "src": "assets/razonamiento-matematico-figuras/c03-p01-fila.svg",
+          "alt": "5 lugares numerados de izquierda a derecha. E ocupa el lugar 1. Los demás se desconocen.",
+          "caption": "Cinco lugares para cinco personas",
+          "width": 760,
+          "height": 320,
+          "credit": "Esquema matemático · SIN LÍMITES"
+        },
+        "topic": "Fila con bloque consecutivo"
+      },
+      {
+        "id": "p02",
+        "prompt": "Seis libros P, Q, R, S, T y U se ordenan de izquierda a derecha. Q es segundo; R está inmediatamente después de Q; T inmediatamente después de S; U es último; P está antes de Q. ¿Cuántos libros hay entre R y U?",
+        "options": [
+          "1 libro",
+          "4 libros",
+          "3 libros",
+          "Ninguno",
+          "2 libros"
+        ],
+        "answer": 4,
+        "solution": "<p>P ocupa el primer lugar; Q el segundo y R el tercero. U está en el sexto. Los lugares cuarto y quinto corresponden al bloque S–T. Entre R y U están S y T: dos libros.</p>"
+      },
+      {
+        "id": "p03",
+        "prompt": "En un edificio de seis pisos vive una persona por piso: A, B, C, D, E y F. A vive en el primero y B en el sexto. E está inmediatamente encima de A; F inmediatamente encima de D; C está por encima de D. ¿En qué piso vive F?",
+        "options": [
+          "Piso 5",
+          "Piso 6",
+          "Piso 3",
+          "Piso 4",
+          "Piso 2"
+        ],
+        "answer": 3,
+        "solution": "<p>E ocupa el piso 2. Para C, D y F quedan 3, 4 y 5. Si D fuera 4, F sería 5 y C tendría que quedar en 3, contradiciendo que C está encima de D. Así, D es 3, F es 4 y C es 5.</p>",
+        "figure": {
+          "src": "assets/razonamiento-matematico-figuras/c03-p03-edificio.svg",
+          "alt": "Edificio con seis pisos numerados de abajo hacia arriba. A vive en el piso 1 y B en el piso 6. Los otros cuatro pisos están por asignar.",
+          "caption": "Un residente en cada piso",
+          "width": 690,
+          "height": 440,
+          "credit": "Esquema matemático · SIN LÍMITES"
+        },
+        "topic": "Orden vertical"
+      },
+      {
+        "id": "p04",
+        "prompt": "Ana, Bruno, Carla y Diego compiten sin empates. Ana llega antes que Bruno; Carla después de Bruno; Diego antes de Ana. ¿Quién llega segundo?",
+        "options": [
+          "Carla",
+          "Ana",
+          "No se puede determinar",
+          "Diego",
+          "Bruno"
+        ],
+        "answer": 1,
+        "solution": "<p>Las comparaciones se encadenan: Diego antes que Ana, Ana antes que Bruno y Bruno antes que Carla. El orden completo es Diego–Ana–Bruno–Carla; Ana es segunda.</p>"
+      },
+      {
+        "id": "p05",
+        "prompt": "Cuatro asientos están numerados en sentido horario como en la figura. Ana está en el 1; Carlos se sienta frente a Ana; Beto ocupa el asiento inmediato a Ana en sentido horario. ¿Qué asiento ocupa Dina?",
+        "options": [
+          "Asiento 1",
+          "Asiento 2",
+          "Asiento 3",
+          "Asiento 4",
+          "No se puede determinar"
+        ],
+        "answer": 3,
+        "solution": "<p>Carlos está frente al asiento 1, es decir, en el 3. Beto ocupa el siguiente en sentido horario, el 2. El único asiento libre para Dina es el 4.</p>",
+        "figure": {
+          "src": "assets/razonamiento-matematico-figuras/c03-p05-mesa-cuatro.svg",
+          "alt": "Mesa con 4 asientos numerados en sentido horario, empezando por el 1 arriba. Ana ocupa el asiento 1. Las flechas muestran que las personas miran hacia el centro.",
+          "caption": "Asientos numerados en sentido horario",
+          "width": 650,
+          "height": 460,
+          "credit": "Esquema matemático · SIN LÍMITES"
+        },
+        "topic": "Mesa de cuatro"
+      },
+      {
+        "id": "p06",
+        "prompt": "Seis personas se sientan mirando hacia el centro. Los asientos se numeran en sentido horario. Alba está en el 1; Bruno está inmediatamente a la izquierda de Alba; Carla está frente a Bruno. ¿Qué asiento ocupa Carla?",
+        "options": [
+          "Asiento 2",
+          "Asiento 3",
+          "Asiento 5",
+          "Asiento 6",
+          "Asiento 4"
+        ],
+        "answer": 2,
+        "solution": "<p>Desde la posición de Alba, que mira al centro, su izquierda conduce al asiento 2. Bruno está allí. El opuesto se obtiene avanzando tres asientos en una mesa de seis: Carla ocupa el 5.</p>",
+        "figure": {
+          "src": "assets/razonamiento-matematico-figuras/c03-p06-mesa-seis.svg",
+          "alt": "Mesa con 6 asientos numerados en sentido horario, empezando por el 1 arriba. Alba ocupa el asiento 1. Las flechas muestran que las personas miran hacia el centro.",
+          "caption": "Asientos numerados en sentido horario",
+          "width": 650,
+          "height": 460,
+          "credit": "Esquema matemático · SIN LÍMITES"
+        },
+        "topic": "Izquierda y posición opuesta"
+      },
+      {
+        "id": "p07",
+        "prompt": "Ana, Bruno, Clara y Dani estudian Medicina, Derecho, Ingeniería y Arquitectura, sin repetir carrera. Ana estudia Medicina. Bruno no estudia Derecho ni Arquitectura. Clara no estudia Derecho. ¿Qué estudia Dani?",
+        "options": [
+          "Ingeniería",
+          "Derecho",
+          "Arquitectura",
+          "Medicina",
+          "No se puede determinar"
+        ],
+        "answer": 1,
+        "solution": "<p>Medicina ya pertenece a Ana. Al excluir Derecho y Arquitectura, Bruno debe estudiar Ingeniería. Clara no puede estudiar Derecho y solo le queda Arquitectura. La carrera restante para Dani es Derecho.</p>"
+      },
+      {
+        "id": "p08",
+        "prompt": "Ana, Beto y Cora viven en Lima, Cusco y Piura, una ciudad distinta por persona. Ana no vive en Lima; Beto no vive en Cusco; Cora vive en Piura. ¿Dónde vive Beto?",
+        "options": [
+          "Lima",
+          "Los datos son contradictorios",
+          "En cualquiera de las tres",
+          "Piura",
+          "Cusco"
+        ],
+        "answer": 0,
+        "solution": "<p>Piura está ocupada por Cora. Entre Lima y Cusco, Ana debe ocupar Cusco porque no vive en Lima. Beto queda en Lima, lo que también respeta que no vive en Cusco.</p>"
+      },
+      {
+        "id": "p09",
+        "prompt": "A, B, C, D y E ocupan los lugares 1 a 5. A está antes que B, C está inmediatamente antes que D y E está en el lugar 5. ¿Cuál de estos lugares es imposible para C?",
+        "options": [
+          "Todos son posibles",
+          "Lugar 3",
+          "Lugar 1",
+          "Lugar 4",
+          "Lugar 2"
+        ],
+        "answer": 3,
+        "solution": "<p>Si C estuviera en 4, D tendría que estar en 5, ya ocupado por E. Los demás lugares sí son posibles: C–D–A–B–E coloca C en 1; A–C–D–B–E lo coloca en 2; A–B–C–D–E lo coloca en 3.</p>",
+        "figure": {
+          "src": "assets/razonamiento-matematico-figuras/c03-p09-posicion-imposible.svg",
+          "alt": "5 lugares numerados de izquierda a derecha. E ocupa el lugar 5. Los demás se desconocen.",
+          "caption": "Restricciones sobre una fila",
+          "width": 760,
+          "height": 320,
+          "credit": "Esquema matemático · SIN LÍMITES"
+        },
+        "topic": "Una posición imposible"
+      },
+      {
+        "id": "p10",
+        "prompt": "Ana, Beto y Cora usan colores distintos: rojo, azul y verde. Cada uno tiene una mascota distinta: gato, perro o pez. Ana usa azul; Beto tiene gato; quien usa rojo tiene perro. ¿Cuál es la mascota de Ana?",
+        "options": [
+          "Gato o pez",
+          "No se puede determinar",
+          "Gato",
+          "Pez",
+          "Perro"
+        ],
+        "answer": 3,
+        "solution": "<p>Beto tiene gato, así que no es quien usa rojo y tiene perro. Como azul ya pertenece a Ana, Beto usa verde y Cora usa rojo. Cora tiene perro; Beto, gato. A Ana le corresponde pez.</p>",
+        "figure": {
+          "src": "assets/razonamiento-matematico-figuras/c03-p10-asignaciones.svg",
+          "alt": "Tabla de datos: Ana usa azul y su mascota es desconocida. Beto tiene gato y su color es desconocido. Cora no tiene color ni mascota asignados todavía. Los colores disponibles son rojo, azul y verde; las mascotas son gato, perro y pez.",
+          "caption": "Datos inicialmente conocidos",
+          "width": 595,
+          "height": 740,
+          "credit": "Esquema matemático · SIN LÍMITES"
+        },
+        "topic": "Cruzar dos categorías"
+      }
+    ]
+  },
+  "razonamiento-matematico-capitulo-04": {
+    "title": "Lazos familiares, cortes y seccionamientos",
+    "problems": [
+      {
+        "id": "p01",
+        "prompt": "Las ramas del árbol indican filiación. Rosa y Luis son padres de Ana y Marco; Ana y Pedro son padres de Elena; Marco es padre de Tomás. ¿Qué relación tiene Elena con Tomás?",
+        "options": [
+          "Abuela",
+          "Prima",
+          "Tía",
+          "Hermana",
+          "Sobrina"
+        ],
+        "answer": 1,
+        "solution": "<p>Ana y Marco son hermanos porque comparten a Rosa y Luis como padres. Elena es hija de Ana y Tomás es hijo de Marco. Los hijos de dos hermanos son primos: Elena es prima de Tomás.</p>",
+        "figure": {
+          "src": "assets/razonamiento-matematico-figuras/c04-p01-familia.svg",
+          "alt": "Rosa y Luis son los padres de Ana y Marco. Ana y Pedro son los padres de Elena. Marco es el padre de Tomás.",
+          "caption": "Relaciones de filiación",
+          "width": 760,
+          "height": 450,
+          "credit": "Esquema matemático · SIN LÍMITES"
+        },
+        "topic": "Árbol familiar"
+      },
+      {
+        "id": "p02",
+        "prompt": "Un varón dice: «Soy hijo único de mi padre. El padre del muchacho de la fotografía es el hijo de mi padre». Los parentescos mencionados son de filiación. ¿Quién es el muchacho respecto del hablante?",
+        "options": [
+          "Su abuelo",
+          "Su padre",
+          "Su sobrino",
+          "Su hermano",
+          "Su hijo"
+        ],
+        "answer": 4,
+        "solution": "<p>Como el hablante es varón e hijo único, «el hijo de mi padre» lo designa a él. La frase se reduce a «el padre del muchacho soy yo». Por tanto, el muchacho es su hijo.</p>"
+      },
+      {
+        "id": "p03",
+        "prompt": "Ana y Bruno son hermanos. Bruno es padre de Clara. ¿Qué relación tiene Ana con Clara?",
+        "options": [
+          "Abuela",
+          "Madre",
+          "Hermana",
+          "Tía",
+          "Prima"
+        ],
+        "answer": 3,
+        "solution": "<p>Bruno es el padre de Clara y Ana es hermana de Bruno. La hermana del padre es la tía de la hija. Por eso Ana es tía de Clara.</p>"
+      },
+      {
+        "id": "p04",
+        "prompt": "Se reúnen varones de una sola cadena de generaciones consecutivas, de padre a hijo. Dentro del grupo debe haber tres padres, tres hijos, dos abuelos y dos nietos. Todos esos vínculos se cuentan entre los presentes. ¿Cuál es el mínimo de personas?",
+        "options": [
+          "6 personas",
+          "3 personas",
+          "10 personas",
+          "4 personas",
+          "5 personas"
+        ],
+        "answer": 3,
+        "solution": "<p>Una cadena A→B→C→D tiene tres padres (A, B, C), tres hijos (B, C, D), dos abuelos (A, B) y dos nietos (C, D). Cuatro personas bastan. Con tres personas de una sola cadena solo hay dos padres dentro del grupo, por lo que no bastan.</p>"
+      },
+      {
+        "id": "p05",
+        "prompt": "Cada flecha indica «es padre de». En esta cadena, ¿quién es el bisabuelo de G4?",
+        "options": [
+          "G4",
+          "G5",
+          "G1",
+          "G2",
+          "G3"
+        ],
+        "answer": 2,
+        "solution": "<p>Desde G4 se asciende a G3 (padre), luego a G2 (abuelo) y después a G1 (bisabuelo). Son tres enlaces de filiación hacia arriba.</p>",
+        "figure": {
+          "src": "assets/razonamiento-matematico-figuras/c04-p05-generaciones.svg",
+          "alt": "Cadena de cinco varones: G1 es padre de G2, G2 de G3, G3 de G4 y G4 de G5. Todas las flechas indican padre de.",
+          "caption": "Una cadena de cinco generaciones",
+          "width": 620,
+          "height": 450,
+          "credit": "Esquema matemático · SIN LÍMITES"
+        },
+        "topic": "Generaciones"
+      },
+      {
+        "id": "p06",
+        "prompt": "Una varilla de 2,40 m se divide en piezas de 30 cm. Cada operación corta un solo punto de la varilla; no se permite doblar ni apilar. ¿Cuántos cortes se necesitan?",
+        "options": [
+          "7 cortes",
+          "9 cortes",
+          "10 cortes",
+          "6 cortes",
+          "8 cortes"
+        ],
+        "answer": 0,
+        "solution": "<p>Convierte \\(2{,}40\\) m a 240 cm. Se obtienen \\(240/30=8\\) piezas. En una varilla abierta, sin superposición, hacen falta \\(8-1=7\\) cortes.</p>",
+        "figure": {
+          "src": "assets/razonamiento-matematico-figuras/c04-p06-varilla.svg",
+          "alt": "Varilla de 240 cm de longitud. El primer tramo de 30 cm está señalado para mostrar la longitud que debe tener cada pieza.",
+          "caption": "División de una varilla",
+          "width": 760,
+          "height": 310,
+          "credit": "Esquema matemático · SIN LÍMITES"
+        },
+        "topic": "Piezas de igual longitud"
+      },
+      {
+        "id": "p07",
+        "prompt": "Un anillo cerrado de alambre se divide en los seis arcos iguales señalados. Cada operación corta un único punto; no se permite doblar ni apilar el alambre. ¿Cuántos cortes se requieren?",
+        "options": [
+          "6 cortes",
+          "4 cortes",
+          "7 cortes",
+          "5 cortes",
+          "12 cortes"
+        ],
+        "answer": 0,
+        "solution": "<p>El primer corte abre el anillo pero lo deja en una sola pieza. Los cinco cortes adicionales producen los otros cinco arcos. Para obtener seis arcos separados se cortan los seis puntos señalados: seis cortes.</p>",
+        "figure": {
+          "src": "assets/razonamiento-matematico-figuras/c04-p07-anillo.svg",
+          "alt": "Anillo cerrado con seis puntos equidistantes A, B, C, D, E y F sobre su circunferencia. Se desea obtener los seis arcos entre puntos consecutivos.",
+          "caption": "Seis arcos de un anillo cerrado",
+          "width": 760,
+          "height": 380,
+          "credit": "Esquema matemático · SIN LÍMITES"
+        },
+        "topic": "Objeto cerrado"
+      },
+      {
+        "id": "p08",
+        "prompt": "Una lámina rectangular debe quedar dividida como muestra la figura: tres filas y cuatro columnas. Solo se permiten cortes rectos completos por las líneas interiores de la cuadrícula, sin mover ni apilar piezas. ¿Cuántos cortes se hacen?",
+        "options": [
+          "11 cortes",
+          "7 cortes",
+          "6 cortes",
+          "5 cortes",
+          "12 cortes"
+        ],
+        "answer": 3,
+        "solution": "<p>Para tres filas se hacen \\(3-1=2\\) cortes horizontales y para cuatro columnas, \\(4-1=3\\) verticales. En total, \\(2+3=5\\) cortes producen 12 rectángulos.</p>",
+        "figure": {
+          "src": "assets/razonamiento-matematico-figuras/c04-p08-lamina.svg",
+          "alt": "Lámina rectangular dividida en una cuadrícula de tres filas y cuatro columnas. Hay dos líneas interiores horizontales y tres verticales.",
+          "caption": "Tres filas y cuatro columnas",
+          "width": 760,
+          "height": 380,
+          "credit": "Esquema matemático · SIN LÍMITES"
+        },
+        "topic": "Cortes de una cuadrícula"
+      },
+      {
+        "id": "p09",
+        "prompt": "Una barra recta debe dar ocho segmentos de igual longitud. Después de cada corte puedes reacomodar y apilar las piezas; cada operación atraviesa toda la pila con un corte transversal recto. ¿Cuál es el mínimo de operaciones?",
+        "options": [
+          "7 operaciones",
+          "2 operaciones",
+          "4 operaciones",
+          "3 operaciones",
+          "8 operaciones"
+        ],
+        "answer": 3,
+        "solution": "<p>Un corte puede, como máximo, partir cada segmento existente en dos. Con dos cortes habría como máximo \\(2^2=4\\) piezas; no basta. Tres sí bastan: corta a la mitad, apila y vuelve a cortar a la mitad dos veces más. Se obtienen \\(2^3=8\\) segmentos iguales.</p>"
+      },
+      {
+        "id": "p10",
+        "prompt": "Un cubo se transforma en 27 cubitos iguales, con tres divisiones en cada arista. Solo se permiten cortes planos paralelos a las caras; no se reacomoda ninguna pieza entre cortes. ¿Cuál es el mínimo de cortes?",
+        "options": [
+          "8 cortes",
+          "6 cortes",
+          "5 cortes",
+          "3 cortes",
+          "9 cortes"
+        ],
+        "answer": 1,
+        "solution": "<p>Cada una de las tres direcciones requiere dos separaciones internas para formar tres partes. Por tanto, \\(2+2+2=6\\) cortes. Se obtienen \\(3\\times3\\times3=27\\) cubitos; cada uno de esos seis planos internos es necesario.</p>",
+        "figure": {
+          "src": "assets/razonamiento-matematico-figuras/c04-p10-cubo.svg",
+          "alt": "Cubo subdividido mediante planos paralelos a sus caras. Cada arista tiene tres segmentos iguales; la retícula representa 3 por 3 por 3 cubitos.",
+          "caption": "Subdivisión de un cubo",
+          "width": 760,
+          "height": 425,
+          "credit": "Esquema matemático · SIN LÍMITES"
+        },
+        "topic": "Cortes en tres dimensiones"
+      }
+    ]
+  },
+  "razonamiento-matematico-capitulo-05": {
+    "title": "Distribuciones numéricas",
+    "problems": [
+      {
+        "id": "p01",
+        "prompt": "Este cuadrado usa del 1 al 9 sin repetir. Todas sus filas, columnas y diagonales principales suman lo mismo. ¿Cuánto vale x?",
+        "options": [
+          "7",
+          "6",
+          "4",
+          "3",
+          "5"
+        ],
+        "answer": 4,
+        "solution": "<p>La primera fila suma \\(8+1+6=15\\). La segunda exige \\(3+x+7=15\\), así que \\(x=5\\). Con ese valor también se verifican las columnas y las dos diagonales.</p>",
+        "figure": {
+          "src": "assets/razonamiento-matematico-figuras/c05-p01-magico-tres.svg",
+          "alt": "Cuadrado de tres por tres: primera fila 8, 1, 6; segunda 3, x, 7; tercera 4, 9, 2. Todas las filas, columnas y diagonales principales tienen la misma suma.",
+          "caption": "Cuadrado mágico aditivo",
+          "width": 400,
+          "height": 320,
+          "credit": "Esquema matemático · SIN LÍMITES"
+        },
+        "topic": "Cuadrado mágico de orden 3"
+      },
+      {
+        "id": "p02",
+        "prompt": "Un cuadrado mágico aditivo de 4 × 4 utiliza una vez cada entero del 1 al 16. ¿Cuánto debe sumar cada fila?",
+        "options": [
+          "36",
+          "40",
+          "30",
+          "32",
+          "34"
+        ],
+        "answer": 4,
+        "solution": "<p>Los números suman \\(16\\times17/2=136\\). Las cuatro filas contienen todas las casillas, sin superposición. La constante es \\(136/4=34\\).</p>"
+      },
+      {
+        "id": "p03",
+        "prompt": "Un cuadrado mágico aditivo de 3 × 3 utiliza una vez cada entero del 11 al 19. ¿Cuál es su constante mágica?",
+        "options": [
+          "45",
+          "15",
+          "42",
+          "30",
+          "48"
+        ],
+        "answer": 0,
+        "solution": "<p>Los nueve números suman \\(9(11+19)/2=135\\). Como hay tres filas, cada una suma \\(135/3=45\\). También se obtiene al añadir 10 a cada casilla de un cuadrado normal: \\(15+3\\times10=45\\).</p>"
+      },
+      {
+        "id": "p04",
+        "prompt": "El cuadrado mágico de la figura usa los enteros del 2 al 10 una sola vez. ¿Qué valor ocupa la casilla x?",
+        "options": [
+          "4",
+          "3",
+          "6",
+          "5",
+          "2"
+        ],
+        "answer": 1,
+        "solution": "<p>El centro es 6, de modo que la constante es \\(3\\times6=18\\). La diagonal con x y 9 exige \\(x+6+9=18\\), así que \\(x=3\\). La primera fila también da \\(x+10+5=18\\).</p>",
+        "figure": {
+          "src": "assets/razonamiento-matematico-figuras/c05-p04-parejas-opuestas.svg",
+          "alt": "Cuadrado mágico de tres por tres. Filas: x, 10, 5; 8, 6, 4; 7, 2, 9. Usa una vez cada entero de 2 a 10.",
+          "caption": "Números del 2 al 10",
+          "width": 400,
+          "height": 320,
+          "credit": "Esquema matemático · SIN LÍMITES"
+        },
+        "topic": "Casillas opuestas"
+      },
+      {
+        "id": "p05",
+        "prompt": "En la figura, cada fila, columna y diagonal principal tiene el mismo producto. Todos los valores son positivos. ¿Cuánto vale x?",
+        "options": [
+          "9",
+          "4",
+          "6",
+          "8",
+          "5"
+        ],
+        "answer": 2,
+        "solution": "<p>La primera fila tiene producto \\(2\\times9\\times12=216\\). En la segunda, \\(36\\times x\\times1=216\\), por lo que \\(x=6\\). Las demás líneas también multiplican 216; por ejemplo, \\(12\\times6\\times3=216\\).</p>",
+        "figure": {
+          "src": "assets/razonamiento-matematico-figuras/c05-p05-magico-producto.svg",
+          "alt": "Cuadrado de tres por tres: filas 2, 9, 12; 36, x, 1; 3, 4, 18. El producto de cada fila, columna y diagonal principal es el mismo.",
+          "caption": "Cuadrado mágico multiplicativo",
+          "width": 400,
+          "height": 320,
+          "credit": "Esquema matemático · SIN LÍMITES"
+        },
+        "topic": "Producto común"
+      },
+      {
+        "id": "p06",
+        "prompt": "Coloca del 1 al 5, sin repetir, en esta cruz. La fila y la columna de tres casillas deben sumar 9 cada una. ¿Qué número debe ir en el centro x?",
+        "options": [
+          "1",
+          "3",
+          "4",
+          "5",
+          "2"
+        ],
+        "answer": 1,
+        "solution": "<p>Los cinco números suman 15. Al sumar las dos líneas, el centro se cuenta dos veces: \\(18=15+x\\). Por tanto, \\(x=3\\). Es posible: usa 1 y 5 como extremos de una línea, y 2 y 4 de la otra.</p>",
+        "figure": {
+          "src": "assets/razonamiento-matematico-figuras/c05-p06-cruz.svg",
+          "alt": "Cruz de cinco casillas: tres en horizontal y tres en vertical, compartiendo la casilla central x. Las otras cuatro casillas aún no tienen valor.",
+          "caption": "Dos líneas que comparten el centro",
+          "width": 440,
+          "height": 330,
+          "credit": "Esquema matemático · SIN LÍMITES"
+        },
+        "topic": "Centro compartido"
+      },
+      {
+        "id": "p07",
+        "prompt": "En la misma forma de cruz, coloca del 1 al 5 sin repetir. La fila y la columna deben tener una misma suma S. ¿Cuál es el mayor valor posible de S?",
+        "options": [
+          "9",
+          "8",
+          "11",
+          "7",
+          "10"
+        ],
+        "answer": 4,
+        "solution": "<p>Se cumple \\(2S=15+x\\), donde x es el centro. Como \\(x\\le5\\), resulta \\(S\\le10\\). Se alcanza 10 poniendo 5 en el centro, 1 y 4 en una pareja de extremos, y 2 y 3 en la otra.</p>",
+        "figure": {
+          "src": "assets/razonamiento-matematico-figuras/c05-p06-cruz.svg",
+          "alt": "Cruz de cinco casillas: tres en horizontal y tres en vertical, compartiendo la casilla central x. Las otras cuatro casillas aún no tienen valor.",
+          "caption": "Dos líneas que comparten el centro",
+          "width": 440,
+          "height": 330,
+          "credit": "Esquema matemático · SIN LÍMITES"
+        },
+        "topic": "Máximo de una suma común"
+      },
+      {
+        "id": "p08",
+        "prompt": "Se colocan del 1 al 6 sin repetir en las seis casillas del triángulo. Cada lado, incluidas sus esquinas, suma 9. ¿Cuánto vale x + y + z, la suma de los tres vértices?",
+        "options": [
+          "5",
+          "6",
+          "12",
+          "7",
+          "9"
+        ],
+        "answer": 1,
+        "solution": "<p>Los seis números suman 21. Al sumar los tres lados se obtiene 27 y cada vértice queda contado una vez de más: \\(27=21+(x+y+z)\\). Por tanto, \\(x+y+z=6\\). Existe una distribución: vértices 1, 2 y 3, con valores 6, 4 y 5 entre las parejas 1–2, 2–3 y 3–1, respectivamente.</p>",
+        "figure": {
+          "src": "assets/razonamiento-matematico-figuras/c05-p08-triangulo.svg",
+          "alt": "Triángulo con seis casillas: x, y, z en sus tres vértices y una casilla desconocida en el punto medio de cada lado. Cada lado contiene tres casillas.",
+          "caption": "Suma de los valores de los vértices",
+          "width": 760,
+          "height": 380,
+          "credit": "Esquema matemático · SIN LÍMITES"
+        },
+        "topic": "Casillas repetidas por líneas"
+      },
+      {
+        "id": "p09",
+        "prompt": "En la fila, toda terna de casillas consecutivas suma 14. ¿Cuánto vale x?",
+        "options": [
+          "5",
+          "6",
+          "9",
+          "7",
+          "8"
+        ],
+        "answer": 3,
+        "solution": "<p>La primera terna exige \\(2+x+5=14\\), de donde \\(x=7\\). La fila queda 2, 7, 5 repetidos; cualquier terna consecutiva contiene esos tres valores y suma 14.</p>",
+        "figure": {
+          "src": "assets/razonamiento-matematico-figuras/c05-p09-tres-consecutivas.svg",
+          "alt": "Nueve casillas en una fila: 2, x, 5, 2, 7, 5, 2, 7, 5. Toda terna de casillas consecutivas suma 14.",
+          "caption": "Regla para cada grupo de tres",
+          "width": 766,
+          "height": 154,
+          "credit": "Esquema matemático · SIN LÍMITES"
+        },
+        "topic": "Ternas consecutivas"
+      },
+      {
+        "id": "p10",
+        "prompt": "En esta cuadrícula se pueden repetir números. Todo bloque contiguo de 2 × 2 debe sumar 20; no se exige que las filas o diagonales completas tengan la misma suma. ¿Cuánto vale x?",
+        "options": [
+          "7",
+          "9",
+          "6",
+          "8",
+          "10"
+        ],
+        "answer": 4,
+        "solution": "<p>El bloque inferior derecho contiene 6, 1, 3 y x. Por tanto, \\(6+1+3+x=20\\), así que \\(x=10\\). Los otros ocho bloques de 2 × 2 ya suman 20; el valor hallado completa la condición.</p>",
+        "figure": {
+          "src": "assets/razonamiento-matematico-figuras/c05-p10-subcuadros.svg",
+          "alt": "Cuadrícula de cuatro por cuatro. Filas: 2, 5, 4, 3; 7, 6, 5, 8; 4, 3, 6, 1; 5, 8, 3, x. Todo bloque de dos filas y dos columnas consecutivas suma 20.",
+          "caption": "Bloques contiguos de 2 × 2",
+          "width": 420,
+          "height": 400,
+          "credit": "Esquema matemático · SIN LÍMITES"
+        },
+        "topic": "Bloques contiguos"
+      }
+    ]
+  },
+  "razonamiento-matematico-capitulo-06": {
+    "title": "Relación de tiempos",
+    "problems": [
+      {
+        "id": "p01",
+        "prompt": "Si anteayer fue viernes, ¿qué día será pasado mañana?",
+        "options": [
+          "Domingo",
+          "Jueves",
+          "Lunes",
+          "Martes",
+          "Miércoles"
+        ],
+        "answer": 3,
+        "solution": "<p>De anteayer a hoy se avanza 2 días: viernes a domingo. De hoy a pasado mañana se avanzan otros 2: domingo a martes. En total, \\(+2-(-2)=4\\) días desde viernes.</p>",
+        "figure": {
+          "src": "assets/razonamiento-matematico-figuras/c06-p01-dias-relativos.svg",
+          "alt": "Línea de tiempo con anteayer menos 2, ayer menos 1, hoy 0, mañana más 1 y pasado mañana más 2. Solo se conoce que anteayer fue viernes.",
+          "caption": "Desplazamientos respecto de hoy",
+          "width": 760,
+          "height": 270,
+          "credit": "Esquema matemático · SIN LÍMITES"
+        },
+        "topic": "Desplazamientos de días"
+      },
+      {
+        "id": "p02",
+        "prompt": "Si hoy es jueves, ¿qué día corresponde a «el ayer del mañana de anteayer»? Resuelve la expresión desde su parte interior.",
+        "options": [
+          "Lunes",
+          "Martes",
+          "Jueves",
+          "Viernes",
+          "Miércoles"
+        ],
+        "answer": 1,
+        "solution": "<p>Anteayer representa \\(-2\\). Su mañana suma 1 y el ayer de ese resultado resta 1: \\(-2+1-1=-2\\). Dos días antes de jueves es martes.</p>"
+      },
+      {
+        "id": "p03",
+        "prompt": "Si hoy es lunes, ¿qué día de la semana será dentro de 100 días?",
+        "options": [
+          "Lunes",
+          "Miércoles",
+          "Jueves",
+          "Martes",
+          "Viernes"
+        ],
+        "answer": 1,
+        "solution": "<p>Como \\(100=14\\times7+2\\), las catorce semanas completas no cambian el día semanal. Dos días después de lunes es miércoles.</p>"
+      },
+      {
+        "id": "p04",
+        "prompt": "El 3 de junio de 2024 fue lunes. ¿Qué día de la semana fue el 30 de junio de ese mismo año?",
+        "options": [
+          "Jueves",
+          "Viernes",
+          "Lunes",
+          "Sábado",
+          "Domingo"
+        ],
+        "answer": 4,
+        "solution": "<p>Entre ambas fechas transcurren \\(30-3=27\\) días. Como \\(27=3\\times7+6\\), avanza seis días desde lunes: domingo. No se suma uno porque se pide el día después de un intervalo, no el número de fechas contando ambos extremos.</p>"
+      },
+      {
+        "id": "p05",
+        "prompt": "Según la regla del calendario gregoriano, ¿cuál de estos años es bisiesto?",
+        "options": [
+          "1900",
+          "2200",
+          "2100",
+          "2000",
+          "2023"
+        ],
+        "answer": 3,
+        "solution": "<p>2000 es divisible entre 400 y, por tanto, es bisiesto. 1900, 2100 y 2200 son divisibles entre 100 pero no entre 400; quedan excluidos. 2023 no es divisible entre 4.</p>"
+      },
+      {
+        "id": "p06",
+        "prompt": "El 1 de febrero de 2024 fue jueves. Utiliza el calendario y la duración de febrero para determinar qué día fue el 1 de marzo de 2024.",
+        "options": [
+          "Sábado",
+          "Viernes",
+          "Miércoles",
+          "Jueves",
+          "Domingo"
+        ],
+        "answer": 1,
+        "solution": "<p>2024 es bisiesto y febrero tiene 29 días. Del 1 de febrero al 1 de marzo pasan \\(29=4\\times7+1\\) días. Por tanto, el día semanal avanza uno: de jueves a viernes.</p>",
+        "figure": {
+          "src": "assets/razonamiento-matematico-figuras/c06-p06-febrero.svg",
+          "alt": "Calendario de febrero de 2024, con semanas de lunes a domingo. El día 1 cae jueves, el 28 miércoles y el 29 jueves. Febrero tiene 29 días.",
+          "caption": "Febrero de 2024",
+          "width": 672,
+          "height": 530,
+          "credit": "Esquema matemático · SIN LÍMITES"
+        },
+        "topic": "Febrero de un año bisiesto"
+      },
+      {
+        "id": "p07",
+        "prompt": "Un mes de 31 días empieza en sábado, como muestra la figura. ¿Qué días de la semana aparecen cinco veces en ese mes?",
+        "options": [
+          "Viernes, sábado y domingo",
+          "Solo sábado y domingo",
+          "Sábado, domingo y lunes",
+          "Domingo, lunes y martes",
+          "Lunes, martes y miércoles"
+        ],
+        "answer": 2,
+        "solution": "<p>Se tiene \\(31=28+3\\): cuatro semanas completas y tres días adicionales. Los adicionales son los tres primeros días semanales del mes: sábado, domingo y lunes. Cada uno aparece cinco veces.</p>",
+        "figure": {
+          "src": "assets/razonamiento-matematico-figuras/c06-p07-mes-31.svg",
+          "alt": "Calendario de un mes de 31 días cuyo día 1 cae sábado. Los días se distribuyen en semanas de lunes a domingo; el día 31 cae lunes.",
+          "caption": "Un mes de 31 días",
+          "width": 672,
+          "height": 614,
+          "credit": "Esquema matemático · SIN LÍMITES"
+        },
+        "topic": "Frecuencia de días"
+      },
+      {
+        "id": "p08",
+        "prompt": "¿Cuántos días transcurren desde el 28 de febrero de 2024 hasta el 1 de marzo de 2024? No cuentes la fecha inicial como un día transcurrido.",
+        "options": [
+          "4 días",
+          "29 días",
+          "2 días",
+          "3 días",
+          "1 día"
+        ],
+        "answer": 2,
+        "solution": "<p>2024 es bisiesto. Desde el 28 de febrero se llega al 29 después de un día, y al 1 de marzo después de otro. En total transcurren 2 días.</p>"
+      },
+      {
+        "id": "p09",
+        "prompt": "El 1 de enero de 2024 fue lunes. ¿Qué día de la semana fue el 1 de enero de 2025?",
+        "options": [
+          "Miércoles",
+          "Lunes",
+          "Martes",
+          "Jueves",
+          "Viernes"
+        ],
+        "answer": 0,
+        "solution": "<p>2024 es bisiesto, así que entre ambos primeros de enero transcurren 366 días. Como \\(366=52\\times7+2\\), el día semanal avanza dos: de lunes a miércoles.</p>"
+      },
+      {
+        "id": "p10",
+        "prompt": "Un mes de 30 días contiene cinco lunes y cinco martes. ¿Qué día de la semana cae el día 30 de ese mes?",
+        "options": [
+          "Miércoles",
+          "Domingo",
+          "Lunes",
+          "Martes",
+          "Sábado"
+        ],
+        "answer": 3,
+        "solution": "<p>Un mes de 30 días contiene cuatro semanas y dos días extra. Si los días con cinco apariciones son lunes y martes, el mes debe comenzar lunes. El día 29 también es lunes y el día 30 es martes.</p>"
+      }
+    ]
+  }
+});

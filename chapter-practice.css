@@ -3,3 +3,10 @@
 @media print{.practice-check{display:none}.practice-card{break-inside:auto}.practice-options label{break-inside:avoid}}
 
 .practice-card .practice-passage{display:block;font-weight:400;line-height:1.75;margin:12px 0 20px}
+
+/* Exact problem figures retain their own aspect ratios and can be enlarged. */
+.math-figure{width:100%;max-width:var(--figure-width,760px);margin:18px auto 24px;break-inside:avoid}.math-figure-button{display:block;width:100%;padding:10px;border:1px solid #c6d6df;border-radius:10px;background:#fff;color:#176c62;cursor:zoom-in;font:inherit}.math-figure-button img{display:block;width:100%;height:auto;object-fit:contain;margin:0 auto}.math-figure-button span{display:block;font-size:13px;font-weight:700;padding-top:8px}.math-figure-button:focus-visible{outline:3px solid #bc7d27;outline-offset:4px}.math-figure figcaption{font-size:13px;font-weight:400;line-height:1.5;color:#526677;text-align:center;margin-top:9px}.math-expanded{background:#fff}.chapter-article .katex{font-size:1.08em}.chapter-article .katex-display{max-width:100%;overflow-x:auto;overflow-y:hidden}
+@media(max-width:650px){.math-figure-button{padding:5px}.math-figure{margin:16px auto 21px}}
+@media print{.math-figure-button{border:0;padding:0}.math-figure-button span{display:none}}
+
+.math-figure-zoom{max-width:100%;max-height:70vh;overflow:auto;overscroll-behavior:contain;background:#fff;border:1px solid #c6d6df;border-radius:8px}.math-figure-zoom .math-expanded{width:var(--natural-width,760px);min-width:100%;max-width:none;height:auto;max-height:none}.math-figure-zoom:focus-visible{outline:3px solid #bc7d27;outline-offset:2px}

@@ -1,0 +1,318 @@
+{
+  "courseId": 2,
+  "source": "Razonamiento Matemático, Lumbreras Editores, 2020. Capítulos 1–6.",
+  "figures": [
+    {
+      "src": "assets/razonamiento-matematico-figuras/c01-p01-cerillos.svg",
+      "alt": "5 cuadrados iguales en una fila. Dos cuadrados vecinos comparten exactamente un cerillo.",
+      "caption": "Fila de 5 cuadrados",
+      "width": 690,
+      "height": 240,
+      "credit": "Esquema matemático · SIN LÍMITES"
+    },
+    {
+      "src": "assets/razonamiento-matematico-figuras/c01-guia-cerillos.svg",
+      "alt": "3 cuadrados iguales en una fila. Dos cuadrados vecinos comparten exactamente un cerillo.",
+      "caption": "Fila de 3 cuadrados",
+      "width": 470,
+      "height": 240,
+      "credit": "Esquema matemático · SIN LÍMITES"
+    },
+    {
+      "src": "assets/razonamiento-matematico-figuras/c01-p02-igualdad.svg",
+      "alt": "Igualdad inicial hecha con cerillos: 6 + 4 = 4. Los dígitos tienen el patrón de siete segmentos.",
+      "caption": "Mueve exactamente un cerillo",
+      "width": 670,
+      "height": 240,
+      "credit": "Esquema matemático · SIN LÍMITES"
+    },
+    {
+      "src": "assets/razonamiento-matematico-figuras/c01-p03-monedas.svg",
+      "alt": "Una moneda O y otra moneda A, iguales y tangentes exteriormente. Se busca completar el contorno de O.",
+      "caption": "Contacto entre monedas iguales",
+      "width": 760,
+      "height": 330,
+      "credit": "Esquema matemático · SIN LÍMITES"
+    },
+    {
+      "src": "assets/razonamiento-matematico-figuras/c01-p04-marco-triangular.svg",
+      "alt": "Marco triangular con cinco monedas por lado. Una moneda ocupa cada vértice y se comparte entre los dos lados vecinos. No hay monedas interiores.",
+      "caption": "Monedas en el perímetro",
+      "width": 760,
+      "height": 360,
+      "credit": "Esquema matemático · SIN LÍMITES"
+    },
+    {
+      "src": "assets/razonamiento-matematico-figuras/c01-p05-dado.svg",
+      "alt": "Dado con 2 arriba, 3 al frente y 1 a la derecha. Las caras opuestas suman 7.",
+      "caption": "Tres caras de un dado",
+      "width": 760,
+      "height": 340,
+      "credit": "Esquema matemático · SIN LÍMITES"
+    },
+    {
+      "src": "assets/razonamiento-matematico-figuras/c01-p06-pila-dados.svg",
+      "alt": "Cuatro dados apilados verticalmente, sin espacios, sobre una mesa. La cara superior del dado de arriba muestra 3.",
+      "caption": "Pila de cuatro dados",
+      "width": 650,
+      "height": 430,
+      "credit": "Esquema matemático · SIN LÍMITES"
+    },
+    {
+      "src": "assets/razonamiento-matematico-figuras/c01-p07-rodar-dado.svg",
+      "alt": "Al inicio: arriba 1, sur 5, este 3; las opuestas son abajo 6, norte 2 y oeste 4. El recorrido tiene un paso al este y otro al norte, girando el dado sobre una arista en cada paso.",
+      "caption": "Dos giros de un cuarto de vuelta",
+      "width": 760,
+      "height": 375,
+      "credit": "Esquema matemático · SIN LÍMITES"
+    },
+    {
+      "src": "assets/razonamiento-matematico-figuras/c01-p09-domino.svg",
+      "alt": "Fichas verticales A: 4 arriba y 2 abajo, B: 1 arriba y 3 abajo, C: 5 arriba y 1 abajo.",
+      "caption": "Fichas antes del giro",
+      "width": 760,
+      "height": 340,
+      "credit": "Esquema matemático · SIN LÍMITES"
+    },
+    {
+      "src": "assets/razonamiento-matematico-figuras/c01-p10-torres.svg",
+      "alt": "Tres postes A, B y C. En A hay tres discos: grande abajo, mediano en medio y pequeño arriba. B y C están vacíos.",
+      "caption": "Traslada la torre de A a C",
+      "width": 760,
+      "height": 350,
+      "credit": "Esquema matemático · SIN LÍMITES"
+    },
+    {
+      "src": "assets/razonamiento-matematico-figuras/c02-p03-balanzas.svg",
+      "alt": "La balanza está equilibrada. En el platillo izquierdo hay un objeto de masa x y una pesa de 3 kg. En el derecho hay pesas de 1 kg y de 9 kg.",
+      "caption": "Compara las masas de ambos platillos",
+      "width": 760,
+      "height": 350,
+      "credit": "Esquema matemático · SIN LÍMITES"
+    },
+    {
+      "src": "assets/razonamiento-matematico-figuras/c02-p04-reparto.svg",
+      "alt": "Todo el arroz, 20 kg, se reparte en las porciones A y B. La balanza se equilibra con A más una pesa de 4 kg en un platillo y B en el otro. Las letras representan masas de arroz, sin la pesa.",
+      "caption": "Compara las masas de ambos platillos",
+      "width": 760,
+      "height": 350,
+      "credit": "Esquema matemático · SIN LÍMITES"
+    },
+    {
+      "src": "assets/razonamiento-matematico-figuras/c02-p05-deudas.svg",
+      "alt": "A debe 40 soles a B; B debe 25 soles a C; C debe 10 soles a A. No existen otras deudas.",
+      "caption": "Red de deudas",
+      "width": 760,
+      "height": 435,
+      "credit": "Esquema matemático · SIN LÍMITES"
+    },
+    {
+      "src": "assets/razonamiento-matematico-figuras/c02-p06-cajas.svg",
+      "alt": "Tres cajas cerradas rotuladas MANZANAS, NARANJAS y MIXTA. Todos los rótulos son incorrectos. De la caja rotulada MIXTA se extrae una manzana.",
+      "caption": "Rótulos y muestra extraída",
+      "width": 760,
+      "height": 390,
+      "credit": "Esquema matemático · SIN LÍMITES"
+    },
+    {
+      "src": "assets/razonamiento-matematico-figuras/c02-p08-tabla-deportiva.svg",
+      "alt": "Tabla de un equipo: 8 partidos jugados, 4 ganados, empates y derrotas desconocidos, 15 puntos. En el problema, ganar vale 3 y empatar vale 1.",
+      "caption": "Registro del equipo",
+      "width": 715,
+      "height": 326,
+      "credit": "Esquema matemático · SIN LÍMITES"
+    },
+    {
+      "src": "assets/razonamiento-matematico-figuras/c02-p09-rio.svg",
+      "alt": "En la orilla inicial están A de 50 kg, B de 50 kg y C de 80 kg. Una barca inicialmente en esa orilla soporta como máximo 100 kg. La orilla de destino está vacía.",
+      "caption": "Personas y capacidad de la barca",
+      "width": 760,
+      "height": 425,
+      "credit": "Esquema matemático · SIN LÍMITES"
+    },
+    {
+      "src": "assets/razonamiento-matematico-figuras/c02-p10-puente.svg",
+      "alt": "Cuatro personas están al inicio de un puente: A tarda 1 minuto, B 2, C 5 y D 10. Pueden cruzar como máximo dos juntas y cada cruce requiere llevar la única linterna.",
+      "caption": "Cruces con una linterna",
+      "width": 760,
+      "height": 415,
+      "credit": "Esquema matemático · SIN LÍMITES"
+    },
+    {
+      "src": "assets/razonamiento-matematico-figuras/c03-p01-fila.svg",
+      "alt": "5 lugares numerados de izquierda a derecha. E ocupa el lugar 1. Los demás se desconocen.",
+      "caption": "Cinco lugares para cinco personas",
+      "width": 760,
+      "height": 320,
+      "credit": "Esquema matemático · SIN LÍMITES"
+    },
+    {
+      "src": "assets/razonamiento-matematico-figuras/c03-p03-edificio.svg",
+      "alt": "Edificio con seis pisos numerados de abajo hacia arriba. A vive en el piso 1 y B en el piso 6. Los otros cuatro pisos están por asignar.",
+      "caption": "Un residente en cada piso",
+      "width": 690,
+      "height": 440,
+      "credit": "Esquema matemático · SIN LÍMITES"
+    },
+    {
+      "src": "assets/razonamiento-matematico-figuras/c03-p05-mesa-cuatro.svg",
+      "alt": "Mesa con 4 asientos numerados en sentido horario, empezando por el 1 arriba. Ana ocupa el asiento 1. Las flechas muestran que las personas miran hacia el centro.",
+      "caption": "Asientos numerados en sentido horario",
+      "width": 650,
+      "height": 460,
+      "credit": "Esquema matemático · SIN LÍMITES"
+    },
+    {
+      "src": "assets/razonamiento-matematico-figuras/c03-p06-mesa-seis.svg",
+      "alt": "Mesa con 6 asientos numerados en sentido horario, empezando por el 1 arriba. Alba ocupa el asiento 1. Las flechas muestran que las personas miran hacia el centro.",
+      "caption": "Asientos numerados en sentido horario",
+      "width": 650,
+      "height": 460,
+      "credit": "Esquema matemático · SIN LÍMITES"
+    },
+    {
+      "src": "assets/razonamiento-matematico-figuras/c03-p09-posicion-imposible.svg",
+      "alt": "5 lugares numerados de izquierda a derecha. E ocupa el lugar 5. Los demás se desconocen.",
+      "caption": "Restricciones sobre una fila",
+      "width": 760,
+      "height": 320,
+      "credit": "Esquema matemático · SIN LÍMITES"
+    },
+    {
+      "src": "assets/razonamiento-matematico-figuras/c03-p10-asignaciones.svg",
+      "alt": "Tabla de datos: Ana usa azul y su mascota es desconocida. Beto tiene gato y su color es desconocido. Cora no tiene color ni mascota asignados todavía. Los colores disponibles son rojo, azul y verde; las mascotas son gato, perro y pez.",
+      "caption": "Datos inicialmente conocidos",
+      "width": 595,
+      "height": 740,
+      "credit": "Esquema matemático · SIN LÍMITES"
+    },
+    {
+      "src": "assets/razonamiento-matematico-figuras/c04-p01-familia.svg",
+      "alt": "Rosa y Luis son los padres de Ana y Marco. Ana y Pedro son los padres de Elena. Marco es el padre de Tomás.",
+      "caption": "Relaciones de filiación",
+      "width": 760,
+      "height": 450,
+      "credit": "Esquema matemático · SIN LÍMITES"
+    },
+    {
+      "src": "assets/razonamiento-matematico-figuras/c04-p05-generaciones.svg",
+      "alt": "Cadena de cinco varones: G1 es padre de G2, G2 de G3, G3 de G4 y G4 de G5. Todas las flechas indican padre de.",
+      "caption": "Una cadena de cinco generaciones",
+      "width": 620,
+      "height": 450,
+      "credit": "Esquema matemático · SIN LÍMITES"
+    },
+    {
+      "src": "assets/razonamiento-matematico-figuras/c04-p06-varilla.svg",
+      "alt": "Varilla de 240 cm de longitud. El primer tramo de 30 cm está señalado para mostrar la longitud que debe tener cada pieza.",
+      "caption": "División de una varilla",
+      "width": 760,
+      "height": 310,
+      "credit": "Esquema matemático · SIN LÍMITES"
+    },
+    {
+      "src": "assets/razonamiento-matematico-figuras/c04-p07-anillo.svg",
+      "alt": "Anillo cerrado con seis puntos equidistantes A, B, C, D, E y F sobre su circunferencia. Se desea obtener los seis arcos entre puntos consecutivos.",
+      "caption": "Seis arcos de un anillo cerrado",
+      "width": 760,
+      "height": 380,
+      "credit": "Esquema matemático · SIN LÍMITES"
+    },
+    {
+      "src": "assets/razonamiento-matematico-figuras/c04-p08-lamina.svg",
+      "alt": "Lámina rectangular dividida en una cuadrícula de tres filas y cuatro columnas. Hay dos líneas interiores horizontales y tres verticales.",
+      "caption": "Tres filas y cuatro columnas",
+      "width": 760,
+      "height": 380,
+      "credit": "Esquema matemático · SIN LÍMITES"
+    },
+    {
+      "src": "assets/razonamiento-matematico-figuras/c04-p10-cubo.svg",
+      "alt": "Cubo subdividido mediante planos paralelos a sus caras. Cada arista tiene tres segmentos iguales; la retícula representa 3 por 3 por 3 cubitos.",
+      "caption": "Subdivisión de un cubo",
+      "width": 760,
+      "height": 425,
+      "credit": "Esquema matemático · SIN LÍMITES"
+    },
+    {
+      "src": "assets/razonamiento-matematico-figuras/c05-p01-magico-tres.svg",
+      "alt": "Cuadrado de tres por tres: primera fila 8, 1, 6; segunda 3, x, 7; tercera 4, 9, 2. Todas las filas, columnas y diagonales principales tienen la misma suma.",
+      "caption": "Cuadrado mágico aditivo",
+      "width": 400,
+      "height": 320,
+      "credit": "Esquema matemático · SIN LÍMITES"
+    },
+    {
+      "src": "assets/razonamiento-matematico-figuras/c05-p04-parejas-opuestas.svg",
+      "alt": "Cuadrado mágico de tres por tres. Filas: x, 10, 5; 8, 6, 4; 7, 2, 9. Usa una vez cada entero de 2 a 10.",
+      "caption": "Números del 2 al 10",
+      "width": 400,
+      "height": 320,
+      "credit": "Esquema matemático · SIN LÍMITES"
+    },
+    {
+      "src": "assets/razonamiento-matematico-figuras/c05-p05-magico-producto.svg",
+      "alt": "Cuadrado de tres por tres: filas 2, 9, 12; 36, x, 1; 3, 4, 18. El producto de cada fila, columna y diagonal principal es el mismo.",
+      "caption": "Cuadrado mágico multiplicativo",
+      "width": 400,
+      "height": 320,
+      "credit": "Esquema matemático · SIN LÍMITES"
+    },
+    {
+      "src": "assets/razonamiento-matematico-figuras/c05-p06-cruz.svg",
+      "alt": "Cruz de cinco casillas: tres en horizontal y tres en vertical, compartiendo la casilla central x. Las otras cuatro casillas aún no tienen valor.",
+      "caption": "Dos líneas que comparten el centro",
+      "width": 440,
+      "height": 330,
+      "credit": "Esquema matemático · SIN LÍMITES"
+    },
+    {
+      "src": "assets/razonamiento-matematico-figuras/c05-p08-triangulo.svg",
+      "alt": "Triángulo con seis casillas: x, y, z en sus tres vértices y una casilla desconocida en el punto medio de cada lado. Cada lado contiene tres casillas.",
+      "caption": "Suma de los valores de los vértices",
+      "width": 760,
+      "height": 380,
+      "credit": "Esquema matemático · SIN LÍMITES"
+    },
+    {
+      "src": "assets/razonamiento-matematico-figuras/c05-p09-tres-consecutivas.svg",
+      "alt": "Nueve casillas en una fila: 2, x, 5, 2, 7, 5, 2, 7, 5. Toda terna de casillas consecutivas suma 14.",
+      "caption": "Regla para cada grupo de tres",
+      "width": 766,
+      "height": 154,
+      "credit": "Esquema matemático · SIN LÍMITES"
+    },
+    {
+      "src": "assets/razonamiento-matematico-figuras/c05-p10-subcuadros.svg",
+      "alt": "Cuadrícula de cuatro por cuatro. Filas: 2, 5, 4, 3; 7, 6, 5, 8; 4, 3, 6, 1; 5, 8, 3, x. Todo bloque de dos filas y dos columnas consecutivas suma 20.",
+      "caption": "Bloques contiguos de 2 × 2",
+      "width": 420,
+      "height": 400,
+      "credit": "Esquema matemático · SIN LÍMITES"
+    },
+    {
+      "src": "assets/razonamiento-matematico-figuras/c06-p01-dias-relativos.svg",
+      "alt": "Línea de tiempo con anteayer menos 2, ayer menos 1, hoy 0, mañana más 1 y pasado mañana más 2. Solo se conoce que anteayer fue viernes.",
+      "caption": "Desplazamientos respecto de hoy",
+      "width": 760,
+      "height": 270,
+      "credit": "Esquema matemático · SIN LÍMITES"
+    },
+    {
+      "src": "assets/razonamiento-matematico-figuras/c06-p06-febrero.svg",
+      "alt": "Calendario de febrero de 2024, con semanas de lunes a domingo. El día 1 cae jueves, el 28 miércoles y el 29 jueves. Febrero tiene 29 días.",
+      "caption": "Febrero de 2024",
+      "width": 672,
+      "height": 530,
+      "credit": "Esquema matemático · SIN LÍMITES"
+    },
+    {
+      "src": "assets/razonamiento-matematico-figuras/c06-p07-mes-31.svg",
+      "alt": "Calendario de un mes de 31 días cuyo día 1 cae sábado. Los días se distribuyen en semanas de lunes a domingo; el día 31 cae lunes.",
+      "caption": "Un mes de 31 días",
+      "width": 672,
+      "height": 614,
+      "credit": "Esquema matemático · SIN LÍMITES"
+    }
+  ]
+}

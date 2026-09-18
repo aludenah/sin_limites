@@ -18,6 +18,7 @@ const ADMIN_EMAIL='alexludenah@gmail.com';
 const app=document.getElementById('adminApp');
 let allStudents=[];
 const TRACKED_CHAPTERS={
+  ...Object.fromEntries((window.MATH_REASONING_CHAPTERS||[]).map(c=>[c.progressId,{label:'Razonamiento Matemático · Capítulo '+c.number+' · '+c.title,items:10}])),
   ...Object.fromEntries((window.VERBAL_CHAPTERS||[]).map(c=>[c.progressId,{label:'Razonamiento Verbal · Capítulo '+c.number+' · '+c.title,items:10}])),
   ...Object.fromEntries((window.ECONOMY_CHAPTERS||[]).map(c=>[c.progressId,{label:'Economía · Capítulo '+c.number+' · '+c.title,items:10}])),
   ...Object.fromEntries((window.CIVICS_CHAPTERS||[]).map(c=>[c.progressId,{label:'Educación Cívica · Capítulo '+c.number+' · '+c.title,items:10}])),

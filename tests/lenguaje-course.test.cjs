@@ -1,7 +1,7 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
 const {harness}=require('./study-entry.test.cjs');
 const root=path.join(__dirname,'..');
-const files=['courses.js','history-catalog.js','peru-catalog.js','lenguaje-catalog.js','economia-catalog.js','educacion-civica-catalog.js','razonamiento-verbal-catalog.js','history-progress.js','app.js'];
+const files=['courses.js','history-catalog.js','peru-catalog.js','lenguaje-catalog.js','economia-catalog.js','educacion-civica-catalog.js','razonamiento-verbal-catalog.js','razonamiento-matematico-catalog.js','history-progress.js','app.js'];
 const chapterFiles=n=>['lenguaje-catalog.js','history-progress.js',`lenguaje-capitulo-0${n}-data.js`,'history-chapter.js'];
 const expectedSyllabus=[
  'La comunicación','El lenguaje','Planos del lenguaje','La realidad lingüística del Perú','Historia de la lengua española','Fonología y Fonética','Uso de grafías','La sílaba','Uso de las letras mayúsculas y minúsculas','Acentuación escrita','La morfología','La semántica','Relaciones semánticas','Frase nominal','El sustantivo','Accidentes del sustantivo','El adjetivo','Determinantes','Pronombre','El verbo','Clasificación morfológica del verbo','Clasificación semántico-sintáctica del verbo','El adverbio','La preposición','La conjunción','Sintaxis','El sujeto','El predicado','Concordancia','Oración compuesta coordinada','Oración compuesta subordinada I','Oración compuesta subordinada II','Signos de puntuación','El texto'
@@ -82,7 +82,7 @@ async function validateAppAndProgress(){
  const last=c.run('CONTENT.lessons.length-1');
  c.run(`goLesson(${last});window.ChapterPractice.choose(CHAPTER_ID,P.practice10,'p01',window.ChapterPractice.questions(CHAPTER_ID)[0].answer,P.studyMode);checkPractice('p01')`);await c.run('persist()');
  assert.equal(c.cloud.get('users/student/progress/navigation').lastCourseId,7);
- assert.equal(c.cloud.get('users/student/progress/navigation').catalogVersion,7);
+ assert.equal(c.cloud.get('users/student/progress/navigation').catalogVersion,8);
  assert.equal(c.cloud.get('users/student/progress/lenguaje-capitulo-03').readingItem,last);
  const reload=harness(chapterFiles(3),{local:h.local,cloud:h.cloud});await reload.signIn({uid:'student'});assert.equal(reload.run('P.readingItem'),last);
  const home=harness(files,{local:h.local,cloud:h.cloud});await home.signIn({uid:'student'});

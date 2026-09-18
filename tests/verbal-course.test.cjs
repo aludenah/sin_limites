@@ -1,7 +1,7 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
 const {harness}=require('./study-entry.test.cjs');
 const root=path.join(__dirname,'..');
-const catalogs=['history-catalog.js','peru-catalog.js','lenguaje-catalog.js','economia-catalog.js','educacion-civica-catalog.js','razonamiento-verbal-catalog.js'];
+const catalogs=['history-catalog.js','peru-catalog.js','lenguaje-catalog.js','economia-catalog.js','educacion-civica-catalog.js','razonamiento-verbal-catalog.js','razonamiento-matematico-catalog.js'];
 const appFiles=['courses.js',...catalogs,'history-progress.js','app.js'];
 const chapterFiles=n=>['razonamiento-verbal-catalog.js','history-progress.js',`razonamiento-verbal-capitulo-0${n}-data.js`,'history-chapter.js'];
 const titles=['Relaciones semánticas','Series verbales y términos excluidos','Analogías','Oraciones incompletas','Conectores lógicos','La comprensión lectora y la jerarquía textual'];
@@ -39,7 +39,7 @@ function contentAndAssets(){
  assert.equal(Object.keys(ctx.window.CHAPTER_PRACTICES).filter(k=>k.startsWith('razonamiento-verbal-')).length,6);
  const admin=fs.readFileSync(path.join(root,'admin.js'),'utf8');
  vm.runInNewContext(admin.slice(admin.indexOf('const TRACKED_CHAPTERS='),admin.indexOf('let selectedChapter='))+';window.tracked=TRACKED_CHAPTERS;',ctx);
- assert.equal(Object.keys(ctx.window.tracked).length,38);
+ assert.equal(Object.keys(ctx.window.tracked).length,44);
  for(let n=1;n<=6;n++){const x=ctx.window.tracked[`razonamiento-verbal-capitulo-0${n}`];assert.equal(x.items,10);assert.ok(x.label.includes(titles[n-1]));}
  for(const f of ['index.html','admin.html'])assert.ok(fs.readFileSync(path.join(root,f),'utf8').includes('razonamiento-verbal-catalog.js'));
 }
@@ -67,7 +67,7 @@ async function navigationAndProgress(){
    assert.match(study.elements.get('image-dialog').innerHTML,/expanded-image/);
   }
   study.run("goLesson(4);window.ChapterPractice.choose(CHAPTER_ID,P.practice10,'p01',window.ChapterPractice.questions(CHAPTER_ID)[0].answer,P.studyMode);checkPractice('p01')");await study.run('persist()');
-  const nav=study.cloud.get('users/student/progress/navigation');assert.equal(nav.lastCourseId,1);assert.equal(nav.lastChapterNumber,n);assert.equal(nav.catalogVersion,7);
+  const nav=study.cloud.get('users/student/progress/navigation');assert.equal(nav.lastCourseId,1);assert.equal(nav.lastChapterNumber,n);assert.equal(nav.catalogVersion,8);
   const restored=harness(chapterFiles(n),{local:home.local,cloud:home.cloud});await restored.signIn({uid:'student'});
   assert.equal(restored.run('P.readingItem'),4);assert.equal(restored.run('progressPercent()'),10);
   const catalog=harness(appFiles,{local:home.local,cloud:home.cloud,search:'?course=1'});await catalog.signIn({uid:'student'});

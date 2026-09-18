@@ -2,6 +2,7 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
 const {harness}=require('./study-entry.test.cjs');
 const root=path.join(__dirname,'..');
 const chapters=[
+ ...[1,2,3,4,5,6].map(n=>({id:`razonamiento-matematico-capitulo-0${n}`,files:['razonamiento-matematico-catalog.js','history-progress.js',`razonamiento-matematico-capitulo-0${n}-data.js`,'history-chapter.js'],number:n,course:2})),
  ...[1,2,3,4,5,6].map(n=>({id:`razonamiento-verbal-capitulo-0${n}`,files:['razonamiento-verbal-catalog.js','history-progress.js',`razonamiento-verbal-capitulo-0${n}-data.js`,'history-chapter.js'],number:n,course:1})),
  ...['economia','educacion-civica'].flatMap(prefix=>[1,2,3,4,5,6].map(n=>({id:`${prefix}-capitulo-0${n}`,files:[`${prefix}-catalog.js`,'history-progress.js',`${prefix}-capitulo-0${n}-data.js`,'history-chapter.js'],number:n,course:prefix==='economia'?14:10}))),
  ...[1,2,3,4,5,6].map(n=>({id:`lenguaje-capitulo-0${n}`,files:['lenguaje-catalog.js','history-progress.js',`lenguaje-capitulo-0${n}-data.js`,'history-chapter.js'],number:n,course:7})),

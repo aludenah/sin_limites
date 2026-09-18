@@ -47,14 +47,19 @@ window.ChapterPractice=(()=>{
   if(answer===q.answer&&!p.mastered.includes(q.id))p.mastered.push(q.id);
   return 'graded';
  }
+ function renderFigure(v,id){
+  if(!v)return '';
+  const width=Number(v.width)||760,height=Number(v.height)||400;
+  return `<figure class="math-figure" style="--figure-width:${width}px"><button type="button" class="math-figure-button" data-action="math-figure" data-id="${esc(id)}" aria-label="Ampliar figura: ${esc(v.caption)}"><img src="${esc(v.src)}" alt="${esc(v.alt)}" width="${width}" height="${height}" loading="lazy" decoding="async"><span>Ampliar figura ⊕</span></button><figcaption>${esc(v.caption)}</figcaption></figure>`;
+ }
  function render(id,p,mode,notice=''){
   const qs=questions(id);
   return `<div class="unified-practice"><header class="practice-intro"><h2>Práctica del capítulo</h2><p>Resuelve los 10 problemas y comprueba cada respuesta para ver su explicación. Puedes volver a intentarlo; tus aciertos se conservan.</p><p class="practice-total"><strong>${p.mastered.length} de 10</strong> problemas resueltos correctamente.</p>${notice?`<p class="practice-notice" role="alert">${esc(notice)}</p>`:''}</header>${qs.map((q,i)=>{
    const done=p.mastered.includes(q.id),available=canOpen(id,p,i,mode),answered=valid(q,p.results[q.id]),right=p.results[q.id]===q.answer;
    const heading=`<header class="practice-heading"><span class="practice-number">${String(i+1).padStart(2,'0')}</span><div><h3>Problema ${i+1}</h3>${q.topic||q.level?`<p>${esc(q.topic||q.level)}</p>`:''}</div>${done?'<span class="practice-done">Resuelto</span>':''}</header>`;
    if(!available)return `<section class="practice-card is-locked" id="practice-${q.id}" aria-label="Problema ${i+1}, pendiente de habilitar">${heading}<p>Resuelve correctamente el problema anterior para continuar.</p></section>`;
-   return `<section class="practice-card" id="practice-${q.id}">${heading}<fieldset><legend>${q.prompt}</legend>${q.statements?`<ul class="practice-statements">${q.statements.map(s=>`<li>${esc(s)}</li>`).join('')}</ul>`:''}<div class="practice-options">${q.options.map((option,n)=>`<label><input type="radio" name="practice10-${q.id}" data-group="practice10" data-question="${q.id}" value="${n}" ${p.answers[q.id]===n?'checked':''}><span><b>${String.fromCharCode(65+n)}.</b> ${option}</span></label>`).join('')}</div></fieldset><button class="practice-check" data-action="check-practice10" data-id="${q.id}">Comprobar respuesta</button>${answered?`<div class="practice-feedback ${right?'is-correct':''}" id="practice-feedback-${q.id}" role="status" tabindex="-1"><strong>${right?'Respuesta correcta':'Revisa tu respuesta'} · Alternativa ${String.fromCharCode(65+q.answer)}</strong><div>${q.solution}</div></div>`:''}${done?'<p class="practice-retained">Tu acierto se conserva aunque vuelvas a responder.</p>':''}</section>`;
+   return `<section class="practice-card" id="practice-${q.id}">${heading}<fieldset><legend>${q.prompt}</legend>${renderFigure(q.figure,'practice:'+q.id)}${q.statements?`<ul class="practice-statements">${q.statements.map(s=>`<li>${esc(s)}</li>`).join('')}</ul>`:''}<div class="practice-options">${q.options.map((option,n)=>`<label><input type="radio" name="practice10-${q.id}" data-group="practice10" data-question="${q.id}" value="${n}" ${p.answers[q.id]===n?'checked':''}><span><b>${String.fromCharCode(65+n)}.</b> ${option}</span></label>`).join('')}</div></fieldset><button class="practice-check" data-action="check-practice10" data-id="${q.id}">Comprobar respuesta</button>${answered?`<div class="practice-feedback ${right?'is-correct':''}" id="practice-feedback-${q.id}" role="status" tabindex="-1"><strong>${right?'Respuesta correcta':'Revisa tu respuesta'} · Alternativa ${String.fromCharCode(65+q.answer)}</strong><div>${q.solution}</div></div>`:''}${done?'<p class="practice-retained">Tu acierto se conserva aunque vuelvas a responder.</p>':''}</section>`;
   }).join('')}</div>`;
  }
- return {has,questions,normalize,merge,summary,limit,canOpen,choose,check,render};
+ return {has,questions,normalize,merge,summary,limit,canOpen,choose,check,render,renderFigure};
 })();

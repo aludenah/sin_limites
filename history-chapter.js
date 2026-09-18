@@ -4,6 +4,7 @@ const CHAPTER_ID=CONTENT.progressId||CONTENT.id;
 const COURSE_ID=CONTENT.courseId||12;
 const COURSE_NAME=CONTENT.courseName||'Historia Universal';
 const COURSE_CONFIG={
+  2:{prefix:'razonamiento-matematico',chapters:window.MATH_REASONING_CHAPTERS||[]},
   1:{prefix:'razonamiento-verbal',chapters:window.VERBAL_CHAPTERS||[]},
   7:{prefix:'lenguaje',chapters:window.LANGUAGE_CHAPTERS||[]},
   10:{prefix:'educacion-civica',chapters:window.CIVICS_CHAPTERS||[]},
@@ -104,7 +105,7 @@ function theoryBlock(block){
  const table=block.rows?`<div class="table-wrap" tabindex="0" role="region" aria-label="${escapeHTML(block.title)}"><table><thead><tr>${block.headers.map(h=>`<th scope="col">${escapeHTML(h)}</th>`).join('')}</tr></thead><tbody>${block.rows.map(row=>`<tr>${row.map((x,i)=>i?`<td>${escapeHTML(x)}</td>`:`<th scope="row">${escapeHTML(x)}</th>`).join('')}</tr>`).join('')}</tbody></table></div>`:'';
  return `<section class="topic" id="${block.id}" tabindex="-1"><h3>${escapeHTML(block.title)}</h3><div class="topic-layout ${block.illustration?'with-image':''}"><div class="topic-prose">${text}</div>${illustration(block)}</div>${cards}${table}${block.sources?.length?`<p class="source-note">Para profundizar: ${block.sources.map(source=>`<a href="${escapeHTML(source.url)}" target="_blank" rel="noopener noreferrer">${escapeHTML(source.label)}</a>`).join(' · ')}</p>`:''}${block.takeaway?`<p class="takeaway">${escapeHTML(block.takeaway)}</p>`:''}</section>`;
 }
-function lessonView(i=P.currentItem){const x=LESSONS[i];return `<section class="reading-section" id="lesson-${i}" data-reading-item="${i}" tabindex="-1" aria-labelledby="lesson-title-${i}"><header class="section-heading"><span>${String(i+1).padStart(2,'0')}</span><h2 id="lesson-title-${i}">${escapeHTML(x.title)}</h2></header>${x.blocks.map(theoryBlock).join('')}${x.examples.map(e=>`<details class="guided-case"><summary>Caso guiado: ${escapeHTML(e.title)}</summary><p>${e.question}</p><ol>${e.steps.map(s=>`<li>${s}</li>`).join('')}</ol></details>`).join('')}</section>`;}
+function lessonView(i=P.currentItem){const x=LESSONS[i];return `<section class="reading-section" id="lesson-${i}" data-reading-item="${i}" tabindex="-1" aria-labelledby="lesson-title-${i}"><header class="section-heading"><span>${String(i+1).padStart(2,'0')}</span><h2 id="lesson-title-${i}">${escapeHTML(x.title)}</h2></header>${x.blocks.map(theoryBlock).join('')}${x.examples.map((e,j)=>`<details class="guided-case"><summary>Caso guiado: ${escapeHTML(e.title)}</summary><p>${e.question}</p>${e.figure?window.ChapterPractice.renderFigure(e.figure,'example:'+i+':'+j):''}<ol>${e.steps.map(s=>`<li>${s}</li>`).join('')}</ol></details>`).join('')}</section>`;}
 function chronology(){const title=CONTENT.sequenceTitle||'Cronología para orientarte',note=CONTENT.sequenceNote||'Referencias aproximadas; los intervalos no están dibujados a escala.';return `<details class="chapter-chronology"><summary>${escapeHTML(title)}</summary><ol class="era-list">${CONTENT.timeline.map(([date,text])=>`<li><span class="era-date">${escapeHTML(date)}</span><p>${escapeHTML(text)}</p></li>`).join('')}</ol><p class="question-note">${escapeHTML(note)}</p></details>`;}
 function progressSummary(){return P.practice10.mastered.length+' de 10 problemas resueltos correctamente';}
 function finishContent(){return '<h2>'+(chapterComplete()?'¡Completaste la práctica!':'Tu avance en el capítulo')+'</h2><p>'+progressSummary()+'</p><p class="question-note">Completa los 10 problemas para alcanzar el 100%. Puedes repasar y volver a responder sin perder tus aciertos.</p>'+chapterLinks();}
@@ -112,13 +113,18 @@ function render(){
  if(!user)return;if(!P.studyMode){window.location.replace('index.html?chapter='+CONTENT.id+'&v=20260918-social1');return;}
  root.innerHTML=`${header()}<main id="chapter-content"><header class="chapter-hero" id="chapter-top"><div><p class="eyebrow">${escapeHTML(COURSE_NAME)} · Capítulo ${String(CHAPTER_NUMBER).padStart(2,'0')}</p><h1>${escapeHTML(CONTENT.title)}</h1><p class="hero-intro">${escapeHTML(CONTENT.intro)}</p></div><div class="hero-actions">${P.readingItem>0?`<button class="button secondary" data-action="resume" data-index="${P.readingItem}">Retomar lectura</button>`:''}<a class="button" href="#activities">Ir a la práctica →</a></div></header><section class="progress-panel" aria-label="Avance del capítulo"><div class="progress-heading"><span>Mi avance en el capítulo</span><strong id="progress-count">${progressPercent()}%</strong></div><progress id="chapter-progress" max="100" value="${progressPercent()}" aria-label="Avance del capítulo"></progress><p class="question-note" id="progress-description">${progressSummary()}</p><div class="save-state"><span id="save-status" role="status">${escapeHTML(saveMessage)}</span><button id="retry-save" data-action="sync" ${cloudReady?'hidden':''}>Reintentar sincronización</button></div></section><div class="reading-layout">${contents()}<article class="chapter-article"><section class="learning-goals" id="learning-goals"><p class="eyebrow">Antes de empezar</p><h2>¿Qué aprenderás?</h2><ul>${CONTENT.goals.map(g=>`<li><strong>${escapeHTML(g.title)}.</strong> ${escapeHTML(g.text)}</li>`).join('')}</ul>${chronology()}${CONTENT.sourceNote?`<p class="source-note">${escapeHTML(CONTENT.sourceNote)}</p>`:''}</section>${LESSONS.map((_,i)=>lessonView(i)).join('')}<section class="activities-section" id="activities"><div id="activities-list">${practiceView()}</div></section><section class="chapter-finish" id="chapter-finish">${finishContent()}</section></article></div></main><footer class="page-footer">SIN LÍMITES · ${escapeHTML(COURSE_NAME)} · ${escapeHTML(CONTENT.title)}</footer><dialog id="image-dialog" aria-labelledby="image-title"></dialog>`;
  observeReading();
+ renderMath(root);
 }
 
 
 
+function renderMath(scope){
+ if(CONTENT.math&&scope&&typeof window.renderMathInElement==='function')window.renderMathInElement(scope,{delimiters:[{left:'\\[',right:'\\]',display:true},{left:'\\(',right:'\\)',display:false}],throwOnError:false,trust:false});
+}
+
 function practiceView(){return window.ChapterPractice.render(CHAPTER_ID,P.practice10,P.studyMode,notice);}
 
-function renderAssessments(){const list=document.getElementById('activities-list');if(list)list.innerHTML=practiceView();const count=document.getElementById('progress-count');if(count)count.textContent=progressPercent()+'%';const bar=document.getElementById('chapter-progress');if(bar)bar.value=progressPercent();const desc=document.getElementById('progress-description');if(desc)desc.textContent=progressSummary();const finish=document.getElementById('chapter-finish');if(finish)finish.innerHTML=finishContent();}
+function renderAssessments(){const list=document.getElementById('activities-list');if(list)list.innerHTML=practiceView();const count=document.getElementById('progress-count');if(count)count.textContent=progressPercent()+'%';const bar=document.getElementById('chapter-progress');if(bar)bar.value=progressPercent();const desc=document.getElementById('progress-description');if(desc)desc.textContent=progressSummary();const finish=document.getElementById('chapter-finish');if(finish)finish.innerHTML=finishContent();renderMath(list);}
 function scrollToBlock(id,focus=false){const el=document.getElementById(id);el?.scrollIntoView({behavior:'instant',block:'start'});if(focus)el?.focus?.({preventScroll:true});}
 function showNotice(message,target='notice'){notice=message;renderAssessments();scrollToBlock(target,true);}
 function goLesson(i){if(!canOpen(i))return;P.currentItem=i;P.readingItem=i;P.activeTab='theory';notice='';markChanged();renderAssessments();persist();scrollToBlock('lesson-'+i,true);}
@@ -133,8 +139,14 @@ function observeReading(){
  document.querySelectorAll('[data-reading-item]').forEach(el=>readingObserver.observe(el));
 }
 function openImage(id){const block=LESSONS.flatMap(l=>l.blocks).find(b=>b.id===id),v=block?.illustration,d=document.getElementById('image-dialog');if(!v||!d)return;d.innerHTML=`<div class="dialog-heading"><h2 id="image-title">${escapeHTML(block.title)}</h2><button class="button secondary" data-action="close-image" aria-label="Cerrar imagen">Cerrar ×</button></div><img class="expanded-image" src="${escapeHTML(v.src)}" alt="${escapeHTML(v.alt)}"><p>${escapeHTML(v.caption)} · ${escapeHTML(v.credit||'Reconstrucción didáctica creada con IA')}.</p>`;d.showModal();}
+function openMathFigure(id){
+ const parts=String(id).split(':');
+ const v=parts[0]==='practice'?window.ChapterPractice.questions(CHAPTER_ID).find(q=>q.id===parts[1])?.figure:parts[0]==='example'?LESSONS[Number(parts[1])]?.examples[Number(parts[2])]?.figure:null;
+ const d=document.getElementById('image-dialog');if(!v||!d)return;
+ d.innerHTML=`<div class="dialog-heading"><h2 id="image-title">${escapeHTML(v.caption)}</h2><button class="button secondary" data-action="close-image" aria-label="Cerrar figura">Cerrar ×</button></div><p class="question-note">Desplaza la figura si no cabe en tu pantalla.</p><div class="math-figure-zoom" tabindex="0" role="region" aria-label="Figura ampliada" style="--natural-width:${Number(v.width)||760}px"><img class="expanded-image math-expanded" src="${escapeHTML(v.src)}" alt="${escapeHTML(v.alt)}"></div><p>${escapeHTML(v.credit||'Esquema matemático · SIN LÍMITES')}.</p>`;d.showModal();
+}
 root.addEventListener('click',event=>{
-const button=event.target.closest('[data-action]');if(!button||button.disabled||!user)return;const {action,index,id}=button.dataset;if(action==='check-practice10')checkPractice(id);else if(action==='sync')retrySync();else if(action==='image')openImage(id);else if(action==='close-image')document.getElementById('image-dialog').close();else if(action==='resume')scrollToBlock('lesson-'+Number(index),true);
+const button=event.target.closest('[data-action]');if(!button||button.disabled||!user)return;const {action,index,id}=button.dataset;if(action==='check-practice10')checkPractice(id);else if(action==='sync')retrySync();else if(action==='image')openImage(id);else if(action==='math-figure')openMathFigure(id);else if(action==='close-image')document.getElementById('image-dialog').close();else if(action==='resume')scrollToBlock('lesson-'+Number(index),true);
 });
 root.addEventListener('change',event=>{
 if(!user)return;const input=event.target;if(input.dataset.group==='practice10'&&window.ChapterPractice.choose(CHAPTER_ID,P.practice10,input.dataset.question,Number(input.value),P.studyMode))saveSoon();
@@ -156,8 +168,8 @@ async function signedIn(u){
   if(cloudReady){markChanged();await persist();}
   if(epoch!==authEpoch)return;
   // The navigation document lets the catalog and teacher panel resume this chapter.
-  const navigation={catalogVersion:7,lastCourseId:COURSE_ID,lastCourseName:COURSE_NAME,lastTopicIndex:CHAPTER_NUMBER-1,lastChapterNumber:CHAPTER_NUMBER,lastChapterName:CONTENT.title};
-  try{localStorage.setItem('academia-sm-state',JSON.stringify({catalogVersion:7,activeCourseId:COURSE_ID,activeTopicIndex:CHAPTER_NUMBER-1,activeTopicName:CONTENT.title}));}catch{}
+  const navigation={catalogVersion:8,lastCourseId:COURSE_ID,lastCourseName:COURSE_NAME,lastTopicIndex:CHAPTER_NUMBER-1,lastChapterNumber:CHAPTER_NUMBER,lastChapterName:CONTENT.title};
+  try{localStorage.setItem('academia-sm-state',JSON.stringify({catalogVersion:8,activeCourseId:COURSE_ID,activeTopicIndex:CHAPTER_NUMBER-1,activeTopicName:CONTENT.title}));}catch{}
   if(cloudReady)try{await db.collection('users').doc(u.uid).collection('progress').doc('navigation').set({...navigation,updatedAt:firebase.firestore.FieldValue.serverTimestamp()},{merge:true});}catch(error){console.error('Navigation save:',error);}
 }
 if(!window.firebase){root.innerHTML='<main class="guest-view"><h1>No se pudo cargar la sesión</h1><p>Revisa tu conexión y vuelve a abrir este capítulo.</p><a class="button" href="">Reintentar</a></main>';}

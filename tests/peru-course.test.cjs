@@ -1,6 +1,6 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
 const {harness}=require('./study-entry.test.cjs');
-const root=path.join(__dirname,'..'),files=['courses.js','history-catalog.js','peru-catalog.js','lenguaje-catalog.js','economia-catalog.js','educacion-civica-catalog.js','razonamiento-verbal-catalog.js','history-progress.js','app.js'];
+const root=path.join(__dirname,'..'),files=['courses.js','history-catalog.js','peru-catalog.js','lenguaje-catalog.js','economia-catalog.js','educacion-civica-catalog.js','razonamiento-verbal-catalog.js','razonamiento-matematico-catalog.js','history-progress.js','app.js'];
 const chapterFiles=n=>['peru-catalog.js','history-progress.js',`historia-del-peru-capitulo-0${n}-data.js`,'history-chapter.js'];
 async function test(){
  const h=harness(files),run=h.run;await h.signIn({uid:'student'});
@@ -19,7 +19,7 @@ async function test(){
  const c=harness(chapterFiles(3),{local:h.local,cloud:h.cloud});await c.signIn({uid:'student'});
  c.run("goLesson(4);window.ChapterPractice.choose(CHAPTER_ID,P.practice10,'p01',window.ChapterPractice.questions(CHAPTER_ID)[0].answer,P.studyMode);checkPractice('p01')");await c.run('persist()');
  assert.equal(c.cloud.get('users/student/progress/navigation').lastCourseId,11);
- assert.equal(c.cloud.get('users/student/progress/navigation').catalogVersion,7);
+ assert.equal(c.cloud.get('users/student/progress/navigation').catalogVersion,8);
  assert.equal(c.cloud.get('users/student/progress/historia-del-peru-capitulo-03').readingItem,4);
  const reload=harness(chapterFiles(3),{local:h.local,cloud:h.cloud});await reload.signIn({uid:'student'});assert.equal(reload.run('P.readingItem'),4);
  const home=harness(files,{local:h.local,cloud:h.cloud});await home.signIn({uid:'student'});
