@@ -26,8 +26,8 @@ const TRACKED_CHAPTERS={
   ...Object.fromEntries((window.LANGUAGE_CHAPTERS||[]).map(c=>[c.progressId,{label:'Lenguaje · Capítulo '+c.number+' · '+c.title,items:10}])),
   ...Object.fromEntries((window.PERU_CHAPTERS||[]).map(c=>[c.progressId,{history:c,label:'Historia del Perú · Capítulo '+c.number+' · '+c.title,items:10}])),
   ...Object.fromEntries((window.HISTORY_CHAPTERS||[]).map(c=>[c.progressId,{history:c,label:'Historia Universal · Capítulo '+c.number+' · '+c.title,items:10}])),
-  'fisica-capitulo-01':{label:'Física · Capítulo 1 · Análisis dimensional',items:10},
-  'fisica-capitulo-02':{label:'Física · Capítulo 2 · Vectores',items:10}
+  'fisica-capitulo-01':{label:'Física · Repaso · Análisis dimensional',items:10},
+  'fisica-capitulo-02':{label:'Física · Repaso · Vectores',items:10}
 };
 let selectedChapter='historia-universal-presentacion-01';
 let dashboardLoad=0;

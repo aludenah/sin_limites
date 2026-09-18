@@ -124,7 +124,7 @@ async function integration(){
   }
   if(n===1){study.run("openMathFigure('example:0:0')");assert.match(study.elements.get('image-dialog').innerHTML,/c01-guia-cerillos/);}
   study.run("goLesson(4);window.ChapterPractice.choose(CHAPTER_ID,P.practice10,'p01',window.ChapterPractice.questions(CHAPTER_ID)[0].answer,P.studyMode);checkPractice('p01')");await study.run('persist()');assert.match(study.run('window.mathCalls.at(-1).html'),/Respuesta correcta/);
-  const nav=study.cloud.get('users/student/progress/navigation');assert.equal(nav.lastCourseId,2);assert.equal(nav.lastChapterNumber,n);assert.equal(nav.catalogVersion,8);
+  const nav=study.cloud.get('users/student/progress/navigation');assert.equal(nav.lastCourseId,2);assert.equal(nav.lastChapterNumber,n);assert.equal(nav.catalogVersion,9);
   const restored=harness(chapterFiles(n),{local:home.local,cloud:home.cloud});await restored.signIn({uid:'student'});assert.equal(restored.run('P.readingItem'),4);assert.equal(restored.run('progressPercent()'),10);
   const catalog=harness(appFiles,{local:home.local,cloud:home.cloud,search:'?course=2'});await catalog.signIn({uid:'student'});assert.equal(catalog.run('state.activeTopicIndex'),n-1);assert.equal(catalog.run(`socialChapterProgress(2,${n}).percent`),10);assert.equal(catalog.run(`socialChapterProgress(1,${n}).percent`),0);catalog.run('openProgressChapter()');assert.equal(catalog.redirects.at(-1),id+'.html?v=20260918-social1');
   assert.doesNotMatch(study.run('chapterLinks()'),/capitulo-00|capitulo-07|razonamiento-verbal|historia-universal/);await catalog.signIn({uid:'other'});assert.equal(catalog.run(`socialChapterProgress(2,${n}).percent`),0);

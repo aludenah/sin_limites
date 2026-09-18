@@ -82,7 +82,7 @@ async function validateAppAndProgress(){
  const last=c.run('CONTENT.lessons.length-1');
  c.run(`goLesson(${last});window.ChapterPractice.choose(CHAPTER_ID,P.practice10,'p01',window.ChapterPractice.questions(CHAPTER_ID)[0].answer,P.studyMode);checkPractice('p01')`);await c.run('persist()');
  assert.equal(c.cloud.get('users/student/progress/navigation').lastCourseId,7);
- assert.equal(c.cloud.get('users/student/progress/navigation').catalogVersion,8);
+ assert.equal(c.cloud.get('users/student/progress/navigation').catalogVersion,9);
  assert.equal(c.cloud.get('users/student/progress/lenguaje-capitulo-03').readingItem,last);
  const reload=harness(chapterFiles(3),{local:h.local,cloud:h.cloud});await reload.signIn({uid:'student'});assert.equal(reload.run('P.readingItem'),last);
  const home=harness(files,{local:h.local,cloud:h.cloud});await home.signIn({uid:'student'});

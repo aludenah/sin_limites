@@ -75,8 +75,8 @@ function physics(){
 }
 
 function structure(){
- const course=ctx.window.COURSES.find(c=>c.id===16);assert.equal(course.topics.length,25);assert.match(course.topics[21],/Electrodinámica/);
- assert.deepEqual(Array.from(ctx.window.PHYSICS_CHAPTERS,c=>c.number),[1,2,15]);assert.equal(ctx.window.PHYSICS_CHAPTERS[2].topicIndex,21);
+ const course=ctx.window.COURSES.find(c=>c.id===16);assert.equal(course.topics.length,18);assert.match(course.topics[14],/Electrodinámica/);
+ assert.deepEqual(Array.from(ctx.window.PHYSICS_CHAPTERS,c=>c.number),[15]);assert.equal(ctx.window.PHYSICS_CHAPTERS[0].topicIndex,14);
  assert.equal(content.number,15);assert.equal(content.courseId,16);assert.equal(content.math,true);assert.equal(content.lessons.length,5);
  assert.equal(content.lessons.reduce((n,l)=>n+l.examples.length,0),10);assert.match(content.sourceNote,/capítulo XV: Electrodinámica, pp\. 217–236/);
  assert.equal(questions.length,10);for(const q of questions){assert.equal(q.options.length,5);assert.equal(new Set(q.options).size,5);assert.ok((q.solution.match(/<li>/g)||[]).length>=4);}
@@ -96,25 +96,25 @@ function structure(){
  const html=read(id+'.html');for(const file of [...chapterFiles,'practice-bank.js','chapter-practice.js'])assert.ok(html.includes(file));assert.match(html,/katex@0.16.22/);
  assert.deepEqual(fs.readdirSync(root).filter(f=>/^fisica-capitulo-\d+\.html$/.test(f)).sort(),['fisica-capitulo-01.html','fisica-capitulo-02.html',id+'.html']);
  const admin=read('admin.js');vm.runInNewContext(admin.slice(admin.indexOf('const TRACKED_CHAPTERS='),admin.indexOf('let selectedChapter='))+';window.tracked=TRACKED_CHAPTERS;',ctx);
- assert.equal(Object.keys(ctx.window.tracked).length,45);assert.equal(ctx.window.tracked[id].items,10);assert.match(ctx.window.tracked[id].label,/Capítulo 15 del PDF/);
+ assert.equal(Object.keys(ctx.window.tracked).length,45);assert.equal(ctx.window.tracked[id].items,10);assert.match(ctx.window.tracked[id].label,/Capítulo 15/);
 }
 
 async function integration(){
  const home=harness(appFiles);await home.signIn({uid:'student'});home.run("selectStudyMode('free');openCourse(16)");
- assert.match(home.elements.get('app').innerHTML,/Capítulo 15 del PDF · Electrodinámica/);
- const redirectCount=home.redirects.length;home.run('setTopic(14)');assert.equal(home.redirects.length,redirectCount,'Existing topic 15 is preserved');
- for(const [topic,number] of [[0,'01'],[1,'02'],[21,'15']]){home.run(`setTopic(${topic})`);assert.equal(home.redirects.at(-1),`fisica-capitulo-${number}.html?v=20260918-social1`);}
+ assert.match(home.elements.get('app').innerHTML,/capítulo 15, Electrodinámica/);
+ const redirectCount=home.redirects.length;home.run('setTopic(1)');assert.equal(home.redirects.length,redirectCount,'PDF chapter II is distinct from the vectors review');
+ for(const [topic,number] of [[14,'15']]){home.run(`setTopic(${topic})`);assert.equal(home.redirects.at(-1),`fisica-capitulo-${number}.html?v=20260918-catalog9`);}
  const direct=harness(chapterFiles);await direct.signIn({uid:'new'});assert.equal(direct.redirects.at(-1),`index.html?chapter=${id}&v=20260918-social1`);
- const entry=harness(appFiles,{search:'?chapter='+id});await entry.signIn({uid:'new'});entry.run("selectStudyMode('progressive')");assert.equal(entry.redirects.at(-1),id+'.html?v=20260918-social1');
+ const entry=harness(appFiles,{search:'?chapter='+id});await entry.signIn({uid:'new'});entry.run("selectStudyMode('progressive')");assert.equal(entry.redirects.at(-1),id+'.html?v=20260918-catalog9');
  const study=harness(chapterFiles,{local:home.local,cloud:home.cloud});study.run('window.mathCalls=[];window.renderMathInElement=(el,options)=>window.mathCalls.push({html:el.innerHTML,options})');await study.signIn({uid:'student'});
- const html=study.elements.get('chapter-app').innerHTML;assert.match(html,/Física · Capítulo 15 del PDF/);assert.equal((html.match(/class="guided-case"/g)||[]).length,10);assert.equal((html.match(/class="practice-card"/g)||[]).length,10);
+ const html=study.elements.get('chapter-app').innerHTML;assert.match(html,/Física · Capítulo 15/);assert.equal((html.match(/class="guided-case"/g)||[]).length,10);assert.equal((html.match(/class="practice-card"/g)||[]).length,10);
  assert.ok(study.run('window.mathCalls.length')>0);assert.equal(study.run('window.mathCalls[0].options.delimiters[1].left'),'\\(');
  for(const q of questions.filter(q=>q.figure)){assert.ok(html.includes(q.figure.src));study.run(`document.getElementById('image-dialog').showModal=()=>{};openMathFigure('practice:${q.id}')`);assert.ok(study.elements.get('image-dialog').innerHTML.includes(q.figure.src));assert.doesNotMatch(study.elements.get('image-dialog').innerHTML,/creada con IA/);}
  study.run("goLesson(4);window.ChapterPractice.choose(CHAPTER_ID,P.practice10,'p01',window.ChapterPractice.questions(CHAPTER_ID)[0].answer,P.studyMode);checkPractice('p01')");await study.run('persist()');assert.match(study.run('window.mathCalls.at(-1).html'),/Respuesta correcta/);
- const nav=home.cloud.get('users/student/progress/navigation');assert.equal(nav.lastCourseId,16);assert.equal(nav.lastChapterNumber,15);assert.equal(nav.lastTopicIndex,21);
+ const nav=home.cloud.get('users/student/progress/navigation');assert.equal(nav.lastCourseId,16);assert.equal(nav.lastChapterNumber,15);assert.equal(nav.lastTopicIndex,14);
  const restored=harness(chapterFiles,{local:home.local,cloud:home.cloud});await restored.signIn({uid:'student'});assert.equal(restored.run('P.readingItem'),4);assert.equal(restored.run('progressPercent()'),10);
- const catalog=harness(appFiles,{local:home.local,cloud:home.cloud,search:'?course=16'});await catalog.signIn({uid:'student'});assert.equal(catalog.run('state.activeTopicIndex'),21);assert.equal(catalog.run('activePhysicsNumber()'),15);assert.equal(catalog.run('physicsChapterProgress(15).percent'),10);assert.equal(catalog.run('physicsChapterProgress(1).percent'),0);assert.equal(catalog.run('physicsChapterProgress(2).percent'),0);
- assert.match(catalog.run('renderProgressPanel()'),/Electrodinámica/);catalog.run('openProgressChapter()');assert.equal(catalog.redirects.at(-1),id+'.html?v=20260918-social1');
+ const catalog=harness(appFiles,{local:home.local,cloud:home.cloud,search:'?course=16'});await catalog.signIn({uid:'student'});assert.equal(catalog.run('state.activeTopicIndex'),14);assert.equal(catalog.run('activePhysicsNumber()'),15);assert.equal(catalog.run('physicsChapterProgress(15).percent'),10);assert.equal(catalog.run('physicsChapterProgress(1).percent'),0);assert.equal(catalog.run('physicsChapterProgress(2).percent'),0);
+ assert.match(catalog.run('renderProgressPanel()'),/Electrodinámica/);catalog.run('openProgressChapter()');assert.equal(catalog.redirects.at(-1),id+'.html?v=20260918-catalog9');
  const offline=harness(chapterFiles,{local:home.local});offline.setOffline(true);await offline.signIn({uid:'student'});assert.equal(offline.run('progressPercent()'),10);
  await catalog.signIn({uid:'other'});assert.equal(catalog.run('physicsChapterProgress(15).percent'),0);assert.doesNotMatch(study.run('chapterLinks()'),/capitulo-14|capitulo-16/);
  console.log('PASS: PDF chapter 15 maps to the existing electrodynamics topic; direct entry, diagrams, math integration, grading, resume, offline progress, account isolation and teacher reporting.');
