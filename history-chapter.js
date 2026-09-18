@@ -4,6 +4,7 @@ const CHAPTER_ID=CONTENT.progressId||CONTENT.id;
 const COURSE_ID=CONTENT.courseId||12;
 const COURSE_NAME=CONTENT.courseName||'Historia Universal';
 const COURSE_CONFIG={
+  16:{prefix:'fisica',chapters:window.PHYSICS_CHAPTERS||[]},
   2:{prefix:'razonamiento-matematico',chapters:window.MATH_REASONING_CHAPTERS||[]},
   1:{prefix:'razonamiento-verbal',chapters:window.VERBAL_CHAPTERS||[]},
   7:{prefix:'lenguaje',chapters:window.LANGUAGE_CHAPTERS||[]},
@@ -16,6 +17,8 @@ const CHAPTER_PREFIX=COURSE_CONFIG.prefix;
 const COURSE_CHAPTERS=COURSE_CONFIG.chapters;
 const CHAPTER_META=COURSE_CHAPTERS.find(c=>c.number===CONTENT.number)||{legacySources:[]};
 const CHAPTER_NUMBER=CONTENT.number;
+const CHAPTER_TOPIC_INDEX=CHAPTER_META.topicIndex??(CHAPTER_NUMBER-1);
+const CHAPTER_LABEL=CHAPTER_META.sourceLabel||'Capítulo '+CHAPTER_NUMBER;
 const LESSONS=CONTENT.lessons;
 
 const CONFIG={apiKey:'AIzaSyCurhmnJ21SMqGM6G54t8QM8jcqO8jV0OE',authDomain:'sin-limites-12f07.firebaseapp.com',projectId:'sin-limites-12f07',storageBucket:'sin-limites-12f07.firebasestorage.app',messagingSenderId:'757098079298',appId:'1:757098079298:web:068a9a7ea93149bfef79db'};
@@ -95,7 +98,7 @@ async function retrySync(){
 
 let readingObserver=null;
 const chapterHref=n=>`${CHAPTER_PREFIX}-capitulo-${String(n).padStart(2,'0')}.html?v=20260918-social1`;
-function header(){return `<header class="topbar"><a class="brand" href="index.html?v=20260918-social1"><img src="assets/logo-sin-limites.jpg" width="40" height="40" alt="Logo de SIN LÍMITES"><span>SIN <em>LÍMITES</em></span></a><span class="course-label">${escapeHTML(COURSE_NAME)} · Capítulo ${CHAPTER_NUMBER}</span><a class="button secondary" href="index.html?course=${COURSE_ID}&v=20260918-social1">← Volver al temario</a></header>`;}
+function header(){return `<header class="topbar"><a class="brand" href="index.html?v=20260918-social1"><img src="assets/logo-sin-limites.jpg" width="40" height="40" alt="Logo de SIN LÍMITES"><span>SIN <em>LÍMITES</em></span></a><span class="course-label">${escapeHTML(COURSE_NAME)} · ${escapeHTML(CHAPTER_LABEL)}</span><a class="button secondary" href="index.html?course=${COURSE_ID}&v=20260918-social1">← Volver al temario</a></header>`;}
 function chapterLinks(){const previous=COURSE_CHAPTERS.some(c=>c.number===CHAPTER_NUMBER-1),next=COURSE_CHAPTERS.some(c=>c.number===CHAPTER_NUMBER+1);return `<nav class="finish-actions" aria-label="Cambiar de capítulo">${previous?`<a class="button secondary" href="${chapterHref(CHAPTER_NUMBER-1)}">← Capítulo ${CHAPTER_NUMBER-1}</a>`:''}${next?`<a class="button" href="${chapterHref(CHAPTER_NUMBER+1)}">Capítulo ${CHAPTER_NUMBER+1} →</a>`:`<a class="button" href="index.html?course=${COURSE_ID}&v=20260918-social1">Volver al temario →</a>`}</nav>`;}
 function contents(){return '<aside class="lesson-sidebar"><details class="lesson-index" open><summary>En este capítulo</summary><nav aria-label="Temas del capítulo"><a href="#learning-goals">Antes de empezar</a>'+LESSONS.map((x,i)=>'<a href="#lesson-'+i+'"><span>'+String(i+1).padStart(2,'0')+'</span>'+escapeHTML(x.title)+'</a>').join('')+'<a class="activities-link" href="#activities">Práctica · 10 problemas</a></nav></details><p class="index-hint">Lee a tu ritmo y vuelve al tema que necesites consultar.</p></aside>';}
 function illustration(block){const v=block.illustration;if(!v)return '';return `<figure class="topic-image"><button class="image-button" data-action="image" data-id="${block.id}" aria-label="Ampliar imagen: ${escapeHTML(v.caption)}"><img src="${escapeHTML(v.src)}" alt="${escapeHTML(v.alt)}" width="1448" height="1086" loading="lazy" decoding="async"><span>Ampliar ⊕</span></button><figcaption>${escapeHTML(v.caption)}<small>${escapeHTML(v.credit||'Reconstrucción didáctica creada con IA')}</small></figcaption></figure>`;}
@@ -168,8 +171,8 @@ async function signedIn(u){
   if(cloudReady){markChanged();await persist();}
   if(epoch!==authEpoch)return;
   // The navigation document lets the catalog and teacher panel resume this chapter.
-  const navigation={catalogVersion:8,lastCourseId:COURSE_ID,lastCourseName:COURSE_NAME,lastTopicIndex:CHAPTER_NUMBER-1,lastChapterNumber:CHAPTER_NUMBER,lastChapterName:CONTENT.title};
-  try{localStorage.setItem('academia-sm-state',JSON.stringify({catalogVersion:8,activeCourseId:COURSE_ID,activeTopicIndex:CHAPTER_NUMBER-1,activeTopicName:CONTENT.title}));}catch{}
+  const navigation={catalogVersion:8,lastCourseId:COURSE_ID,lastCourseName:COURSE_NAME,lastTopicIndex:CHAPTER_TOPIC_INDEX,lastChapterNumber:CHAPTER_NUMBER,lastChapterName:CONTENT.title};
+  try{localStorage.setItem('academia-sm-state',JSON.stringify({catalogVersion:8,activeCourseId:COURSE_ID,activeTopicIndex:CHAPTER_TOPIC_INDEX,activeTopicName:CONTENT.title}));}catch{}
   if(cloudReady)try{await db.collection('users').doc(u.uid).collection('progress').doc('navigation').set({...navigation,updatedAt:firebase.firestore.FieldValue.serverTimestamp()},{merge:true});}catch(error){console.error('Navigation save:',error);}
 }
 if(!window.firebase){root.innerHTML='<main class="guest-view"><h1>No se pudo cargar la sesión</h1><p>Revisa tu conexión y vuelve a abrir este capítulo.</p><a class="button" href="">Reintentar</a></main>';}

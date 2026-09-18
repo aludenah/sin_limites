@@ -1,7 +1,7 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
 const {harness}=require('./study-entry.test.cjs');
 const root=path.join(__dirname,'..');
-const appFiles=['courses.js','history-catalog.js','peru-catalog.js','lenguaje-catalog.js','economia-catalog.js','educacion-civica-catalog.js','razonamiento-verbal-catalog.js','razonamiento-matematico-catalog.js','history-progress.js','app.js'];
+const appFiles=['courses.js','history-catalog.js','peru-catalog.js','lenguaje-catalog.js','economia-catalog.js','educacion-civica-catalog.js','razonamiento-verbal-catalog.js','razonamiento-matematico-catalog.js','fisica-catalog.js','history-progress.js','app.js'];
 const configs=[
  {prefix:'economia',id:14,name:'Economía',variable:'ECONOMY',count:30,pages:[11,18,25,33,40,47],titles:['La ciencia económica','División de la economía','Necesidades y pobreza','Bienes y servicios','Proceso económico y sectores productivos','Teoría de la producción y costos de producción']},
  {prefix:'educacion-civica',id:10,name:'Educación Cívica',variable:'CIVICS',count:11,pages:[243,250,256,264,270,277],titles:['Educación cívica y las normas','La Constitución Política','Los derechos y mecanismos de protección','Ciudadanía y mecanismos de participación y de control ciudadanos','El Estado y el Gobierno','El Poder Legislativo y el Poder Ejecutivo']}
@@ -79,7 +79,7 @@ async function validateNavigation(){
 function validateTeacher(){
  const ctx={window:{}};for(const f of appFiles.filter(f=>f.includes('catalog')))vm.runInNewContext(fs.readFileSync(path.join(root,f),'utf8'),ctx);
  const admin=fs.readFileSync(path.join(root,'admin.js'),'utf8');vm.runInNewContext(admin.slice(admin.indexOf('const TRACKED_CHAPTERS='),admin.indexOf('let selectedChapter='))+';window.tracked=TRACKED_CHAPTERS;',ctx);
- assert.equal(Object.keys(ctx.window.tracked).length,44);
+ assert.equal(Object.keys(ctx.window.tracked).length,45);
  for(const c of configs)for(let n=1;n<=6;n++){const t=ctx.window.tracked[`${c.prefix}-capitulo-0${n}`];assert.equal(t.items,10);assert.ok(t.label.startsWith(`${c.name} · Capítulo ${n} ·`));}
  for(const file of ['index.html','admin.html'])for(const c of configs)assert.ok(fs.readFileSync(path.join(root,file),'utf8').includes(`${c.prefix}-catalog.js`));
 }

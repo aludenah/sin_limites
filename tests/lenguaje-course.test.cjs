@@ -1,7 +1,7 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
 const {harness}=require('./study-entry.test.cjs');
 const root=path.join(__dirname,'..');
-const files=['courses.js','history-catalog.js','peru-catalog.js','lenguaje-catalog.js','economia-catalog.js','educacion-civica-catalog.js','razonamiento-verbal-catalog.js','razonamiento-matematico-catalog.js','history-progress.js','app.js'];
+const files=['courses.js','history-catalog.js','peru-catalog.js','lenguaje-catalog.js','economia-catalog.js','educacion-civica-catalog.js','razonamiento-verbal-catalog.js','razonamiento-matematico-catalog.js','fisica-catalog.js','history-progress.js','app.js'];
 const chapterFiles=n=>['lenguaje-catalog.js','history-progress.js',`lenguaje-capitulo-0${n}-data.js`,'history-chapter.js'];
 const expectedSyllabus=[
  'La comunicación','El lenguaje','Planos del lenguaje','La realidad lingüística del Perú','Historia de la lengua española','Fonología y Fonética','Uso de grafías','La sílaba','Uso de las letras mayúsculas y minúsculas','Acentuación escrita','La morfología','La semántica','Relaciones semánticas','Frase nominal','El sustantivo','Accidentes del sustantivo','El adjetivo','Determinantes','Pronombre','El verbo','Clasificación morfológica del verbo','Clasificación semántico-sintáctica del verbo','El adverbio','La preposición','La conjunción','Sintaxis','El sujeto','El predicado','Concordancia','Oración compuesta coordinada','Oración compuesta subordinada I','Oración compuesta subordinada II','Signos de puntuación','El texto'

@@ -7052,3 +7052,216 @@ Object.assign(window.CHAPTER_PRACTICES,{
     ]
   }
 });
+
+// FISICA_CAPITULO_15_ELECTRODINAMICA
+Object.assign(window.CHAPTER_PRACTICES,{
+  "fisica-capitulo-15": {
+    "title": "Electrodinámica",
+    "problems": [
+      {
+        "id": "p01",
+        "prompt": "Por una sección de un conductor metálico circula una corriente constante de \\(0{,}80\\,\\mathrm A\\) durante \\(2{,}0\\,\\mathrm{min}\\). ¿Cuántos electrones atraviesan la sección? Usa \\(e=1{,}6\\times10^{-19}\\,\\mathrm C\\).",
+        "options": [
+          "\\(1{,}0\\times10^{19}\\)",
+          "\\(6{,}0\\times10^{20}\\)",
+          "\\(3{,}0\\times10^{20}\\)",
+          "\\(6{,}0\\times10^{18}\\)",
+          "\\(9{,}6\\times10^{20}\\)"
+        ],
+        "answer": 1,
+        "solution": "<ol><li>Expresa el tiempo en segundos: \\(\\Delta t=2{,}0(60)=120\\,\\mathrm s\\).</li><li>La carga transportada en magnitud es \\(|Q|=I\\Delta t=0{,}80(120)=96\\,\\mathrm C\\).</li><li>Cada electrón tiene carga de magnitud e. Por tanto, \\(N=96/(1{,}6\\times10^{-19})=6{,}0\\times10^{20}\\).</li><li>El número de electrones es positivo; el signo negativo de su carga no cambia el conteo.</li></ol>",
+        "topic": "Básico · carga y número de electrones"
+      },
+      {
+        "id": "p02",
+        "prompt": "La gráfica muestra la corriente en una sección de un conductor. ¿Qué carga atraviesa esa sección entre t = 0 y t = 7 s? La corriente mantiene el sentido mostrado durante todo el intervalo.",
+        "options": [
+          "\\(12\\,\\mathrm C\\)",
+          "\\(20\\,\\mathrm C\\)",
+          "\\(24\\,\\mathrm C\\)",
+          "\\(16\\,\\mathrm C\\)",
+          "\\(28\\,\\mathrm C\\)"
+        ],
+        "answer": 1,
+        "solution": "<ol><li>De 0 a 2 s: área triangular \\(Q_1=2(4)/2=4\\,\\mathrm C\\).</li><li>De 2 a 5 s: área rectangular \\(Q_2=(5-2)(4)=12\\,\\mathrm C\\).</li><li>De 5 a 7 s: área triangular \\(Q_3=(7-5)(4)/2=4\\,\\mathrm C\\).</li><li>La carga total es \\(Q=4+12+4=20\\,\\mathrm C\\). Usar \\(4\\times7\\) trataría incorrectamente la corriente como constante.</li></ol>",
+        "topic": "Básico · área en una gráfica I–t",
+        "figure": {
+          "src": "assets/fisica-capitulo-15/p02-corriente-tiempo.svg",
+          "alt": "Gráfica I frente a t: de 0 a 2 segundos, I crece linealmente de 0 a 4 amperios; de 2 a 5 segundos permanece en 4 A; de 5 a 7 segundos disminuye linealmente a 0 A.",
+          "caption": "Corriente durante siete segundos",
+          "width": 800,
+          "height": 400,
+          "credit": "Diagrama físico · SIN LÍMITES"
+        }
+      },
+      {
+        "id": "p03",
+        "prompt": "La gráfica V–I corresponde a un resistor óhmico. Si mantiene la misma temperatura y sigue siendo óhmico, ¿qué corriente conduce al aplicarle \\(15\\,\\mathrm V\\)?",
+        "options": [
+          "\\(2{,}5\\,\\mathrm A\\)",
+          "\\(1{,}5\\,\\mathrm A\\)",
+          "\\(1{,}0\\,\\mathrm A\\)",
+          "\\(2{,}0\\,\\mathrm A\\)",
+          "\\(3{,}0\\,\\mathrm A\\)"
+        ],
+        "answer": 0,
+        "solution": "<ol><li>El voltaje está en el eje vertical y la corriente en el horizontal. La pendiente es la resistencia: \\(R=\\Delta V/\\Delta I\\).</li><li>Con el punto \\((1{,}5\\,\\mathrm A;9\\,\\mathrm V)\\), se obtiene \\(R=9/1{,}5=6\\,\\Omega\\).</li><li>Con esa resistencia constante, \\(I=V/R=15/6=2{,}5\\,\\mathrm A\\).</li><li>El otro punto también da \\(3/0{,}5=6\\,\\Omega\\), lo que confirma la lectura de la gráfica.</li></ol>",
+        "topic": "Básico · ley de Ohm y pendiente",
+        "figure": {
+          "src": "assets/fisica-capitulo-15/p03-voltaje-corriente.svg",
+          "alt": "Gráfica lineal de voltaje V, vertical, frente a corriente I, horizontal, que pasa por el origen y por los puntos I igual a 0,5 A, V igual a 3 V, e I igual a 1,5 A, V igual a 9 V.",
+          "caption": "Característica de un resistor óhmico",
+          "width": 720,
+          "height": 415,
+          "credit": "Diagrama físico · SIN LÍMITES"
+        }
+      },
+      {
+        "id": "p04",
+        "prompt": "Un alambre uniforme tiene resistividad \\(\\rho=2{,}0\\times10^{-8}\\,\\Omega\\cdot\\mathrm m\\), longitud inicial de 5 m y sección de 0,50 mm². Se estira uniformemente hasta 10 m, conservando su volumen y su resistividad. ¿Cuál es su resistencia final?",
+        "options": [
+          "\\(0{,}80\\,\\Omega\\)",
+          "\\(0{,}40\\,\\Omega\\)",
+          "\\(1{,}60\\,\\Omega\\)",
+          "\\(0{,}20\\,\\Omega\\)",
+          "\\(0{,}10\\,\\Omega\\)"
+        ],
+        "answer": 0,
+        "solution": "<ol><li>La sección inicial es \\(A=0{,}50\\times10^{-6}=5{,}0\\times10^{-7}\\,\\mathrm m^2\\).</li><li>Al conservarse el volumen, \\(A^{\\prime}=LA/L^{\\prime}=5A/10=A/2=2{,}5\\times10^{-7}\\,\\mathrm m^2\\).</li><li>La nueva resistencia es \\(R^{\\prime}=\\rho L^{\\prime}/A^{\\prime}=(2{,}0\\times10^{-8})(10)/(2{,}5\\times10^{-7})=0{,}80\\,\\Omega\\).</li><li>Comprobación: inicialmente \\(R=0{,}20\\,\\Omega\\). Duplicar la longitud y reducir la sección a la mitad multiplica R por cuatro.</li></ol>",
+        "topic": "Intermedio · resistividad y conservación del volumen",
+        "figure": {
+          "src": "assets/fisica-capitulo-15/p04-alambre-estirado.svg",
+          "alt": "Antes: conductor de longitud 5 m y sección 0,50 milímetros cuadrados. Después del estiramiento uniforme: longitud 10 m y sección desconocida. Se conserva el volumen y la resistividad permanece constante.",
+          "caption": "Estiramiento uniforme de un conductor",
+          "width": 800,
+          "height": 415,
+          "credit": "Diagrama físico · SIN LÍMITES"
+        }
+      },
+      {
+        "id": "p05",
+        "prompt": "La fuente de 12 V y los cables son ideales. ¿Qué corriente pasa por el resistor de 3 Ω de la figura?",
+        "options": [
+          "\\(3\\,\\mathrm A\\)",
+          "\\(0{,}5\\,\\mathrm A\\)",
+          "\\(1\\,\\mathrm A\\)",
+          "\\(1{,}5\\,\\mathrm A\\)",
+          "\\(2\\,\\mathrm A\\)"
+        ],
+        "answer": 4,
+        "solution": "<ol><li>Los resistores de 6 Ω y 3 Ω comparten A y B: \\(R_{AB}=6(3)/(6+3)=2\\,\\Omega\\).</li><li>El resistor superior de 2 Ω está en serie con ese paralelo. Así, \\(R_{\\mathrm{eq}}=2+2=4\\,\\Omega\\) e \\(I_{\\mathrm{fuente}}=12/4=3\\,\\mathrm A\\).</li><li>El voltaje entre A y B es \\(V_{AB}=3(2)=6\\,\\mathrm V\\). Por el resistor de 3 Ω pasa \\(I_2=6/3=2\\,\\mathrm A\\).</li><li>Por el de 6 Ω pasa 1 A; en el nodo se verifica \\(3=2+1\\).</li></ol>",
+        "topic": "Intermedio · asociación mixta",
+        "figure": {
+          "src": "assets/fisica-capitulo-15/p05-circuito-mixto.svg",
+          "alt": "Fuente ideal de 12 V, positiva arriba. Un resistor de 2 ohmios conecta la fuente al nodo A. Entre A y B hay dos ramas en paralelo, de 6 y 3 ohmios. B vuelve al terminal negativo. I1 e I2 se indican de A hacia B.",
+          "caption": "Un resistor en serie con dos ramas en paralelo",
+          "width": 800,
+          "height": 400,
+          "credit": "Diagrama físico · SIN LÍMITES"
+        }
+      },
+      {
+        "id": "p06",
+        "prompt": "En el circuito, el cable superior une directamente los terminales del resistor de 9 Ω. La fuente, los cables y ambos instrumentos son ideales. ¿Qué indican el amperímetro A y el voltímetro V, respectivamente?",
+        "options": [
+          "\\(1\\,\\mathrm A\\) y \\(6\\,\\mathrm V\\)",
+          "\\(2\\,\\mathrm A\\) y \\(6\\,\\mathrm V\\)",
+          "\\(2\\,\\mathrm A\\) y \\(12\\,\\mathrm V\\)",
+          "\\(3\\,\\mathrm A\\) y \\(18\\,\\mathrm V\\)",
+          "\\(0\\,\\mathrm A\\) y \\(0\\,\\mathrm V\\)"
+        ],
+        "answer": 2,
+        "solution": "<ol><li>El puente ideal pone los dos terminales del resistor de 9 Ω al mismo potencial. No circula corriente por ese resistor.</li><li>El voltímetro ideal no conduce y el amperímetro ideal no añade resistencia. Quedan en serie 3 Ω y 6 Ω: \\(R_{\\mathrm{eq}}=9\\,\\Omega\\).</li><li>La corriente del retorno, que mide A, es \\(I=18/9=2\\,\\mathrm A\\).</li><li>V está conectado entre los extremos del resistor de 6 Ω y mide \\(V_6=2(6)=12\\,\\mathrm V\\). La otra caída es 6 V, y ambas suman 18 V.</li></ol>",
+        "topic": "Intermedio · cortocircuito e instrumentos ideales",
+        "figure": {
+          "src": "assets/fisica-capitulo-15/p06-instrumentos-y-puente.svg",
+          "alt": "Fuente ideal de 18 V, con positivo arriba. En la rama superior hay resistores de 3 ohmios y 9 ohmios; un cable ideal une directamente ambos terminales del resistor de 9 ohmios. A continuación hay un resistor de 6 ohmios en la rama derecha. Un amperímetro ideal está en el retorno inferior y un voltímetro ideal está en paralelo con el resistor de 6 ohmios.",
+          "caption": "Un puente conductor y dos instrumentos ideales",
+          "width": 860,
+          "height": 425,
+          "credit": "Diagrama físico · SIN LÍMITES"
+        }
+      },
+      {
+        "id": "p07",
+        "prompt": "La lámpara está rotulada 6 V y 3 W. Para que funcione en su punto nominal con la fuente ideal de 18 V, se conecta R en serie como indica la figura. ¿Cuáles deben ser el valor de R y la potencia que disipa?",
+        "options": [
+          "\\(36\\,\\Omega\\) y \\(9\\,\\mathrm W\\)",
+          "\\(24\\,\\Omega\\) y \\(6\\,\\mathrm W\\)",
+          "\\(6\\,\\Omega\\) y \\(24\\,\\mathrm W\\)",
+          "\\(12\\,\\Omega\\) y \\(3\\,\\mathrm W\\)",
+          "\\(24\\,\\Omega\\) y \\(3\\,\\mathrm W\\)"
+        ],
+        "answer": 1,
+        "solution": "<ol><li>En el punto nominal, la lámpara conduce \\(I_n=P_n/V_n=3/6=0{,}5\\,\\mathrm A\\).</li><li>La caída que corresponde a R es \\(V_R=18-6=12\\,\\mathrm V\\). Como está en serie, conduce los mismos 0,5 A.</li><li>Por la ley de Ohm, \\(R=12/0{,}5=24\\,\\Omega\\). Su potencia es \\(P_R=V_RI=12(0{,}5)=6\\,\\mathrm W\\).</li><li>Comprueba: la fuente entrega \\(18(0{,}5)=9\\,\\mathrm W\\); la lámpara transforma 3 W y R transforma 6 W.</li></ol>",
+        "topic": "Intermedio · valores nominales y potencia",
+        "figure": {
+          "src": "assets/fisica-capitulo-15/p07-lampara.svg",
+          "alt": "Fuente ideal de 18 V, positiva arriba, conectada en serie con un resistor R desconocido y una lámpara rotulada 6 V y 3 W.",
+          "caption": "Resistor limitador y lámpara en serie",
+          "width": 800,
+          "height": 390,
+          "credit": "Diagrama físico · SIN LÍMITES"
+        }
+      },
+      {
+        "id": "p08",
+        "prompt": "Durante 20 días, un horno consume 1200 W durante 45 min diarios y una lámpara consume 60 W durante 5 h diarias. Ambos mantienen esas potencias mientras están encendidos. Para este ejercicio, la tarifa de energía es S/ 0,60 por kWh, sin otros cargos. ¿Cuál es el costo total de su energía consumida?",
+        "options": [
+          "S/ 18,00",
+          "S/ 24,00",
+          "S/ 14,40",
+          "S/ 12,60",
+          "S/ 10,80"
+        ],
+        "answer": 2,
+        "solution": "<ol><li>Horno: \\(P=1{,}2\\,\\mathrm{kW}\\), \\(t=0{,}75\\,\\mathrm h\\) por día. En 20 días consume \\(E_h=1{,}2(0{,}75)(20)=18\\,\\mathrm{kWh}\\).</li><li>Lámpara: \\(P=0{,}060\\,\\mathrm{kW}\\). Consume \\(E_l=0{,}060(5)(20)=6\\,\\mathrm{kWh}\\).</li><li>La energía total es \\(E=18+6=24\\,\\mathrm{kWh}\\).</li><li>El costo indicado es \\(24\\times0{,}60=14{,}40\\) soles. Se cobra energía en kWh, no potencia en kW.</li></ol>",
+        "topic": "Intermedio · energía y costo con una tarifa dada"
+      },
+      {
+        "id": "p09",
+        "prompt": "Las fuentes de 18 V y 6 V tienen las polaridades dibujadas y son ideales. Los resistores son de 3 Ω y 5 Ω. ¿Cuál es la corriente y su sentido real en el circuito?",
+        "options": [
+          "\\(3\\,\\mathrm A\\), horario",
+          "\\(0{,}75\\,\\mathrm A\\), antihorario",
+          "\\(1{,}5\\,\\mathrm A\\), horario",
+          "\\(1{,}5\\,\\mathrm A\\), antihorario",
+          "\\(2{,}25\\,\\mathrm A\\), horario"
+        ],
+        "answer": 2,
+        "solution": "<ol><li>Se adopta el sentido horario que aparece como referencia. En ese recorrido, la fuente de 18 V se cruza de − a + y la de 6 V de + a −.</li><li>La ecuación de voltajes es \\(18-3I-6-5I=0\\). Las fuentes se oponen en esta malla.</li><li>De \\(12=8I\\) se obtiene \\(I=1{,}5\\,\\mathrm A\\). Como es positiva, la corriente real es horaria.</li><li>Comprobación energética: la fuente de 18 V entrega 27 W; la de 6 V absorbe 9 W; los resistores disipan \\((1{,}5)^2(3+5)=18\\,\\mathrm W\\). Se cumple \\(27=9+18\\).</li></ol>",
+        "topic": "Avanzado · polaridades y ley de mallas",
+        "figure": {
+          "src": "assets/fisica-capitulo-15/p09-fuentes-opuestas.svg",
+          "alt": "Malla rectangular con una fuente de 18 V a la izquierda y otra de 6 V a la derecha. Ambas tienen positivo arriba y negativo abajo. El resistor superior vale 3 ohmios y el inferior 5 ohmios. Se elige una corriente de referencia horaria.",
+          "caption": "Dos fuentes con polaridades explícitas",
+          "width": 850,
+          "height": 400,
+          "credit": "Diagrama físico · SIN LÍMITES"
+        }
+      },
+      {
+        "id": "p10",
+        "prompt": "En el circuito de tres ramas, las fuentes de 12 V y 6 V y los cables son ideales. Las resistencias de las ramas izquierda, central y derecha son 2 Ω, 3 Ω y 6 Ω. Con B a 0 V, ¿qué corriente pasa por la rama central y en qué sentido?",
+        "options": [
+          "\\(0\\,\\mathrm A\\)",
+          "\\(\\dfrac{2}{3}\\,\\mathrm A\\), de B hacia A",
+          "\\(\\dfrac{4}{3}\\,\\mathrm A\\), de A hacia B",
+          "\\(2\\,\\mathrm A\\), de B hacia A",
+          "\\(\\dfrac{2}{3}\\,\\mathrm A\\), de A hacia B"
+        ],
+        "answer": 4,
+        "solution": "<ol><li>Los terminales superiores de las fuentes tienen potenciales 12 V y 6 V. Sea VA el potencial del nodo superior. Se conserva la referencia descendente de la figura para la rama central.</li><li>En A, la corriente que llega desde la izquierda es \\((12-V_A)/2\\). Las que salen por el centro y la derecha son \\((V_A-6)/3\\) y \\(V_A/6\\).</li><li>Kirchhoff: \\((12-V_A)/2=(V_A-6)/3+V_A/6\\). Multiplicando por 6: \\(36-3V_A=2V_A-12+V_A\\), de donde \\(V_A=8\\,\\mathrm V\\).</li><li>La corriente central es \\(I=(8-6)/3=2/3\\,\\mathrm A\\), de A hacia B. Es positiva respecto de la flecha de referencia.</li><li>Comprobación en A: llegan \\((12-8)/2=2\\,\\mathrm A\\) y salen \\(2/3+8/6=2\\,\\mathrm A\\). La fuente de 6 V absorbe energía porque la corriente entra por su terminal positivo.</li></ol>",
+        "topic": "Avanzado · análisis de un nodo con dos fuentes",
+        "figure": {
+          "src": "assets/fisica-capitulo-15/p10-tres-ramas.svg",
+          "alt": "Dos nodos comunes A arriba y B abajo. Rama izquierda: resistor de 2 ohmios y fuente de 12 V, positiva arriba. Rama central: resistor de 3 ohmios y fuente de 6 V, positiva arriba. Rama derecha: resistor de 6 ohmios. B tiene potencial de referencia 0 V. La corriente I de referencia desciende por la rama central.",
+          "caption": "Tres ramas entre los mismos dos nodos",
+          "width": 850,
+          "height": 440,
+          "credit": "Diagrama físico · SIN LÍMITES"
+        }
+      }
+    ]
+  }
+});

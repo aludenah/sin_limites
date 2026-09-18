@@ -1,7 +1,7 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
 const {harness}=require('./study-entry.test.cjs');
 const root=path.join(__dirname,'..');
-const catalogs=['history-catalog.js','peru-catalog.js','lenguaje-catalog.js','economia-catalog.js','educacion-civica-catalog.js','razonamiento-verbal-catalog.js','razonamiento-matematico-catalog.js'];
+const catalogs=['history-catalog.js','peru-catalog.js','lenguaje-catalog.js','economia-catalog.js','educacion-civica-catalog.js','razonamiento-verbal-catalog.js','razonamiento-matematico-catalog.js','fisica-catalog.js'];
 const appFiles=['courses.js',...catalogs,'history-progress.js','app.js'];
 const chapterFiles=n=>['razonamiento-verbal-catalog.js','history-progress.js',`razonamiento-verbal-capitulo-0${n}-data.js`,'history-chapter.js'];
 const titles=['Relaciones semánticas','Series verbales y términos excluidos','Analogías','Oraciones incompletas','Conectores lógicos','La comprensión lectora y la jerarquía textual'];
@@ -39,7 +39,7 @@ function contentAndAssets(){
  assert.equal(Object.keys(ctx.window.CHAPTER_PRACTICES).filter(k=>k.startsWith('razonamiento-verbal-')).length,6);
  const admin=fs.readFileSync(path.join(root,'admin.js'),'utf8');
  vm.runInNewContext(admin.slice(admin.indexOf('const TRACKED_CHAPTERS='),admin.indexOf('let selectedChapter='))+';window.tracked=TRACKED_CHAPTERS;',ctx);
- assert.equal(Object.keys(ctx.window.tracked).length,44);
+ assert.equal(Object.keys(ctx.window.tracked).length,45);
  for(let n=1;n<=6;n++){const x=ctx.window.tracked[`razonamiento-verbal-capitulo-0${n}`];assert.equal(x.items,10);assert.ok(x.label.includes(titles[n-1]));}
  for(const f of ['index.html','admin.html'])assert.ok(fs.readFileSync(path.join(root,f),'utf8').includes('razonamiento-verbal-catalog.js'));
 }

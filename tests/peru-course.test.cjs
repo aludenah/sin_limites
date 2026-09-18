@@ -1,6 +1,6 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
 const {harness}=require('./study-entry.test.cjs');
-const root=path.join(__dirname,'..'),files=['courses.js','history-catalog.js','peru-catalog.js','lenguaje-catalog.js','economia-catalog.js','educacion-civica-catalog.js','razonamiento-verbal-catalog.js','razonamiento-matematico-catalog.js','history-progress.js','app.js'];
+const root=path.join(__dirname,'..'),files=['courses.js','history-catalog.js','peru-catalog.js','lenguaje-catalog.js','economia-catalog.js','educacion-civica-catalog.js','razonamiento-verbal-catalog.js','razonamiento-matematico-catalog.js','fisica-catalog.js','history-progress.js','app.js'];
 const chapterFiles=n=>['peru-catalog.js','history-progress.js',`historia-del-peru-capitulo-0${n}-data.js`,'history-chapter.js'];
 async function test(){
  const h=harness(files),run=h.run;await h.signIn({uid:'student'});

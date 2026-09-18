@@ -1,0 +1,404 @@
+{
+  "courseId": 16,
+  "chapter": 15,
+  "source": "Física, Lumbreras Editores, 2021, capítulo XV.",
+  "figures": [
+    {
+      "src": "assets/fisica-capitulo-15/guia-sentido-corriente.svg",
+      "alt": "Tramo de conductor metálico con potencial Va mayor que Vb. La corriente convencional apunta de izquierda a derecha y la deriva de electrones de derecha a izquierda.",
+      "caption": "Corriente y movimiento de electrones",
+      "width": 800,
+      "height": 430,
+      "credit": "Diagrama físico · SIN LÍMITES"
+    },
+    {
+      "src": "assets/fisica-capitulo-15/guia-resistividad.svg",
+      "alt": "Conductor uniforme de longitud 10 m y área transversal 2 milímetros cuadrados. La resistividad es 1,6 por 10 elevado a menos 8 ohmios metro. El dibujo no está a escala.",
+      "caption": "Longitud, sección y resistividad",
+      "width": 800,
+      "height": 350,
+      "credit": "Diagrama físico · SIN LÍMITES"
+    },
+    {
+      "src": "assets/fisica-capitulo-15/guia-asociacion-mixta.svg",
+      "alt": "Fuente ideal de 24 V, positiva arriba. Un resistor de 4 ohmios conecta la fuente al nodo A. Entre A y B hay dos ramas en paralelo, de 12 y 6 ohmios. B vuelve al terminal negativo. I1 e I2 se indican de A hacia B.",
+      "caption": "Un resistor en serie con dos ramas en paralelo",
+      "width": 800,
+      "height": 400,
+      "credit": "Diagrama físico · SIN LÍMITES",
+      "model": {
+        "resistors": [
+          {
+            "id": "Rs",
+            "a": "S",
+            "b": "A",
+            "ohms": 4
+          },
+          {
+            "id": "R1",
+            "a": "A",
+            "b": "B",
+            "ohms": 12
+          },
+          {
+            "id": "R2",
+            "a": "A",
+            "b": "B",
+            "ohms": 6
+          }
+        ],
+        "sources": [
+          {
+            "id": "E",
+            "positive": "S",
+            "negative": "B",
+            "volts": 24
+          }
+        ],
+        "ground": "B"
+      }
+    },
+    {
+      "src": "assets/fisica-capitulo-15/guia-fuentes-opuestas.svg",
+      "alt": "Malla rectangular con una fuente de 14 V a la izquierda y otra de 4 V a la derecha. Ambas tienen positivo arriba y negativo abajo. El resistor superior vale 2 ohmios y el inferior 3 ohmios. Se elige una corriente de referencia horaria.",
+      "caption": "Dos fuentes con polaridades explícitas",
+      "width": 850,
+      "height": 400,
+      "credit": "Diagrama físico · SIN LÍMITES",
+      "model": {
+        "resistors": [
+          {
+            "id": "R1",
+            "a": "A",
+            "b": "C",
+            "ohms": 2
+          },
+          {
+            "id": "R2",
+            "a": "D",
+            "b": "B",
+            "ohms": 3
+          }
+        ],
+        "sources": [
+          {
+            "id": "E1",
+            "positive": "A",
+            "negative": "B",
+            "volts": 14
+          },
+          {
+            "id": "E2",
+            "positive": "C",
+            "negative": "D",
+            "volts": 4
+          }
+        ],
+        "ground": "B"
+      }
+    },
+    {
+      "src": "assets/fisica-capitulo-15/guia-nodos.svg",
+      "alt": "Dos nodos comunes A arriba y B abajo. Rama izquierda: resistor de 2 ohmios y fuente de 16 V, positiva arriba. Rama central: resistor de 2 ohmios y fuente de 8 V, positiva arriba. Rama derecha: resistor de 4 ohmios. B tiene potencial de referencia 0 V. La corriente I de referencia desciende por la rama central.",
+      "caption": "Tres ramas entre los mismos dos nodos",
+      "width": 850,
+      "height": 440,
+      "credit": "Diagrama físico · SIN LÍMITES",
+      "model": {
+        "resistors": [
+          {
+            "id": "R1",
+            "a": "A",
+            "b": "P",
+            "ohms": 2
+          },
+          {
+            "id": "R2",
+            "a": "A",
+            "b": "Q",
+            "ohms": 2
+          },
+          {
+            "id": "RL",
+            "a": "A",
+            "b": "B",
+            "ohms": 4
+          }
+        ],
+        "sources": [
+          {
+            "id": "E1",
+            "positive": "P",
+            "negative": "B",
+            "volts": 16
+          },
+          {
+            "id": "E2",
+            "positive": "Q",
+            "negative": "B",
+            "volts": 8
+          }
+        ],
+        "ground": "B"
+      }
+    },
+    {
+      "src": "assets/fisica-capitulo-15/guia-lampara.svg",
+      "alt": "Fuente ideal de 15 V, positiva arriba, conectada en serie con un resistor R desconocido y una lámpara rotulada 9 V y 0,9 W.",
+      "caption": "Resistor limitador y lámpara en serie",
+      "width": 800,
+      "height": 390,
+      "credit": "Diagrama físico · SIN LÍMITES",
+      "model": {
+        "supply": 15,
+        "ratedVolts": 9,
+        "ratedWatts": 0.9
+      }
+    },
+    {
+      "src": "assets/fisica-capitulo-15/p02-corriente-tiempo.svg",
+      "alt": "Gráfica I frente a t: de 0 a 2 segundos, I crece linealmente de 0 a 4 amperios; de 2 a 5 segundos permanece en 4 A; de 5 a 7 segundos disminuye linealmente a 0 A.",
+      "caption": "Corriente durante siete segundos",
+      "width": 800,
+      "height": 400,
+      "credit": "Diagrama físico · SIN LÍMITES",
+      "model": {
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            2,
+            4
+          ],
+          [
+            5,
+            4
+          ],
+          [
+            7,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "src": "assets/fisica-capitulo-15/p03-voltaje-corriente.svg",
+      "alt": "Gráfica lineal de voltaje V, vertical, frente a corriente I, horizontal, que pasa por el origen y por los puntos I igual a 0,5 A, V igual a 3 V, e I igual a 1,5 A, V igual a 9 V.",
+      "caption": "Característica de un resistor óhmico",
+      "width": 720,
+      "height": 415,
+      "credit": "Diagrama físico · SIN LÍMITES",
+      "model": {
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            0.5,
+            3
+          ],
+          [
+            1.5,
+            9
+          ]
+        ]
+      }
+    },
+    {
+      "src": "assets/fisica-capitulo-15/p04-alambre-estirado.svg",
+      "alt": "Antes: conductor de longitud 5 m y sección 0,50 milímetros cuadrados. Después del estiramiento uniforme: longitud 10 m y sección desconocida. Se conserva el volumen y la resistividad permanece constante.",
+      "caption": "Estiramiento uniforme de un conductor",
+      "width": 800,
+      "height": 415,
+      "credit": "Diagrama físico · SIN LÍMITES"
+    },
+    {
+      "src": "assets/fisica-capitulo-15/p05-circuito-mixto.svg",
+      "alt": "Fuente ideal de 12 V, positiva arriba. Un resistor de 2 ohmios conecta la fuente al nodo A. Entre A y B hay dos ramas en paralelo, de 6 y 3 ohmios. B vuelve al terminal negativo. I1 e I2 se indican de A hacia B.",
+      "caption": "Un resistor en serie con dos ramas en paralelo",
+      "width": 800,
+      "height": 400,
+      "credit": "Diagrama físico · SIN LÍMITES",
+      "model": {
+        "resistors": [
+          {
+            "id": "Rs",
+            "a": "S",
+            "b": "A",
+            "ohms": 2
+          },
+          {
+            "id": "R1",
+            "a": "A",
+            "b": "B",
+            "ohms": 6
+          },
+          {
+            "id": "R2",
+            "a": "A",
+            "b": "B",
+            "ohms": 3
+          }
+        ],
+        "sources": [
+          {
+            "id": "E",
+            "positive": "S",
+            "negative": "B",
+            "volts": 12
+          }
+        ],
+        "ground": "B"
+      }
+    },
+    {
+      "src": "assets/fisica-capitulo-15/p06-instrumentos-y-puente.svg",
+      "alt": "Fuente ideal de 18 V, con positivo arriba. En la rama superior hay resistores de 3 ohmios y 9 ohmios; un cable ideal une directamente ambos terminales del resistor de 9 ohmios. A continuación hay un resistor de 6 ohmios en la rama derecha. Un amperímetro ideal está en el retorno inferior y un voltímetro ideal está en paralelo con el resistor de 6 ohmios.",
+      "caption": "Un puente conductor y dos instrumentos ideales",
+      "width": 860,
+      "height": 425,
+      "credit": "Diagrama físico · SIN LÍMITES",
+      "model": {
+        "resistors": [
+          {
+            "id": "R3",
+            "a": "P",
+            "b": "X",
+            "ohms": 3
+          },
+          {
+            "id": "R9",
+            "a": "X",
+            "b": "Y",
+            "ohms": 9
+          },
+          {
+            "id": "R6",
+            "a": "Y",
+            "b": "B",
+            "ohms": 6
+          }
+        ],
+        "sources": [
+          {
+            "id": "E",
+            "positive": "P",
+            "negative": "B",
+            "volts": 18
+          }
+        ],
+        "wires": [
+          [
+            "X",
+            "Y"
+          ]
+        ],
+        "ground": "B",
+        "meterAcross": [
+          "Y",
+          "B"
+        ]
+      }
+    },
+    {
+      "src": "assets/fisica-capitulo-15/p07-lampara.svg",
+      "alt": "Fuente ideal de 18 V, positiva arriba, conectada en serie con un resistor R desconocido y una lámpara rotulada 6 V y 3 W.",
+      "caption": "Resistor limitador y lámpara en serie",
+      "width": 800,
+      "height": 390,
+      "credit": "Diagrama físico · SIN LÍMITES",
+      "model": {
+        "supply": 18,
+        "ratedVolts": 6,
+        "ratedWatts": 3.0
+      }
+    },
+    {
+      "src": "assets/fisica-capitulo-15/p09-fuentes-opuestas.svg",
+      "alt": "Malla rectangular con una fuente de 18 V a la izquierda y otra de 6 V a la derecha. Ambas tienen positivo arriba y negativo abajo. El resistor superior vale 3 ohmios y el inferior 5 ohmios. Se elige una corriente de referencia horaria.",
+      "caption": "Dos fuentes con polaridades explícitas",
+      "width": 850,
+      "height": 400,
+      "credit": "Diagrama físico · SIN LÍMITES",
+      "model": {
+        "resistors": [
+          {
+            "id": "R1",
+            "a": "A",
+            "b": "C",
+            "ohms": 3
+          },
+          {
+            "id": "R2",
+            "a": "D",
+            "b": "B",
+            "ohms": 5
+          }
+        ],
+        "sources": [
+          {
+            "id": "E1",
+            "positive": "A",
+            "negative": "B",
+            "volts": 18
+          },
+          {
+            "id": "E2",
+            "positive": "C",
+            "negative": "D",
+            "volts": 6
+          }
+        ],
+        "ground": "B"
+      }
+    },
+    {
+      "src": "assets/fisica-capitulo-15/p10-tres-ramas.svg",
+      "alt": "Dos nodos comunes A arriba y B abajo. Rama izquierda: resistor de 2 ohmios y fuente de 12 V, positiva arriba. Rama central: resistor de 3 ohmios y fuente de 6 V, positiva arriba. Rama derecha: resistor de 6 ohmios. B tiene potencial de referencia 0 V. La corriente I de referencia desciende por la rama central.",
+      "caption": "Tres ramas entre los mismos dos nodos",
+      "width": 850,
+      "height": 440,
+      "credit": "Diagrama físico · SIN LÍMITES",
+      "model": {
+        "resistors": [
+          {
+            "id": "R1",
+            "a": "A",
+            "b": "P",
+            "ohms": 2
+          },
+          {
+            "id": "R2",
+            "a": "A",
+            "b": "Q",
+            "ohms": 3
+          },
+          {
+            "id": "RL",
+            "a": "A",
+            "b": "B",
+            "ohms": 6
+          }
+        ],
+        "sources": [
+          {
+            "id": "E1",
+            "positive": "P",
+            "negative": "B",
+            "volts": 12
+          },
+          {
+            "id": "E2",
+            "positive": "Q",
+            "negative": "B",
+            "volts": 6
+          }
+        ],
+        "ground": "B"
+      }
+    }
+  ]
+}

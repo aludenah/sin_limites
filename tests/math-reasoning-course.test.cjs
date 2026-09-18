@@ -1,7 +1,7 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
 const {harness}=require('./study-entry.test.cjs');
 const root=path.join(__dirname,'..');
-const catalogs=['history-catalog.js','peru-catalog.js','lenguaje-catalog.js','economia-catalog.js','educacion-civica-catalog.js','razonamiento-verbal-catalog.js','razonamiento-matematico-catalog.js'];
+const catalogs=['history-catalog.js','peru-catalog.js','lenguaje-catalog.js','economia-catalog.js','educacion-civica-catalog.js','razonamiento-verbal-catalog.js','razonamiento-matematico-catalog.js','fisica-catalog.js'];
 const appFiles=['courses.js',...catalogs,'history-progress.js','app.js'];
 const chapterFiles=n=>['razonamiento-matematico-catalog.js','history-progress.js',`razonamiento-matematico-capitulo-0${n}-data.js`,'history-chapter.js'];
 const ctx={window:{}};for(const f of ['courses.js','practice-bank.js',...catalogs])vm.runInNewContext(fs.readFileSync(path.join(root,f),'utf8'),ctx);
@@ -109,7 +109,7 @@ function structure(){
   const strings=[JSON.stringify(c),JSON.stringify(questions(n))];for(const s of strings){const opens=(s.match(/\\\\\(/g)||[]).length,closes=(s.match(/\\\\\)/g)||[]).length;assert.equal(opens,closes,'All inline formula delimiters close');formulas+=opens;}
  }
  assert.equal(examples,30);assert.ok(formulas>100);assert.equal(used.size,39,'Every authored figure is used');assert.ok(!fs.existsSync(path.join(root,'razonamiento-matematico-capitulo-07.html')));
- const admin=fs.readFileSync(path.join(root,'admin.js'),'utf8');vm.runInNewContext(admin.slice(admin.indexOf('const TRACKED_CHAPTERS='),admin.indexOf('let selectedChapter='))+';window.tracked=TRACKED_CHAPTERS;',ctx);assert.equal(Object.keys(ctx.window.tracked).length,44);for(let n=1;n<=6;n++)assert.equal(ctx.window.tracked[`razonamiento-matematico-capitulo-0${n}`].items,10);
+ const admin=fs.readFileSync(path.join(root,'admin.js'),'utf8');vm.runInNewContext(admin.slice(admin.indexOf('const TRACKED_CHAPTERS='),admin.indexOf('let selectedChapter='))+';window.tracked=TRACKED_CHAPTERS;',ctx);assert.equal(Object.keys(ctx.window.tracked).length,45);for(let n=1;n<=6;n++)assert.equal(ctx.window.tracked[`razonamiento-matematico-capitulo-0${n}`].items,10);
 }
 async function integration(){
  const home=harness(appFiles);await home.signIn({uid:'student'});home.run("selectStudyMode('free');openCourse(2)");assert.match(home.elements.get('app').innerHTML,/Razonamiento Matemático: 24 capítulos; contenido desarrollado del 1 al 6/);assert.match(home.elements.get('app').innerHTML,/figuras matemáticas en los enunciados/);
