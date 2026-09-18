@@ -5073,3 +5073,817 @@ Object.assign(window.CHAPTER_PRACTICES,{
     ]
   }
 });
+
+// Razonamiento Verbal: capítulos 1–6.
+Object.assign(window.CHAPTER_PRACTICES,{
+  "razonamiento-verbal-capitulo-01": {
+    "title": "Relaciones semánticas",
+    "problems": [
+      {
+        "id": "p01",
+        "prompt": "En «La explicación fue diáfana: todos comprendieron el procedimiento», diáfana puede sustituirse por:",
+        "options": [
+          "clara",
+          "extensa",
+          "rápida",
+          "severa",
+          "incierta"
+        ],
+        "answer": 0,
+        "solution": "Diáfana alude aquí a una explicación clara y comprensible. La pista es que todos comprendieron; no se informa sobre su duración ni sobre la rapidez."
+      },
+      {
+        "id": "p02",
+        "prompt": "En «Al conocer la noticia, el equipo quedó abatido», ¿qué palabra mantiene el significado de abatido?",
+        "options": [
+          "derribado",
+          "desanimado",
+          "distraído",
+          "entusiasmado",
+          "inmóvil"
+        ],
+        "answer": 1,
+        "solution": "En este contexto, abatido describe el estado de ánimo del equipo. Desanimado conserva esa acepción; derribado llevaría la palabra a un sentido físico no indicado."
+      },
+      {
+        "id": "p03",
+        "prompt": "En «Mostró una actitud hostil hacia el visitante», ¿cuál es el antónimo contextual de hostil?",
+        "options": [
+          "reservada",
+          "agresiva",
+          "amistosa",
+          "indiferente",
+          "desconocida"
+        ],
+        "answer": 2,
+        "solution": "Hostil expresa enemistad o rechazo. Amistosa invierte esa actitud; indiferente expresa ausencia de interés y reservada, cautela, no amistad."
+      },
+      {
+        "id": "p04",
+        "prompt": "¿Qué pareja presenta antonimia morfológica, formada sobre una misma base?",
+        "options": [
+          "alegría : tristeza",
+          "subir : bajar",
+          "joven : anciano",
+          "posible : imposible",
+          "comprar : vender"
+        ],
+        "answer": 3,
+        "solution": "Imposible se forma sobre posible con un prefijo negativo. Las otras parejas pueden oponerse por el significado, pero no comparten una base con un afijo de negación."
+      },
+      {
+        "id": "p05",
+        "prompt": "¿Qué término es hiperónimo de violín, guitarra y violonchelo?",
+        "options": [
+          "melodía",
+          "orquesta",
+          "arco",
+          "músico",
+          "instrumento de cuerda"
+        ],
+        "answer": 4,
+        "solution": "Violín, guitarra y violonchelo son tipos de instrumento de cuerda. Orquesta es un conjunto de músicos; arco es un utensilio y melodía es una sucesión de sonidos."
+      },
+      {
+        "id": "p06",
+        "prompt": "Bajo el hiperónimo fruta, ¿qué relación existe entre pera y manzana?",
+        "options": [
+          "cohiponimia",
+          "sinonimia",
+          "antonimia",
+          "meronimia",
+          "holonimia"
+        ],
+        "answer": 0,
+        "solution": "Pera y manzana designan clases diferentes incluidas en fruta. Por compartir ese hiperónimo son cohipónimos; no son palabras de igual significado ni partes una de otra."
+      },
+      {
+        "id": "p07",
+        "prompt": "En la pareja página : libro, leída en ese orden, la relación es:",
+        "options": [
+          "género : especie",
+          "parte : todo",
+          "todo : parte",
+          "causa : efecto",
+          "sinónimo : sinónimo"
+        ],
+        "answer": 1,
+        "solution": "Una página es parte de un libro. Página funciona como merónimo respecto de libro; invertir la pareja produciría el orden todo : parte."
+      },
+      {
+        "id": "p08",
+        "prompt": "Biblioteca, lector, préstamo y bibliotecario se relacionan principalmente porque:",
+        "options": [
+          "son sinónimos intercambiables",
+          "designan todos una clase de libro",
+          "pertenecen al mismo ámbito temático",
+          "son antónimos por parejas",
+          "nombran exclusivamente objetos"
+        ],
+        "answer": 2,
+        "solution": "Los términos se vinculan con el uso y la organización de libros, pero nombran lugares, personas y actividades distintas. La asociación temática no los hace sinónimos."
+      },
+      {
+        "id": "p09",
+        "prompt": "¿Qué concepto queda definido por los rasgos «figura plana cerrada formada por tres lados rectos»?",
+        "options": [
+          "recta",
+          "círculo",
+          "ángulo",
+          "triángulo",
+          "cuadrilátero"
+        ],
+        "answer": 3,
+        "solution": "Los rasgos reunidos delimitan un triángulo. La pregunta exige reconstruir la definición completa; círculo carece de lados rectos y cuadrilátero tiene cuatro."
+      },
+      {
+        "id": "p10",
+        "prompt": "¿Qué concepto interviene de manera necesaria en las definiciones de dentista, dentadura y dentífrico?",
+        "options": [
+          "hospital",
+          "anestesia",
+          "dolor",
+          "cepillo",
+          "diente"
+        ],
+        "answer": 4,
+        "solution": "Dentista se relaciona profesionalmente con los dientes; dentadura es su conjunto y dentífrico es un producto para limpiarlos. Hospital, anestesia y dolor no son necesarios en todas esas definiciones."
+      }
+    ]
+  },
+  "razonamiento-verbal-capitulo-02": {
+    "title": "Series verbales y términos excluidos",
+    "problems": [
+      {
+        "id": "p01",
+        "prompt": "Completa la serie de unidades de tiempo de menor a mayor duración: segundo, minuto, hora, …",
+        "options": [
+          "instante",
+          "día",
+          "reloj",
+          "calendario",
+          "ayer"
+        ],
+        "answer": 1,
+        "solution": "Día continúa el aumento de duración después de hora. Reloj y calendario son instrumentos o sistemas relacionados con el tiempo, no unidades que continúen la serie."
+      },
+      {
+        "id": "p02",
+        "prompt": "Completa la serie manteniendo la clase instrumento de cuerda: violín, guitarra, violonchelo, …",
+        "options": [
+          "trompeta",
+          "flauta",
+          "arpa",
+          "tambor",
+          "clarinete"
+        ],
+        "answer": 2,
+        "solution": "El arpa produce sonido mediante cuerdas. Trompeta, flauta y clarinete son instrumentos de viento; tambor es de percusión."
+      },
+      {
+        "id": "p03",
+        "prompt": "Completa la serie por parejas: abrir, cerrar; entrar, salir; ascender, …",
+        "options": [
+          "avanzar",
+          "llegar",
+          "subir",
+          "descender",
+          "caminar"
+        ],
+        "answer": 3,
+        "solution": "Las parejas reúnen antónimos. Descender se opone a ascender; subir es semejante a ascender y rompería la oposición."
+      },
+      {
+        "id": "p04",
+        "prompt": "Completa la serie de pares sinónimos: reparar, arreglar; iniciar, comenzar; concluir, …",
+        "options": [
+          "aplazar",
+          "proponer",
+          "reanudar",
+          "repetir",
+          "terminar"
+        ],
+        "answer": 4,
+        "solution": "Concluir y terminar son sinónimos en el sentido de dar fin a algo. La relación se establece dentro de cada pareja, no entre todos los verbos indiscriminadamente."
+      },
+      {
+        "id": "p05",
+        "prompt": "Completa respetando todo : parte: libro, página; bicicleta, rueda; árbol, …",
+        "options": [
+          "tronco",
+          "bosque",
+          "semilla",
+          "vivero",
+          "jardinero"
+        ],
+        "answer": 0,
+        "solution": "El tronco es parte del árbol, como la página del libro y la rueda de la bicicleta. Bosque es un conjunto; semilla se relaciona con su origen y no conserva el vínculo pedido."
+      },
+      {
+        "id": "p06",
+        "prompt": "¿Qué término se excluye del grupo de sinónimos de valentía: coraje, arrojo, audacia, valor, cobardía?",
+        "options": [
+          "coraje",
+          "cobardía",
+          "arrojo",
+          "audacia",
+          "valor"
+        ],
+        "answer": 1,
+        "solution": "Coraje, arrojo, audacia y valor pueden expresar valentía. Cobardía expresa falta de valor y no pertenece al grupo sinonímico."
+      },
+      {
+        "id": "p07",
+        "prompt": "¿Qué término se excluye del grupo formado por cuatro planetas del sistema solar?",
+        "options": [
+          "Marte",
+          "Venus",
+          "Luna",
+          "Saturno",
+          "Neptuno"
+        ],
+        "answer": 2,
+        "solution": "Marte, Venus, Saturno y Neptuno son planetas. La Luna es el satélite natural de la Tierra, aunque todos sean cuerpos celestes."
+      },
+      {
+        "id": "p08",
+        "prompt": "¿Qué término se excluye por no pertenecer al ámbito de la astronomía?",
+        "options": [
+          "telescopio",
+          "órbita",
+          "galaxia",
+          "receta culinaria",
+          "observatorio"
+        ],
+        "answer": 3,
+        "solution": "Telescopio, órbita, galaxia y observatorio se relacionan con el estudio de los astros. Receta culinaria pertenece a la preparación de alimentos; no comparte ese ámbito."
+      },
+      {
+        "id": "p09",
+        "prompt": "Completa las dos secuencias intercaladas: lunes, enero, martes, febrero, miércoles, …",
+        "options": [
+          "jueves",
+          "abril",
+          "domingo",
+          "semana",
+          "marzo"
+        ],
+        "answer": 4,
+        "solution": "Las posiciones impares contienen días sucesivos; las pares, meses sucesivos. Después de enero y febrero, corresponde marzo en la sexta posición."
+      },
+      {
+        "id": "p10",
+        "prompt": "Si el criterio es partes de un libro impreso, ¿qué término se excluye?",
+        "options": [
+          "bibliotecario",
+          "portada",
+          "lomo",
+          "página",
+          "contraportada"
+        ],
+        "answer": 0,
+        "solution": "Portada, lomo, página y contraportada son partes del libro. Bibliotecario nombra una persona vinculada con los libros, pero no una parte de ellos."
+      }
+    ]
+  },
+  "razonamiento-verbal-capitulo-03": {
+    "title": "Analogías",
+    "problems": [
+      {
+        "id": "p01",
+        "prompt": "DOCENTE : ENSEÑAR :: ¿Qué pareja conserva la relación agente : función?",
+        "options": [
+          "LIBRO : BIBLIOTECA",
+          "PÁGINA : LIBRO",
+          "CENTINELA : VIGILAR",
+          "HARINA : PAN",
+          "ENSEÑAR : DOCENTE"
+        ],
+        "answer": 2,
+        "solution": "El docente tiene como función enseñar y el centinela, vigilar. Enseñar : docente invierte el orden; las demás opciones presentan relaciones diferentes."
+      },
+      {
+        "id": "p02",
+        "prompt": "ÁRBOL : TRONCO ::",
+        "options": [
+          "FLOR : ROSA",
+          "ISLA : ARCHIPIÉLAGO",
+          "AGUA : JARRA",
+          "LIBRO : PÁGINA",
+          "PINO : ROBLE"
+        ],
+        "answer": 3,
+        "solution": "Árbol : tronco expresa todo : parte. Libro : página conserva ese orden y vínculo. Flor : rosa es género : especie; isla : archipiélago invierte conjunto y elemento."
+      },
+      {
+        "id": "p03",
+        "prompt": "JARRA : AGUA ::",
+        "options": [
+          "AGUA : RÍO",
+          "LIBRO : PÁGINA",
+          "MÚSICO : GUITARRA",
+          "FLOR : PÉTALO",
+          "FLORERO : FLORES"
+        ],
+        "answer": 4,
+        "solution": "La jarra contiene agua y el florero contiene flores: recipiente : contenido. Una página o un pétalo son partes estructurales, no contenidos equivalentes."
+      },
+      {
+        "id": "p04",
+        "prompt": "AVE : CÓNDOR ::",
+        "options": [
+          "FLOR : ROSA",
+          "BICICLETA : PEDAL",
+          "BANDADA : AVE",
+          "CÓNDOR : PLUMA",
+          "ROSA : CLAVEL"
+        ],
+        "answer": 0,
+        "solution": "Cóndor es un tipo de ave y rosa es un tipo de flor. Se mantiene género : especie. Bandada : ave corresponde a conjunto : elemento."
+      },
+      {
+        "id": "p05",
+        "prompt": "ARCHIPIÉLAGO : ISLA ::",
+        "options": [
+          "OCÉANO : AGUA",
+          "CONSTELACIÓN : ESTRELLA",
+          "ÁRBOL : RAMA",
+          "ANIMAL : PERRO",
+          "ISLA : ARCHIPIÉLAGO"
+        ],
+        "answer": 1,
+        "solution": "Un archipiélago es un conjunto de islas; una constelación agrupa estrellas en una figura aparente. La relación es conjunto : elemento y conserva el orden."
+      },
+      {
+        "id": "p06",
+        "prompt": "VELOZ : RÁPIDO ::",
+        "options": [
+          "ACEPTAR : RECHAZAR",
+          "ÁRBOL : BOSQUE",
+          "CONTENTO : ALEGRE",
+          "CALOR : FRÍO",
+          "DOCENTE : AULA"
+        ],
+        "answer": 2,
+        "solution": "Veloz y rápido presentan sinonimia, al igual que contento y alegre. Las parejas de oposición o asociación temática no reproducen ese vínculo."
+      },
+      {
+        "id": "p07",
+        "prompt": "ACEPTAR : RECHAZAR ::",
+        "options": [
+          "REPARAR : ARREGLAR",
+          "LEER : LIBRO",
+          "CASA : HABITACIÓN",
+          "UNIR : SEPARAR",
+          "COMENZAR : INICIAR"
+        ],
+        "answer": 3,
+        "solution": "Aceptar y rechazar son acciones opuestas; unir y separar también. Reparar : arreglar y comenzar : iniciar presentan sinonimia, no oposición."
+      },
+      {
+        "id": "p08",
+        "prompt": "En la relación causa : efecto, FRICCIÓN : CALOR se corresponde con:",
+        "options": [
+          "MÉDICO : HOSPITAL",
+          "DOLOR : GOLPE",
+          "JARRA : AGUA",
+          "INFANCIA : ADOLESCENCIA",
+          "GOLPE : DOLOR"
+        ],
+        "answer": 4,
+        "solution": "La fricción puede producir calor y un golpe puede producir dolor. Dolor : golpe invierte el orden; infancia : adolescencia expresa sucesión, no la misma relación causal."
+      },
+      {
+        "id": "p09",
+        "prompt": "INFANCIA : ADOLESCENCIA :: ¿Qué pareja mantiene la sucesión temporal?",
+        "options": [
+          "PRIMAVERA : VERANO",
+          "VERANO : PRIMAVERA",
+          "DÍA : RELOJ",
+          "MINUTO : SEGUNDO",
+          "ÁRBOL : BOSQUE"
+        ],
+        "answer": 0,
+        "solution": "Primavera antecede a verano en la sucesión de estaciones, como infancia antecede a adolescencia. Invertir ese orden rompería la dirección del par base."
+      },
+      {
+        "id": "p10",
+        "prompt": "ROSA : CLAVEL :: ¿Qué pareja mantiene la cogeneridad entre especies distintas?",
+        "options": [
+          "FLOR : ROSA",
+          "ROBLE : PINO",
+          "ROSA : PÉTALO",
+          "ÁRBOL : TRONCO",
+          "BOSQUE : ÁRBOL"
+        ],
+        "answer": 1,
+        "solution": "Rosa y clavel son tipos de flor; roble y pino, tipos de árbol. Cada pareja comparte una clase. Flor : rosa cambia a género : especie y árbol : tronco a todo : parte."
+      }
+    ]
+  },
+  "razonamiento-verbal-capitulo-04": {
+    "title": "Oraciones incompletas",
+    "problems": [
+      {
+        "id": "p01",
+        "prompt": "Completa: «Durante la escasez de agua, la comunidad acordó … su consumo para evitar que el depósito se agotara».",
+        "options": [
+          "derrochar",
+          "duplicar",
+          "ignorar",
+          "reducir",
+          "aumentar"
+        ],
+        "answer": 3,
+        "solution": "Escasez y evitar que se agotara indican la necesidad de disminuir el uso del agua. Reducir expresa esa medida; aumentar o duplicar irían contra la finalidad."
+      },
+      {
+        "id": "p02",
+        "prompt": "Completa: «Aunque las críticas lo …, el investigador … con su proyecto sin abandonarlo».",
+        "options": [
+          "animaron – renunció",
+          "fortalecieron – desistió",
+          "alegraron – abandonó",
+          "convencieron – cesó",
+          "desalentaron – continuó"
+        ],
+        "answer": 4,
+        "solution": "Aunque introduce una dificultad que no impide avanzar. Desalentaron expresa esa dificultad y continuó concuerda con sin abandonarlo; las otras parejas contradicen el cierre."
+      },
+      {
+        "id": "p03",
+        "prompt": "Completa: «Después de inspirar, debemos … el aire lentamente, es decir, expulsarlo de los pulmones».",
+        "options": [
+          "exhalar",
+          "inhalar",
+          "retener",
+          "absorber",
+          "contener"
+        ],
+        "answer": 0,
+        "solution": "La aclaración expulsarlo de los pulmones define exhalar. Inhalar es introducir aire; retener y contener implican mantenerlo dentro."
+      },
+      {
+        "id": "p04",
+        "prompt": "Completa con concordancia y tiempo adecuados: «El profesor y la coordinadora … los resultados ayer».",
+        "options": [
+          "revisó",
+          "revisaron",
+          "revisará",
+          "revisas",
+          "reviso"
+        ],
+        "answer": 1,
+        "solution": "El sujeto compuesto exige plural y ayer sitúa el hecho en el pasado. Revisaron satisface ambas condiciones."
+      },
+      {
+        "id": "p05",
+        "prompt": "Completa: «Las propuestas … recibieron el reconocimiento del jurado por aportar soluciones nuevas».",
+        "options": [
+          "innovador",
+          "innovadora",
+          "innovadoras",
+          "innovación",
+          "innovar"
+        ],
+        "answer": 2,
+        "solution": "Propuestas es femenino plural y requiere un adjetivo concordante. Innovadoras además recoge la idea de aportar soluciones nuevas."
+      },
+      {
+        "id": "p06",
+        "prompt": "Completa: «Antes de aceptar la afirmación como verdadera, la científica … los datos para … su exactitud».",
+        "options": [
+          "ocultó – demostrar",
+          "alteró – garantizar",
+          "inventó – conservar",
+          "verificó – comprobar",
+          "desechó – medir"
+        ],
+        "answer": 3,
+        "solution": "Verificar los datos permite comprobar su exactitud antes de aceptar una afirmación. Ocultarlos, alterarlos o inventarlos no proporciona esa comprobación."
+      },
+      {
+        "id": "p07",
+        "prompt": "Completa: «La artesana … la arcilla hasta darle forma de cuenco».",
+        "options": [
+          "leyó",
+          "disolvió",
+          "escuchó",
+          "evaporó",
+          "modeló"
+        ],
+        "answer": 4,
+        "solution": "Dar forma a una materia moldeable es modelar. La arcilla y el resultado cuenco son rastros que delimitan esa acción."
+      },
+      {
+        "id": "p08",
+        "prompt": "Completa: «Prometió guardar el secreto y no … a nadie».",
+        "options": [
+          "revelarlo",
+          "rebelarlo",
+          "relevarlo",
+          "revocarlo",
+          "revalidarlo"
+        ],
+        "answer": 0,
+        "solution": "Revelar un secreto significa darlo a conocer. La frase guardar el secreto exige no revelarlo; rebelar tiene otro significado y no funciona en esa construcción."
+      },
+      {
+        "id": "p09",
+        "prompt": "Completa: «El informe carece … pruebas suficientes para sostener esa conclusión».",
+        "options": [
+          "en",
+          "de",
+          "a",
+          "con",
+          "desde"
+        ],
+        "answer": 1,
+        "solution": "La construcción es carecer de algo. La preposición de une el verbo con aquello que falta y respeta la estructura gramatical."
+      },
+      {
+        "id": "p10",
+        "prompt": "Completa: «Al detectar resultados … entre sí, el equipo decidió … el experimento para comprobarlos de nuevo».",
+        "options": [
+          "idénticos – ocultar",
+          "concordantes – abandonar",
+          "inconsistentes – repetir",
+          "uniformes – impedir",
+          "precisos – suprimir"
+        ],
+        "answer": 2,
+        "solution": "Inconsistentes indica falta de concordancia, lo que justifica repetir el experimento para comprobar. Las otras acciones no satisfacen la finalidad explícita de comprobar de nuevo."
+      }
+    ]
+  },
+  "razonamiento-verbal-capitulo-05": {
+    "title": "Conectores lógicos",
+    "problems": [
+      {
+        "id": "p01",
+        "prompt": "Completa con el nexo causal: «La planta se marchitó … no recibió agua».",
+        "options": [
+          "sin embargo",
+          "por tanto",
+          "es decir",
+          "además",
+          "porque"
+        ],
+        "answer": 4,
+        "solution": "La falta de agua explica el marchitamiento. Porque introduce esa causa; por tanto presentaría una consecuencia y los demás enlaces no expresan el vínculo solicitado."
+      },
+      {
+        "id": "p02",
+        "prompt": "Completa: «Se interrumpió el suministro eléctrico; …, la sala quedó a oscuras».",
+        "options": [
+          "por eso",
+          "sin embargo",
+          "en cambio",
+          "es decir",
+          "además de"
+        ],
+        "answer": 0,
+        "solution": "La oscuridad se presenta como resultado del corte de electricidad. Por eso introduce esa consecuencia y encaja en la construcción."
+      },
+      {
+        "id": "p03",
+        "prompt": "Completa con un conector de oposición: «Preparó la exposición con cuidado, … olvidó un dato importante».",
+        "options": [
+          "porque",
+          "pero",
+          "por eso",
+          "para que",
+          "o sea"
+        ],
+        "answer": 1,
+        "solution": "Pero contrapone el cuidado de la preparación con el olvido de un dato. La segunda idea no se presenta como explicación equivalente ni como finalidad."
+      },
+      {
+        "id": "p04",
+        "prompt": "Completa con un conector concesivo: «… llovía intensamente, los estudiantes llegaron a la biblioteca».",
+        "options": [
+          "Porque",
+          "Por tanto",
+          "Aunque",
+          "Además",
+          "Es decir"
+        ],
+        "answer": 2,
+        "solution": "Aunque presenta la lluvia como dificultad que no impidió llegar. Porque la convertiría en causa, relación distinta de la solicitada."
+      },
+      {
+        "id": "p05",
+        "prompt": "Completa la condición: «Podrás consultar el libro … lo devuelvas dentro del plazo acordado».",
+        "options": [
+          "puesto que",
+          "sin embargo",
+          "por consiguiente",
+          "siempre que",
+          "además"
+        ],
+        "answer": 3,
+        "solution": "Siempre que introduce la condición para consultar el libro: devolverlo a tiempo. No se afirma simplemente una causa ya conocida."
+      },
+      {
+        "id": "p06",
+        "prompt": "Completa expresando finalidad: «La docente reorganizó los ejemplos … todos comprendieran la explicación».",
+        "options": [
+          "aunque",
+          "ya que",
+          "por tanto",
+          "es decir",
+          "para que"
+        ],
+        "answer": 4,
+        "solution": "Para que introduce el propósito de reorganizar los ejemplos. La forma comprendieran se integra con la finalidad expresada."
+      },
+      {
+        "id": "p07",
+        "prompt": "Completa: «La biblioteca ofrece préstamos de libros; …, organiza talleres de lectura».",
+        "options": [
+          "además",
+          "por el contrario",
+          "sin embargo",
+          "es decir",
+          "a pesar de"
+        ],
+        "answer": 0,
+        "solution": "Además agrega otro servicio compatible con el préstamo. Los talleres no reformulan qué significa prestar libros ni se oponen a ese servicio."
+      },
+      {
+        "id": "p08",
+        "prompt": "Completa con un conector aclarativo: «El recipiente es hermético, …, no deja pasar aire».",
+        "options": [
+          "por eso",
+          "es decir",
+          "aunque",
+          "en cambio",
+          "además de"
+        ],
+        "answer": 1,
+        "solution": "El segundo segmento explica el significado de hermético. Es decir introduce una reformulación aclarativa; no se está narrando un resultado posterior."
+      },
+      {
+        "id": "p09",
+        "prompt": "Completa: «No entendía … se fue; después explicó el …: salió … se sentía mal».",
+        "options": [
+          "porque – por qué – porqué",
+          "porqué – porque – por qué",
+          "por qué – porqué – porque",
+          "por que – porque – porqué",
+          "porqué – por qué – porque"
+        ],
+        "answer": 2,
+        "solution": "Por qué introduce una pregunta indirecta; el porqué es un sustantivo equivalente a motivo; porque introduce la causa de la salida."
+      },
+      {
+        "id": "p10",
+        "prompt": "Completa: «No eligió la versión impresa, … la digital; … tiene conexión, no podrá descargarla».",
+        "options": [
+          "si no – sino",
+          "sino – sino",
+          "si no – si no",
+          "sino – si no",
+          "porque – conque"
+        ],
+        "answer": 3,
+        "solution": "Sino rectifica la negación: no impresa, sino digital. Si no introduce la condición negativa de carecer de conexión; son dos funciones y dos grafías distintas."
+      }
+    ]
+  },
+  "razonamiento-verbal-capitulo-06": {
+    "title": "La comprensión lectora y la jerarquía textual",
+    "problems": [
+      {
+        "id": "p01",
+        "prompt": "<strong>Lee el texto:</strong><span class=\"practice-passage\">La biblioteca del barrio amplió su horario y organizó clubes de lectura. También habilitó una mesa para intercambiar recomendaciones y reservó una sala para que los vecinos estudiaran juntos. Estas medidas convirtieron el local en un espacio de encuentro y aprendizaje compartido. El préstamo de libros sigue siendo importante, pero ya no es la única actividad que reúne a la comunidad. Ahora los usuarios pueden conversar sobre lo que leen y colaborar en nuevos proyectos.</span><strong>¿Cuál es el tema central del texto?</strong>",
+        "options": [
+          "La biblioteca barrial como espacio de encuentro y aprendizaje",
+          "Los horarios de los trabajadores municipales",
+          "La historia de la impresión de libros",
+          "Las ventajas de estudiar siempre en soledad",
+          "El precio de los libros nuevos"
+        ],
+        "answer": 0,
+        "solution": "El conjunto describe cómo varias actividades amplían la función de la biblioteca en la comunidad. El horario es solo un detalle; el tema integra encuentro y aprendizaje."
+      },
+      {
+        "id": "p02",
+        "prompt": "<strong>Lee el texto:</strong><span class=\"practice-passage\">La biblioteca del barrio amplió su horario y organizó clubes de lectura. También habilitó una mesa para intercambiar recomendaciones y reservó una sala para que los vecinos estudiaran juntos. Estas medidas convirtieron el local en un espacio de encuentro y aprendizaje compartido. El préstamo de libros sigue siendo importante, pero ya no es la única actividad que reúne a la comunidad. Ahora los usuarios pueden conversar sobre lo que leen y colaborar en nuevos proyectos.</span><strong>¿Qué enunciado expresa mejor la idea principal?</strong>",
+        "options": [
+          "Los préstamos de libros han dejado de existir",
+          "La biblioteca amplió sus funciones para favorecer el encuentro y el aprendizaje compartido",
+          "La única actividad importante es intercambiar recomendaciones",
+          "Todos los vecinos prefieren estudiar en su casa",
+          "Los clubes de lectura impiden realizar otros proyectos"
+        ],
+        "answer": 1,
+        "solution": "La idea elegida integra horario, clubes, sala de estudio y colaboración. El texto afirma que el préstamo sigue siendo importante, por lo que no puede sostenerse que desapareció."
+      },
+      {
+        "id": "p03",
+        "prompt": "<strong>Lee el texto:</strong><span class=\"practice-passage\">La biblioteca del barrio amplió su horario y organizó clubes de lectura. También habilitó una mesa para intercambiar recomendaciones y reservó una sala para que los vecinos estudiaran juntos. Estas medidas convirtieron el local en un espacio de encuentro y aprendizaje compartido. El préstamo de libros sigue siendo importante, pero ya no es la única actividad que reúne a la comunidad. Ahora los usuarios pueden conversar sobre lo que leen y colaborar en nuevos proyectos.</span><strong>¿Qué idea secundaria sirve como ejemplo concreto de la transformación descrita?</strong>",
+        "options": [
+          "Toda biblioteca del mundo tiene el mismo horario",
+          "Los usuarios dejaron de pedir libros prestados",
+          "Se reservó una sala para que los vecinos estudiaran juntos",
+          "La lectura solo puede practicarse individualmente",
+          "El barrio construyó una universidad"
+        ],
+        "answer": 2,
+        "solution": "La sala de estudio compartido es un dato explícito que ejemplifica la función comunitaria. Las otras afirmaciones no aparecen o contradicen el texto."
+      },
+      {
+        "id": "p04",
+        "prompt": "En «Lucía encontró una carta. La leyó al llegar a casa», ¿a qué se refiere la en La leyó?",
+        "options": [
+          "a Lucía",
+          "a casa",
+          "al momento de llegar",
+          "a una carta",
+          "a una lectura futura"
+        ],
+        "answer": 3,
+        "solution": "La recupera el objeto mencionado antes: una carta. La concordancia y el verbo leer permiten reconocer esa referencia anafórica."
+      },
+      {
+        "id": "p05",
+        "prompt": "En «Solo necesitaba esto: tiempo para revisar el informe», esto constituye:",
+        "options": [
+          "una anáfora que recupera una persona anterior",
+          "un sinónimo de informe",
+          "un conector de consecuencia",
+          "la idea secundaria de un texto ausente",
+          "una catáfora que anticipa tiempo para revisar el informe"
+        ],
+        "answer": 4,
+        "solution": "Esto anuncia una información que se especifica después de los dos puntos. Esa dirección hacia un contenido posterior corresponde a la catáfora."
+      },
+      {
+        "id": "p06",
+        "prompt": "En «Compró un violín. El instrumento necesitaba una reparación», instrumento sustituye a violín mediante:",
+        "options": [
+          "hiperonimia",
+          "antonimia",
+          "meronimia",
+          "oposición causal",
+          "cambio de sujeto sin referencia"
+        ],
+        "answer": 0,
+        "solution": "Instrumento es un término más general que incluye violín. El contexto permite que retome el mismo objeto mediante una sustitución por hiperónimo."
+      },
+      {
+        "id": "p07",
+        "prompt": "<strong>Lee el texto:</strong><span class=\"practice-passage\">El huerto vecinal produce hortalizas para varias familias, pero su valor no se limita a la cosecha. Los vecinos aprenden a distribuir tareas, intercambian conocimientos y acuerdan turnos de riego. Cuando aparece un problema, buscan una solución entre todos. Así, el cultivo compartido también fortalece la cooperación. Considerarlo únicamente una fuente de alimentos dejaría fuera una parte esencial de lo que aporta al barrio.</span><strong>¿Qué afirmación recoge mejor la idea principal?</strong>",
+        "options": [
+          "El huerto solo importa por la cantidad de hortalizas",
+          "El huerto ofrece alimentos y, además, fortalece la cooperación vecinal",
+          "Distribuir turnos de riego impide la cooperación",
+          "Los vecinos no necesitan ponerse de acuerdo",
+          "El barrio abandonó el cultivo de alimentos"
+        ],
+        "answer": 1,
+        "solution": "La idea central integra el aporte alimentario y el social. Tareas, conocimientos y soluciones conjuntas sustentan la cooperación; limitarlo a la cosecha contradice el texto."
+      },
+      {
+        "id": "p08",
+        "prompt": "<strong>Lee el texto:</strong><span class=\"practice-passage\">El huerto vecinal produce hortalizas para varias familias, pero su valor no se limita a la cosecha. Los vecinos aprenden a distribuir tareas, intercambian conocimientos y acuerdan turnos de riego. Cuando aparece un problema, buscan una solución entre todos. Así, el cultivo compartido también fortalece la cooperación. Considerarlo únicamente una fuente de alimentos dejaría fuera una parte esencial de lo que aporta al barrio.</span><strong>¿Qué función cumple la mención de los turnos de riego?</strong>",
+        "options": [
+          "Introduce un tema sin relación con el huerto",
+          "Niega que el huerto produzca alimentos",
+          "Ejemplifica una práctica de organización y cooperación",
+          "Presenta la conclusión de que nadie colabora",
+          "Demuestra que solo una persona toma decisiones"
+        ],
+        "answer": 2,
+        "solution": "Acordar turnos es un ejemplo concreto de coordinación. La idea apoya la afirmación general sobre cooperación, pero no representa por sí sola todo el mensaje."
+      },
+      {
+        "id": "p09",
+        "prompt": "<strong>Lee el texto:</strong><span class=\"practice-passage\">Reconocer cada palabra de un texto no garantiza comprenderlo. Para construir su sentido, el lector necesita relacionar las ideas, identificar a qué se refieren las expresiones y distinguir lo central de lo secundario. Por eso, una lectura muy rápida puede resultar insuficiente si no permite establecer esos vínculos. Comprender supone una actividad interpretativa, además de la decodificación de las palabras.</span><strong>¿Cuál es la idea principal del texto?</strong>",
+        "options": [
+          "Leer rápidamente garantiza entender cualquier texto",
+          "Conocer las palabras vuelve innecesaria la interpretación",
+          "Toda información de un texto tiene la misma importancia",
+          "Comprender requiere interpretar relaciones entre ideas, además de reconocer palabras",
+          "La comprensión depende únicamente de la pronunciación"
+        ],
+        "answer": 3,
+        "solution": "El texto contrasta reconocimiento de palabras e interpretación. Su afirmación central es que comprender requiere construir relaciones y jerarquías, no solo decodificar."
+      },
+      {
+        "id": "p10",
+        "prompt": "¿Qué afirmación distingue correctamente tema central e idea principal?",
+        "options": [
+          "El tema es siempre la primera oración y la idea principal la última",
+          "Ambos deben reducirse a una sola palabra",
+          "La idea principal es cualquier dato repetido muchas veces",
+          "El tema solo aparece en textos con título",
+          "El tema nombra el asunto; la idea principal afirma algo central sobre él"
+        ],
+        "answer": 4,
+        "solution": "La diferencia es funcional: el tema identifica de qué se trata y la idea principal expresa qué se sostiene fundamentalmente. Ninguno depende de una posición fija ni de la existencia de título."
+      }
+    ]
+  }
+});

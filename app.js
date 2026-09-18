@@ -20,10 +20,11 @@ const LANGUAGE_CHAPTERS=window.LANGUAGE_CHAPTERS||[];
 const HISTORY_CHAPTERS=window.HISTORY_CHAPTERS||[];
 const PERU_CHAPTERS=window.PERU_CHAPTERS||[];
 const SOCIAL_COURSES={
+  1:{name:'Razonamiento Verbal',prefix:'razonamiento-verbal',chapters:window.VERBAL_CHAPTERS||[],syllabus:window.VERBAL_SYLLABUS||[]},
   10:{name:'Educación Cívica',prefix:'educacion-civica',chapters:window.CIVICS_CHAPTERS||[],syllabus:window.CIVICS_SYLLABUS||[]},
   14:{name:'Economía',prefix:'economia',chapters:window.ECONOMY_CHAPTERS||[],syllabus:window.ECONOMY_SYLLABUS||[]}
 };
-const CATALOG_VERSION=6;
+const CATALOG_VERSION=7;
 const CATEGORIES=['Todos',...new Set(COURSES.map(c=>c.category))];
 const TAB_INFO={
   Teoría:{icon:'book-open',title:'Teoría del capítulo',text:'Aquí se incorporará el desarrollo conceptual, definiciones, propiedades, ejemplos y fórmulas esenciales de este capítulo.'},
@@ -47,6 +48,11 @@ const esc=v=>String(v??'').replaceAll('&','&amp;').replaceAll('<','&lt;').replac
 const clamp=(value,min,max)=>Math.min(Math.max(Number(value)||0,min),max);
 
 function restoredTopicIndex(course,index,topicName,catalogVersion){
+  // Catalog 7 replaces the Habilidad Verbal outline with the supplied Razonamiento Verbal volume.
+  if(course.id===1&&!(Number(catalogVersion)>=7)){
+    const previous=[13,12,7,5,5,5,5,6,6,6,6,0,0,0,0,7,7,7,7,7,7,7,7,7];
+    return previous[clamp(index,0,23)];
+  }
   // Catalog 4 replaces Peru's earlier generic 24-topic outline with the PDF's 35 chapters.
   if(course.id===11&&!(Number(catalogVersion)>=4)){
     const previous=[1,2,4,5,6,7,8,8,9,12,12,13,14,15,15,16,17,17,19,20,21,23,28,30];

@@ -1,7 +1,7 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),vm=require('node:vm');
 const {harness}=require('./study-entry.test.cjs');
 const root=path.join(__dirname,'..');
-const appFiles=['courses.js','history-catalog.js','peru-catalog.js','lenguaje-catalog.js','economia-catalog.js','educacion-civica-catalog.js','history-progress.js','app.js'];
+const appFiles=['courses.js','history-catalog.js','peru-catalog.js','lenguaje-catalog.js','economia-catalog.js','educacion-civica-catalog.js','razonamiento-verbal-catalog.js','history-progress.js','app.js'];
 const configs=[
  {prefix:'economia',id:14,name:'Economía',variable:'ECONOMY',count:30,pages:[11,18,25,33,40,47],titles:['La ciencia económica','División de la economía','Necesidades y pobreza','Bienes y servicios','Proceso económico y sectores productivos','Teoría de la producción y costos de producción']},
  {prefix:'educacion-civica',id:10,name:'Educación Cívica',variable:'CIVICS',count:11,pages:[243,250,256,264,270,277],titles:['Educación cívica y las normas','La Constitución Política','Los derechos y mecanismos de protección','Ciudadanía y mecanismos de participación y de control ciudadanos','El Estado y el Gobierno','El Poder Legislativo y el Poder Ejecutivo']}
@@ -66,7 +66,7 @@ async function validateNavigation(){
    const study=harness(chapterFiles(c,n),{local:home.local,cloud:home.cloud});await study.signIn({uid:'student'});
    assert.match(study.elements.get('chapter-app').innerHTML,/Ilustración referencial creada con IA/);assert.doesNotMatch(study.elements.get('chapter-app').innerHTML,/Esquema didáctico|Reconstrucción didáctica creada con IA/);
    study.run("goLesson(4);window.ChapterPractice.choose(CHAPTER_ID,P.practice10,'p01',window.ChapterPractice.questions(CHAPTER_ID)[0].answer,P.studyMode);checkPractice('p01')");await study.run('persist()');
-   const nav=study.cloud.get('users/student/progress/navigation');assert.equal(nav.lastCourseId,c.id);assert.equal(nav.lastChapterNumber,n);assert.equal(nav.catalogVersion,6);
+   const nav=study.cloud.get('users/student/progress/navigation');assert.equal(nav.lastCourseId,c.id);assert.equal(nav.lastChapterNumber,n);assert.equal(nav.catalogVersion,7);
    const restored=harness(chapterFiles(c,n),{local:home.local,cloud:home.cloud});await restored.signIn({uid:'student'});assert.equal(restored.run('P.readingItem'),4);assert.equal(restored.run('progressPercent()'),10);
    const catalog=harness(appFiles,{local:home.local,cloud:home.cloud,search:`?course=${c.id}`});await catalog.signIn({uid:'student'});assert.equal(catalog.run('state.activeTopicIndex'),n-1);assert.equal(catalog.run(`socialChapterProgress(${c.id},${n}).percent`),10);assert.equal(catalog.run(`socialChapterProgress(${c.id===10?14:10},${n}).percent`),0);
    assert.match(catalog.run('renderProgressPanel()'),new RegExp(`${c.name} · Capítulo ${n}`));catalog.run('openProgressChapter()');assert.equal(catalog.redirects.at(-1),`${id}.html?v=20260918-social1`);
@@ -79,7 +79,7 @@ async function validateNavigation(){
 function validateTeacher(){
  const ctx={window:{}};for(const f of appFiles.filter(f=>f.includes('catalog')))vm.runInNewContext(fs.readFileSync(path.join(root,f),'utf8'),ctx);
  const admin=fs.readFileSync(path.join(root,'admin.js'),'utf8');vm.runInNewContext(admin.slice(admin.indexOf('const TRACKED_CHAPTERS='),admin.indexOf('let selectedChapter='))+';window.tracked=TRACKED_CHAPTERS;',ctx);
- assert.equal(Object.keys(ctx.window.tracked).length,32);
+ assert.equal(Object.keys(ctx.window.tracked).length,38);
  for(const c of configs)for(let n=1;n<=6;n++){const t=ctx.window.tracked[`${c.prefix}-capitulo-0${n}`];assert.equal(t.items,10);assert.ok(t.label.startsWith(`${c.name} · Capítulo ${n} ·`));}
  for(const file of ['index.html','admin.html'])for(const c of configs)assert.ok(fs.readFileSync(path.join(root,file),'utf8').includes(`${c.prefix}-catalog.js`));
 }

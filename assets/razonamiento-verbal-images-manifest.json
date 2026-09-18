@@ -1,0 +1,151 @@
+{
+  "tool": "image_gen built-in",
+  "course": "Razonamiento Verbal",
+  "style": "Use case: photorealistic-natural. Educational reference image for a Spanish pre-university course. Landscape 4:3. Polished natural documentary photography with believable materials, clear subjects, warm daylight and uncluttered framing. Depict concrete objects and actions. No infographic, no diagram, no text boxes, no floating words, no captions, no logos, no watermark. Any book pages in background should be out of focus and not readable.",
+  "images": [
+    {
+      "id": "cap01-biblioteca",
+      "chapter": 1,
+      "block": 1,
+      "scene": "A bright public library in Peru. A young adult librarian slides a closed book onto a shelf while a young adult reader browses nearby. A small reading table with several books in foreground, shelves in background. Make the actual books, reader and librarian clearly visible in one coherent scene.",
+      "alt": "Dos personas consultan y organizan libros en una biblioteca.",
+      "caption": "Libro, lector, biblioteca y bibliotecario se vinculan por un mismo ámbito, aunque no son sinónimos."
+    },
+    {
+      "id": "cap01-frutas",
+      "chapter": 1,
+      "block": 7,
+      "scene": "Close natural photograph of an inviting fruit stall: separate wicker baskets containing red apples, oranges, bananas and pears. A small handful of each fruit, all easy to recognize. No vegetables, no signs, no prices. Eye-level slightly elevated framing, morning natural light.",
+      "alt": "Canastas con manzanas, naranjas, plátanos y peras.",
+      "caption": "Fruta es el hiperónimo; manzana, naranja, plátano y pera son hipónimos y cohipónimos entre sí."
+    },
+    {
+      "id": "cap01-bicicleta",
+      "chapter": 1,
+      "block": 9,
+      "scene": "A complete conventional city bicycle resting against a light textured wall in a real repair workshop. Clearly show the whole bike including both wheels, handlebars, saddle, pedals and chain. A mechanic's hand points toward one wheel. Natural perspective, useful close-medium view, all parts correctly assembled.",
+      "alt": "Una bicicleta completa con ruedas, manillar, asiento y pedales visibles.",
+      "caption": "Una rueda es parte de una bicicleta: meronimia. La bicicleta es el todo: holonimia."
+    },
+    {
+      "id": "cap02-crecimiento",
+      "chapter": 2,
+      "block": 3,
+      "scene": "Four terracotta pots arranged left to right along a greenhouse bench showing four successively more developed bean plants: newly emerged tiny sprout, small seedling with two leaves, taller leafy young plant, mature healthy bean plant supported by a thin wooden stake with a few visible pods. Botanically believable and recognizably increasing development. A single realistic greenhouse photograph, not a labeled chart.",
+      "alt": "Plantas de frijol en diferentes etapas de crecimiento sobre una mesa de vivero.",
+      "caption": "La progresión de etapas permite reconocer el orden de una serie; no basta con pertenecer al mismo tema."
+    },
+    {
+      "id": "cap02-instrumentos",
+      "chapter": 2,
+      "block": 7,
+      "scene": "Natural still life in a music classroom: a violin, an acoustic guitar, a cello and a small ukulele arranged safely on stands, plus a single brass trumpet on a nearby wooden stool. All five instruments fully identifiable, especially their strings versus the trumpet's valves and bell. No people or text. Warm window light, one coherent room.",
+      "alt": "Instrumentos de cuerda junto a una trompeta en una sala de música.",
+      "caption": "Todos son instrumentos musicales, pero la trompeta queda fuera del grupo de instrumentos de cuerda."
+    },
+    {
+      "id": "cap02-panaderia",
+      "chapter": 2,
+      "block": 9,
+      "scene": "An artisan bakery workbench with a baker kneading bread dough, a wooden rolling pin, a metal sieve, an open sack of flour without markings, and several baked loaves on a cooling rack. Natural candid photograph, visible real tools and ingredients, clean working scene, no signage.",
+      "alt": "Una persona amasa pan junto a harina, rodillo, tamiz y panes horneados.",
+      "caption": "Panadero, harina, amasar y horno guardan afinidad temática: cumplen funciones distintas dentro de la panadería."
+    },
+    {
+      "id": "cap03-proteccion",
+      "chapter": 3,
+      "block": 3,
+      "scene": "A gardener sitting on a low bench preparing for work in a garden. Focus on the naturally positioned hands putting on a gardening glove and the feet wearing sturdy gardening boots, with anatomical accuracy. Both hand-glove and foot-boot relationships are easy to see in a single candid scene. No text or symbolic graphics.",
+      "alt": "Una persona se coloca guantes de jardinería y lleva botas de trabajo.",
+      "caption": "Mano : guante y pie : bota comparten la relación entre una parte del cuerpo y una prenda que la cubre."
+    },
+    {
+      "id": "cap03-oficios",
+      "chapter": 3,
+      "block": 5,
+      "scene": "A community garden workshop: one adult carpenter uses a hand saw safely to cut a plank on a sturdy workbench; nearby another adult gardener uses pruning shears on a small shrub. A single cohesive wide photograph showing two different professionals with their distinctive tools. Hands anatomically correct and tools clearly identifiable.",
+      "alt": "Un carpintero utiliza una sierra y una jardinera utiliza tijeras de podar.",
+      "caption": "Carpintero : sierra y jardinero : tijeras de podar relacionan un oficio con una herramienta de trabajo."
+    },
+    {
+      "id": "cap03-recipientes",
+      "chapter": 3,
+      "block": 7,
+      "scene": "A wooden table by a softly lit window. A clear glass pitcher visibly contains drinking water, and a ceramic vase holds a small bouquet of fresh daisies. Both vessels and contents fully visible with realistic size and perspective. Elegant simple photographic still life, no written labels.",
+      "alt": "Una jarra con agua y un florero con flores sobre una mesa.",
+      "caption": "Jarra : agua y florero : flores mantienen el orden recipiente : contenido."
+    },
+    {
+      "id": "cap04-indicios",
+      "chapter": 4,
+      "block": 1,
+      "scene": "Young adult science student in a modest bright laboratory examines a small seedling with yellowing leaves using a magnifying glass; nearby are a healthy green seedling, soil samples and a plain notebook with text out of focus. A thoughtful observation scene emphasizing comparison of visible clues, no screen, no charts, no lab coat branding.",
+      "alt": "Una estudiante compara plantas y observa indicios con una lupa.",
+      "caption": "Los indicios orientan una deducción; en una oración incompleta, esa función la cumplen las palabras del contexto."
+    },
+    {
+      "id": "cap04-ceramica",
+      "chapter": 4,
+      "block": 5,
+      "scene": "Close candid photograph of a ceramic artist's hands carefully shaping a clay bowl on a pottery wheel, wet clay texture clearly visible, a few finished ceramic bowls in background. Anatomically correct hands, clean natural side lighting. Focus on the specific action of molding, no text.",
+      "alt": "Las manos de una ceramista modelan un cuenco de arcilla.",
+      "caption": "Modelar la arcilla nombra una acción concreta; la precisión léxica elige el verbo adecuado al contexto."
+    },
+    {
+      "id": "cap04-restauracion",
+      "chapter": 4,
+      "block": 9,
+      "scene": "A book conservator at a worktable carefully repairs a visibly torn blank margin of an old book page using delicate paper repair strips and a small brush. Young adult assistant holds the book steady. Close-medium realistic photograph; no readable text on the book, no labels, no gloves required. Show careful cooperative restoration.",
+      "alt": "Dos personas reparan con cuidado una página rasgada de un libro.",
+      "caption": "La página estaba rasgada; por eso la repararon con cuidado. Los rastros verbales orientan las palabras que faltan."
+    },
+    {
+      "id": "cap05-cadena",
+      "chapter": 5,
+      "block": 3,
+      "scene": "A cyclist has stopped on a quiet daylight path beside a bicycle with a visibly broken chain lying slack near the rear gear and on the ground. The person crouches to examine it with a concerned but calm expression, one hand holds the bike. Mechanical cause is clear, no accident or injury, no text.",
+      "alt": "Un ciclista se detiene para revisar la cadena rota de su bicicleta.",
+      "caption": "La cadena se rompió, por eso el ciclista se detuvo: causa y consecuencia."
+    },
+    {
+      "id": "cap05-lluvia",
+      "chapter": 5,
+      "block": 5,
+      "scene": "A young adult student walks toward a neighborhood library on a rainy day, holding a plain umbrella and keeping books dry inside a backpack. Rain and wet pavement are clearly visible; the person continues confidently toward the open building entrance. No signage or readable text. Photorealistic natural everyday scene.",
+      "alt": "Una estudiante camina bajo la lluvia protegida por un paraguas.",
+      "caption": "Aunque llovía, continuó su camino. La concesión presenta una dificultad que no impide la acción."
+    },
+    {
+      "id": "cap05-riego",
+      "chapter": 5,
+      "block": 7,
+      "scene": "A young adult waters healthy seedlings with a small watering can in a community plant nursery. Clear gentle water stream reaching the soil, seedlings in orderly trays, warm morning light. The action and its purpose of caring for plants should be instantly recognizable. No text, no diagrams.",
+      "alt": "Una persona riega con suavidad varias plantas jóvenes.",
+      "caption": "Riega las plantas para que crezcan: el conector introduce una finalidad."
+    },
+    {
+      "id": "cap06-lectura",
+      "chapter": 6,
+      "block": 1,
+      "scene": "Two young adult students read the same open book and discuss it attentively at a bright public library table in Peru. One points to a paragraph while the other listens and reflects. Candid respectful study scene, pages visible but writing too small to read, natural lighting and shelves softly blurred behind.",
+      "alt": "Dos estudiantes leen y comentan un libro en una biblioteca.",
+      "caption": "Comprender implica relacionar, interpretar y explicar lo leído, además de reconocer las palabras."
+    },
+    {
+      "id": "cap06-manglar",
+      "chapter": 6,
+      "block": 7,
+      "scene": "Realistic coastal mangrove wetland reference photograph at low tide: intertwined exposed mangrove roots in the foreground, calm brackish water channel, a few small fish visible near roots and a white wading bird in the middle distance. Lush foliage and peaceful daylight. No map, no labels, no fantasy structures.",
+      "alt": "Raíces de manglar junto a un canal de agua y un ave costera.",
+      "caption": "En el ejemplo de lectura, las raíces, la fauna y la protección de la costa apoyan una idea general sobre el manglar."
+    },
+    {
+      "id": "cap06-huerto",
+      "chapter": 6,
+      "block": 9,
+      "scene": "A lively but orderly urban community vegetable garden in a Peruvian neighborhood. Several adult neighbors tend raised vegetable beds together; one waters, another harvests lettuce, two share gardening tools. City buildings softly visible behind. Clear cooperative action and healthy plants, natural documentary photography, no text or signs.",
+      "alt": "Vecinos colaboran en el cuidado de un huerto urbano.",
+      "caption": "La cosecha, el aprendizaje y la cooperación son detalles que sustentan una idea principal sobre los beneficios del huerto."
+    }
+  ]
+}

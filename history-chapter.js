@@ -4,6 +4,7 @@ const CHAPTER_ID=CONTENT.progressId||CONTENT.id;
 const COURSE_ID=CONTENT.courseId||12;
 const COURSE_NAME=CONTENT.courseName||'Historia Universal';
 const COURSE_CONFIG={
+  1:{prefix:'razonamiento-verbal',chapters:window.VERBAL_CHAPTERS||[]},
   7:{prefix:'lenguaje',chapters:window.LANGUAGE_CHAPTERS||[]},
   10:{prefix:'educacion-civica',chapters:window.CIVICS_CHAPTERS||[]},
   14:{prefix:'economia',chapters:window.ECONOMY_CHAPTERS||[]},
@@ -155,8 +156,8 @@ async function signedIn(u){
   if(cloudReady){markChanged();await persist();}
   if(epoch!==authEpoch)return;
   // The navigation document lets the catalog and teacher panel resume this chapter.
-  const navigation={catalogVersion:6,lastCourseId:COURSE_ID,lastCourseName:COURSE_NAME,lastTopicIndex:CHAPTER_NUMBER-1,lastChapterNumber:CHAPTER_NUMBER,lastChapterName:CONTENT.title};
-  try{localStorage.setItem('academia-sm-state',JSON.stringify({catalogVersion:6,activeCourseId:COURSE_ID,activeTopicIndex:CHAPTER_NUMBER-1,activeTopicName:CONTENT.title}));}catch{}
+  const navigation={catalogVersion:7,lastCourseId:COURSE_ID,lastCourseName:COURSE_NAME,lastTopicIndex:CHAPTER_NUMBER-1,lastChapterNumber:CHAPTER_NUMBER,lastChapterName:CONTENT.title};
+  try{localStorage.setItem('academia-sm-state',JSON.stringify({catalogVersion:7,activeCourseId:COURSE_ID,activeTopicIndex:CHAPTER_NUMBER-1,activeTopicName:CONTENT.title}));}catch{}
   if(cloudReady)try{await db.collection('users').doc(u.uid).collection('progress').doc('navigation').set({...navigation,updatedAt:firebase.firestore.FieldValue.serverTimestamp()},{merge:true});}catch(error){console.error('Navigation save:',error);}
 }
 if(!window.firebase){root.innerHTML='<main class="guest-view"><h1>No se pudo cargar la sesión</h1><p>Revisa tu conexión y vuelve a abrir este capítulo.</p><a class="button" href="">Reintentar</a></main>';}

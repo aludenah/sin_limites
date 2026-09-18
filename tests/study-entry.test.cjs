@@ -18,7 +18,7 @@ function harness(files,{local=new Map(),cloud=new Map(),search=''}={}){
  for(const file of ['practice-bank.js','chapter-practice.js','study-mode.js',...files])vm.runInContext(fs.readFileSync(path.join(root,file),'utf8'),context);
  return {run:s=>vm.runInContext(s,context),signIn:u=>callback(u),cloud,local,elements,redirects,events,setOffline:value=>offline=value};
 }
-const appFiles=['courses.js','history-catalog.js','peru-catalog.js','lenguaje-catalog.js','economia-catalog.js','educacion-civica-catalog.js','history-progress.js','app.js'];
+const appFiles=['courses.js','history-catalog.js','peru-catalog.js','lenguaje-catalog.js','economia-catalog.js','educacion-civica-catalog.js','razonamiento-verbal-catalog.js','history-progress.js','app.js'];
 const presentations=['historia-universal-capitulo-01-content.js','history-reading.js'];
 const physics=n=>[`fisica-capitulo-0${n}-data.js`,`fisica-capitulo-0${n}.js`];
 const history=n=>['history-catalog.js','history-progress.js',`historia-universal-capitulo-0${n}-data.js`,'history-chapter.js'];
