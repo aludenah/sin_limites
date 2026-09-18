@@ -17,6 +17,7 @@
  const returnWire='M791 258 C852 270 854 326 819 370 C761 452 651 433 583 388 C550 359 526 358 500 375';
 
  function render(kind){
+  if(kind==='electron-drift')return window.ElectronDrift.render(kind);
   if(kind!=='simple-circuit')return '';
   return `<section class="circuit-sim" id="${id}" data-circuit-demo data-state="${state.closed?'closed':'open'}" data-motion="${state.paused?'paused':'running'}" aria-labelledby="${id}-title">
    <p class="circuit-kicker">Explora el circuito</p>
@@ -82,6 +83,7 @@
  }
 
  function handleClick(button){
+  if(window.ElectronDrift?.handleClick(button))return true;
   const action=button.dataset.action;
   if(!['toggle-simple-circuit','circuit-motion'].includes(action))return false;
   const root=button.closest('[data-circuit-demo]');
@@ -93,5 +95,5 @@
  }
 
  // State lasts through chapter re-renders; it does not change study progress.
- window.ChapterInteractions={render,handleClick};
+ window.ChapterInteractions={render,handleClick,mount:root=>window.ElectronDrift?.mount(root),unmount:()=>window.ElectronDrift?.unmount()};
 })();

@@ -4,8 +4,9 @@ const root=path.join(__dirname,'..'),id='fisica-capitulo-15';
 const read=f=>fs.readFileSync(path.join(root,f),'utf8');
 const catalogs=['history-catalog.js','peru-catalog.js','lenguaje-catalog.js','economia-catalog.js','educacion-civica-catalog.js','razonamiento-verbal-catalog.js','razonamiento-matematico-catalog.js','fisica-catalog.js'];
 const appFiles=['courses.js',...catalogs,'history-progress.js','app.js'];
-const chapterFiles=['fisica-catalog.js','history-progress.js',id+'-data.js',id+'-interactivo.js','history-chapter.js'];
-const ctx={window:{}};for(const f of ['courses.js','practice-bank.js',...catalogs,id+'-data.js',id+'-interactivo.js'])vm.runInNewContext(read(f),ctx);
+const interactionFiles=[id+'-electrones-modelo.js',id+'-electrones.js',id+'-interactivo.js'];
+const chapterFiles=['fisica-catalog.js','history-progress.js',id+'-data.js',...interactionFiles,'history-chapter.js'];
+const ctx={window:{}};for(const f of ['courses.js','practice-bank.js',...catalogs,id+'-data.js',...interactionFiles])vm.runInNewContext(read(f),ctx);
 const content=ctx.window.HISTORY_CONTENT,questions=ctx.window.CHAPTER_PRACTICES[id].problems;
 const figures=JSON.parse(read('assets/fisica-capitulo-15-figuras.json')).figures;
 const sourceFigures=JSON.parse(read('assets/fisica-capitulo-15-originales.json')).figures;
@@ -163,6 +164,8 @@ async function integration(){
  const section=study.run("theoryBlock(LESSONS[0].blocks.find(b=>b.id==='fis15-movimiento'))");
  assert.match(section,/data-circuit-demo/);assert.equal((html.match(/data-circuit-demo/g)||[]).length,1);
  assert.ok(section.indexOf('data-circuit-demo')>section.indexOf('corriente-interruptor-cerrado.svg'),'The simulation follows the two existing illustrations');
+ assert.equal((html.match(/data-electron-demo/g)||[]).length,1);
+ assert.ok(html.indexOf('data-electron-demo')<html.indexOf('<h3>1.1.'),'Electron animation appears before subsection 1.1');
  assert.ok(study.run('window.mathCalls.length')>0);assert.equal(study.run('window.mathCalls[0].options.delimiters[1].left'),'\\(');
  for(const q of questions.filter(q=>q.figure)){assert.ok(html.includes(q.figure.src));study.run(`document.getElementById('image-dialog').showModal=()=>{};openMathFigure('practice:${q.id}')`);assert.ok(study.elements.get('image-dialog').innerHTML.includes(q.figure.src));assert.doesNotMatch(study.elements.get('image-dialog').innerHTML,/creada con IA/);}
  const sourceButtons=[...html.matchAll(/data-id="((?:theory|example|solution):[^"]+)"/g)].map(m=>m[1]);assert.equal(sourceButtons.length,37);

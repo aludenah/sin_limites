@@ -6,6 +6,42 @@
 .topic-prose .katex-display,
 .guided-case .katex-display { padding: 4px 0 8px; }
 
+/* Microscopic conductor view; direction labels remain readable on mobile. */
+.electron-sim { max-width: 740px; margin: 26px auto 8px; padding: 24px; border: 1px solid #c6d6df; border-radius: 14px; background: #fff; color: #172630; }
+.electron-sim .electron-kicker { margin: 0 0 6px; color: #176c62; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.electron-sim h4 { margin: 0 0 8px; font-size: 21px; line-height: 1.35; }
+.electron-sim .electron-instruction { margin: 0 0 16px; color: #526677; font-size: 15px; line-height: 1.5; }
+.electron-sim .electron-svg { display: block; width: 100%; height: auto; margin: 12px 0; }
+.electron-direction { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 14px; padding: 10px 14px; border-radius: 8px; background: #f3f6f8; font-size: 14px; line-height: 1.4; }
+.electron-direction > strong { margin-right: auto; }
+.electron-direction > [aria-hidden] { font-size: 30px; line-height: 1; font-weight: 700; }
+.electron-direction > span:last-child { min-width: 130px; }
+.electron-sim[data-field="on"] .electron-field { background: #edf6f2; color: #145c4b; }
+.electron-sim[data-field="on"] .electron-drift { background: #edf5fb; color: #1b547c; }
+.electron-legend { display: flex; flex-wrap: wrap; gap: 10px 20px; margin: 16px 0 20px; color: #526677; font-size: 13px; line-height: 1.5; }
+.electron-legend > span { display: inline-flex; align-items: center; gap: 7px; }
+.electron-dot { display: inline-flex; justify-content: center; align-items: center; width: 13px; height: 13px; border-radius: 50%; background: #216d9f; font-style: normal; }
+.electron-dot-ion { border: 1px solid #bcc9cf; background: #f0f3f5; color: #687e89; }
+.electron-dot-tracked { background: #a65c08; }
+.electron-controls { display: flex; flex-wrap: wrap; gap: 10px; }
+.electron-controls .button { min-height: 46px; white-space: normal; }
+.electron-controls .button:focus-visible { outline: 3px solid #bc7d27; outline-offset: 3px; }
+.electron-feedback { margin-top: 18px; padding-top: 16px; border-top: 1px solid #e0e8eb; font-size: 15px; line-height: 1.6; }
+.electron-feedback p { margin: 6px 0 0; }
+.electron-sim .electron-note { margin: 12px 0 0; color: #526677; font-size: 13px; line-height: 1.6; }
+@media (max-width: 650px) {
+ .electron-sim { padding: 16px 12px; }
+ .electron-sim h4 { font-size: 19px; }
+ .electron-svg-label { font-size: 31px; }
+ .electron-direction { gap: 5px 10px; padding: 10px; }
+ .electron-direction > strong { flex-basis: 100%; }
+ .electron-controls .button { flex: 1 1 190px; }
+}
+@media print {
+ .electron-sim { break-inside: avoid; }
+ .electron-controls, .electron-instruction { display: none !important; }
+}
+
 /* Simple DC circuit. Native buttons provide mouse, touch and keyboard controls. */
 .circuit-sim { max-width: 740px; margin: 26px auto 8px; padding: 24px; border: 1px solid #c6d6df; border-radius: 14px; background: #fff; color: #172630; }
 .circuit-sim .circuit-kicker { margin: 0 0 6px; color: #176c62; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }

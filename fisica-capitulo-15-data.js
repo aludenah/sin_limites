@@ -52,6 +52,7 @@ window.HISTORY_CONTENT={
         {
           "id": "fis15-corriente",
           "title": "1. Corriente eléctrica",
+          "interactive": "electron-drift",
           "paragraphs": [
             "Es un fenómeno que se da a nivel microscópico y se puede manifestar en los sólidos, líquidos y gases bajo la influencia de ciertos factores entre los cuales no puede faltar una diferencia de potencial eléctrico, la cual se puede establecer mediante una batería, pila o alternador."
           ],
