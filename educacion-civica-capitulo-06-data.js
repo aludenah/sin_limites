@@ -56,10 +56,10 @@ window.HISTORY_CONTENT={
           ],
           "id": "educacion-civica06-tema1-1",
           "illustration": {
-            "src": "assets/educacion-civica-diagramas/cap06-bicameralidad.svg",
-            "alt": "Congreso formado por Senado y Cámara de Diputados con mínimos constitucionales.",
-            "caption": "Estructura conforme a la Ley 31988, aplicada desde 2026.",
-            "credit": "Esquema didáctico · SIN LÍMITES"
+            "src": "assets/educacion-civica-imagenes/cap06-bicameralidad.webp",
+            "alt": "Representación ilustrada de dos cámaras legislativas conectadas por un espacio institucional común.",
+            "caption": "En un sistema bicameral, dos cámaras participan en las funciones del Congreso.",
+            "credit": "Ilustración referencial creada con IA · SIN LÍMITES"
           }
         },
         {
@@ -156,10 +156,10 @@ window.HISTORY_CONTENT={
           ],
           "id": "educacion-civica06-tema3-1",
           "illustration": {
-            "src": "assets/educacion-civica-diagramas/cap06-ley.svg",
-            "alt": "Esquema del procedimiento ordinario de formación de una ley.",
-            "caption": "La revisión bicameral precede a promulgación y publicación.",
-            "credit": "Esquema didáctico · SIN LÍMITES"
+            "src": "assets/educacion-civica-imagenes/cap06-ley.webp",
+            "alt": "Una comisión parlamentaria revisa y debate una propuesta de ley.",
+            "caption": "La elaboración de una ley comprende revisión, debate y decisiones institucionales.",
+            "credit": "Ilustración referencial creada con IA · SIN LÍMITES"
           }
         },
         {
@@ -253,10 +253,10 @@ window.HISTORY_CONTENT={
           "takeaway": "Controlar al otro poder exige una atribución expresa y el cumplimiento de sus condiciones.",
           "id": "educacion-civica06-tema5-2",
           "illustration": {
-            "src": "assets/educacion-civica-diagramas/cap06-controles.svg",
-            "alt": "Control de Diputados al gabinete y límites a la disolución.",
-            "caption": "El Senado no puede ser disuelto por el presidente.",
-            "credit": "Esquema didáctico · SIN LÍMITES"
+            "src": "assets/educacion-civica-imagenes/cap06-controles.webp",
+            "alt": "Un integrante del gobierno responde preguntas ante una comisión parlamentaria.",
+            "caption": "Los controles entre instituciones permiten examinar la actuación del gobierno.",
+            "credit": "Ilustración referencial creada con IA · SIN LÍMITES"
           }
         }
       ],

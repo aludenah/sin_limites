@@ -27,10 +27,11 @@ function validateContent(){
    assert.ok(content.lessons.every(l=>l.examples.length&&l.examples[0].steps.length>=3));
    const visuals=blocks.filter(b=>b.illustration).map(b=>b.illustration);assert.equal(visuals.length,3);
    for(const visual of visuals){
-    assert.ok(visual.alt&&visual.caption);assert.match(visual.credit,/Esquema didáctico/);
+    assert.ok(visual.alt&&visual.caption);assert.match(visual.credit,/Ilustración referencial creada con IA/);
     assert.ok(!images.has(visual.src));images.add(visual.src);
-    const svg=fs.readFileSync(path.join(root,visual.src),'utf8');assert.match(svg,/<svg /);assert.match(svg,/<title>.+<\/title>/);assert.doesNotMatch(svg,/<script\b|<foreignObject\b/i);
-    const hash=require('node:crypto').createHash('sha256').update(svg).digest('hex');assert.ok(!imageHashes.has(hash));imageHashes.add(hash);
+    assert.match(visual.src,/\.webp$/);
+    const bitmap=fs.readFileSync(path.join(root,visual.src));assert.equal(bitmap.toString('ascii',0,4),'RIFF');assert.equal(bitmap.toString('ascii',8,12),'WEBP');assert.ok(bitmap.length>20000,'Referential image is a full raster asset');
+    const hash=require('node:crypto').createHash('sha256').update(bitmap).digest('hex');assert.ok(!imageHashes.has(hash));imageHashes.add(hash);
    }
    const practice=ctx.window.CHAPTER_PRACTICES[id];assert.equal(practice.problems.length,10);
    assert.deepEqual(Array.from(practice.problems,q=>q.id),Array.from({length:10},(_,i)=>`p${String(i+1).padStart(2,'0')}`));
@@ -63,7 +64,7 @@ async function validateNavigation(){
    const id=`${c.prefix}-capitulo-0${n}`,direct=harness(chapterFiles(c,n));await direct.signIn({uid:'new'});assert.deepEqual(direct.redirects,[`index.html?chapter=${id}&v=20260918-social1`]);
    const entry=harness(appFiles,{search:`?chapter=${id}`});await entry.signIn({uid:'new'});entry.run("selectStudyMode('progressive')");assert.equal(entry.redirects.at(-1),`${id}.html?v=20260918-social1`);
    const study=harness(chapterFiles(c,n),{local:home.local,cloud:home.cloud});await study.signIn({uid:'student'});
-   assert.match(study.elements.get('chapter-app').innerHTML,/Esquema didáctico/);assert.doesNotMatch(study.elements.get('chapter-app').innerHTML,/Reconstrucción didáctica creada con IA/);
+   assert.match(study.elements.get('chapter-app').innerHTML,/Ilustración referencial creada con IA/);assert.doesNotMatch(study.elements.get('chapter-app').innerHTML,/Esquema didáctico|Reconstrucción didáctica creada con IA/);
    study.run("goLesson(4);window.ChapterPractice.choose(CHAPTER_ID,P.practice10,'p01',window.ChapterPractice.questions(CHAPTER_ID)[0].answer,P.studyMode);checkPractice('p01')");await study.run('persist()');
    const nav=study.cloud.get('users/student/progress/navigation');assert.equal(nav.lastCourseId,c.id);assert.equal(nav.lastChapterNumber,n);assert.equal(nav.catalogVersion,6);
    const restored=harness(chapterFiles(c,n),{local:home.local,cloud:home.cloud});await restored.signIn({uid:'student'});assert.equal(restored.run('P.readingItem'),4);assert.equal(restored.run('progressPercent()'),10);
@@ -82,4 +83,4 @@ function validateTeacher(){
  for(const c of configs)for(let n=1;n<=6;n++){const t=ctx.window.tracked[`${c.prefix}-capitulo-0${n}`];assert.equal(t.items,10);assert.ok(t.label.startsWith(`${c.name} · Capítulo ${n} ·`));}
  for(const file of ['index.html','admin.html'])for(const c of configs)assert.ok(fs.readFileSync(path.join(root,file),'utf8').includes(`${c.prefix}-catalog.js`));
 }
-(async()=>{validateContent();await validateNavigation();validateTeacher();console.log('PASS: Economía 30 / Cívica 11 chapters, 12 developed routes, 120 practices, 36 unique diagrams, source corrections, resume, course/account isolation and teacher tracking.');})().catch(e=>{console.error(e);process.exitCode=1;});
+(async()=>{validateContent();await validateNavigation();validateTeacher();console.log('PASS: Economía 30 / Cívica 11 chapters, 12 developed routes, 120 practices, 36 unique referential images, source corrections, resume, course/account isolation and teacher tracking.');})().catch(e=>{console.error(e);process.exitCode=1;});

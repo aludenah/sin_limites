@@ -64,10 +64,10 @@ window.HISTORY_CONTENT={
           ],
           "id": "educacion-civica02-tema1-2",
           "illustration": {
-            "src": "assets/educacion-civica-diagramas/cap02-constitucion.svg",
-            "alt": "Relación entre derechos, organización del Estado y supremacía constitucional.",
-            "caption": "La organización pública y la garantía de derechos se complementan.",
-            "credit": "Esquema didáctico · SIN LÍMITES"
+            "src": "assets/educacion-civica-imagenes/cap02-constitucion.webp",
+            "alt": "Docente y estudiantes consultan un libro jurídico durante una clase de ciudadanía.",
+            "caption": "Conocer la Constitución ayuda a relacionar los derechos con la organización del Estado.",
+            "credit": "Ilustración referencial creada con IA · SIN LÍMITES"
           }
         }
       ],
@@ -128,10 +128,10 @@ window.HISTORY_CONTENT={
           ],
           "id": "educacion-civica02-tema2-2",
           "illustration": {
-            "src": "assets/educacion-civica-diagramas/cap02-historia.svg",
-            "alt": "Cinco hitos de la historia constitucional peruana.",
-            "caption": "Cronología selectiva; las distancias no representan duración.",
-            "credit": "Esquema didáctico · SIN LÍMITES"
+            "src": "assets/educacion-civica-imagenes/cap02-historia.webp",
+            "alt": "Una investigadora consulta libros jurídicos y documentos antiguos en un archivo.",
+            "caption": "Los textos constitucionales permiten estudiar los cambios políticos de distintas épocas.",
+            "credit": "Ilustración referencial creada con IA · SIN LÍMITES"
           }
         }
       ],
@@ -263,10 +263,10 @@ window.HISTORY_CONTENT={
           ],
           "id": "educacion-civica02-tema5-1",
           "illustration": {
-            "src": "assets/educacion-civica-diagramas/cap02-reforma.svg",
-            "alt": "Dos vías de aprobación de reforma constitucional en el sistema bicameral.",
-            "caption": "Artículo 206 conforme a la reforma de la Ley 31988.",
-            "credit": "Esquema didáctico · SIN LÍMITES"
+            "src": "assets/educacion-civica-imagenes/cap02-reforma.webp",
+            "alt": "Representantes debaten una propuesta normativa y revisan documentos en una comisión.",
+            "caption": "Una reforma constitucional requiere deliberación y los procedimientos previstos por la Constitución.",
+            "credit": "Ilustración referencial creada con IA · SIN LÍMITES"
           }
         },
         {

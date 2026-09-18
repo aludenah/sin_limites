@@ -117,10 +117,10 @@ window.HISTORY_CONTENT={
           ],
           "id": "educacion-civica01-tema2-2",
           "illustration": {
-            "src": "assets/educacion-civica-diagramas/cap01-normas.svg",
-            "alt": "Cuatro tipos de normas comparados por su fundamento.",
-            "caption": "Una misma conducta puede estar regulada por varias normas.",
-            "credit": "Esquema didáctico · SIN LÍMITES"
+            "src": "assets/educacion-civica-imagenes/cap01-normas.webp",
+            "alt": "Vecinos respetan el cruce peatonal y colaboran con una persona mayor.",
+            "caption": "Las normas y el respeto cotidiano ayudan a convivir en comunidad.",
+            "credit": "Ilustración referencial creada con IA · SIN LÍMITES"
           }
         }
       ],
@@ -155,10 +155,10 @@ window.HISTORY_CONTENT={
           ],
           "id": "educacion-civica01-tema3-2",
           "illustration": {
-            "src": "assets/educacion-civica-diagramas/cap01-garantias.svg",
-            "alt": "Regla, autoridad competente, procedimiento y control de una sanción.",
-            "caption": "La fuerza del Estado debe actuar dentro de límites jurídicos.",
-            "credit": "Esquema didáctico · SIN LÍMITES"
+            "src": "assets/educacion-civica-imagenes/cap01-garantias.webp",
+            "alt": "Una persona presenta su versión de los hechos ante una autoridad, acompañada de una asesora.",
+            "caption": "La actuación de una autoridad debe respetar procedimientos y permitir la defensa.",
+            "credit": "Ilustración referencial creada con IA · SIN LÍMITES"
           }
         }
       ],
@@ -191,10 +191,10 @@ window.HISTORY_CONTENT={
           ],
           "id": "educacion-civica01-tema4-1",
           "illustration": {
-            "src": "assets/educacion-civica-diagramas/cap01-jerarquia.svg",
-            "alt": "Constitución, rango legal y reglamentos con una nota sobre competencia.",
-            "caption": "Jerarquía y competencia se analizan juntas.",
-            "credit": "Esquema didáctico · SIN LÍMITES"
+            "src": "assets/educacion-civica-imagenes/cap01-jerarquia.webp",
+            "alt": "Un libro con el título Constitución Política del Perú, una balanza y la bandera peruana sobre una mesa.",
+            "caption": "La Constitución sirve como referencia fundamental para el ordenamiento jurídico.",
+            "credit": "Ilustración referencial creada con IA · SIN LÍMITES"
           }
         },
         {

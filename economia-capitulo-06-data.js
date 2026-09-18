@@ -56,10 +56,10 @@ window.HISTORY_CONTENT={
           ],
           "id": "economia06-tema1-1",
           "illustration": {
-            "src": "assets/economia-diagramas/cap06-factores.svg",
-            "alt": "Factores y tecnología se combinan para generar bienes y servicios.",
-            "caption": "La producción depende de la combinación y de la tecnología.",
-            "credit": "Esquema didáctico · SIN LÍMITES"
+            "src": "assets/economia-imagenes/cap06-factores.webp",
+            "alt": "Personas, papel y maquinaria se combinan en una pequeña imprenta.",
+            "caption": "La producción requiere coordinar trabajo, materiales, equipos y conocimientos.",
+            "credit": "Ilustración referencial creada con IA · SIN LÍMITES"
           }
         },
         {
@@ -176,10 +176,10 @@ window.HISTORY_CONTENT={
           ],
           "id": "economia06-tema3-2",
           "illustration": {
-            "src": "assets/economia-diagramas/cap06-rendimientos.svg",
-            "alt": "Producto total y marginal según una tabla hipotética de trabajadores.",
-            "caption": "Marginal decreciente y producto total decreciente son situaciones distintas.",
-            "credit": "Esquema didáctico · SIN LÍMITES"
+            "src": "assets/economia-imagenes/cap06-rendimientos.webp",
+            "alt": "Varios trabajadores comparten una mesa y un horno de capacidad limitada.",
+            "caption": "Si el espacio y los equipos no cambian, añadir trabajadores puede generar aportes cada vez menores.",
+            "credit": "Ilustración referencial creada con IA · SIN LÍMITES"
           }
         }
       ],
@@ -283,10 +283,10 @@ window.HISTORY_CONTENT={
           "takeaway": "Total se suma; medio se divide por Q; marginal compara variaciones.",
           "id": "economia06-tema5-2",
           "illustration": {
-            "src": "assets/economia-diagramas/cap06-costos.svg",
-            "alt": "Descomposición de costos fijos y variables para tres niveles de producción.",
-            "caption": "La suma forma el costo total; dividir entre Q da el costo medio.",
-            "credit": "Esquema didáctico · SIN LÍMITES"
+            "src": "assets/economia-imagenes/cap06-costos.webp",
+            "alt": "Una panadera revisa sus gastos junto a los insumos, el equipo y los panes elaborados.",
+            "caption": "Los materiales y el uso de equipos forman parte del análisis de los costos de producción.",
+            "credit": "Ilustración referencial creada con IA · SIN LÍMITES"
           }
         }
       ],

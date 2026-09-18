@@ -117,10 +117,10 @@ window.HISTORY_CONTENT={
           ],
           "id": "economia04-tema2-2",
           "illustration": {
-            "src": "assets/economia-diagramas/cap04-destino.svg",
-            "alt": "El mismo tipo de objeto se clasifica como consumo o capital según su uso.",
-            "caption": "El destino del bien importa más que su apariencia.",
-            "credit": "Esquema didáctico · SIN LÍMITES"
+            "src": "assets/economia-imagenes/cap04-destino.webp",
+            "alt": "Dos personas utilizan computadoras semejantes: una para trabajar y otra para entretenerse.",
+            "caption": "La función económica de un bien depende del uso al que se destina.",
+            "credit": "Ilustración referencial creada con IA · SIN LÍMITES"
           }
         }
       ],
@@ -147,10 +147,10 @@ window.HISTORY_CONTENT={
           ],
           "id": "economia04-tema3-1",
           "illustration": {
-            "src": "assets/economia-diagramas/cap04-cadena.svg",
-            "alt": "Cadena de trigo, harina y pan con sus valores agregados.",
-            "caption": "Sumar el valor agregado evita contar dos veces los insumos.",
-            "credit": "Esquema didáctico · SIN LÍMITES"
+            "src": "assets/economia-imagenes/cap04-cadena.webp",
+            "alt": "Espigas, harina, masa y panes sobre la mesa de una panadería.",
+            "caption": "El trigo y la harina se transforman en un producto final: el pan.",
+            "credit": "Ilustración referencial creada con IA · SIN LÍMITES"
           }
         },
         {
@@ -185,10 +185,10 @@ window.HISTORY_CONTENT={
           ],
           "id": "economia04-tema4-1",
           "illustration": {
-            "src": "assets/economia-diagramas/cap04-relaciones.svg",
-            "alt": "Comparación entre bienes sustitutos y complementarios.",
-            "caption": "Las relaciones se identifican a partir del uso y de la demanda.",
-            "credit": "Esquema didáctico · SIN LÍMITES"
+            "src": "assets/economia-imagenes/cap04-relaciones.webp",
+            "alt": "Tazas de té y café junto a una computadora con su cargador conectado.",
+            "caption": "El té y el café pueden ser alternativas; la computadora y su cargador se utilizan conjuntamente.",
+            "credit": "Ilustración referencial creada con IA · SIN LÍMITES"
           }
         },
         {

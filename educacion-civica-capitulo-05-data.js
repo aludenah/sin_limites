@@ -56,10 +56,10 @@ window.HISTORY_CONTENT={
           ],
           "id": "educacion-civica05-tema1-1",
           "illustration": {
-            "src": "assets/educacion-civica-diagramas/cap05-estado.svg",
-            "alt": "Estado permanente, gobierno temporal y nación como vínculo de pertenencia.",
-            "caption": "Diferenciar conceptos evita atribuir al gobierno la totalidad del Estado.",
-            "credit": "Esquema didáctico · SIN LÍMITES"
+            "src": "assets/educacion-civica-imagenes/cap05-estado.webp",
+            "alt": "Personas de distintas edades transitan por una plaza junto a un edificio público peruano.",
+            "caption": "La vida del Estado comprende población, territorio e instituciones.",
+            "credit": "Ilustración referencial creada con IA · SIN LÍMITES"
           }
         },
         {
@@ -188,10 +188,10 @@ window.HISTORY_CONTENT={
           ],
           "id": "educacion-civica05-tema4-1",
           "illustration": {
-            "src": "assets/educacion-civica-diagramas/cap05-organizacion.svg",
-            "alt": "Poderes estatales y niveles territoriales en dos clasificaciones separadas.",
-            "caption": "Separación de poderes y descentralización son relaciones distintas.",
-            "credit": "Esquema didáctico · SIN LÍMITES"
+            "src": "assets/educacion-civica-imagenes/cap05-organizacion.webp",
+            "alt": "Personal municipal orienta a vecinos que realizan trámites en un centro de atención.",
+            "caption": "Los gobiernos locales atienden funciones y necesidades de su ámbito territorial.",
+            "credit": "Ilustración referencial creada con IA · SIN LÍMITES"
           }
         },
         {
@@ -245,10 +245,10 @@ window.HISTORY_CONTENT={
           "takeaway": "La excepción tiene causas, alcance, duración y controles; no equivale a poder ilimitado.",
           "id": "educacion-civica05-tema5-2",
           "illustration": {
-            "src": "assets/educacion-civica-diagramas/cap05-excepcion.svg",
-            "alt": "Causas, límites temporales y controles de los regímenes de excepción.",
-            "caption": "La emergencia no suspende automáticamente todos los derechos.",
-            "credit": "Esquema didáctico · SIN LÍMITES"
+            "src": "assets/educacion-civica-imagenes/cap05-excepcion.webp",
+            "alt": "Autoridades y equipos de respuesta coordinan apoyo a vecinos afectados por una inundación.",
+            "caption": "Las situaciones excepcionales requieren una respuesta pública sujeta a límites y controles.",
+            "credit": "Ilustración referencial creada con IA · SIN LÍMITES"
           }
         }
       ],

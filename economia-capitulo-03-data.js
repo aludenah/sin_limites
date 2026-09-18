@@ -56,10 +56,10 @@ window.HISTORY_CONTENT={
           ],
           "id": "economia03-tema1-1",
           "illustration": {
-            "src": "assets/economia-diagramas/cap03-necesidades.svg",
-            "alt": "Necesidad de alimentación y varias alternativas de satisfacción.",
-            "caption": "Una necesidad puede satisfacerse de distintas maneras.",
-            "credit": "Esquema didáctico · SIN LÍMITES"
+            "src": "assets/economia-imagenes/cap03-necesidades.webp",
+            "alt": "Una familia comparte alimentos y agua en casa; una mochila recuerda la necesidad de educación.",
+            "caption": "Alimentación, vivienda y educación son necesidades que se atienden en la vida cotidiana.",
+            "credit": "Ilustración referencial creada con IA · SIN LÍMITES"
           }
         },
         {
@@ -166,10 +166,10 @@ window.HISTORY_CONTENT={
           "takeaway": "Marginal decreciente no significa necesariamente utilidad total decreciente.",
           "id": "economia03-tema3-2",
           "illustration": {
-            "src": "assets/economia-diagramas/cap03-utilidad.svg",
-            "alt": "Gráfico de utilidad total y marginal con valores hipotéticos.",
-            "caption": "Una utilidad adicional menor puede seguir aumentando la utilidad total.",
-            "credit": "Esquema didáctico · SIN LÍMITES"
+            "src": "assets/economia-imagenes/cap03-utilidad.webp",
+            "alt": "Una persona se refresca con agua después de hacer ejercicio.",
+            "caption": "El primer vaso puede brindar más satisfacción adicional que los siguientes.",
+            "credit": "Ilustración referencial creada con IA · SIN LÍMITES"
           }
         }
       ],
@@ -228,10 +228,10 @@ window.HISTORY_CONTENT={
           ],
           "id": "economia03-tema5-1",
           "illustration": {
-            "src": "assets/economia-diagramas/cap03-pobreza.svg",
-            "alt": "Dos líneas hipotéticas distinguen pobreza extrema, no extrema y ausencia de pobreza monetaria.",
-            "caption": "Los umbrales del esquema son hipotéticos, no cifras oficiales.",
-            "credit": "Esquema didáctico · SIN LÍMITES"
+            "src": "assets/economia-imagenes/cap03-pobreza.webp",
+            "alt": "Una pareja organiza el dinero disponible para comprar alimentos básicos del hogar.",
+            "caption": "El presupuesto del hogar se relaciona con su capacidad de cubrir necesidades básicas.",
+            "credit": "Ilustración referencial creada con IA · SIN LÍMITES"
           }
         },
         {

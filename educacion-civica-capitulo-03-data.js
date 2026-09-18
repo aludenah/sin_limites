@@ -88,10 +88,10 @@ window.HISTORY_CONTENT={
           ],
           "id": "educacion-civica03-tema2-1",
           "illustration": {
-            "src": "assets/educacion-civica-diagramas/cap03-derechos.svg",
-            "alt": "Derechos civiles, sociales y colectivos conectados por la dignidad.",
-            "caption": "La clasificación no establece derechos superiores a otros.",
-            "credit": "Esquema didáctico · SIN LÍMITES"
+            "src": "assets/educacion-civica-imagenes/cap03-derechos.webp",
+            "alt": "Estudiantes con distintas características participan juntos en una clase accesible.",
+            "caption": "La dignidad y los derechos corresponden a todas las personas.",
+            "credit": "Ilustración referencial creada con IA · SIN LÍMITES"
           }
         },
         {
@@ -182,10 +182,10 @@ window.HISTORY_CONTENT={
           ],
           "id": "educacion-civica03-tema4-1",
           "illustration": {
-            "src": "assets/educacion-civica-diagramas/cap03-proteccion.svg",
-            "alt": "Relación entre libertad individual, otros derechos y acceso a información con sus garantías.",
-            "caption": "El derecho afectado orienta la identificación del mecanismo.",
-            "credit": "Esquema didáctico · SIN LÍMITES"
+            "src": "assets/educacion-civica-imagenes/cap03-proteccion.webp",
+            "alt": "Una ciudadana recibe orientación para presentar una solicitud de protección de sus derechos.",
+            "caption": "Identificar el derecho afectado ayuda a buscar el mecanismo de protección correspondiente.",
+            "credit": "Ilustración referencial creada con IA · SIN LÍMITES"
           }
         },
         {
@@ -220,10 +220,10 @@ window.HISTORY_CONTENT={
           ],
           "id": "educacion-civica03-tema5-1",
           "illustration": {
-            "src": "assets/educacion-civica-diagramas/cap03-sistema.svg",
-            "alt": "Ruta simplificada entre persona, Comisión y eventual intervención de la Corte.",
-            "caption": "La Corte Interamericana no recibe directamente peticiones individuales.",
-            "credit": "Esquema didáctico · SIN LÍMITES"
+            "src": "assets/educacion-civica-imagenes/cap03-sistema.webp",
+            "alt": "Una audiencia ilustrativa reúne a personas solicitantes, representantes y autoridades judiciales.",
+            "caption": "Existen instancias internacionales de protección que actúan bajo procedimientos específicos.",
+            "credit": "Ilustración referencial creada con IA · SIN LÍMITES"
           }
         },
         {

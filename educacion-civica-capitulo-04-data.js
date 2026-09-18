@@ -56,10 +56,10 @@ window.HISTORY_CONTENT={
           ],
           "id": "educacion-civica04-tema1-1",
           "illustration": {
-            "src": "assets/educacion-civica-diagramas/cap04-ciudadania.svg",
-            "alt": "Nacionalidad, derechos humanos y ciudadanía electoral diferenciados.",
-            "caption": "Tener derechos humanos no depende de la edad electoral.",
-            "credit": "Esquema didáctico · SIN LÍMITES"
+            "src": "assets/educacion-civica-imagenes/cap04-ciudadania.webp",
+            "alt": "Adolescentes y adultos colaboran en el cuidado de un parque del barrio.",
+            "caption": "La participación en la vida de la comunidad puede ejercerse de diversas maneras.",
+            "credit": "Ilustración referencial creada con IA · SIN LÍMITES"
           }
         },
         {
@@ -150,10 +150,10 @@ window.HISTORY_CONTENT={
           ],
           "id": "educacion-civica04-tema3-2",
           "illustration": {
-            "src": "assets/educacion-civica-diagramas/cap04-participacion.svg",
-            "alt": "Iniciativa legislativa, reforma y referéndum con sus finalidades.",
-            "caption": "Proponer y decidir requieren procedimientos diferentes.",
-            "credit": "Esquema didáctico · SIN LÍMITES"
+            "src": "assets/educacion-civica-imagenes/cap04-participacion.webp",
+            "alt": "Una ciudadana deposita su voto en una mesa de sufragio.",
+            "caption": "El voto permite participar en decisiones colectivas mediante los procedimientos establecidos.",
+            "credit": "Ilustración referencial creada con IA · SIN LÍMITES"
           }
         }
       ],
@@ -216,10 +216,10 @@ window.HISTORY_CONTENT={
           ],
           "id": "educacion-civica04-tema4-2",
           "illustration": {
-            "src": "assets/educacion-civica-diagramas/cap04-control.svg",
-            "alt": "Comparación entre revocatoria, remoción y rendición de cuentas.",
-            "caption": "Cada mecanismo responde a un objetivo y ámbito legal específicos.",
-            "credit": "Esquema didáctico · SIN LÍMITES"
+            "src": "assets/educacion-civica-imagenes/cap04-control.webp",
+            "alt": "Vecinos formulan preguntas a una autoridad durante una reunión pública.",
+            "caption": "La rendición de cuentas permite pedir explicaciones sobre la gestión pública.",
+            "credit": "Ilustración referencial creada con IA · SIN LÍMITES"
           }
         }
       ],

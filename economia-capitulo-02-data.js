@@ -56,10 +56,10 @@ window.HISTORY_CONTENT={
           ],
           "id": "economia02-tema1-1",
           "illustration": {
-            "src": "assets/economia-diagramas/cap02-enunciados.svg",
-            "alt": "Distinción entre afirmaciones comprobables y juicios de valor.",
-            "caption": "Una propuesta puede contener hechos y valoraciones.",
-            "credit": "Esquema didáctico · SIN LÍMITES"
+            "src": "assets/economia-imagenes/cap02-enunciados.webp",
+            "alt": "Vecinos dialogan sobre propuestas para mejorar el mercado de su comunidad.",
+            "caption": "Analizar lo que ocurre y proponer lo que debería hacerse son preguntas distintas.",
+            "credit": "Ilustración referencial creada con IA · SIN LÍMITES"
           }
         },
         {
@@ -169,10 +169,10 @@ window.HISTORY_CONTENT={
           ],
           "id": "economia02-tema3-2",
           "illustration": {
-            "src": "assets/economia-diagramas/cap02-escalas.svg",
-            "alt": "Comparación de mercados específicos con variables agregadas.",
-            "caption": "Micro y macro se distinguen por la pregunta y la escala de análisis.",
-            "credit": "Esquema didáctico · SIN LÍMITES"
+            "src": "assets/economia-imagenes/cap02-escalas.webp",
+            "alt": "Una tienda de barrio forma parte de una ciudad con comercios, talleres y transporte de mercancías.",
+            "caption": "La economía puede estudiarse desde una empresa o desde el conjunto de actividades de un país.",
+            "credit": "Ilustración referencial creada con IA · SIN LÍMITES"
           }
         }
       ],
@@ -207,10 +207,10 @@ window.HISTORY_CONTENT={
           ],
           "id": "economia02-tema4-2",
           "illustration": {
-            "src": "assets/economia-diagramas/cap02-politicas.svg",
-            "alt": "Política fiscal y política monetaria con ejemplos de instrumentos.",
-            "caption": "Distinguir instrumentos ayuda a evaluar responsabilidades y efectos.",
-            "credit": "Esquema didáctico · SIN LÍMITES"
+            "src": "assets/economia-imagenes/cap02-politicas.webp",
+            "alt": "Trabajadores y una ingeniera mejoran la infraestructura y el acceso de una escuela pública.",
+            "caption": "La inversión en infraestructura pública es un ejemplo de actuación mediante el gasto del Estado.",
+            "credit": "Ilustración referencial creada con IA · SIN LÍMITES"
           }
         }
       ],

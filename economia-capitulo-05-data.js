@@ -56,10 +56,10 @@ window.HISTORY_CONTENT={
           ],
           "id": "economia05-tema1-1",
           "illustration": {
-            "src": "assets/economia-diagramas/cap05-proceso.svg",
-            "alt": "Cinco fases conectadas del proceso económico.",
-            "caption": "Las fases se realizan de manera interdependiente.",
-            "credit": "Esquema didáctico · SIN LÍMITES"
+            "src": "assets/economia-imagenes/cap05-proceso.webp",
+            "alt": "En una panadería se prepara, organiza y vende el pan a los clientes.",
+            "caption": "Producir y vender conectan el trabajo de la empresa con el consumo de los hogares.",
+            "credit": "Ilustración referencial creada con IA · SIN LÍMITES"
           }
         },
         {
@@ -102,10 +102,10 @@ window.HISTORY_CONTENT={
           ],
           "id": "economia05-tema2-2",
           "illustration": {
-            "src": "assets/economia-diagramas/cap05-flujo.svg",
-            "alt": "Flujos reales y monetarios entre hogares y empresas.",
-            "caption": "Modelo simplificado sin Estado, ahorro ni sector externo.",
-            "credit": "Esquema didáctico · SIN LÍMITES"
+            "src": "assets/economia-imagenes/cap05-flujo.webp",
+            "alt": "Una persona entrega monedas a un comerciante y recibe una bolsa con productos.",
+            "caption": "En un intercambio circulan bienes en una dirección y pagos en la otra.",
+            "credit": "Ilustración referencial creada con IA · SIN LÍMITES"
           }
         }
       ],
@@ -196,10 +196,10 @@ window.HISTORY_CONTENT={
           ],
           "id": "economia05-tema5-1",
           "illustration": {
-            "src": "assets/economia-diagramas/cap05-sectores.svg",
-            "alt": "Cadena de algodón, confección y servicios comerciales.",
-            "caption": "Una misma cadena conecta los tres sectores productivos.",
-            "credit": "Esquema didáctico · SIN LÍMITES"
+            "src": "assets/economia-imagenes/cap05-sectores.webp",
+            "alt": "Algodón, confección de prendas y venta de ropa en un taller cooperativo.",
+            "caption": "Una cadena textil relaciona la materia prima, la transformación y el comercio.",
+            "credit": "Ilustración referencial creada con IA · SIN LÍMITES"
           }
         },
         {

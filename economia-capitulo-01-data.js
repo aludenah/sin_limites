@@ -56,10 +56,10 @@ window.HISTORY_CONTENT={
           ],
           "id": "economia01-tema1-1",
           "illustration": {
-            "src": "assets/economia-diagramas/cap01-eleccion.svg",
-            "alt": "Recursos limitados y alternativas que conducen a una elección.",
-            "caption": "La escasez obliga a priorizar usos.",
-            "credit": "Esquema didáctico · SIN LÍMITES"
+            "src": "assets/economia-imagenes/cap01-eleccion.webp",
+            "alt": "Una madre y su hijo eligen alimentos en un mercado mientras revisan su presupuesto.",
+            "caption": "Elegir qué comprar permite reconocer la escasez y las prioridades.",
+            "credit": "Ilustración referencial creada con IA · SIN LÍMITES"
           }
         },
         {
@@ -135,10 +135,10 @@ window.HISTORY_CONTENT={
           ],
           "id": "economia01-tema3-1",
           "illustration": {
-            "src": "assets/economia-diagramas/cap01-oportunidad.svg",
-            "alt": "Tres alternativas y una mejor opción descartada.",
-            "caption": "El costo de oportunidad es una alternativa, no la suma de todas.",
-            "credit": "Esquema didáctico · SIN LÍMITES"
+            "src": "assets/economia-imagenes/cap01-oportunidad.webp",
+            "alt": "Un estudiante dedica la tarde a estudiar mientras al fondo funciona el taller familiar.",
+            "caption": "Dedicar tiempo al estudio implica renunciar a otro uso posible de esas horas.",
+            "credit": "Ilustración referencial creada con IA · SIN LÍMITES"
           }
         },
         {
@@ -202,10 +202,10 @@ window.HISTORY_CONTENT={
           ],
           "id": "economia01-tema4-2",
           "illustration": {
-            "src": "assets/economia-diagramas/cap01-metodos.svg",
-            "alt": "Relación entre observaciones, hipótesis, modelos y contrastación.",
-            "caption": "La investigación conecta teoría y evidencia.",
-            "credit": "Esquema didáctico · SIN LÍMITES"
+            "src": "assets/economia-imagenes/cap01-metodos.webp",
+            "alt": "Dos investigadores conversan con una comerciante y observan la actividad del mercado.",
+            "caption": "La observación y la recolección de información permiten contrastar las ideas económicas.",
+            "credit": "Ilustración referencial creada con IA · SIN LÍMITES"
           }
         }
       ],
