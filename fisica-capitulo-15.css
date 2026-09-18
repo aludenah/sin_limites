@@ -5,7 +5,56 @@
 .guided-case li { min-width: 0; }
 .topic-prose .katex-display,
 .guided-case .katex-display { padding: 4px 0 8px; }
+
+/* Simple DC circuit. Native buttons provide mouse, touch and keyboard controls. */
+.circuit-sim { max-width: 740px; margin: 26px auto 8px; padding: 24px; border: 1px solid #c6d6df; border-radius: 14px; background: #fff; color: #172630; }
+.circuit-sim .circuit-kicker { margin: 0 0 6px; color: #176c62; font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.circuit-sim h4 { margin: 0 0 8px; font-size: 21px; line-height: 1.35; }
+.circuit-sim .circuit-instruction { margin: 0; font-size: 15px; line-height: 1.5; color: #526677; }
+.circuit-stage { position: relative; width: 100%; margin: 12px 0 16px; }
+.circuit-sim .circuit-svg { display: block; width: 100%; height: auto; }
+.circuit-switch-hit { position: absolute; left: 23%; top: 9%; width: 20%; height: 31%; min-width: 44px; min-height: 44px; padding: 0; border: 2px dashed transparent; border-radius: 12px; background: transparent; cursor: pointer; touch-action: manipulation; }
+.circuit-switch-hit:hover { border-color: #a4beb8; }
+.circuit-switch-hit:focus-visible { outline: 3px solid #bc7d27; outline-offset: 3px; }
+.circuit-switch-blade { transition: transform .25s ease; }
+.circuit-lamp { transition: fill .2s ease, stroke .2s ease; }
+.circuit-filament { transition: stroke .2s ease; }
+.circuit-glow, .circuit-rays, .circuit-direction { opacity: 0; transition: opacity .2s ease; }
+.circuit-flow { stroke: #176c62; stroke-width: 6; stroke-dasharray: 2 25; opacity: 0; animation: circuit-current 1.2s linear infinite; animation-play-state: paused; }
+.circuit-sim[data-state="closed"] .circuit-lamp { fill: #fff0a3; stroke: #8b610d; }
+.circuit-sim[data-state="closed"] .circuit-filament { stroke: #8b610d; }
+.circuit-sim[data-state="closed"] .circuit-glow { opacity: .5; }
+.circuit-sim[data-state="closed"] .circuit-rays,
+.circuit-sim[data-state="closed"] .circuit-direction,
+.circuit-sim[data-state="closed"] .circuit-flow { opacity: 1; }
+.circuit-sim[data-state="closed"][data-motion="running"] .circuit-flow { animation-play-state: running; }
+@keyframes circuit-current { to { stroke-dashoffset: -81; } }
+.circuit-controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.circuit-controls .button { min-height: 46px; white-space: normal; }
+.circuit-toggle-track { position: relative; display: inline-block; width: 34px; height: 20px; flex: 0 0 34px; border: 1px solid #fff; border-radius: 20px; }
+.circuit-toggle-track::after { position: absolute; content: ''; top: 3px; left: 3px; width: 12px; height: 12px; border-radius: 50%; background: #fff; transition: transform .2s ease; }
+.circuit-sim[data-state="closed"] .circuit-toggle-track::after { transform: translateX(14px); }
+.circuit-feedback { margin-top: 18px; padding-top: 16px; border-top: 1px solid #e0e8eb; }
+.circuit-feedback p { margin: 0; font-size: 15px; line-height: 1.6; }
+.circuit-feedback .circuit-status { display: flex; align-items: center; gap: 9px; margin-bottom: 6px; }
+.circuit-status-dot { width: 12px; height: 12px; flex: 0 0 12px; border: 2px solid #647580; border-radius: 50%; background: #fff; }
+.circuit-sim[data-state="closed"] .circuit-status-dot { background: #f4cd45; border-color: #8b610d; }
+.circuit-sim .circuit-note { margin: 12px 0 0; color: #526677; font-size: 13px; line-height: 1.6; }
+@media (max-width: 650px) {
+  .circuit-sim { padding: 16px 12px; }
+  .circuit-sim h4 { font-size: 19px; }
+  .circuit-labels { font-size: 32px; }
+  .circuit-controls { align-items: stretch; }
+  .circuit-controls .button { flex: 1 1 190px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .circuit-sim *, .circuit-sim *::after { animation: none !important; transition: none !important; }
+  .circuit-motion { display: none; }
+}
 @media print {
   .math-figure-button { display: block !important; }
   .guided-case { break-inside: auto; }
+  .circuit-sim { break-inside: avoid; }
+  .circuit-flow { animation: none !important; }
+  .circuit-controls, .circuit-switch-hit, .circuit-instruction { display: none !important; }
 }

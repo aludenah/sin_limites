@@ -60,6 +60,7 @@ window.HISTORY_CONTENT={
         {
           "id": "fis15-movimiento",
           "title": "1.1. ¿Qué es la corriente eléctrica?",
+          "interactive": "simple-circuit",
           "paragraphs": [
             "Es el movimiento orientado de portadores de carga eléctrica dentro de un cuerpo por influencia de un campo eléctrico externo.",
             "Veamos el caso de la conexión de un foco a una batería mediante un alambre de cobre.",

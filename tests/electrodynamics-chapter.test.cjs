@@ -4,8 +4,8 @@ const root=path.join(__dirname,'..'),id='fisica-capitulo-15';
 const read=f=>fs.readFileSync(path.join(root,f),'utf8');
 const catalogs=['history-catalog.js','peru-catalog.js','lenguaje-catalog.js','economia-catalog.js','educacion-civica-catalog.js','razonamiento-verbal-catalog.js','razonamiento-matematico-catalog.js','fisica-catalog.js'];
 const appFiles=['courses.js',...catalogs,'history-progress.js','app.js'];
-const chapterFiles=['fisica-catalog.js','history-progress.js',id+'-data.js','history-chapter.js'];
-const ctx={window:{}};for(const f of ['courses.js','practice-bank.js',...catalogs,id+'-data.js'])vm.runInNewContext(read(f),ctx);
+const chapterFiles=['fisica-catalog.js','history-progress.js',id+'-data.js',id+'-interactivo.js','history-chapter.js'];
+const ctx={window:{}};for(const f of ['courses.js','practice-bank.js',...catalogs,id+'-data.js',id+'-interactivo.js'])vm.runInNewContext(read(f),ctx);
 const content=ctx.window.HISTORY_CONTENT,questions=ctx.window.CHAPTER_PRACTICES[id].problems;
 const figures=JSON.parse(read('assets/fisica-capitulo-15-figuras.json')).figures;
 const sourceFigures=JSON.parse(read('assets/fisica-capitulo-15-originales.json')).figures;
@@ -117,6 +117,37 @@ function structure(){
  assert.equal(Object.keys(ctx.window.tracked).length,45);assert.equal(ctx.window.tracked[id].items,10);assert.match(ctx.window.tracked[id].label,/Capítulo 15/);
 }
 
+function circuitInteraction(){
+ const widget=ctx.window.ChapterInteractions;
+ const block=content.lessons[0].blocks.find(b=>b.id==='fis15-movimiento');
+ assert.equal(block.interactive,'simple-circuit');assert.equal(block.figures.length,2,'Both reference images remain');
+ assert.equal(widget.render('unknown'),'');
+ const initial=widget.render(block.interactive);
+ assert.match(initial,/data-state="open"/);assert.match(initial,/Circuito abierto · foco apagado/);
+ assert.equal((initial.match(/role="switch" aria-checked="false"/g)||[]).length,2,'Both controls start open and are native buttons');
+ const fields=Object.fromEntries(['[data-circuit-status]','[data-circuit-explanation]','[data-circuit-desc]'].map(s=>[s,{textContent:''}]));
+ fields['[data-circuit-blade]']={attributes:{},setAttribute(k,v){this.attributes[k]=v;}};
+ const root={dataset:{},querySelector:s=>fields[s],querySelectorAll:()=>switches};
+ const control=action=>({dataset:{action},disabled:false,attributes:{},label:{},closest:()=>root,setAttribute(k,v){this.attributes[k]=v;},querySelector(){return this.label;}});
+ const switches=[control('toggle-simple-circuit'),control('toggle-simple-circuit')],motion=control('circuit-motion');
+ fields['[data-action="circuit-motion"]']=motion;
+ assert.equal(widget.handleClick(control('math-figure')),false,'Other chapter actions pass through');
+ assert.equal(widget.handleClick(switches[0]),true);assert.equal(root.dataset.state,'closed');
+ assert.equal(fields['[data-circuit-blade]'].attributes.transform,'rotate(0 195 120)','Closing the switch joins both contacts');
+ assert.match(fields['[data-circuit-status]'].textContent,/foco encendido/);assert.equal(motion.disabled,false);
+ for(const button of switches){assert.equal(button.attributes['aria-checked'],'true');assert.equal(button.label.textContent,'Abrir interruptor');}
+ widget.handleClick(motion);assert.equal(root.dataset.motion,'paused');assert.equal(root.dataset.state,'closed','Pausing the animation does not open the circuit');
+ assert.match(widget.render('simple-circuit'),/data-state="closed" data-motion="paused"/,'A chapter re-render preserves circuit state');
+ widget.handleClick(switches[1]);assert.equal(root.dataset.state,'open');assert.equal(motion.disabled,true);
+ assert.equal(fields['[data-circuit-blade]'].attributes.transform,'rotate(-32 195 120)','Opening the switch creates a visible gap');
+ assert.match(fields['[data-circuit-desc]'].textContent,/foco apagado/);
+ assert.equal(widget.handleClick(motion),false,'Movement cannot start in an open circuit');
+ widget.handleClick(switches[0]);widget.handleClick(motion);assert.equal(root.dataset.motion,'running');
+ widget.handleClick(switches[1]);
+ for(const button of switches)assert.equal(button.attributes['aria-checked'],'false');
+ console.log('PASS: circuit opens/closes from both controls, bulb and accessible status agree, movement pauses independently, and state survives chapter re-rendering.');
+}
+
 async function integration(){
  const home=harness(appFiles);await home.signIn({uid:'student'});home.run("selectStudyMode('free');openCourse(16)");
  assert.match(home.elements.get('app').innerHTML,/capítulo 15, Electrodinámica/);
@@ -126,6 +157,9 @@ async function integration(){
  const entry=harness(appFiles,{search:'?chapter='+id});await entry.signIn({uid:'new'});entry.run("selectStudyMode('progressive')");assert.equal(entry.redirects.at(-1),id+'.html?v=20260918-catalog9');
  const study=harness(chapterFiles,{local:home.local,cloud:home.cloud});study.run('window.mathCalls=[];window.renderMathInElement=(el,options)=>window.mathCalls.push({html:el.innerHTML,options})');await study.signIn({uid:'student'});
  const html=study.elements.get('chapter-app').innerHTML;assert.match(html,/Física · Capítulo 15/);assert.equal((html.match(/class="guided-case"/g)||[]).length,10);assert.equal((html.match(/class="practice-card"/g)||[]).length,10);
+ const section=study.run("theoryBlock(LESSONS[0].blocks.find(b=>b.id==='fis15-movimiento'))");
+ assert.match(section,/data-circuit-demo/);assert.equal((html.match(/data-circuit-demo/g)||[]).length,1);
+ assert.ok(section.indexOf('data-circuit-demo')>section.indexOf('corriente-interruptor-cerrado.svg'),'The simulation follows the two existing illustrations');
  assert.ok(study.run('window.mathCalls.length')>0);assert.equal(study.run('window.mathCalls[0].options.delimiters[1].left'),'\\(');
  for(const q of questions.filter(q=>q.figure)){assert.ok(html.includes(q.figure.src));study.run(`document.getElementById('image-dialog').showModal=()=>{};openMathFigure('practice:${q.id}')`);assert.ok(study.elements.get('image-dialog').innerHTML.includes(q.figure.src));assert.doesNotMatch(study.elements.get('image-dialog').innerHTML,/creada con IA/);}
  const sourceButtons=[...html.matchAll(/data-id="((?:theory|example|solution):[^"]+)"/g)].map(m=>m[1]);assert.equal(sourceButtons.length,37);
@@ -139,4 +173,4 @@ async function integration(){
  await catalog.signIn({uid:'other'});assert.equal(catalog.run('physicsChapterProgress(15).percent'),0);assert.doesNotMatch(study.run('chapterLinks()'),/capitulo-14|capitulo-16/);
  console.log('PASS: PDF chapter 15 maps to the existing electrodynamics topic; direct entry, diagrams, math integration, grading, resume, offline progress, account isolation and teacher reporting.');
 }
-physics();structure();integration().catch(e=>{console.error(e);process.exitCode=1});
+physics();structure();circuitInteraction();integration().catch(e=>{console.error(e);process.exitCode=1});
