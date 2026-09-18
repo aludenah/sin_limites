@@ -6,319 +6,818 @@ window.HISTORY_CONTENT={
   "courseId": 16,
   "courseName": "Física",
   "title": "Electrodinámica",
-  "intro": "Capítulo 15 del PDF. Comprende cómo circula la carga, interpreta gráficas y resuelve circuitos de corriente continua con resistores, fuentes e instrumentos ideales.",
-  "version": 1,
+  "intro": "Corriente eléctrica, resistencia, ley de Ohm, circuitos, reglas de Kirchhoff y potencia eléctrica. Teoría y aplicaciones resueltas del capítulo XV.",
+  "version": 2,
   "format": "reading",
   "assessmentFormat": "practice-10",
   "math": true,
-  "sequenceTitle": "Ruta para resolver circuitos",
-  "sequenceNote": "Identifica los nodos y las polaridades; simplifica cuando sea posible; aplica conservación de carga y energía; comprueba unidades, sentidos y potencias.",
+  "sequenceTitle": "Contenido del capítulo",
+  "sequenceNote": "La numeración de los temas y de las aplicaciones corresponde al PDF.",
   "goals": [
     {
-      "title": "Relacionar",
-      "text": "Calcula carga, intensidad y resistencia, con unidades y gráficas correctamente interpretadas."
+      "title": "Corriente eléctrica",
+      "text": "Entender qué es la corriente eléctrica."
     },
     {
-      "title": "Resolver",
-      "text": "Distingue serie, paralelo, puentes conductores y circuitos con varias fuentes."
-    },
-    {
-      "title": "Comprobar",
-      "text": "Explica las lecturas de instrumentos y verifica el balance de corriente y energía."
+      "title": "Portadores de carga",
+      "text": "Analizar los fenómenos relacionados con los portadores de carga eléctrica en movimiento."
     }
   ],
   "timeline": [
     [
-      "Paso 1",
-      "Corriente eléctrica y carga transportada"
+      "1",
+      "Corriente eléctrica"
     ],
     [
-      "Paso 2",
-      "Resistencia, resistividad y ley de Ohm"
+      "2",
+      "Resistencia eléctrica"
     ],
     [
-      "Paso 3",
-      "Resistores en serie, paralelo y redes mixtas"
+      "3",
+      "Ley de Ohm y conexión de resistores"
     ],
     [
-      "Paso 4",
-      "Instrumentos ideales y leyes de Kirchhoff"
+      "4",
+      "Circuitos eléctricos, instrumentos de medición y reglas de Kirchhoff"
     ],
     [
-      "Paso 5",
-      "Potencia, energía y aplicaciones"
+      "4.3",
+      "Potencia eléctrica"
     ]
   ],
   "lessons": [
     {
-      "title": "Corriente eléctrica y carga transportada",
+      "title": "Corriente eléctrica",
       "blocks": [
         {
-          "title": "Movimiento de carga y sentido convencional",
+          "id": "fis15-corriente",
+          "title": "1. Corriente eléctrica",
           "paragraphs": [
-            "La corriente eléctrica es el transporte neto de carga a través de una sección. En un metal, los portadores móviles son electrones; en otros medios también pueden intervenir iones. El movimiento térmico desordenado no produce por sí solo una corriente neta. Un campo eléctrico establece una deriva de los portadores.",
-            "El sentido convencional corresponde al movimiento de cargas positivas. En un tramo metálico resistivo, la corriente convencional va del mayor al menor potencial y la deriva de electrones tiene el sentido contrario. Esta afirmación sobre el tramo resistivo no se extiende sin más al interior de una fuente: allí otros procesos pueden llevar carga hacia un potencial mayor. La corriente no se «gasta» al pasar por un resistor; se transforma energía eléctrica."
+            "Es un fenómeno que se da a nivel microscópico y se puede manifestar en los sólidos, líquidos y gases bajo la influencia de ciertos factores entre los cuales no puede faltar una diferencia de potencial eléctrico, la cual se puede establecer mediante una batería, pila o alternador."
           ],
-          "id": "fis15-tema-01"
+          "figures": []
         },
         {
-          "title": "Intensidad, electrones y gráficas",
+          "id": "fis15-movimiento",
+          "title": "1.1. ¿Qué es la corriente eléctrica?",
           "paragraphs": [
-            "Para corriente constante, \\(I=|Q|/\\Delta t\\). La unidad es el amperio: \\(1\\,\\mathrm A=1\\,\\mathrm C/\\mathrm s\\). Si se busca cuántos electrones atraviesan una sección, \\(N=|Q|/e\\), con \\(e=1{,}6\\times10^{-19}\\,\\mathrm C\\) en nuestros ejercicios. Convierte minutos a segundos y miliamperios a amperios antes de sustituir.",
-            "En una gráfica corriente–tiempo, la carga se obtiene del área entre la curva y el eje temporal. Para tramos constantes o lineales basta usar rectángulos, triángulos o trapecios. Las unidades del área son \\(\\mathrm A\\cdot\\mathrm s=\\mathrm C\\). Si la corriente cambia de sentido, las áreas con signo dan la carga neta; no son automáticamente la suma de todas las cargas que cruzan en ambos sentidos."
+            "Es el movimiento orientado de portadores de carga eléctrica dentro de un cuerpo por influencia de un campo eléctrico externo.",
+            "Veamos el caso de la conexión de un foco a una batería mediante un alambre de cobre.",
+            "Cuando el interruptor está abierto, en el interior del conductor de cobre, que es un cuerpo metálico, los electrones libres se mueven en diversas direcciones como se esquematiza a continuación.",
+            "Al cerrar el interruptor, el foco se enciende y en el interior del conductor se establece un campo eléctrico debido a la diferencia de potencial eléctrico establecido por la batería. El campo eléctrico arrastra a los electrones libres originando una tendencia a desplazarse en una misma dirección como se indica.",
+            "Como en el interior del conductor se establece un movimiento orientado de portadores de carga, decimos que se ha establecido una corriente eléctrica."
           ],
-          "takeaway": "Carga e intensidad son distintas: Q mide cuánto se transporta; I, a qué ritmo.",
-          "id": "fis15-tema-02"
-        }
-      ],
-      "examples": [
-        {
-          "title": "De la carga a la intensidad",
-          "question": "Por una sección de un conductor pasan 2,4 C en 20 s, con corriente constante. Calcula su intensidad y describe el sentido del flujo de electrones en el tramo dibujado.",
-          "steps": [
-            "Usa \\(I=|Q|/\\Delta t\\); los datos ya están en coulomb y segundo.",
-            "\\(I=2{,}4/20=0{,}12\\,\\mathrm A=120\\,\\mathrm{mA}\\).",
-            "Como Va es mayor que Vb, la corriente convencional apunta hacia la derecha y los electrones derivan hacia la izquierda. El número 0,12 A representa la intensidad, no la rapidez de cada electrón."
-          ],
-          "figure": {
-            "src": "assets/fisica-capitulo-15/guia-sentido-corriente.svg",
-            "alt": "Tramo de conductor metálico con potencial Va mayor que Vb. La corriente convencional apunta de izquierda a derecha y la deriva de electrones de derecha a izquierda.",
-            "caption": "Corriente y movimiento de electrones",
-            "width": 800,
-            "height": 430,
-            "credit": "Diagrama físico · SIN LÍMITES"
-          }
+          "figures": [
+            {
+              "src": "assets/fisica-capitulo-15/originales/corriente-interruptor-abierto.webp",
+              "width": 667,
+              "height": 380,
+              "caption": "Interruptor abierto: movimiento desordenado de los electrones · p. 217",
+              "alt": "Circuito de batería y foco apagado. La ampliación del conductor muestra electrones con movimiento desordenado en varias direcciones.",
+              "credit": "Física · Lumbreras Editores · 2021",
+              "original": true,
+              "afterParagraph": 2
+            },
+            {
+              "src": "assets/fisica-capitulo-15/originales/corriente-interruptor-cerrado.webp",
+              "width": 674,
+              "height": 353,
+              "caption": "Interruptor cerrado: movimiento orientado · p. 217",
+              "alt": "Batería y foco encendido. El conductor muestra el campo eléctrico E y el movimiento orientado de los portadores de carga.",
+              "credit": "Física · Lumbreras Editores · 2021",
+              "original": true,
+              "afterParagraph": 3
+            }
+          ]
         },
         {
-          "title": "Carga sin cálculo diferencial",
-          "question": "Durante 4 s la corriente se mantiene en 3 A. Luego disminuye linealmente a cero durante 2 s. ¿Qué carga atraviesa la sección en esos 6 s?",
-          "steps": [
-            "El primer tramo es un rectángulo: \\(Q_1=(3\\,\\mathrm A)(4\\,\\mathrm s)=12\\,\\mathrm C\\).",
-            "El segundo es un triángulo: \\(Q_2=(2\\,\\mathrm s)(3\\,\\mathrm A)/2=3\\,\\mathrm C\\).",
-            "La corriente no cambia de sentido; se suman las áreas: \\(Q=12+3=15\\,\\mathrm C\\)."
+          "id": "fis15-intensidad",
+          "title": "1.2. ¿Cómo medimos la corriente eléctrica?",
+          "paragraphs": [
+            "Primero debemos tener presente que un foco, un televisor o un motor eléctrico necesitan de la corriente eléctrica para funcionar; sin embargo, cada uno de ellos requiere una cantidad diferente de corriente, por ello, es necesario medir la corriente eléctrica.",
+            "Para medir la corriente eléctrica empleamos una magnitud escalar denominada intensidad de corriente eléctrica \\(I\\), la cual nos expresa la rapidez con que fluye la carga eléctrica a través de la sección recta de un conductor.",
+            "Si la corriente eléctrica es continua, se evalúa de la siguiente forma:",
+            "\\[I=\\dfrac{|Q|}{\\Delta t}\\]",
+            "Su unidad: amperio (A).",
+            "Donde \\(|Q|\\): valor de la cantidad de carga neta (C); \\(\\Delta t\\): intervalo de tiempo (s).",
+            "\\[1\\text{ amperio}=1\\,\\mathrm A=\\dfrac{1\\text{ coulomb}}{1\\text{ segundo}}\\]"
+          ],
+          "figures": []
+        },
+        {
+          "id": "fis15-sentido",
+          "title": "1.3. Sentido de la corriente eléctrica",
+          "paragraphs": [
+            "Cuando se descubre el fenómeno de la corriente eléctrica, los hombres de ciencia consideraron que esta se debe al movimiento orientado de portadores de carga positiva y que fluye de la zona de mayor potencial eléctrico a la de menor potencial. Más adelante descubrieron que en los conductores la corriente eléctrica es en realidad un flujo de electrones libres, entonces acordaron (convención) mantener el sentido de la corriente, es decir, que es un movimiento de portadores de cargas positivas.",
+            "A la corriente eléctrica que se considera constituida por portadores de cargas positivas, se le denomina corriente convencional.",
+            "Vamos a trabajar en adelante con la corriente convencional, es decir, la corriente que fluye de la zona de mayor potencial eléctrico a la de menor potencial eléctrico."
+          ],
+          "figures": [
+            {
+              "src": "assets/fisica-capitulo-15/originales/sentido-corriente.webp",
+              "width": 805,
+              "height": 357,
+              "caption": "Corriente convencional y corriente de electrones · p. 218",
+              "alt": "Conductor con menor potencial a la izquierda y mayor potencial a la derecha. La corriente convencional va a la izquierda y los electrones a la derecha.",
+              "credit": "Física · Lumbreras Editores · 2021",
+              "original": true,
+              "afterParagraph": 0
+            }
+          ]
+        },
+        {
+          "id": "fis15-grafica",
+          "title": "Nota: intensidad de corriente versus tiempo",
+          "paragraphs": [
+            "Se puede representar gráficamente la intensidad de corriente eléctrica versus el tiempo.",
+            "\\[A=|Q|\\]"
+          ],
+          "figures": [
+            {
+              "src": "assets/fisica-capitulo-15/originales/area-corriente-tiempo.webp",
+              "width": 763,
+              "height": 316,
+              "caption": "Área en la gráfica de intensidad frente al tiempo · p. 218",
+              "alt": "Gráfica I frente a t con el área A entre t1 y t2. El recuadro indica A igual al valor absoluto de Q.",
+              "credit": "Física · Lumbreras Editores · 2021",
+              "original": true,
+              "afterParagraph": 0
+            }
           ]
         }
-      ]
-    },
-    {
-      "title": "Resistencia, resistividad y ley de Ohm",
-      "blocks": [
-        {
-          "title": "La geometría del conductor importa",
-          "paragraphs": [
-            "Para un conductor homogéneo de sección uniforme, \\(R=\\rho L/A\\). Aquí R es resistencia en ohmios, ρ es resistividad en \\(\\Omega\\cdot\\mathrm m\\), L es longitud y A es área transversal. A igual material y temperatura, aumentar la longitud aumenta R; aumentar la sección la reduce. No se confunde la resistividad del material con la resistencia del objeto.",
-            "Una sección de \\(1\\,\\mathrm{mm}^2\\) equivale a \\(10^{-6}\\,\\mathrm m^2\\). Si un alambre se estira uniformemente y conserva su volumen, \\(LA=L^{\\prime} A^{\\prime}\\). Al duplicar L, la sección se reduce a la mitad. Si ρ permanece constante, la resistencia se multiplica por cuatro: cambian simultáneamente el numerador y el denominador."
-          ],
-          "id": "fis15-tema-03"
-        },
-        {
-          "title": "Relación entre voltaje y corriente",
-          "paragraphs": [
-            "Un resistor óhmico, bajo condiciones físicas constantes, cumple \\(V=IR\\). Si R permanece fija, duplicar V duplica I. Si se mantiene V pero se aumenta R, I disminuye. Un filamento que se calienta puede cambiar su resistencia; no se supone un único R para cualquier temperatura.",
-            "En una gráfica de V en el eje vertical frente a I en el horizontal, una recta que pasa por el origen tiene pendiente \\(\\Delta V/\\Delta I=R\\). Si se invierten los ejes, la pendiente es \\(1/R\\). Lee primero los nombres de los ejes y sus unidades. En los problemas se indicará cuándo el resistor sigue siendo óhmico al considerar otro voltaje."
-          ],
-          "takeaway": "R = ρL/A describe material y geometría; V = IR relaciona las magnitudes eléctricas.",
-          "id": "fis15-tema-04"
-        }
       ],
       "examples": [
         {
-          "title": "Resistencia de un alambre",
-          "question": "Calcula R para el conductor de la figura, a temperatura constante.",
+          "number": 1,
+          "title": "Número de electrones",
+          "question": "A veces cuando tocamos un televisor, un microondas o la radio, sentimos ciertas descargas eléctricas, ello se debe a que el artefacto y la tierra se conecta por nuestro cuerpo como si fuera un cable conductor. Si esta descarga produce una intensidad de corriente de 8 mA, calcule el número de electrones que circulan en 2 s.",
           "steps": [
-            "Convierte la sección: \\(A=2\\,\\mathrm{mm}^2=2\\times10^{-6}\\,\\mathrm m^2\\).",
-            "Aplica \\(R=\\rho L/A=(1{,}6\\times10^{-8})(10)/(2\\times10^{-6})\\).",
-            "Resulta \\(R=0{,}08\\,\\Omega\\). La unidad también se verifica: \\((\\Omega\\cdot\\mathrm m)\\mathrm m/\\mathrm m^2=\\Omega\\)."
+            "La intensidad de corriente eléctrica se evalúa de la siguiente forma: \\[I=\\dfrac{|Q|}{\\Delta t}\\]",
+            "Además, para calcular la cantidad de carga eléctrica, usamos \\(|Q|=|nq_{e^-}|\\).",
+            "Entonces \\[I=\\dfrac{|nq_{e^-}|}{\\Delta t}\\] \\[8\\times10^{-3}=\\dfrac{n(1{,}6\\times10^{-19})}{2}\\]",
+            "\\[n=10^{17}\\text{ electrones}\\]"
+          ],
+          "solutionFigures": []
+        },
+        {
+          "number": 2,
+          "title": "Lectura de la gráfica I–t",
+          "question": "Un amperímetro es un dispositivo que se usa para calcular la intensidad de corriente eléctrica que circula a través de un conductor. Si con las lecturas que marcó el amperímetro en el tiempo se construye la siguiente gráfica, calcule la cantidad de electrones que fluyen entre \\(t=0{,}1\\,\\mathrm s\\) y \\(t=1{,}4\\,\\mathrm s\\).",
+          "steps": [
+            "Según la gráfica:",
+            "En la gráfica \\(I\\) vs. \\(t\\) se tiene que \\(A=|Q|\\), por lo tanto \\(A_1+A_2=|nq_{e^-}|\\).",
+            "\\[\\left(\\dfrac{0{,}7+0{,}9}{2}\\right)(0{,}1)+(0{,}9)(1{,}2)=n(1{,}6\\times10^{-19})\\]",
+            "\\[n=725\\times10^{16}\\text{ electrones}\\]"
+          ],
+          "solutionFigures": [
+            {
+              "src": "assets/fisica-capitulo-15/originales/aplicacion-02-areas.webp",
+              "width": 744,
+              "height": 527,
+              "caption": "Aplicación 2: áreas entre 0,1 s y 1,4 s · p. 219",
+              "alt": "Gráfica original con el trapecio A1 entre 0,1 y 0,2 s y el rectángulo A2 entre 0,2 y 1,4 s. En 0,1 s la intensidad es 0,7 A.",
+              "credit": "Física · Lumbreras Editores · 2021",
+              "original": true,
+              "afterStep": 0
+            }
           ],
           "figure": {
-            "src": "assets/fisica-capitulo-15/guia-resistividad.svg",
-            "alt": "Conductor uniforme de longitud 10 m y área transversal 2 milímetros cuadrados. La resistividad es 1,6 por 10 elevado a menos 8 ohmios metro. El dibujo no está a escala.",
-            "caption": "Longitud, sección y resistividad",
-            "width": 800,
-            "height": 350,
-            "credit": "Diagrama físico · SIN LÍMITES"
-          }
-        },
-        {
-          "title": "Cambiar la resistencia a voltaje constante",
-          "question": "Con una fuente ideal de 12 V, un resistor conduce 2 A. Se lo reemplaza por otro de 18 Ω. ¿Cuál es la nueva corriente?",
-          "steps": [
-            "El resistor inicial era de \\(R_1=12/2=6\\,\\Omega\\).",
-            "La nueva resistencia triplica la inicial y la fuente conserva el voltaje.",
-            "La nueva corriente es \\(I_2=12/18=2/3\\,\\mathrm A\\). Se redujo a la tercera parte."
-          ]
-        }
-      ]
-    },
-    {
-      "title": "Resistores en serie, paralelo y redes mixtas",
-      "blocks": [
-        {
-          "title": "Reconocer la conexión por los nodos",
-          "paragraphs": [
-            "Dos resistores están en serie cuando comparten una conexión sin derivación que obligue a repartir la corriente. Ambos conducen la misma I y sus caídas de tensión se suman: \\(R_{\\mathrm{eq}}=R_1+R_2+\\cdots\\). No basta que aparezcan uno al lado del otro en el dibujo. Debe existir la misma trayectoria de corriente.",
-            "En paralelo, los terminales de cada resistor se conectan a los mismos dos nodos. Comparten V y las corrientes se suman: \\(1/R_{\\mathrm{eq}}=1/R_1+1/R_2+\\cdots\\). Para dos resistores, \\(R_{\\mathrm{eq}}=R_1R_2/(R_1+R_2)\\). El equivalente paralelo es menor que cualquiera de sus resistencias positivas. La rama de menor resistencia conduce mayor corriente bajo el mismo voltaje."
-          ],
-          "id": "fis15-tema-05"
-        },
-        {
-          "title": "Reducir y después reconstruir",
-          "paragraphs": [
-            "En una red mixta, identifica primero los grupos que sean realmente serie o paralelo y redibuja cada reducción. Con el equivalente total calcula la corriente de la fuente. Después regresa al circuito original: halla el voltaje de cada grupo y, finalmente, las corrientes de sus ramas. Usar la corriente total en un resistor de una sola rama suele dar una respuesta incorrecta.",
-            "Un cable ideal conecta puntos del mismo potencial. Si une directamente los dos terminales de un resistor de resistencia finita positiva, ese resistor queda cortocircuitado: tiene V = 0 e I = 0. En una rama abierta no circula corriente estacionaria. Al simplificar conserva los nodos y verifica si una línea cruza otra o está realmente unida; las figuras marcan las uniones con puntos."
-          ],
-          "id": "fis15-tema-06"
-        }
-      ],
-      "examples": [
-        {
-          "title": "Red mixta paso a paso",
-          "question": "En la figura, determina la corriente de la fuente y la corriente en el resistor de 6 Ω.",
-          "steps": [
-            "Entre A y B: \\(R_{AB}=12\\times6/(12+6)=4\\,\\Omega\\).",
-            "El equivalente total es \\(4+4=8\\,\\Omega\\); la fuente conduce \\(I=24/8=3\\,\\mathrm A\\).",
-            "El paralelo tiene \\(V_{AB}=3\\times4=12\\,\\mathrm V\\). Por el resistor de 6 Ω pasan \\(12/6=2\\,\\mathrm A\\).",
-            "Por el de 12 Ω pasa 1 A. Se comprueba el reparto: \\(1+2=3\\,\\mathrm A\\)."
-          ],
-          "figure": {
-            "src": "assets/fisica-capitulo-15/guia-asociacion-mixta.svg",
-            "alt": "Fuente ideal de 24 V, positiva arriba. Un resistor de 4 ohmios conecta la fuente al nodo A. Entre A y B hay dos ramas en paralelo, de 12 y 6 ohmios. B vuelve al terminal negativo. I1 e I2 se indican de A hacia B.",
-            "caption": "Un resistor en serie con dos ramas en paralelo",
-            "width": 800,
-            "height": 400,
-            "credit": "Diagrama físico · SIN LÍMITES"
-          }
-        },
-        {
-          "title": "Un resistor puenteado",
-          "question": "Un resistor de 8 Ω tiene sus dos terminales unidos por un cable ideal. Este conjunto está en serie con resistores de 4 Ω y 2 Ω, alimentados por 12 V. ¿Qué corriente pasa por el de 8 Ω y por la fuente?",
-          "steps": [
-            "El cable une puntos equipotenciales: en el resistor de 8 Ω, \\(V=0\\).",
-            "Por ese resistor pasa \\(I_8=0/8=0\\). El cable sí puede transportar corriente.",
-            "El equivalente que ve la fuente es \\(4+2=6\\,\\Omega\\), de modo que \\(I_{\\mathrm{fuente}}=12/6=2\\,\\mathrm A\\)."
-          ]
-        }
-      ]
-    },
-    {
-      "title": "Instrumentos ideales y leyes de Kirchhoff",
-      "blocks": [
-        {
-          "title": "Amperímetro y voltímetro",
-          "paragraphs": [
-            "El amperímetro mide la corriente del tramo donde se conecta en serie. En el modelo ideal tiene resistencia cero y no añade una caída de potencial. El voltímetro mide la diferencia de potencial entre dos puntos y se conecta en paralelo con el elemento o grupo que se quiere medir. En el modelo ideal tiene resistencia infinita y por su rama no circula corriente.",
-            "Al analizar una figura, reemplaza mentalmente el amperímetro ideal por un cable y el voltímetro ideal por una rama abierta, conservando los puntos donde están conectados. Una lectura de voltaje no indica por sí sola la corriente del circuito. Los instrumentos reales modifican ligeramente el circuito; aquí trabajaremos con el modelo ideal, indicado en cada enunciado."
-          ],
-          "id": "fis15-tema-07"
-        },
-        {
-          "title": "Nodos: conservación de la carga",
-          "paragraphs": [
-            "Un nodo reúne puntos conectados entre sí por conductores ideales y, por tanto, equipotenciales. En régimen estacionario no se acumula carga en el nodo: \\(\\sum I_{\\mathrm{entran}}=\\sum I_{\\mathrm{salen}}\\). Elige sentidos de referencia, escribe la igualdad con esos sentidos y conserva los signos.",
-            "Para calcular con potenciales, fija un nodo de referencia en 0 V. Si una rama resistiva une un punto de potencial \\(V_A\\) con otro de potencial \\(V_B\\), su corriente de A a B es \\((V_A-V_B)/R\\). Una fuente ideal conectada al nodo de referencia fija el potencial de su otro terminal según su polaridad. Si una corriente resulta negativa, su sentido real es contrario al elegido."
-          ],
-          "id": "fis15-tema-08"
-        },
-        {
-          "title": "Recorridos cerrados: conservación de la energía",
-          "paragraphs": [
-            "En los circuitos de corriente continua de este capítulo, la suma algebraica de variaciones de potencial en un recorrido cerrado es cero. Al atravesar un resistor en el sentido de la corriente de referencia, escribe \\(-IR\\); en sentido contrario, \\(+IR\\). Al atravesar una fuente ideal de − a +, escribe \\(+\\varepsilon\\); de + a −, escribe \\(-\\varepsilon\\).",
-            "Las fuentes no siempre se suman: depende de las polaridades y del sentido de recorrido. Una fuente también puede absorber energía si la corriente entra por su terminal positivo. Resuelve las ecuaciones de nodos y de recorridos conjuntamente cuando la red no pueda reducirse solo por serie y paralelo. Comprueba después cada signo con el sentido real de la corriente."
-          ],
-          "takeaway": "Los signos se eligen antes de calcular y se interpretan después; una corriente negativa es información física.",
-          "id": "fis15-tema-09"
-        }
-      ],
-      "examples": [
-        {
-          "title": "Dos fuentes que se oponen",
-          "question": "Halla la corriente horaria de referencia y el voltaje en el resistor de 3 Ω del circuito.",
-          "steps": [
-            "En el recorrido horario, la fuente izquierda aporta +14 V y la derecha −4 V. Las caídas resistivas son \\(-2I\\) y \\(-3I\\).",
-            "La ecuación es \\(14-2I-4-3I=0\\). Así, \\(I=(14-4)/(2+3)=2\\,\\mathrm A\\).",
-            "El resultado es positivo: el sentido real es horario. En el resistor de 3 Ω, \\(V_3=2\\times3=6\\,\\mathrm V\\).",
-            "Un voltímetro ideal conectado entre los extremos de ese resistor indicaría 6 V en magnitud."
-          ],
-          "figure": {
-            "src": "assets/fisica-capitulo-15/guia-fuentes-opuestas.svg",
-            "alt": "Malla rectangular con una fuente de 14 V a la izquierda y otra de 4 V a la derecha. Ambas tienen positivo arriba y negativo abajo. El resistor superior vale 2 ohmios y el inferior 3 ohmios. Se elige una corriente de referencia horaria.",
-            "caption": "Dos fuentes con polaridades explícitas",
-            "width": 850,
-            "height": 400,
-            "credit": "Diagrama físico · SIN LÍMITES"
-          }
-        },
-        {
-          "title": "Un nodo conectado a dos fuentes",
-          "question": "Con B a 0 V, calcula el potencial de A y la corriente de referencia I de la rama central.",
-          "steps": [
-            "Los terminales superiores de las fuentes están a 16 V y 8 V. La rama izquierda aporta a A \\((16-V_A)/2\\); por la central salen \\((V_A-8)/2\\) y por la derecha \\(V_A/4\\).",
-            "Kirchhoff en A: \\((16-V_A)/2=(V_A-8)/2+V_A/4\\). Al multiplicar por 4: \\(32-2V_A=2V_A-16+V_A\\).",
-            "De \\(48=5V_A\\) se obtiene \\(V_A=9{,}6\\,\\mathrm V\\). La corriente central es \\(I=(9{,}6-8)/2=0{,}8\\,\\mathrm A\\), hacia B.",
-            "Comprueba: entran \\(3{,}2\\,\\mathrm A\\) y salen \\(0{,}8+2{,}4=3{,}2\\,\\mathrm A\\). La fuente de 8 V recibe corriente por su terminal positivo y absorbe energía."
-          ],
-          "figure": {
-            "src": "assets/fisica-capitulo-15/guia-nodos.svg",
-            "alt": "Dos nodos comunes A arriba y B abajo. Rama izquierda: resistor de 2 ohmios y fuente de 16 V, positiva arriba. Rama central: resistor de 2 ohmios y fuente de 8 V, positiva arriba. Rama derecha: resistor de 4 ohmios. B tiene potencial de referencia 0 V. La corriente I de referencia desciende por la rama central.",
-            "caption": "Tres ramas entre los mismos dos nodos",
-            "width": 850,
-            "height": 440,
-            "credit": "Diagrama físico · SIN LÍMITES"
+            "src": "assets/fisica-capitulo-15/originales/aplicacion-02-grafica.webp",
+            "width": 740,
+            "height": 537,
+            "caption": "Aplicación 2: intensidad de corriente en función del tiempo · p. 219",
+            "alt": "La corriente aumenta linealmente de 0,5 A en 0 s a 0,9 A en 0,2 s; luego permanece en 0,9 A hasta 1,4 s.",
+            "credit": "Física · Lumbreras Editores · 2021",
+            "original": true
           }
         }
       ]
     },
     {
-      "title": "Potencia, energía y aplicaciones",
+      "title": "Resistencia eléctrica y ley de Ohm",
       "blocks": [
         {
-          "title": "Potencia de elementos y fuentes",
+          "id": "fis15-resistencia",
+          "title": "2. Resistencia eléctrica",
           "paragraphs": [
-            "La potencia mide la rapidez con que se transforma energía: \\(P=E/\\Delta t\\), y para un elemento con voltaje y corriente constantes se usa \\(P=VI\\). En un resistor óhmico, \\(P=I^2R=V^2/R\\). Sus unidades son watt: \\(1\\,\\mathrm W=1\\,\\mathrm J/\\mathrm s=1\\,\\mathrm V\\cdot\\mathrm A\\).",
-            "La forma conveniente depende de qué se conoce y de qué se mantiene constante. A voltaje fijo, aumentar R reduce \\(P=V^2/R\\); a corriente fija, aumentar R incrementa \\(P=I^2R\\). Para las fuentes se distingue potencia entregada de absorbida mediante el sentido de la corriente. En una red ideal, la potencia total entregada coincide con la absorbida por resistores y por otras fuentes."
+            "Nos expresa el grado de oposición que ofrece todo cuerpo a que se establezca en ellos la corriente eléctrica.",
+            "Cuando en un conductor se origina la corriente eléctrica, los portadores de carga no se mueven en trayectorias continuas o suaves, las trayectorias son desviadas por la presencia de impurezas o vacíos, es decir, los portadores de carga encuentran oposición durante su movimiento; esta es una característica fundamental para cada material y se le denomina resistividad eléctrica \\(\\rho\\).",
+            "Fue Poulliet, físico francés, quien planteó el cálculo de la resistencia eléctrica \\(R\\) para los metales sólidos.",
+            "\\[R=\\rho\\dfrac{L}{A}\\]",
+            "Su unidad: ohmio \\(\\Omega\\).",
+            "Donde \\(\\rho\\): resistividad eléctrica \\((\\Omega\\cdot\\mathrm m)\\); \\(L\\): longitud del conductor (m); \\(A\\): área de la sección transversal del conductor \\((\\mathrm m^2)\\)."
           ],
-          "id": "fis15-tema-10"
+          "figures": [
+            {
+              "src": "assets/fisica-capitulo-15/originales/resistividad.webp",
+              "width": 602,
+              "height": 237,
+              "caption": "Longitud y sección transversal de un conductor · p. 219",
+              "alt": "Conductor cilíndrico de longitud L, área transversal A y resistividad rho.",
+              "credit": "Física · Lumbreras Editores · 2021",
+              "original": true,
+              "afterParagraph": 2
+            }
+          ]
         },
         {
-          "title": "Energía consumida y funcionamiento nominal",
+          "id": "fis15-resistores",
+          "title": "Resistores",
           "paragraphs": [
-            "Con potencia constante, \\(E=P\\Delta t\\). Para expresar E en joule usa watt y segundo. Para expresarla en kilowatt-hora usa kilowatt y hora: \\(1\\,\\mathrm{kWh}=3{,}6\\times10^6\\,\\mathrm J\\). El kWh es una unidad de energía. Para un costo de energía se multiplica el consumo en kWh por la tarifa indicada en el problema, sin añadir cargos que no se hayan dado.",
-            "Una lámpara rotulada con voltaje y potencia nominales requiere \\(I_n=P_n/V_n\\) en ese punto de funcionamiento. Si una fuente ideal tiene mayor voltaje, un resistor en serie puede absorber la diferencia de potencial: \\(R=(V_{\\mathrm{fuente}}-V_n)/I_n\\). Luego calcula también la potencia del resistor; no corresponde aplicar todo el voltaje de la fuente a la lámpara."
+            "Todo cuerpo con determinada resistencia eléctrica se denomina resistor y los símbolos a usar para representarlos son:",
+            "Un ejemplo de un resistor variable es el control de volumen de un equipo de sonido, a este también se le denomina potenciómetro."
           ],
-          "takeaway": "Antes de sustituir, identifica el elemento al que pertenece cada V, I y P.",
-          "id": "fis15-tema-11"
+          "figures": [
+            {
+              "src": "assets/fisica-capitulo-15/originales/simbolos-resistores.webp",
+              "width": 590,
+              "height": 331,
+              "caption": "Símbolos de resistor fijo y variable · p. 219",
+              "alt": "Símbolo de resistencia fija y símbolo de resistencia variable, con una flecha oblicua.",
+              "credit": "Física · Lumbreras Editores · 2021",
+              "original": true,
+              "afterParagraph": 0
+            }
+          ]
+        },
+        {
+          "id": "fis15-ohm",
+          "title": "3. Ley de Ohm",
+          "paragraphs": [
+            "Establece que “en un conductor, la diferencia de potencial eléctrico (voltaje) es directamente proporcional a la intensidad de corriente que se establece”.",
+            "\\[\\dfrac{V}{I}=\\text{constante}\\]",
+            "La constante de proporcionalidad es la resistencia eléctrica \\(R\\).",
+            "\\[\\dfrac{V}{I}=R\\]",
+            "De donde \\[V=IR\\]"
+          ],
+          "figures": [
+            {
+              "src": "assets/fisica-capitulo-15/originales/ley-ohm.webp",
+              "width": 868,
+              "height": 508,
+              "caption": "Circuito y representación para la ley de Ohm · p. 220",
+              "alt": "Batería conectada a un foco y su representación equivalente mediante una fuente de voltaje V y un resistor R, por el que circula I.",
+              "credit": "Física · Lumbreras Editores · 2021",
+              "original": true,
+              "afterParagraph": 0
+            }
+          ]
         }
       ],
       "examples": [
         {
-          "title": "Una lámpara en su punto nominal",
-          "question": "La lámpara de 9 V y 0,9 W se conecta a una fuente ideal de 15 V mediante R. Halla R y la potencia que disipa.",
+          "number": 3,
+          "title": "Resistencia del filamento de tungsteno",
+          "question": "El filamento de tungsteno de una lámpara incandescente está formado por un alambre extremadamente fino, mucho más que el de un cable cualquiera. Por ejemplo, en una lámpara de 60 W, el filamento puede llegar a medir alrededor de 2 m de longitud y de grosor, solamente, 3 mm. Para que la longitud total del filamento ocupe el menor espacio posible, el alambre se reduce por medio de un doble enrollado. Suponiendo que el área de la sección transversal es aproximadamente \\(21\\times10^{-6}\\,\\mathrm m^2\\), calcule la resistencia eléctrica de 2 m de este alambre. \\(\\rho_{\\text{tungsteno}}=5{,}25\\times10^{-8}\\,\\Omega\\cdot\\mathrm m\\).",
           "steps": [
-            "En el punto nominal, \\(I_n=0{,}9/9=0{,}1\\,\\mathrm A\\). Esa misma corriente pasa por R.",
-            "El resistor debe tener una caída \\(V_R=15-9=6\\,\\mathrm V\\). Por tanto, \\(R=6/0{,}1=60\\,\\Omega\\).",
-            "Su potencia es \\(P_R=V_RI=6(0{,}1)=0{,}6\\,\\mathrm W\\).",
-            "Comprueba la energía por segundo: la fuente entrega \\(15(0{,}1)=1{,}5\\,\\mathrm W\\), iguales a \\(0{,}9+0{,}6\\,\\mathrm W\\)."
+            "Nos piden la resistencia \\(R\\) del alambre conductor. Para ello hacemos uso de la ley de Poulliet: \\[R=\\rho\\dfrac{L}{A}\\]",
+            "\\[R=\\dfrac{(5{,}25\\times10^{-8})(2)}{21\\times10^{-6}}\\]",
+            "\\[R=0{,}5\\times10^{-2}=5\\times10^{-3}\\,\\Omega\\]",
+            "\\[R=5\\,\\mathrm{m}\\Omega\\]"
+          ],
+          "solutionFigures": []
+        },
+        {
+          "number": 4,
+          "title": "Filamento frío y caliente",
+          "question": "Un material cuya resistencia eléctrica no es constante, sino que depende de la temperatura y de la diferencia de potencial a la cual está sometido, se llama material no óhmico; tal es el caso del filamento de un bulbo incandescente. Sobre la base de esta información, halle la razón entre la mayor y la menor corriente que conduce un filamento, si su resistencia es igual a \\(20\\,\\Omega\\) cuando está frío (25 °C) y \\(100\\,\\Omega\\) cuando está caliente y que, además, soporta una diferencia de potencial \\(\\Delta V\\) de 120 V. (UNMSM 2019-II)",
+          "steps": [
+            "Ambos filamentos son colocados al mismo voltaje.",
+            "Para el que está frío: \\[I_1=\\dfrac{120}{20}=6\\,\\mathrm A\\]",
+            "Para el que está caliente: \\[I_2=\\dfrac{120}{100}=1{,}2\\,\\mathrm A\\]",
+            "Nos piden \\[\\dfrac{I_1}{I_2}=\\dfrac{6}{1{,}2}=5\\]"
+          ],
+          "solutionFigures": [
+            {
+              "src": "assets/fisica-capitulo-15/originales/aplicacion-04-frio.webp",
+              "width": 573,
+              "height": 413,
+              "caption": "Aplicación 4: filamento frío · p. 221",
+              "alt": "Resistor de 20 ohmios conectado a 120 V. La corriente I1 es 120 entre 20, igual a 6 A.",
+              "credit": "Física · Lumbreras Editores · 2021",
+              "original": true,
+              "afterStep": 1
+            },
+            {
+              "src": "assets/fisica-capitulo-15/originales/aplicacion-04-caliente.webp",
+              "width": 610,
+              "height": 420,
+              "caption": "Aplicación 4: filamento caliente · p. 221",
+              "alt": "Resistor de 100 ohmios conectado a 120 V. La corriente I2 es 120 entre 100, igual a 1,2 A.",
+              "credit": "Física · Lumbreras Editores · 2021",
+              "original": true,
+              "afterStep": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Conexión de resistores",
+      "blocks": [
+        {
+          "id": "fis15-conexion",
+          "title": "3.1. Conexión de resistores",
+          "paragraphs": [
+            "Acoplar resistores obedece a muchas necesidades, tales como dividir corrientes, regular voltajes, estabilizar circuitos, entre otros. Lo que se busca con la conexión de resistores es darle mayor utilidad a la energía eléctrica.",
+            "Entre las conexiones comunes tenemos las siguientes:"
+          ],
+          "figures": []
+        },
+        {
+          "id": "fis15-serie",
+          "title": "3.1.1. Conexión en serie",
+          "paragraphs": [
+            "Dos o más resistores están conectados en serie cuando se acoplan uno a continuación del otro.",
+            "Estos resistores se pueden reemplazar por un solo resistor al cual denominamos resistor equivalente \\(R_{\\mathrm{Eq}}\\), veamos:",
+            "La intensidad de corriente eléctrica a través de todos los resistores es la misma. \\[I=I_1=I_2=I_3\\]",
+            "El voltaje de la fuente es igual a la suma de los voltajes de cada resistor. \\[V=V_1+V_2+V_3\\]",
+            "Resistor de resistencia equivalente \\(R_{\\mathrm{Eq}}\\): \\[V=I R_{\\mathrm{Eq}}\\]",
+            "Se sabe que \\(V=V_1+V_2+V_3\\). Entonces \\[I R_{\\mathrm{Eq}}=I R_1+I R_2+I R_3\\] \\[R_{\\mathrm{Eq}}=R_1+R_2+R_3\\]",
+            "En general, para \\(n\\) resistores: \\[R_{\\mathrm{Eq}}=R_1+R_2+R_3+\\cdots+R_n\\]"
+          ],
+          "figures": [
+            {
+              "src": "assets/fisica-capitulo-15/originales/serie-conexion.webp",
+              "width": 549,
+              "height": 204,
+              "caption": "Conexión en serie · p. 221",
+              "alt": "Tres resistores R1, R2 y R3 conectados uno a continuación del otro.",
+              "credit": "Física · Lumbreras Editores · 2021",
+              "original": true,
+              "afterParagraph": 0
+            },
+            {
+              "src": "assets/fisica-capitulo-15/originales/serie-equivalente.webp",
+              "width": 874,
+              "height": 423,
+              "caption": "Circuito en serie y resistor equivalente · p. 221",
+              "alt": "Tres resistores en serie con corrientes I1, I2 e I3 y voltajes V1, V2 y V3. A la derecha, el resistor equivalente conectado a la misma fuente V.",
+              "credit": "Física · Lumbreras Editores · 2021",
+              "original": true,
+              "afterParagraph": 1
+            }
+          ]
+        },
+        {
+          "id": "fis15-paralelo",
+          "title": "3.1.2. Conexión en paralelo",
+          "paragraphs": [
+            "Dos o más resistores están conectados en paralelo cuando tienen terminales comunes.",
+            "Estos resistores se pueden reemplazar por un solo resistor al cual denominamos equivalente \\(R_{\\mathrm{Eq}}\\).",
+            "La intensidad de corriente eléctrica \\(I\\) es igual a la suma de las intensidades de corriente eléctrica en cada resistor. \\[I=I_1+I_2+I_3\\]",
+            "El voltaje de la fuente es igual al voltaje en cada resistor. \\[V=V_1=V_2=V_3\\]",
+            "Resistor de resistencia eléctrica equivalente \\(R_{\\mathrm{Eq}}\\): \\[V=I R_{\\mathrm{Eq}},\\qquad I=\\dfrac{V}{R_{\\mathrm{Eq}}}\\]",
+            "Se sabe que \\(I=I_1+I_2+I_3\\). Entonces \\[\\dfrac{V}{R_{\\mathrm{Eq}}}=\\dfrac{V}{R_1}+\\dfrac{V}{R_2}+\\dfrac{V}{R_3}\\] \\[\\dfrac{1}{R_{\\mathrm{Eq}}}=\\dfrac{1}{R_1}+\\dfrac{1}{R_2}+\\dfrac{1}{R_3}\\]",
+            "En general: \\[\\dfrac{1}{R_{\\mathrm{Eq}}}=\\dfrac{1}{R_1}+\\dfrac{1}{R_2}+\\dfrac{1}{R_3}+\\cdots+\\dfrac{1}{R_n}\\]",
+            "Observación. Para dos resistores tenemos \\[\\dfrac{1}{R_{\\mathrm{Eq}}}=\\dfrac{1}{R_1}+\\dfrac{1}{R_2}\\] \\[R_{\\mathrm{Eq}}=\\dfrac{R_1 R_2}{R_1+R_2}\\]"
+          ],
+          "figures": [
+            {
+              "src": "assets/fisica-capitulo-15/originales/paralelo-conexion.webp",
+              "width": 845,
+              "height": 351,
+              "caption": "Conexión en paralelo · p. 222",
+              "alt": "Resistores R1, R2 y R3 conectados entre los mismos terminales a y b.",
+              "credit": "Física · Lumbreras Editores · 2021",
+              "original": true,
+              "afterParagraph": 0
+            },
+            {
+              "src": "assets/fisica-capitulo-15/originales/paralelo-equivalente.webp",
+              "width": 873,
+              "height": 596,
+              "caption": "Circuito en paralelo y resistor equivalente · p. 222",
+              "alt": "Tres ramas con resistores R1, R2 y R3, intensidades I1, I2 e I3 y voltajes V1, V2 y V3; a la derecha, el circuito equivalente.",
+              "credit": "Física · Lumbreras Editores · 2021",
+              "original": true,
+              "afterParagraph": 1
+            }
+          ]
+        }
+      ],
+      "examples": [
+        {
+          "number": 5,
+          "title": "Resistencia equivalente entre A y B",
+          "question": "Las instalaciones eléctricas constan de un arreglo de resistores conectados en serie o paralelo a una fuente de energía eléctrica. Teniendo en cuenta estas conexiones, determine la resistencia equivalente entre los puntos A y B.",
+          "steps": [
+            "Los resistores de \\(2\\,\\Omega\\) están conectados en paralelo. \\[R_{\\mathrm{Eq}}=\\dfrac{2\\times2}{2+2}=1\\,\\Omega\\]",
+            "Luego:",
+            "Los resistores están en serie, entonces \\[R_{\\mathrm{Eq}(AB)}=1\\,\\Omega+4\\,\\Omega+3\\,\\Omega\\]",
+            "\\[R_{\\mathrm{Eq}(AB)}=8\\,\\Omega\\]"
+          ],
+          "solutionFigures": [
+            {
+              "src": "assets/fisica-capitulo-15/originales/aplicacion-05-paralelo.webp",
+              "width": 853,
+              "height": 460,
+              "caption": "Aplicación 5: reducción del paralelo · p. 223",
+              "alt": "Se destaca el paralelo de dos resistores de 2 ohmios, cuya resistencia equivalente es 1 ohmio.",
+              "credit": "Física · Lumbreras Editores · 2021",
+              "original": true,
+              "afterStep": 0
+            },
+            {
+              "src": "assets/fisica-capitulo-15/originales/aplicacion-05-serie.webp",
+              "width": 624,
+              "height": 524,
+              "caption": "Aplicación 5: resistores resultantes en serie · p. 223",
+              "alt": "Circuito reducido a tres resistores de 1, 4 y 3 ohmios en serie entre A y B.",
+              "credit": "Física · Lumbreras Editores · 2021",
+              "original": true,
+              "afterStep": 1
+            }
           ],
           "figure": {
-            "src": "assets/fisica-capitulo-15/guia-lampara.svg",
-            "alt": "Fuente ideal de 15 V, positiva arriba, conectada en serie con un resistor R desconocido y una lámpara rotulada 9 V y 0,9 W.",
-            "caption": "Resistor limitador y lámpara en serie",
-            "width": 800,
-            "height": 390,
-            "credit": "Diagrama físico · SIN LÍMITES"
+            "src": "assets/fisica-capitulo-15/originales/aplicacion-05-circuito.webp",
+            "width": 586,
+            "height": 449,
+            "caption": "Aplicación 5: resistencia equivalente entre A y B · p. 223",
+            "alt": "Dos resistores de 2 ohmios en paralelo, conectados en serie con resistores de 4 y 3 ohmios entre A y B.",
+            "credit": "Física · Lumbreras Editores · 2021",
+            "original": true
+          }
+        }
+      ]
+    },
+    {
+      "title": "Circuitos eléctricos, instrumentos y reglas de Kirchhoff",
+      "blocks": [
+        {
+          "id": "fis15-circuitos",
+          "title": "4. Circuitos eléctricos",
+          "paragraphs": [
+            "En el término circuito se encuentra implícita la idea de que existe una trayectoria cerrada que les permite a los portadores de carga eléctrica desplazarse a través de los diferentes componentes de modo continuo.",
+            "Un circuito eléctrico está conformado por diversos componentes, entre los cuales tenemos baterías, resistores, interruptores, entre otros.",
+            "En el análisis de circuitos se hace uso de dos reglas conocidas como de Kirchhoff, las cuales surgen de las leyes de conservación de la carga y de la energía.",
+            "Representación gráfica del circuito anterior:"
+          ],
+          "figures": [
+            {
+              "src": "assets/fisica-capitulo-15/originales/circuito-componentes.webp",
+              "width": 858,
+              "height": 337,
+              "caption": "Componentes de un circuito eléctrico · p. 223",
+              "alt": "Circuito formado por una fuente, un interruptor cerrado y un foco encendido, con las etiquetas originales.",
+              "credit": "Física · Lumbreras Editores · 2021",
+              "original": true,
+              "afterParagraph": 2
+            },
+            {
+              "src": "assets/fisica-capitulo-15/originales/circuito-representacion.webp",
+              "width": 640,
+              "height": 264,
+              "caption": "Representación gráfica del circuito · p. 223",
+              "alt": "Esquema con fuente, interruptor, resistor y una trayectoria cerrada marcada con la intensidad I.",
+              "credit": "Física · Lumbreras Editores · 2021",
+              "original": true,
+              "afterParagraph": 3
+            }
+          ]
+        },
+        {
+          "id": "fis15-instrumentos",
+          "title": "4.1. Instrumentos de medición eléctrica",
+          "paragraphs": [],
+          "figures": []
+        },
+        {
+          "id": "fis15-amperimetro",
+          "title": "4.1.1. Amperímetro",
+          "paragraphs": [
+            "Se utiliza para registrar la intensidad de corriente que pasa por algún tramo de un circuito eléctrico.",
+            "Se conecta en serie con los elementos eléctricos en pleno funcionamiento y normalmente presenta una resistencia interna muy pequeña en comparación con la resistencia de los elementos del circuito.",
+            "Un amperímetro se considera ideal cuando despreciamos su resistencia interna, de tal modo que se comporta como un simple alambre equipotencial."
+          ],
+          "figures": [
+            {
+              "src": "assets/fisica-capitulo-15/originales/amperimetro.webp",
+              "width": 491,
+              "height": 175,
+              "caption": "Amperímetro conectado en serie · p. 224",
+              "alt": "Amperímetro en serie con un resistor R; una flecha indica la corriente I.",
+              "credit": "Física · Lumbreras Editores · 2021",
+              "original": true,
+              "afterParagraph": 1
+            },
+            {
+              "src": "assets/fisica-capitulo-15/originales/amperimetro-ideal.webp",
+              "width": 709,
+              "height": 102,
+              "caption": "Modelo del amperímetro ideal · p. 224",
+              "alt": "Un amperímetro ideal equivale a un alambre conductor.",
+              "credit": "Física · Lumbreras Editores · 2021",
+              "original": true,
+              "afterParagraph": 2
+            }
+          ]
+        },
+        {
+          "id": "fis15-voltimetro",
+          "title": "4.1.2. Voltímetro",
+          "paragraphs": [
+            "Es un instrumento que mide la diferencia de potencial eléctrico entre dos puntos de un circuito. Tiene una resistencia interna de gran valor en comparación con los elementos del circuito.",
+            "Si buscamos medir la diferencia de potencial eléctrico de un componente que pertenece a un circuito, el voltímetro se conectará en paralelo con este.",
+            "Un voltímetro se considera ideal cuando asumimos que su resistencia interna es muy grande, de tal manera que impide el paso de la corriente eléctrica a través de él, de esta manera se comporta como si fuese un circuito abierto."
+          ],
+          "figures": [
+            {
+              "src": "assets/fisica-capitulo-15/originales/voltimetro.webp",
+              "width": 702,
+              "height": 277,
+              "caption": "Voltímetro conectado en paralelo · p. 224",
+              "alt": "Voltímetro entre A y B, en paralelo con el resistor R; se indica la corriente I por el resistor.",
+              "credit": "Física · Lumbreras Editores · 2021",
+              "original": true,
+              "afterParagraph": 1
+            },
+            {
+              "src": "assets/fisica-capitulo-15/originales/voltimetro-ideal.webp",
+              "width": 835,
+              "height": 143,
+              "caption": "Modelo del voltímetro ideal · p. 224",
+              "alt": "La rama del voltímetro ideal equivale a una rama abierta.",
+              "credit": "Física · Lumbreras Editores · 2021",
+              "original": true,
+              "afterParagraph": 2
+            }
+          ]
+        },
+        {
+          "id": "fis15-kirchhoff",
+          "title": "4.2. Reglas de Kirchhoff",
+          "paragraphs": [
+            "Antes de señalar las reglas consideremos el siguiente circuito.",
+            "En todo circuito eléctrico identificamos lo siguiente:"
+          ],
+          "figures": [
+            {
+              "src": "assets/fisica-capitulo-15/originales/kirchhoff-circuito.webp",
+              "width": 509,
+              "height": 568,
+              "caption": "Circuito para identificar nodos y mallas · p. 224",
+              "alt": "Circuito con nodos M, A y N a la izquierda y B, C y D a la derecha, fuentes V0 y V1 y cinco resistores. En C confluyen I1 e I2 y sale I3.",
+              "credit": "Física · Lumbreras Editores · 2021",
+              "original": true,
+              "afterParagraph": 0
+            }
+          ]
+        },
+        {
+          "id": "fis15-nodo",
+          "title": "4.2.1. Nodo",
+          "paragraphs": [
+            "Es el punto de unión de dos o más tramos activos en un circuito.",
+            "En nuestro caso son nodos los puntos A, B, C, M y N."
+          ],
+          "figures": []
+        },
+        {
+          "id": "fis15-malla",
+          "title": "4.2.2. Malla",
+          "paragraphs": [
+            "Es un circuito eléctrico cerrado (recorrido cerrado).",
+            "En el circuito eléctrico anterior, una malla eléctrica es AMBCA."
+          ],
+          "figures": []
+        },
+        {
+          "id": "fis15-regla-nodos",
+          "title": "Primera regla de Kirchhoff",
+          "paragraphs": [
+            "Considerando los conceptos anteriores, enunciamos las reglas de Kirchhoff:",
+            "En todo nodo eléctrico se cumple la conservación de la carga eléctrica y debido a ello la suma de las intensidades de corriente que llegan al nodo es igual a la suma de las intensidades de corriente que salen.",
+            "\\[\\sum I_{\\text{llegan}}=\\sum I_{\\text{salen}}\\]",
+            "En el nodo C del circuito tenemos \\[I_1+I_2=I_3\\]"
+          ],
+          "figures": []
+        },
+        {
+          "id": "fis15-regla-mallas",
+          "title": "Segunda regla de Kirchhoff",
+          "paragraphs": [
+            "En toda malla eléctrica se verifica la conservación de la energía eléctrica y debido a ello la suma de voltajes en la malla es igual a cero.",
+            "\\[\\sum V_{\\text{malla}}=0\\]",
+            "En la malla AMBCA tenemos \\[V_{AM}+V_{MB}+V_{BC}+V_{CA}=0\\]",
+            "Observación. En la malla, los voltajes son positivos si vamos del menor al mayor potencial eléctrico, y los voltajes son negativos si vamos del mayor al menor potencial eléctrico."
+          ],
+          "figures": []
+        }
+      ],
+      "examples": []
+    },
+    {
+      "title": "Potencia eléctrica y aplicaciones de circuitos",
+      "blocks": [
+        {
+          "id": "fis15-potencia",
+          "title": "4.3. Potencia eléctrica",
+          "paragraphs": [
+            "Es aquella magnitud escalar que mide la rapidez con que una máquina o dispositivo transforma y/o consume la energía eléctrica.",
+            "Veamos el siguiente circuito.",
+            "La potencia que entrega la fuente se evalúa. \\[P=V\\cdot I\\] Expresión general de la potencia eléctrica.",
+            "La unidad de la potencia eléctrica es el watt o vatio (W).",
+            "\\[1\\text{ watt}=1\\text{ voltio}\\times1\\text{ amperio}\\]"
+          ],
+          "figures": [
+            {
+              "src": "assets/fisica-capitulo-15/originales/potencia-fuente.webp",
+              "width": 391,
+              "height": 421,
+              "caption": "Potencia entregada por una fuente · p. 225",
+              "alt": "Una batería de voltaje V suministra la corriente I a un resistor R que disipa energía.",
+              "credit": "Física · Lumbreras Editores · 2021",
+              "original": true,
+              "afterParagraph": 1
+            }
+          ]
+        },
+        {
+          "id": "fis15-potencia-resistor",
+          "title": "Caso particular: un resistor eléctrico",
+          "paragraphs": [
+            "Para un resistor eléctrico tenemos:",
+            "Donde \\(V=IR\\). Reemplazando en la expresión de la potencia tenemos \\[P=I^2R=\\dfrac{V^2}{R}\\]"
+          ],
+          "figures": [
+            {
+              "src": "assets/fisica-capitulo-15/originales/potencia-resistor.webp",
+              "width": 297,
+              "height": 128,
+              "caption": "Potencia en un resistor · p. 225",
+              "alt": "Resistor R atravesado por la intensidad I.",
+              "credit": "Física · Lumbreras Editores · 2021",
+              "original": true,
+              "afterParagraph": 0
+            }
+          ]
+        }
+      ],
+      "examples": [
+        {
+          "number": 6,
+          "title": "Intensidad en un circuito mixto",
+          "question": "En la clase de Física de un colegio, un profesor dibuja el siguiente arreglo de resistores. Si indica que la diferencia de potencial entre A y B es 16 V y pregunta qué intensidad de corriente pasa por el resistor de \\(2\\,\\Omega\\), ¿cuál fue la respuesta correcta de sus estudiantes?",
+          "steps": [
+            "Sea \\(I\\) la intensidad de corriente que pasa por el resistor de \\(2\\,\\Omega\\).",
+            "En el nodo inferior tenemos \\(I=I_1+I_2\\) (I), primera regla de Kirchhoff.",
+            "En el resistor de \\(4\\,\\Omega\\): \\(V_{AB}=I_2R\\). Entonces \\(16=I_2(4)\\) y \\(I_2=4\\,\\mathrm A\\).",
+            "El resistor de \\(8\\,\\Omega\\) está sometido a la misma diferencia de potencial entre A y B, luego \\(V_{AB}=I_1r\\). Entonces \\(16=I_1(8)\\) y \\(I_1=2\\,\\mathrm A\\).",
+            "Finalmente, reemplazamos en (I): \\[I=2\\,\\mathrm A+4\\,\\mathrm A=6\\,\\mathrm A\\]"
+          ],
+          "solutionFigures": [
+            {
+              "src": "assets/fisica-capitulo-15/originales/aplicacion-06-corrientes.webp",
+              "width": 747,
+              "height": 401,
+              "caption": "Aplicación 6: corrientes y nodo inferior · p. 225",
+              "alt": "Circuito original con I1 descendiendo por 8 ohmios, I2 por la rama de 4 ohmios e I saliendo del nodo inferior hacia el resistor de 2 ohmios.",
+              "credit": "Física · Lumbreras Editores · 2021",
+              "original": true,
+              "afterStep": 0
+            }
+          ],
+          "figure": {
+            "src": "assets/fisica-capitulo-15/originales/aplicacion-06-circuito.webp",
+            "width": 683,
+            "height": 433,
+            "caption": "Aplicación 6: corriente por el resistor de 2 Ω · p. 225",
+            "alt": "Fuente epsilon y resistor de 2 ohmios en serie con el paralelo de 8 y 4 ohmios entre los puntos A y B.",
+            "credit": "Física · Lumbreras Editores · 2021",
+            "original": true
           }
         },
         {
-          "title": "La misma energía en dos unidades",
-          "question": "Un dispositivo de 300 W funciona a potencia constante durante 10 min. Calcula la energía en joule y en kWh.",
+          "number": 7,
+          "title": "Lecturas de los instrumentos ideales",
+          "question": "Con la intención de no sufrir algún tipo de daño como quemaduras o electrocutarse, antes de trabajar con ciertos circuitos es recomendable usar un multitéster, el cual se puede calibrar como amperímetro o voltímetro. Si en el circuito mostrado se utiliza dos multitéster, determine las lecturas de los instrumentos ideales.",
           "steps": [
-            "En segundos: \\(10\\,\\mathrm{min}=600\\,\\mathrm s\\). Entonces \\(E=300(600)=180\\,000\\,\\mathrm J\\).",
-            "En kW y horas: \\(P=0{,}3\\,\\mathrm{kW}\\) y \\(t=1/6\\,\\mathrm h\\). Resulta \\(E=0{,}3/6=0{,}05\\,\\mathrm{kWh}\\).",
-            "Verifica la equivalencia: \\(0{,}05(3{,}6\\times10^6)=180\\,000\\,\\mathrm J\\)."
-          ]
+            "En el circuito eléctrico tenemos dos fuentes y la que define el sentido de la corriente es la fuente de 12 V.",
+            "El amperímetro ideal mide la intensidad de corriente \\(I\\). Aplicamos la segunda regla de Kirchhoff en el circuito: \\(\\sum V_{\\text{malla}}=0\\).",
+            "Iniciamos en M en sentido horario: \\[12-2I-2-3I=0\\] \\[10-5I=0\\] \\[I=2\\,\\mathrm A\\]",
+            "La lectura del voltímetro es la diferencia de potencial entre A y B: \\[V_{AB}=I R_{AB}=2(2)=4\\,\\mathrm V\\]"
+          ],
+          "solutionFigures": [
+            {
+              "src": "assets/fisica-capitulo-15/originales/aplicacion-07-recorrido.webp",
+              "width": 775,
+              "height": 401,
+              "caption": "Aplicación 7: recorrido horario de la malla · p. 226",
+              "alt": "Circuito sin los instrumentos con las polaridades de las fuentes y resistores y corriente I en sentido horario, iniciando en M.",
+              "credit": "Física · Lumbreras Editores · 2021",
+              "original": true,
+              "afterStep": 0
+            }
+          ],
+          "figure": {
+            "src": "assets/fisica-capitulo-15/originales/aplicacion-07-instrumentos.webp",
+            "width": 765,
+            "height": 329,
+            "caption": "Aplicación 7: lecturas de los instrumentos · p. 226",
+            "alt": "Fuentes de 12 V y 2 V en oposición, resistores de 2 y 3 ohmios en serie, amperímetro en serie y voltímetro en paralelo con el resistor de 2 ohmios.",
+            "credit": "Física · Lumbreras Editores · 2021",
+            "original": true
+          }
+        },
+        {
+          "number": 8,
+          "title": "Potencia disipada por un resistor",
+          "question": "Es importante controlar el consumo energético de los aparatos resistivos, por medio de la potencia eléctrica consumida. Para ello, en un simulador interactivo se dibuja el siguiente circuito, determine la potencia disipada por el resistor de \\(2\\,\\Omega\\).",
+          "steps": [
+            "En el resistor de \\(16\\,\\Omega\\) tenemos \\(V=IR\\), de donde \\(48=I(16)\\) e \\(I=3\\,\\mathrm A\\).",
+            "Los resistores de \\(2\\,\\Omega\\) y \\(16\\,\\Omega\\) están en serie, entonces la intensidad de corriente a través de ellos es la misma.",
+            "Para el resistor de \\(2\\,\\Omega\\) tenemos \\[P_{2\\Omega}=I^2r=(3)^2(2)\\]",
+            "\\[P_{2\\Omega}=18\\,\\mathrm W\\]"
+          ],
+          "solutionFigures": [],
+          "figure": {
+            "src": "assets/fisica-capitulo-15/originales/aplicacion-08-circuito.webp",
+            "width": 568,
+            "height": 352,
+            "caption": "Aplicación 8: potencia disipada · p. 226",
+            "alt": "Resistores de 2 y 16 ohmios en serie. El resistor de 16 ohmios tiene una diferencia de potencial de 48 V.",
+            "credit": "Física · Lumbreras Editores · 2021",
+            "original": true
+          }
+        },
+        {
+          "number": 9,
+          "title": "Intensidad de corriente en un ramal",
+          "question": "Se muestra un ramal eléctrico que es parte de un circuito complejo en el que los potenciales eléctricos en los nodos a y b son 42 V y 25 V, respectivamente. Determine la intensidad de corriente que fluye por el ramal.",
+          "steps": [
+            "Por dato tenemos \\(V_a=42\\,\\mathrm V\\) y \\(V_b=25\\,\\mathrm V\\). La corriente eléctrica fluye de a hacia b.",
+            "Iniciamos el recorrido del ramal de a hacia b y luego tenemos \\[V_a-5I+12-2I-8=V_b\\]",
+            "Cuando vamos de mayor a menor potencial colocamos el signo negativo, pero cuando vamos de menor a mayor potencial colocamos el signo positivo.",
+            "Reemplazamos valores: \\[42-5I+12-2I-8=25\\] \\[46-7I=25\\] \\[7I=21\\] \\[I=3\\,\\mathrm A\\]"
+          ],
+          "solutionFigures": [
+            {
+              "src": "assets/fisica-capitulo-15/originales/aplicacion-09-polaridades.webp",
+              "width": 789,
+              "height": 194,
+              "caption": "Aplicación 9: signos de las diferencias de potencial · p. 227",
+              "alt": "Ramal de a hacia b con la corriente I y las polaridades anotadas en los dos resistores y en las fuentes de 12 y 8 V.",
+              "credit": "Física · Lumbreras Editores · 2021",
+              "original": true,
+              "afterStep": 0
+            }
+          ],
+          "figure": {
+            "src": "assets/fisica-capitulo-15/originales/aplicacion-09-ramal.webp",
+            "width": 785,
+            "height": 322,
+            "caption": "Aplicación 9: ramal eléctrico · p. 227",
+            "alt": "Ramal de a hacia b con resistor de 5 ohmios, fuente de 12 V con positivo a la derecha, resistor de 2 ohmios y fuente de 8 V con positivo a la izquierda.",
+            "credit": "Física · Lumbreras Editores · 2021",
+            "original": true
+          }
+        },
+        {
+          "number": 10,
+          "title": "Voltímetro y potencia entregada por la fuente",
+          "question": "Si la lectura del amperímetro es 3 A, ¿cuánto indica el voltímetro, y cuánto es la potencia entregada por la fuente?",
+          "steps": [
+            "Consideramos que los instrumentos son ideales. Si retiramos los instrumentos tenemos el siguiente circuito:",
+            "El amperímetro nos indicará el valor de la intensidad de corriente \\(I\\), y el voltímetro la diferencia de potencial entre a y b, entonces por condición del ejercicio tenemos \\(I=3\\,\\mathrm A\\).",
+            "El voltímetro indica \\(V=V_{ab}\\). Entonces \\[V=I R_{ab}=3(6)=18\\,\\mathrm V\\]",
+            "La potencia que entrega la fuente la absorben los resistores. Reduciendo el circuito tenemos:",
+            "\\[P_{\\text{fuente}}=P_{R_{\\mathrm{Eq}}}\\] \\[P_{\\text{fuente}}=I^2 R_{\\mathrm{Eq}}=(3)^2(15)=135\\,\\mathrm W\\]"
+          ],
+          "solutionFigures": [
+            {
+              "src": "assets/fisica-capitulo-15/originales/aplicacion-10-sin-instrumentos.webp",
+              "width": 706,
+              "height": 432,
+              "caption": "Aplicación 10: circuito sin instrumentos · p. 227",
+              "alt": "Circuito con resistores de 4, 6 y 5 ohmios. Los puntos a y b delimitan el resistor de 6 ohmios por el que circula I.",
+              "credit": "Física · Lumbreras Editores · 2021",
+              "original": true,
+              "afterStep": 0
+            },
+            {
+              "src": "assets/fisica-capitulo-15/originales/aplicacion-10-equivalente.webp",
+              "width": 599,
+              "height": 295,
+              "caption": "Aplicación 10: resistencia equivalente · p. 228",
+              "alt": "Fuente V conectada a un único resistor equivalente de 15 ohmios, con corriente I.",
+              "credit": "Física · Lumbreras Editores · 2021",
+              "original": true,
+              "afterStep": 3
+            }
+          ],
+          "figure": {
+            "src": "assets/fisica-capitulo-15/originales/aplicacion-10-instrumentos.webp",
+            "width": 706,
+            "height": 385,
+            "caption": "Aplicación 10: voltímetro y potencia de la fuente · p. 227",
+            "alt": "Fuente V conectada a resistores de 4, 6 y 5 ohmios en serie. Amperímetro en la rama superior y voltímetro en paralelo con el resistor de 6 ohmios.",
+            "credit": "Física · Lumbreras Editores · 2021",
+            "original": true
+          }
         }
       ]
     }
   ],
-  "sourceNote": "Base temática: Física, Peter Flores Escobal y José Luis Mateo Torres, Lumbreras Editores, primera edición, febrero de 2021, capítulo XV: Electrodinámica, pp. 217–236 (páginas impresas). Desarrollo didáctico con ejemplos, problemas y diagramas originales de SIN LÍMITES. Se emplean modelos ideales de corriente continua en régimen estacionario, según las condiciones de cada enunciado."
+  "sourceNote": "Fuente: Física, Peter Flores Escobal y José Luis Mateo Torres, Lumbreras Editores, primera edición, febrero de 2021, capítulo XV: Electrodinámica, pp. 217–228 (páginas impresas). Teoría y diez aplicaciones resueltas transcritas del PDF proporcionado; gráficos originales extraídos de esas páginas. La práctica interactiva de diez problemas se conserva al final."
 };

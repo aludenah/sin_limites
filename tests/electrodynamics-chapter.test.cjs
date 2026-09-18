@@ -8,6 +8,7 @@ const chapterFiles=['fisica-catalog.js','history-progress.js',id+'-data.js','his
 const ctx={window:{}};for(const f of ['courses.js','practice-bank.js',...catalogs,id+'-data.js'])vm.runInNewContext(read(f),ctx);
 const content=ctx.window.HISTORY_CONTENT,questions=ctx.window.CHAPTER_PRACTICES[id].problems;
 const figures=JSON.parse(read('assets/fisica-capitulo-15-figuras.json')).figures;
+const sourceFigures=JSON.parse(read('assets/fisica-capitulo-15-originales.json')).figures;
 const figure=name=>figures.find(f=>f.src.endsWith('/'+name+'.svg'));
 const near=(a,b)=>assert.ok(Math.abs(a-b)<1e-8*Math.max(1,Math.abs(b)),`${a} != ${b}`);
 const chosen=n=>questions[n-1].options[questions[n-1].answer];
@@ -78,16 +79,21 @@ function structure(){
  const course=ctx.window.COURSES.find(c=>c.id===16);assert.equal(course.topics.length,18);assert.match(course.topics[14],/Electrodinámica/);
  assert.deepEqual(Array.from(ctx.window.PHYSICS_CHAPTERS,c=>c.number),[15]);assert.equal(ctx.window.PHYSICS_CHAPTERS[0].topicIndex,14);
  assert.equal(content.number,15);assert.equal(content.courseId,16);assert.equal(content.math,true);assert.equal(content.lessons.length,5);
- assert.equal(content.lessons.reduce((n,l)=>n+l.examples.length,0),10);assert.match(content.sourceNote,/capítulo XV: Electrodinámica, pp\. 217–236/);
+ assert.equal(content.lessons.reduce((n,l)=>n+l.examples.length,0),10);assert.match(content.sourceNote,/capítulo XV: Electrodinámica, pp\. 217–228/);
+ assert.deepEqual(Array.from(content.lessons.flatMap(l=>l.examples),e=>e.number),[1,2,3,4,5,6,7,8,9,10]);
  assert.equal(questions.length,10);for(const q of questions){assert.equal(q.options.length,5);assert.equal(new Set(q.options).size,5);assert.ok((q.solution.match(/<li>/g)||[]).length>=4);}
- const used=[...content.lessons.flatMap(l=>l.examples.map(e=>e.figure)),...questions.map(q=>q.figure)].filter(Boolean);
- assert.equal(used.length,14);assert.equal(new Set(used.map(f=>f.src)).size,14);
+ const used=questions.map(q=>q.figure).filter(Boolean);
+ assert.equal(used.length,8);assert.equal(new Set(used.map(f=>f.src)).size,8);
  for(const f of used){assert.ok(f.alt&&f.caption);assert.equal(f.credit,'Diagrama físico · SIN LÍMITES');assert.ok(figures.some(x=>x.src===f.src));assert.match(read(f.src),/<desc/);assert.doesNotMatch(read(f.src),/<script|<foreignObject/);}
- const commands=new Set(['mathrm','Delta','times','cdot','cdots','rho','Omega','prime','sum','varepsilon','dfrac']);let count=0;
+ const original=content.lessons.flatMap(l=>[...l.blocks.flatMap(b=>b.figures||[]),...l.examples.flatMap(e=>[e.figure,...e.solutionFigures||[]].filter(Boolean))]);
+ assert.equal(original.length,37);assert.equal(new Set(original.map(f=>f.src)).size,37);
+ for(const f of original){const source=sourceFigures.find(x=>x.src===f.src);assert.ok(source);assert.ok(f.alt&&f.caption&&f.credit.includes('Lumbreras'));assert.equal(require('node:crypto').createHash('sha256').update(fs.readFileSync(path.join(root,f.src))).digest('hex'),source.sha256,'Source crop is preserved');assert.ok(f.width>0&&f.height>0);}
+ const commands=new Set(['mathrm','Delta','times','cdot','cdots','rho','Omega','prime','sum','varepsilon','dfrac','text','left','right','qquad']);let count=0;
  function formulas(v){
   if(Array.isArray(v))return v.forEach(formulas);if(v&&typeof v==='object')return Object.values(v).forEach(formulas);if(typeof v!=='string')return;
   assert.equal((v.match(/\\\(/g)||[]).length,(v.match(/\\\)/g)||[]).length,'Formula delimiters close');
-  for(const match of v.matchAll(/\\\(([\s\S]*?)\\\)/g)){
+  assert.equal((v.match(/\\\[/g)||[]).length,(v.match(/\\\]/g)||[]).length,'Display formula delimiters close');
+  for(const match of v.matchAll(/\\[\[(]([\s\S]*?)\\[\])]/g)){
    count++;let depth=0;for(const ch of match[1]){if(ch==='{')depth++;if(ch==='}')depth--;assert.ok(depth>=0);}assert.equal(depth,0,'Formula braces balance');
    for(const c of match[1].matchAll(/\\([a-zA-Z]+)/g))assert.ok(commands.has(c[1]),`Review formula command ${c[1]}`);
   }
@@ -110,6 +116,8 @@ async function integration(){
  const html=study.elements.get('chapter-app').innerHTML;assert.match(html,/Física · Capítulo 15/);assert.equal((html.match(/class="guided-case"/g)||[]).length,10);assert.equal((html.match(/class="practice-card"/g)||[]).length,10);
  assert.ok(study.run('window.mathCalls.length')>0);assert.equal(study.run('window.mathCalls[0].options.delimiters[1].left'),'\\(');
  for(const q of questions.filter(q=>q.figure)){assert.ok(html.includes(q.figure.src));study.run(`document.getElementById('image-dialog').showModal=()=>{};openMathFigure('practice:${q.id}')`);assert.ok(study.elements.get('image-dialog').innerHTML.includes(q.figure.src));assert.doesNotMatch(study.elements.get('image-dialog').innerHTML,/creada con IA/);}
+ const sourceButtons=[...html.matchAll(/data-id="((?:theory|example|solution):[^"]+)"/g)].map(m=>m[1]);assert.equal(sourceButtons.length,37);
+ for(const key of sourceButtons){study.run(`openMathFigure('${key}')`);assert.match(study.elements.get('image-dialog').innerHTML,/originales\//);assert.match(study.elements.get('image-dialog').innerHTML,/Lumbreras/);}
  study.run("goLesson(4);window.ChapterPractice.choose(CHAPTER_ID,P.practice10,'p01',window.ChapterPractice.questions(CHAPTER_ID)[0].answer,P.studyMode);checkPractice('p01')");await study.run('persist()');assert.match(study.run('window.mathCalls.at(-1).html'),/Respuesta correcta/);
  const nav=home.cloud.get('users/student/progress/navigation');assert.equal(nav.lastCourseId,16);assert.equal(nav.lastChapterNumber,15);assert.equal(nav.lastTopicIndex,14);
  const restored=harness(chapterFiles,{local:home.local,cloud:home.cloud});await restored.signIn({uid:'student'});assert.equal(restored.run('P.readingItem'),4);assert.equal(restored.run('progressPercent()'),10);

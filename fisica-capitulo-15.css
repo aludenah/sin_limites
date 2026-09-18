@@ -1,0 +1,11 @@
+/* Preserve the proportions of the source diagrams at a readable study size. */
+.topic-prose { min-width: 0; }
+.topic-prose .math-figure,
+.guided-case .math-figure { max-width: min(var(--figure-width, 620px), 620px); }
+.guided-case li { min-width: 0; }
+.topic-prose .katex-display,
+.guided-case .katex-display { padding: 4px 0 8px; }
+@media print {
+  .math-figure-button { display: block !important; }
+  .guided-case { break-inside: auto; }
+}
