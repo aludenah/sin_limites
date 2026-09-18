@@ -1,0 +1,43 @@
+{
+  "mode": "built-in image_gen",
+  "assets": [
+    {
+      "src": "foco-apagado.webp",
+      "prompt": "Use case: product-mockup. Asset type: photographic object sprite for a Spanish educational web interactive circuit, not a circuit diagram. Generate a photorealistic studio product photograph of ONE small clear glass incandescent flashlight bulb (miniature low-voltage bulb, rounded clear glass envelope, fine visible tungsten filament) securely screwed into a squat white ceramic cylindrical socket on a small rectangular matte white base. The bulb is OFF: dark unlit filament, clear transparent glass, no emitted light. Two actual metallic screw terminal connection posts project horizontally from the lower left and lower right sides of the socket/base, clearly visible, at the same height. Camera exactly front-facing at a very slightly elevated angle; centered symmetrical composition, full object visible. Square 1024x1024 image, object occupies 70% of image height and 62% width including terminal posts, generous evenly white margin. Pure white #FFFFFF background and only a restrained natural contact shadow beneath the object. Realistic glass reflections, brushed metal contacts, ceramic texture; professional sharp catalog photography. No wires, no schematic symbols, no arrows, no labels, no words, no logos, no watermarks, no extra objects. Retain blank margins for later code-positioned circuit wires."
+    },
+    {
+      "src": "foco-encendido.webp",
+      "prompt": "Use case: lighting-weather. Asset type: second state of a photographic bulb sprite. Input image 1 is the exact OFF bulb product photo to edit. Change ONLY the lighting state of this very same bulb from OFF to ON: make the fine horizontal tungsten filament brightly incandescent yellow-white, with a small warm golden halo within the clear glass and a very subtle warm reflection on the glass and socket. Clearly visible pleasant warm glow, avoid obscuring the bulb silhouette. Strict invariants: keep the entire image camera, crop, object placement and scale, clear glass envelope shape, screw base, ceramic socket, rectangular base, left and right screw terminal posts, pure white background, shadows and all margins pixel-positionally unchanged. No added wires, no text, no arrows, no extra objects, no rays or schematic graphics. This must seamlessly replace the off image at the same coordinates on a web page, so do not redesign or move anything."
+    }
+  ],
+  "width": 1254,
+  "height": 1254,
+  "silhouetteBounds": {
+    "left": 0.186,
+    "top": 0.104,
+    "right": 0.813,
+    "bottom": 0.869
+  },
+  "wireAnchors": {
+    "left": {
+      "x": 0.188,
+      "y": 0.657
+    },
+    "right": {
+      "x": 0.812,
+      "y": 0.657
+    }
+  },
+  "terminalScrewCenters": {
+    "left": {
+      "x": 0.234,
+      "y": 0.637
+    },
+    "right": {
+      "x": 0.766,
+      "y": 0.637
+    }
+  },
+  "background": "white, opaque RGB",
+  "optimization": "WebP quality 90; original dimensions and composition retained."
+}

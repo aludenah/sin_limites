@@ -13,19 +13,13 @@
 .circuit-sim .circuit-instruction { margin: 0; font-size: 15px; line-height: 1.5; color: #526677; }
 .circuit-stage { position: relative; width: 100%; margin: 12px 0 16px; }
 .circuit-sim .circuit-svg { display: block; width: 100%; height: auto; }
-.circuit-switch-hit { position: absolute; left: 23%; top: 9%; width: 20%; height: 31%; min-width: 44px; min-height: 44px; padding: 0; border: 2px dashed transparent; border-radius: 12px; background: transparent; cursor: pointer; touch-action: manipulation; }
+.circuit-switch-hit { position: absolute; left: 9.5%; top: 5%; width: 39%; height: 38%; min-width: 44px; min-height: 44px; padding: 0; border: 2px dashed transparent; border-radius: 12px; background: transparent; cursor: pointer; touch-action: manipulation; }
 .circuit-switch-hit:hover { border-color: #a4beb8; }
 .circuit-switch-hit:focus-visible { outline: 3px solid #bc7d27; outline-offset: 3px; }
-.circuit-switch-blade { transition: transform .25s ease; }
-.circuit-lamp { transition: fill .2s ease, stroke .2s ease; }
-.circuit-filament { transition: stroke .2s ease; }
-.circuit-glow, .circuit-rays, .circuit-direction { opacity: 0; transition: opacity .2s ease; }
-.circuit-flow { stroke: #176c62; stroke-width: 6; stroke-dasharray: 2 25; opacity: 0; animation: circuit-current 1.2s linear infinite; animation-play-state: paused; }
-.circuit-sim[data-state="closed"] .circuit-lamp { fill: #fff0a3; stroke: #8b610d; }
-.circuit-sim[data-state="closed"] .circuit-filament { stroke: #8b610d; }
-.circuit-sim[data-state="closed"] .circuit-glow { opacity: .5; }
-.circuit-sim[data-state="closed"] .circuit-rays,
-.circuit-sim[data-state="closed"] .circuit-direction,
+.circuit-photo-on { opacity: 0; }
+.circuit-sim[data-state="closed"] .circuit-photo-off { opacity: 0; }
+.circuit-sim[data-state="closed"] .circuit-photo-on { opacity: 1; }
+.circuit-flow { stroke: #ffe698; stroke-width: 3; stroke-dasharray: 2 25; opacity: 0; animation: circuit-current 1.2s linear infinite; animation-play-state: paused; }
 .circuit-sim[data-state="closed"] .circuit-flow { opacity: 1; }
 .circuit-sim[data-state="closed"][data-motion="running"] .circuit-flow { animation-play-state: running; }
 @keyframes circuit-current { to { stroke-dashoffset: -81; } }
@@ -43,7 +37,7 @@
 @media (max-width: 650px) {
   .circuit-sim { padding: 16px 12px; }
   .circuit-sim h4 { font-size: 19px; }
-  .circuit-labels { font-size: 32px; }
+  .circuit-labels { font-size: 38px; }
   .circuit-controls { align-items: stretch; }
   .circuit-controls .button { flex: 1 1 190px; }
 }

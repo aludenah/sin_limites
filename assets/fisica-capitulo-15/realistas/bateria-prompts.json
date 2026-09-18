@@ -1,0 +1,19 @@
+{
+  "mode": "built-in image_gen",
+  "src": "bateria.webp",
+  "prompt": "Use case: product-mockup. Asset type: isolated realistic product photograph for an educational web animation. Create a photorealistic compact rectangular black 6-volt laboratory battery, a physical real object not a circuit symbol. Front view from slightly above, almost orthographic, two clearly separated small brass binding-post terminals on the TOP, one RED positive terminal on the left and one BLACK negative terminal on the right. The whole object fits comfortably centered in a square canvas with generous empty margin, no crop. Matte black plastic case, subtle realistic plastic texture, metal reflections, a blank front face without text or logos. Pure white RGB255 backdrop, soft minimal ground contact shadow, even neutral studio illumination. No electrical wires, circuit lines, diagrams, symbols, labels, hands, arrows or other objects. The separate web code will draw all precise electrical connections, so generate ONLY the battery product photo. Request true transparent background if supported, retaining realistic object edges and its faint grounding shadow. Important: both terminal posts clearly visible, with practical places to attach electrical wires. Export as a project asset; provide accessible local artifact path in result metadata if possible.",
+  "width": 1254,
+  "height": 1254,
+  "background": "transparent RGBA",
+  "wireAnchors": {
+    "positive": {
+      "x": 0.32,
+      "y": 0.089
+    },
+    "negative": {
+      "x": 0.68,
+      "y": 0.089
+    }
+  },
+  "optimization": "WebP quality 90; original dimensions, composition and alpha retained."
+}

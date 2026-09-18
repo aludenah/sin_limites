@@ -1,0 +1,58 @@
+{
+  "mode": "built-in image_gen",
+  "dimensions": {
+    "width": 1536,
+    "height": 1024
+  },
+  "background": "transparent alpha",
+  "assets": [
+    {
+      "file": "interruptor-abierto.webp",
+      "sourceGeneratedPng": "/workspace/scratch/2a639c10e476/generated_images/exec-ac1d13d2-f655-41f3-bf3a-7d8dc5c863ba.png",
+      "operation": "generate",
+      "prompt": "Use case: product-mockup. Asset type: isolated photographic component for a school website interactive circuit. Create one photorealistic small laboratory educational KNIFE SWITCH in the OPEN position. The switch has a low horizontal rectangular black bakelite insulating base, two visibly separated brass terminal assemblies at the LEFT and RIGHT ends; brass connecting screws accessible at both ends. A single flat brass blade is hinged at the left contact and raised diagonally about 55 degrees toward the upper right, with a short black insulated handle at its free end, clearly leaving an air gap from the right stationary fork contact. Precisely plausible real product construction. Camera straight in front, slightly elevated by only 15 degrees to see a little of the base top, long base runs horizontally left to right; orthographic-like product photo. Center the complete switch with generous identical whitespace around it, do not crop any part, switch base in lower half to leave room above for lifted lever. Landscape-ish square 1024x1024 framing. Real brushed brass, black bakelite and natural studio highlights, sharp focus. GENUINELY TRANSPARENT BACKGROUND with alpha, no floor or cast shadow outside object. No wires, labels, text, numbers, arrows, diagrams, hands, logos or watermark. This is a real product photo, not a schematic symbol or cartoon.",
+      "visibleBoundsAlphaGte128": [
+        160,
+        96,
+        1378,
+        919
+      ],
+      "normalizedTerminalAnchors": {
+        "left": [
+          0.19,
+          0.728
+        ],
+        "right": [
+          0.812,
+          0.728
+        ]
+      },
+      "alignmentOffsetYpx": 0
+    },
+    {
+      "file": "interruptor-cerrado.webp",
+      "sourceGeneratedPng": "/workspace/scratch/2a639c10e476/generated_images/exec-54df94a8-c837-4411-b1e8-f4f2dbbd0637.png",
+      "operation": "edit",
+      "editReferencePng": "/workspace/scratch/2a639c10e476/generated_images/exec-ac1d13d2-f655-41f3-bf3a-7d8dc5c863ba.png",
+      "prompt": "Use case: precise-object-edit. Edit target: provided photo of a real laboratory knife switch. Produce the CLOSED state of exactly the same switch for a two-frame interactive animation. Change ONLY the movable brass blade and its black insulated handle: rotate the blade down about its existing LEFT hinge to a horizontal position, fully engaged into the right stationary fork, making continuous conductive contact. Keep absolutely unchanged the entire base, both fixed terminal assemblies and screws, their positions and pixel sizes, camera viewpoint, framing, lighting and 1536x1024 canvas dimensions. Do not resize or recenter the object. Maintain genuinely transparent alpha background; no floor or shadow outside object. The lever and handle should occupy their physically rotated position with the free black handle pointing to the right. Preserve real photographic brass and bakelite texture. No labels, text, wires, arrows, extra objects, logos or watermark.",
+      "visibleBoundsAlphaGte128": [
+        158,
+        576,
+        1443,
+        888
+      ],
+      "normalizedTerminalAnchors": {
+        "left": [
+          0.19,
+          0.698
+        ],
+        "right": [
+          0.812,
+          0.698
+        ]
+      },
+      "alignmentOffsetYpx": 31,
+      "alignmentNote": "Translate closed image down 31 source-image pixels (3.02734375% of image height) to match the open image base and terminals."
+    }
+  ]
+}

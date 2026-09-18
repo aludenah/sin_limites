@@ -124,22 +124,25 @@ function circuitInteraction(){
  assert.equal(widget.render('unknown'),'');
  const initial=widget.render(block.interactive);
  assert.match(initial,/data-state="open"/);assert.match(initial,/Circuito abierto · foco apagado/);
+ const photos=[...initial.matchAll(/<image\b[^>]*\bhref="(assets\/fisica-capitulo-15\/realistas\/[^"\s]+)"[^>]*>/g)];
+ const photoNames=['bateria','foco-apagado','foco-encendido','interruptor-abierto','interruptor-cerrado'];
+ assert.deepEqual(photos.map(match=>match[1]).sort(),photoNames.map(name=>`assets/fisica-capitulo-15/realistas/${name}.webp`).sort(),'All five local photo assets render exactly once');
+ for(const match of photos)assert.ok(fs.existsSync(path.join(__dirname,'..',match[1])),`Photo asset exists: ${match[1]}`);
+ for(const name of ['foco-apagado','interruptor-abierto'])assert.match(photos.find(match=>match[1].endsWith(`/${name}.webp`))[0],/class="[^"]*\bcircuit-photo-off\b/,'Both open-state photos are available immediately');
+ for(const name of ['foco-encendido','interruptor-cerrado'])assert.match(photos.find(match=>match[1].endsWith(`/${name}.webp`))[0],/class="[^"]*\bcircuit-photo-on\b/,'Both closed-state photos are available before the first click');
  assert.equal((initial.match(/role="switch" aria-checked="false"/g)||[]).length,2,'Both controls start open and are native buttons');
  const fields=Object.fromEntries(['[data-circuit-status]','[data-circuit-explanation]','[data-circuit-desc]'].map(s=>[s,{textContent:''}]));
- fields['[data-circuit-blade]']={attributes:{},setAttribute(k,v){this.attributes[k]=v;}};
  const root={dataset:{},querySelector:s=>fields[s],querySelectorAll:()=>switches};
  const control=action=>({dataset:{action},disabled:false,attributes:{},label:{},closest:()=>root,setAttribute(k,v){this.attributes[k]=v;},querySelector(){return this.label;}});
  const switches=[control('toggle-simple-circuit'),control('toggle-simple-circuit')],motion=control('circuit-motion');
  fields['[data-action="circuit-motion"]']=motion;
  assert.equal(widget.handleClick(control('math-figure')),false,'Other chapter actions pass through');
  assert.equal(widget.handleClick(switches[0]),true);assert.equal(root.dataset.state,'closed');
- assert.equal(fields['[data-circuit-blade]'].attributes.transform,'rotate(0 195 120)','Closing the switch joins both contacts');
  assert.match(fields['[data-circuit-status]'].textContent,/foco encendido/);assert.equal(motion.disabled,false);
  for(const button of switches){assert.equal(button.attributes['aria-checked'],'true');assert.equal(button.label.textContent,'Abrir interruptor');}
  widget.handleClick(motion);assert.equal(root.dataset.motion,'paused');assert.equal(root.dataset.state,'closed','Pausing the animation does not open the circuit');
  assert.match(widget.render('simple-circuit'),/data-state="closed" data-motion="paused"/,'A chapter re-render preserves circuit state');
  widget.handleClick(switches[1]);assert.equal(root.dataset.state,'open');assert.equal(motion.disabled,true);
- assert.equal(fields['[data-circuit-blade]'].attributes.transform,'rotate(-32 195 120)','Opening the switch creates a visible gap');
  assert.match(fields['[data-circuit-desc]'].textContent,/foco apagado/);
  assert.equal(widget.handleClick(motion),false,'Movement cannot start in an open circuit');
  widget.handleClick(switches[0]);widget.handleClick(motion);assert.equal(root.dataset.motion,'running');
