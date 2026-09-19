@@ -1,0 +1,93 @@
+{
+  "version": 1,
+  "created": "2026-09-19",
+  "purpose": "Fotografías para el laboratorio interactivo Medir del capítulo 1 de Física",
+  "generation": {
+    "mode": "built-in image_gen",
+    "processing": "Resize only to 1024×1024 and encode WebP quality 90; no retouching, compositing, scales or numeric labels baked into images.",
+    "source_dimensions": {
+      "width": 1254,
+      "height": 1254
+    }
+  },
+  "background": "#ffffff",
+  "coordinate_system": "All bounds in final 1024×1024 asset pixel coordinates; use code overlays for exact readings and scales.",
+  "assets": [
+    {
+      "file": "balanza.webp",
+      "width": 1024,
+      "height": 1024,
+      "prompt": "Use case: product-mockup. Asset type: realistic science learning website photo asset, 1024x1024 square. A single complete real laboratory digital weighing scale, front view from slightly above, centered product studio photograph on pure white background. White and light gray body, empty horizontal flat brushed stainless steel weighing platform visible on top, LCD display large clean blank pale green rectangle clearly facing directly forward. Platform around 45 percent of image height, display around x35%-65%, y65%-76%. Full object visible, subtle realistic contact shadow, no people or additional objects. Crisp believable physical textures, soft even light, elegant high quality catalog photograph. Display must be completely blank: absolutely no numbers, digits, lettering, brand, logos, marks or tick scales anywhere. The UI will overlay exact readings later. Keep front LCD horizontal and rectangular, not diagonal or trapezoidal. Do not include any weights or objects on platform. No graphic overlay, no illustration.",
+      "alt": "Balanza digital de laboratorio con plataforma metálica vacía y pantalla LCD.",
+      "overlays": {
+        "lcd_safe_rect": {
+          "x": 288,
+          "y": 591,
+          "width": 449,
+          "height": 98
+        },
+        "lcd_center": {
+          "x": 512,
+          "y": 639
+        },
+        "platform_bounds": {
+          "x": 117,
+          "y": 134,
+          "width": 790,
+          "height": 368
+        },
+        "suggested_object_base": {
+          "x": 512,
+          "y": 430
+        }
+      }
+    },
+    {
+      "file": "cronometro.webp",
+      "width": 1024,
+      "height": 1024,
+      "prompt": "Use case: product-mockup. Asset type: realistic science learning website photo asset, 1024x1024 square. A single real handheld digital stopwatch, black rubber and brushed stainless steel body, photographed from exactly the front orthographic view, full complete stopwatch centered on pure white background. Large clean horizontal rectangular pale green LCD blank screen, realistic physical start stop buttons on top, no lanyard. Believable plastic rubber and steel, crisp realistic product studio photography with soft even light and very subtle contact shadow. The screen is entirely blank: no numerals, digits, lettering, logos, brand names, marks or other elements anywhere. No numbers will be drawn by you, exact readings will be overlaid by the website. Full shape takes around 75 percent width and 80 percent height. No other objects, no people, no graphical UI, no illustration.",
+      "alt": "Cronómetro digital negro y metálico con botones físicos y pantalla LCD.",
+      "overlays": {
+        "lcd_safe_rect": {
+          "x": 281,
+          "y": 350,
+          "width": 463,
+          "height": 239
+        },
+        "lcd_center": {
+          "x": 512,
+          "y": 473
+        },
+        "top_button_center": {
+          "x": 512,
+          "y": 70
+        }
+      }
+    },
+    {
+      "file": "lapiz.webp",
+      "width": 1024,
+      "height": 1024,
+      "prompt": "Use case: product-mockup. Asset type: realistic science learning website photo asset, 1024x1024 square. A single real yellow wooden pencil lying perfectly horizontal, graphite sharpened tip pointing left and pink eraser with metallic ferrule pointing right, an orthographic straight top down studio product photograph. Full pencil centered vertically exactly along the middle line, takes about 90 percent image width. Pure white background, very subtle realistic natural contact shadow. Sharp physical detail in sharpened wood, graphite, yellow paint, metal ferrule and pink rubber. No letters, brand, logos, words, numbers or designs anywhere. No ruler, measuring scale, ticks, hands or extra objects. Pure product photograph, not vector or illustration, no graphic overlay.",
+      "alt": "Lápiz amarillo horizontal con punta de grafito a la izquierda y goma rosada a la derecha.",
+      "overlays": {
+        "object_bounds": {
+          "x": 21,
+          "y": 459,
+          "width": 982,
+          "height": 68
+        },
+        "left_tip": {
+          "x": 21,
+          "y": 493
+        },
+        "right_tip": {
+          "x": 1003,
+          "y": 491
+        },
+        "suggested_view_box": "0 440 1024 120"
+      }
+    }
+  ]
+}
