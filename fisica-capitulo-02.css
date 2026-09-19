@@ -2,8 +2,6 @@
 .vector-figure svg{display:block;width:100%;max-width:430px;height:auto;margin:auto}
 .vector-figure text{font:15px Inter,system-ui,sans-serif;fill:var(--ink);stroke:none}
 .vector-figure figcaption{font-size:13px;color:var(--muted);margin-top:10px;line-height:1.6}
-.vector-hero .vector-figure{margin:0;background:#f8fbfe;border-color:transparent}
-.vector-hero .vector-figure figcaption{font-size:12px}
 .vector-controls{display:grid;grid-template-columns:1fr 1fr;gap:8px 24px}
 .vector-controls label{display:block;min-width:0}
 .vector-controls output{font-variant-numeric:tabular-nums;color:var(--green)}
@@ -13,5 +11,4 @@
 .vector-chart text{font:12px Inter,system-ui,sans-serif;fill:#58697e}
 .lab-answer{display:grid;gap:5px;padding:16px;background:#fff;border-radius:12px;margin-bottom:16px;font-size:14px}
 .lab-answer b{font-size:18px;color:var(--navy)}
-@media(max-width:850px){.vector-hero{display:none}}
 @media(max-width:520px){.vector-figure{padding:12px}.vector-controls{gap:8px 18px}.vector-legend{gap:5px 12px}}
