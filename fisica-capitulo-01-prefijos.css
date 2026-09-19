@@ -1,0 +1,35 @@
+.prefix-explorer{margin:22px 0;padding:20px;border:1px solid var(--line,#dce4ed);border-radius:16px;background:#fff;color:var(--ink,#1b2f49)}
+.prefix-explorer .prefix-explorer-instruction{margin:0 0 16px;color:var(--muted,#58697e);font-size:14px;line-height:1.6}
+.prefix-explorer-choices{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,130px),1fr));gap:9px}
+.prefix-explorer-choices button{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:4px 9px;min-width:0;min-height:76px;padding:12px 14px;border:1px solid #c9d6e5;border-radius:11px;background:#fff;color:var(--navy,#122744);line-height:1.4;text-align:left;cursor:pointer}
+.prefix-explorer-choices button>strong{font-size:25px;font-weight:750}
+.prefix-explorer-choices button>span{font-size:14px;font-weight:650}
+.prefix-explorer-choices button>small{flex-basis:100%;font-size:13px}
+.prefix-explorer-choices button:hover{border-color:#526e91;background:#f3f7fb}
+.prefix-explorer-choices button[aria-pressed=true]{border-color:var(--navy,#122744);background:var(--navy,#122744);color:#fff;box-shadow:inset 0 0 0 1px var(--navy,#122744)}
+.prefix-explorer :is(button,input,select):focus-visible{outline:3px solid #b96b12;outline-offset:3px}
+.prefix-explorer-detail{margin-top:18px;padding:20px;border:1px solid #cbd9e8;border-radius:12px;overflow-wrap:anywhere}
+.prefix-explorer .prefix-explorer-name{margin:0 0 18px;color:var(--navy,#122744);font-size:21px;line-height:1.3}
+.prefix-explorer-facts{display:grid;grid-template-columns:1fr 1fr 2fr;gap:14px;margin:0}
+.prefix-explorer-facts>div{min-width:0;padding-bottom:12px;border-bottom:1px solid var(--line,#dce4ed)}
+.prefix-explorer-facts dt{margin:0 0 6px;color:var(--muted,#58697e);font-size:12px;line-height:1.5}
+.prefix-explorer-facts dd{margin:0;color:var(--navy,#122744);font-size:17px;font-weight:650;line-height:1.5}
+.prefix-explorer .prefix-explorer-rule{margin:14px 0 0;font-size:14px;line-height:1.7}
+.prefix-explorer .prefix-explorer-case{margin:16px 0;padding:12px 14px;border-left:3px solid var(--red,#ef233c);border-radius:0 8px 8px 0;background:#fff6f7;font-size:13px;line-height:1.7}
+.prefix-explorer-converter{padding-top:6px}
+.prefix-explorer-converter>h5{margin:0 0 14px;color:var(--navy,#122744);font-size:18px}
+.prefix-explorer-fields{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.prefix-explorer-fields>div{min-width:0}
+.prefix-explorer-fields label{display:block;margin-bottom:6px;font-size:13px;font-weight:650}
+.prefix-explorer-fields :is(input,select){box-sizing:border-box;display:block;width:100%;min-width:0;min-height:46px;margin:0;padding:10px 12px;border:1px solid #bbcce0;border-radius:8px;background:#fff;color:var(--ink,#1b2f49);font:inherit;font-size:16px}
+.prefix-explorer-fields input[aria-invalid=true]{border-color:#b42335}
+.prefix-explorer .prefix-explorer-hint{margin:9px 0 14px;font-size:12px;line-height:1.6;color:var(--muted,#58697e)}
+.prefix-explorer-result{min-height:80px;padding:16px;border:1px solid #cbd9e8;border-radius:10px;background:#f3f7fc;line-height:1.7;overflow-wrap:anywhere}
+.prefix-explorer-result>strong{display:block;color:var(--navy,#122744);font-size:20px;line-height:1.6}
+.prefix-explorer-result>span{display:block;margin-top:5px;font-size:13px}
+.prefix-explorer-result .prefix-explorer-error{margin-top:0;color:#a11d2e;font-size:14px}
+.prefix-explorer .prefix-explorer-mass-note{margin:14px 0 0;font-size:13px;line-height:1.7;color:var(--muted,#58697e)}
+.prefix-explorer [hidden]{display:none!important}
+@media(max-width:600px){.prefix-explorer{padding:14px}.prefix-explorer-choices{grid-template-columns:repeat(2,minmax(0,1fr))}.prefix-explorer-detail{padding:15px}.prefix-explorer-facts{grid-template-columns:repeat(2,minmax(0,1fr))}.prefix-explorer-facts>div:last-child{grid-column:1/-1}.prefix-explorer-result>strong{font-size:18px}}
+@media(max-width:380px){.prefix-explorer-fields{grid-template-columns:1fr}.prefix-explorer-choices button{padding:10px}}
+@media print{.prefix-explorer{break-inside:avoid}.prefix-explorer-choices button,.prefix-explorer-choices button[aria-pressed=true]{color:#122744;background:#fff}.prefix-explorer-choices button[aria-pressed=true]{border-width:2px}}
