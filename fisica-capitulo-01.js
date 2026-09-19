@@ -9,15 +9,24 @@ const escapeHTML=value=>String(value??'').replaceAll('&','&amp;').replaceAll('<'
 let user=null,db=null,cloudReady=false,saveChain=Promise.resolve(),saveVersion=0,authEpoch=0;
 let saveMessage='',notice='',P=emptyProgress(),saveTimer=null;
 
-function emptyProgress(){return {studyMode:null,currentItem:0,readingItem:0,contentVersion:3,activeTab:'theory',practice10:window.ChapterPractice.normalize(CHAPTER_ID),updatedMs:0};}
+function emptyProgress(){return {studyMode:null,currentItem:0,readingItem:0,contentVersion:4,activeTab:'theory',practice10:window.ChapterPractice.normalize(CHAPTER_ID),updatedMs:0};}
 
 
 
 function normalized(data={}){
  const p={...data,...emptyProgress()};
  const legacyLessons=['dim-magnitudes','dim-dimensiones','dim-reglas','dim-homogeneidad','dim-homogeneidad','dim-exponentes'];
- // Version 3 removes the opening lesson from version 2; keep bookmarks on the same topic.
- const lessonIndex=index=>Number.isInteger(index)?Math.max(0,Math.min(LESSONS.length-1,Number(data.contentVersion)>=3?index:Number(data.contentVersion)===2?index-1:LESSONS.findIndex(x=>x.id===legacyLessons[index]))):0;
+ // Version 3 removed the opening lesson; version 4 removes the third topic.
+ // A bookmark on the removed topic resumes at its successor, now at index 2.
+ const lessonIndex=index=>{
+  if(!Number.isInteger(index))return 0;
+  const version=Number(data.contentVersion);let target=index;
+  if(version===2||version===3){
+   if(version===2)target--;
+   if(target>2)target--;
+  }else if(!(version>=4))target=LESSONS.findIndex(x=>x.id===legacyLessons[index]);
+  return Math.max(0,Math.min(LESSONS.length-1,target));
+ };
  p.studyMode=window.StudyMode?.get(user?.uid)||(['free','progressive'].includes(data.studyMode)?data.studyMode:null);
  p.currentItem=lessonIndex(data.currentItem);p.readingItem=Number.isInteger(data.readingItem)?lessonIndex(data.readingItem):p.currentItem;
  p.activeTab=data.activeTab==='exam'?'practice':['theory','examples','practice','resources'].includes(data.activeTab)?data.activeTab:'theory';
@@ -85,14 +94,13 @@ function updateLab(n){
   output.textContent=n;el.innerHTML=`<div class="equation">\\[[at^{${n}}]=LT^{${n-2}}\\]</div><p>${n===1?'✓ Con n = 1, ambos términos tienen dimensión de velocidad.':'Todavía no coincide con '+String.raw`\(LT^{-1}\)`+'. Prueba otro exponente.'}</p>`;renderMath();
 }
 const DIMENSIONAL_FIGURES={
- 'dim-naturaleza':[['escalares-vectoriales','Dos móviles pueden tener igual rapidez y velocidades con direcciones distintas.']],
  'dim-dimensiones':[['dimensiones-geometricas','El área contiene dos factores de longitud; el volumen contiene tres.']],
  'dim-deducciones':[['magnitudes-derivadas','Las relaciones físicas permiten deducir dimensiones de fuerza, presión, trabajo y potencia.']],
  'dim-homogeneidad':[['homogeneidad','Solo se suman magnitudes compatibles, después de expresar sus valores en unidades compatibles.']]
 };
 function dimensionalFigure(name,caption){
  const src='assets/fisica-capitulo-01/'+name+'.svg';
- const heights={'escalares-vectoriales':465,'dimensiones-geometricas':665,'magnitudes-derivadas':805,homogeneidad:500,'mapa-magnitudes':940};
+ const heights={'dimensiones-geometricas':665,'magnitudes-derivadas':805,homogeneidad:500,'mapa-magnitudes':940};
  return `<figure class="dimensional-figure"><a href="${src}" target="_blank" rel="noopener" aria-label="Ampliar gráfico: ${escapeHTML(caption)}"><img src="${src}" width="760" height="${heights[name]}" alt="${escapeHTML(caption)}" loading="lazy"></a><figcaption>${escapeHTML(caption)} <a href="${src}" target="_blank" rel="noopener">Ampliar gráfico</a></figcaption></figure>`;
 }
 function lessonFigures(id){

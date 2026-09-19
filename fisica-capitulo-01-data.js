@@ -22,47 +22,6 @@ window.DIMENSIONAL_CONTENT = {
       "examples": []
     },
     {
-      "id": "dim-naturaleza",
-      "title": "Magnitudes escalares y vectoriales",
-      "subtitle": "Cuándo también importa la dirección",
-      "goal": "Clasifica las magnitudes por su naturaleza y diferencia rapidez de velocidad.",
-      "body": "<h4>Magnitudes escalares</h4><p>Quedan descritas por un valor numérico y una unidad, sin requerir una dirección espacial. Son ejemplos la masa, el tiempo, la temperatura, la longitud, la distancia, el área, el volumen, la densidad, el trabajo, la energía y la presión.</p><p>Al indicar que un recipiente contiene 2 L o que unas naranjas tienen una masa de 10 kg, la información escalar está completa. Algunas cantidades escalares admiten valores negativos según su definición y referencia, como una temperatura de −40 °C o un trabajo negativo; eso no significa que todas los admitan. La masa y el volumen ordinarios no son negativos.</p><p>Podemos sumar o restar magnitudes escalares compatibles, expresándolas en unidades apropiadas: \\(3\\,\\mathrm{m^3}+5\\,\\mathrm{m^3}=8\\,\\mathrm{m^3}\\). Una diferencia entre 180 K y 50 K es 130 K.</p><h4>Magnitudes vectoriales</h4><p>Para describirlas se requieren un <strong>módulo</strong> o tamaño, una unidad y una <strong>dirección con su sentido</strong>. Se representan mediante flechas o vectores: \\(\\vec v\\), \\(\\vec a\\), \\(\\vec F\\). Son ejemplos el desplazamiento, la velocidad, la aceleración, la fuerza, la cantidad de movimiento y el impulso.</p><div class=\"table-scroll\"><table><thead><tr><th>Magnitud</th><th>Descripción completa</th></tr></thead><tbody><tr><td>Velocidad de una esfera</td><td>20 m/s hacia la derecha</td></tr><tr><td>Desplazamiento de una persona</td><td>8 m hacia la izquierda</td></tr><tr><td>Fuerza aplicada a un automóvil</td><td>10 N hacia la izquierda</td></tr></tbody></table></div><p>La <strong>rapidez</strong> es escalar; la <strong>velocidad</strong> incluye dirección. Dos móviles pueden tener la misma rapidez y velocidades diferentes si se desplazan en sentidos opuestos. Una veleta indica la dirección del viento; un anemómetro de cazoletas permite medir su rapidez.</p><p>La clasificación por origen y la clasificación por naturaleza responden preguntas distintas: la masa es base y escalar; el volumen es derivado y escalar; la velocidad es derivada y vectorial. Las siete magnitudes base del SI se tratan como escalares en este nivel.</p><p>Las operaciones vectoriales deben considerar las direcciones y se desarrollarán en el capítulo <strong>Análisis Vectorial</strong>. No se suma directamente una magnitud escalar con una vectorial.</p>",
-      "key": "Un número y una unidad bastan para un escalar; un vector necesita además dirección y sentido.",
-      "examples": [
-        {
-          "title": "Aplicación 3. Escalares y vectores",
-          "question": "Clasifica las afirmaciones: I. Una magnitud escalar necesita dirección. II. Las magnitudes físicas vectoriales de este capítulo no tienen unidad. III. Una magnitud escalar puede sumarse directamente con una vectorial.",
-          "steps": [
-            "I. <strong>Falso.</strong> La dirección no forma parte de la definición de una magnitud escalar.",
-            "II. <strong>Falso.</strong> La velocidad se mide en m/s y la fuerza en N, por ejemplo.",
-            "III. <strong>Falso.</strong> No corresponde sumar directamente un escalar con un vector.",
-            "Respuesta: <strong>F, F, F.</strong>"
-          ],
-          "sourcePage": 9
-        },
-        {
-          "title": "Aplicación 4. Cuenta las magnitudes vectoriales",
-          "question": "¿Cuántas son vectoriales: velocidad, masa, aceleración de la gravedad, fuerza de gravedad y fuerza magnética?",
-          "steps": [
-            "La velocidad, la aceleración de la gravedad, la fuerza de gravedad y la fuerza magnética incluyen dirección.",
-            "La masa es escalar.",
-            "Respuesta: <strong>4 magnitudes vectoriales.</strong>"
-          ],
-          "sourcePage": 9
-        },
-        {
-          "title": "Aplicación 5. Dos clasificaciones",
-          "question": "Clasifica velocidad, desplazamiento, masa, temperatura, longitud, tiempo, aceleración y fuerza. ¿Cuántas son escalares y cuántas vectoriales?",
-          "steps": [
-            "Escalares: masa, temperatura, longitud y tiempo.",
-            "Vectoriales: velocidad, desplazamiento, aceleración y fuerza.",
-            "Respuesta: <strong>4 escalares y 4 vectoriales.</strong>"
-          ],
-          "sourcePage": 9
-        }
-      ]
-    },
-    {
       "id": "dim-dimensiones",
       "title": "El lenguaje del análisis dimensional",
       "subtitle": "Distinguir dimensión y unidad",

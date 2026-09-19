@@ -86,7 +86,7 @@ async function chapterIntegration(){
  assert.match(rendered,/id="magnitude-game"/);assert.doesNotMatch(rendered,/Ejemplo resuelto|Aplicación 1\./);
  assert.doesNotMatch(h.run('lessonBody(LESSONS[0])'),/<table\b/,'Interactive explorers replace both first-topic tables');
  assert.equal(h.run('LESSONS[0].examples.length'),0);
- assert.equal(h.run('LESSONS.length'),8);assert.equal(h.run('CONTENT.workedExamples.length'),25);
+ assert.equal(h.run('LESSONS.length'),7);assert.equal(h.run('CONTENT.workedExamples.length'),25);
  const savedBefore=clone(h.run('P.practice10'));
 
  // Exercise the real explorer action, including retention after the chapter rerenders.
