@@ -15,8 +15,8 @@ const COURSE_CONFIG={
 }[COURSE_ID]||{prefix:'historia-universal',chapters:window.HISTORY_CHAPTERS||[]};
 const CHAPTER_PREFIX=COURSE_CONFIG.prefix;
 const COURSE_CHAPTERS=COURSE_CONFIG.chapters;
-const CHAPTER_META=COURSE_CHAPTERS.find(c=>c.number===CONTENT.number)||{legacySources:[]};
-const CHAPTER_NUMBER=CONTENT.number;
+const CHAPTER_META=COURSE_CHAPTERS.find(c=>c.progressId===CHAPTER_ID)||COURSE_CHAPTERS.find(c=>c.number===CONTENT.number)||{legacySources:[]};
+const CHAPTER_NUMBER=CHAPTER_META.number||CONTENT.number;
 const CHAPTER_TOPIC_INDEX=CHAPTER_META.topicIndex??(CHAPTER_NUMBER-1);
 const CHAPTER_LABEL=CHAPTER_META.sourceLabel||'Capítulo '+CHAPTER_NUMBER;
 const LESSONS=CONTENT.lessons;
@@ -61,7 +61,7 @@ function storeLocal(pending=true){
   catch{return false;}
 }
 function record(uid=user.uid){return db.collection('users').doc(uid).collection('progress').doc(CHAPTER_ID);}
-function cloudPayload(){return {...P,...window.ChapterPractice.summary(CHAPTER_ID,P),courseId:COURSE_ID,courseName:COURSE_NAME,chapterNumber:CHAPTER_NUMBER,chapterName:CONTENT.title,schemaVersion:3,format:'reading',updatedAt:firebase.firestore.FieldValue.serverTimestamp()};}
+function cloudPayload(){return {...P,...window.ChapterPractice.summary(CHAPTER_ID,P),courseId:COURSE_ID,courseName:COURSE_NAME,chapterNumber:CHAPTER_NUMBER,chapterName:CONTENT.title,...(COURSE_ID===16?{contentType:'chapter',moduleId:CHAPTER_ID,topicIndex:CHAPTER_TOPIC_INDEX,catalogVersion:10}:{}),schemaVersion:3,format:'reading',updatedAt:firebase.firestore.FieldValue.serverTimestamp()};}
 function setSaveStatus(message){saveMessage=message;const el=document.getElementById('save-status');if(el){el.textContent=message;el.classList.toggle('warning',!cloudReady);}const retry=document.getElementById('retry-save');if(retry)retry.hidden=cloudReady;}
 function markChanged(){
   P.updatedMs=Date.now();saveVersion++;
@@ -97,9 +97,9 @@ async function retrySync(){
 }
 
 let readingObserver=null;
-const chapterHref=n=>`${CHAPTER_PREFIX}-capitulo-${String(n).padStart(2,'0')}.html?v=20260918-social1`;
-function header(){return `<header class="topbar"><a class="brand" href="index.html?v=20260918-catalog9"><img src="assets/logo-sin-limites.jpg" width="40" height="40" alt="Logo de SIN LÍMITES"><span>SIN <em>LÍMITES</em></span></a><span class="course-label">${escapeHTML(COURSE_NAME)} · ${escapeHTML(CHAPTER_LABEL)}</span><a class="button secondary" href="index.html?course=${COURSE_ID}&v=20260918-catalog9">← Volver al temario</a></header>`;}
-function chapterLinks(){const previous=COURSE_CHAPTERS.some(c=>c.number===CHAPTER_NUMBER-1),next=COURSE_CHAPTERS.some(c=>c.number===CHAPTER_NUMBER+1);return `<nav class="finish-actions" aria-label="Cambiar de capítulo">${previous?`<a class="button secondary" href="${chapterHref(CHAPTER_NUMBER-1)}">← Capítulo ${CHAPTER_NUMBER-1}</a>`:''}${next?`<a class="button" href="${chapterHref(CHAPTER_NUMBER+1)}">Capítulo ${CHAPTER_NUMBER+1} →</a>`:`<a class="button" href="index.html?course=${COURSE_ID}&v=20260918-catalog9">Volver al temario →</a>`}</nav>`;}
+const chapterHref=n=>`${(COURSE_ID===16?COURSE_CHAPTERS.find(c=>c.number===n)?.progressId:null)||CHAPTER_PREFIX+'-capitulo-'+String(n).padStart(2,'0')}.html?v=${COURSE_ID===16?'20260919-fisica19':'20260918-social1'}`;
+function header(){return `<header class="topbar"><a class="brand" href="index.html?v=20260919-fisica19"><img src="assets/logo-sin-limites.jpg" width="40" height="40" alt="Logo de SIN LÍMITES"><span>SIN <em>LÍMITES</em></span></a><span class="course-label">${escapeHTML(COURSE_NAME)} · ${escapeHTML(CHAPTER_LABEL)}</span><a class="button secondary" href="index.html?course=${COURSE_ID}&v=20260919-fisica19">← Volver al temario</a></header>`;}
+function chapterLinks(){const previous=COURSE_CHAPTERS.some(c=>c.number===CHAPTER_NUMBER-1),next=COURSE_CHAPTERS.some(c=>c.number===CHAPTER_NUMBER+1);return `<nav class="finish-actions" aria-label="Cambiar de capítulo">${previous?`<a class="button secondary" href="${chapterHref(CHAPTER_NUMBER-1)}">← Capítulo ${CHAPTER_NUMBER-1}</a>`:''}${next?`<a class="button" href="${chapterHref(CHAPTER_NUMBER+1)}">Capítulo ${CHAPTER_NUMBER+1} →</a>`:`<a class="button" href="index.html?course=${COURSE_ID}&v=20260919-fisica19">Volver al temario →</a>`}</nav>`;}
 function contents(){return '<aside class="lesson-sidebar"><details class="lesson-index" open><summary>En este capítulo</summary><nav aria-label="Temas del capítulo"><a href="#learning-goals">Antes de empezar</a>'+LESSONS.map((x,i)=>'<a href="#lesson-'+i+'"><span>'+String(i+1).padStart(2,'0')+'</span>'+escapeHTML(x.title)+'</a>').join('')+'<a class="activities-link" href="#activities">Práctica · 10 problemas</a></nav></details><p class="index-hint">Lee a tu ritmo y vuelve al tema que necesites consultar.</p></aside>';}
 function illustration(block){const v=block.illustration;if(!v)return '';return `<figure class="topic-image"><button class="image-button" data-action="image" data-id="${block.id}" aria-label="Ampliar imagen: ${escapeHTML(v.caption)}"><img src="${escapeHTML(v.src)}" alt="${escapeHTML(v.alt)}" width="1448" height="1086" loading="lazy" decoding="async"><span>Ampliar ⊕</span></button><figcaption>${escapeHTML(v.caption)}<small>${escapeHTML(v.credit||'Reconstrucción didáctica creada con IA')}</small></figcaption></figure>`;}
 function theoryBlock(block){
@@ -183,8 +183,8 @@ async function signedIn(u){
   if(cloudReady){markChanged();await persist();}
   if(epoch!==authEpoch)return;
   // The navigation document lets the catalog and teacher panel resume this chapter.
-  const navigation={catalogVersion:9,lastCourseId:COURSE_ID,lastCourseName:COURSE_NAME,lastModuleId:COURSE_ID===16?CHAPTER_ID:null,lastTopicIndex:CHAPTER_TOPIC_INDEX,lastChapterNumber:CHAPTER_NUMBER,lastChapterName:CONTENT.title};
-  try{localStorage.setItem('academia-sm-state',JSON.stringify({catalogVersion:9,activeCourseId:COURSE_ID,activeModuleId:COURSE_ID===16?CHAPTER_ID:null,activeTopicIndex:CHAPTER_TOPIC_INDEX,activeTopicName:CONTENT.title}));}catch{}
+  const navigation={catalogVersion:10,lastCourseId:COURSE_ID,lastCourseName:COURSE_NAME,lastModuleId:COURSE_ID===16?CHAPTER_ID:null,lastTopicIndex:CHAPTER_TOPIC_INDEX,lastChapterNumber:CHAPTER_NUMBER,lastChapterName:CONTENT.title};
+  try{localStorage.setItem('academia-sm-state',JSON.stringify({catalogVersion:10,activeCourseId:COURSE_ID,activeModuleId:COURSE_ID===16?CHAPTER_ID:null,activeTopicIndex:CHAPTER_TOPIC_INDEX,activeTopicName:CONTENT.title}));}catch{}
   if(cloudReady)try{await db.collection('users').doc(u.uid).collection('progress').doc('navigation').set({...navigation,updatedAt:firebase.firestore.FieldValue.serverTimestamp()},{merge:true});}catch(error){console.error('Navigation save:',error);}
 }
 if(!window.firebase){root.innerHTML='<main class="guest-view"><h1>No se pudo cargar la sesión</h1><p>Revisa tu conexión y vuelve a abrir este capítulo.</p><a class="button" href="">Reintentar</a></main>';}

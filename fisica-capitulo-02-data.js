@@ -1,5 +1,5 @@
 window.VECTOR_CONTENT = {
-  "title": "Vectores",
+  "title": "Análisis Vectorial",
   "lessons": [
     {
       "title": "Elementos de un vector",

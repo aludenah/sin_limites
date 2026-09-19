@@ -1,7 +1,7 @@
 // One chapter practice; source metadata preserves equivalent previous achievements.
 window.CHAPTER_PRACTICES = {
   "fisica-capitulo-01": {
-    "title": "Análisis dimensional",
+    "title": "Análisis Dimensional",
     "problems": [
       {
         "id": "p01",
@@ -14,7 +14,7 @@ window.CHAPTER_PRACTICES = {
           "\\(L^2T^{-2}\\)"
         ],
         "answer": 1,
-        "solution": "<div class=\"equation\">\\[[Q]=\\frac{LT^{-1}}T=LT^{-2}\\]</div>",
+        "solution": "<p>La rapidez expresa longitud recorrida por unidad de tiempo: \\([v]=LT^{-1}\\). Además, \\([t]=T\\).</p><p>Como Q es un cociente, dividimos las dimensiones:</p><div class=\"equation\">\\[[Q]=\\frac{[v]}{[t]}=\\frac{LT^{-1}}{T}\\]</div><p>Al dividir potencias de la misma base, restamos los exponentes: \\(-1-1=-2\\).</p><div class=\"equation\">\\[\\boxed{[Q]=LT^{-2}}\\]</div><p>Corresponde a la dimensión de una aceleración; su unidad SI es \\(\\mathrm{m/s^2}\\). Alternativa B.</p>",
         "level": "Básico",
         "source": {
           "kind": "practice",
@@ -32,7 +32,7 @@ window.CHAPTER_PRACTICES = {
           "\\(L^2T^{-1}\\)"
         ],
         "answer": 3,
-        "solution": "<div class=\"equation\">\\[[J_F]=(MLT^{-2})T=MLT^{-1}\\]</div>",
+        "solution": "<p>La fuerza tiene dimensión \\([F]=MLT^{-2}\\) y el intervalo de tiempo cumple \\([\\Delta t]=T\\).</p><p>Aplicamos la regla dimensional del producto:</p><div class=\"equation\">\\[[J_F]=[F][\\Delta t]=(MLT^{-2})T\\]</div><p>La potencia de T es \\(-2+1=-1\\); las potencias de M y L se conservan.</p><div class=\"equation\">\\[\\boxed{[J_F]=MLT^{-1}}\\]</div><p>El impulso se mide en \\(\\mathrm{N\\,s}=\\mathrm{kg\\,m/s}\\). Tiene la misma dimensión que la cantidad de movimiento. Alternativa D.</p>",
         "level": "Básico",
         "source": {
           "kind": "practice",
@@ -50,7 +50,7 @@ window.CHAPTER_PRACTICES = {
           "\\(LT^{-2}\\)"
         ],
         "answer": 0,
-        "solution": "<div class=\"equation\">\\[[k]=[F]/[x]=MLT^{-2}/L=MT^{-2}\\]</div>",
+        "solution": "<p>Por homogeneidad, los dos miembros de \\(F=kx\\) deben tener la misma dimensión: \\([F]=[k][x]\\).</p><p>La deformación x es una longitud, de modo que \\([x]=L\\). Despejamos la dimensión de la constante:</p><div class=\"equation\">\\[[k]=\\frac{[F]}{[x]}=\\frac{MLT^{-2}}L\\]</div><p>El factor L se cancela y obtenemos:</p><div class=\"equation\">\\[\\boxed{[k]=MT^{-2}}\\]</div><p>Su unidad SI es \\(\\mathrm{N/m}=\\mathrm{kg/s^2}\\). Una constante física, como k, puede tener dimensiones. Alternativa A.</p>",
         "level": "Básico",
         "source": {
           "kind": "practice",
@@ -59,7 +59,7 @@ window.CHAPTER_PRACTICES = {
       },
       {
         "id": "p04",
-        "prompt": "En \\(F=Gm_1m_2/r^2\\), halla \\([G]\\).",
+        "prompt": "En \\(F=Gm_1m_2/r^2\\), donde F es fuerza, \\(m_1\\) y \\(m_2\\) son masas y r es la distancia entre ellas, halla \\([G]\\).",
         "options": [
           "\\(ML^3T^{-2}\\)",
           "\\(M^{-1}LT^{-2}\\)",
@@ -68,7 +68,7 @@ window.CHAPTER_PRACTICES = {
           "\\(M^{-1}L^3T^{-2}\\)"
         ],
         "answer": 4,
-        "solution": "<div class=\"equation\">\\[[G]=\\frac{[F][r]^2}{[m_1][m_2]}=\\frac{MLT^{-2}L^2}{M^2}=M^{-1}L^3T^{-2}\\]</div>",
+        "solution": "<p>Despejamos la constante gravitatoria de la relación dada: \\(G=Fr^2/(m_1m_2)\\).</p><p>Usamos \\([F]=MLT^{-2}\\), \\([r]=L\\) y \\([m_1]=[m_2]=M\\):</p><div class=\"equation\">\\[[G]=\\frac{[F][r]^2}{[m_1][m_2]}=\\frac{(MLT^{-2})L^2}{M^2}\\]</div><p>Sumamos los exponentes de L y restamos los de M: \\(1+2=3\\) y \\(1-2=-1\\).</p><div class=\"equation\">\\[\\boxed{[G]=M^{-1}L^3T^{-2}}\\]</div><p>La unidad SI correspondiente es \\(\\mathrm{m^3/(kg\\,s^2)}\\), equivalente a \\(\\mathrm{N\\,m^2/kg^2}\\). Alternativa E.</p>",
         "level": "Intermedio",
         "source": {
           "kind": "practice",
@@ -86,7 +86,7 @@ window.CHAPTER_PRACTICES = {
           "\\(L^2T^{-1}\\)"
         ],
         "answer": 2,
-        "solution": "<div class=\"equation\">\\[[h]=\\frac{ML^2T^{-2}}{T^{-1}}=ML^2T^{-1}\\]</div>",
+        "solution": "<p>La energía tiene dimensión \\([E]=ML^2T^{-2}\\). La frecuencia es el número de ciclos por unidad de tiempo, por lo que \\([f]=T^{-1}\\).</p><p>De \\(E=hf\\), despejamos \\(h=E/f\\) y aplicamos dimensiones:</p><div class=\"equation\">\\[[h]=\\frac{[E]}{[f]}=\\frac{ML^2T^{-2}}{T^{-1}}\\]</div><p>El exponente temporal resulta \\(-2-(-1)=-1\\).</p><div class=\"equation\">\\[\\boxed{[h]=ML^2T^{-1}}\\]</div><p>La constante h se mide en \\(\\mathrm{J\\,s}\\). Alternativa C.</p>",
         "level": "Intermedio",
         "source": {
           "kind": "practice",
@@ -104,7 +104,7 @@ window.CHAPTER_PRACTICES = {
           "\\(1\\)"
         ],
         "answer": 1,
-        "solution": "Por homogeneidad, \\([A]=LT^{-3}\\) y \\([B]=LT^{-1}\\). <div class=\"equation\">\\[[A/B]=\\frac{LT^{-3}}{LT^{-1}}=T^{-2}\\]</div>",
+        "solution": "<p>Como los términos se suman, aplicamos el principio de homogeneidad:</p><div class=\"equation\">\\[[v]=[A][t]^2=[B]\\]</div><p>La velocidad cumple \\([v]=LT^{-1}\\). Por tanto, \\([B]=LT^{-1}\\) y:</p><div class=\"equation\">\\[[A]=\\frac{LT^{-1}}{T^2}=LT^{-3}\\]</div><p>Ahora dividimos las dimensiones de A y B:</p><div class=\"equation\">\\[\\left[\\frac AB\\right]=\\frac{LT^{-3}}{LT^{-1}}=\\boxed{T^{-2}}\\]</div><p>La unidad SI del cociente A/B es \\(\\mathrm{s^{-2}}\\). Alternativa B.</p>",
         "level": "Intermedio",
         "source": {
           "kind": "practice",
@@ -122,7 +122,7 @@ window.CHAPTER_PRACTICES = {
           "\\(MT^{-2}\\)"
         ],
         "answer": 3,
-        "solution": "<div class=\"equation\">\\[[A]=\\frac{ML^{-1}T^{-2}}{L^2T^{-2}}=ML^{-3}\\]</div>",
+        "solution": "<p>Por homogeneidad, cada término de la suma debe tener la dimensión de la presión:</p><div class=\"equation\">\\[[p]=[A][v]^2=[B]\\]</div><p>La presión es fuerza por unidad de área: \\([p]=ML^{-1}T^{-2}\\). Además, \\([v]^2=(LT^{-1})^2=L^2T^{-2}\\).</p><div class=\"equation\">\\[[A]=\\frac{[p]}{[v]^2}=\\frac{ML^{-1}T^{-2}}{L^2T^{-2}}\\]</div><p>Los factores temporales se cancelan y el exponente de L es \\(-1-2=-3\\).</p><div class=\"equation\">\\[\\boxed{[A]=ML^{-3}}\\]</div><p>A tiene la dimensión de una densidad y se mide en \\(\\mathrm{kg/m^3}\\). Alternativa D.</p>",
         "level": "Intermedio",
         "source": {
           "kind": "practice",
@@ -140,7 +140,7 @@ window.CHAPTER_PRACTICES = {
           "\\(L^2T^{-2}\\)"
         ],
         "answer": 0,
-        "solution": "El argumento exige \\([B]=T^{-1}\\) y la amplitud cumple \\([A]=L\\). Entonces \\([AB]=LT^{-1}\\).",
+        "solution": "<p>El argumento de la función seno debe ser adimensional. Por eso:</p><div class=\"equation\">\\[[Bt]=1\\quad\\Rightarrow\\quad[B]T=1\\quad\\Rightarrow\\quad[B]=T^{-1}\\]</div><p>El seno también es adimensional. En \\(x=A\\operatorname{sen}(Bt)\\), la amplitud A debe tener la misma dimensión que x:</p><div class=\"equation\">\\[[A]=[x]=L\\]</div><p>Multiplicamos las dimensiones obtenidas:</p><div class=\"equation\">\\[[AB]=[A][B]=\\boxed{LT^{-1}}\\]</div><p>El producto AB tiene dimensión de velocidad; su unidad SI es \\(\\mathrm{m/s}\\). Alternativa A.</p>",
         "level": "Intermedio",
         "source": {
           "kind": "practice",
@@ -149,7 +149,7 @@ window.CHAPTER_PRACTICES = {
       },
       {
         "id": "p09",
-        "prompt": "Si \\(E=C\\rho^av^bV^c\\), con densidad \\(\\rho\\), rapidez v, volumen V y C adimensional, halla (a, b, c).",
+        "prompt": "Si \\(E=C\\rho^av^bV^c\\), donde E es energía, \\(\\rho\\) es densidad, v es rapidez, V es volumen y C es adimensional, halla (a, b, c).",
         "options": [
           "\\((1,1,1)\\)",
           "\\((1,2,-1)\\)",
@@ -158,7 +158,7 @@ window.CHAPTER_PRACTICES = {
           "\\((1,2,1)\\)"
         ],
         "answer": 4,
-        "solution": "<div class=\"equation\">\\[ML^2T^{-2}=M^aL^{-3a+b+3c}T^{-b}\\]</div>Masa: a=1. Tiempo: b=2. Longitud: \\(-3+2+3c=2\\), luego c=1.",
+        "solution": "<p>Identificamos las dimensiones: \\([E]=ML^2T^{-2}\\), \\([\\rho]=ML^{-3}\\), \\([v]=LT^{-1}\\), \\([V]=L^3\\) y \\([C]=1\\).</p><p>Sustituimos y agrupamos las potencias de cada dimensión fundamental:</p><div class=\"equation\">\\[ML^2T^{-2}=M^aL^{-3a+b+3c}T^{-b}\\]</div><p>Igualamos los exponentes de M y T: \\(a=1\\) y \\(-b=-2\\), por lo que \\(b=2\\).</p><p>Con L obtenemos \\(-3a+b+3c=2\\). Al sustituir: \\(-3+2+3c=2\\), de donde \\(c=1\\).</p><div class=\"equation\">\\[\\boxed{(a,b,c)=(1,2,1)}\\]</div><p>Así, \\(\\rho V\\) tiene dimensión de masa y \\(\\rho Vv^2\\) tiene dimensión de energía. El análisis dimensional no determina el valor numérico de C. Alternativa E.</p>",
         "level": "Avanzado",
         "source": {
           "kind": "practice",
@@ -167,7 +167,7 @@ window.CHAPTER_PRACTICES = {
       },
       {
         "id": "p10",
-        "prompt": "Supón \\(\\tau=Cm^ak^b\\), donde \\(\\tau\\) es un período, k la constante elástica y C adimensional. Halla (a, b).",
+        "prompt": "Supón \\(\\tau=Cm^ak^b\\), donde \\(\\tau\\) es un período, m es masa, k es la constante elástica y C es adimensional. Halla (a, b).",
         "options": [
           "\\((1,-1)\\)",
           "\\((-1/2,1/2)\\)",
@@ -176,7 +176,7 @@ window.CHAPTER_PRACTICES = {
           "\\((0,-1/2)\\)"
         ],
         "answer": 2,
-        "solution": "<div class=\"equation\">\\[T=M^a(MT^{-2})^b=M^{a+b}T^{-2b}\\]</div>Se cumple \\(a+b=0\\) y \\(-2b=1\\). Por ello \\(a=1/2,\\ b=-1/2\\).",
+        "solution": "<p>El período cumple \\([\\tau]=T\\), la masa \\([m]=M\\) y C es adimensional. De \\(F=kx\\), la constante elástica tiene dimensión \\([k]=MT^{-2}\\).</p><p>Aplicamos dimensiones a la relación propuesta:</p><div class=\"equation\">\\[T=M^a(MT^{-2})^b=M^{a+b}T^{-2b}\\]</div><p>Igualamos exponentes. En T: \\(-2b=1\\), de donde \\(b=-1/2\\). En M: \\(a+b=0\\), de donde \\(a=1/2\\).</p><div class=\"equation\">\\[\\boxed{(a,b)=\\left(\\frac12,-\\frac12\\right)}\\]</div><p>La relación toma la forma \\(\\tau=C\\sqrt{m/k}\\), que tiene unidad de tiempo. El valor de C requiere información física adicional. Alternativa C.</p>",
         "level": "Avanzado",
         "source": {
           "kind": "practice",

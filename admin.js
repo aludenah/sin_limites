@@ -18,16 +18,14 @@ const ADMIN_EMAIL='alexludenah@gmail.com';
 const app=document.getElementById('adminApp');
 let allStudents=[];
 const TRACKED_CHAPTERS={
-  ...Object.fromEntries((window.PHYSICS_CHAPTERS||[]).filter(c=>c.format==='reading').map(c=>[c.progressId,{label:'Física · '+(c.sourceLabel||'Capítulo '+c.number)+' · '+c.title,items:10}])),
+  ...Object.fromEntries((window.PHYSICS_CHAPTERS||[]).map(c=>[c.progressId,{label:'Física · '+(c.sourceLabel||'Capítulo '+c.number)+' · '+c.title,items:10}])),
   ...Object.fromEntries((window.MATH_REASONING_CHAPTERS||[]).map(c=>[c.progressId,{label:'Razonamiento Matemático · Capítulo '+c.number+' · '+c.title,items:10}])),
   ...Object.fromEntries((window.VERBAL_CHAPTERS||[]).map(c=>[c.progressId,{label:'Razonamiento Verbal · Capítulo '+c.number+' · '+c.title,items:10}])),
   ...Object.fromEntries((window.ECONOMY_CHAPTERS||[]).map(c=>[c.progressId,{label:'Economía · Capítulo '+c.number+' · '+c.title,items:10}])),
   ...Object.fromEntries((window.CIVICS_CHAPTERS||[]).map(c=>[c.progressId,{label:'Educación Cívica · Capítulo '+c.number+' · '+c.title,items:10}])),
   ...Object.fromEntries((window.LANGUAGE_CHAPTERS||[]).map(c=>[c.progressId,{label:'Lenguaje · Capítulo '+c.number+' · '+c.title,items:10}])),
   ...Object.fromEntries((window.PERU_CHAPTERS||[]).map(c=>[c.progressId,{history:c,label:'Historia del Perú · Capítulo '+c.number+' · '+c.title,items:10}])),
-  ...Object.fromEntries((window.HISTORY_CHAPTERS||[]).map(c=>[c.progressId,{history:c,label:'Historia Universal · Capítulo '+c.number+' · '+c.title,items:10}])),
-  'fisica-capitulo-01':{label:'Física · Repaso · Análisis dimensional',items:10},
-  'fisica-capitulo-02':{label:'Física · Repaso · Vectores',items:10}
+  ...Object.fromEntries((window.HISTORY_CHAPTERS||[]).map(c=>[c.progressId,{history:c,label:'Historia Universal · Capítulo '+c.number+' · '+c.title,items:10}]))
 };
 let selectedChapter='historia-universal-presentacion-01';
 let dashboardLoad=0;

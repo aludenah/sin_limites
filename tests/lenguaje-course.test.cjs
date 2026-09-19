@@ -82,7 +82,7 @@ async function validateAppAndProgress(){
  const last=c.run('CONTENT.lessons.length-1');
  c.run(`goLesson(${last});window.ChapterPractice.choose(CHAPTER_ID,P.practice10,'p01',window.ChapterPractice.questions(CHAPTER_ID)[0].answer,P.studyMode);checkPractice('p01')`);await c.run('persist()');
  assert.equal(c.cloud.get('users/student/progress/navigation').lastCourseId,7);
- assert.equal(c.cloud.get('users/student/progress/navigation').catalogVersion,9);
+ assert.equal(c.cloud.get('users/student/progress/navigation').catalogVersion,10);
  assert.equal(c.cloud.get('users/student/progress/lenguaje-capitulo-03').readingItem,last);
  const reload=harness(chapterFiles(3),{local:h.local,cloud:h.cloud});await reload.signIn({uid:'student'});assert.equal(reload.run('P.readingItem'),last);
  const home=harness(files,{local:h.local,cloud:h.cloud});await home.signIn({uid:'student'});
@@ -100,9 +100,9 @@ async function validateAppAndProgress(){
 }
 
 function validateTeacherTracking(){
- const ctx={window:{}};for(const f of ['peru-catalog.js','history-catalog.js','lenguaje-catalog.js','economia-catalog.js','educacion-civica-catalog.js'])vm.runInNewContext(fs.readFileSync(path.join(root,f),'utf8'),ctx);
+ const ctx={window:{}};for(const f of ['peru-catalog.js','history-catalog.js','lenguaje-catalog.js','economia-catalog.js','educacion-civica-catalog.js','fisica-catalog.js'])vm.runInNewContext(fs.readFileSync(path.join(root,f),'utf8'),ctx);
  const admin=fs.readFileSync(path.join(root,'admin.js'),'utf8');const declaration=admin.slice(admin.indexOf('const TRACKED_CHAPTERS='),admin.indexOf('let selectedChapter='));vm.runInNewContext(declaration+';window.tracked=TRACKED_CHAPTERS;',ctx);
- assert.equal(Object.keys(ctx.window.tracked).length,32);
+ assert.equal(Object.keys(ctx.window.tracked).length,33);
  for(let n=1;n<=6;n++){const tracked=ctx.window.tracked[`lenguaje-capitulo-0${n}`];assert.equal(tracked.items,10);assert.match(tracked.label,new RegExp(`^Lenguaje · Capítulo ${n} ·`));}
 }
 

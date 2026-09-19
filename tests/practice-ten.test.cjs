@@ -2,13 +2,13 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
 const {harness}=require('./study-entry.test.cjs');
 const root=path.join(__dirname,'..');
 const chapters=[
- {id:'fisica-capitulo-15',files:['fisica-catalog.js','history-progress.js','fisica-capitulo-15-data.js','history-chapter.js'],number:15,course:16},
+ {id:'fisica-capitulo-15',files:['fisica-catalog.js','history-progress.js','fisica-capitulo-15-data.js','history-chapter.js'],number:16,course:16},
  ...[1,2,3,4,5,6].map(n=>({id:`razonamiento-matematico-capitulo-0${n}`,files:['razonamiento-matematico-catalog.js','history-progress.js',`razonamiento-matematico-capitulo-0${n}-data.js`,'history-chapter.js'],number:n,course:2})),
  ...[1,2,3,4,5,6].map(n=>({id:`razonamiento-verbal-capitulo-0${n}`,files:['razonamiento-verbal-catalog.js','history-progress.js',`razonamiento-verbal-capitulo-0${n}-data.js`,'history-chapter.js'],number:n,course:1})),
  ...['economia','educacion-civica'].flatMap(prefix=>[1,2,3,4,5,6].map(n=>({id:`${prefix}-capitulo-0${n}`,files:[`${prefix}-catalog.js`,'history-progress.js',`${prefix}-capitulo-0${n}-data.js`,'history-chapter.js'],number:n,course:prefix==='economia'?14:10}))),
  ...[1,2,3,4,5,6].map(n=>({id:`lenguaje-capitulo-0${n}`,files:['lenguaje-catalog.js','history-progress.js',`lenguaje-capitulo-0${n}-data.js`,'history-chapter.js'],number:n,course:7})),
  ...[1,2,3,4,5,6].map(n=>({id:`historia-del-peru-capitulo-0${n}`,files:['peru-catalog.js','history-progress.js',`historia-del-peru-capitulo-0${n}-data.js`,'history-chapter.js'],number:n,course:11})),
- ...[1,2].map(n=>({id:`fisica-capitulo-0${n}`,files:[`fisica-capitulo-0${n}-data.js`,`fisica-capitulo-0${n}.js`],number:null,course:16})),
+ ...[1,2].map(n=>({id:`fisica-capitulo-0${n}`,files:[`fisica-capitulo-0${n}-data.js`,`fisica-capitulo-0${n}.js`],number:n,course:16})),
  {id:'historia-universal-presentacion-01',files:['historia-universal-capitulo-01-content.js','history-reading.js'],number:1,course:12,reading:true},
  ...[2,3,4,5,6].map(n=>({id:`historia-universal-pdf-0${n}`,files:['history-catalog.js','history-progress.js',`historia-universal-capitulo-0${n}-data.js`,'history-chapter.js'],number:n,course:12}))
 ];

@@ -1,0 +1,76 @@
+{
+  "sourceFile": "analisis dimensional.pdf",
+  "sourceSha256": "6e90866f7c659144a49db5a42d5e607fec6ffc8e41c358e9f63be6a7d10baa00",
+  "pageNumbering": "Páginas del archivo PDF, comenzando en 1.",
+  "method": "Redibujo vectorial didáctico a partir de los conceptos e ilustraciones del documento. Las composiciones se reorganizan para su lectura en la web. La regla y el cronómetro son ejemplos complementarios de medición.",
+  "figures": [
+    {
+      "file": "fenomenos.svg",
+      "sourcePages": [
+        3
+      ],
+      "suggestedLesson": "dim-fisica",
+      "width": 760,
+      "height": 600
+    },
+    {
+      "file": "medicion.svg",
+      "sourcePages": [
+        4,
+        6,
+        7
+      ],
+      "suggestedLesson": "dim-magnitudes",
+      "width": 760,
+      "height": 760
+    },
+    {
+      "file": "escalares-vectoriales.svg",
+      "sourcePages": [
+        7,
+        8
+      ],
+      "suggestedLesson": "dim-naturaleza",
+      "width": 760,
+      "height": 465
+    },
+    {
+      "file": "dimensiones-geometricas.svg",
+      "sourcePages": [
+        11
+      ],
+      "suggestedLesson": "dim-deducciones",
+      "width": 760,
+      "height": 665
+    },
+    {
+      "file": "magnitudes-derivadas.svg",
+      "sourcePages": [
+        12,
+        13
+      ],
+      "suggestedLesson": "dim-deducciones",
+      "width": 760,
+      "height": 805
+    },
+    {
+      "file": "homogeneidad.svg",
+      "sourcePages": [
+        10,
+        15
+      ],
+      "suggestedLesson": "dim-homogeneidad",
+      "width": 760,
+      "height": 500
+    },
+    {
+      "file": "mapa-magnitudes.svg",
+      "sourcePages": [
+        17
+      ],
+      "suggestedLesson": "recursos",
+      "width": 760,
+      "height": 940
+    }
+  ]
+}

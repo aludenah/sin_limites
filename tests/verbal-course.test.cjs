@@ -67,7 +67,7 @@ async function navigationAndProgress(){
    assert.match(study.elements.get('image-dialog').innerHTML,/expanded-image/);
   }
   study.run("goLesson(4);window.ChapterPractice.choose(CHAPTER_ID,P.practice10,'p01',window.ChapterPractice.questions(CHAPTER_ID)[0].answer,P.studyMode);checkPractice('p01')");await study.run('persist()');
-  const nav=study.cloud.get('users/student/progress/navigation');assert.equal(nav.lastCourseId,1);assert.equal(nav.lastChapterNumber,n);assert.equal(nav.catalogVersion,9);
+  const nav=study.cloud.get('users/student/progress/navigation');assert.equal(nav.lastCourseId,1);assert.equal(nav.lastChapterNumber,n);assert.equal(nav.catalogVersion,10);
   const restored=harness(chapterFiles(n),{local:home.local,cloud:home.cloud});await restored.signIn({uid:'student'});
   assert.equal(restored.run('P.readingItem'),4);assert.equal(restored.run('progressPercent()'),10);
   const catalog=harness(appFiles,{local:home.local,cloud:home.cloud,search:'?course=1'});await catalog.signIn({uid:'student'});
