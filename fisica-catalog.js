@@ -110,7 +110,7 @@ window.PHYSICS_CHAPTERS=[
     "sourceLabel": "Capítulo 1",
     "intro": "Comprende las magnitudes físicas, sus unidades y dimensiones, y aplica la homogeneidad dimensional para analizar ecuaciones.",
     "format": "custom",
-    "items": 9,
+    "items": 8,
     "practiceCount": 10,
     "itemLabel": "problemas",
     "assessmentFormat": "practice-10",

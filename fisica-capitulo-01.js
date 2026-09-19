@@ -9,14 +9,15 @@ const escapeHTML=value=>String(value??'').replaceAll('&','&amp;').replaceAll('<'
 let user=null,db=null,cloudReady=false,saveChain=Promise.resolve(),saveVersion=0,authEpoch=0;
 let saveMessage='',notice='',P=emptyProgress(),saveTimer=null;
 
-function emptyProgress(){return {studyMode:null,currentItem:0,readingItem:0,contentVersion:2,activeTab:'theory',practice10:window.ChapterPractice.normalize(CHAPTER_ID),updatedMs:0};}
+function emptyProgress(){return {studyMode:null,currentItem:0,readingItem:0,contentVersion:3,activeTab:'theory',practice10:window.ChapterPractice.normalize(CHAPTER_ID),updatedMs:0};}
 
 
 
 function normalized(data={}){
  const p={...data,...emptyProgress()};
  const legacyLessons=['dim-magnitudes','dim-dimensiones','dim-reglas','dim-homogeneidad','dim-homogeneidad','dim-exponentes'];
- const lessonIndex=index=>Number.isInteger(index)?Math.max(0,Math.min(LESSONS.length-1,Number(data.contentVersion)>=2?index:LESSONS.findIndex(x=>x.id===legacyLessons[index]))):0;
+ // Version 3 removes the opening lesson from version 2; keep bookmarks on the same topic.
+ const lessonIndex=index=>Number.isInteger(index)?Math.max(0,Math.min(LESSONS.length-1,Number(data.contentVersion)>=3?index:Number(data.contentVersion)===2?index-1:LESSONS.findIndex(x=>x.id===legacyLessons[index]))):0;
  p.studyMode=window.StudyMode?.get(user?.uid)||(['free','progressive'].includes(data.studyMode)?data.studyMode:null);
  p.currentItem=lessonIndex(data.currentItem);p.readingItem=Number.isInteger(data.readingItem)?lessonIndex(data.readingItem):p.currentItem;
  p.activeTab=data.activeTab==='exam'?'practice':['theory','examples','practice','resources'].includes(data.activeTab)?data.activeTab:'theory';
@@ -84,7 +85,6 @@ function updateLab(n){
   output.textContent=n;el.innerHTML=`<div class="equation">\\[[at^{${n}}]=LT^{${n-2}}\\]</div><p>${n===1?'✓ Con n = 1, ambos términos tienen dimensión de velocidad.':'Todavía no coincide con '+String.raw`\(LT^{-1}\)`+'. Prueba otro exponente.'}</p>`;renderMath();
 }
 const DIMENSIONAL_FIGURES={
- 'dim-fisica':[['fenomenos','Fenómenos físicos: fusión del hielo, deformación de un resorte y reflexión de la luz.']],
  'dim-magnitudes':[['medicion','Medir es comparar una magnitud con una unidad de referencia.']],
  'dim-naturaleza':[['escalares-vectoriales','Dos móviles pueden tener igual rapidez y velocidades con direcciones distintas.']],
  'dim-dimensiones':[['dimensiones-geometricas','El área contiene dos factores de longitud; el volumen contiene tres.']],
@@ -93,7 +93,7 @@ const DIMENSIONAL_FIGURES={
 };
 function dimensionalFigure(name,caption){
  const src='assets/fisica-capitulo-01/'+name+'.svg';
- const heights={fenomenos:600,medicion:760,'escalares-vectoriales':465,'dimensiones-geometricas':665,'magnitudes-derivadas':805,homogeneidad:500,'mapa-magnitudes':940};
+ const heights={medicion:760,'escalares-vectoriales':465,'dimensiones-geometricas':665,'magnitudes-derivadas':805,homogeneidad:500,'mapa-magnitudes':940};
  return `<figure class="dimensional-figure"><a href="${src}" target="_blank" rel="noopener" aria-label="Ampliar gráfico: ${escapeHTML(caption)}"><img src="${src}" width="760" height="${heights[name]}" alt="${escapeHTML(caption)}" loading="lazy"></a><figcaption>${escapeHTML(caption)} <a href="${src}" target="_blank" rel="noopener">Ampliar gráfico</a></figcaption></figure>`;
 }
 function lessonFigures(id){return (DIMENSIONAL_FIGURES[id]||[]).map(([name,caption])=>dimensionalFigure(name,caption)).join('');}

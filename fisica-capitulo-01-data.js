@@ -1,27 +1,8 @@
 window.DIMENSIONAL_CONTENT = {
   "title": "Análisis Dimensional",
-  "intro": "Aprende a describir y medir fenómenos, clasificar magnitudes y analizar las dimensiones de una ecuación. La teoría incluye aplicaciones explicadas, un mapa conceptual y 25 problemas resueltos para estudiar antes de la práctica.",
+  "intro": "Aprende a medir y clasificar magnitudes físicas y analizar las dimensiones de una ecuación. La teoría incluye aplicaciones explicadas, un mapa conceptual y 25 problemas resueltos para estudiar antes de la práctica.",
   "sourceNote": "Fuente: Magnitudes físicas, Colección Esencial, Lumbreras Editores (material proporcionado). Contenido adaptado con notación revisada y aclaraciones sobre el alcance del análisis dimensional.",
   "lessons": [
-    {
-      "id": "dim-fisica",
-      "title": "La física y los fenómenos físicos",
-      "subtitle": "Observar, describir y medir",
-      "goal": "Distingue una descripción cualitativa de una cuantitativa y reconoce fenómenos físicos cotidianos.",
-      "body": "<p>La <strong>física</strong> es una ciencia natural que estudia la materia, la energía, sus interacciones y los cambios que ocurren en el espacio y el tiempo. Construye modelos, realiza mediciones y contrasta sus explicaciones mediante observaciones y experimentos. Su campo abarca desde las partículas hasta los cuerpos celestes.</p><p>Sus conocimientos permiten desarrollar motores, medios de transporte, comunicaciones, circuitos electrónicos y técnicas de diagnóstico por imágenes. En todos estos casos necesitamos describir los fenómenos y comparar medidas.</p><h4>¿Qué es un fenómeno físico?</h4><p>En los ejemplos cotidianos de este capítulo, es un cambio de estado, forma, movimiento o temperatura que conserva la identidad química de la sustancia. Un fenómeno químico, en cambio, produce una transformación de su composición.</p><div class=\"table-scroll\"><table><thead><tr><th>Fenómeno</th><th>¿Qué cambia?</th><th>Observación</th></tr></thead><tbody><tr><td>Fusión del hielo</td><td>Estado sólido a líquido</td><td>La sustancia continúa siendo agua.</td></tr><tr><td>Deformación de un resorte</td><td>Forma o longitud</td><td>El material se deforma sin cambiar su composición.</td></tr><tr><td>Golpe a un balón</td><td>Velocidad y dirección</td><td>Una interacción modifica su movimiento.</td></tr><tr><td>Reflexión de la luz</td><td>Dirección de propagación</td><td>La luz reflejada permite observar nuestro entorno.</td></tr><tr><td>Choque de canicas</td><td>Movimiento y energía interna</td><td>Parte de la energía puede transformarse en calor, sonido y deformación.</td></tr><tr><td>Vaporización del agua</td><td>Estado líquido a gaseoso</td><td>El agua hierve aproximadamente a 100 °C bajo presión atmosférica normal; la temperatura de ebullición depende de la presión.</td></tr></tbody></table></div><p>La oxidación de un clavo, la combustión de madera, la fermentación y la cocción de alimentos son ejemplos de transformaciones químicas. La diferencia no depende de si el cambio es rápido, visible o reversible, sino de lo que ocurre con la composición.</p><h4>De la observación a la medida</h4><p>Decir «el balón se mueve rápido» es una descripción <strong>cualitativa</strong>. Indicar «recorre 12 m en 2 s» incorpora información <strong>cuantitativa</strong>. Para medir, calcular y comparar usamos magnitudes físicas.</p>",
-      "key": "Medir convierte una observación en información que podemos comparar y poner a prueba.",
-      "examples": [
-        {
-          "title": "Una misma observación, dos descripciones",
-          "question": "Una esfera cae y llega al piso. ¿Qué información puede medirse?",
-          "steps": [
-            "La altura inicial y la distancia recorrida se expresan en unidades de longitud, como el metro.",
-            "La duración de la caída se expresa en segundos.",
-            "La masa se expresa en kilogramos. Estas medidas permiten formular preguntas y comprobar modelos del movimiento."
-          ]
-        }
-      ]
-    },
     {
       "id": "dim-magnitudes",
       "title": "Magnitudes físicas y su clasificación por origen",
