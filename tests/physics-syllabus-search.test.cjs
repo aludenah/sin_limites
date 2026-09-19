@@ -15,7 +15,7 @@ async function searchAndSyllabus(){
  assert.equal(h.run('window.PHYSICS_SYLLABUS[14].number'),15);assert.equal(h.run('PHYSICS_CHAPTERS[0].topicIndex'),14);
  const html=h.elements.get('app').innerHTML;
  assert.ok(html.indexOf('id="searchInput"')<html.indexOf('class="course-card'));
- assert.ok(html.indexOf('id="searchInput"')<html.indexOf('Sigue desde donde te quedaste'));
+ assert.doesNotMatch(html,/Sigue desde donde te quedaste/);
  assert.match(html,/<label for="searchInput"[^>]*>Buscar curso<\/label>/);assert.match(html,/type="search"/);
  h.run("document.getElementById('searchInput').value='fisica'");const input=h.elements.get('searchInput'),initialMarkup=h.elements.get('app').innerHTML;
  for(const [query,ids] of [['fisica',[16]],['FÍSICA',[16]],['  algebra  ',[5]],['educacion civica',[10]],['peru',[11]],['raz mat',[2]],['RM',[2]],['razonamiento',[1,2]],['noexiste',[]]]){
