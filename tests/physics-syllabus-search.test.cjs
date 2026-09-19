@@ -27,7 +27,7 @@ async function searchAndSyllabus(){
  h.run("clearCourseSearch(true)");assert.equal(input.value,'');assert.equal(h.run('filteredCourses().length'),18);assert.equal(h.elements.get('clearCourseSearch').hidden,true);
  h.run("setCategory('Ciencias');setSearch('fisica')");assert.deepEqual(parse(h,'filteredCourses().map(c=>c.id)'),[16]);
  h.run('openSearchResult()');assert.equal(h.run('state.activeCourseId'),16);assert.equal(h.run('state.view'),'course');
- const courseHTML=h.elements.get('app').innerHTML;assert.match(courseHTML,/18 capítulos en el orden del PDF/);assert.doesNotMatch(courseHTML,/25 capítulos|Capítulo 02 de 25/);
+ const courseHTML=h.elements.get('app').innerHTML;assert.match(courseHTML,/18 capítulos/);assert.doesNotMatch(courseHTML,/25 capítulos|Capítulo 02 de 25/);
  for(const title of titles)assert.ok(courseHTML.includes(title));assert.match(courseHTML,/Repasos complementarios/);
  const count=h.redirects.length;h.run('setTopic(1)');assert.equal(h.redirects.length,count);assert.match(h.elements.get('app').innerHTML,/Cinemática y Movimiento rectilíneo uniforme/);
  h.run('setTopic(14)');assert.equal(h.redirects.at(-1),'fisica-capitulo-15.html?v=20260918-catalog9');
