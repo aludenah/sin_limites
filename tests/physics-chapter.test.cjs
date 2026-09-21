@@ -14,21 +14,44 @@ async function sourceContentAndResume(){
  assert.equal(cloud.get(record).chapterNumber,1);assert.equal(cloud.get(record).contentVersion,6);
  assert.deepEqual(clone(h.run('LESSONS.map(lesson=>lesson.id)')),lessonIds);
  assert.equal(h.run("LESSONS.some(lesson=>['dim-fisica','dim-naturaleza','dim-exponentes'].includes(lesson.id))"),false);
- assert.equal(h.run('CONTENT.workedExamples.length'),25);
+ assert.equal(h.run('CONTENT.workedExamples.length'),10);
  for(let i=0;i<4;i++){
   h.run(`goLesson(${i})`);const rendered=h.elements.get('chapter-app').innerHTML;
   assert.ok(rendered.includes(h.run(`LESSONS[${i}].title`)));
   assert.match(rendered,new RegExp(`Tema ${i+1} de 4`));
  }
  h.run("goTab('examples')");const html=h.elements.get('chapter-app').innerHTML;
- assert.equal((html.match(/class="example worked-example"/g)||[]).length,25);
- assert.equal((html.match(/Ver solución paso a paso/g)||[]).length,25);
+ assert.equal((html.match(/class="example worked-example"/g)||[]).length,10);
+ assert.equal((html.match(/Ver solución paso a paso/g)||[]).length,10);
  assert.doesNotMatch(html,/<details\s+open/,'Worked solutions stay collapsed until the student opens them');
+ assert.deepEqual(clone(h.run('CONTENT.workedExamples.map(example=>example.number)')),Array.from({length:10},(_,i)=>i+1),'Solved problems are numbered 1–10');
+ assert.deepEqual([...html.matchAll(/id="dimensional-resuelto-(\d+)"/g)].map(match=>Number(match[1])),Array.from({length:10},(_,i)=>i+1));
+ assert.match(html,/Resueltos · 10/);assert.match(html,/<h2>10 problemas resueltos<\/h2>/);
+ assert.doesNotMatch(html,/Materiales|data-value="resources"/,'The Materials tab is removed');
+ const before=clone(h.run('P'));h.run("goTab('resources')");
+ assert.deepEqual(clone(h.run('P')),before,'A removed tab cannot change the current view or progress');
  await h.run('persist()');
  const restored=harness(files,{local,cloud});await restored.signIn({uid:'student'});
  assert.equal(restored.run('P.activeTab'),'examples');assert.equal(restored.run('LESSONS[P.currentItem].id'),'dim-homogeneidad');
  assert.equal(restored.run('progressPercent()'),10,'Reading solved problems does not award practice mastery');
  console.log('PASS: source theory and solved-problem access, legacy reading migration, stable bookmarks and unchanged achievements.');
+}
+async function removedMaterialsMigration(){
+ const id='fisica-capitulo-01',record='users/student/progress/'+id,key='sin-limites:student:'+id;
+ for(const source of ['local','cloud']){
+  const progress={contentVersion:6,currentItem:2,readingItem:3,activeTab:'resources',updatedMs:10,
+   practice10:{version:1,mastered:['p01'],attempts:{p01:3}},examBest:8,examAttempts:2,itemScores:{item_4:7}};
+  const local=new Map([['sin-limites:student:study-mode',JSON.stringify({mode:'free',updatedMs:1})]]),cloud=new Map();
+  if(source==='local')local.set(key,JSON.stringify({progress,pending:true}));else cloud.set(record,progress);
+  const h=harness(files,{local,cloud});await h.signIn({uid:'student'});
+  assert.equal(h.run('P.activeTab'),'theory',source+' Materials bookmark resumes in theory');
+  for(const field of ['currentItem','readingItem','examBest','examAttempts','itemScores'])assert.deepEqual(clone(h.run('P.'+field)),progress[field],source+' preserves '+field);
+  assert.deepEqual(clone(h.run('P.practice10.mastered')),progress.practice10.mastered);assert.equal(h.run('P.practice10.attempts.p01'),3);
+  assert.equal(h.run('progressPercent()'),10);
+  await h.run('persist()');
+  for(const saved of [JSON.parse(local.get(key)).progress,cloud.get(record)])assert.equal(saved.activeTab,'theory','The corrected tab is saved locally and in the cloud');
+ }
+ console.log('PASS: removed Materials bookmarks resume in theory without changing reading positions, practice or grades.');
 }
 async function removedLessonMigration(){
  const id='fisica-capitulo-01',record='users/student/progress/'+id;
@@ -158,4 +181,4 @@ async function mergedContent(){
  assert.equal(h.run('P.activeTab'),'practice');assert.equal(h.run('progressPercent()'),progress,'Entering practice does not award mastery');
  console.log('PASS: merged dimensions, deductions and rules retain two groups with three ordered examples each, six interactive derivations, activity order and four-topic navigation.');
 }
-sourceContentAndResume().then(removedLessonMigration).then(mergedTopicMigration).then(mergedContent).then(()=>testChapters(['fisica-capitulo-01'])).catch(error=>{console.error(error);process.exitCode=1;});
+sourceContentAndResume().then(removedMaterialsMigration).then(removedLessonMigration).then(mergedTopicMigration).then(mergedContent).then(()=>testChapters(['fisica-capitulo-01'])).catch(error=>{console.error(error);process.exitCode=1;});

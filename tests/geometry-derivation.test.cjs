@@ -189,7 +189,7 @@ async function chapterIntegration(){
  h.run("goTab('practice')");click('geometry-derivation-reset');assert.equal(markup(),retained,'Practice controls cannot reset the theory activity');
  h.run("goTab('theory')");assert.equal(markup(),retained);
  assert.deepEqual(clone(h.run('P.practice10')),progress.practice10);
- assert.equal(h.run('P.contentVersion'),6);assert.equal(h.run('LESSONS.length'),4);assert.equal(h.run('CONTENT.workedExamples.length'),25);
+ assert.equal(h.run('P.contentVersion'),6);assert.equal(h.run('LESSONS.length'),4);assert.equal(h.run('CONTENT.workedExamples.length'),10);
  await h.signIn(null);assert.equal(markup(),initial,'Signing out resets the interactive derivation');
  click('geometry-derivation-next');assert.equal(markup(),initial);
  h.run("window.StudyMode.choose('other','free')");await h.signIn({uid:'other'});h.run('goLesson(2)');

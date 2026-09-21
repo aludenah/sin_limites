@@ -132,7 +132,7 @@ async function integration(){
  h.run("goTab('practice')");click({action:'dimension-game-start'});assert.match(gameHTML(),/Ronda 2 de 10/);
  h.run("goTab('theory')");assert.match(app.innerHTML,/Ronda 2 de 10/);
  assert.deepEqual(clone(h.run('P.practice10')),practiceBefore,'Practice mastery stays independent from the game');
- assert.equal(h.run('P.contentVersion'),6);assert.equal(h.run('LESSONS.length'),4);assert.equal(h.run('CONTENT.workedExamples.length'),25);
+ assert.equal(h.run('P.contentVersion'),6);assert.equal(h.run('LESSONS.length'),4);assert.equal(h.run('CONTENT.workedExamples.length'),10);
  await h.signIn(null);assert.match(gameHTML(),/Comenzar juego/);
  click({action:'dimension-game-start'});assert.match(gameHTML(),/Comenzar juego/);
  h.run("window.StudyMode.choose('other','free')");await h.signIn({uid:'other'});h.run('goLesson(2)');

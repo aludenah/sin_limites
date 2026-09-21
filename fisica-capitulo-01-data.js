@@ -1,6 +1,6 @@
 window.DIMENSIONAL_CONTENT = {
   "title": "Análisis Dimensional",
-  "intro": "Aprende a medir y clasificar magnitudes físicas y analizar las dimensiones de una ecuación. La teoría incluye aplicaciones explicadas, un mapa conceptual y 25 problemas resueltos para estudiar antes de la práctica.",
+  "intro": "Aprende a medir y clasificar magnitudes físicas y analizar las dimensiones de una ecuación. La teoría incluye aplicaciones explicadas y 10 problemas resueltos de deducción dimensional para estudiar antes de la práctica.",
   "sourceNote": "Fuente: Magnitudes físicas, Colección Esencial, Lumbreras Editores (material proporcionado). Contenido adaptado con notación revisada y aclaraciones sobre el alcance del análisis dimensional.",
   "lessons": [
     {
@@ -97,74 +97,6 @@ window.DIMENSIONAL_CONTENT = {
   ],
   "workedExamples": [
     {
-      "title": "Fenómenos físicos y químicos",
-      "question": "Indica si son fenómenos físicos (F) o químicos (Q): I. Dilatación del mercurio en un termómetro. II. Oxidación de un clavo. III. Freír pescado. IV. Evaporación del agua del mar.",
-      "steps": [
-        "I. <strong>Físico.</strong> La dilatación cambia el volumen del mercurio sin cambiar su identidad química.",
-        "II. <strong>Químico.</strong> El hierro reacciona y se forman productos de oxidación.",
-        "III. <strong>Químico.</strong> Durante la cocción ocurren transformaciones químicas en los alimentos.",
-        "IV. <strong>Físico.</strong> La evaporación cambia el estado del agua.",
-        "Respuesta: <strong>F, Q, Q, F.</strong>"
-      ],
-      "sourcePage": 18,
-      "number": 1
-    },
-    {
-      "title": "Reconoce una magnitud derivada",
-      "question": "¿Cuál no es una magnitud fundamental del SI: masa, tiempo, longitud, temperatura o área?",
-      "steps": [
-        "Masa, tiempo, longitud y temperatura termodinámica son magnitudes base del SI.",
-        "El área se obtiene mediante el producto de longitudes, de modo que \\([A]=L^2\\).",
-        "Respuesta: <strong>área.</strong>"
-      ],
-      "sourcePage": 18,
-      "number": 2
-    },
-    {
-      "title": "Cuenta las magnitudes derivadas",
-      "question": "¿Cuántas no son fundamentales en el SI: presión, área, temperatura, longitud, intensidad de corriente y fuerza?",
-      "steps": [
-        "Temperatura, longitud e intensidad de corriente son magnitudes base.",
-        "Presión, área y fuerza se expresan en función de magnitudes base.",
-        "Respuesta: <strong>3 magnitudes derivadas.</strong>"
-      ],
-      "sourcePage": 19,
-      "number": 3
-    },
-    {
-      "title": "Escalares en una lista",
-      "question": "¿Cuántas son escalares: distancia, velocidad, masa, temperatura y aceleración?",
-      "steps": [
-        "Distancia, masa y temperatura no necesitan una dirección para quedar descritas.",
-        "Velocidad y aceleración son vectoriales.",
-        "Respuesta: <strong>3 escalares.</strong>"
-      ],
-      "sourcePage": 19,
-      "number": 4
-    },
-    {
-      "title": "La excepción vectorial",
-      "question": "¿Cuál no es vectorial: aceleración, fuerza, velocidad, desplazamiento o volumen?",
-      "steps": [
-        "Aceleración, fuerza, velocidad y desplazamiento necesitan dirección y sentido.",
-        "El volumen se expresa con un valor numérico y una unidad, sin dirección.",
-        "Respuesta: <strong>volumen.</strong>"
-      ],
-      "sourcePage": 19,
-      "number": 5
-    },
-    {
-      "title": "Escalares y vectoriales",
-      "question": "Clasifica densidad, fuerza de tensión, trabajo, tiempo, velocidad y aceleración. Indica cuántas son escalares y cuántas vectoriales.",
-      "steps": [
-        "Escalares: densidad, trabajo y tiempo.",
-        "Vectoriales: fuerza de tensión, velocidad y aceleración.",
-        "Respuesta: <strong>3 escalares y 3 vectoriales.</strong>"
-      ],
-      "sourcePage": 19,
-      "number": 6
-    },
-    {
       "title": "Producto de área y volumen",
       "question": "Si \\(x=AB\\), A es área y B es volumen, determina \\([x]\\).",
       "steps": [
@@ -173,7 +105,7 @@ window.DIMENSIONAL_CONTENT = {
         "Respuesta: \\(\\boxed{[x]=L^5}\\)."
       ],
       "sourcePage": 20,
-      "number": 7
+      "number": 1
     },
     {
       "title": "Masa, velocidad y fuerza",
@@ -184,41 +116,7 @@ window.DIMENSIONAL_CONTENT = {
         "Respuesta: \\(\\boxed{[A]=L}\\)."
       ],
       "sourcePage": 20,
-      "number": 8
-    },
-    {
-      "title": "Un cociente de productos",
-      "question": "Calcula \\([B]\\) en \\(B=Fd^2/(mv^2)\\), con F fuerza, d distancia, m masa y v velocidad.",
-      "steps": [
-        "<div class=\"equation\">\\[[Fd^2]=(MLT^{-2})L^2=ML^3T^{-2}\\]</div>",
-        "<div class=\"equation\">\\[[mv^2]=M(LT^{-1})^2=ML^2T^{-2}\\]</div>",
-        "<div class=\"equation\">\\[[B]=\\frac{ML^3T^{-2}}{ML^2T^{-2}}=L\\]</div>",
-        "Respuesta: \\(\\boxed{[B]=L}\\)."
-      ],
-      "sourcePage": 20,
-      "number": 9
-    },
-    {
-      "title": "Exponente de una base numérica",
-      "question": "En la expresión \\(\\pi^{km^2/t}\\), m es masa y t tiempo. Halla la dimensión de k para que el exponente sea adimensional.",
-      "steps": [
-        "La base \\(\\pi\\) es numérica, de modo que el exponente debe ser un número sin dimensiones.",
-        "<div class=\"equation\">\\[\\left[\\frac{km^2}{t}\\right]=1\\quad\\Rightarrow\\quad\\frac{[k]M^2}{T}=1\\]</div>",
-        "<div class=\"equation\">\\[\\boxed{[k]=M^{-2}T}\\]</div>"
-      ],
-      "sourcePage": 20,
-      "number": 10
-    },
-    {
-      "title": "Una razón trigonométrica elevada a una potencia",
-      "question": "En \\((\\sec19^\\circ)^{RF/a}\\), F es fuerza y a aceleración. Determina \\([R]\\) para que el exponente sea adimensional.",
-      "steps": [
-        "La secante de 19° es un número. Por ello, \\([RF/a]=1\\).",
-        "<div class=\"equation\">\\[\\frac{[R](MLT^{-2})}{LT^{-2}}=1\\quad\\Rightarrow\\quad[R]M=1\\]</div>",
-        "<div class=\"equation\">\\[\\boxed{[R]=M^{-1}}\\]</div>"
-      ],
-      "sourcePage": 21,
-      "number": 11
+      "number": 2
     },
     {
       "title": "Coeficiente de una fuerza resistente",
@@ -230,29 +128,7 @@ window.DIMENSIONAL_CONTENT = {
         "En una expresión de fuerza dirigida, el signo requiere además una elección de eje y una interpretación física."
       ],
       "sourcePage": 21,
-      "number": 12
-    },
-    {
-      "title": "Un factor numérico bajo una raíz",
-      "question": "Si \\(E=\\sqrt2\\,kv^2\\), E es energía y v velocidad, determina \\([k]\\). La raíz afecta únicamente al número 2.",
-      "steps": [
-        "El factor \\(\\sqrt2\\) es adimensional. Por homogeneidad, \\([E]=[k][v]^2\\).",
-        "<div class=\"equation\">\\[ML^2T^{-2}=[k](LT^{-1})^2\\]</div>",
-        "<div class=\"equation\">\\[\\boxed{[k]=M}\\]</div>"
-      ],
-      "sourcePage": 21,
-      "number": 13
-    },
-    {
-      "title": "Encuentra un exponente",
-      "question": "En \\(d=v^x/(a\\sin\\theta)\\), d es distancia, v velocidad y a aceleración. Si \\(\\sin\\theta\\ne0\\), ¿cuál es x?",
-      "steps": [
-        "<div class=\"equation\">\\[L=\\frac{(LT^{-1})^x}{LT^{-2}}=L^{x-1}T^{2-x}\\]</div>",
-        "Compara exponentes: para L, \\(x-1=1\\); para T, \\(2-x=0\\).",
-        "Ambas condiciones dan \\(\\boxed{x=2}\\)."
-      ],
-      "sourcePage": 22,
-      "number": 14
+      "number": 3
     },
     {
       "title": "Fuerza por tiempo",
@@ -263,7 +139,7 @@ window.DIMENSIONAL_CONTENT = {
         "<div class=\"equation\">\\[\\boxed{[B]=LT^{-1}}\\]</div>"
       ],
       "sourcePage": 22,
-      "number": 15
+      "number": 4
     },
     {
       "title": "Área y densidad en una suma",
@@ -275,18 +151,19 @@ window.DIMENSIONAL_CONTENT = {
         "Respuesta: \\(\\boxed{[\\alpha]=L,\\quad[\\beta]=M^{-1}L^6}\\)."
       ],
       "sourcePage": 22,
-      "number": 16
+      "number": 5
     },
     {
-      "title": "Una suma dentro de un cociente",
-      "question": "Si \\(R=(A+B)\\sin\\alpha/C^2\\), A es velocidad y C densidad. Determina \\([R]\\).",
+      "title": "Trabajo, altura y potencia",
+      "question": "En \\(W=AgH-BP\\), W es trabajo, g aceleración de la gravedad, H altura y P potencia. Determina \\([A]\\) y \\([B]\\).",
       "steps": [
-        "Para que \\(A+B\\) sea admisible, \\([B]=[A]=LT^{-1}\\). La suma conserva esa dimensión.",
-        "<div class=\"equation\">\\[[R]=\\frac{[A+B][\\sin\\alpha]}{[C]^2}=\\frac{LT^{-1}}{(ML^{-3})^2}\\]</div>",
-        "<div class=\"equation\">\\[\\boxed{[R]=M^{-2}L^7T^{-1}}\\]</div>"
+        "Por homogeneidad, \\([W]=[A][g][H]=[B][P]\\).",
+        "<div class=\"equation\">\\[[A]=\\frac{ML^2T^{-2}}{(LT^{-2})L}=M\\]</div>",
+        "<div class=\"equation\">\\[[B]=\\frac{ML^2T^{-2}}{ML^2T^{-3}}=T\\]</div>",
+        "Respuesta: \\(\\boxed{[A]=M,\\quad[B]=T}\\)."
       ],
-      "sourcePage": 23,
-      "number": 17
+      "sourcePage": 26,
+      "number": 6
     },
     {
       "title": "Dimensiones dentro de una raíz",
@@ -298,18 +175,7 @@ window.DIMENSIONAL_CONTENT = {
         "<div class=\"equation\">\\[\\boxed{[B][A]=L^2T^{-3}}\\]</div>"
       ],
       "sourcePage": 23,
-      "number": 18
-    },
-    {
-      "title": "Coeficientes en una fuerza",
-      "question": "La ecuación \\(F=ka+mv/b\\) es homogénea. F es fuerza, a aceleración, m masa y v velocidad. Obtén \\([k]\\) y \\([b]\\), e indica con qué magnitudes son compatibles.",
-      "steps": [
-        "<div class=\"equation\">\\[[k]=\\frac{[F]}{[a]}=\\frac{MLT^{-2}}{LT^{-2}}=M\\]</div>",
-        "<div class=\"equation\">\\[[b]=\\frac{[m][v]}{[F]}=\\frac{M(LT^{-1})}{MLT^{-2}}=T\\]</div>",
-        "Respuesta: <strong>k tiene dimensión de masa y b de tiempo.</strong> Su interpretación concreta depende del modelo físico."
-      ],
-      "sourcePage": 24,
-      "number": 19
+      "number": 7
     },
     {
       "title": "Energía de un sistema bloque–resorte",
@@ -322,44 +188,18 @@ window.DIMENSIONAL_CONTENT = {
         "<div class=\"equation\">\\[\\boxed{[ABC]=M(MT^{-2})(MLT^{-2})=M^3LT^{-4}}\\]</div>"
       ],
       "sourcePage": 24,
-      "number": 20
+      "number": 8
     },
     {
-      "title": "Amplitud de una oscilación",
-      "question": "La amplitud A de un movimiento cumple \\(A=\\sqrt{B^2+(v/W)^2}\\), donde A es longitud y v velocidad. Determina \\([B][W]\\).",
+      "title": "Exponente de una base numérica",
+      "question": "En la expresión \\(\\pi^{km^2/t}\\), m es masa y t tiempo. Halla la dimensión de k para que el exponente sea adimensional.",
       "steps": [
-        "Eleva al cuadrado: \\(A^2=B^2+(v/W)^2\\).",
-        "<div class=\"equation\">\\[[B]^2=[A]^2=L^2\\quad\\Rightarrow\\quad[B]=L\\]</div>",
-        "<div class=\"equation\">\\[\\frac{[v]^2}{[W]^2}=L^2\\quad\\Rightarrow\\quad[W]^2=\\frac{L^2T^{-2}}{L^2}=T^{-2}\\]</div>",
-        "Por ello, \\([W]=T^{-1}\\). En este problema W no representa trabajo: se trata de una constante por determinar.",
-        "<div class=\"equation\">\\[\\boxed{[B][W]=LT^{-1}}\\]</div>"
+        "La base \\(\\pi\\) es numérica, de modo que el exponente debe ser un número sin dimensiones.",
+        "<div class=\"equation\">\\[\\left[\\frac{km^2}{t}\\right]=1\\quad\\Rightarrow\\quad\\frac{[k]M^2}{T}=1\\]</div>",
+        "<div class=\"equation\">\\[\\boxed{[k]=M^{-2}T}\\]</div>"
       ],
-      "sourcePage": 24,
-      "number": 21
-    },
-    {
-      "title": "Exponentes de una energía cinética",
-      "question": "Una energía cinética se propone como \\(E=km^av^b\\), con m masa, v velocidad y k una constante adimensional. Determina a y b.",
-      "steps": [
-        "<div class=\"equation\">\\[ML^2T^{-2}=M^a(LT^{-1})^b=M^aL^bT^{-b}\\]</div>",
-        "Para M: \\(a=1\\). Para L: \\(b=2\\). La condición temporal, \\(-b=-2\\), coincide.",
-        "Respuesta: \\(\\boxed{a=1,\\quad b=2}\\).",
-        "La forma es \\(E=kmv^2\\); el análisis dimensional no permite obtener el valor clásico \\(k=1/2\\)."
-      ],
-      "sourcePage": 25,
-      "number": 22
-    },
-    {
-      "title": "Aceleración centrípeta",
-      "question": "En un movimiento circular de radio R, se propone \\(a_{\\mathrm{cp}}=kv^aR^b\\), con rapidez v y k adimensional. Determina los exponentes a y b.",
-      "steps": [
-        "<div class=\"equation\">\\[LT^{-2}=(LT^{-1})^aL^b=L^{a+b}T^{-a}\\]</div>",
-        "Para T: \\(-a=-2\\), entonces \\(a=2\\).",
-        "Para L: \\(a+b=1\\), entonces \\(2+b=1\\), de donde \\(b=-1\\).",
-        "Respuesta: \\(\\boxed{a=2,\\quad b=-1}\\), compatible con \\(a_{\\mathrm{cp}}=kv^2/R\\)."
-      ],
-      "sourcePage": 25,
-      "number": 23
+      "sourcePage": 20,
+      "number": 9
     },
     {
       "title": "Logaritmo y homogeneidad",
@@ -371,19 +211,7 @@ window.DIMENSIONAL_CONTENT = {
         "<div class=\"equation\">\\[\\boxed{[y]=L^2T}\\]</div>"
       ],
       "sourcePage": 26,
-      "number": 24
-    },
-    {
-      "title": "Trabajo, altura y potencia",
-      "question": "En \\(W=AgH-BP\\), W es trabajo, g aceleración de la gravedad, H altura y P potencia. Determina \\([A]\\) y \\([B]\\).",
-      "steps": [
-        "Por homogeneidad, \\([W]=[A][g][H]=[B][P]\\).",
-        "<div class=\"equation\">\\[[A]=\\frac{ML^2T^{-2}}{(LT^{-2})L}=M\\]</div>",
-        "<div class=\"equation\">\\[[B]=\\frac{ML^2T^{-2}}{ML^2T^{-3}}=T\\]</div>",
-        "Respuesta: \\(\\boxed{[A]=M,\\quad[B]=T}\\)."
-      ],
-      "sourcePage": 26,
-      "number": 25
+      "number": 10
     }
   ],
   "derivedTable": "<div class=\"table-scroll\"><table><thead><tr><th>Magnitud derivada</th><th>Relación de referencia</th><th>Dimensión</th><th>Unidad SI</th></tr></thead><tbody><tr><td>Área</td><td>\\(A=bh\\)</td><td>\\(L^2\\)</td><td>m²</td></tr><tr><td>Volumen</td><td>\\(V=abc\\)</td><td>\\(L^3\\)</td><td>m³</td></tr><tr><td>Densidad</td><td>\\(\\rho=m/V\\)</td><td>\\(ML^{-3}\\)</td><td>kg/m³</td></tr><tr><td>Rapidez y velocidad</td><td>\\(v=d/t\\) (rapidez constante)</td><td>\\(LT^{-1}\\)</td><td>m/s</td></tr><tr><td>Aceleración</td><td>\\(a=\\Delta v/\\Delta t\\)</td><td>\\(LT^{-2}\\)</td><td>m/s²</td></tr><tr><td>Fuerza</td><td>\\(F=ma\\)</td><td>\\(MLT^{-2}\\)</td><td>N</td></tr><tr><td>Trabajo y energía</td><td>\\(W=Fd\\) (fuerza paralela)</td><td>\\(ML^2T^{-2}\\)</td><td>J</td></tr><tr><td>Calor</td><td>\\(Q\\): energía transferida</td><td>\\(ML^2T^{-2}\\)</td><td>J</td></tr><tr><td>Potencia</td><td>\\(\\mathcal P=W/t\\)</td><td>\\(ML^2T^{-3}\\)</td><td>W</td></tr><tr><td>Presión</td><td>\\(p=F_\\perp/A\\)</td><td>\\(ML^{-1}T^{-2}\\)</td><td>Pa</td></tr><tr><td>Impulso</td><td>\\(J_F=F\\Delta t\\) (fuerza constante)</td><td>\\(MLT^{-1}\\)</td><td>N·s</td></tr><tr><td>Cantidad de movimiento</td><td>\\(p_m=mv\\)</td><td>\\(MLT^{-1}\\)</td><td>kg·m/s</td></tr><tr><td>Frecuencia</td><td>\\(f=1/\\tau\\)</td><td>\\(T^{-1}\\)</td><td>Hz</td></tr><tr><td>Carga eléctrica</td><td>\\(q=it\\) (corriente constante)</td><td>\\(IT\\)</td><td>C</td></tr><tr><td>Velocidad angular</td><td>\\(\\omega=\\Delta\\theta/\\Delta t\\)</td><td>\\(T^{-1}\\)</td><td>rad/s</td></tr><tr><td>Torque o momento de una fuerza</td><td>\\(\\tau_F=Fd_\\perp\\)</td><td>\\(ML^2T^{-2}\\)</td><td>N·m</td></tr><tr><td>Constante elástica</td><td>\\(k=F/x\\)</td><td>\\(MT^{-2}\\)</td><td>N/m</td></tr></tbody></table></div>",

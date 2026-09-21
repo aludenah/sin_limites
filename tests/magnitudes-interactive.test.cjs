@@ -129,7 +129,7 @@ async function chapterIntegration(){
  assert.equal((h.run('lessonBody(LESSONS[0])').match(/<table\b/g)||[]).length,2,'Both first-topic tables are visible in full');
  assert.doesNotMatch(rendered,/magnitude-select|Selecciona una magnitud para descubrir/);
  assert.equal(h.run('LESSONS[0].examples.length'),0);
- assert.equal(h.run('LESSONS.length'),4);assert.equal(h.run('CONTENT.workedExamples.length'),25);
+ assert.equal(h.run('LESSONS.length'),4);assert.equal(h.run('CONTENT.workedExamples.length'),10);
  const savedBefore=clone(h.run('P.practice10'));
 
  const gameHost=h.run("document.getElementById('magnitude-game')");gameHost.querySelectorAll=()=>[];
@@ -164,7 +164,7 @@ async function chapterIntegration(){
  h.run("goTab('practice')");click({action:'magnitude-game-next'});
  h.run("goTab('theory')");assert.match(rootElement.innerHTML,/Ronda 2 de 10/,'Switching tabs preserves the current game');
  assert.deepEqual(clone(h.run('P.practice10')),savedBefore,'Playing never alters the ten graded practice questions');
- h.run("goTab('examples')");assert.equal((rootElement.innerHTML.match(/class="example worked-example"/g)||[]).length,25);
+ h.run("goTab('examples')");assert.equal((rootElement.innerHTML.match(/class="example worked-example"/g)||[]).length,10);
 
  await h.signIn(null);assert.match(gameHTML(),/Comenzar juego/);
  click({action:'magnitude-game-start'});assert.match(gameHTML(),/Comenzar juego/,'Sign-out disables chapter actions');
