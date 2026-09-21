@@ -124,34 +124,33 @@
     },
     friction: {
       name: 'Coeficiente de rozamiento cinético',
-      question: 'En el rozamiento cinético, ' + math('F_r=\\mu_k F_N') + ', donde ' + math('F_r') + ' es el módulo de la fuerza de rozamiento y ' + math('F_N>0') + ' el de la fuerza normal. Determina la dimensión de ' + math('\\mu_k') + ' y calcula su valor cuando ' + math('F_r=30\\,\\mathrm N') + ' y ' + math('F_N=100\\,\\mathrm N') + '. ¿Tener dimensión uno significa valer uno?',
+      question: 'En el rozamiento cinético, ' + math('F_r=\\mu_k F_N') + ', donde ' + math('F_r') + ' es el módulo de la fuerza de rozamiento y ' + math('F_N>0') + ' el de la fuerza normal. Determina la dimensión de ' + math('\\mu_k') + '.',
       steps: [
         {
           title: 'Identifica la relación y las magnitudes',
-          text: 'El coeficiente de rozamiento cinético μₖ es el cociente entre el módulo de la fuerza de rozamiento cinético Fᵣ y el módulo de la fuerza normal Fₙ, con Fₙ mayor que cero. Ambas son fuerzas.',
-          equations: ['\\mu_k=\\frac{F_r}{F_N}', '[F_r]=[F_N]=MLT^{-2}'],
-          hint: 'Comparamos dos magnitudes de la misma naturaleza: fuerza entre fuerza.'
+          text: 'La relación vincula el coeficiente de rozamiento cinético μₖ con la fuerza de rozamiento y la fuerza normal. Ambas fuerzas tienen la misma dimensión.',
+          equations: ['F_r=\\mu_k F_N', '[F_r]=[F_N]=MLT^{-2}'],
+          hint: 'Identifica primero las dimensiones de las magnitudes conocidas.'
         },
         {
-          title: 'Sustituye por dimensiones',
-          text: 'Escribe la dimensión del cociente y reemplaza cada fuerza por MLT⁻².',
-          equations: ['[\\mu_k]=\\frac{[F_r]}{[F_N]}', '[\\mu_k]=\\frac{MLT^{-2}}{MLT^{-2}}'],
-          hint: 'El numerador y el denominador contienen exactamente los mismos factores dimensionales.'
+          title: 'Despeja el coeficiente',
+          text: 'Divide ambos miembros entre la fuerza normal, que es distinta de cero. La dimensión del cociente es el cociente de las dimensiones.',
+          equations: ['\\mu_k=\\frac{F_r}{F_N}', '[\\mu_k]=\\frac{[F_r]}{[F_N]}'],
+          hint: 'El coeficiente queda expresado como fuerza entre fuerza.'
         },
         {
-          title: 'Cancela los factores dimensionales',
-          text: 'Al dividir las potencias de cada base, restamos exponentes iguales. Todos quedan en cero; por tanto, el producto es uno.',
-          equations: ['[\\mu_k]=M^{1-1}L^{1-1}T^{-2-(-2)}', '[\\mu_k]=M^0L^0T^0=1'],
-          hint: 'El coeficiente es adimensional: tiene dimensión uno. Esto no determina su valor numérico.'
+          title: 'Sustituye las dimensiones',
+          text: 'Reemplaza ambas fuerzas por MLT⁻². Al dividir potencias de la misma base, resta sus exponentes.',
+          equations: ['[\\mu_k]=\\frac{MLT^{-2}}{MLT^{-2}}', '[\\mu_k]=M^{1-1}L^{1-1}T^{-2-(-2)}'],
+          hint: 'Los factores dimensionales del numerador y del denominador se cancelan.'
         },
         {
-          title: 'Distingue dimensión y valor numérico',
-          text: 'Si el rozamiento cinético es 30 N y la fuerza normal es 100 N, las unidades se cancelan al dividir. El coeficiente vale 0,30 y su dimensión es uno.',
-          equations: ['F_r=30\\,\\mathrm N,\\qquad F_N=100\\,\\mathrm N', '\\mu_k=\\frac{30\\,\\mathrm N}{100\\,\\mathrm N}=0{,}30', '[\\mu_k]=1'],
+          title: 'Obtén la dimensión',
+          text: 'Todos los exponentes quedan en cero. El producto de los factores dimensionales es uno.',
+          equations: ['[\\mu_k]=M^0L^0T^0=1'],
           dimension: '1',
-          unit: '1',
-          unitName: 'uno; se omite al escribir el valor',
-          hint: 'Dimensión uno no significa valor numérico uno. Escribimos μₖ = 0,30, sin añadir un símbolo de unidad.'
+          dimensionLabel: 'Dimensión de μₖ',
+          hint: 'El coeficiente de rozamiento es adimensional: su dimensión es uno.'
         }
       ]
     },
@@ -271,7 +270,7 @@
       '<h5>' + step.title + '</h5><p>' + step.text + '</p>' +
       '<div class="constant-derivation-equations">' + step.equations.map(tex => '<div>' + math(tex) + '</div>').join('') + '</div>' +
       (step.dimension ? '<dl class="constant-derivation-result"><div><dt>' + escapeHTML(step.dimensionLabel || 'Dimensión') + '</dt><dd>' + math(step.dimension) + '</dd></div>' +
-        '<div><dt>' + escapeHTML(step.unitLabel || 'Unidad SI') + '</dt><dd>' + math(step.unit) + '<span class="constant-derivation-unit-name">' + step.unitName + '</span></dd></div></dl>' : '') +
+        (step.unit ? '<div><dt>' + escapeHTML(step.unitLabel || 'Unidad SI') + '</dt><dd>' + math(step.unit) + '<span class="constant-derivation-unit-name">' + step.unitName + '</span></dd></div>' : '') + '</dl>' : '') +
       '<p class="constant-derivation-hint">' + step.hint + '</p>';
   }
   function render(example) {

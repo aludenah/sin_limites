@@ -119,9 +119,10 @@ function dimensionOneFormulas(card,panels){
   assert.ok(all.includes('F_r=\\mu_kF_N'),'The coefficient relates friction and normal force');
   assert.ok(all.includes('\\mu_k=\\fracF_rF_N'),'The solution isolates the coefficient');
   assert.ok(all.includes('\\fracMLT^-2MLT^-2'),'Both forces are replaced by the same dimensions');
-  assert.ok(all.includes('[\\mu_k]=1'),'All dimensional exponents cancel');
-  assert.match(steps[3],/30.*100.*0[,\.]30/,'The coefficient can have a numerical value other than one');
-  assert.match(panels[3],/dimensión uno/i);assert.match(panels[3],/valor numérico/);
+  assert.ok(all.includes('[\\mu_k]=1')||all.includes('[\\mu_k]=M^0L^0T^0=1'),'All dimensional exponents cancel');
+  assert.ok(steps[3].includes('M^0L^0T^0=1'),'The last step simplifies the canceled dimensions to one');
+  assert.match(panels[3],/<dt>Dimensión de μₖ<\/dt><dd>\\\(1\\\)<\/dd>/,'The result contains only the coefficient dimension');
+  assert.doesNotMatch(panels.join('\n'),/30|100|0[,.]30|¿Tener dimensión uno|calcula su valor|Unidad SI/i,'The friction walkthrough asks only for the dimension, without numerical values or a unit result');
  }else if(card==='sine'){
   assert.ok(all.includes('y=A\\sin('),'The sine appears in a displacement equation');
   assert.ok(all.includes('[A]=L'),'Amplitude supplies the displacement dimension');
