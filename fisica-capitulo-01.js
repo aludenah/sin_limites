@@ -119,7 +119,10 @@ function lessonActivity(lesson){
  if(lesson.id==='dim-magnitudes')return window.MagnitudeGame?.render()||'<p>Recarga la página para abrir el juego de magnitudes.</p>';
  if(lesson.id==='dim-si')return window.PrefixGame?.render()||'<p>Recarga la página para abrir el juego de prefijos.</p>';
  if(lesson.id==='dim-dimensiones')return window.DimensionGame?.render()||'<p>Recarga la página para abrir el juego de dimensiones.</p>';
- return lesson.examples.map(e=>`<section class="example"><p class="eyebrow">Ejemplo resuelto</p><h3>${e.title}</h3><p>${e.question}</p><ol>${e.steps.map(s=>`<li>${s}</li>`).join('')}</ol></section>`).join('');
+ return lesson.examples.map(e=>{
+  if(e.interactive&&window.ConstantDerivations)return window.ConstantDerivations.render(e);
+  return `<section class="example"><p class="eyebrow">Ejemplo resuelto</p><h3>${e.title}</h3><p>${e.question}</p><ol>${e.steps.map(s=>`<li>${s}</li>`).join('')}</ol></section>`;
+ }).join('');
 }
 function lessonSections(lesson){
  return (lesson.sections||[]).map(section=>`<section aria-labelledby="section-${section.id}"><h3 id="section-${section.id}">${escapeHTML(section.title)}</h3><div class="content">${lessonBody(section)}${lessonFigures(section.id)}</div>${lessonActivity(section)}</section>`).join('');
@@ -155,7 +158,7 @@ root.addEventListener('click',event=>{
 const button=event.target.closest('[data-action]');if(!button||button.disabled||!user)return;
 if(P.activeTab==='theory'&&LESSONS[P.currentItem]?.id==='dim-magnitudes'&&(window.MagnitudeGame?.handleAction(button)||window.StoneExplorer?.handleAction(button)))return;
 if(P.activeTab==='theory'&&LESSONS[P.currentItem]?.id==='dim-si'&&window.PrefixGame?.handleAction(button))return;
-if(P.activeTab==='theory'&&LESSONS[P.currentItem]?.id==='dim-dimensiones'&&(window.GeometryDerivation?.handleAction(button)||window.DimensionGame?.handleAction(button)))return;
+if(P.activeTab==='theory'&&LESSONS[P.currentItem]?.id==='dim-dimensiones'&&(window.GeometryDerivation?.handleAction(button)||window.ConstantDerivations?.handleAction(button)||window.DimensionGame?.handleAction(button)))return;
 const {action,value,index,id}=button.dataset;if(action==='lesson')goLesson(Number(index));else if(action==='tab')goTab(value);else if(action==='check-practice10')checkPractice(id);else if(action==='sync')retrySync();
 });
 root.addEventListener('change',event=>{
@@ -172,7 +175,7 @@ window.addEventListener('pagehide',()=>{if(user&&saveTimer){clearTimeout(saveTim
 
 async function signedIn(u){
   const epoch=++authEpoch;clearTimeout(saveTimer);user=u;P=emptyProgress();cloudReady=false;saveVersion=0;saveChain=Promise.resolve();notice='';
-  window.MagnitudeGame?.reset();window.StoneExplorer?.reset();window.PrefixGame?.reset();window.GeometryDerivation?.reset();window.DimensionGame?.reset();
+  window.MagnitudeGame?.reset();window.StoneExplorer?.reset();window.PrefixGame?.reset();window.GeometryDerivation?.reset();window.ConstantDerivations?.reset();window.DimensionGame?.reset();
   if(!u){root.innerHTML=`${header()}<main id="chapter-content" class="access card"><p class="eyebrow">Física · Capítulo 1 de 19</p><h1>Análisis Dimensional</h1><p>Inicia sesión en la academia para estudiar y guardar tu avance.</p><a class="button" href="index.html?chapter=fisica-capitulo-01">Continuar con Google</a></main>`;return;}
  if(window.StudyMode&&!await window.StudyMode.requireChoice(u.uid,db,'fisica-capitulo-01',()=>epoch===authEpoch))return;
  if(epoch!==authEpoch)return;

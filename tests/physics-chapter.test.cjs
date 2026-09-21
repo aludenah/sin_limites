@@ -1,7 +1,7 @@
 const assert=require('node:assert/strict');
 const {harness}=require('./study-entry.test.cjs');
 const {testChapters}=require('./practice-ten.test.cjs');
-const files=['fisica-capitulo-01-data.js','fisica-capitulo-01-deducciones-figuras.js','fisica-capitulo-01-geometria.js','fisica-capitulo-01.js'];
+const files=['fisica-capitulo-01-data.js','fisica-capitulo-01-deducciones-figuras.js','fisica-capitulo-01-geometria.js','fisica-capitulo-01-constantes.js','fisica-capitulo-01.js'];
 const lessonIds=['dim-magnitudes','dim-si','dim-dimensiones','dim-homogeneidad','dim-exponentes'];
 const clone=value=>JSON.parse(JSON.stringify(value));
 async function sourceContentAndResume(){
@@ -101,6 +101,7 @@ async function mergedContent(){
  assert.doesNotMatch(rendered,/Tabla de consulta interactiva|id="dimension-explorer"|data-dimension-explorer/);
  assert.deepEqual(merged.sections.map(s=>s.id),['dim-deducciones','dim-reglas']);
  assert.deepEqual(merged.sections.map(s=>s.examples.length),[2,2],'Four examples remain after removing the two requested cards');
+ assert.deepEqual(merged.sections[0].examples.map(example=>example.interactive),['spring','gravity-planck'],'The spring and gravity/Planck examples use their interactive walkthroughs');
  assert.doesNotMatch(rendered,/Aplicación 6\. Once magnitudes derivadas|Ejemplo complementario\. Impulso y cantidad de movimiento|Las siguientes once deducciones/,'The two removed cards and their introductory reference are absent');
  for(const title of ['Ejemplo complementario. Constante de un resorte','Ejemplo complementario. Gravitación y constante de Planck','Aplicación 7. Una expresión con presión y área','Ejemplo complementario. Productos y cocientes'])assert.ok(rendered.includes(title),'The other examples remain');
  assert.match(merged.body,/siete magnitudes fundamentales del SI/);
@@ -114,7 +115,12 @@ async function mergedContent(){
   for(const example of section.examples){
    const position=rendered.indexOf(example.title);assert.ok(position>lastPosition,'Examples retain the source order');lastPosition=position;
    assert.ok(rendered.includes(example.question));
-   for(const step of example.steps)assert.ok(rendered.includes(step),'Every solution step is accessible');
+   if(example.interactive){
+    assert.match(rendered,new RegExp('id="constant-derivation-'+example.interactive+'"'),'Each example has an independent interactive card');
+    assert.ok(example.steps.some(step=>!rendered.includes(step)),'The complete solution is not exposed before advancing');
+   }else{
+    for(const step of example.steps)assert.ok(rendered.includes(step),'The other examples preserve their solution steps');
+   }
   }
  }
  assert.doesNotMatch(rendered,/magnitudes-derivadas\.svg/,'The old derived-magnitudes image is removed');

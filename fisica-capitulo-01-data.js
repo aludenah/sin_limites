@@ -45,7 +45,8 @@ window.DIMENSIONAL_CONTENT = {
                 "Despeja \\(k=F/x\\).",
                 "<div class=\"equation\">\\[[k]=\\frac{MLT^{-2}}{L}=MT^{-2}\\]</div>",
                 "Su unidad SI es N/m. Una constante física puede tener dimensiones."
-              ]
+              ],
+              "interactive": "spring"
             },
             {
               "title": "Ejemplo complementario. Gravitación y constante de Planck",
@@ -56,7 +57,8 @@ window.DIMENSIONAL_CONTENT = {
                 "En la relación de Planck, \\(E\\) es energía y \\(f\\) frecuencia.",
                 "<div class=\"equation\">\\[[h]=\\frac{[E]}{[f]}=\\frac{ML^2T^{-2}}{T^{-1}}=ML^2T^{-1}\\]</div>",
                 "G y h son constantes físicas con dimensiones; no deben confundirse con números como 2 o π."
-              ]
+              ],
+              "interactive": "gravity-planck"
             }
           ]
         },
