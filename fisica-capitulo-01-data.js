@@ -34,37 +34,10 @@ window.DIMENSIONAL_CONTENT = {
           "id": "dim-deducciones",
           "title": "Deducción de dimensiones",
           "subtitle": "Construir las fórmulas desde relaciones conocidas",
-          "goal": "Obtén las dimensiones de once magnitudes y reconoce las dimensiones de constantes físicas.",
-          "body": "<p>Para deducir una dimensión, parte de una relación física conocida, reemplaza cada magnitud por su dimensión y simplifica las potencias. Los coeficientes puramente numéricos no modifican la dimensión.</p><p>Por ejemplo, el área de un triángulo es \\(A=bh/2\\). Aunque su fórmula difiere de la del rectángulo, ambas áreas tienen dimensión \\(L^2\\). La dimensión no depende de la forma geométrica.</p><ol><li>Escribe la fórmula que relaciona las magnitudes.</li><li>Coloca corchetes y sustituye las dimensiones conocidas.</li><li>Multiplica, divide o eleva las potencias.</li><li>Comprueba que el resultado corresponde a la unidad de la magnitud.</li></ol><p>Las siguientes once deducciones reúnen el desarrollo de la aplicación del material de estudio. La fuerza, la velocidad y la aceleración pueden tratarse por sus módulos para hallar dimensiones; sus direcciones no cambian el resultado dimensional.</p>",
+          "goal": "Obtén las dimensiones de magnitudes derivadas y reconoce las dimensiones de constantes físicas.",
+          "body": "<p>Para deducir una dimensión, parte de una relación física conocida, reemplaza cada magnitud por su dimensión y simplifica las potencias. Los coeficientes puramente numéricos no modifican la dimensión.</p><p>Por ejemplo, el área de un triángulo es \\(A=bh/2\\). Aunque su fórmula difiere de la del rectángulo, ambas áreas tienen dimensión \\(L^2\\). La dimensión no depende de la forma geométrica.</p><ol><li>Escribe la fórmula que relaciona las magnitudes.</li><li>Coloca corchetes y sustituye las dimensiones conocidas.</li><li>Multiplica, divide o eleva las potencias.</li><li>Comprueba que el resultado corresponde a la unidad de la magnitud.</li></ol><p>La fuerza, la velocidad y la aceleración pueden tratarse por sus módulos para hallar dimensiones; sus direcciones no cambian el resultado dimensional.</p>",
           "key": "Reconstruir una dimensión a partir de su definición es más útil que memorizarla sin comprenderla.",
           "examples": [
-            {
-              "title": "Aplicación 6. Once magnitudes derivadas",
-              "question": "Determina las dimensiones de área, volumen, velocidad, aceleración, fuerza, densidad, trabajo, potencia, presión, frecuencia y carga eléctrica.",
-              "steps": [
-                "<strong>a. Área de un rectángulo.</strong> \\(A=bh\\), de modo que \\([A]=[b][h]=L\\cdot L=L^2\\). Base y altura son longitudes.",
-                "<strong>b. Volumen de un prisma rectangular.</strong> \\(V=abc\\); por tanto, \\([V]=[a][b][c]=L^3\\).",
-                "<strong>c. Rapidez y velocidad.</strong> Para rapidez constante, \\(v=d/t\\), así que \\([v]=L/T=LT^{-1}\\). La velocidad vectorial también tiene esa dimensión, utilizando desplazamiento e intervalo de tiempo.",
-                "<strong>d. Aceleración.</strong> \\(a=\\Delta v/\\Delta t\\), luego \\([a]=LT^{-1}/T=LT^{-2}\\).",
-                "<strong>e. Fuerza.</strong> De \\(F=ma\\): \\([F]=[m][a]=M(LT^{-2})=MLT^{-2}\\).",
-                "<strong>f. Densidad.</strong> \\(\\rho=m/V\\), por lo que \\([\\rho]=M/L^3=ML^{-3}\\).",
-                "<strong>g. Trabajo.</strong> Para fuerza constante paralela al desplazamiento, \\(W=Fd\\). Entonces \\([W]=(MLT^{-2})L=ML^2T^{-2}\\). El trabajo general incluye un factor \\(\\cos\\theta\\), que es adimensional.",
-                "<strong>h. Potencia media.</strong> \\(\\mathcal P=W/t\\), de donde \\([\\mathcal P]=ML^2T^{-2}/T=ML^2T^{-3}\\).",
-                "<strong>i. Presión.</strong> \\(p=F_\\perp/A\\). Entonces \\([p]=MLT^{-2}/L^2=ML^{-1}T^{-2}\\).",
-                "<strong>j. Frecuencia.</strong> \\(f=1/\\tau\\), con período \\(\\tau\\); por tanto, \\([f]=T^{-1}\\).",
-                "<strong>k. Carga eléctrica.</strong> Para corriente constante, \\(q=it\\). Así, \\([q]=[i][t]=IT\\). Esta dimensión requiere la magnitud base corriente eléctrica."
-              ],
-              "sourcePage": 11
-            },
-            {
-              "title": "Ejemplo complementario. Impulso y cantidad de movimiento",
-              "question": "Compara las dimensiones de \\(J_F=F\\Delta t\\) y \\(p_m=mv\\).",
-              "steps": [
-                "<div class=\"equation\">\\[[J_F]=(MLT^{-2})T=MLT^{-1}\\]</div>",
-                "<div class=\"equation\">\\[[p_m]=M(LT^{-1})=MLT^{-1}\\]</div>",
-                "Comparten dimensión, lo que es compatible con la relación entre impulso y cambio de cantidad de movimiento."
-              ]
-            },
             {
               "title": "Ejemplo complementario. Constante de un resorte",
               "question": "En \\(F=kx\\), \\(F\\) es el módulo de la fuerza elástica y \\(x\\) la deformación. Obtén la dimensión de \\(k\\).",

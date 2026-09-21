@@ -100,7 +100,9 @@ async function mergedContent(){
  assert.equal(merged.title,'Análisis dimensional: deducciones y reglas');
  assert.doesNotMatch(rendered,/Tabla de consulta interactiva|id="dimension-explorer"|data-dimension-explorer/);
  assert.deepEqual(merged.sections.map(s=>s.id),['dim-deducciones','dim-reglas']);
- assert.deepEqual(merged.sections.map(s=>s.examples.length),[4,2],'All six examples from the merged topics remain');
+ assert.deepEqual(merged.sections.map(s=>s.examples.length),[2,2],'Four examples remain after removing the two requested cards');
+ assert.doesNotMatch(rendered,/Aplicación 6\. Once magnitudes derivadas|Ejemplo complementario\. Impulso y cantidad de movimiento|Las siguientes once deducciones/,'The two removed cards and their introductory reference are absent');
+ for(const title of ['Ejemplo complementario. Constante de un resorte','Ejemplo complementario. Gravitación y constante de Planck','Aplicación 7. Una expresión con presión y área','Ejemplo complementario. Productos y cocientes'])assert.ok(rendered.includes(title),'The other examples remain');
  assert.match(merged.body,/siete magnitudes fundamentales del SI/);
  assert.match(merged.sections[0].body,/Para deducir una dimensión/);
  assert.match(merged.sections[1].body,/Regla 1[\s\S]*Regla 2[\s\S]*Regla 3[\s\S]*Funciones matemáticas/);
@@ -117,11 +119,12 @@ async function mergedContent(){
  }
  assert.doesNotMatch(rendered,/magnitudes-derivadas\.svg/,'The old derived-magnitudes image is removed');
  assert.match(rendered,/id="geometry-derivation"/,'The area and volume step-by-step activity replaces it');
+ assert.deepEqual([...rendered.matchAll(/data-action="geometry-derivation-select" data-shape="([^"]+)"/g)].map(match=>match[1]),['area','volume','density','velocity','acceleration','force'],'All six interactive derivations remain');
  assert.ok(rendered.indexOf('id="geometry-derivation"')<rendered.indexOf(merged.sections[0].examples[0].title),'The interactive derivation appears before the existing examples');
  assert.ok(rendered.indexOf('Recarga la página para abrir el juego de dimensiones.')>lastPosition,'The dimension activity follows the merged content');
  const before=h.run('P.currentItem');h.run('goLesson(5)');assert.equal(h.run('P.currentItem'),before,'Removed menu positions cannot be opened');
  h.run('goLesson(3)');assert.equal(h.run('LESSONS[P.currentItem].id'),'dim-homogeneidad');
  assert.match(h.elements.get('chapter-app').innerHTML,/id="power-slider"/,'The homogeneity activity remains on its renumbered topic');
- console.log('PASS: merged dimensions, deductions and rules retain six examples, the replacement derivation activity, activity order and five-topic navigation.');
+ console.log('PASS: merged dimensions, deductions and rules retain four examples, six interactive derivations, activity order and five-topic navigation.');
 }
 sourceContentAndResume().then(removedLessonMigration).then(mergedTopicMigration).then(mergedContent).then(()=>testChapters(['fisica-capitulo-01'])).catch(error=>{console.error(error);process.exitCode=1;});
