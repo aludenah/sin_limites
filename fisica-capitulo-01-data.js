@@ -59,26 +59,14 @@ window.DIMENSIONAL_CONTENT = {
           "key": "Constante no significa adimensional: distingue los números puros de las constantes físicas.",
           "examples": [
             {
-              "title": "Dimensión uno: coeficiente de rozamiento",
-              "question": "En el rozamiento cinético, \\(F_r=\\mu_k F_N\\), donde \\(F_r\\) es el módulo de la fuerza de rozamiento y \\(F_N>0\\) el de la fuerza normal. Determina la dimensión de \\(\\mu_k\\) y calcula su valor cuando \\(F_r=30\\,\\mathrm N\\) y \\(F_N=100\\,\\mathrm N\\). ¿Tener dimensión uno significa valer uno?",
+              "title": "Dimensión uno: de menor a mayor dificultad",
+              "question": "Resuelve los tres ejemplos en orden: rozamiento, seno y exponencial. Puedes volver a cada uno conservando el paso en el que te quedaste.",
               "steps": [
-                "Despeja \\(\\mu_k=F_r/F_N\\). Ambas fuerzas tienen dimensión \\(MLT^{-2}\\).",
-                "<div class=\"equation\">\\[[\\mu_k]=\\frac{[F_r]}{[F_N]}=\\frac{MLT^{-2}}{MLT^{-2}}\\]</div>",
-                "<div class=\"equation\">\\[[\\mu_k]=M^{1-1}L^{1-1}T^{-2-(-2)}=M^0L^0T^0=1\\]</div>",
-                "<div class=\"equation\">\\[\\mu_k=\\frac{30\\,\\mathrm N}{100\\,\\mathrm N}=0{,}30\\]</div><p>El coeficiente es adimensional: tiene dimensión uno, aunque su valor numérico es 0,30. Su unidad SI es el uno, que se omite al escribir el valor.</p>"
+                "<strong>1. Rozamiento · Básico.</strong> En \\(F_r=\\mu_kF_N\\), ambas fuerzas tienen dimensión \\(MLT^{-2}\\). Por tanto, \\([\\mu_k]=[F_r]/[F_N]=1\\). Con \\(F_r=30\\,\\mathrm N\\) y \\(F_N=100\\,\\mathrm N\\), se obtiene \\(\\mu_k=0{,}30\\): dimensión uno no significa valor numérico uno.",
+                "<strong>2. Seno · Intermedio.</strong> En \\(y=A\\sin(2\\pi t/\\tau)\\), \\([A]=L\\) y \\([t]=[\\tau]=T\\). El argumento y el seno tienen dimensión uno, por lo que \\([y]=L\\). Con \\(A=0{,}20\\,\\mathrm m\\), \\(t=1\\,\\mathrm s\\) y \\(\\tau=12\\,\\mathrm s\\), el seno vale 1/2 y \\(y=0{,}10\\,\\mathrm m\\).",
+                "<strong>3. Exponencial · Avanzado.</strong> En el modelo de frenado \\(v=v_0e^{-bt/m}\\), \\(v_0\\) es rapidez, \\(m>0\\) es masa, \\(t\\ge0\\) es tiempo y \\(b>0\\) es un coeficiente. El exponente debe ser adimensional: \\([b]T/M=1\\), de donde \\([b]=MT^{-1}\\), con unidad SI kg/s. Como \\([e^{-bt/m}]=1\\), se conserva \\([v]=LT^{-1}\\). Para \\(b=2\\,\\mathrm{kg}/\\mathrm s\\), \\(m=4\\,\\mathrm{kg}\\), \\(t=2\\,\\mathrm s\\) y \\(v_0=10\\,\\mathrm m/\\mathrm s\\), resulta \\(bt/m=1\\) y \\(v=10/e\\,\\mathrm m/\\mathrm s\\approx3{,}68\\,\\mathrm m/\\mathrm s\\)."
               ],
-              "interactive": "friction"
-            },
-            {
-              "title": "Dimensión uno: una función seno",
-              "question": "En \\(y=A\\sin(2\\pi t/\\tau)\\), \\(A\\) es una amplitud de longitud, \\(t\\) es tiempo y \\(\\tau>0\\) es el período. Determina las dimensiones del argumento del seno, del seno y de \\(y\\). Luego calcula \\(y\\) para \\(A=0{,}20\\,\\mathrm m\\), \\(t=1\\,\\mathrm s\\) y \\(\\tau=12\\,\\mathrm s\\).",
-              "steps": [
-                "Identifica \\([A]=L\\), \\([t]=[\\tau]=T\\) y \\([2]=[\\pi]=1\\).",
-                "El argumento es \\(\\varphi=2\\pi t/\\tau\\). Su dimensión es \\([\\varphi]=[2][\\pi][t]/[\\tau]=1\\cdot1\\cdot T/T=1\\); el ángulo se expresa en radianes.",
-                "El seno es adimensional: \\([\\sin\\varphi]=1\\). Por tanto, \\([y]=[A][\\sin\\varphi]=L\\cdot1=L\\).",
-                "Con los datos, \\(\\varphi=\\pi/6\\,\\mathrm{rad}\\) y \\(\\sin\\varphi=1/2\\). Entonces \\(y=(0{,}20\\,\\mathrm m)(1/2)=0{,}10\\,\\mathrm m\\). El seno tiene dimensión uno aunque su valor sea 1/2; la posición conserva dimensión de longitud."
-              ],
-              "interactive": "sine"
+              "interactive": "dimension-one"
             }
           ]
         }

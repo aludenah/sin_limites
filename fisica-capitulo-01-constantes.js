@@ -3,12 +3,25 @@
 
   const escapeHTML = value => String(value).replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character]));
   const math = tex => '\\(' + escapeHTML(tex) + '\\)';
-  const cards = ['physical-constants', 'friction', 'sine'];
-  const physicalConstants = Object.freeze([
-    { id: 'spring', label: 'Resorte', difficulty: 'Básico' },
-    { id: 'planck', label: 'Planck', difficulty: 'Intermedio' },
-    { id: 'gravity', label: 'Gravitación', difficulty: 'Avanzado' }
-  ]);
+  const groups = Object.freeze({
+    'physical-constants': {
+      selection: 'selected',
+      items: [
+        { id: 'spring', label: 'Resorte', difficulty: 'Básico' },
+        { id: 'planck', label: 'Planck', difficulty: 'Intermedio' },
+        { id: 'gravity', label: 'Gravitación', difficulty: 'Avanzado' }
+      ]
+    },
+    'dimension-one': {
+      selection: 'selectedDimension',
+      items: [
+        { id: 'friction', label: 'Rozamiento', difficulty: 'Básico' },
+        { id: 'sine', label: 'Seno', difficulty: 'Intermedio' },
+        { id: 'exponential', label: 'Exponencial', difficulty: 'Avanzado' }
+      ]
+    }
+  });
+  const cards = Object.keys(groups);
   const constants = Object.freeze({
     spring: {
       name: 'Constante de un resorte',
@@ -111,6 +124,7 @@
     },
     friction: {
       name: 'Coeficiente de rozamiento cinético',
+      question: 'En el rozamiento cinético, ' + math('F_r=\\mu_k F_N') + ', donde ' + math('F_r') + ' es el módulo de la fuerza de rozamiento y ' + math('F_N>0') + ' el de la fuerza normal. Determina la dimensión de ' + math('\\mu_k') + ' y calcula su valor cuando ' + math('F_r=30\\,\\mathrm N') + ' y ' + math('F_N=100\\,\\mathrm N') + '. ¿Tener dimensión uno significa valer uno?',
       steps: [
         {
           title: 'Identifica la relación y las magnitudes',
@@ -143,6 +157,7 @@
     },
     sine: {
       name: 'Dimensión del seno y de su argumento',
+      question: 'En ' + math('y=A\\sin(2\\pi t/\\tau)') + ', ' + math('A') + ' es una amplitud de longitud, ' + math('t') + ' es tiempo y ' + math('\\tau>0') + ' es el período. Determina las dimensiones del argumento del seno, del seno y de ' + math('y') + '. Luego calcula ' + math('y') + ' para ' + math('A=0{,}20\\,\\mathrm m') + ', ' + math('t=1\\,\\mathrm s') + ' y ' + math('\\tau=12\\,\\mathrm s') + '.',
       steps: [
         {
           title: 'Identifica la relación y las magnitudes',
@@ -172,13 +187,49 @@
           hint: 'El seno vale 1/2, pero tiene dimensión uno. El desplazamiento y conserva dimensión L y se expresa en metros.'
         }
       ]
+    },
+    exponential: {
+      name: 'Dimensión del exponente y del coeficiente de frenado',
+      question: 'Un modelo de frenado describe la rapidez mediante ' + math('v=v_0e^{-bt/m}') + ', donde ' + math('v_0') + ' es la rapidez inicial, ' + math('m>0') + ' la masa, ' + math('t\\geq0') + ' el tiempo y ' + math('b>0') + ' un coeficiente. Deduce la dimensión y la unidad SI de ' + math('b') + '. Verifica las dimensiones de la exponencial y de ' + math('v') + '.',
+      steps: [
+        {
+          title: 'Identifica la relación y las magnitudes',
+          text: 'La rapidez v es la rapidez inicial v₀ multiplicada por un factor exponencial. La masa m es positiva, el tiempo t es no negativo y el coeficiente b es positivo.',
+          equations: ['v=v_0e^{-bt/m}', '[v_0]=LT^{-1}', '[m]=M,\\qquad[t]=T'],
+          hint: 'La base e es la constante matemática e ≈ 2,718 y tiene dimensión uno. Su exponente también debe ser adimensional.'
+        },
+        {
+          title: 'Exige dimensión uno en el exponente',
+          text: 'El exponente −bt/m debe tener dimensión uno. El signo menos es un factor numérico que no cambia la dimensión.',
+          equations: ['\\left[-\\frac{bt}{m}\\right]=1', '\\frac{[b][t]}{[m]}=1', '\\frac{[b]T}{M}=1'],
+          hint: 'Esta condición permite encontrar la dimensión de b sin resolver ninguna ecuación de movimiento.'
+        },
+        {
+          title: 'Deduce la dimensión del coeficiente',
+          text: 'Multiplica por M y divide entre T para despejar [b]. La exponencial tiene dimensión uno, por lo que v conserva la dimensión de rapidez.',
+          equations: ['[b]=\\frac{M}{T}=MT^{-1}', '\\text{Unidad SI de }b:\\quad\\frac{\\mathrm{kg}}{\\mathrm s}', '[e^{-bt/m}]=1', '[v]=[v_0][e^{-bt/m}]=LT^{-1}\\cdot1=LT^{-1}'],
+          hint: 'El coeficiente b tiene dimensiones, mientras que el exponente y el factor exponencial son adimensionales.'
+        },
+        {
+          title: 'Comprueba con valores numéricos',
+          text: 'Con b = 2 kg/s, m = 4 kg y t = 2 s, el cociente bt/m vale uno. El exponente es −1 y la rapidez inicial de 10 m/s se multiplica por e⁻¹.',
+          equations: ['\\frac{bt}{m}=\\frac{(2\\,\\mathrm{kg}/\\mathrm s)(2\\,\\mathrm s)}{4\\,\\mathrm{kg}}=1', 'e^{-bt/m}=e^{-1}\\approx0{,}368', 'v=10\\,\\frac{\\mathrm m}{\\mathrm s}\\cdot e^{-1}\\approx3{,}68\\,\\frac{\\mathrm m}{\\mathrm s}'],
+          dimension: 'MT^{-1}',
+          dimensionLabel: 'Dimensión de b',
+          unit: '\\frac{\\mathrm{kg}}{\\mathrm s}',
+          unitLabel: 'Unidad SI de b',
+          unitName: 'kilogramo por segundo',
+          hint: 'El factor e⁻¹ tiene dimensión uno, aunque su valor sea aproximadamente 0,368. La rapidez resultante se expresa en m/s.'
+        }
+      ]
     }
   });
 
   function createSession() {
-    let state = { selected: 'spring', spring: 0, planck: 0, gravity: 0, friction: 0, sine: 0 };
+    const initialState = () => ({ selected: 'spring', selectedDimension: 'friction', spring: 0, planck: 0, gravity: 0, friction: 0, sine: 0, exponential: 0 });
+    let state = initialState();
     const snapshot = () => ({ ...state });
-    const active = card => card === 'physical-constants' ? state.selected : card;
+    const active = card => state[groups[card].selection];
     function move(card, change) {
       if (!cards.includes(card)) return false;
       const key = active(card);
@@ -187,16 +238,16 @@
     }
     return Object.freeze({
       snapshot,
-      select(value) {
-        if (!physicalConstants.some(constant => constant.id === value)) return false;
-        state.selected = value;
+      select(value, card = 'physical-constants') {
+        if (!cards.includes(card) || !groups[card].items.some(constant => constant.id === value)) return false;
+        state[groups[card].selection] = value;
         return snapshot();
       },
       next: card => move(card, step => step + 1),
       previous: card => move(card, step => step - 1),
       restart: card => move(card, () => 0),
       reset() {
-        state = { selected: 'spring', spring: 0, planck: 0, gravity: 0, friction: 0, sine: 0 };
+        state = initialState();
         return snapshot();
       }
     });
@@ -205,21 +256,22 @@
   const session = createSession();
   function activeState(card) {
     const state = session.snapshot();
-    const constant = card === 'physical-constants' ? state.selected : card;
+    const constant = state[groups[card].selection];
     return { constant, step: state[constant] };
   }
   function panelHTML(card) {
     const state = activeState(card);
     const constant = constants[state.constant];
     const step = constant.steps[state.step];
-    const index = physicalConstants.findIndex(item => item.id === state.constant);
-    const progress = card === 'physical-constants' ? 'Ejemplo ' + (index + 1) + ' de 3 · ' + physicalConstants[index].difficulty + ' · ' : '';
+    const group = groups[card];
+    const index = group.items.findIndex(item => item.id === state.constant);
+    const progress = 'Ejemplo ' + (index + 1) + ' de 3 · ' + group.items[index].difficulty + ' · ';
     return '<p class="constant-derivation-progress">' + progress + escapeHTML(constant.name) + ' · Paso ' + (state.step + 1) + ' de 4</p>' +
       (constant.question ? '<div class="constant-derivation-prompt"><p>' + constant.question + '</p></div>' : '') +
       '<h5>' + step.title + '</h5><p>' + step.text + '</p>' +
       '<div class="constant-derivation-equations">' + step.equations.map(tex => '<div>' + math(tex) + '</div>').join('') + '</div>' +
-      (step.dimension ? '<dl class="constant-derivation-result"><div><dt>Dimensión</dt><dd>' + math(step.dimension) + '</dd></div>' +
-        '<div><dt>Unidad SI</dt><dd>' + math(step.unit) + '<span class="constant-derivation-unit-name">' + step.unitName + '</span></dd></div></dl>' : '') +
+      (step.dimension ? '<dl class="constant-derivation-result"><div><dt>' + escapeHTML(step.dimensionLabel || 'Dimensión') + '</dt><dd>' + math(step.dimension) + '</dd></div>' +
+        '<div><dt>' + escapeHTML(step.unitLabel || 'Unidad SI') + '</dt><dd>' + math(step.unit) + '<span class="constant-derivation-unit-name">' + step.unitName + '</span></dd></div></dl>' : '') +
       '<p class="constant-derivation-hint">' + step.hint + '</p>';
   }
   function render(example) {
@@ -232,8 +284,8 @@
       '<p class="constant-derivation-eyebrow">Ejemplo interactivo · paso a paso</p>' +
       '<h4 id="' + id + '-title">' + escapeHTML(example.title) + '</h4>' +
       '<div class="constant-derivation-question">' + example.question + '</div>' +
-      (card === 'physical-constants' ? '<div class="constant-derivation-selector constant-derivation-selector-constants" role="group" aria-label="Elige un ejemplo, de menor a mayor dificultad">' +
-        physicalConstants.map((item, index) => '<button type="button" data-action="constant-derivation-select"' + control + ' data-constant="' + item.id + '" aria-pressed="' + (state.constant === item.id) + '">' + (index + 1) + '. ' + item.label + ' · ' + item.difficulty + '</button>').join('') + '</div>' : '') +
+      '<div class="constant-derivation-selector constant-derivation-selector-constants" role="group" aria-label="Elige un ejemplo, de menor a mayor dificultad">' +
+        groups[card].items.map((item, index) => '<button type="button" data-action="constant-derivation-select"' + control + ' data-constant="' + item.id + '" aria-pressed="' + (state.constant === item.id) + '">' + (index + 1) + '. ' + item.label + ' · ' + item.difficulty + '</button>').join('') + '</div>' +
       '<div class="constant-derivation-panel" id="' + id + '-panel" role="region" aria-label="Resolución paso a paso" aria-live="polite" aria-atomic="true">' + panelHTML(card) + '</div>' +
       '<div class="constant-derivation-navigation" role="group" aria-label="Recorrer la resolución">' +
       '<button type="button" data-action="constant-derivation-previous"' + control + (state.step === 0 ? ' disabled' : '') + '>Anterior</button>' +
@@ -275,7 +327,7 @@
     const root = button.closest('#constant-derivation-' + card);
     if (!root || !root.querySelector('#constant-derivation-' + card + '-panel')) return false;
     if (action === 'constant-derivation-select') {
-      if (card !== 'physical-constants' || !session.select(button.dataset.constant)) return false;
+      if (!session.select(button.dataset.constant, card)) return false;
     } else if (action === 'constant-derivation-next') session.next(card);
     else if (action === 'constant-derivation-previous') session.previous(card);
     else session.restart(card);

@@ -4,14 +4,15 @@ const {harness}=require('./study-entry.test.cjs');
 const read=file=>fs.readFileSync(path.join(__dirname,'..',file),'utf8');
 const clone=value=>JSON.parse(JSON.stringify(value));
 const moduleFile='fisica-capitulo-01-constantes.js';
-const cards=['physical-constants','friction','sine'];
+const cards=['physical-constants','dimension-one'];
 const constantOrder=['spring','planck','gravity'];
+const dimensionOrder=['friction','sine','exponential'];
+const groups={'physical-constants':constantOrder,'dimension-one':dimensionOrder};
 const examples={
  'physical-constants':{interactive:'physical-constants',title:'Constantes físicas: de menor a mayor dificultad',question:'Resuelve los tres ejemplos en orden: resorte, Planck y gravitación. Puedes volver a cada uno conservando el paso en el que te quedaste.'},
- friction:{interactive:'friction',title:'Dimensión uno: coeficiente de rozamiento',question:'Deduce la dimensión de \\(\\mu_k\\) en \\(F_r=\\mu_k F_N\\).'},
- sine:{interactive:'sine',title:'Dimensión uno: una función seno',question:'Analiza las dimensiones de \\(y=A\\sin(2\\pi t/\\tau)\\).'}
+ 'dimension-one':{interactive:'dimension-one',title:'Dimensión uno: de menor a mayor dificultad',question:'Resuelve los tres ejemplos en orden: rozamiento, seno y exponencial. Puedes volver a cada uno conservando el paso en el que te quedaste.'}
 };
-const initialState={selected:'spring',spring:0,planck:0,gravity:0,friction:0,sine:0};
+const initialState={selected:'spring',selectedDimension:'friction',spring:0,planck:0,gravity:0,friction:0,sine:0,exponential:0};
 
 function element(){
  return {dataset:{},innerHTML:'',textContent:'',disabled:false,attributes:{},
@@ -25,7 +26,7 @@ function widgetHarness(){
   const host=Object.assign(element(),{id:'constant-derivation-'+card}),panel=Object.assign(element(),{id:host.id+'-panel'});
   hosts.set(card,host);panels.set(card,panel);
   const definitions=['previous','next','restart'].map(action=>({action:'constant-derivation-'+action,card}));
-  if(card==='physical-constants')definitions.push(...constantOrder.map(constant=>({action:'constant-derivation-select',card,constant})));
+  definitions.push(...groups[card].map(constant=>({action:'constant-derivation-select',card,constant})));
   const controls=definitions.map(dataset=>{
    const button=Object.assign(element(),{dataset,closest:()=>host});
    button.focus=()=>document.activeElement=button;return button;
@@ -65,18 +66,24 @@ function sessions(){
  session.restart('physical-constants');
  assert.deepEqual(state(),{...initialState,selected:'gravity',spring:3,planck:2},'Restart affects only the selected constant');
  session.select('planck');session.previous('physical-constants');assert.equal(state().planck,1);
- for(const card of ['friction','sine']){
+ for(const constant of dimensionOrder){
+  const card='dimension-one';session.select(constant,card);
   const before=state();
   for(let i=0;i<5;i++)session.next(card);
-  assert.deepEqual(state(),{...before,[card]:3},'Each dimension-one example advances independently to its last step');
-  session.previous(card);assert.equal(state()[card],2);
+  assert.deepEqual(state(),{...before,[constant]:3},'Each dimension-one example advances independently to its last step');
+  session.previous(card);assert.equal(state()[constant],2);
   session.restart(card);assert.deepEqual(state(),before,'Restart preserves the other examples');
  }
  const stable=state();
  for(const invalid of ['__proto__','constructor','toString','bad',null,undefined]){
   assert.equal(session.select(invalid),false);
+  assert.equal(session.select(invalid,'dimension-one'),false);
   for(const action of ['next','previous','restart'])assert.equal(session[action](invalid),false);
   assert.deepEqual(state(),stable,'Unsupported constants and cards cannot mutate another derivation');
+ }
+ for(const card of cards)for(const constant of groups[cards.find(value=>value!==card)]){
+  assert.equal(session.select(constant,card),false,'An example cannot be selected in the other group');
+  assert.deepEqual(state(),stable);
  }
  const external=session.snapshot();external.spring=0;external.selected='bad';
  assert.deepEqual(state(),stable,'Snapshots cannot mutate the internal state');
@@ -115,7 +122,7 @@ function dimensionOneFormulas(card,panels){
   assert.ok(all.includes('[\\mu_k]=1'),'All dimensional exponents cancel');
   assert.match(steps[3],/30.*100.*0[,\.]30/,'The coefficient can have a numerical value other than one');
   assert.match(panels[3],/dimensión uno/i);assert.match(panels[3],/valor numérico/);
- }else{
+ }else if(card==='sine'){
   assert.ok(all.includes('y=A\\sin('),'The sine appears in a displacement equation');
   assert.ok(all.includes('[A]=L'),'Amplitude supplies the displacement dimension');
   assert.ok(all.includes('[t]=[\\tau]=T'),'Time and period have matching dimensions');
@@ -126,6 +133,18 @@ function dimensionOneFormulas(card,panels){
   assert.match(steps[3],/\\frac\\pi6/,'The chosen time produces an angle of pi/6 radians');
   assert.match(steps[3],/\\frac12/,'The sine evaluates to one half');
   assert.match(steps[3],/0[,\.]20/);assert.match(steps[3],/0[,\.]10/,'The displacement is 0.10 m');
+ }else{
+  assert.doesNotMatch(panels[0],/kg\/s|kilogramo por segundo|3[,.]68/,'The coefficient unit and numerical result are discovered after advancing');
+  assert.match(all,/v=v_0(?:e|\\exp)/,'The decay law multiplies initial speed by an exponential');
+  assert.ok(all.includes('[m]=M')&&all.includes('[t]=T'),'The coefficient is deduced from known mass and time dimensions');
+  assert.match(all,/\[-?\\fracbtm\]=1|\[.*\]=\\frac\[b\]T(?:M|\[m\])=1/,'The full exponent must have dimension one');
+  assert.ok(all.includes('[b]=MT^-1')||all.includes('[b]=\\fracMT=MT^-1'),'The coefficient has mass divided by time dimensions');
+  assert.match(panels[2]+panels[3],/kilogramo por segundo|kg.*s/,'The coefficient is expressed in kilograms per second');
+  assert.match(all,/\[(?:e|\\exp).*\]=1/,'The exponential itself is dimensionless');
+  assert.match(all,/\[v\]=[^<]*=LT\^-1|\[v\]=LT\^-1/,'The resulting speed retains its dimension');
+  assert.match(steps[3],/10/);assert.match(steps[3],/3[,\.]68/,'Ten times exp(-1) is approximately 3.68 m/s');
+  assert.match(steps[3],/e\^-1|\\exp\(-1\)|\\frac10e/,'The numerical exponent equals minus one');
+  assert.match(panels[3],/Dimensión de b/);assert.match(panels[3],/Unidad SI de b/,'The result box identifies the coefficient rather than the exponent');
  }
 }
 
@@ -138,21 +157,25 @@ function interaction(){
   assert.ok(markup(card).includes(examples[card].title));assert.ok(markup(card).includes(examples[card].question));
   assert.match(markup(card),/constant-derivation-previous[^>]*disabled/);
  }
- const selectors=[...markup('physical-constants').matchAll(/<button\b[^>]*data-constant="([^"]+)"[^>]*>(.*?)<\/button>/g)];
- assert.deepEqual(selectors.map(match=>match[1]),constantOrder,'Constants progress from spring to Planck to gravitation');
- for(const [index,label] of ['Básico','Intermedio','Avanzado'].entries())assert.match(selectors[index][2],new RegExp(label));
- assert.match(selectors[0][0],/aria-pressed="true"/,'Spring is selected by default');
- assert.ok(selectors.slice(1).every(match=>match[0].includes('aria-pressed="false"')));
- for(const constant of [...constantOrder,'friction','sine']){
-  const card=constantOrder.includes(constant)?'physical-constants':constant;
-  if(card==='physical-constants'){
+ for(const card of cards){
+  const selectors=[...markup(card).matchAll(/<button\b[^>]*data-constant="([^"]+)"[^>]*>(.*?)<\/button>/g)];
+  assert.deepEqual(selectors.map(match=>match[1]),groups[card],'Each group follows its prescribed difficulty order');
+  for(const [index,label] of ['Básico','Intermedio','Avanzado'].entries())assert.match(selectors[index][2],new RegExp(label));
+  assert.match(selectors[0][0],/aria-pressed="true"/,'The first exercise is selected by default');
+  assert.ok(selectors.slice(1).every(match=>match[0].includes('aria-pressed="false"')));
+ }
+ for(const constant of [...constantOrder,...dimensionOrder]){
+  const card=constantOrder.includes(constant)?'physical-constants':'dimension-one';
+  {
+   const otherCard=cards.find(value=>value!==card),otherBefore=markup(otherCard);
    h.click(card,'select',constant);
+   assert.equal(markup(otherCard),otherBefore,'Selecting an example does not alter the other group selection or step');
    const prompt=markup(card).match(/<div class="constant-derivation-prompt">([\s\S]*?)<\/div>/)?.[1];
    assert.ok(prompt,'The selected constant includes its own exercise statement');
-   const laws={spring:/F=kx/,planck:/E=hf/,gravity:/F=G/};
+   const laws={spring:/F=kx/,planck:/E=hf/,gravity:/F=G/,friction:/F_r=\\mu_k/,sine:/y=A\\sin/,exponential:/v=v_0(?:e|\\exp)/};
    assert.match(prompt,laws[constant]);
-   for(const other of constantOrder.filter(value=>value!==constant))assert.doesNotMatch(prompt,laws[other],'Other exercises do not appear in the active statement');
-   assert.match(markup(card),new RegExp('Ejemplo '+(constantOrder.indexOf(constant)+1)+' de 3'),'The selected example reports its position in the progression');
+   for(const other of [...constantOrder,...dimensionOrder].filter(value=>value!==constant))assert.doesNotMatch(prompt,laws[other],'Other exercises do not appear in the active statement');
+   assert.match(markup(card),new RegExp('Ejemplo '+(groups[card].indexOf(constant)+1)+' de 3'),'The selected example reports its position in the progression');
   }
   const other=cards.filter(id=>id!==card),unaffected=other.map(markup),panels=[markup(card)];
   for(let step=1;step<=3;step++){
@@ -160,7 +183,7 @@ function interaction(){
    assert.match(h.panels.get(card).innerHTML,new RegExp('Paso '+(step+1)+' de 4'));
    assert.deepEqual(other.map(markup),unaffected,'Changing a step cannot change any neighboring example');
   }
-  if(['friction','sine'].includes(card))dimensionOneFormulas(card,panels);else formulas(constant,panels);
+  if(card==='dimension-one')dimensionOneFormulas(constant,panels);else formulas(constant,panels);
   assert.equal(h.control(card,'next').disabled,true);
   assert.equal(h.document.activeElement,h.control(card,'previous'),'A newly disabled Next control transfers focus to Previous');
   const final=markup(card);h.click(card,'next');assert.equal(markup(card),final,'The last step is bounded');
@@ -174,22 +197,25 @@ function interaction(){
  }
  assert.ok(h.mathCalls.length>0);
  assert.ok(h.mathCalls.every(call=>[...h.panels.values()].includes(call.node)&&call.options.trust===false&&call.options.throwOnError===false),'Math is rendered safely in the changed panel');
- for(const [index,constant] of constantOrder.entries()){
-  h.click('physical-constants','select',constant);
-  for(let step=0;step<=index;step++)h.click('physical-constants','next');
+ for(const card of cards){
+  for(const [index,constant] of groups[card].entries()){
+   h.click(card,'select',constant);
+   for(let step=0;step<=index;step++)h.click(card,'next');
+  }
+  for(const [index,constant] of groups[card].entries()){
+   h.click(card,'select',constant);
+   assert.match(markup(card),new RegExp('Paso '+(index+2)+' de 4'),'Switching exercises preserves each displayed step');
+  }
+  h.click(card,'restart');
+  assert.match(markup(card),/Ejemplo 3 de 3[\s\S]*Paso 1 de 4/,'Restart retains the selected advanced exercise');
+  h.click(card,'select',groups[card][0]);assert.match(markup(card),/Paso 2 de 4/,'Restarting the advanced example does not restart the basic example');
  }
- for(const [index,constant] of constantOrder.entries()){
-  h.click('physical-constants','select',constant);
-  assert.match(markup('physical-constants'),new RegExp('Paso '+(index+2)+' de 4'),'Switching exercises preserves each displayed step');
- }
- h.click('physical-constants','restart');
- assert.match(markup('physical-constants'),/Ejemplo 3 de 3[\s\S]*Paso 1 de 4/,'Restart retains the selected gravity exercise');
- h.click('physical-constants','select','spring');assert.match(markup('physical-constants'),/Paso 2 de 4/,'Restarting gravity does not restart spring');
  const stable=cards.map(markup);
  assert.equal(widget.handleAction({dataset:{action:'other'},closest:()=>h.hosts.get('physical-constants')}),false);
  assert.equal(widget.handleAction({dataset:{action:'constant-derivation-next',card:'bad'},closest:()=>h.hosts.get('physical-constants')}),false);
  assert.equal(widget.handleAction({dataset:{action:'constant-derivation-next',card:'physical-constants'},closest:()=>null}),false);
- for(const card of ['spring','gravity-planck'])assert.equal(widget.handleAction({dataset:{action:'constant-derivation-next',card},closest:()=>h.hosts.get('physical-constants')}),false,'Obsolete separate-card controls cannot mutate the unified activity');
+ for(const card of ['spring','gravity-planck','friction','sine'])assert.equal(widget.handleAction({dataset:{action:'constant-derivation-next',card},closest:()=>h.hosts.get('physical-constants')}),false,'Obsolete separate-card controls cannot mutate the unified activity');
+ for(const card of cards)for(const constant of groups[cards.find(value=>value!==card)])assert.equal(widget.handleAction({dataset:{action:'constant-derivation-select',card,constant},closest:()=>h.hosts.get(card)}),false,'Selectors reject exercises from the other group');
  assert.deepEqual(cards.map(markup),stable,'Unrelated and detached controls cannot mutate the examples');
  for(const card of cards)h.click(card,'next');widget.reset();
  assert.deepEqual(cards.map(markup),initial,'Signing out can clear every walkthrough');
@@ -210,12 +236,13 @@ async function chapterIntegration(){
  assert.equal(h.run('LESSONS[2].sections[0].examples.length'),1,'The former two cards are merged into one example block');
  assert.equal(h.run('LESSONS[2].sections[0].examples[0].interactive'),'physical-constants');
  assert.equal((app.innerHTML.match(/id="constant-derivation-physical-constants"/g)||[]).length,1,'The shared constants widget is mounted once');
- assert.doesNotMatch(app.innerHTML,/id="constant-derivation-(?:spring|gravity-planck)"/,'The former separate constants cards are absent');
- assert.equal(h.run('LESSONS[2].sections[1].examples[0].interactive'),'friction');
- assert.equal(h.run('LESSONS[2].sections[1].examples[1].interactive'),'sine');
+ assert.doesNotMatch(app.innerHTML,/id="constant-derivation-(?:spring|gravity-planck|friction|sine)"/,'The former separate example cards are absent');
+ assert.equal(h.run('LESSONS[2].sections[1].examples.length'),1);
+ assert.equal(h.run('LESSONS[2].sections[1].examples[0].interactive'),'dimension-one');
+ assert.equal((app.innerHTML.match(/id="constant-derivation-dimension-one"/g)||[]).length,1,'The shared dimension-one widget is mounted once');
  assert.doesNotMatch(app.innerHTML,/Aplicación 7\. Una expresión con presión y área|Ejemplo complementario\. Productos y cocientes/,'The previous rule examples are replaced in theory');
  const progress=clone(h.run('P'));
- click('physical-constants','select','gravity');for(const card of cards)click(card,'next');
+ click('physical-constants','select','gravity');click('dimension-one','select','exponential');for(const card of cards)click(card,'next');
  const retained=markup();assert.notDeepEqual(retained,initial);
  assert.deepEqual(clone(h.run('P')),progress,'Resolving constants does not award practice points or modify stored progress');
  h.run('goLesson(1)');for(const card of cards)click(card,'next');assert.deepEqual(markup(),retained,'Hidden examples cannot be advanced from a different topic');

@@ -100,14 +100,15 @@ async function mergedContent(){
  assert.equal(merged.title,'Análisis dimensional: deducciones y reglas');
  assert.doesNotMatch(rendered,/Tabla de consulta interactiva|id="dimension-explorer"|data-dimension-explorer/);
  assert.deepEqual(merged.sections.map(s=>s.id),['dim-deducciones','dim-reglas']);
- assert.deepEqual(merged.sections.map(s=>s.examples.length),[1,2],'One constants block and two dimension-one examples remain');
+ assert.deepEqual(merged.sections.map(s=>s.examples.length),[1,1],'One block per group remains');
  assert.deepEqual(merged.sections[0].examples.map(example=>example.interactive),['physical-constants'],'The three physical constants share one interactive walkthrough');
- assert.deepEqual(merged.sections[1].examples.map(example=>example.interactive),['friction','sine'],'The rules section contains the two dimension-one walkthroughs');
+ assert.deepEqual(merged.sections[1].examples.map(example=>example.interactive),['dimension-one'],'The rules section groups the three dimension-one examples');
  assert.doesNotMatch(rendered,/Aplicación 6\. Once magnitudes derivadas|Ejemplo complementario\. Impulso y cantidad de movimiento|Las siguientes once deducciones/,'The two removed cards and their introductory reference are absent');
- for(const title of ['Constantes físicas: de menor a mayor dificultad','Dimensión uno: coeficiente de rozamiento','Dimensión uno: una función seno'])assert.ok(rendered.includes(title),'The constants and dimension-one examples are available');
+ for(const title of ['Constantes físicas: de menor a mayor dificultad','Dimensión uno: de menor a mayor dificultad'])assert.ok(rendered.includes(title),'The constants and dimension-one groups are available');
  assert.equal((rendered.match(/id="constant-derivation-physical-constants"/g)||[]).length,1,'The constants block is mounted only once');
- assert.doesNotMatch(rendered,/id="constant-derivation-(?:spring|gravity-planck)"|Ejemplo complementario\. Constante de un resorte|Ejemplo complementario\. Gravitación y constante de Planck/,'The previous separate constants blocks are removed');
- assert.deepEqual([...rendered.matchAll(/data-constant="([^"]+)"/g)].map(match=>match[1]),['spring','planck','gravity'],'Constants are ordered from least to most difficult');
+ assert.equal((rendered.match(/id="constant-derivation-dimension-one"/g)||[]).length,1,'The dimension-one block is mounted only once');
+ assert.doesNotMatch(rendered,/id="constant-derivation-(?:spring|gravity-planck|friction|sine)"|Ejemplo complementario\. Constante de un resorte|Ejemplo complementario\. Gravitación y constante de Planck|Dimensión uno: coeficiente de rozamiento|Dimensión uno: una función seno/,'The previous separate example blocks are removed');
+ assert.deepEqual([...rendered.matchAll(/data-constant="([^"]+)"/g)].map(match=>match[1]),['spring','planck','gravity','friction','sine','exponential'],'Both groups are ordered from least to most difficult');
  assert.doesNotMatch(rendered,/Aplicación 7\. Una expresión con presión y área|Ejemplo complementario\. Productos y cocientes/,'The previous rule examples no longer appear in theory');
  assert.match(merged.body,/siete magnitudes fundamentales del SI/);
  assert.match(merged.sections[0].body,/Para deducir una dimensión/);
@@ -136,6 +137,6 @@ async function mergedContent(){
  const before=h.run('P.currentItem');h.run('goLesson(5)');assert.equal(h.run('P.currentItem'),before,'Removed menu positions cannot be opened');
  h.run('goLesson(3)');assert.equal(h.run('LESSONS[P.currentItem].id'),'dim-homogeneidad');
  assert.match(h.elements.get('chapter-app').innerHTML,/id="power-slider"/,'The homogeneity activity remains on its renumbered topic');
- console.log('PASS: merged dimensions, deductions and rules retain one constants block and two dimension-one examples, six interactive derivations, activity order and five-topic navigation.');
+ console.log('PASS: merged dimensions, deductions and rules retain two groups with three ordered examples each, six interactive derivations, activity order and five-topic navigation.');
 }
 sourceContentAndResume().then(removedLessonMigration).then(mergedTopicMigration).then(mergedContent).then(()=>testChapters(['fisica-capitulo-01'])).catch(error=>{console.error(error);process.exitCode=1;});
