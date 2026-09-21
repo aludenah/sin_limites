@@ -127,21 +127,15 @@
       question: 'En el rozamiento cinético, ' + math('F_r=\\mu_k F_N') + ', donde ' + math('F_r') + ' es el módulo de la fuerza de rozamiento y ' + math('F_N>0') + ' el de la fuerza normal. Determina la dimensión de ' + math('\\mu_k') + '.',
       steps: [
         {
-          title: 'Identifica la relación y las magnitudes',
-          text: 'La relación vincula el coeficiente de rozamiento cinético μₖ con la fuerza de rozamiento y la fuerza normal. Ambas fuerzas tienen la misma dimensión.',
-          equations: ['F_r=\\mu_k F_N', '[F_r]=[F_N]=MLT^{-2}'],
-          hint: 'Identifica primero las dimensiones de las magnitudes conocidas.'
-        },
-        {
           title: 'Despeja el coeficiente',
           text: 'Divide ambos miembros entre la fuerza normal, que es distinta de cero. La dimensión del cociente es el cociente de las dimensiones.',
-          equations: ['\\mu_k=\\frac{F_r}{F_N}', '[\\mu_k]=\\frac{[F_r]}{[F_N]}'],
+          equations: ['F_r=\\mu_k F_N', '\\mu_k=\\frac{F_r}{F_N}', '[\\mu_k]=\\frac{[F_r]}{[F_N]}'],
           hint: 'El coeficiente queda expresado como fuerza entre fuerza.'
         },
         {
-          title: 'Sustituye las dimensiones',
-          text: 'Reemplaza ambas fuerzas por MLT⁻². Al dividir potencias de la misma base, resta sus exponentes.',
-          equations: ['[\\mu_k]=\\frac{MLT^{-2}}{MLT^{-2}}', '[\\mu_k]=M^{1-1}L^{1-1}T^{-2-(-2)}'],
+          title: 'Identifica y sustituye las dimensiones',
+          text: 'La fuerza de rozamiento y la fuerza normal tienen la misma dimensión: MLT⁻². Sustituye ambas dimensiones en el cociente.',
+          equations: ['[F_r]=[F_N]=MLT^{-2}', '[\\mu_k]=\\frac{MLT^{-2}}{MLT^{-2}}'],
           hint: 'Los factores dimensionales del numerador y del denominador se cancelan.'
         },
         {

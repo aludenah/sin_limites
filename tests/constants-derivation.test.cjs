@@ -7,7 +7,7 @@ const moduleFile='fisica-capitulo-01-constantes.js';
 const cards=['physical-constants','dimension-one'];
 const constantOrder=['spring','planck','gravity'];
 const dimensionOrder=['friction','sine','exponential'];
-const stepTotals={spring:4,planck:4,gravity:4,friction:4,sine:2,exponential:4};
+const stepTotals={spring:4,planck:4,gravity:4,friction:3,sine:2,exponential:4};
 const groups={'physical-constants':constantOrder,'dimension-one':dimensionOrder};
 const examples={
  'physical-constants':{interactive:'physical-constants',title:'Constantes físicas: de menor a mayor dificultad',question:'Resuelve los tres ejemplos en orden: resorte, Planck y gravitación. Puedes volver a cada uno conservando el paso en el que te quedaste.'},
@@ -120,11 +120,12 @@ function dimensionOneFormulas(card,panels){
  assert.doesNotMatch(panels[0],/<dt>Dimensión<\/dt>|0[,.]30|0[,.]10/,'Students must advance before seeing the numerical solution');
  if(card==='friction'){
   assert.ok(all.includes('F_r=\\mu_kF_N'),'The coefficient relates friction and normal force');
-  assert.ok(all.includes('\\mu_k=\\fracF_rF_N'),'The solution isolates the coefficient');
-  assert.ok(all.includes('\\fracMLT^-2MLT^-2'),'Both forces are replaced by the same dimensions');
+  assert.ok(steps[0].includes('\\mu_k=\\fracF_rF_N'),'The first step isolates the coefficient before substitution');
+  assert.ok(steps[1].includes('[F_r]=[F_N]=MLT^-2')&&steps[1].includes('\\fracMLT^-2MLT^-2'),'The force dimensions and their substitution appear together in one step');
   assert.ok(all.includes('[\\mu_k]=1')||all.includes('[\\mu_k]=M^0L^0T^0=1'),'All dimensional exponents cancel');
-  assert.ok(steps[3].includes('M^0L^0T^0=1'),'The last step simplifies the canceled dimensions to one');
-  assert.match(panels[3],/<dt>Dimensión de μₖ<\/dt><dd>\\\(1\\\)<\/dd>/,'The result contains only the coefficient dimension');
+  assert.ok(steps[2].includes('M^0L^0T^0=1'),'The third step simplifies the canceled dimensions to one');
+  assert.match(panels[2],/<dt>Dimensión de μₖ<\/dt><dd>\\\(1\\\)<\/dd>/,'The result contains only the coefficient dimension');
+  assert.doesNotMatch(all,/M\^1-1|L\^1-1|T\^-2-\(-2\)/,'The highlighted expansion of exponent differences is removed');
   assert.doesNotMatch(panels.join('\n'),/30|100|0[,.]30|¿Tener dimensión uno|calcula su valor|Unidad SI/i,'The friction walkthrough asks only for the dimension, without numerical values or a unit result');
  }else if(card==='sine'){
   assert.ok(all.includes('y=A\\operatornamesen('),'The displacement equation uses the Spanish operator sen');
@@ -212,7 +213,7 @@ function interaction(){
   }
   h.click(card,'restart');
   assert.match(markup(card),/Ejemplo 3 de 3[\s\S]*Paso 1 de 4/,'Restart retains the selected advanced exercise');
-  h.click(card,'select',groups[card][0]);assert.match(markup(card),/Paso 2 de 4/,'Restarting the advanced example does not restart the basic example');
+  h.click(card,'select',groups[card][0]);assert.match(markup(card),new RegExp('Paso 2 de '+stepTotals[groups[card][0]]),'Restarting the advanced example does not restart the basic example');
  }
  const stable=cards.map(markup);
  assert.equal(widget.handleAction({dataset:{action:'other'},closest:()=>h.hosts.get('physical-constants')}),false);
