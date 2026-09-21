@@ -97,26 +97,15 @@ async function integration(){
  click({action:'dimension-game-start'});assert.match(gameHTML(),/Comenzar juego/);
  h.run("window.StudyMode.choose('student','free')");await h.signIn({uid:'student'});h.run('goLesson(2)');
  assert.equal(h.run('LESSONS[2].id'),'dim-dimensiones');assert.equal(h.run('LESSONS[2].examples.length'),0);
- assert.match(app.innerHTML,/id="dimension-explorer"/);assert.match(app.innerHTML,/id="dimension-game"/);
- assert.doesNotMatch(h.run('lessonBody(LESSONS[2])'),/Ejemplo resuelto|Una dimensión, varias unidades|<table\b/,'The original dimension introduction still uses its interactive reference and game');
+ assert.doesNotMatch(app.innerHTML,/id="dimension-explorer"|Tabla de consulta interactiva|data-dimension-explorer/,'The removed consultation widget has no visible fallback');
+ assert.match(app.innerHTML,/id="dimension-game"/);
+ assert.doesNotMatch(h.run('lessonBody(LESSONS[2])'),/Ejemplo resuelto|Una dimensión, varias unidades|<table\b/,'The introduction no longer includes the removed reference table');
  assert.match(app.innerHTML,/Deducción de dimensiones[\s\S]*Reglas del álgebra dimensional/);
  assert.ok(app.innerHTML.indexOf('id="dimension-game"')>app.innerHTML.indexOf('Ejemplo complementario. Productos y cocientes'),'The game appears after both merged sections');
  assert.doesNotMatch(app.innerHTML,/dimensiones-geometricas\.svg/,'The removed geometry figure is not shown');
  const practiceBefore=clone(h.run('P.practice10'));
 
- const panel={innerHTML:''};
- const buttons=explorer.items.map(item=>({dataset:{id:item.id},attributes:{},setAttribute(k,v){this.attributes[k]=v;}}));
- const host={querySelector:()=>panel,querySelectorAll:()=>buttons};
- Object.defineProperty(host,'innerHTML',{set(){throw Error('Explorer must keep the original focused buttons');}});
- for(const item of explorer.items){
-  click({action:'dimension-explorer-select',id:item.id},()=>host);
-  if(item.id!=='area')assert.ok(panel.innerHTML.includes(item.unitName));
- }
- click({action:'dimension-explorer-select',id:'torque'},()=>host);
- assert.match(panel.innerHTML,/Trabajo y energía/);assert.match(panel.innerHTML,/Calor/);
- assert.match(panel.innerHTML,/Compartir dimensión no significa/);
- assert.equal(buttons.find(b=>b.dataset.id==='torque').attributes['aria-pressed'],'true');
- assert.ok(mathCalls.some(c=>c.element===panel&&c.options.trust===false));
+ assert.doesNotMatch(read('fisica-capitulo-01.js'),/DimensionExplorer\?\.(?:render|handleAction|reset)/,'The game retains reference data without mounting or routing the old explorer');
 
  const gameHost=h.run("document.getElementById('dimension-game')");gameHost.querySelectorAll=()=>[];
  click({action:'dimension-game-start'});assert.match(gameHTML(),/Ronda 1 de 10/);
@@ -137,7 +126,7 @@ async function integration(){
  click({action:'dimension-game-check'});assert.match(gameHTML(),/1 \/ 20 puntos/);
  h.run('goLesson(1)');assert.doesNotMatch(app.innerHTML,/id="dimension-game"/);
  click({action:'dimension-game-next'});assert.match(gameHTML(),/Ronda 1 de 10/);
- h.run('goLesson(2)');assert.match(app.innerHTML,/data-id="torque" aria-pressed="true"/);
+ h.run('goLesson(2)');assert.doesNotMatch(app.innerHTML,/id="dimension-explorer"/);
  assert.match(app.innerHTML,/1 \/ 20 puntos/);click({action:'dimension-game-next'});
  assert.match(gameHTML(),/Ronda 2 de 10/);
  h.run("goTab('practice')");click({action:'dimension-game-start'});assert.match(gameHTML(),/Ronda 2 de 10/);
@@ -147,7 +136,7 @@ async function integration(){
  await h.signIn(null);assert.match(gameHTML(),/Comenzar juego/);
  click({action:'dimension-game-start'});assert.match(gameHTML(),/Comenzar juego/);
  h.run("window.StudyMode.choose('other','free')");await h.signIn({uid:'other'});h.run('goLesson(2)');
- assert.match(app.innerHTML,/Comenzar juego/);assert.match(app.innerHTML,/data-id="area" aria-pressed="true"/);
+ assert.match(app.innerHTML,/Comenzar juego/);assert.doesNotMatch(app.innerHTML,/id="dimension-explorer"/);
 }
 
-scientificContent();scoring();integration().then(()=>console.log('PASS: 17 dimensional references, exponent builder, equivalent-unit fairness, partial scoring, math rendering, navigation retention and student isolation.')).catch(error=>{console.error(error);process.exitCode=1;});
+scientificContent();scoring();integration().then(()=>console.log('PASS: 17 retained dimensional references, removed consultation UI, exponent builder, equivalent-unit fairness, partial scoring, math rendering, navigation retention and student isolation.')).catch(error=>{console.error(error);process.exitCode=1;});

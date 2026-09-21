@@ -98,23 +98,22 @@ function updateLab(n){
   output.textContent=n;el.innerHTML=`<div class="equation">\\[[at^{${n}}]=LT^{${n-2}}\\]</div><p>${n===1?'✓ Con n = 1, ambos términos tienen dimensión de velocidad.':'Todavía no coincide con '+String.raw`\(LT^{-1}\)`+'. Prueba otro exponente.'}</p>`;renderMath();
 }
 const DIMENSIONAL_FIGURES={
- 'dim-deducciones':[['magnitudes-derivadas','Las relaciones físicas permiten deducir dimensiones de fuerza, presión, trabajo y potencia.']],
  'dim-homogeneidad':[['homogeneidad','Solo se suman magnitudes compatibles, después de expresar sus valores en unidades compatibles.']]
 };
 function dimensionalFigure(name,caption){
  const src='assets/fisica-capitulo-01/'+name+'.svg';
- const heights={'magnitudes-derivadas':805,homogeneidad:500,'mapa-magnitudes':940};
+ const heights={homogeneidad:500,'mapa-magnitudes':940};
  return `<figure class="dimensional-figure"><a href="${src}" target="_blank" rel="noopener" aria-label="Ampliar gráfico: ${escapeHTML(caption)}"><img src="${src}" width="760" height="${heights[name]}" alt="${escapeHTML(caption)}" loading="lazy"></a><figcaption>${escapeHTML(caption)} <a href="${src}" target="_blank" rel="noopener">Ampliar gráfico</a></figcaption></figure>`;
 }
 function lessonFigures(id){
+ if(id==='dim-deducciones')return window.GeometryDerivation?.render()||String.raw`<section><h4>Área y volumen: deducción paso a paso</h4><p>Área: \([A]=[b][h]=L\cdot L=L^2\). Su unidad SI es el metro cuadrado.</p><p>Volumen: \([V]=[a][b][c]=L\cdot L\cdot L=L^3\). Su unidad SI es el metro cúbico.</p></section>`;
  return (DIMENSIONAL_FIGURES[id]||[]).map(([name,caption])=>dimensionalFigure(name,caption)).join('');
 }
 function lessonBody(lesson){
  return lesson.body.replace('<div data-stone-explorer></div>',()=>window.StoneExplorer?.render()||'<p>Una piedra tiene magnitudes medibles, como masa, longitud, volumen y temperatura.</p>')
   .replace('<div data-magnitude-explorer="base"></div>',()=>window.MagnitudeExplorer?.render('base')||CONTENT.baseTable)
   .replace('<div data-magnitude-explorer="derived"></div>',()=>window.MagnitudeExplorer?.render('derived')||CONTENT.derivedTable)
-  .replace('<div data-prefix-explorer></div>',()=>CONTENT.prefixTable)
-  .replace('<div data-dimension-explorer></div>',()=>window.DimensionExplorer?.render()||CONTENT.derivedTable);
+  .replace('<div data-prefix-explorer></div>',()=>CONTENT.prefixTable);
 }
 function lessonActivity(lesson){
  if(lesson.id==='dim-magnitudes')return window.MagnitudeGame?.render()||'<p>Recarga la página para abrir el juego de magnitudes.</p>';
@@ -156,7 +155,7 @@ root.addEventListener('click',event=>{
 const button=event.target.closest('[data-action]');if(!button||button.disabled||!user)return;
 if(P.activeTab==='theory'&&LESSONS[P.currentItem]?.id==='dim-magnitudes'&&(window.MagnitudeGame?.handleAction(button)||window.StoneExplorer?.handleAction(button)))return;
 if(P.activeTab==='theory'&&LESSONS[P.currentItem]?.id==='dim-si'&&window.PrefixGame?.handleAction(button))return;
-if(P.activeTab==='theory'&&LESSONS[P.currentItem]?.id==='dim-dimensiones'&&(window.DimensionExplorer?.handleAction(button)||window.DimensionGame?.handleAction(button)))return;
+if(P.activeTab==='theory'&&LESSONS[P.currentItem]?.id==='dim-dimensiones'&&(window.GeometryDerivation?.handleAction(button)||window.DimensionGame?.handleAction(button)))return;
 const {action,value,index,id}=button.dataset;if(action==='lesson')goLesson(Number(index));else if(action==='tab')goTab(value);else if(action==='check-practice10')checkPractice(id);else if(action==='sync')retrySync();
 });
 root.addEventListener('change',event=>{
@@ -173,7 +172,7 @@ window.addEventListener('pagehide',()=>{if(user&&saveTimer){clearTimeout(saveTim
 
 async function signedIn(u){
   const epoch=++authEpoch;clearTimeout(saveTimer);user=u;P=emptyProgress();cloudReady=false;saveVersion=0;saveChain=Promise.resolve();notice='';
-  window.MagnitudeGame?.reset();window.StoneExplorer?.reset();window.PrefixGame?.reset();window.DimensionExplorer?.reset();window.DimensionGame?.reset();
+  window.MagnitudeGame?.reset();window.StoneExplorer?.reset();window.PrefixGame?.reset();window.GeometryDerivation?.reset();window.DimensionGame?.reset();
   if(!u){root.innerHTML=`${header()}<main id="chapter-content" class="access card"><p class="eyebrow">Física · Capítulo 1 de 19</p><h1>Análisis Dimensional</h1><p>Inicia sesión en la academia para estudiar y guardar tu avance.</p><a class="button" href="index.html?chapter=fisica-capitulo-01">Continuar con Google</a></main>`;return;}
  if(window.StudyMode&&!await window.StudyMode.requireChoice(u.uid,db,'fisica-capitulo-01',()=>epoch===authEpoch))return;
  if(epoch!==authEpoch)return;

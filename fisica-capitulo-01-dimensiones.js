@@ -2,7 +2,7 @@
   'use strict';
 
   // Relations, dimensions and derivations are TeX. Other fields are plain text.
-  // The 17 entries preserve the chapter's reference table, including equal dimensions.
+  // The 17 entries supply the dimension game, including equal dimensions.
   const items = Object.freeze([
     {
       id: 'area', name: 'Área', relation: 'A=bh', dimension: 'L^{2}', unit: 'm²', unitName: 'metro cuadrado',
@@ -108,53 +108,6 @@
     }
   ].map(item => Object.freeze({ ...item, exponents: Object.freeze(item.exponents) })));
 
-  const dimensions = Object.freeze({ M: 'Masa', L: 'Longitud', T: 'Tiempo', I: 'Corriente eléctrica' });
-  let selected = 'area';
-  const escapeHTML = text => String(text).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
-  const math = tex => '\\(' + escapeHTML(tex) + '\\)';
-  const sameDimension = (first, second) => Object.keys(dimensions).every(key => first.exponents[key] === second.exponents[key]);
-
-  function detailHTML(item) {
-    const related = items.filter(other => other.id !== item.id && sameDimension(item, other));
-    return '<h5 class="dimension-explorer-name">' + escapeHTML(item.name) + '</h5>' +
-      '<dl class="dimension-explorer-facts"><div><dt>Dimensión</dt><dd>' + math(item.dimension) + '</dd></div>' +
-      '<div><dt>Unidad SI</dt><dd>' + escapeHTML(item.unit) + '<span>' + escapeHTML(item.unitName) + '</span></dd></div></dl>' +
-      '<div class="dimension-explorer-relation"><strong>Relación de referencia</strong><div>' + math(item.relation) + '</div></div>' +
-      '<div class="dimension-explorer-derivation"><strong>Cómo se obtiene</strong><div>' + math(item.derivation) + '</div></div>' +
-      '<p class="dimension-explorer-explanation">' + escapeHTML(item.explanation) + '</p>' +
-      (related.length ? '<div class="dimension-explorer-connections"><strong>También tienen esta dimensión</strong><ul>' + related.map(other => '<li>' + escapeHTML(other.name) + ' <span>(' + escapeHTML(other.unit) + ')</span></li>').join('') + '</ul><p>Compartir dimensión no significa representar la misma magnitud. Selecciona sus nombres arriba para comparar.</p></div>' : '');
-  }
-
-  function render() {
-    const active = items.find(item => item.id === selected) || items[0];
-    return '<section class="dimension-explorer" id="dimension-explorer" aria-label="Tabla interactiva de dimensiones">' +
-      '<p class="dimension-explorer-instruction">Elige una de las 17 magnitudes para consultar su dimensión, su unidad y cómo se relaciona con las magnitudes base.</p>' +
-      '<div class="dimension-explorer-choices" role="group" aria-label="Magnitudes de la tabla de consulta">' +
-      items.map(item => '<button type="button" data-action="dimension-explorer-select" data-id="' + item.id + '" aria-pressed="' + (item.id === active.id) + '" aria-controls="dimension-explorer-detail">' + escapeHTML(item.name) + '</button>').join('') +
-      '</div><div class="dimension-explorer-detail" id="dimension-explorer-detail" role="region" aria-label="Detalle de la magnitud seleccionada" aria-live="polite" aria-atomic="true">' + detailHTML(active) + '</div></section>';
-  }
-
-  function handleAction(button) {
-    if (!button || !button.dataset || button.disabled || button.dataset.action !== 'dimension-explorer-select') return false;
-    const item = items.find(entry => entry.id === button.dataset.id);
-    const root = button.closest('#dimension-explorer');
-    const panel = root && root.querySelector('#dimension-explorer-detail');
-    if (!item || !panel) return false;
-    if (selected === item.id) return true;
-    selected = item.id;
-    root.querySelectorAll('[data-action="dimension-explorer-select"]').forEach(choice => choice.setAttribute('aria-pressed', String(choice.dataset.id === item.id)));
-    // Update only the detail: the selected button and keyboard focus stay mounted.
-    panel.innerHTML = detailHTML(item);
-    if (typeof window.renderMathInElement === 'function') {
-      window.renderMathInElement(panel, {
-        delimiters: [{ left: '\\(', right: '\\)', display: false }],
-        throwOnError: false,
-        trust: false
-      });
-    }
-    return true;
-  }
-
-  function reset() { selected = 'area'; }
-  window.DimensionExplorer = Object.freeze({ items, render, handleAction, reset });
+  // Shared reference data for the dimension game; the consultation widget was removed.
+  window.DimensionExplorer = Object.freeze({ items });
 })();
