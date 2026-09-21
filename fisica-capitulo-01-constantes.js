@@ -163,14 +163,14 @@
       ]
     },
     exponential: {
-      name: 'Dimensión del exponente y del coeficiente de frenado',
-      question: 'Un modelo de frenado describe la rapidez mediante ' + math('v=v_0e^{-bt/m}') + ', donde ' + math('v_0') + ' es la rapidez inicial, ' + math('m>0') + ' la masa, ' + math('t\\geq0') + ' el tiempo y ' + math('b>0') + ' un coeficiente. Deduce la dimensión y la unidad SI de ' + math('b') + '. Verifica las dimensiones de la exponencial y de ' + math('v') + '.',
+      name: 'Dimensión del coeficiente b',
+      question: 'Un modelo de frenado describe la rapidez mediante ' + math('v=v_0e^{-bt/m}') + ', donde ' + math('v_0') + ' es la rapidez inicial, ' + math('m') + ' la masa, ' + math('t') + ' el tiempo y ' + math('b') + ' un coeficiente. Determina la dimensión de ' + math('b') + '.',
       steps: [
         {
           title: 'Identifica la relación y las magnitudes',
-          text: 'La rapidez v es la rapidez inicial v₀ multiplicada por un factor exponencial. La masa m es positiva, el tiempo t es no negativo y el coeficiente b es positivo.',
-          equations: ['v=v_0e^{-bt/m}', '[v_0]=LT^{-1}', '[m]=M,\\qquad[t]=T'],
-          hint: 'La base e es la constante matemática e ≈ 2,718 y tiene dimensión uno. Su exponente también debe ser adimensional.'
+          text: 'Para determinar la dimensión de b, identifica las magnitudes que aparecen en el exponente: m es masa y t es tiempo.',
+          equations: ['v=v_0e^{-bt/m}', '[m]=M,\\qquad[t]=T'],
+          hint: 'El exponente de una función exponencial debe ser adimensional.'
         },
         {
           title: 'Exige dimensión uno en el exponente',
@@ -180,20 +180,11 @@
         },
         {
           title: 'Deduce la dimensión del coeficiente',
-          text: 'Multiplica por M y divide entre T para despejar [b]. La exponencial tiene dimensión uno, por lo que v conserva la dimensión de rapidez.',
-          equations: ['[b]=\\frac{M}{T}=MT^{-1}', '\\text{Unidad SI de }b:\\quad\\frac{\\mathrm{kg}}{\\mathrm s}', '[e^{-bt/m}]=1', '[v]=[v_0][e^{-bt/m}]=LT^{-1}\\cdot1=LT^{-1}'],
-          hint: 'El coeficiente b tiene dimensiones, mientras que el exponente y el factor exponencial son adimensionales.'
-        },
-        {
-          title: 'Comprueba con valores numéricos',
-          text: 'Con b = 2 kg/s, m = 4 kg y t = 2 s, el cociente bt/m vale uno. El exponente es −1 y la rapidez inicial de 10 m/s se multiplica por e⁻¹.',
-          equations: ['\\frac{bt}{m}=\\frac{(2\\,\\mathrm{kg}/\\mathrm s)(2\\,\\mathrm s)}{4\\,\\mathrm{kg}}=1', 'e^{-bt/m}=e^{-1}\\approx0{,}368', 'v=10\\,\\frac{\\mathrm m}{\\mathrm s}\\cdot e^{-1}\\approx3{,}68\\,\\frac{\\mathrm m}{\\mathrm s}'],
+          text: 'Multiplica por M y divide entre T para despejar la dimensión de b.',
+          equations: ['[b]=\\frac{M}{T}=MT^{-1}'],
           dimension: 'MT^{-1}',
           dimensionLabel: 'Dimensión de b',
-          unit: '\\frac{\\mathrm{kg}}{\\mathrm s}',
-          unitLabel: 'Unidad SI de b',
-          unitName: 'kilogramo por segundo',
-          hint: 'El factor e⁻¹ tiene dimensión uno, aunque su valor sea aproximadamente 0,368. La rapidez resultante se expresa en m/s.'
+          hint: 'El coeficiente b tiene dimensión de masa dividida entre tiempo.'
         }
       ]
     }

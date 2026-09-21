@@ -7,7 +7,7 @@ const moduleFile='fisica-capitulo-01-constantes.js';
 const cards=['physical-constants','dimension-one'];
 const constantOrder=['spring','planck','gravity'];
 const dimensionOrder=['friction','sine','exponential'];
-const stepTotals={spring:4,planck:4,gravity:4,friction:2,sine:2,exponential:4};
+const stepTotals={spring:4,planck:4,gravity:4,friction:2,sine:2,exponential:3};
 const groups={'physical-constants':constantOrder,'dimension-one':dimensionOrder};
 const examples={
  'physical-constants':{interactive:'physical-constants',title:'Constantes físicas: de menor a mayor dificultad',question:'Resuelve los tres ejemplos en orden: resorte, Planck y gravitación. Puedes volver a cada uno conservando el paso en el que te quedaste.'},
@@ -139,17 +139,13 @@ function dimensionOneFormulas(card,panels){
   assert.doesNotMatch(panels.join('\n'),/\\sin\b|Dimensión de y/,'Every sine formula uses sen and the result targets A');
   assert.doesNotMatch(all,/0[,\.]20|0[,\.]10|\\frac\\pi6|\\frac12|\\tau=12|Luegocalcula|valoresnuméricos|UnidadSI/i,'The sine walkthrough asks only for dimensions, without numerical calculations or a unit result');
  }else{
-  assert.doesNotMatch(panels[0],/kg\/s|kilogramo por segundo|3[,.]68/,'The coefficient unit and numerical result are discovered after advancing');
   assert.match(all,/v=v_0(?:e|\\exp)/,'The decay law multiplies initial speed by an exponential');
-  assert.ok(all.includes('[m]=M')&&all.includes('[t]=T'),'The coefficient is deduced from known mass and time dimensions');
-  assert.match(all,/\[-?\\fracbtm\]=1|\[.*\]=\\frac\[b\]T(?:M|\[m\])=1/,'The full exponent must have dimension one');
-  assert.ok(all.includes('[b]=MT^-1')||all.includes('[b]=\\fracMT=MT^-1'),'The coefficient has mass divided by time dimensions');
-  assert.match(panels[2]+panels[3],/kilogramo por segundo|kg.*s/,'The coefficient is expressed in kilograms per second');
-  assert.match(all,/\[(?:e|\\exp).*\]=1/,'The exponential itself is dimensionless');
-  assert.match(all,/\[v\]=[^<]*=LT\^-1|\[v\]=LT\^-1/,'The resulting speed retains its dimension');
-  assert.match(steps[3],/10/);assert.match(steps[3],/3[,\.]68/,'Ten times exp(-1) is approximately 3.68 m/s');
-  assert.match(steps[3],/e\^-1|\\exp\(-1\)|\\frac10e/,'The numerical exponent equals minus one');
-  assert.match(panels[3],/Dimensión de b/);assert.match(panels[3],/Unidad SI de b/,'The result box identifies the coefficient rather than the exponent');
+  assert.ok(steps[0].includes('[m]=M')&&steps[0].includes('[t]=T'),'The first step identifies the known mass and time dimensions');
+  assert.match(steps[1],/\[-?\\fracbtm\]=1|\[.*\]=\\frac\[b\]T(?:M|\[m\])=1/,'The second step requires dimension one in the exponent');
+  assert.ok(steps[2].includes('[b]=MT^-1')||steps[2].includes('[b]=\\fracMT=MT^-1'),'The third step deduces the coefficient dimension');
+  assert.match(panels[2],/<dt>Dimensión de b<\/dt><dd>\\\(MT\^\{-1\}\\\)<\/dd>/,'The final result contains only the requested dimension of b');
+  assert.doesNotMatch(all,/UnidadSI|kilogramo|kg|3[,.]68|0[,.]368|\\frac10e|\[v(?:_0)?\]|\[e\^|\[\\exp/,'The example has no unit result, numerical calculation or extra dimensional checks');
+  assert.doesNotMatch(panels.join('\n'),/\\(?:geq?|leq?|gt|lt)\b|[mbt](?:&gt;|&lt;|[<>≥≤])0|positiv[oa]|mayor que cero|no negativo/i,'The example does not state positivity or inequality conditions');
  }
 }
 
@@ -212,7 +208,7 @@ function interaction(){
    assert.match(markup(card),new RegExp('Paso '+Math.min(index+2,stepTotals[constant])+' de '+stepTotals[constant]),'Switching exercises preserves each displayed step with its own limit');
   }
   h.click(card,'restart');
-  assert.match(markup(card),/Ejemplo 3 de 3[\s\S]*Paso 1 de 4/,'Restart retains the selected advanced exercise');
+  assert.match(markup(card),new RegExp('Ejemplo 3 de 3[\\s\\S]*Paso 1 de '+stepTotals[groups[card][2]]),'Restart retains the selected advanced exercise');
   h.click(card,'select',groups[card][0]);assert.match(markup(card),new RegExp('Paso 2 de '+stepTotals[groups[card][0]]),'Restarting the advanced example does not restart the basic example');
  }
  const stable=cards.map(markup);
