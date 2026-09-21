@@ -17,3 +17,13 @@
 .content ul,.content ol{padding-left:23px}.content li{margin:8px 0}
 @media(max-width:520px){.dimensional-figure{padding:8px}.tabs button{flex:0 0 auto}.worked-example{padding:16px}}
 @media print{.dimensional-figure{break-inside:avoid}.dimensional-figure figcaption a{display:none}}
+
+.dimensional-rules{max-width:100%;background:#fff}
+.dimensional-rules:focus-visible{outline:3px solid #db8428;outline-offset:3px}
+.dimensional-rules table{min-width:640px;white-space:normal;line-height:1.6}
+.dimensional-rules th,.dimensional-rules td{vertical-align:middle}
+.dimensional-rules tbody th{width:20%;background:transparent}
+.dimensional-rules tbody tr:last-child th{border-bottom:0}
+.dimensional-rules .rule-formula{display:block;margin-top:5px;white-space:nowrap}
+.dimensional-rules-note{font-size:13px;line-height:1.65}
+@media(max-width:520px){.dimensional-rules table{font-size:12px}.dimensional-rules th,.dimensional-rules td{padding:10px 12px}}

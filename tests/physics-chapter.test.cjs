@@ -112,7 +112,14 @@ async function mergedContent(){
  assert.doesNotMatch(rendered,/Aplicación 7\. Una expresión con presión y área|Ejemplo complementario\. Productos y cocientes/,'The previous rule examples no longer appear in theory');
  assert.match(merged.body,/siete magnitudes fundamentales del SI/);
  assert.match(merged.sections[0].body,/Para deducir una dimensión/);
- assert.match(merged.sections[1].body,/Regla 1[\s\S]*Regla 2[\s\S]*Regla 3[\s\S]*Funciones matemáticas/);
+ const rules=merged.sections[1].body;
+ assert.match(rules,/class="table-scroll dimensional-rules"/,'The dimensional rules use a static reference table');
+ const tableHead=rules.match(/<thead>([\s\S]*?)<\/thead>/)?.[1],tableBody=rules.match(/<tbody>([\s\S]*?)<\/tbody>/)?.[1];
+ assert.ok(tableHead&&tableBody,'The table separates column headings and rule rows');
+ assert.deepEqual([...tableHead.matchAll(/<th\b[^>]*scope="col"[^>]*>(.*?)<\/th>/g)].map(match=>match[1]),['Regla','Expresión','Ejemplo o idea clave']);
+ assert.equal((tableBody.match(/<tr\b/g)||[]).length,6,'The summary has six rules');
+ assert.deepEqual([...tableBody.matchAll(/<th\b[^>]*scope="row"[^>]*>(.*?)<\/th>/g)].map(match=>match[1]),['Suma y resta','Multiplicación','División','Potencias y raíces','Dimensión uno','Funciones matemáticas']);
+ assert.doesNotMatch(rules,/<(?:button|input|select)\b/,'The rules table has no interactive controls');
  let lastPosition=rendered.indexOf('Para deducir una dimensión');
  assert.ok(lastPosition>rendered.indexOf('siete magnitudes fundamentales del SI'),'Deductions follow the original introduction');
  for(const section of merged.sections){
