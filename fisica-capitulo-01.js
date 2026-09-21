@@ -94,13 +94,12 @@ function updateLab(n){
   output.textContent=n;el.innerHTML=`<div class="equation">\\[[at^{${n}}]=LT^{${n-2}}\\]</div><p>${n===1?'✓ Con n = 1, ambos términos tienen dimensión de velocidad.':'Todavía no coincide con '+String.raw`\(LT^{-1}\)`+'. Prueba otro exponente.'}</p>`;renderMath();
 }
 const DIMENSIONAL_FIGURES={
- 'dim-dimensiones':[['dimensiones-geometricas','El área contiene dos factores de longitud; el volumen contiene tres.']],
  'dim-deducciones':[['magnitudes-derivadas','Las relaciones físicas permiten deducir dimensiones de fuerza, presión, trabajo y potencia.']],
  'dim-homogeneidad':[['homogeneidad','Solo se suman magnitudes compatibles, después de expresar sus valores en unidades compatibles.']]
 };
 function dimensionalFigure(name,caption){
  const src='assets/fisica-capitulo-01/'+name+'.svg';
- const heights={'dimensiones-geometricas':665,'magnitudes-derivadas':805,homogeneidad:500,'mapa-magnitudes':940};
+ const heights={'magnitudes-derivadas':805,homogeneidad:500,'mapa-magnitudes':940};
  return `<figure class="dimensional-figure"><a href="${src}" target="_blank" rel="noopener" aria-label="Ampliar gráfico: ${escapeHTML(caption)}"><img src="${src}" width="760" height="${heights[name]}" alt="${escapeHTML(caption)}" loading="lazy"></a><figcaption>${escapeHTML(caption)} <a href="${src}" target="_blank" rel="noopener">Ampliar gráfico</a></figcaption></figure>`;
 }
 function lessonFigures(id){

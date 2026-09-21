@@ -99,7 +99,7 @@ async function integration(){
  assert.equal(h.run('LESSONS[2].id'),'dim-dimensiones');assert.equal(h.run('LESSONS[2].examples.length'),0);
  assert.match(app.innerHTML,/id="dimension-explorer"/);assert.match(app.innerHTML,/id="dimension-game"/);
  assert.doesNotMatch(app.innerHTML,/Ejemplo resuelto|Una dimensión, varias unidades|<table\b/);
- assert.match(app.innerHTML,/dimensiones-geometricas\.svg/,'The lesson figure is preserved');
+ assert.doesNotMatch(app.innerHTML,/dimensiones-geometricas\.svg/,'The removed geometry figure is not shown');
  const practiceBefore=clone(h.run('P.practice10'));
 
  const panel={innerHTML:''};
