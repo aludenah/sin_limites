@@ -107,7 +107,8 @@ function lessonFigures(id){
  return (DIMENSIONAL_FIGURES[id]||[]).map(([name,caption])=>dimensionalFigure(name,caption)).join('');
 }
 function lessonBody(lesson){
- return lesson.body.replace('<div data-magnitude-explorer="base"></div>',()=>window.MagnitudeExplorer?.render('base')||CONTENT.baseTable)
+ return lesson.body.replace('<div data-stone-explorer></div>',()=>window.StoneExplorer?.render()||'<p>Una piedra tiene magnitudes medibles, como masa, longitud, volumen y temperatura.</p>')
+  .replace('<div data-magnitude-explorer="base"></div>',()=>window.MagnitudeExplorer?.render('base')||CONTENT.baseTable)
   .replace('<div data-magnitude-explorer="derived"></div>',()=>window.MagnitudeExplorer?.render('derived')||CONTENT.derivedTable)
   .replace('<div data-prefix-explorer></div>',()=>window.PrefixExplorer?.render()||CONTENT.prefixTable)
   .replace('<div data-dimension-explorer></div>',()=>window.DimensionExplorer?.render()||CONTENT.derivedTable);
@@ -149,7 +150,7 @@ function checkPractice(id){if(P.activeTab!=='practice')return;const result=windo
 
 root.addEventListener('click',event=>{
 const button=event.target.closest('[data-action]');if(!button||button.disabled||!user)return;
-if(P.activeTab==='theory'&&LESSONS[P.currentItem]?.id==='dim-magnitudes'&&(window.MagnitudeExplorer?.handleAction(button)||window.MagnitudeGame?.handleAction(button)||window.MeasurementLab?.handleAction(button)))return;
+if(P.activeTab==='theory'&&LESSONS[P.currentItem]?.id==='dim-magnitudes'&&(window.MagnitudeExplorer?.handleAction(button)||window.MagnitudeGame?.handleAction(button)||window.MeasurementLab?.handleAction(button)||window.StoneExplorer?.handleAction(button)))return;
 if(P.activeTab==='theory'&&LESSONS[P.currentItem]?.id==='dim-si'&&(window.PrefixExplorer?.handleAction(button)||window.PrefixGame?.handleAction(button)))return;
 if(P.activeTab==='theory'&&LESSONS[P.currentItem]?.id==='dim-dimensiones'&&(window.DimensionExplorer?.handleAction(button)||window.DimensionGame?.handleAction(button)))return;
 const {action,value,index,id}=button.dataset;if(action==='lesson')goLesson(Number(index));else if(action==='tab')goTab(value);else if(action==='check-practice10')checkPractice(id);else if(action==='sync')retrySync();
@@ -171,7 +172,7 @@ window.addEventListener('pagehide',()=>{window.MeasurementLab?.unmount();if(user
 
 async function signedIn(u){
   const epoch=++authEpoch;clearTimeout(saveTimer);user=u;P=emptyProgress();cloudReady=false;saveVersion=0;saveChain=Promise.resolve();notice='';
-  window.MagnitudeExplorer?.reset();window.MagnitudeGame?.reset();window.MeasurementLab?.reset();window.PrefixExplorer?.reset();window.PrefixGame?.reset();window.DimensionExplorer?.reset();window.DimensionGame?.reset();
+  window.MagnitudeExplorer?.reset();window.MagnitudeGame?.reset();window.MeasurementLab?.reset();window.StoneExplorer?.reset();window.PrefixExplorer?.reset();window.PrefixGame?.reset();window.DimensionExplorer?.reset();window.DimensionGame?.reset();
   if(!u){root.innerHTML=`${header()}<main id="chapter-content" class="access card"><p class="eyebrow">Física · Capítulo 1 de 19</p><h1>Análisis Dimensional</h1><p>Inicia sesión en la academia para estudiar y guardar tu avance.</p><a class="button" href="index.html?chapter=fisica-capitulo-01">Continuar con Google</a></main>`;return;}
  if(window.StudyMode&&!await window.StudyMode.requireChoice(u.uid,db,'fisica-capitulo-01',()=>epoch===authEpoch))return;
  if(epoch!==authEpoch)return;
