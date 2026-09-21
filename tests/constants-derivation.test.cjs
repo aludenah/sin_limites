@@ -7,6 +7,7 @@ const moduleFile='fisica-capitulo-01-constantes.js';
 const cards=['physical-constants','dimension-one'];
 const constantOrder=['spring','planck','gravity'];
 const dimensionOrder=['friction','sine','exponential'];
+const stepTotals={spring:4,planck:4,gravity:4,friction:4,sine:2,exponential:4};
 const groups={'physical-constants':constantOrder,'dimension-one':dimensionOrder};
 const examples={
  'physical-constants':{interactive:'physical-constants',title:'Constantes físicas: de menor a mayor dificultad',question:'Resuelve los tres ejemplos en orden: resorte, Planck y gravitación. Puedes volver a cada uno conservando el paso en el que te quedaste.'},
@@ -70,8 +71,8 @@ function sessions(){
   const card='dimension-one';session.select(constant,card);
   const before=state();
   for(let i=0;i<5;i++)session.next(card);
-  assert.deepEqual(state(),{...before,[constant]:3},'Each dimension-one example advances independently to its last step');
-  session.previous(card);assert.equal(state()[constant],2);
+  assert.deepEqual(state(),{...before,[constant]:stepTotals[constant]-1},'Each dimension-one example advances independently to its own last step');
+  session.previous(card);assert.equal(state()[constant],stepTotals[constant]-2);
   session.restart(card);assert.deepEqual(state(),before,'Restart preserves the other examples');
  }
  const stable=state();
@@ -113,7 +114,9 @@ function formulas(constant,panels){
 function dimensionOneFormulas(card,panels){
  const compact=text=>text.replace(/\\(?:mathrm|text)\s*\{([^}]*)\}/g,'$1').replace(/[{}\s]/g,'').replace(/\\(?:left|right|,|!|cdot)/g,'');
  const steps=panels.map(compact),all=steps.join('\n');
- assert.match(panels[0],/Paso 1 de 4/);assert.match(panels[3],/Paso 4 de 4/);
+ assert.equal(panels.length,stepTotals[card],'Each exercise retains its requested number of steps');
+ assert.match(panels[0],new RegExp('Paso 1 de '+stepTotals[card]));
+ assert.match(panels.at(-1),new RegExp('Paso '+stepTotals[card]+' de '+stepTotals[card]));
  assert.doesNotMatch(panels[0],/<dt>Dimensión<\/dt>|0[,.]30|0[,.]10/,'Students must advance before seeing the numerical solution');
  if(card==='friction'){
   assert.ok(all.includes('F_r=\\mu_kF_N'),'The coefficient relates friction and normal force');
@@ -128,14 +131,10 @@ function dimensionOneFormulas(card,panels){
   assert.ok(steps[0].includes('[y]=L'),'The displacement dimension is the known input');
   assert.doesNotMatch(steps[0],/\[A\]=L/,'The unknown amplitude dimension is not given at the beginning');
   assert.ok(all.includes('[t]=[\\tau]=T'),'Time and period have matching dimensions');
-  assert.ok(all.includes('\\frac[2][\\pi][t][\\tau]')&&all.includes('\\frac11TT=1'),'The numerical factors have dimension one and the time dimensions cancel');
-  assert.match(all,/\[\\(?:phi|varphi)\]=.*1/,'The complete trigonometric argument has dimension one');
-  assert.match(all,/\[\\operatornamesen(?:\(|\\(?:phi|varphi)).*\]=1/,'The sine result is dimensionless');
-  assert.match(steps[1],/\[\\(?:phi|varphi)\]=.*1/,'The second step deduces the argument dimension');
-  assert.match(steps[2],/\[\\operatornamesen\\(?:phi|varphi)\]=1/,'The third step deduces the sine dimension');
-  assert.match(steps[3],/\[A\]=\\frac\[y\]\[\\operatornamesen\\(?:phi|varphi)\]/,'The last step isolates the amplitude dimension');
-  assert.ok(steps[3].includes('\\fracL1=L'),'The amplitude dimension is length divided by dimension one');
-  assert.match(panels[3],/<dt>Dimensión de A<\/dt><dd>\\\(L\\\)<\/dd>/,'The result answers only the requested dimension of A');
+  assert.match(steps[1],/\[A\]=\\frac\[y\]\[\\operatornamesen/,'One Next action reaches the direct amplitude deduction');
+  assert.ok(steps[1].includes('\\fracL1=L'),'The amplitude dimension is length divided by dimension one');
+  assert.match(panels[1],/<dt>Dimensión de A<\/dt><dd>\\\(L\\\)<\/dd>/,'The second step answers the requested dimension of A');
+  assert.doesNotMatch(panels.join('\n'),/\\(?:phi|varphi)\b|Analiza el argumento del seno|Determina la dimensión del seno/,'Removed intermediate steps and their auxiliary symbol do not remain');
   assert.doesNotMatch(panels.join('\n'),/\\sin\b|Dimensión de y/,'Every sine formula uses sen and the result targets A');
   assert.doesNotMatch(all,/0[,\.]20|0[,\.]10|\\frac\\pi6|\\frac12|\\tau=12|Luegocalcula|valoresnuméricos|UnidadSI/i,'The sine walkthrough asks only for dimensions, without numerical calculations or a unit result');
  }else{
@@ -183,16 +182,16 @@ function interaction(){
    assert.match(markup(card),new RegExp('Ejemplo '+(groups[card].indexOf(constant)+1)+' de 3'),'The selected example reports its position in the progression');
   }
   const other=cards.filter(id=>id!==card),unaffected=other.map(markup),panels=[markup(card)];
-  for(let step=1;step<=3;step++){
+  for(let step=1;step<stepTotals[constant];step++){
    h.control(card,'next').focus();h.click(card,'next');panels.push(markup(card));
-   assert.match(h.panels.get(card).innerHTML,new RegExp('Paso '+(step+1)+' de 4'));
+   assert.match(h.panels.get(card).innerHTML,new RegExp('Paso '+(step+1)+' de '+stepTotals[constant]));
    assert.deepEqual(other.map(markup),unaffected,'Changing a step cannot change any neighboring example');
   }
   if(card==='dimension-one')dimensionOneFormulas(constant,panels);else formulas(constant,panels);
   assert.equal(h.control(card,'next').disabled,true);
   assert.equal(h.document.activeElement,h.control(card,'previous'),'A newly disabled Next control transfers focus to Previous');
   const final=markup(card);h.click(card,'next');assert.equal(markup(card),final,'The last step is bounded');
-  h.click(card,'previous');h.click(card,'previous');h.control(card,'previous').focus();h.click(card,'previous');
+  for(let step=stepTotals[constant]-1;step>0;step--){h.control(card,'previous').focus();h.click(card,'previous');}
   assert.equal(h.control(card,'previous').disabled,true);
   assert.equal(h.document.activeElement,h.control(card,'next'),'First-step focus remains on an available control');
   assert.equal(markup(card),panels[0],'All steps can be reversed');
@@ -209,7 +208,7 @@ function interaction(){
   }
   for(const [index,constant] of groups[card].entries()){
    h.click(card,'select',constant);
-   assert.match(markup(card),new RegExp('Paso '+(index+2)+' de 4'),'Switching exercises preserves each displayed step');
+   assert.match(markup(card),new RegExp('Paso '+Math.min(index+2,stepTotals[constant])+' de '+stepTotals[constant]),'Switching exercises preserves each displayed step with its own limit');
   }
   h.click(card,'restart');
   assert.match(markup(card),/Ejemplo 3 de 3[\s\S]*Paso 1 de 4/,'Restart retains the selected advanced exercise');

@@ -165,21 +165,9 @@
           hint: 'τ representa el período de la oscilación; T representa la dimensión de tiempo.'
         },
         {
-          title: 'Analiza el argumento del seno',
-          text: 'Llama φ al argumento. Los números 2 y π tienen dimensión uno; el cociente entre el tiempo y el período también tiene dimensión uno.',
-          equations: ['\\varphi=\\frac{2\\pi t}{\\tau}', '[2]=[\\pi]=1', '[\\varphi]=\\frac{[2][\\pi][t]}{[\\tau]}', '[\\varphi]=\\frac{1\\cdot1\\cdot T}{T}=1'],
-          hint: 'El argumento es un ángulo expresado en radianes. El radián es una unidad de dimensión uno.'
-        },
-        {
-          title: 'Determina la dimensión del seno',
-          text: 'El argumento tiene dimensión uno. El seno de ese argumento también es adimensional.',
-          equations: ['[\\varphi]=1', '[\\operatorname{sen}\\varphi]=1'],
-          hint: 'El seno aporta un factor de dimensión uno.'
-        },
-        {
           title: 'Obtén la dimensión de A',
           text: 'Expresa las dimensiones de ambos miembros y despeja la dimensión de A. El desplazamiento tiene dimensión L y el seno tiene dimensión uno.',
-          equations: ['[y]=[A][\\operatorname{sen}\\varphi]', '[A]=\\frac{[y]}{[\\operatorname{sen}\\varphi]}=\\frac{L}{1}=L'],
+          equations: ['[y]=[A]\\left[\\operatorname{sen}\\!\\left(\\frac{2\\pi t}{\\tau}\\right)\\right]', '[A]=\\frac{[y]}{\\left[\\operatorname{sen}(2\\pi t/\\tau)\\right]}=\\frac{L}{1}=L'],
           dimension: 'L',
           dimensionLabel: 'Dimensión de A',
           hint: 'La amplitud A tiene dimensión de longitud.'
@@ -231,7 +219,7 @@
     function move(card, change) {
       if (!cards.includes(card)) return false;
       const key = active(card);
-      state[key] = Math.max(0, Math.min(3, change(state[key])));
+      state[key] = Math.max(0, Math.min(constants[key].steps.length - 1, change(state[key])));
       return snapshot();
     }
     return Object.freeze({
@@ -255,7 +243,7 @@
   function activeState(card) {
     const state = session.snapshot();
     const constant = state[groups[card].selection];
-    return { constant, step: state[constant] };
+    return { constant, step: state[constant], lastStep: constants[constant].steps.length - 1 };
   }
   function panelHTML(card) {
     const state = activeState(card);
@@ -264,7 +252,7 @@
     const group = groups[card];
     const index = group.items.findIndex(item => item.id === state.constant);
     const progress = 'Ejemplo ' + (index + 1) + ' de 3 · ' + group.items[index].difficulty + ' · ';
-    return '<p class="constant-derivation-progress">' + progress + escapeHTML(constant.name) + ' · Paso ' + (state.step + 1) + ' de 4</p>' +
+    return '<p class="constant-derivation-progress">' + progress + escapeHTML(constant.name) + ' · Paso ' + (state.step + 1) + ' de ' + constant.steps.length + '</p>' +
       (constant.question ? '<div class="constant-derivation-prompt"><p>' + constant.question + '</p></div>' : '') +
       '<h5>' + step.title + '</h5><p>' + step.text + '</p>' +
       '<div class="constant-derivation-equations">' + step.equations.map(tex => '<div>' + math(tex) + '</div>').join('') + '</div>' +
@@ -287,7 +275,7 @@
       '<div class="constant-derivation-panel" id="' + id + '-panel" role="region" aria-label="Resolución paso a paso" aria-live="polite" aria-atomic="true">' + panelHTML(card) + '</div>' +
       '<div class="constant-derivation-navigation" role="group" aria-label="Recorrer la resolución">' +
       '<button type="button" data-action="constant-derivation-previous"' + control + (state.step === 0 ? ' disabled' : '') + '>Anterior</button>' +
-      '<button type="button" class="constant-derivation-next" data-action="constant-derivation-next"' + control + (state.step === 3 ? ' disabled' : '') + '>Siguiente</button>' +
+      '<button type="button" class="constant-derivation-next" data-action="constant-derivation-next"' + control + (state.step === state.lastStep ? ' disabled' : '') + '>Siguiente</button>' +
       '<button type="button" data-action="constant-derivation-restart"' + control + (state.step === 0 ? ' disabled' : '') + '>Reiniciar</button>' +
       '</div></section>';
   }
@@ -303,7 +291,7 @@
       choice.setAttribute('aria-pressed', String(choice.dataset.constant === state.constant));
     });
     if (previous) previous.disabled = state.step === 0;
-    if (next) next.disabled = state.step === 3;
+    if (next) next.disabled = state.step === state.lastStep;
     if (restart) restart.disabled = state.step === 0;
     if (typeof window.renderMathInElement === 'function') {
       window.renderMathInElement(panel, {
@@ -314,7 +302,7 @@
     }
     // Retain mounted controls; transfer focus only if its button becomes disabled.
     if (hadFocus && button.disabled) {
-      const target = state.step === 3 ? previous : next;
+      const target = state.step === state.lastStep ? previous : next;
       if (target && typeof target.focus === 'function') target.focus();
     }
   }
