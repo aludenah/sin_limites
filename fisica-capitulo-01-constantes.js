@@ -133,15 +133,9 @@
           hint: 'El coeficiente queda expresado como fuerza entre fuerza.'
         },
         {
-          title: 'Identifica y sustituye las dimensiones',
-          text: 'La fuerza de rozamiento y la fuerza normal tienen la misma dimensión: MLT⁻². Sustituye ambas dimensiones en el cociente.',
-          equations: ['[F_r]=[F_N]=MLT^{-2}', '[\\mu_k]=\\frac{MLT^{-2}}{MLT^{-2}}'],
-          hint: 'Los factores dimensionales del numerador y del denominador se cancelan.'
-        },
-        {
-          title: 'Obtén la dimensión',
-          text: 'Todos los exponentes quedan en cero. El producto de los factores dimensionales es uno.',
-          equations: ['[\\mu_k]=M^0L^0T^0=1'],
+          title: 'Sustituye y obtén la dimensión',
+          text: 'La fuerza de rozamiento y la fuerza normal tienen la misma dimensión: MLT⁻². Al sustituirlas en el cociente, los factores dimensionales se cancelan y el resultado es uno.',
+          equations: ['[F_r]=[F_N]=MLT^{-2}', '[\\mu_k]=\\frac{MLT^{-2}}{MLT^{-2}}', '[\\mu_k]=M^0L^0T^0=1'],
           dimension: '1',
           dimensionLabel: 'Dimensión de μₖ',
           hint: 'El coeficiente de rozamiento es adimensional: su dimensión es uno.'
