@@ -118,7 +118,7 @@ async function mergedContent(){
  assert.match(rules,/class="table-scroll dimensional-rules"/,'The dimensional rules use a static reference table');
  const tableHead=rules.match(/<thead>([\s\S]*?)<\/thead>/)?.[1],tableBody=rules.match(/<tbody>([\s\S]*?)<\/tbody>/)?.[1];
  assert.ok(tableHead&&tableBody,'The table separates column headings and rule rows');
- assert.deepEqual([...tableHead.matchAll(/<th\b[^>]*scope="col"[^>]*>(.*?)<\/th>/g)].map(match=>match[1]),['Regla','Expresión','Ejemplo o idea clave']);
+ assert.deepEqual([...tableHead.matchAll(/<th\b[^>]*scope="col"[^>]*>(.*?)<\/th>/g)].map(match=>match[1]),['Regla','Expresión']);
  assert.equal((tableBody.match(/<tr\b/g)||[]).length,6,'The summary has six rules');
  assert.deepEqual([...tableBody.matchAll(/<th\b[^>]*scope="row"[^>]*>(.*?)<\/th>/g)].map(match=>match[1]),['Suma y resta','Multiplicación','División','Potencias y raíces','Dimensión uno','Funciones matemáticas']);
  assert.doesNotMatch(rules,/<(?:button|input|select)\b/,'The rules table has no interactive controls');
