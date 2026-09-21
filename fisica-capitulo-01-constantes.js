@@ -156,7 +156,7 @@
     },
     sine: {
       name: 'Dimensión del seno y de su argumento',
-      question: 'En ' + math('y=A\\sin(2\\pi t/\\tau)') + ', ' + math('A') + ' es una amplitud de longitud, ' + math('t') + ' es tiempo y ' + math('\\tau>0') + ' es el período. Determina las dimensiones del argumento del seno, del seno y de ' + math('y') + '. Luego calcula ' + math('y') + ' para ' + math('A=0{,}20\\,\\mathrm m') + ', ' + math('t=1\\,\\mathrm s') + ' y ' + math('\\tau=12\\,\\mathrm s') + '.',
+      question: 'En ' + math('y=A\\sin(2\\pi t/\\tau)') + ', ' + math('A') + ' es una amplitud de longitud, ' + math('t') + ' es tiempo y ' + math('\\tau>0') + ' es el período. Determina las dimensiones del argumento del seno, del seno y de ' + math('y') + '.',
       steps: [
         {
           title: 'Identifica la relación y las magnitudes',
@@ -171,19 +171,18 @@
           hint: 'El argumento es un ángulo expresado en radianes. El radián es una unidad de dimensión uno.'
         },
         {
-          title: 'Deduce la dimensión de la expresión',
-          text: 'El seno de un argumento válido es un número de dimensión uno. Multiplicarlo por la amplitud conserva la dimensión de longitud.',
-          equations: ['[\\sin\\varphi]=1', '[y]=[A][\\sin\\varphi]', '[y]=L\\cdot1=L'],
-          hint: 'La amplitud aporta la dimensión de longitud; el seno aporta un factor adimensional.'
+          title: 'Determina la dimensión del seno',
+          text: 'El argumento tiene dimensión uno. El seno de ese argumento también es adimensional.',
+          equations: ['[\\varphi]=1', '[\\sin\\varphi]=1'],
+          hint: 'El seno aporta un factor de dimensión uno.'
         },
         {
-          title: 'Comprueba con valores numéricos',
-          text: 'Toma A = 0,20 m, t = 1 s y τ = 12 s. El argumento es π/6 rad, su seno vale 1/2 y el desplazamiento es 0,10 m.',
-          equations: ['\\varphi=\\frac{2\\pi(1\\,\\mathrm s)}{12\\,\\mathrm s}=\\frac{\\pi}{6}\\,\\mathrm{rad}', '\\sin\\varphi=\\sin\\!\\left(\\frac{\\pi}{6}\\right)=\\frac12', 'y=(0{,}20\\,\\mathrm m)\\frac12=0{,}10\\,\\mathrm m', '[\\sin\\varphi]=1,\\qquad[y]=L'],
+          title: 'Obtén la dimensión de y',
+          text: 'La dimensión de y es el producto de la dimensión de la amplitud y la del seno. Como la amplitud es una longitud y el seno es adimensional, y tiene dimensión de longitud.',
+          equations: ['[y]=[A][\\sin\\varphi]', '[y]=L\\cdot1=L'],
           dimension: 'L',
-          unit: '\\mathrm m',
-          unitName: 'metro, unidad del desplazamiento y',
-          hint: 'El seno vale 1/2, pero tiene dimensión uno. El desplazamiento y conserva dimensión L y se expresa en metros.'
+          dimensionLabel: 'Dimensión de y',
+          hint: 'La amplitud aporta la dimensión de longitud; el factor seno conserva esa dimensión.'
         }
       ]
     },

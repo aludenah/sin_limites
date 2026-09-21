@@ -131,9 +131,11 @@ function dimensionOneFormulas(card,panels){
   assert.match(all,/\[\\(?:phi|varphi)\]=.*1/,'The complete trigonometric argument has dimension one');
   assert.match(all,/\[\\sin(?:\(|\\(?:phi|varphi)).*\]=1/,'The sine result is dimensionless');
   assert.ok(all.includes('[y]=L')||all.includes('[y]=L1=L')||all.includes('[y]=[A]1=L'),'Displacement keeps the amplitude dimension');
-  assert.match(steps[3],/\\frac\\pi6/,'The chosen time produces an angle of pi/6 radians');
-  assert.match(steps[3],/\\frac12/,'The sine evaluates to one half');
-  assert.match(steps[3],/0[,\.]20/);assert.match(steps[3],/0[,\.]10/,'The displacement is 0.10 m');
+  assert.match(steps[1],/\[\\(?:phi|varphi)\]=.*1/,'The second step deduces the argument dimension');
+  assert.match(steps[2],/\[\\sin\\(?:phi|varphi)\]=1/,'The third step deduces the sine dimension');
+  assert.match(steps[3],/\[y\]=[^<]*L/,'The last step deduces the displacement dimension');
+  assert.match(panels[3],/<dt>Dimensión de y<\/dt><dd>\\\(L\\\)<\/dd>/,'The result contains only the dimension of y');
+  assert.doesNotMatch(all,/0[,\.]20|0[,\.]10|\\frac\\pi6|\\frac12|\\tau=12|Luegocalcula|valoresnuméricos|UnidadSI/i,'The sine walkthrough asks only for dimensions, without numerical calculations or a unit result');
  }else{
   assert.doesNotMatch(panels[0],/kg\/s|kilogramo por segundo|3[,.]68/,'The coefficient unit and numerical result are discovered after advancing');
   assert.match(all,/v=v_0(?:e|\\exp)/,'The decay law multiplies initial speed by an exponential');
