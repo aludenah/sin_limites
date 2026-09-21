@@ -3,6 +3,38 @@
 
   const escapeHTML = value => String(value).replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character]));
   const math = tex => '\\(' + escapeHTML(tex) + '\\)';
+  const magnitudes = Object.freeze([
+    {
+      "id": "area",
+      "name": "Área",
+      "caption": "Rectángulo · dos longitudes"
+    },
+    {
+      "id": "volume",
+      "name": "Volumen",
+      "caption": "Prisma rectangular · tres longitudes"
+    },
+    {
+      "id": "density",
+      "name": "Densidad",
+      "caption": "Masa por unidad de volumen"
+    },
+    {
+      "id": "velocity",
+      "name": "Velocidad",
+      "caption": "Desplazamiento en un intervalo de tiempo"
+    },
+    {
+      "id": "acceleration",
+      "name": "Aceleración",
+      "caption": "Cambio de velocidad en un intervalo de tiempo"
+    },
+    {
+      "id": "force",
+      "name": "Fuerza",
+      "caption": "Fuerza neta sobre un cuerpo de masa constante"
+    }
+  ]);
   const steps = Object.freeze({
     area: [
       {
@@ -57,6 +89,164 @@
         dimension: 'L^{3}', unit: '\\mathrm{m}^{3}', unitName: 'metro cúbico',
         hint: 'L³ expresa la dimensión del volumen. Si las longitudes se miden en metros, el volumen se expresa en metros cúbicos.'
       }
+    ],
+    density: [
+      {
+        "title": "Identifica masa y volumen",
+        "text": "La densidad relaciona la masa m de un cuerpo con el volumen V que ocupa. La masa tiene dimensión M y el volumen tiene dimensión L³.",
+        "equations": [
+          "[m]=M",
+          "[V]=L^{3}"
+        ],
+        "hint": "El volumen ya es una magnitud derivada: reúne tres factores de longitud."
+      },
+      {
+        "title": "Escribe la fórmula de la densidad",
+        "text": "Divide la masa entre el volumen del cuerpo para obtener su densidad media.",
+        "equations": [
+          "\\rho=\\frac{m}{V}"
+        ],
+        "hint": "La letra griega ρ (rho) representa la densidad. No confundas masa con peso."
+      },
+      {
+        "title": "Sustituye por dimensiones",
+        "text": "La dimensión de un cociente es el cociente de las dimensiones de sus magnitudes.",
+        "equations": [
+          "[\\rho]=\\frac{[m]}{[V]}",
+          "[\\rho]=\\frac{M}{L^{3}}"
+        ],
+        "hint": "Sustituimos la masa por M y el volumen por L³."
+      },
+      {
+        "title": "Simplifica y distingue la unidad",
+        "text": "Una potencia en el denominador puede escribirse con exponente negativo.",
+        "equations": [
+          "[\\rho]=ML^{-3}"
+        ],
+        "dimension": "ML^{-3}",
+        "unit": "\\frac{\\mathrm{kg}}{\\mathrm{m}^{3}}",
+        "unitName": "kilogramo por metro cúbico",
+        "hint": "ML⁻³ es la dimensión de la densidad; kg/m³ es su unidad en el SI."
+      }
+    ],
+    velocity: [
+      {
+        "title": "Identifica desplazamiento y tiempo",
+        "text": "En un movimiento rectilíneo, el desplazamiento Δx tiene dimensión de longitud y el intervalo Δt tiene dimensión de tiempo.",
+        "equations": [
+          "[\\Delta x]=L",
+          "[\\Delta t]=T"
+        ],
+        "hint": "Δx = x_f − x_i indica el cambio de posición sobre la recta."
+      },
+      {
+        "title": "Escribe la fórmula de la velocidad",
+        "text": "La velocidad media sobre una recta se obtiene dividiendo el desplazamiento entre el intervalo de tiempo.",
+        "equations": [
+          "v_{\\mathrm m}=\\frac{\\Delta x}{\\Delta t}"
+        ],
+        "hint": "Usamos el desplazamiento, que puede ser positivo o negativo, no la distancia total recorrida."
+      },
+      {
+        "title": "Sustituye por dimensiones",
+        "text": "Reemplaza el desplazamiento por L y el intervalo de tiempo por T.",
+        "equations": [
+          "[v]=\\frac{[\\Delta x]}{[\\Delta t]}",
+          "[v]=\\frac{L}{T}"
+        ],
+        "hint": "El signo y la dirección de la velocidad no cambian su dimensión."
+      },
+      {
+        "title": "Simplifica y distingue la unidad",
+        "text": "Dividir entre T equivale a multiplicar por T elevado a −1.",
+        "equations": [
+          "[v]=LT^{-1}"
+        ],
+        "dimension": "LT^{-1}",
+        "unit": "\\frac{\\mathrm m}{\\mathrm s}",
+        "unitName": "metro por segundo",
+        "hint": "LT⁻¹ expresa la dimensión de la velocidad; m/s es su unidad en el SI."
+      }
+    ],
+    acceleration: [
+      {
+        "title": "Identifica velocidad y tiempo",
+        "text": "Compara las velocidades inicial y final sobre una misma recta. Su diferencia Δv tiene dimensión de velocidad y el intervalo Δt tiene dimensión de tiempo.",
+        "equations": [
+          "[\\Delta v]=LT^{-1}",
+          "[\\Delta t]=T"
+        ],
+        "hint": "Restar dos velocidades conserva su dimensión: Δv = v_f − v_i."
+      },
+      {
+        "title": "Escribe la fórmula de la aceleración",
+        "text": "La aceleración media es el cambio de velocidad dividido entre el intervalo de tiempo.",
+        "equations": [
+          "a_{\\mathrm m}=\\frac{\\Delta v}{\\Delta t}",
+          "\\Delta v=v_f-v_i"
+        ],
+        "hint": "Las velocidades se comparan con el mismo eje y sentido positivo."
+      },
+      {
+        "title": "Sustituye por dimensiones",
+        "text": "El cambio de velocidad aporta LT⁻¹. Después dividimos entre la dimensión T del intervalo.",
+        "equations": [
+          "[a]=\\frac{[\\Delta v]}{[\\Delta t]}",
+          "[a]=\\frac{LT^{-1}}{T}"
+        ],
+        "hint": "Hay un factor de tiempo en la velocidad y otro en el denominador de la aceleración."
+      },
+      {
+        "title": "Simplifica y distingue la unidad",
+        "text": "Al dividir potencias de tiempo, restamos sus exponentes: −1 − 1 = −2.",
+        "equations": [
+          "[a]=LT^{-1-1}=LT^{-2}"
+        ],
+        "dimension": "LT^{-2}",
+        "unit": "\\frac{\\mathrm m}{\\mathrm s^{2}}",
+        "unitName": "metro por segundo cuadrado",
+        "hint": "LT⁻² es la dimensión de la aceleración; m/s² es su unidad en el SI."
+      }
+    ],
+    force: [
+      {
+        "title": "Identifica masa y aceleración",
+        "text": "Para un cuerpo de masa constante, la fuerza neta se relaciona con su masa m y su aceleración a.",
+        "equations": [
+          "[m]=M",
+          "[a]=LT^{-2}"
+        ],
+        "hint": "La fuerza neta es la resultante de todas las fuerzas que actúan sobre el cuerpo."
+      },
+      {
+        "title": "Escribe la segunda ley de Newton",
+        "text": "Multiplica la masa por la aceleración. La fuerza neta y la aceleración tienen la misma dirección.",
+        "equations": [
+          "F_{\\mathrm{neta}}=m\\cdot a"
+        ],
+        "hint": "Usamos los módulos de la fuerza neta y de la aceleración para deducir dimensiones."
+      },
+      {
+        "title": "Sustituye por dimensiones",
+        "text": "En un producto se multiplican las dimensiones. Sustituye m por M y a por LT⁻².",
+        "equations": [
+          "[F]=[m]\\cdot[a]",
+          "[F]=M\\cdot(LT^{-2})"
+        ],
+        "hint": "La masa aporta M; la aceleración aporta L y T⁻²."
+      },
+      {
+        "title": "Simplifica y distingue la unidad",
+        "text": "Reúne los factores de masa, longitud y tiempo para expresar la dimensión de la fuerza.",
+        "equations": [
+          "[F]=MLT^{-2}",
+          "1\\,\\mathrm N=1\\,\\mathrm{kg}\\cdot\\mathrm m/\\mathrm s^{2}"
+        ],
+        "dimension": "MLT^{-2}",
+        "unit": "\\mathrm N",
+        "unitName": "newton",
+        "hint": "MLT⁻² expresa la dimensión de la fuerza. El newton equivale a un kilogramo metro por segundo cuadrado."
+      }
     ]
   });
 
@@ -67,7 +257,7 @@
     return Object.freeze({
       snapshot,
       select(value) {
-        if (value !== 'area' && value !== 'volume') return false;
+        if (!magnitudes.some(item => item.id === value)) return false;
         if (value !== shape) { shape = value; step = 0; }
         return snapshot();
       },
@@ -80,6 +270,7 @@
   const session = createSession();
 
   function figureHTML(shape, step) {
+    if (shape !== 'area' && shape !== 'volume') return window.DimensionalDerivationFigures?.render(shape, step) || '';
     const dimensions = step >= 2;
     const result = step === 3;
     const label = shape === 'area'
@@ -107,7 +298,7 @@
   function panelHTML(state) {
     const item = steps[state.shape][state.step];
     return '<div class="geometry-derivation-visual">' + figureHTML(state.shape, state.step) +
-      '<p>' + (state.shape === 'area' ? 'Rectángulo · dos longitudes' : 'Prisma rectangular · tres longitudes') + '</p></div>' +
+      '<p>' + magnitudes.find(magnitude => magnitude.id === state.shape).caption + '</p></div>' +
       '<div class="geometry-derivation-work"><h5>' + item.title + '</h5><p>' + item.text + '</p>' +
       '<div class="geometry-derivation-equations">' + item.equations.map(tex => '<div>' + math(tex) + '</div>').join('') + '</div>' +
       (item.dimension ? '<dl class="geometry-derivation-result"><div><dt>Dimensión</dt><dd>' + math(item.dimension) + '</dd></div><div><dt>Unidad SI</dt><dd>' + math(item.unit) + '<span class="geometry-derivation-unit-name">' + item.unitName + '</span></dd></div></dl>' : '') +
@@ -117,10 +308,9 @@
   function render() {
     const state = session.snapshot();
     return '<section class="geometry-derivation" id="geometry-derivation" aria-labelledby="geometry-derivation-title">' +
-      '<h4 id="geometry-derivation-title">Área y volumen: deducción paso a paso</h4>' +
+      '<h4 id="geometry-derivation-title">Magnitudes derivadas: deducción paso a paso</h4>' +
       '<div class="geometry-derivation-selector" role="group" aria-label="Elige una magnitud">' +
-      '<button type="button" data-action="geometry-derivation-select" data-shape="area" aria-pressed="' + (state.shape === 'area') + '" aria-controls="geometry-derivation-panel">Área</button>' +
-      '<button type="button" data-action="geometry-derivation-select" data-shape="volume" aria-pressed="' + (state.shape === 'volume') + '" aria-controls="geometry-derivation-panel">Volumen</button></div>' +
+      magnitudes.map(item => '<button type="button" data-action="geometry-derivation-select" data-shape="' + item.id + '" aria-pressed="' + (state.shape === item.id) + '" aria-controls="geometry-derivation-panel">' + item.name + '</button>').join('') + '</div>' +
       '<p class="geometry-derivation-progress" id="geometry-derivation-progress">Paso ' + (state.step + 1) + ' de 4</p>' +
       '<div class="geometry-derivation-panel" id="geometry-derivation-panel" role="region" aria-label="Resolución paso a paso" aria-live="polite" aria-atomic="true">' + panelHTML(state) + '</div>' +
       '<div class="geometry-derivation-navigation" role="group" aria-label="Recorrer la resolución">' +

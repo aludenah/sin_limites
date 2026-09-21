@@ -106,7 +106,7 @@ function dimensionalFigure(name,caption){
  return `<figure class="dimensional-figure"><a href="${src}" target="_blank" rel="noopener" aria-label="Ampliar gráfico: ${escapeHTML(caption)}"><img src="${src}" width="760" height="${heights[name]}" alt="${escapeHTML(caption)}" loading="lazy"></a><figcaption>${escapeHTML(caption)} <a href="${src}" target="_blank" rel="noopener">Ampliar gráfico</a></figcaption></figure>`;
 }
 function lessonFigures(id){
- if(id==='dim-deducciones')return window.GeometryDerivation?.render()||String.raw`<section><h4>Área y volumen: deducción paso a paso</h4><p>Área: \([A]=[b][h]=L\cdot L=L^2\). Su unidad SI es el metro cuadrado.</p><p>Volumen: \([V]=[a][b][c]=L\cdot L\cdot L=L^3\). Su unidad SI es el metro cúbico.</p></section>`;
+ if(id==='dim-deducciones')return window.GeometryDerivation?.render()||String.raw`<section><h4>Magnitudes derivadas: deducción paso a paso</h4><p>Área: \([A]=[b][h]=L\cdot L=L^2\). Su unidad SI es el metro cuadrado.</p><p>Volumen: \([V]=[a][b][c]=L\cdot L\cdot L=L^3\). Su unidad SI es el metro cúbico.</p><p>Densidad: \([\rho]=M/L^3=ML^{-3}\); unidad: kg/m³.</p><p>Velocidad: \([v]=L/T=LT^{-1}\); unidad: m/s.</p><p>Aceleración: \([a]=(LT^{-1})/T=LT^{-2}\); unidad: m/s².</p><p>Fuerza: \([F]=M(LT^{-2})=MLT^{-2}\); unidad: N.</p></section>`;
  return (DIMENSIONAL_FIGURES[id]||[]).map(([name,caption])=>dimensionalFigure(name,caption)).join('');
 }
 function lessonBody(lesson){

@@ -5,8 +5,8 @@
 .geometry-derivation button:hover:not(:disabled){border-color:#0a818c;background:#f2f8fa}
 .geometry-derivation button:focus-visible{outline:3px solid #b96b12;outline-offset:3px}
 .geometry-derivation button:disabled{color:#697c8d;background:#f3f6f8;border-color:#dce4ed;cursor:default}
-.geometry-derivation-selector{display:flex;gap:10px;flex-wrap:wrap}
-.geometry-derivation-selector button{flex:1;min-width:90px;max-width:180px}
+.geometry-derivation-selector{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.geometry-derivation-selector button{width:100%;min-width:0;padding:10px 12px;overflow-wrap:anywhere}
 .geometry-derivation-selector button[aria-pressed=true]{border-color:var(--navy,#092f4a);background:var(--navy,#092f4a);color:#fff;box-shadow:inset 0 -3px 0 var(--red,#ff334f)}
 .geometry-derivation-selector button[aria-pressed=true]:hover{background:#124a65;color:#fff}
 .geometry-derivation .geometry-derivation-progress{margin:20px 0 12px;color:#08727b;font-size:13px;font-weight:750;letter-spacing:.02em}
@@ -27,10 +27,10 @@
 .geometry-derivation-equations{display:flex;flex-direction:column;gap:10px;padding:15px;border-radius:10px;background:#f1f6fa;color:var(--navy,#092f4a);font-size:17px;min-width:0}
 .geometry-derivation-equations>div{max-width:100%;overflow-x:auto;padding:3px 0}
 .geometry-derivation .geometry-derivation-hint{margin:16px 0 0;padding-left:12px;border-left:3px solid var(--red,#ff334f);font-size:13px;line-height:1.65}
-.geometry-derivation-result{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:16px 0 0}
+.geometry-derivation-result{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,140px),1fr));gap:12px;margin:16px 0 0}
 .geometry-derivation-result>div{min-width:0;border:1px solid #bcdadd;border-radius:9px;padding:12px;background:#fff}
 .geometry-derivation-result dt{margin:0 0 5px;color:#52697c;font-size:12px}
-.geometry-derivation-result dd{margin:0;color:#08727b;font-size:20px;overflow-wrap:anywhere}
+.geometry-derivation-result dd{margin:0;color:#08727b;font-size:20px;overflow-wrap:anywhere;overflow-x:auto}
 .geometry-derivation-result .geometry-derivation-unit-name{display:block;margin-top:4px;color:#52697c;font-size:12px;line-height:1.5}
 .geometry-derivation-navigation{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;padding-top:18px;border-top:1px solid var(--line,#dce4ed)}
 .geometry-derivation .geometry-derivation-next:not(:disabled){border-color:var(--navy,#092f4a);background:var(--navy,#092f4a);color:#fff}
@@ -39,3 +39,5 @@
 @media(max-width:760px){.geometry-derivation-panel{grid-template-columns:minmax(0,1fr)}.geometry-derivation-visual{width:100%}.geometry-derivation-figure{max-width:320px}}
 @media(max-width:420px){.geometry-derivation{padding:13px}.geometry-derivation h4{font-size:18px}.geometry-derivation-selector button{padding:10px 12px}.geometry-derivation-navigation{gap:8px}.geometry-derivation-navigation button{flex:1 1 90px;padding:10px 12px}.geometry-derivation-navigation button:last-child{margin-left:0}.geometry-derivation-equations{padding:12px;font-size:15px}.geometry-derivation-result{gap:8px}.geometry-derivation-result>div{padding:10px}}
 @media print{.geometry-derivation{break-inside:avoid}.geometry-derivation-selector,.geometry-derivation-navigation{display:none}.geometry-derivation-panel{grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr)}}
+
+@media(max-width:520px){.geometry-derivation-selector{grid-template-columns:repeat(2,minmax(0,1fr))}}

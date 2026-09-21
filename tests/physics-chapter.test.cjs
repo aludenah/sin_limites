@@ -1,7 +1,7 @@
 const assert=require('node:assert/strict');
 const {harness}=require('./study-entry.test.cjs');
 const {testChapters}=require('./practice-ten.test.cjs');
-const files=['fisica-capitulo-01-data.js','fisica-capitulo-01-geometria.js','fisica-capitulo-01.js'];
+const files=['fisica-capitulo-01-data.js','fisica-capitulo-01-deducciones-figuras.js','fisica-capitulo-01-geometria.js','fisica-capitulo-01.js'];
 const lessonIds=['dim-magnitudes','dim-si','dim-dimensiones','dim-homogeneidad','dim-exponentes'];
 const clone=value=>JSON.parse(JSON.stringify(value));
 async function sourceContentAndResume(){
