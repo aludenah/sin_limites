@@ -35,7 +35,7 @@ window.DIMENSIONAL_CONTENT = {
           "title": "",
           "subtitle": "Construir las fórmulas desde relaciones conocidas",
           "goal": "Obtén las dimensiones de magnitudes derivadas y reconoce las dimensiones de constantes físicas.",
-          "body": "<p>Para deducir una dimensión, parte de una relación física conocida, reemplaza cada magnitud por su dimensión y simplifica las potencias. Los coeficientes puramente numéricos no modifican la dimensión.</p><p>Por ejemplo, el área de un triángulo es \\(A=bh/2\\). Aunque su fórmula difiere de la del rectángulo, ambas áreas tienen dimensión \\(L^2\\). La dimensión no depende de la forma geométrica.</p><ol><li>Escribe la fórmula que relaciona las magnitudes.</li><li>Coloca corchetes y sustituye las dimensiones conocidas.</li><li>Multiplica, divide o eleva las potencias.</li><li>Comprueba que el resultado corresponde a la unidad de la magnitud.</li></ol><p>La fuerza, la velocidad y la aceleración pueden tratarse por sus módulos para hallar dimensiones; sus direcciones no cambian el resultado dimensional.</p>",
+          "body": "<p>Para deducir una dimensión, parte de una relación física conocida, reemplaza cada magnitud por su dimensión y simplifica las potencias. Los coeficientes puramente numéricos no modifican la dimensión.</p>",
           "key": "Reconstruir una dimensión a partir de su definición es más útil que memorizarla sin comprenderla.",
           "examples": [
             {
