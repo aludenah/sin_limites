@@ -81,21 +81,31 @@ async function chapterIntegration(){
  assert.match(gameHTML(),/Comenzar juego/,'The chapter rejects game actions before sign-in');
  h.run("window.StudyMode.choose('student','free')");await h.signIn({uid:'student'});
  let rendered=rootElement.innerHTML;
- assert.equal((rendered.match(/class="magnitude-explorer"/g)||[]).length,2);
- assert.match(rendered,/Explora las 7 magnitudes base/);assert.match(rendered,/Explora 13 magnitudes derivadas/);
+ assert.equal((rendered.match(/class="magnitude-table table-scroll"/g)||[]).length,2);
+ const explorer=h.run('window.MagnitudeExplorer');
+ assert.deepEqual(Object.keys(explorer).sort(),['items','render']);
+ assert.ok(Object.isFrozen(explorer.items));assert.ok(explorer.items.every(Object.isFrozen));
+ for(const [kind,count] of [['base',7],['derived',13]]){
+  const table=explorer.render(kind),items=explorer.items.filter(item=>item.kind===kind);
+  assert.equal((table.match(/<table\b/g)||[]).length,1);
+  assert.match(table,/<caption\b/);
+  assert.equal((table.match(/<th scope="row">/g)||[]).length,count);
+  for(const item of items){
+   assert.ok(table.includes(item.name),`${item.name}: name is visible`);
+   assert.ok(table.includes(item.unit),`${item.name}: SI unit is visible`);
+   assert.ok(table.includes(item.symbol),`${item.name}: unit symbol is visible`);
+   assert.ok(table.includes('\\('+item.dimension+'\\)'),`${item.name}: dimension uses inline math`);
+   if(item.relation)assert.ok(table.includes('\\('+item.relation+'\\)'),`${item.name}: reference relation is visible`);
+  }
+  assert.doesNotMatch(table,/<button\b|data-action=|aria-pressed=|magnitude-explorer/);
+ }
+ assert.equal(explorer.render('unknown'),'');
  assert.match(rendered,/id="magnitude-game"/);assert.doesNotMatch(rendered,/Ejemplo resuelto|Aplicación 1\./);
- assert.doesNotMatch(h.run('lessonBody(LESSONS[0])'),/<table\b/,'Interactive explorers replace both first-topic tables');
+ assert.equal((h.run('lessonBody(LESSONS[0])').match(/<table\b/g)||[]).length,2,'Both first-topic tables are visible in full');
+ assert.doesNotMatch(rendered,/magnitude-select|Selecciona una magnitud para descubrir/);
  assert.equal(h.run('LESSONS[0].examples.length'),0);
  assert.equal(h.run('LESSONS.length'),7);assert.equal(h.run('CONTENT.workedExamples.length'),25);
  const savedBefore=clone(h.run('P.practice10'));
-
- // Exercise the real explorer action, including retention after the chapter rerenders.
- const panel={innerHTML:''},choiceAttributes=new Map();
- const choice={dataset:{id:'masa'},setAttribute:(name,value)=>choiceAttributes.set(name,value)};
- const explorerRoot={querySelector:()=>panel,querySelectorAll:()=>[choice]};
- const button={dataset:{action:'magnitude-select',kind:'base',id:'masa'},closest:()=>explorerRoot};
- assert.equal(h.run('window.MagnitudeExplorer').handleAction(button),true);
- assert.match(panel.innerHTML,/kilogramo/);assert.equal(choiceAttributes.get('aria-pressed'),'true');
 
  const gameHost=h.run("document.getElementById('magnitude-game')");gameHost.querySelectorAll=()=>[];
  click({action:'magnitude-game-start'});assert.match(gameHTML(),/Ronda 1 de 10/);
@@ -111,7 +121,7 @@ async function chapterIntegration(){
  h.run('goLesson(1)');assert.doesNotMatch(rootElement.innerHTML,/id="magnitude-game"/);
  click({action:'magnitude-game-next'});assert.match(gameHTML(),/Ronda 1 de 10/,'Other topics do not process game actions');
  h.run('goLesson(0)');assert.match(rootElement.innerHTML,/needs-review/);
- assert.match(rootElement.innerHTML,/data-id="masa" aria-pressed="true"/);
+ assert.equal((rootElement.innerHTML.match(/class="magnitude-table table-scroll"/g)||[]).length,2);
  click({action:'magnitude-game-next'});assert.match(gameHTML(),/Ronda 2 de 10/);
  h.run("goTab('practice')");click({action:'magnitude-game-next'});
  h.run("goTab('theory')");assert.match(rootElement.innerHTML,/Ronda 2 de 10/,'Switching tabs preserves the current game');
@@ -122,7 +132,7 @@ async function chapterIntegration(){
  click({action:'magnitude-game-start'});assert.match(gameHTML(),/Comenzar juego/,'Sign-out disables chapter actions');
  h.run("window.StudyMode.choose('other','free')");await h.signIn({uid:'other'});
  assert.match(rootElement.innerHTML,/Comenzar juego/);assert.doesNotMatch(rootElement.innerHTML,/Ronda 2 de 10/);
- assert.match(rootElement.innerHTML,/data-id="longitud" aria-pressed="true"/,'An account change resets explorer selections');
+ assert.equal((rootElement.innerHTML.match(/class="magnitude-table table-scroll"/g)||[]).length,2,'Static tables remain visible after an account change');
 }
 
-scoring();chapterIntegration().then(()=>console.log('PASS: interactive magnitude explorers, fair 10-round game, independent grading, feedback, navigation retention and account isolation.')).catch(error=>{console.error(error);process.exitCode=1;});
+scoring();chapterIntegration().then(()=>console.log('PASS: static fundamental and derived tables, fair 10-round game, independent grading, feedback, navigation retention and account isolation.')).catch(error=>{console.error(error);process.exitCode=1;});

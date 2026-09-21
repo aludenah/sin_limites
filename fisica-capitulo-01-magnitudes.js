@@ -25,63 +25,27 @@
     { id: 'velocidad-angular', name: 'Velocidad angular', kind: 'derived', unit: 'radián por segundo', symbol: 'rad/s', dimension: 'T^{-1}', relation: '\\omega_{\\mathrm m}=\\frac{\\Delta\\theta}{\\Delta t}', example: 'Un giro de 6 rad en 2 s corresponde a una velocidad angular media de 3 rad/s.', explanation: 'Relaciona el desplazamiento angular con el tiempo. El radián es adimensional en el SI; por ello, la dimensión es T⁻¹, aunque la unidad se escribe rad/s.' }
   ].map(item => Object.freeze(item)));
 
-  const selected = { base: 'longitud', derived: 'area' };
-  const kinds = ['base', 'derived'];
   const escapeHTML = text => String(text).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
   const math = tex => '\\(' + escapeHTML(tex) + '\\)';
 
-  function detail(item) {
-    return '<h5 class="magnitude-explorer-name">' + escapeHTML(item.name) + '</h5>' +
-      '<dl class="magnitude-explorer-facts"><div><dt>Unidad SI</dt><dd>' + escapeHTML(item.unit) + '</dd></div>' +
-      '<div><dt>Símbolo de la unidad</dt><dd class="magnitude-explorer-symbol">' + escapeHTML(item.symbol) + '</dd></div>' +
-      '<div><dt>Dimensión</dt><dd>' + math(item.dimension) + '</dd></div></dl>' +
-      (item.relation ? '<div class="magnitude-explorer-relation"><strong>Relación de referencia</strong><div>' + math(item.relation) + '</div></div>' : '') +
-      '<p class="magnitude-explorer-explanation">' + escapeHTML(item.explanation) + '</p>' +
-      '<p class="magnitude-explorer-example"><strong>En una situación real</strong>' + escapeHTML(item.example) + '</p>';
-  }
-
   function render(kind) {
-    if (!kinds.includes(kind)) return '';
-    const group = items.filter(item => item.kind === kind);
-    const active = group.find(item => item.id === selected[kind]) || group[0];
-    const id = 'magnitude-explorer-' + kind;
-    const label = kind === 'base' ? 'Explora las 7 magnitudes base' : 'Explora 13 magnitudes derivadas';
-    return '<section class="magnitude-explorer" id="' + id + '" aria-label="' + label + '">' +
-      '<p class="magnitude-explorer-instruction">Selecciona una magnitud para descubrir su unidad, dimensión y un ejemplo.</p>' +
-      '<div class="magnitude-explorer-choices" role="group" aria-label="' + label + '">' +
-      group.map(item => '<button type="button" data-action="magnitude-select" data-kind="' + kind + '" data-id="' + item.id + '" aria-pressed="' + (item.id === active.id) + '" aria-controls="' + id + '-detail">' + escapeHTML(item.name) + '</button>').join('') +
-      '</div><div class="magnitude-explorer-detail" id="' + id + '-detail" role="region" aria-label="Detalle de la magnitud seleccionada" aria-live="polite" aria-atomic="true">' + detail(active) + '</div></section>';
+    if (!['base', 'derived'].includes(kind)) return '';
+    const derived = kind === 'derived';
+    const label = derived ? 'Magnitudes derivadas' : 'Magnitudes fundamentales';
+    const rows = items.filter(item => item.kind === kind).map(item =>
+      '<tr><th scope="row">' + escapeHTML(item.name) + '</th>' +
+      (derived ? '<td class="magnitude-table-relation">' + math(item.relation) + '</td>' : '') +
+      '<td class="magnitude-table-dimension">' + math(item.dimension) + '</td>' +
+      '<td>' + escapeHTML(item.unit) + '</td><td class="magnitude-table-symbol">' + escapeHTML(item.symbol) + '</td></tr>'
+    ).join('');
+    return '<div class="magnitude-table table-scroll" tabindex="0" role="region" aria-label="' + label + '">' +
+      '<table><caption class="sr-only">' + label + ': dimensiones y unidades del SI</caption><thead><tr>' +
+      '<th scope="col">' + (derived ? 'Magnitud derivada' : 'Magnitud fundamental') + '</th>' +
+      (derived ? '<th scope="col">Relación de referencia</th>' : '') +
+      '<th scope="col">Dimensión</th><th scope="col">Unidad SI</th><th scope="col">Símbolo</th></tr></thead>' +
+      '<tbody>' + rows + '</tbody></table></div>';
   }
 
-  function handleAction(button) {
-    if (!button || !button.dataset || button.dataset.action !== 'magnitude-select' || button.disabled) return false;
-    const kind = button.dataset.kind;
-    if (!kinds.includes(kind)) return false;
-    const item = items.find(entry => entry.kind === kind && entry.id === button.dataset.id);
-    const root = button.closest('#magnitude-explorer-' + kind);
-    const panel = root && root.querySelector('.magnitude-explorer-detail');
-    if (!item || !panel) return false;
-    if (selected[kind] === item.id) return true;
-    selected[kind] = item.id;
-    root.querySelectorAll('[data-action="magnitude-select"]').forEach(choice => {
-      choice.setAttribute('aria-pressed', String(choice.dataset.id === item.id));
-    });
-    // Keep the original buttons mounted so keyboard focus never moves.
-    panel.innerHTML = detail(item);
-    if (typeof window.renderMathInElement === 'function') {
-      window.renderMathInElement(panel, {
-        delimiters: [{ left: '\\(', right: '\\)', display: false }],
-        throwOnError: false,
-        trust: false
-      });
-    }
-    return true;
-  }
-
-  function reset() {
-    selected.base = 'longitud';
-    selected.derived = 'area';
-  }
-
-  window.MagnitudeExplorer = Object.freeze({ items, render, handleAction, reset });
+  // The game shares this reference data; the tables have no selection state.
+  window.MagnitudeExplorer = Object.freeze({ items, render });
 })();
