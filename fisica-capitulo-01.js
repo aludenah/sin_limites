@@ -9,23 +9,27 @@ const escapeHTML=value=>String(value??'').replaceAll('&','&amp;').replaceAll('<'
 let user=null,db=null,cloudReady=false,saveChain=Promise.resolve(),saveVersion=0,authEpoch=0;
 let saveMessage='',notice='',P=emptyProgress(),saveTimer=null;
 
-function emptyProgress(){return {studyMode:null,currentItem:0,readingItem:0,contentVersion:4,activeTab:'theory',practice10:window.ChapterPractice.normalize(CHAPTER_ID),updatedMs:0};}
+function emptyProgress(){return {studyMode:null,currentItem:0,readingItem:0,contentVersion:5,activeTab:'theory',practice10:window.ChapterPractice.normalize(CHAPTER_ID),updatedMs:0};}
 
 
 
 function normalized(data={}){
  const p={...data,...emptyProgress()};
  const legacyLessons=['dim-magnitudes','dim-dimensiones','dim-reglas','dim-homogeneidad','dim-homogeneidad','dim-exponentes'];
- // Version 3 removed the opening lesson; version 4 removes the third topic.
- // A bookmark on the removed topic resumes at its successor, now at index 2.
+ const version4Lessons=['dim-magnitudes','dim-si','dim-dimensiones','dim-deducciones','dim-reglas','dim-homogeneidad','dim-exponentes'];
+ // Versions 3 and 4 removed topics; version 5 joins dimensions, deductions and rules.
+ // Resolve old bookmarks by lesson identity before locating the combined topic.
  const lessonIndex=index=>{
   if(!Number.isInteger(index))return 0;
   const version=Number(data.contentVersion);let target=index;
+  if(version>=5)return Math.max(0,Math.min(LESSONS.length-1,target));
   if(version===2||version===3){
    if(version===2)target--;
    if(target>2)target--;
-  }else if(!(version>=4))target=LESSONS.findIndex(x=>x.id===legacyLessons[index]);
-  return Math.max(0,Math.min(LESSONS.length-1,target));
+  }
+  let id=[2,3,4].includes(version)?version4Lessons[Math.max(0,Math.min(version4Lessons.length-1,target))]:legacyLessons[index];
+  if(id==='dim-deducciones'||id==='dim-reglas')id='dim-dimensiones';
+  return Math.max(0,LESSONS.findIndex(x=>x.id===id));
  };
  p.studyMode=window.StudyMode?.get(user?.uid)||(['free','progressive'].includes(data.studyMode)?data.studyMode:null);
  p.currentItem=lessonIndex(data.currentItem);p.readingItem=Number.isInteger(data.readingItem)?lessonIndex(data.readingItem):p.currentItem;
@@ -118,9 +122,12 @@ function lessonActivity(lesson){
  if(lesson.id==='dim-dimensiones')return window.DimensionGame?.render()||'<p>Recarga la página para abrir el juego de dimensiones.</p>';
  return lesson.examples.map(e=>`<section class="example"><p class="eyebrow">Ejemplo resuelto</p><h3>${e.title}</h3><p>${e.question}</p><ol>${e.steps.map(s=>`<li>${s}</li>`).join('')}</ol></section>`).join('');
 }
+function lessonSections(lesson){
+ return (lesson.sections||[]).map(section=>`<section aria-labelledby="section-${section.id}"><h3 id="section-${section.id}">${escapeHTML(section.title)}</h3><div class="content">${lessonBody(section)}${lessonFigures(section.id)}</div>${lessonActivity(section)}</section>`).join('');
+}
 function lessonView(){
   const i=P.currentItem,x=LESSONS[i];
-  return `<p class="eyebrow">Tema ${i+1} de ${LESSONS.length} · ${x.subtitle}</p><h2>${x.title}</h2><div class="content">${lessonBody(x)}${lessonFigures(x.id)}</div>${lessonActivity(x)}${x.id==='dim-homogeneidad'?lab():''}<div class="actions"><button class="button secondary" data-action="lesson" data-index="${i-1}" ${i===0?'disabled':''}>← Tema anterior</button>${i<LESSONS.length-1?`<button class="button" data-action="lesson" data-index="${i+1}" ${!canOpen(i+1)?'disabled':''}>Siguiente tema →</button>`:`<button class="button" data-action="tab" data-value="practice" ${!canApply()?'disabled':''}>Ir a la práctica →</button>`}</div>`;
+  return `<p class="eyebrow">Tema ${i+1} de ${LESSONS.length} · ${x.subtitle}</p><h2>${x.title}</h2><div class="content">${lessonBody(x)}${lessonFigures(x.id)}</div>${lessonSections(x)}${lessonActivity(x)}${x.id==='dim-homogeneidad'?lab():''}<div class="actions"><button class="button secondary" data-action="lesson" data-index="${i-1}" ${i===0?'disabled':''}>← Tema anterior</button>${i<LESSONS.length-1?`<button class="button" data-action="lesson" data-index="${i+1}" ${!canOpen(i+1)?'disabled':''}>Siguiente tema →</button>`:`<button class="button" data-action="tab" data-value="practice" ${!canApply()?'disabled':''}>Ir a la práctica →</button>`}</div>`;
 }
 function practiceView(){return window.ChapterPractice.render(CHAPTER_ID,P.practice10,P.studyMode,notice);}
 

@@ -23,94 +23,96 @@ window.DIMENSIONAL_CONTENT = {
     },
     {
       "id": "dim-dimensiones",
-      "title": "El lenguaje del análisis dimensional",
-      "subtitle": "Distinguir dimensión y unidad",
+      "title": "Análisis dimensional: dimensiones, deducciones y reglas",
+      "subtitle": "Lenguaje y operaciones del análisis dimensional",
       "goal": "Interpreta los corchetes dimensionales y reconoce la estructura de una magnitud.",
       "body": "<p>El <strong>análisis dimensional</strong> estudia las relaciones entre magnitudes mediante sus dimensiones. La dimensión expresa cómo depende una magnitud de las magnitudes base; la unidad es la referencia con la que se mide.</p><p>Escribimos \\([Q]\\) para indicar la dimensión de la magnitud \\(Q\\). En general, una expresión dimensional se escribe en función de las <strong>siete magnitudes fundamentales del SI</strong>:</p><div class=\"equation\">\\[[Q]=M^aL^bT^c\\Theta^dI^eN^fJ^g\\]</div><p>En esta expresión, \\(M\\) representa masa; \\(L\\), longitud; \\(T\\), tiempo; \\(\\Theta\\), temperatura termodinámica; \\(I\\), intensidad de corriente eléctrica; \\(N\\), cantidad de sustancia; y \\(J\\), intensidad luminosa. Son símbolos dimensionales: aquí \\(N\\) y \\(J\\) no representan las unidades newton y joule.</p><p>Los exponentes \\(a,b,c,d,e,f,g\\) dependen de la magnitud y pueden ser positivos, negativos, fraccionarios o cero. Cuando una dimensión no interviene, su exponente es cero y el factor correspondiente vale 1. Para magnitudes puramente mecánicas, los exponentes de \\(\\Theta,I,N,J\\) son cero y la expresión se reduce a \\([Q]=M^aL^bT^c\\).</p><h4>La dimensión no depende de la unidad elegida</h4><p>La longitud puede expresarse en metros, centímetros o kilómetros: en todos los casos tiene dimensión \\(L\\). Tanto m/s como km/h son unidades de una magnitud con dimensión \\(LT^{-1}\\).</p><p>Una ecuación dimensional describe una propiedad, no un valor numérico. La operación \\(8\\,\\mathrm m+2\\,\\mathrm{kg}=10\\,\\mathrm s\\) no tiene sentido físico. En cambio, \\(8\\,\\mathrm m+100\\,\\mathrm{cm}=9\\,\\mathrm m\\) compara y suma longitudes.</p><h4>Tabla de consulta interactiva</h4><div data-dimension-explorer></div><p><strong>Compartir dimensión no significa ser la misma magnitud.</strong> El trabajo y el torque tienen dimensión \\(ML^2T^{-2}\\), pero representan conceptos físicos diferentes. La dimensión, por sí sola, tampoco determina si una magnitud es escalar o vectorial.</p>",
       "key": "La dimensión describe la estructura de una magnitud, pero no identifica de manera única su significado físico.",
-      "examples": []
-    },
-    {
-      "id": "dim-deducciones",
-      "title": "Deducción de dimensiones",
-      "subtitle": "Construir las fórmulas desde relaciones conocidas",
-      "goal": "Obtén las dimensiones de once magnitudes y reconoce las dimensiones de constantes físicas.",
-      "body": "<p>Para deducir una dimensión, parte de una relación física conocida, reemplaza cada magnitud por su dimensión y simplifica las potencias. Los coeficientes puramente numéricos no modifican la dimensión.</p><p>Por ejemplo, el área de un triángulo es \\(A=bh/2\\). Aunque su fórmula difiere de la del rectángulo, ambas áreas tienen dimensión \\(L^2\\). La dimensión no depende de la forma geométrica.</p><ol><li>Escribe la fórmula que relaciona las magnitudes.</li><li>Coloca corchetes y sustituye las dimensiones conocidas.</li><li>Multiplica, divide o eleva las potencias.</li><li>Comprueba que el resultado corresponde a la unidad de la magnitud.</li></ol><p>Las siguientes once deducciones reúnen el desarrollo de la aplicación del material de estudio. La fuerza, la velocidad y la aceleración pueden tratarse por sus módulos para hallar dimensiones; sus direcciones no cambian el resultado dimensional.</p>",
-      "key": "Reconstruir una dimensión a partir de su definición es más útil que memorizarla sin comprenderla.",
-      "examples": [
+      "examples": [],
+      "sections": [
         {
-          "title": "Aplicación 6. Once magnitudes derivadas",
-          "question": "Determina las dimensiones de área, volumen, velocidad, aceleración, fuerza, densidad, trabajo, potencia, presión, frecuencia y carga eléctrica.",
-          "steps": [
-            "<strong>a. Área de un rectángulo.</strong> \\(A=bh\\), de modo que \\([A]=[b][h]=L\\cdot L=L^2\\). Base y altura son longitudes.",
-            "<strong>b. Volumen de un prisma rectangular.</strong> \\(V=abc\\); por tanto, \\([V]=[a][b][c]=L^3\\).",
-            "<strong>c. Rapidez y velocidad.</strong> Para rapidez constante, \\(v=d/t\\), así que \\([v]=L/T=LT^{-1}\\). La velocidad vectorial también tiene esa dimensión, utilizando desplazamiento e intervalo de tiempo.",
-            "<strong>d. Aceleración.</strong> \\(a=\\Delta v/\\Delta t\\), luego \\([a]=LT^{-1}/T=LT^{-2}\\).",
-            "<strong>e. Fuerza.</strong> De \\(F=ma\\): \\([F]=[m][a]=M(LT^{-2})=MLT^{-2}\\).",
-            "<strong>f. Densidad.</strong> \\(\\rho=m/V\\), por lo que \\([\\rho]=M/L^3=ML^{-3}\\).",
-            "<strong>g. Trabajo.</strong> Para fuerza constante paralela al desplazamiento, \\(W=Fd\\). Entonces \\([W]=(MLT^{-2})L=ML^2T^{-2}\\). El trabajo general incluye un factor \\(\\cos\\theta\\), que es adimensional.",
-            "<strong>h. Potencia media.</strong> \\(\\mathcal P=W/t\\), de donde \\([\\mathcal P]=ML^2T^{-2}/T=ML^2T^{-3}\\).",
-            "<strong>i. Presión.</strong> \\(p=F_\\perp/A\\). Entonces \\([p]=MLT^{-2}/L^2=ML^{-1}T^{-2}\\).",
-            "<strong>j. Frecuencia.</strong> \\(f=1/\\tau\\), con período \\(\\tau\\); por tanto, \\([f]=T^{-1}\\).",
-            "<strong>k. Carga eléctrica.</strong> Para corriente constante, \\(q=it\\). Así, \\([q]=[i][t]=IT\\). Esta dimensión requiere la magnitud base corriente eléctrica."
-          ],
-          "sourcePage": 11
-        },
-        {
-          "title": "Ejemplo complementario. Impulso y cantidad de movimiento",
-          "question": "Compara las dimensiones de \\(J_F=F\\Delta t\\) y \\(p_m=mv\\).",
-          "steps": [
-            "<div class=\"equation\">\\[[J_F]=(MLT^{-2})T=MLT^{-1}\\]</div>",
-            "<div class=\"equation\">\\[[p_m]=M(LT^{-1})=MLT^{-1}\\]</div>",
-            "Comparten dimensión, lo que es compatible con la relación entre impulso y cambio de cantidad de movimiento."
+          "id": "dim-deducciones",
+          "title": "Deducción de dimensiones",
+          "subtitle": "Construir las fórmulas desde relaciones conocidas",
+          "goal": "Obtén las dimensiones de once magnitudes y reconoce las dimensiones de constantes físicas.",
+          "body": "<p>Para deducir una dimensión, parte de una relación física conocida, reemplaza cada magnitud por su dimensión y simplifica las potencias. Los coeficientes puramente numéricos no modifican la dimensión.</p><p>Por ejemplo, el área de un triángulo es \\(A=bh/2\\). Aunque su fórmula difiere de la del rectángulo, ambas áreas tienen dimensión \\(L^2\\). La dimensión no depende de la forma geométrica.</p><ol><li>Escribe la fórmula que relaciona las magnitudes.</li><li>Coloca corchetes y sustituye las dimensiones conocidas.</li><li>Multiplica, divide o eleva las potencias.</li><li>Comprueba que el resultado corresponde a la unidad de la magnitud.</li></ol><p>Las siguientes once deducciones reúnen el desarrollo de la aplicación del material de estudio. La fuerza, la velocidad y la aceleración pueden tratarse por sus módulos para hallar dimensiones; sus direcciones no cambian el resultado dimensional.</p>",
+          "key": "Reconstruir una dimensión a partir de su definición es más útil que memorizarla sin comprenderla.",
+          "examples": [
+            {
+              "title": "Aplicación 6. Once magnitudes derivadas",
+              "question": "Determina las dimensiones de área, volumen, velocidad, aceleración, fuerza, densidad, trabajo, potencia, presión, frecuencia y carga eléctrica.",
+              "steps": [
+                "<strong>a. Área de un rectángulo.</strong> \\(A=bh\\), de modo que \\([A]=[b][h]=L\\cdot L=L^2\\). Base y altura son longitudes.",
+                "<strong>b. Volumen de un prisma rectangular.</strong> \\(V=abc\\); por tanto, \\([V]=[a][b][c]=L^3\\).",
+                "<strong>c. Rapidez y velocidad.</strong> Para rapidez constante, \\(v=d/t\\), así que \\([v]=L/T=LT^{-1}\\). La velocidad vectorial también tiene esa dimensión, utilizando desplazamiento e intervalo de tiempo.",
+                "<strong>d. Aceleración.</strong> \\(a=\\Delta v/\\Delta t\\), luego \\([a]=LT^{-1}/T=LT^{-2}\\).",
+                "<strong>e. Fuerza.</strong> De \\(F=ma\\): \\([F]=[m][a]=M(LT^{-2})=MLT^{-2}\\).",
+                "<strong>f. Densidad.</strong> \\(\\rho=m/V\\), por lo que \\([\\rho]=M/L^3=ML^{-3}\\).",
+                "<strong>g. Trabajo.</strong> Para fuerza constante paralela al desplazamiento, \\(W=Fd\\). Entonces \\([W]=(MLT^{-2})L=ML^2T^{-2}\\). El trabajo general incluye un factor \\(\\cos\\theta\\), que es adimensional.",
+                "<strong>h. Potencia media.</strong> \\(\\mathcal P=W/t\\), de donde \\([\\mathcal P]=ML^2T^{-2}/T=ML^2T^{-3}\\).",
+                "<strong>i. Presión.</strong> \\(p=F_\\perp/A\\). Entonces \\([p]=MLT^{-2}/L^2=ML^{-1}T^{-2}\\).",
+                "<strong>j. Frecuencia.</strong> \\(f=1/\\tau\\), con período \\(\\tau\\); por tanto, \\([f]=T^{-1}\\).",
+                "<strong>k. Carga eléctrica.</strong> Para corriente constante, \\(q=it\\). Así, \\([q]=[i][t]=IT\\). Esta dimensión requiere la magnitud base corriente eléctrica."
+              ],
+              "sourcePage": 11
+            },
+            {
+              "title": "Ejemplo complementario. Impulso y cantidad de movimiento",
+              "question": "Compara las dimensiones de \\(J_F=F\\Delta t\\) y \\(p_m=mv\\).",
+              "steps": [
+                "<div class=\"equation\">\\[[J_F]=(MLT^{-2})T=MLT^{-1}\\]</div>",
+                "<div class=\"equation\">\\[[p_m]=M(LT^{-1})=MLT^{-1}\\]</div>",
+                "Comparten dimensión, lo que es compatible con la relación entre impulso y cambio de cantidad de movimiento."
+              ]
+            },
+            {
+              "title": "Ejemplo complementario. Constante de un resorte",
+              "question": "En \\(F=kx\\), \\(F\\) es el módulo de la fuerza elástica y \\(x\\) la deformación. Obtén la dimensión de \\(k\\).",
+              "steps": [
+                "Despeja \\(k=F/x\\).",
+                "<div class=\"equation\">\\[[k]=\\frac{MLT^{-2}}{L}=MT^{-2}\\]</div>",
+                "Su unidad SI es N/m. Una constante física puede tener dimensiones."
+              ]
+            },
+            {
+              "title": "Ejemplo complementario. Gravitación y constante de Planck",
+              "question": "Deduce las dimensiones de \\(G\\) en \\(F=Gm_1m_2/r^2\\) y de \\(h\\) en \\(E=hf\\).",
+              "steps": [
+                "En la ley de gravitación, \\(r\\) es distancia y \\(m_1,m_2\\) son masas.",
+                "<div class=\"equation\">\\[[G]=\\frac{[F][r]^2}{[m_1][m_2]}=\\frac{MLT^{-2}L^2}{M^2}=M^{-1}L^3T^{-2}\\]</div>",
+                "En la relación de Planck, \\(E\\) es energía y \\(f\\) frecuencia.",
+                "<div class=\"equation\">\\[[h]=\\frac{[E]}{[f]}=\\frac{ML^2T^{-2}}{T^{-1}}=ML^2T^{-1}\\]</div>",
+                "G y h son constantes físicas con dimensiones; no deben confundirse con números como 2 o π."
+              ]
+            }
           ]
         },
         {
-          "title": "Ejemplo complementario. Constante de un resorte",
-          "question": "En \\(F=kx\\), \\(F\\) es el módulo de la fuerza elástica y \\(x\\) la deformación. Obtén la dimensión de \\(k\\).",
-          "steps": [
-            "Despeja \\(k=F/x\\).",
-            "<div class=\"equation\">\\[[k]=\\frac{MLT^{-2}}{L}=MT^{-2}\\]</div>",
-            "Su unidad SI es N/m. Una constante física puede tener dimensiones."
-          ]
-        },
-        {
-          "title": "Ejemplo complementario. Gravitación y constante de Planck",
-          "question": "Deduce las dimensiones de \\(G\\) en \\(F=Gm_1m_2/r^2\\) y de \\(h\\) en \\(E=hf\\).",
-          "steps": [
-            "En la ley de gravitación, \\(r\\) es distancia y \\(m_1,m_2\\) son masas.",
-            "<div class=\"equation\">\\[[G]=\\frac{[F][r]^2}{[m_1][m_2]}=\\frac{MLT^{-2}L^2}{M^2}=M^{-1}L^3T^{-2}\\]</div>",
-            "En la relación de Planck, \\(E\\) es energía y \\(f\\) frecuencia.",
-            "<div class=\"equation\">\\[[h]=\\frac{[E]}{[f]}=\\frac{ML^2T^{-2}}{T^{-1}}=ML^2T^{-1}\\]</div>",
-            "G y h son constantes físicas con dimensiones; no deben confundirse con números como 2 o π."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "dim-reglas",
-      "title": "Reglas del álgebra dimensional",
-      "subtitle": "Productos, cocientes, potencias y cantidades adimensionales",
-      "goal": "Aplica las reglas dimensionales e identifica qué puede sumarse y qué debe ser adimensional.",
-      "body": "<h4>Regla 1. Sumas y diferencias de magnitudes compatibles</h4><p>Al sumar o restar magnitudes de la misma naturaleza, el resultado conserva esa dimensión. Si \\(v_1\\) y \\(v_2\\) son velocidades comparables, \\([v_1+v_2]=[v_1-v_2]=LT^{-1}\\). No se suman los símbolos dimensionales como si fueran cantidades: no se escribe que la dimensión sea \\(2LT^{-1}\\).</p><p>Aunque el resultado numérico de una diferencia sea cero, la cantidad conserva su tipo: \\(5\\,\\mathrm m-5\\,\\mathrm m=0\\,\\mathrm m\\). Una resta de longitudes no se transforma por ello en una masa.</p><h4>Regla 2. Multiplicación, división y potencias</h4><div class=\"equation\">\\[[AB]=[A][B]\\qquad\\left[\\frac AB\\right]=\\frac{[A]}{[B]}\\qquad[A^n]=[A]^n\\]</div><div class=\"equation\">\\[L\\cdot LT^{-1}=L^2T^{-1}\\qquad\\frac{M^4T^2}{MT^{-1}}=M^3T^3\\]</div><p>Al multiplicar se suman exponentes de la misma base; al dividir se restan; al elevar a una potencia se multiplican. Las raíces son potencias fraccionarias.</p><h4>Regla 3. Dimensión uno</h4><p>Los números y las constantes matemáticas son adimensionales: \\([2]=[\\pi]=[\\sqrt5]=1\\). «Adimensional» significa <strong>dimensión uno</strong>, no valor numérico igual a uno ni dimensión cero. El cociente entre dos longitudes puede valer 3 y seguir siendo adimensional.</p><div class=\"equation\">\\[\\left[\\frac{d_1}{d_2}\\right]=\\frac LL=1\\qquad M^0L^0T^0=1\\]</div><p>Los ángulos planos medidos en radianes son adimensionales, pues se definen mediante un cociente de longitudes. El radián sigue siendo una unidad útil para expresar que la cantidad es un ángulo.</p><h4>Funciones matemáticas</h4><p>Los argumentos de seno, coseno, exponencial y logaritmo deben ser adimensionales. También lo es el exponente de una expresión exponencial con base numérica, como \\(e^x\\).</p><div class=\"equation\">\\[[\\sin\\theta]=[\\cos\\theta]=[\\log b]=[e^x]=1\\qquad[\\theta]=[b]=[x]=1\\]</div><p>Esto no elimina las condiciones matemáticas: para un logaritmo real, su argumento debe ser positivo; su base debe ser positiva y distinta de uno. Si se usa \\(\\log(Q/Q_0)\\), \\(Q\\) y \\(Q_0\\) deben tener la misma dimensión.</p><p>Una potencia de una cantidad dimensional con exponente numérico fijo, como \\(v^2\\), sí puede tener dimensiones. Lo que debe ser adimensional es el exponente, no necesariamente la base de toda potencia.</p>",
-      "key": "Constante no significa adimensional: distingue los números puros de las constantes físicas.",
-      "examples": [
-        {
-          "title": "Aplicación 7. Una expresión con presión y área",
-          "question": "Si \\(Y=\\pi\\,\\dfrac{pA}{m\\sin\\alpha}\\), con presión \\(p\\), área \\(A\\), masa \\(m\\) y \\(\\sin\\alpha\\ne0\\), determina la dimensión de \\(Y\\) e indica con qué magnitud es compatible.",
-          "steps": [
-            "Usa \\([p]=ML^{-1}T^{-2}\\), \\([A]=L^2\\), \\([m]=M\\), \\([\\pi]=[\\sin\\alpha]=1\\).",
-            "<div class=\"equation\">\\[[Y]=\\frac{(ML^{-1}T^{-2})L^2}{M}=LT^{-2}\\]</div>",
-            "El resultado es <strong>compatible con una aceleración</strong>. La dimensión no basta por sí sola para identificar de manera única la magnitud."
-          ],
-          "sourcePage": 14
-        },
-        {
-          "title": "Ejemplo complementario. Productos y cocientes",
-          "question": "Halla la dimensión de \\(Q=Fv/t\\), donde \\(F\\) es fuerza, \\(v\\) rapidez y \\(t\\) tiempo.",
-          "steps": [
-            "<div class=\"equation\">\\[[Q]=\\frac{(MLT^{-2})(LT^{-1})}{T}=ML^2T^{-4}\\]</div>",
-            "La potencia de M es 1; la de L es 1+1=2; la de T es −2−1−1=−4."
+          "id": "dim-reglas",
+          "title": "Reglas del álgebra dimensional",
+          "subtitle": "Productos, cocientes, potencias y cantidades adimensionales",
+          "goal": "Aplica las reglas dimensionales e identifica qué puede sumarse y qué debe ser adimensional.",
+          "body": "<h4>Regla 1. Sumas y diferencias de magnitudes compatibles</h4><p>Al sumar o restar magnitudes de la misma naturaleza, el resultado conserva esa dimensión. Si \\(v_1\\) y \\(v_2\\) son velocidades comparables, \\([v_1+v_2]=[v_1-v_2]=LT^{-1}\\). No se suman los símbolos dimensionales como si fueran cantidades: no se escribe que la dimensión sea \\(2LT^{-1}\\).</p><p>Aunque el resultado numérico de una diferencia sea cero, la cantidad conserva su tipo: \\(5\\,\\mathrm m-5\\,\\mathrm m=0\\,\\mathrm m\\). Una resta de longitudes no se transforma por ello en una masa.</p><h4>Regla 2. Multiplicación, división y potencias</h4><div class=\"equation\">\\[[AB]=[A][B]\\qquad\\left[\\frac AB\\right]=\\frac{[A]}{[B]}\\qquad[A^n]=[A]^n\\]</div><div class=\"equation\">\\[L\\cdot LT^{-1}=L^2T^{-1}\\qquad\\frac{M^4T^2}{MT^{-1}}=M^3T^3\\]</div><p>Al multiplicar se suman exponentes de la misma base; al dividir se restan; al elevar a una potencia se multiplican. Las raíces son potencias fraccionarias.</p><h4>Regla 3. Dimensión uno</h4><p>Los números y las constantes matemáticas son adimensionales: \\([2]=[\\pi]=[\\sqrt5]=1\\). «Adimensional» significa <strong>dimensión uno</strong>, no valor numérico igual a uno ni dimensión cero. El cociente entre dos longitudes puede valer 3 y seguir siendo adimensional.</p><div class=\"equation\">\\[\\left[\\frac{d_1}{d_2}\\right]=\\frac LL=1\\qquad M^0L^0T^0=1\\]</div><p>Los ángulos planos medidos en radianes son adimensionales, pues se definen mediante un cociente de longitudes. El radián sigue siendo una unidad útil para expresar que la cantidad es un ángulo.</p><h4>Funciones matemáticas</h4><p>Los argumentos de seno, coseno, exponencial y logaritmo deben ser adimensionales. También lo es el exponente de una expresión exponencial con base numérica, como \\(e^x\\).</p><div class=\"equation\">\\[[\\sin\\theta]=[\\cos\\theta]=[\\log b]=[e^x]=1\\qquad[\\theta]=[b]=[x]=1\\]</div><p>Esto no elimina las condiciones matemáticas: para un logaritmo real, su argumento debe ser positivo; su base debe ser positiva y distinta de uno. Si se usa \\(\\log(Q/Q_0)\\), \\(Q\\) y \\(Q_0\\) deben tener la misma dimensión.</p><p>Una potencia de una cantidad dimensional con exponente numérico fijo, como \\(v^2\\), sí puede tener dimensiones. Lo que debe ser adimensional es el exponente, no necesariamente la base de toda potencia.</p>",
+          "key": "Constante no significa adimensional: distingue los números puros de las constantes físicas.",
+          "examples": [
+            {
+              "title": "Aplicación 7. Una expresión con presión y área",
+              "question": "Si \\(Y=\\pi\\,\\dfrac{pA}{m\\sin\\alpha}\\), con presión \\(p\\), área \\(A\\), masa \\(m\\) y \\(\\sin\\alpha\\ne0\\), determina la dimensión de \\(Y\\) e indica con qué magnitud es compatible.",
+              "steps": [
+                "Usa \\([p]=ML^{-1}T^{-2}\\), \\([A]=L^2\\), \\([m]=M\\), \\([\\pi]=[\\sin\\alpha]=1\\).",
+                "<div class=\"equation\">\\[[Y]=\\frac{(ML^{-1}T^{-2})L^2}{M}=LT^{-2}\\]</div>",
+                "El resultado es <strong>compatible con una aceleración</strong>. La dimensión no basta por sí sola para identificar de manera única la magnitud."
+              ],
+              "sourcePage": 14
+            },
+            {
+              "title": "Ejemplo complementario. Productos y cocientes",
+              "question": "Halla la dimensión de \\(Q=Fv/t\\), donde \\(F\\) es fuerza, \\(v\\) rapidez y \\(t\\) tiempo.",
+              "steps": [
+                "<div class=\"equation\">\\[[Q]=\\frac{(MLT^{-2})(LT^{-1})}{T}=ML^2T^{-4}\\]</div>",
+                "La potencia de M es 1; la de L es 1+1=2; la de T es −2−1−1=−4."
+              ]
+            }
           ]
         }
       ]

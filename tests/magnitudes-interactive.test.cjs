@@ -129,7 +129,7 @@ async function chapterIntegration(){
  assert.equal((h.run('lessonBody(LESSONS[0])').match(/<table\b/g)||[]).length,2,'Both first-topic tables are visible in full');
  assert.doesNotMatch(rendered,/magnitude-select|Selecciona una magnitud para descubrir/);
  assert.equal(h.run('LESSONS[0].examples.length'),0);
- assert.equal(h.run('LESSONS.length'),7);assert.equal(h.run('CONTENT.workedExamples.length'),25);
+ assert.equal(h.run('LESSONS.length'),5);assert.equal(h.run('CONTENT.workedExamples.length'),25);
  const savedBefore=clone(h.run('P.practice10'));
 
  const gameHost=h.run("document.getElementById('magnitude-game')");gameHost.querySelectorAll=()=>[];
