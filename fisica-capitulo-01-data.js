@@ -39,26 +39,14 @@ window.DIMENSIONAL_CONTENT = {
           "key": "Reconstruir una dimensión a partir de su definición es más útil que memorizarla sin comprenderla.",
           "examples": [
             {
-              "title": "Ejemplo complementario. Constante de un resorte",
-              "question": "En \\(F=kx\\), \\(F\\) es el módulo de la fuerza elástica y \\(x\\) la deformación. Obtén la dimensión de \\(k\\).",
+              "title": "Constantes físicas: de menor a mayor dificultad",
+              "question": "Resuelve los tres ejemplos en orden: resorte, Planck y gravitación. Puedes volver a cada uno conservando el paso en el que te quedaste.",
               "steps": [
-                "Despeja \\(k=F/x\\).",
-                "<div class=\"equation\">\\[[k]=\\frac{MLT^{-2}}{L}=MT^{-2}\\]</div>",
-                "Su unidad SI es N/m. Una constante física puede tener dimensiones."
+                "<strong>1. Resorte · Básico.</strong> En \\(F=kx\\), despeja \\(k=F/x\\). Como \\([F]=MLT^{-2}\\) y \\([x]=L\\), resulta \\([k]=MLT^{-2}/L=MT^{-2}\\). Su unidad SI es N/m.",
+                "<strong>2. Planck · Intermedio.</strong> En \\(E=hf\\), despeja \\(h=E/f\\). Como \\([E]=ML^2T^{-2}\\) y \\([f]=T^{-1}\\), resulta \\([h]=ML^2T^{-2}/T^{-1}=ML^2T^{-1}\\). Su unidad SI es J·s.",
+                "<strong>3. Gravitación · Avanzado.</strong> En \\(F=Gm_1m_2/r^2\\), despeja \\(G=Fr^2/(m_1m_2)\\). Con \\([F]=MLT^{-2}\\), \\([r]=L\\) y \\([m_1]=[m_2]=M\\), resulta \\([G]=M^{-1}L^3T^{-2}\\). Su unidad SI es m³/(kg·s²)."
               ],
-              "interactive": "spring"
-            },
-            {
-              "title": "Ejemplo complementario. Gravitación y constante de Planck",
-              "question": "Deduce las dimensiones de \\(G\\) en \\(F=Gm_1m_2/r^2\\) y de \\(h\\) en \\(E=hf\\).",
-              "steps": [
-                "En la ley de gravitación, \\(r\\) es distancia y \\(m_1,m_2\\) son masas.",
-                "<div class=\"equation\">\\[[G]=\\frac{[F][r]^2}{[m_1][m_2]}=\\frac{MLT^{-2}L^2}{M^2}=M^{-1}L^3T^{-2}\\]</div>",
-                "En la relación de Planck, \\(E\\) es energía y \\(f\\) frecuencia.",
-                "<div class=\"equation\">\\[[h]=\\frac{[E]}{[f]}=\\frac{ML^2T^{-2}}{T^{-1}}=ML^2T^{-1}\\]</div>",
-                "G y h son constantes físicas con dimensiones; no deben confundirse con números como 2 o π."
-              ],
-              "interactive": "gravity-planck"
+              "interactive": "physical-constants"
             }
           ]
         },

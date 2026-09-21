@@ -3,10 +3,16 @@
 
   const escapeHTML = value => String(value).replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character]));
   const math = tex => '\\(' + escapeHTML(tex) + '\\)';
-  const cards = ['spring', 'gravity-planck', 'friction', 'sine'];
+  const cards = ['physical-constants', 'friction', 'sine'];
+  const physicalConstants = Object.freeze([
+    { id: 'spring', label: 'Resorte', difficulty: 'Básico' },
+    { id: 'planck', label: 'Planck', difficulty: 'Intermedio' },
+    { id: 'gravity', label: 'Gravitación', difficulty: 'Avanzado' }
+  ]);
   const constants = Object.freeze({
     spring: {
       name: 'Constante de un resorte',
+      question: 'En ' + math('F=kx') + ', ' + math('F') + ' es el módulo de la fuerza elástica y ' + math('x') + ' el módulo de la deformación. Obtén la dimensión de ' + math('k') + '.',
       steps: [
         {
           title: 'Identifica la relación y las magnitudes',
@@ -39,6 +45,7 @@
     },
     gravity: {
       name: 'Constante de gravitación G',
+      question: 'Deduce la dimensión de ' + math('G') + ' en ' + math('F=Gm_1m_2/r^2') + ', donde ' + math('F') + ' es el módulo de la fuerza gravitatoria, ' + math('m_1') + ' y ' + math('m_2') + ' son masas y ' + math('r') + ' es la distancia entre sus centros.',
       steps: [
         {
           title: 'Identifica la relación y las magnitudes',
@@ -71,6 +78,7 @@
     },
     planck: {
       name: 'Constante de Planck h',
+      question: 'Deduce la dimensión de ' + math('h') + ' en ' + math('E=hf') + ', donde ' + math('E') + ' es la energía de un fotón y ' + math('f') + ' es su frecuencia.',
       steps: [
         {
           title: 'Identifica la relación y las magnitudes',
@@ -168,9 +176,9 @@
   });
 
   function createSession() {
-    let state = { spring: 0, gravityPlanck: 'gravity', gravity: 0, planck: 0, friction: 0, sine: 0 };
+    let state = { selected: 'spring', spring: 0, planck: 0, gravity: 0, friction: 0, sine: 0 };
     const snapshot = () => ({ ...state });
-    const active = card => card === 'gravity-planck' ? state.gravityPlanck : card;
+    const active = card => card === 'physical-constants' ? state.selected : card;
     function move(card, change) {
       if (!cards.includes(card)) return false;
       const key = active(card);
@@ -180,15 +188,15 @@
     return Object.freeze({
       snapshot,
       select(value) {
-        if (value !== 'gravity' && value !== 'planck') return false;
-        state.gravityPlanck = value;
+        if (!physicalConstants.some(constant => constant.id === value)) return false;
+        state.selected = value;
         return snapshot();
       },
       next: card => move(card, step => step + 1),
       previous: card => move(card, step => step - 1),
       restart: card => move(card, () => 0),
       reset() {
-        state = { spring: 0, gravityPlanck: 'gravity', gravity: 0, planck: 0, friction: 0, sine: 0 };
+        state = { selected: 'spring', spring: 0, planck: 0, gravity: 0, friction: 0, sine: 0 };
         return snapshot();
       }
     });
@@ -197,14 +205,17 @@
   const session = createSession();
   function activeState(card) {
     const state = session.snapshot();
-    const constant = card === 'gravity-planck' ? state.gravityPlanck : card;
+    const constant = card === 'physical-constants' ? state.selected : card;
     return { constant, step: state[constant] };
   }
   function panelHTML(card) {
     const state = activeState(card);
     const constant = constants[state.constant];
     const step = constant.steps[state.step];
-    return '<p class="constant-derivation-progress">' + escapeHTML(constant.name) + ' · Paso ' + (state.step + 1) + ' de 4</p>' +
+    const index = physicalConstants.findIndex(item => item.id === state.constant);
+    const progress = card === 'physical-constants' ? 'Ejemplo ' + (index + 1) + ' de 3 · ' + physicalConstants[index].difficulty + ' · ' : '';
+    return '<p class="constant-derivation-progress">' + progress + escapeHTML(constant.name) + ' · Paso ' + (state.step + 1) + ' de 4</p>' +
+      (constant.question ? '<div class="constant-derivation-prompt"><p>' + constant.question + '</p></div>' : '') +
       '<h5>' + step.title + '</h5><p>' + step.text + '</p>' +
       '<div class="constant-derivation-equations">' + step.equations.map(tex => '<div>' + math(tex) + '</div>').join('') + '</div>' +
       (step.dimension ? '<dl class="constant-derivation-result"><div><dt>Dimensión</dt><dd>' + math(step.dimension) + '</dd></div>' +
@@ -221,8 +232,8 @@
       '<p class="constant-derivation-eyebrow">Ejemplo interactivo · paso a paso</p>' +
       '<h4 id="' + id + '-title">' + escapeHTML(example.title) + '</h4>' +
       '<div class="constant-derivation-question">' + example.question + '</div>' +
-      (card === 'gravity-planck' ? '<div class="constant-derivation-selector" role="group" aria-label="Elige la constante que deseas deducir">' +
-        ['gravity', 'planck'].map(key => '<button type="button" data-action="constant-derivation-select"' + control + ' data-constant="' + key + '" aria-pressed="' + (state.constant === key) + '">' + constants[key].name + '</button>').join('') + '</div>' : '') +
+      (card === 'physical-constants' ? '<div class="constant-derivation-selector constant-derivation-selector-constants" role="group" aria-label="Elige un ejemplo, de menor a mayor dificultad">' +
+        physicalConstants.map((item, index) => '<button type="button" data-action="constant-derivation-select"' + control + ' data-constant="' + item.id + '" aria-pressed="' + (state.constant === item.id) + '">' + (index + 1) + '. ' + item.label + ' · ' + item.difficulty + '</button>').join('') + '</div>' : '') +
       '<div class="constant-derivation-panel" id="' + id + '-panel" role="region" aria-label="Resolución paso a paso" aria-live="polite" aria-atomic="true">' + panelHTML(card) + '</div>' +
       '<div class="constant-derivation-navigation" role="group" aria-label="Recorrer la resolución">' +
       '<button type="button" data-action="constant-derivation-previous"' + control + (state.step === 0 ? ' disabled' : '') + '>Anterior</button>' +
@@ -264,7 +275,7 @@
     const root = button.closest('#constant-derivation-' + card);
     if (!root || !root.querySelector('#constant-derivation-' + card + '-panel')) return false;
     if (action === 'constant-derivation-select') {
-      if (card !== 'gravity-planck' || !session.select(button.dataset.constant)) return false;
+      if (card !== 'physical-constants' || !session.select(button.dataset.constant)) return false;
     } else if (action === 'constant-derivation-next') session.next(card);
     else if (action === 'constant-derivation-previous') session.previous(card);
     else session.restart(card);

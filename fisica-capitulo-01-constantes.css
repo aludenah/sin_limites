@@ -9,11 +9,14 @@
 .constant-derivation button:focus-visible{outline:3px solid #b96b12;outline-offset:3px}
 .constant-derivation button:disabled{color:#697c8d;background:#f3f6f8;border-color:#dce4ed;cursor:default}
 .constant-derivation-selector{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0 0 20px}
+.constant-derivation-selector-constants{grid-template-columns:repeat(3,minmax(0,1fr))}
 .constant-derivation-selector button{width:100%;min-width:0;overflow-wrap:anywhere}
 .constant-derivation-selector button[aria-pressed=true]{border-color:var(--navy,#092f4a);background:var(--navy,#092f4a);color:#fff;box-shadow:inset 0 -3px 0 var(--red,#ff334f)}
 .constant-derivation-selector button[aria-pressed=true]:hover{background:#124a65;color:#fff}
 .constant-derivation-panel{min-width:0;padding-top:18px;border-top:1px solid var(--line,#dce4ed)}
 .constant-derivation-panel .constant-derivation-progress{margin:0 0 12px;color:#08727b;font-size:13px;font-weight:750;line-height:1.5}
+.constant-derivation-prompt{margin:0 0 20px;padding:14px 16px;border:1px solid #cbdde5;border-left:3px solid #08727b;border-radius:8px;background:#fff;font-size:14px;line-height:1.7;overflow-wrap:anywhere}
+.constant-derivation-prompt>p{margin:0}
 .constant-derivation-panel h5{margin:0 0 12px;color:var(--navy,#092f4a);font-size:18px;line-height:1.4}
 .constant-derivation-panel>p{margin:0 0 16px;font-size:14px;line-height:1.7}
 .constant-derivation-equations{display:flex;flex-direction:column;gap:12px;padding:18px;border-radius:10px;background:#f1f6fa;color:var(--navy,#092f4a);font-size:18px;min-width:0}
