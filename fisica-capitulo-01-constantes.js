@@ -3,7 +3,7 @@
 
   const escapeHTML = value => String(value).replace(/[&<>"']/g, character => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[character]));
   const math = tex => '\\(' + escapeHTML(tex) + '\\)';
-  const cards = ['spring', 'gravity-planck'];
+  const cards = ['spring', 'gravity-planck', 'friction', 'sine'];
   const constants = Object.freeze({
     spring: {
       name: 'Constante de un resorte',
@@ -100,13 +100,77 @@
           hint: 'h tiene dimensión de energía multiplicada por tiempo. Una constante física puede tener dimensiones.'
         }
       ]
+    },
+    friction: {
+      name: 'Coeficiente de rozamiento cinético',
+      steps: [
+        {
+          title: 'Identifica la relación y las magnitudes',
+          text: 'El coeficiente de rozamiento cinético μₖ es el cociente entre el módulo de la fuerza de rozamiento cinético Fᵣ y el módulo de la fuerza normal Fₙ, con Fₙ mayor que cero. Ambas son fuerzas.',
+          equations: ['\\mu_k=\\frac{F_r}{F_N}', '[F_r]=[F_N]=MLT^{-2}'],
+          hint: 'Comparamos dos magnitudes de la misma naturaleza: fuerza entre fuerza.'
+        },
+        {
+          title: 'Sustituye por dimensiones',
+          text: 'Escribe la dimensión del cociente y reemplaza cada fuerza por MLT⁻².',
+          equations: ['[\\mu_k]=\\frac{[F_r]}{[F_N]}', '[\\mu_k]=\\frac{MLT^{-2}}{MLT^{-2}}'],
+          hint: 'El numerador y el denominador contienen exactamente los mismos factores dimensionales.'
+        },
+        {
+          title: 'Cancela los factores dimensionales',
+          text: 'Al dividir las potencias de cada base, restamos exponentes iguales. Todos quedan en cero; por tanto, el producto es uno.',
+          equations: ['[\\mu_k]=M^{1-1}L^{1-1}T^{-2-(-2)}', '[\\mu_k]=M^0L^0T^0=1'],
+          hint: 'El coeficiente es adimensional: tiene dimensión uno. Esto no determina su valor numérico.'
+        },
+        {
+          title: 'Distingue dimensión y valor numérico',
+          text: 'Si el rozamiento cinético es 30 N y la fuerza normal es 100 N, las unidades se cancelan al dividir. El coeficiente vale 0,30 y su dimensión es uno.',
+          equations: ['F_r=30\\,\\mathrm N,\\qquad F_N=100\\,\\mathrm N', '\\mu_k=\\frac{30\\,\\mathrm N}{100\\,\\mathrm N}=0{,}30', '[\\mu_k]=1'],
+          dimension: '1',
+          unit: '1',
+          unitName: 'uno; se omite al escribir el valor',
+          hint: 'Dimensión uno no significa valor numérico uno. Escribimos μₖ = 0,30, sin añadir un símbolo de unidad.'
+        }
+      ]
+    },
+    sine: {
+      name: 'Dimensión del seno y de su argumento',
+      steps: [
+        {
+          title: 'Identifica la relación y las magnitudes',
+          text: 'Una oscilación se describe mediante y = A sen(2πt/τ). La amplitud A es una longitud, t es el tiempo y τ es el período, que es mayor que cero.',
+          equations: ['y=A\\sin\\!\\left(\\frac{2\\pi t}{\\tau}\\right)', '[A]=L', '[t]=[\\tau]=T'],
+          hint: 'τ representa el período de la oscilación; T representa la dimensión de tiempo.'
+        },
+        {
+          title: 'Analiza el argumento del seno',
+          text: 'Llama φ al argumento. Los números 2 y π tienen dimensión uno; el cociente entre el tiempo y el período también tiene dimensión uno.',
+          equations: ['\\varphi=\\frac{2\\pi t}{\\tau}', '[2]=[\\pi]=1', '[\\varphi]=\\frac{[2][\\pi][t]}{[\\tau]}', '[\\varphi]=\\frac{1\\cdot1\\cdot T}{T}=1'],
+          hint: 'El argumento es un ángulo expresado en radianes. El radián es una unidad de dimensión uno.'
+        },
+        {
+          title: 'Deduce la dimensión de la expresión',
+          text: 'El seno de un argumento válido es un número de dimensión uno. Multiplicarlo por la amplitud conserva la dimensión de longitud.',
+          equations: ['[\\sin\\varphi]=1', '[y]=[A][\\sin\\varphi]', '[y]=L\\cdot1=L'],
+          hint: 'La amplitud aporta la dimensión de longitud; el seno aporta un factor adimensional.'
+        },
+        {
+          title: 'Comprueba con valores numéricos',
+          text: 'Toma A = 0,20 m, t = 1 s y τ = 12 s. El argumento es π/6 rad, su seno vale 1/2 y el desplazamiento es 0,10 m.',
+          equations: ['\\varphi=\\frac{2\\pi(1\\,\\mathrm s)}{12\\,\\mathrm s}=\\frac{\\pi}{6}\\,\\mathrm{rad}', '\\sin\\varphi=\\sin\\!\\left(\\frac{\\pi}{6}\\right)=\\frac12', 'y=(0{,}20\\,\\mathrm m)\\frac12=0{,}10\\,\\mathrm m', '[\\sin\\varphi]=1,\\qquad[y]=L'],
+          dimension: 'L',
+          unit: '\\mathrm m',
+          unitName: 'metro, unidad del desplazamiento y',
+          hint: 'El seno vale 1/2, pero tiene dimensión uno. El desplazamiento y conserva dimensión L y se expresa en metros.'
+        }
+      ]
     }
   });
 
   function createSession() {
-    let state = { spring: 0, gravityPlanck: 'gravity', gravity: 0, planck: 0 };
+    let state = { spring: 0, gravityPlanck: 'gravity', gravity: 0, planck: 0, friction: 0, sine: 0 };
     const snapshot = () => ({ ...state });
-    const active = card => card === 'spring' ? 'spring' : state.gravityPlanck;
+    const active = card => card === 'gravity-planck' ? state.gravityPlanck : card;
     function move(card, change) {
       if (!cards.includes(card)) return false;
       const key = active(card);
@@ -124,7 +188,7 @@
       previous: card => move(card, step => step - 1),
       restart: card => move(card, () => 0),
       reset() {
-        state = { spring: 0, gravityPlanck: 'gravity', gravity: 0, planck: 0 };
+        state = { spring: 0, gravityPlanck: 'gravity', gravity: 0, planck: 0, friction: 0, sine: 0 };
         return snapshot();
       }
     });
@@ -133,7 +197,7 @@
   const session = createSession();
   function activeState(card) {
     const state = session.snapshot();
-    const constant = card === 'spring' ? 'spring' : state.gravityPlanck;
+    const constant = card === 'gravity-planck' ? state.gravityPlanck : card;
     return { constant, step: state[constant] };
   }
   function panelHTML(card) {

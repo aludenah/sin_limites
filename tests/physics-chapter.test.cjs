@@ -102,8 +102,10 @@ async function mergedContent(){
  assert.deepEqual(merged.sections.map(s=>s.id),['dim-deducciones','dim-reglas']);
  assert.deepEqual(merged.sections.map(s=>s.examples.length),[2,2],'Four examples remain after removing the two requested cards');
  assert.deepEqual(merged.sections[0].examples.map(example=>example.interactive),['spring','gravity-planck'],'The spring and gravity/Planck examples use their interactive walkthroughs');
+ assert.deepEqual(merged.sections[1].examples.map(example=>example.interactive),['friction','sine'],'The rules section contains the two dimension-one walkthroughs');
  assert.doesNotMatch(rendered,/Aplicación 6\. Once magnitudes derivadas|Ejemplo complementario\. Impulso y cantidad de movimiento|Las siguientes once deducciones/,'The two removed cards and their introductory reference are absent');
- for(const title of ['Ejemplo complementario. Constante de un resorte','Ejemplo complementario. Gravitación y constante de Planck','Aplicación 7. Una expresión con presión y área','Ejemplo complementario. Productos y cocientes'])assert.ok(rendered.includes(title),'The other examples remain');
+ for(const title of ['Ejemplo complementario. Constante de un resorte','Ejemplo complementario. Gravitación y constante de Planck','Dimensión uno: coeficiente de rozamiento','Dimensión uno: una función seno'])assert.ok(rendered.includes(title),'The constants and dimension-one examples are available');
+ assert.doesNotMatch(rendered,/Aplicación 7\. Una expresión con presión y área|Ejemplo complementario\. Productos y cocientes/,'The previous rule examples no longer appear in theory');
  assert.match(merged.body,/siete magnitudes fundamentales del SI/);
  assert.match(merged.sections[0].body,/Para deducir una dimensión/);
  assert.match(merged.sections[1].body,/Regla 1[\s\S]*Regla 2[\s\S]*Regla 3[\s\S]*Funciones matemáticas/);
