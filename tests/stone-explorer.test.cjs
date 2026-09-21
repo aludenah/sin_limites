@@ -89,8 +89,8 @@ async function chapterIntegration(){
  const lessonMarkup=h.run('lessonBody(LESSONS[0])');
  assert.ok(lessonMarkup.startsWith(firstParagraph));
  assert.ok(lessonMarkup.indexOf('id="stone-explorer"')>firstParagraph.length);
- assert.ok(lessonMarkup.indexOf('id="stone-explorer"')<lessonMarkup.indexOf('\\ell=2'),
-  'The existing length equation stays after the interactive stone');
+ assert.ok(lessonMarkup.indexOf('id="stone-explorer"')<lessonMarkup.indexOf('Magnitudes fundamentales o base'),
+  'The base magnitudes heading stays after the interactive stone');
  const progressBefore=clone(h.run('P'));
  for(const id of ['mass','length','volume','temperature']){
   click({action:'stone-select',id});
