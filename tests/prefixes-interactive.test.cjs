@@ -85,41 +85,35 @@ function scoring(){
 async function integration(){
  const html=read('fisica-capitulo-01.html');
  const scripts=[...html.matchAll(/<script\b[^>]*src="([^"]+)"/g)].map(m=>m[1].split('?')[0]);
- for(const file of modules){assert.ok(scripts.includes(file));assert.ok(scripts.indexOf(file)<scripts.indexOf('fisica-capitulo-01.js'));}
- const h=harness(['fisica-capitulo-01-data.js',...modules]);
+ assert.ok(!scripts.includes('fisica-capitulo-01-prefijos.js'),'The removed prefix explorer is not loaded');
+ assert.doesNotMatch(html,/href="fisica-capitulo-01-prefijos\.css\?/);
+ assert.ok(scripts.includes('fisica-capitulo-01-prefijos-juego.js'));
+ assert.ok(scripts.indexOf('fisica-capitulo-01-prefijos-juego.js')<scripts.indexOf('fisica-capitulo-01.js'));
+ const h=harness(['fisica-capitulo-01-data.js','fisica-capitulo-01-prefijos-juego.js']);
  const app=h.run("document.getElementById('chapter-app')"),handlers=new Map();
  app.addEventListener=(type,handler)=>handlers.set(type,handler);h.run(read('fisica-capitulo-01.js'));
  const click=(dataset,closest=()=>null)=>handlers.get('click')({target:{closest:()=>({dataset,disabled:false,closest})}});
  const gameHTML=()=>h.run('window.PrefixGame.render()');
- const explorerHTML=()=>h.run('window.PrefixExplorer.render()');
+ const assertStaticTable=()=>{
+  const table=app.innerHTML.match(/<table\b[^>]*>[\s\S]*?<\/table>/)?.[0];
+  assert.ok(table,'The topic displays a reference table');
+  assert.deepEqual([...table.matchAll(/<th>(.*?)<\/th>/g)].map(m=>m[1]),['Prefijo','Símbolo','Factor']);
+  const rows=[...table.matchAll(/<tr><td>(.*?)<\/td><td>(.*?)<\/td><td>\\\((.*?)\\\)<\/td><\/tr>/g)].map(m=>m.slice(1));
+  assert.deepEqual(rows,[
+   ['pico','p','10^{-12}'],['nano','n','10^{-9}'],['micro','µ','10^{-6}'],['mili','m','10^{-3}'],
+   ['centi','c','10^{-2}'],['kilo','k','10^3'],['mega','M','10^6'],['giga','G','10^9']
+  ]);
+  assert.doesNotMatch(table,/<button\b|<input\b|<select\b|data-action=/,'The table contains no interactive controls');
+  assert.doesNotMatch(app.innerHTML,/prefix-explorer|Selecciona un prefijo|Prueba una conversión|Prefijo de origen|Prefijo de destino/);
+  assert.equal(h.run('typeof window.PrefixExplorer'),'undefined','The chapter works without the old explorer module');
+ };
  click({action:'prefix-game-start'});assert.match(gameHTML(),/Comenzar juego/);
  h.run("window.StudyMode.choose('student','free')");await h.signIn({uid:'student'});
  h.run('goLesson(1)');
  assert.equal(h.run('LESSONS[1].id'),'dim-si');assert.equal(h.run('LESSONS[1].examples.length'),0);
- assert.match(app.innerHTML,/id="prefix-explorer"/);assert.match(app.innerHTML,/id="prefix-game"/);
- assert.doesNotMatch(app.innerHTML,/Ejemplo resuelto|Aplicación 2\. Equivalencias|<table\b/);
+ assertStaticTable();assert.match(app.innerHTML,/id="prefix-game"/);
+ assert.doesNotMatch(app.innerHTML,/Ejemplo resuelto|Aplicación 2\. Equivalencias/);
  const practiceBefore=clone(h.run('P.practice10'));
-
- // Exercise delegated input/change/card events using stable input objects.
- const elements=new Map();
- const element=id=>{if(!elements.has(id))elements.set(id,{innerHTML:'',value:'',hidden:false,attributes:{},setAttribute(k,v){this.attributes[k]=v;}});return elements.get(id);};
- const cards=explorer.items.map(p=>({dataset:{prefix:p.id},attributes:{},setAttribute(k,v){this.attributes[k]=v;}}));
- const explorerHost={querySelector:selector=>element(selector.slice(1)),querySelectorAll:()=>cards};
- Object.defineProperty(explorerHost,'innerHTML',{set(){throw Error('Do not replace focused explorer controls');}});
- const input=element('prefix-explorer-value');input.dataset={action:'prefix-explorer-value'};input.closest=()=>explorerHost;
- input.value='2,5';handlers.get('input')({target:input});
- assert.match(element('prefix-explorer-result').innerHTML,/2\u202f500 m/);
- assert.equal(input.attributes['aria-invalid'],'false');
- const select={dataset:{action:'prefix-explorer-unit'},value:'g',closest:()=>explorerHost};
- handlers.get('change')({target:select});assert.match(element('prefix-explorer-result').innerHTML,/2\u202f500 g/);
- assert.equal(element('prefix-explorer-mass-note').hidden,false);
- click({action:'prefix-explorer-select',prefix:'mili'},()=>explorerHost);
- assert.equal(element('prefix-explorer-from').value,'mili');
- assert.match(element('prefix-explorer-result').innerHTML,/0,0025 g/);
- assert.equal(cards.find(p=>p.dataset.prefix==='mili').attributes['aria-pressed'],'true');
- input.value='';handlers.get('input')({target:input});assert.equal(input.attributes['aria-invalid'],'true');
- assert.match(element('prefix-explorer-result').innerHTML,/número completo/);
- input.value='0';handlers.get('input')({target:input});assert.match(element('prefix-explorer-result').innerHTML,/0 mg = 0 g/);
 
  const gameHost=h.run("document.getElementById('prefix-game')");gameHost.querySelectorAll=()=>[];
  click({action:'prefix-game-start'});assert.match(gameHTML(),/Ronda 1 de 10/);
@@ -130,17 +124,16 @@ async function integration(){
  assert.ok(gameHTML().includes(question.explanation));assert.match(gameHTML(),/0 \/ 10 puntos/);
  h.run('goLesson(0)');assert.doesNotMatch(app.innerHTML,/id="prefix-game"/);
  click({action:'prefix-game-next'});assert.match(gameHTML(),/Ronda 1 de 10/);
- input.value='12';handlers.get('input')({target:input});assert.match(explorerHTML(),/value="0"/,'Other topics ignore converter input');
- h.run('goLesson(1)');assert.match(app.innerHTML,/needs-review/);assert.match(app.innerHTML,/value="0"/);
+ h.run('goLesson(1)');assert.match(app.innerHTML,/needs-review/);assertStaticTable();
  click({action:'prefix-game-next'});assert.match(gameHTML(),/Ronda 2 de 10/);
  h.run("goTab('practice')");click({action:'prefix-game-start'});assert.match(gameHTML(),/Ronda 2 de 10/);
  h.run("goTab('theory')");assert.match(app.innerHTML,/Ronda 2 de 10/);
  assert.deepEqual(clone(h.run('P.practice10')),practiceBefore,'The game never changes graded chapter progress');
  assert.equal(h.run('CONTENT.workedExamples.length'),25);assert.equal(h.run('LESSONS.length'),7);
- await h.signIn(null);assert.match(gameHTML(),/Comenzar juego/);assert.match(explorerHTML(),/value="1"/);
+ await h.signIn(null);assert.match(gameHTML(),/Comenzar juego/);
  click({action:'prefix-game-start'});assert.match(gameHTML(),/Comenzar juego/);
  h.run("window.StudyMode.choose('other','free')");await h.signIn({uid:'other'});h.run('goLesson(1)');
- assert.match(app.innerHTML,/Comenzar juego/);assert.match(app.innerHTML,/data-prefix="kilo" aria-pressed="true"/);
+ assert.match(app.innerHTML,/Comenzar juego/);assertStaticTable();
 }
 
-conversions();scoring();integration().then(()=>console.log('PASS: exact prefix conversions, balanced game and feedback, delegated controls, navigation retention and independent student progress.')).catch(error=>{console.error(error);process.exitCode=1;});
+conversions();scoring();integration().then(()=>console.log('PASS: standalone prefix conversions, static eight-prefix table, balanced game and feedback, navigation retention and independent student progress.')).catch(error=>{console.error(error);process.exitCode=1;});
