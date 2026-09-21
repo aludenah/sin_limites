@@ -120,9 +120,6 @@
       '<dl class="dimension-explorer-facts"><div><dt>Dimensión</dt><dd>' + math(item.dimension) + '</dd></div>' +
       '<div><dt>Unidad SI</dt><dd>' + escapeHTML(item.unit) + '<span>' + escapeHTML(item.unitName) + '</span></dd></div></dl>' +
       '<div class="dimension-explorer-relation"><strong>Relación de referencia</strong><div>' + math(item.relation) + '</div></div>' +
-      '<div class="dimension-explorer-exponents" role="group" aria-label="Exponentes de las dimensiones base">' +
-      Object.keys(dimensions).map(key => '<div class="dimension-explorer-exponent' + (item.exponents[key] === 0 ? ' is-zero' : '') + '"><span>' + escapeHTML(dimensions[key]) + '</span><strong aria-label="' + key + ', exponente ' + item.exponents[key] + '">' + key + '<sup>' + item.exponents[key] + '</sup></strong></div>').join('') +
-      '</div><p class="dimension-explorer-zero-note">Un exponente 0 indica que esa dimensión no aparece en la expresión final.</p>' +
       '<div class="dimension-explorer-derivation"><strong>Cómo se obtiene</strong><div>' + math(item.derivation) + '</div></div>' +
       '<p class="dimension-explorer-explanation">' + escapeHTML(item.explanation) + '</p>' +
       (related.length ? '<div class="dimension-explorer-connections"><strong>También tienen esta dimensión</strong><ul>' + related.map(other => '<li>' + escapeHTML(other.name) + ' <span>(' + escapeHTML(other.unit) + ')</span></li>').join('') + '</ul><p>Compartir dimensión no significa representar la misma magnitud. Selecciona sus nombres arriba para comparar.</p></div>' : '');

@@ -15,13 +15,6 @@
 .dimension-explorer .dimension-explorer-relation,.dimension-explorer .dimension-explorer-derivation{margin-bottom:16px;padding:12px 14px;border-radius:10px;background:#f2f6fb;font-size:15px}
 .dimension-explorer .dimension-explorer-relation>strong,.dimension-explorer .dimension-explorer-derivation>strong{display:block;margin-bottom:8px;color:var(--muted,#58697e);font-size:12px;font-weight:650}
 .dimension-explorer .dimension-explorer-relation>div,.dimension-explorer .dimension-explorer-derivation>div{overflow-x:auto;padding:4px 0}
-.dimension-explorer .dimension-explorer-exponents{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:18px}
-.dimension-explorer .dimension-explorer-exponent{padding:12px 8px;border:1px solid #afc1d7;border-radius:10px;background:#f6f9fd;text-align:center}
-.dimension-explorer .dimension-explorer-exponent>span{display:block;min-height:36px;color:#425b79;font-size:12px;line-height:1.5}
-.dimension-explorer .dimension-explorer-exponent>strong{display:block;margin-top:5px;color:var(--navy,#122744);font-family:Georgia,serif;font-size:25px;line-height:1.5}
-.dimension-explorer .dimension-explorer-exponent.is-zero{border-style:dashed;border-color:#cbd5e1;background:#fff}
-.dimension-explorer .dimension-explorer-exponent.is-zero>strong{color:#62748a}
-.dimension-explorer .dimension-explorer-zero-note{margin:8px 0 18px;color:var(--muted,#58697e);font-size:12px;line-height:1.6}
 .dimension-explorer .dimension-explorer-explanation{margin:0;font-size:14px;line-height:1.7}
 .dimension-explorer .dimension-explorer-connections{margin-top:18px;padding:14px 16px;border-left:3px solid var(--red,#ef233c);border-radius:0 8px 8px 0;background:#fff7f7;font-size:13px;line-height:1.6}
 .dimension-explorer .dimension-explorer-connections>strong{display:block;color:var(--navy,#122744)}
@@ -29,5 +22,5 @@
 .dimension-explorer .dimension-explorer-connections li{margin:0;padding:4px 8px;border:1px solid #efcfd3;border-radius:6px;background:#fff;font-size:12px}
 .dimension-explorer .dimension-explorer-connections li>span{color:#58697e}
 .dimension-explorer .dimension-explorer-connections p{margin:0;font-size:13px;line-height:1.6}
-@media(max-width:520px){.dimension-explorer{padding:13px}.dimension-explorer .dimension-explorer-detail{padding:15px}.dimension-explorer .dimension-explorer-choices{grid-template-columns:repeat(auto-fit,minmax(min(100%,120px),1fr))}.dimension-explorer .dimension-explorer-choices button{font-size:12px}.dimension-explorer .dimension-explorer-name{font-size:18px}.dimension-explorer .dimension-explorer-exponents{grid-template-columns:repeat(2,minmax(0,1fr))}.dimension-explorer .dimension-explorer-exponent>span{min-height:0}.dimension-explorer .dimension-explorer-facts{gap:10px}.dimension-explorer .dimension-explorer-facts dd{font-size:17px}}
+@media(max-width:520px){.dimension-explorer{padding:13px}.dimension-explorer .dimension-explorer-detail{padding:15px}.dimension-explorer .dimension-explorer-choices{grid-template-columns:repeat(auto-fit,minmax(min(100%,120px),1fr))}.dimension-explorer .dimension-explorer-choices button{font-size:12px}.dimension-explorer .dimension-explorer-name{font-size:18px}.dimension-explorer .dimension-explorer-facts{gap:10px}.dimension-explorer .dimension-explorer-facts dd{font-size:17px}}
 @media print{.dimension-explorer{break-inside:avoid}.dimension-explorer .dimension-explorer-choices button{color:#122744;background:#fff}.dimension-explorer .dimension-explorer-choices button[aria-pressed=true]{color:#122744;background:#fff;border-width:2px;box-shadow:none}}
