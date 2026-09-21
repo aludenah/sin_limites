@@ -63,7 +63,7 @@ window.DIMENSIONAL_CONTENT = {
               "question": "Resuelve los tres ejemplos en orden: rozamiento, seno y exponencial. Puedes volver a cada uno conservando el paso en el que te quedaste.",
               "steps": [
                 "<strong>1. Rozamiento · Básico.</strong> En \\(F_r=\\mu_kF_N\\), despeja \\(\\mu_k=F_r/F_N\\). Ambas fuerzas tienen dimensión \\(MLT^{-2}\\), por lo que \\([\\mu_k]=[F_r]/[F_N]=M^0L^0T^0=1\\). El coeficiente de rozamiento es adimensional.",
-                "<strong>2. Seno · Intermedio.</strong> En \\(y=A\\sin(2\\pi t/\\tau)\\), \\([A]=L\\) y \\([t]=[\\tau]=T\\). El argumento y el seno tienen dimensión uno, por lo que \\([y]=L\\).",
+                "<strong>2. Seno · Intermedio.</strong> En \\(y=A\\operatorname{sen}(2\\pi t/\\tau)\\), \\(y\\) es un desplazamiento y \\([t]=[\\tau]=T\\). Determina la dimensión de \\(A\\). El argumento y el seno tienen dimensión uno. Como \\([y]=L\\), resulta \\([A]=[y]/[\\operatorname{sen}(2\\pi t/\\tau)]=L/1=L\\).",
                 "<strong>3. Exponencial · Avanzado.</strong> En el modelo de frenado \\(v=v_0e^{-bt/m}\\), \\(v_0\\) es rapidez, \\(m>0\\) es masa, \\(t\\ge0\\) es tiempo y \\(b>0\\) es un coeficiente. El exponente debe ser adimensional: \\([b]T/M=1\\), de donde \\([b]=MT^{-1}\\), con unidad SI kg/s. Como \\([e^{-bt/m}]=1\\), se conserva \\([v]=LT^{-1}\\). Para \\(b=2\\,\\mathrm{kg}/\\mathrm s\\), \\(m=4\\,\\mathrm{kg}\\), \\(t=2\\,\\mathrm s\\) y \\(v_0=10\\,\\mathrm m/\\mathrm s\\), resulta \\(bt/m=1\\) y \\(v=10/e\\,\\mathrm m/\\mathrm s\\approx3{,}68\\,\\mathrm m/\\mathrm s\\)."
               ],
               "interactive": "dimension-one"

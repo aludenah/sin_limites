@@ -155,13 +155,13 @@
       ]
     },
     sine: {
-      name: 'Dimensión del seno y de su argumento',
-      question: 'En ' + math('y=A\\sin(2\\pi t/\\tau)') + ', ' + math('A') + ' es una amplitud de longitud, ' + math('t') + ' es tiempo y ' + math('\\tau>0') + ' es el período. Determina las dimensiones del argumento del seno, del seno y de ' + math('y') + '.',
+      name: 'Dimensión de la amplitud A',
+      question: 'En ' + math('y=A\\operatorname{sen}(2\\pi t/\\tau)') + ', ' + math('y') + ' es un desplazamiento, ' + math('t') + ' es tiempo y ' + math('\\tau>0') + ' es el período. Determina la dimensión de ' + math('A') + '.',
       steps: [
         {
           title: 'Identifica la relación y las magnitudes',
-          text: 'Una oscilación se describe mediante y = A sen(2πt/τ). La amplitud A es una longitud, t es el tiempo y τ es el período, que es mayor que cero.',
-          equations: ['y=A\\sin\\!\\left(\\frac{2\\pi t}{\\tau}\\right)', '[A]=L', '[t]=[\\tau]=T'],
+          text: 'El desplazamiento y tiene dimensión de longitud. El tiempo t y el período τ tienen dimensión de tiempo. A es la amplitud cuya dimensión buscamos.',
+          equations: ['y=A\\operatorname{sen}\\!\\left(\\frac{2\\pi t}{\\tau}\\right)', '[y]=L', '[t]=[\\tau]=T'],
           hint: 'τ representa el período de la oscilación; T representa la dimensión de tiempo.'
         },
         {
@@ -173,16 +173,16 @@
         {
           title: 'Determina la dimensión del seno',
           text: 'El argumento tiene dimensión uno. El seno de ese argumento también es adimensional.',
-          equations: ['[\\varphi]=1', '[\\sin\\varphi]=1'],
+          equations: ['[\\varphi]=1', '[\\operatorname{sen}\\varphi]=1'],
           hint: 'El seno aporta un factor de dimensión uno.'
         },
         {
-          title: 'Obtén la dimensión de y',
-          text: 'La dimensión de y es el producto de la dimensión de la amplitud y la del seno. Como la amplitud es una longitud y el seno es adimensional, y tiene dimensión de longitud.',
-          equations: ['[y]=[A][\\sin\\varphi]', '[y]=L\\cdot1=L'],
+          title: 'Obtén la dimensión de A',
+          text: 'Expresa las dimensiones de ambos miembros y despeja la dimensión de A. El desplazamiento tiene dimensión L y el seno tiene dimensión uno.',
+          equations: ['[y]=[A][\\operatorname{sen}\\varphi]', '[A]=\\frac{[y]}{[\\operatorname{sen}\\varphi]}=\\frac{L}{1}=L'],
           dimension: 'L',
-          dimensionLabel: 'Dimensión de y',
-          hint: 'La amplitud aporta la dimensión de longitud; el factor seno conserva esa dimensión.'
+          dimensionLabel: 'Dimensión de A',
+          hint: 'La amplitud A tiene dimensión de longitud.'
         }
       ]
     },

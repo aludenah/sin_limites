@@ -124,17 +124,19 @@ function dimensionOneFormulas(card,panels){
   assert.match(panels[3],/<dt>Dimensión de μₖ<\/dt><dd>\\\(1\\\)<\/dd>/,'The result contains only the coefficient dimension');
   assert.doesNotMatch(panels.join('\n'),/30|100|0[,.]30|¿Tener dimensión uno|calcula su valor|Unidad SI/i,'The friction walkthrough asks only for the dimension, without numerical values or a unit result');
  }else if(card==='sine'){
-  assert.ok(all.includes('y=A\\sin('),'The sine appears in a displacement equation');
-  assert.ok(all.includes('[A]=L'),'Amplitude supplies the displacement dimension');
+  assert.ok(all.includes('y=A\\operatornamesen('),'The displacement equation uses the Spanish operator sen');
+  assert.ok(steps[0].includes('[y]=L'),'The displacement dimension is the known input');
+  assert.doesNotMatch(steps[0],/\[A\]=L/,'The unknown amplitude dimension is not given at the beginning');
   assert.ok(all.includes('[t]=[\\tau]=T'),'Time and period have matching dimensions');
   assert.ok(all.includes('\\frac[2][\\pi][t][\\tau]')&&all.includes('\\frac11TT=1'),'The numerical factors have dimension one and the time dimensions cancel');
   assert.match(all,/\[\\(?:phi|varphi)\]=.*1/,'The complete trigonometric argument has dimension one');
-  assert.match(all,/\[\\sin(?:\(|\\(?:phi|varphi)).*\]=1/,'The sine result is dimensionless');
-  assert.ok(all.includes('[y]=L')||all.includes('[y]=L1=L')||all.includes('[y]=[A]1=L'),'Displacement keeps the amplitude dimension');
+  assert.match(all,/\[\\operatornamesen(?:\(|\\(?:phi|varphi)).*\]=1/,'The sine result is dimensionless');
   assert.match(steps[1],/\[\\(?:phi|varphi)\]=.*1/,'The second step deduces the argument dimension');
-  assert.match(steps[2],/\[\\sin\\(?:phi|varphi)\]=1/,'The third step deduces the sine dimension');
-  assert.match(steps[3],/\[y\]=[^<]*L/,'The last step deduces the displacement dimension');
-  assert.match(panels[3],/<dt>Dimensión de y<\/dt><dd>\\\(L\\\)<\/dd>/,'The result contains only the dimension of y');
+  assert.match(steps[2],/\[\\operatornamesen\\(?:phi|varphi)\]=1/,'The third step deduces the sine dimension');
+  assert.match(steps[3],/\[A\]=\\frac\[y\]\[\\operatornamesen\\(?:phi|varphi)\]/,'The last step isolates the amplitude dimension');
+  assert.ok(steps[3].includes('\\fracL1=L'),'The amplitude dimension is length divided by dimension one');
+  assert.match(panels[3],/<dt>Dimensión de A<\/dt><dd>\\\(L\\\)<\/dd>/,'The result answers only the requested dimension of A');
+  assert.doesNotMatch(panels.join('\n'),/\\sin\b|Dimensión de y/,'Every sine formula uses sen and the result targets A');
   assert.doesNotMatch(all,/0[,\.]20|0[,\.]10|\\frac\\pi6|\\frac12|\\tau=12|Luegocalcula|valoresnuméricos|UnidadSI/i,'The sine walkthrough asks only for dimensions, without numerical calculations or a unit result');
  }else{
   assert.doesNotMatch(panels[0],/kg\/s|kilogramo por segundo|3[,.]68/,'The coefficient unit and numerical result are discovered after advancing');
@@ -175,7 +177,7 @@ function interaction(){
    assert.equal(markup(otherCard),otherBefore,'Selecting an example does not alter the other group selection or step');
    const prompt=markup(card).match(/<div class="constant-derivation-prompt">([\s\S]*?)<\/div>/)?.[1];
    assert.ok(prompt,'The selected constant includes its own exercise statement');
-   const laws={spring:/F=kx/,planck:/E=hf/,gravity:/F=G/,friction:/F_r=\\mu_k/,sine:/y=A\\sin/,exponential:/v=v_0(?:e|\\exp)/};
+   const laws={spring:/F=kx/,planck:/E=hf/,gravity:/F=G/,friction:/F_r=\\mu_k/,sine:/y=A\\operatorname\{sen\}/,exponential:/v=v_0(?:e|\\exp)/};
    assert.match(prompt,laws[constant]);
    for(const other of [...constantOrder,...dimensionOrder].filter(value=>value!==constant))assert.doesNotMatch(prompt,laws[other],'Other exercises do not appear in the active statement');
    assert.match(markup(card),new RegExp('Ejemplo '+(groups[card].indexOf(constant)+1)+' de 3'),'The selected example reports its position in the progression');
