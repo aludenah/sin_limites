@@ -111,6 +111,8 @@ async function mergedContent(){
  assert.deepEqual([...rendered.matchAll(/data-constant="([^"]+)"/g)].map(match=>match[1]),['spring','planck','gravity','friction','sine','exponential'],'Both groups are ordered from least to most difficult');
  assert.doesNotMatch(rendered,/Aplicación 7\. Una expresión con presión y área|Ejemplo complementario\. Productos y cocientes/,'The previous rule examples no longer appear in theory');
  assert.match(merged.body,/siete magnitudes fundamentales del SI/);
+ assert.doesNotMatch(rendered,/La dimensión no depende de la unidad elegida|La longitud puede expresarse en metros|Una ecuación dimensional describe una propiedad|Compartir dimensión no significa ser la misma magnitud|Deducción de dimensiones/,'The highlighted block and the deductions heading are removed');
+ assert.equal(merged.sections[0].title,'','The deductions section keeps its content without a heading');
  assert.match(merged.sections[0].body,/Para deducir una dimensión/);
  const rules=merged.sections[1].body;
  assert.match(rules,/class="table-scroll dimensional-rules"/,'The dimensional rules use a static reference table');
@@ -123,7 +125,11 @@ async function mergedContent(){
  let lastPosition=rendered.indexOf('Para deducir una dimensión');
  assert.ok(lastPosition>rendered.indexOf('siete magnitudes fundamentales del SI'),'Deductions follow the original introduction');
  for(const section of merged.sections){
-  assert.ok([...rendered.matchAll(/<h3\b[^>]*>(.*?)<\/h3>/g)].some(match=>match[1]===section.title),'Merged topic titles become section headings');
+  if(section.title){
+   assert.ok([...rendered.matchAll(/<h3\b[^>]*>(.*?)<\/h3>/g)].some(match=>match[1]===section.title),'Named sections retain their headings');
+  }else{
+   assert.doesNotMatch(rendered,new RegExp('(?:id|aria-labelledby)="section-'+section.id+'"|<h3\\b[^>]*>\\s*</h3>'),'An untitled section has no empty heading or dangling heading reference');
+  }
   assert.ok(rendered.includes(h.run(`lessonBody(LESSONS[2].sections[${merged.sections.indexOf(section)}])`)),'All theory paragraphs and replacement activities are rendered');
   for(const example of section.examples){
    const position=rendered.indexOf(example.title);assert.ok(position>lastPosition,'Examples retain the source order');lastPosition=position;

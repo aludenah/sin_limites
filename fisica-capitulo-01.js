@@ -125,7 +125,11 @@ function lessonActivity(lesson){
  }).join('');
 }
 function lessonSections(lesson){
- return (lesson.sections||[]).map(section=>`<section aria-labelledby="section-${section.id}"><h3 id="section-${section.id}">${escapeHTML(section.title)}</h3><div class="content">${lessonBody(section)}${lessonFigures(section.id)}</div>${lessonActivity(section)}</section>`).join('');
+ return (lesson.sections||[]).map(section=>{
+  const heading=section.title?`<h3 id="section-${section.id}">${escapeHTML(section.title)}</h3>`:'';
+  const label=section.title?` aria-labelledby="section-${section.id}"`:'';
+  return `<section${label}>${heading}<div class="content">${lessonBody(section)}${lessonFigures(section.id)}</div>${lessonActivity(section)}</section>`;
+ }).join('');
 }
 function lessonView(){
   const i=P.currentItem,x=LESSONS[i];
