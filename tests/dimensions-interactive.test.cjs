@@ -100,7 +100,7 @@ async function integration(){
  assert.doesNotMatch(app.innerHTML,/id="dimension-explorer"|Tabla de consulta interactiva|data-dimension-explorer/,'The removed consultation widget has no visible fallback');
  assert.match(app.innerHTML,/id="dimension-game"/);
  assert.doesNotMatch(h.run('lessonBody(LESSONS[2])'),/Ejemplo resuelto|Una dimensión, varias unidades|<table\b/,'The introduction no longer includes the removed reference table');
- assert.match(app.innerHTML,/Deducción de dimensiones[\s\S]*Reglas del álgebra dimensional/);
+ assert.match(app.innerHTML,/Para deducir una dimensión[\s\S]*Reglas del álgebra dimensional/);
  assert.ok(app.innerHTML.indexOf('id="dimension-game"')>app.innerHTML.indexOf('Ejemplo complementario. Productos y cocientes'),'The game appears after both merged sections');
  assert.doesNotMatch(app.innerHTML,/dimensiones-geometricas\.svg/,'The removed geometry figure is not shown');
  const practiceBefore=clone(h.run('P.practice10'));
@@ -132,7 +132,7 @@ async function integration(){
  h.run("goTab('practice')");click({action:'dimension-game-start'});assert.match(gameHTML(),/Ronda 2 de 10/);
  h.run("goTab('theory')");assert.match(app.innerHTML,/Ronda 2 de 10/);
  assert.deepEqual(clone(h.run('P.practice10')),practiceBefore,'Practice mastery stays independent from the game');
- assert.equal(h.run('P.contentVersion'),5);assert.equal(h.run('LESSONS.length'),5);assert.equal(h.run('CONTENT.workedExamples.length'),25);
+ assert.equal(h.run('P.contentVersion'),6);assert.equal(h.run('LESSONS.length'),4);assert.equal(h.run('CONTENT.workedExamples.length'),25);
  await h.signIn(null);assert.match(gameHTML(),/Comenzar juego/);
  click({action:'dimension-game-start'});assert.match(gameHTML(),/Comenzar juego/);
  h.run("window.StudyMode.choose('other','free')");await h.signIn({uid:'other'});h.run('goLesson(2)');

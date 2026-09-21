@@ -9,7 +9,7 @@ const escapeHTML=value=>String(value??'').replaceAll('&','&amp;').replaceAll('<'
 let user=null,db=null,cloudReady=false,saveChain=Promise.resolve(),saveVersion=0,authEpoch=0;
 let saveMessage='',notice='',P=emptyProgress(),saveTimer=null;
 
-function emptyProgress(){return {studyMode:null,currentItem:0,readingItem:0,contentVersion:5,activeTab:'theory',practice10:window.ChapterPractice.normalize(CHAPTER_ID),updatedMs:0};}
+function emptyProgress(){return {studyMode:null,currentItem:0,readingItem:0,contentVersion:6,activeTab:'theory',practice10:window.ChapterPractice.normalize(CHAPTER_ID),updatedMs:0};}
 
 
 
@@ -18,6 +18,7 @@ function normalized(data={}){
  const legacyLessons=['dim-magnitudes','dim-dimensiones','dim-reglas','dim-homogeneidad','dim-homogeneidad','dim-exponentes'];
  const version4Lessons=['dim-magnitudes','dim-si','dim-dimensiones','dim-deducciones','dim-reglas','dim-homogeneidad','dim-exponentes'];
  // Versions 3 and 4 removed topics; version 5 joins dimensions, deductions and rules.
+ // Version 6 removes the final exponents topic; its bookmarks resume at homogeneity.
  // Resolve old bookmarks by lesson identity before locating the combined topic.
  const lessonIndex=index=>{
   if(!Number.isInteger(index))return 0;
@@ -29,6 +30,7 @@ function normalized(data={}){
   }
   let id=[2,3,4].includes(version)?version4Lessons[Math.max(0,Math.min(version4Lessons.length-1,target))]:legacyLessons[index];
   if(id==='dim-deducciones'||id==='dim-reglas')id='dim-dimensiones';
+  if(id==='dim-exponentes')id='dim-homogeneidad';
   return Math.max(0,LESSONS.findIndex(x=>x.id===id));
  };
  p.studyMode=window.StudyMode?.get(user?.uid)||(['free','progressive'].includes(data.studyMode)?data.studyMode:null);

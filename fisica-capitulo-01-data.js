@@ -93,48 +93,6 @@ window.DIMENSIONAL_CONTENT = {
           ]
         }
       ]
-    },
-    {
-      "id": "dim-exponentes",
-      "title": "Cálculo de exponentes y límites del método",
-      "subtitle": "Deducir relaciones de potencias",
-      "goal": "Construye un sistema de exponentes y reconoce qué información falta para establecer una ley física.",
-      "body": "<p>Si suponemos una relación de potencias \\(Q=C A^aB^b\\), con C adimensional, podemos obtener restricciones sobre los exponentes \\(a,b\\). Sustituimos dimensiones, agrupamos potencias de cada base y comparamos sus exponentes.</p><ol><li>Identifica la magnitud buscada y las variables de las que se supone que depende.</li><li>Declara cuáles constantes son adimensionales.</li><li>Escribe la ecuación dimensional y agrupa \\(M,L,T\\), u otras bases si hacen falta.</li><li>Iguala exponentes de cada base y resuelve el sistema.</li><li>Interpreta el resultado y revisa las condiciones del modelo.</li></ol><p>Este procedimiento usa álgebra y propiedades de potencias; no requiere derivadas ni integrales.</p><h4>Límites del análisis dimensional</h4><p>El método no obtiene factores adimensionales como \\(1/2\\), \\(2\\pi\\) o un coeficiente que deba medirse. El resultado depende de las variables elegidas y de la forma de relación supuesta. Si hay grupos adimensionales, puede quedar indeterminada parte de la relación.</p><p>Una fórmula homogénea todavía debe contrastarse con un modelo físico o con experimentos. La coincidencia dimensional tampoco permite distinguir, por sí sola, energía de torque, ni rapidez de velocidad.</p><h4>Organiza lo aprendido</h4><p>Las magnitudes se clasifican por su <strong>origen</strong> en fundamentales y derivadas, y por su <strong>naturaleza</strong> en escalares y vectoriales. Las dimensiones expresan su relación con las magnitudes base. A partir de ellas podemos deducir dimensiones, comprobar homogeneidad y calcular exponentes.</p>",
-      "key": "Los exponentes pueden deducirse bajo una hipótesis; los factores numéricos y la validez física requieren más información.",
-      "examples": [
-        {
-          "title": "Ejemplo complementario. Energía, densidad, rapidez y volumen",
-          "question": "Supón \\(E=C\\rho^av^bV^c\\), donde E es energía, \\(\\rho\\) densidad, \\(v\\) rapidez, \\(V\\) volumen y C adimensional. Encuentra a, b y c.",
-          "steps": [
-            "<div class=\"equation\">\\[ML^2T^{-2}=(ML^{-3})^a(LT^{-1})^b(L^3)^c=M^aL^{-3a+b+3c}T^{-b}\\]</div>",
-            "Para M: \\(a=1\\). Para T: \\(-b=-2\\), luego \\(b=2\\).",
-            "Para L: \\(-3a+b+3c=2\\). Con los valores anteriores, \\(-3+2+3c=2\\), así que \\(c=1\\).",
-            "<div class=\"equation\">\\[E=C\\rho v^2V\\]</div>",
-            "El análisis dimensional no determina el valor de C."
-          ]
-        },
-        {
-          "title": "Ejemplo complementario. Período de un resorte",
-          "question": "Se propone \\(\\tau=Cm^ak^b\\), con período \\(\\tau\\), masa m, constante elástica k y C adimensional. Halla a y b.",
-          "steps": [
-            "Usa \\([k]=MT^{-2}\\).",
-            "<div class=\"equation\">\\[T=M^a(MT^{-2})^b=M^{a+b}T^{-2b}\\]</div>",
-            "Iguala exponentes: \\(a+b=0\\) y \\(-2b=1\\).",
-            "<div class=\"equation\">\\[a=\\frac12\\qquad b=-\\frac12\\qquad\\tau=C\\sqrt{\\frac mk}\\]</div>",
-            "En el modelo ideal de oscilaciones de un sistema masa–resorte, la dinámica da C=2π; el método dimensional no obtiene ese valor."
-          ]
-        },
-        {
-          "title": "Ejemplo complementario. Período de un péndulo",
-          "question": "Si se supone \\(\\tau=C\\ell^ag^b\\), con longitud \\(\\ell\\), aceleración gravitatoria g y C adimensional, calcula a y b.",
-          "steps": [
-            "<div class=\"equation\">\\[T=L^a(LT^{-2})^b=L^{a+b}T^{-2b}\\]</div>",
-            "Las condiciones son \\(a+b=0\\) y \\(-2b=1\\).",
-            "<div class=\"equation\">\\[a=\\frac12\\qquad b=-\\frac12\\qquad\\tau=C\\sqrt{\\frac\\ell g}\\]</div>",
-            "En un péndulo simple de pequeña amplitud, C=2π. Para otras amplitudes puede intervenir además el ángulo, que es adimensional."
-          ]
-        }
-      ]
     }
   ],
   "workedExamples": [

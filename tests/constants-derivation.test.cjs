@@ -250,7 +250,7 @@ async function chapterIntegration(){
  h.run('goLesson(2)');assert.deepEqual(markup(),retained,'The current steps survive chapter navigation');
  h.run("goTab('practice')");for(const card of cards)click(card,'restart');assert.deepEqual(markup(),retained,'Practice controls cannot mutate theory examples');
  h.run("goTab('theory')");assert.deepEqual(markup(),retained);
- assert.equal(h.run('LESSONS.length'),5);assert.equal(h.run('CONTENT.workedExamples.length'),25);assert.equal(h.run('window.ChapterPractice.questions(CHAPTER_ID).length'),10);
+ assert.equal(h.run('LESSONS.length'),4);assert.equal(h.run('CONTENT.workedExamples.length'),25);assert.equal(h.run('window.ChapterPractice.questions(CHAPTER_ID).length'),10);
  assert.deepEqual(clone(h.run('P.practice10')),progress.practice10);
  await h.signIn(null);assert.deepEqual(markup(),initial,'Signing out clears every example');
  h.run("window.StudyMode.choose('other','free')");await h.signIn({uid:'other'});h.run('goLesson(2)');

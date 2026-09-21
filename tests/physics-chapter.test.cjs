@@ -2,7 +2,7 @@ const assert=require('node:assert/strict');
 const {harness}=require('./study-entry.test.cjs');
 const {testChapters}=require('./practice-ten.test.cjs');
 const files=['fisica-capitulo-01-data.js','fisica-capitulo-01-deducciones-figuras.js','fisica-capitulo-01-geometria.js','fisica-capitulo-01-constantes.js','fisica-capitulo-01.js'];
-const lessonIds=['dim-magnitudes','dim-si','dim-dimensiones','dim-homogeneidad','dim-exponentes'];
+const lessonIds=['dim-magnitudes','dim-si','dim-dimensiones','dim-homogeneidad'];
 const clone=value=>JSON.parse(JSON.stringify(value));
 async function sourceContentAndResume(){
  const id='fisica-capitulo-01',record='users/student/progress/'+id;
@@ -11,14 +11,14 @@ async function sourceContentAndResume(){
  const h=harness(files,{local,cloud});await h.signIn({uid:'student'});
  assert.equal(h.run('LESSONS[P.currentItem].id'),'dim-homogeneidad','A newer legacy cloud bookmark is migrated before merging with the new local schema');
  assert.equal(h.run('progressPercent()'),10);assert.equal(h.run('P.practice10.attempts.p01'),2);
- assert.equal(cloud.get(record).chapterNumber,1);assert.equal(cloud.get(record).contentVersion,5);
+ assert.equal(cloud.get(record).chapterNumber,1);assert.equal(cloud.get(record).contentVersion,6);
  assert.deepEqual(clone(h.run('LESSONS.map(lesson=>lesson.id)')),lessonIds);
- assert.equal(h.run("LESSONS.some(lesson=>['dim-fisica','dim-naturaleza'].includes(lesson.id))"),false);
+ assert.equal(h.run("LESSONS.some(lesson=>['dim-fisica','dim-naturaleza','dim-exponentes'].includes(lesson.id))"),false);
  assert.equal(h.run('CONTENT.workedExamples.length'),25);
- for(let i=0;i<5;i++){
+ for(let i=0;i<4;i++){
   h.run(`goLesson(${i})`);const rendered=h.elements.get('chapter-app').innerHTML;
   assert.ok(rendered.includes(h.run(`LESSONS[${i}].title`)));
-  assert.match(rendered,new RegExp(`Tema ${i+1} de 5`));
+  assert.match(rendered,new RegExp(`Tema ${i+1} de 4`));
  }
  h.run("goTab('examples')");const html=h.elements.get('chapter-app').innerHTML;
  assert.equal((html.match(/class="example worked-example"/g)||[]).length,25);
@@ -26,7 +26,7 @@ async function sourceContentAndResume(){
  assert.doesNotMatch(html,/<details\s+open/,'Worked solutions stay collapsed until the student opens them');
  await h.run('persist()');
  const restored=harness(files,{local,cloud});await restored.signIn({uid:'student'});
- assert.equal(restored.run('P.activeTab'),'examples');assert.equal(restored.run('LESSONS[P.currentItem].id'),'dim-exponentes');
+ assert.equal(restored.run('P.activeTab'),'examples');assert.equal(restored.run('LESSONS[P.currentItem].id'),'dim-homogeneidad');
  assert.equal(restored.run('progressPercent()'),10,'Reading solved problems does not award practice mastery');
  console.log('PASS: source theory and solved-problem access, legacy reading migration, stable bookmarks and unchanged achievements.');
 }
@@ -37,20 +37,20 @@ async function removedLessonMigration(){
  const h=harness(files,{local,cloud});await h.signIn({uid:'student'});
  assert.equal(h.run('P.currentItem'),3,'Version 2 bookmarks shift past removed and merged topics');
  assert.equal(h.run('LESSONS[P.currentItem].id'),'dim-homogeneidad');
- assert.equal(h.run('P.readingItem'),4);assert.equal(h.run('LESSONS[P.readingItem].id'),'dim-exponentes');
+ assert.equal(h.run('P.readingItem'),3);assert.equal(h.run('LESSONS[P.readingItem].id'),'dim-homogeneidad');
  assert.equal(h.run('progressPercent()'),10);assert.equal(h.run('P.practice10.attempts.p01'),2);
- assert.equal(cloud.get(record).contentVersion,5);
+ assert.equal(cloud.get(record).contentVersion,6);
  assert.equal(h.run('normalized({contentVersion:2,currentItem:0,readingItem:0}).currentItem'),0,'The removed topic resumes at the new first topic');
  assert.equal(h.run('normalized({contentVersion:2,currentItem:3,readingItem:3}).currentItem'),2,'The second removed topic resumes at dimensions');
  await h.run('persist()');
  const restored=harness(files,{local,cloud});await restored.signIn({uid:'student'});
- assert.equal(restored.run('P.currentItem'),3);assert.equal(restored.run('P.readingItem'),4,'Migration is not repeated on subsequent visits');
+ assert.equal(restored.run('P.currentItem'),3);assert.equal(restored.run('P.readingItem'),3,'Migration is not repeated on subsequent visits');
  assert.equal(restored.run('progressPercent()'),10);
  console.log('PASS: removed-topic bookmarks migrate once and preserve practice achievements.');
 }
 async function mergedTopicMigration(){
  const id='fisica-capitulo-01',record='users/student/progress/'+id,key='sin-limites:student:'+id;
- const previousVersions={2:[0,0,1,2,2,2,2,3,4],3:[0,1,2,2,2,2,3,4],4:[0,1,2,2,2,3,4]};
+ const previousVersions={2:[0,0,1,2,2,2,2,3,3],3:[0,1,2,2,2,2,3,3],4:[0,1,2,2,2,3,3],5:[0,1,2,3,3]};
  for(const [version,mappedIndexes] of Object.entries(previousVersions))for(const source of ['local','cloud'])for(let index=0;index<mappedIndexes.length;index++){
   const expected=mappedIndexes.map(i=>lessonIds[i]);
   const readingIndex=expected.length-1-index;
@@ -63,21 +63,21 @@ async function mergedTopicMigration(){
   const label=`${source} version ${version} bookmark ${index}`;
   assert.equal(h.run('LESSONS[P.currentItem].id'),expected[index],label);
   assert.equal(h.run('LESSONS[P.readingItem].id'),expected[readingIndex],label+' keeps the independent reading bookmark');
-  assert.equal(h.run('P.contentVersion'),5);
+  assert.equal(h.run('P.contentVersion'),6);
   assert.equal(h.run('progressPercent()'),10,label+' preserves mastery');
   assert.equal(h.run('P.practice10.attempts.p01'),3);
   assert.equal(h.run('P.examBest'),8);assert.equal(h.run('P.examAttempts'),2);
   assert.deepEqual(clone(h.run('P.itemScores')),{item_4:7});
   const menu=h.elements.get('chapter-app').innerHTML.match(/<nav class="route"[^>]*>([\s\S]*?)<\/nav>/)[1];
-  assert.deepEqual([...menu.matchAll(/data-index="(\d+)"/g)].map(m=>Number(m[1])),[0,1,2,3,4],'The menu contains five topics');
+  assert.deepEqual([...menu.matchAll(/data-index="(\d+)"/g)].map(m=>Number(m[1])),[0,1,2,3],'The menu contains four topics');
   await h.run('persist()');
   const saved=JSON.parse(local.get(key)).progress,remote=cloud.get(record);
   for(const copy of [saved,remote]){
-   assert.equal(copy.contentVersion,5);assert.equal(copy.currentItem,h.run('P.currentItem'));
+   assert.equal(copy.contentVersion,6);assert.equal(copy.currentItem,h.run('P.currentItem'));
    assert.equal(copy.readingItem,h.run('P.readingItem'));assert.equal(copy.examBest,8);
   }
   const normalized=clone(h.run('normalized(P)'));
-  assert.equal(normalized.currentItem,saved.currentItem,'Version 5 normalization is idempotent');
+  assert.equal(normalized.currentItem,saved.currentItem,'Version 6 normalization is idempotent');
   assert.equal(normalized.readingItem,saved.readingItem);
   const reopened=harness(files,{local,cloud});await reopened.signIn({uid:'student'});
   assert.equal(reopened.run('LESSONS[P.currentItem].id'),expected[index],label+' survives reopening');
@@ -85,14 +85,14 @@ async function mergedTopicMigration(){
   assert.equal(reopened.run('P.examBest'),8);assert.equal(reopened.run('P.practice10.attempts.p01'),3);
  }
  const h=harness(files);
- const legacy=['dim-magnitudes','dim-dimensiones','dim-dimensiones','dim-homogeneidad','dim-homogeneidad','dim-exponentes'];
+ const legacy=['dim-magnitudes','dim-dimensiones','dim-dimensiones','dim-homogeneidad','dim-homogeneidad','dim-homogeneidad'];
  for(let index=0;index<legacy.length;index++)for(const version of ['', 'contentVersion:1,']){
   assert.equal(h.run(`LESSONS[normalized({${version}currentItem:${index}}).currentItem].id`),legacy[index]);
  }
  for(const version of [5,6])for(let index=0;index<5;index++){
-  assert.equal(h.run(`normalized({contentVersion:${version},currentItem:${index}}).currentItem`),index);
+  assert.equal(h.run(`normalized({contentVersion:${version},currentItem:${index}}).currentItem`),Math.min(index,3));
  }
- console.log('PASS: version 2–4 local/cloud bookmarks migrate once into five topics; reading, grades, practice and older bookmarks survive.');
+ console.log('PASS: version 2–5 local/cloud bookmarks migrate once into four topics; reading, grades, practice and older bookmarks survive.');
 }
 async function mergedContent(){
  const h=harness(files);h.run("window.StudyMode.choose('student','free')");await h.signIn({uid:'student'});h.run('goLesson(2)');
@@ -147,10 +147,15 @@ async function mergedContent(){
  assert.deepEqual([...rendered.matchAll(/data-action="geometry-derivation-select" data-shape="([^"]+)"/g)].map(match=>match[1]),['area','volume','density','velocity','acceleration','force'],'All six interactive derivations remain');
  assert.ok(rendered.indexOf('id="geometry-derivation"')<rendered.indexOf(merged.sections[0].examples[0].title),'The interactive derivation appears before the existing examples');
  assert.ok(rendered.indexOf('Recarga la página para abrir el juego de dimensiones.')>lastPosition,'The dimension activity follows the merged content');
- const before=h.run('P.currentItem');h.run('goLesson(5)');assert.equal(h.run('P.currentItem'),before,'Removed menu positions cannot be opened');
+ const before=h.run('P.currentItem');h.run('goLesson(4)');assert.equal(h.run('P.currentItem'),before,'Removed menu positions cannot be opened');
  h.run('goLesson(3)');assert.equal(h.run('LESSONS[P.currentItem].id'),'dim-homogeneidad');
  assert.match(h.elements.get('chapter-app').innerHTML,/id="constant-derivation-homogeneity"/,'The homogeneity examples share an interactive block on topic 4');
  assert.doesNotMatch(h.elements.get('chapter-app').innerHTML,/homogeneidad\.svg|id="power-slider"|Explora una fórmula/,'The previous homogeneity picture and formula game are removed');
- console.log('PASS: merged dimensions, deductions and rules retain two groups with three ordered examples each, six interactive derivations, activity order and five-topic navigation.');
+ const finalTopic=h.elements.get('chapter-app').innerHTML;
+ assert.match(finalTopic,/data-action="tab" data-value="practice"[^>]*>Ir a la práctica/,'The last remaining topic leads to practice');
+ assert.doesNotMatch(finalTopic,/Siguiente tema|Cálculo de exponentes y límites del método/,'The removed topic is absent from navigation');
+ const progress=h.run('progressPercent()');h.run("goTab('practice')");
+ assert.equal(h.run('P.activeTab'),'practice');assert.equal(h.run('progressPercent()'),progress,'Entering practice does not award mastery');
+ console.log('PASS: merged dimensions, deductions and rules retain two groups with three ordered examples each, six interactive derivations, activity order and four-topic navigation.');
 }
 sourceContentAndResume().then(removedLessonMigration).then(mergedTopicMigration).then(mergedContent).then(()=>testChapters(['fisica-capitulo-01'])).catch(error=>{console.error(error);process.exitCode=1;});

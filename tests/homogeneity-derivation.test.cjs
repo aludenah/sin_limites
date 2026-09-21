@@ -125,7 +125,7 @@ async function chapterIntegration(){
  h.run('goLesson(3)');assert.equal(render(),retained);
  h.run("goTab('practice')");click('restart');assert.equal(render(),retained);
  h.run("goTab('theory')");click('previous');assert.notEqual(render(),retained,'Returning to theory restores navigation');
- assert.equal(h.run('LESSONS.length'),5);assert.equal(h.run('CONTENT.workedExamples.length'),25);assert.equal(h.run('window.ChapterPractice.questions(CHAPTER_ID).length'),10);
+ assert.equal(h.run('LESSONS.length'),4);assert.equal(h.run('CONTENT.workedExamples.length'),25);assert.equal(h.run('window.ChapterPractice.questions(CHAPTER_ID).length'),10);
  assert.deepEqual(clone(h.run('P.practice10')),progress.practice10);
  await h.signIn(null);assert.equal(render(),initial);click('next');assert.equal(render(),initial);
  h.run("window.StudyMode.choose('other','free')");await h.signIn({uid:'other'});h.run('goLesson(3)');assert.equal(render(),initial);
