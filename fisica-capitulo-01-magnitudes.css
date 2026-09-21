@@ -5,7 +5,6 @@
 .magnitude-table thead th{white-space:nowrap}
 .magnitude-table tbody th{min-width:135px;max-width:200px;background:transparent;font-weight:650}
 .magnitude-table tbody td{min-width:95px;max-width:190px}
-.magnitude-table .magnitude-table-relation{white-space:nowrap}
 .magnitude-table .magnitude-table-dimension,.magnitude-table .magnitude-table-symbol{white-space:nowrap}
 .magnitude-table .magnitude-table-symbol{min-width:70px}
 .magnitude-table tbody tr:last-child th{border-bottom:0}

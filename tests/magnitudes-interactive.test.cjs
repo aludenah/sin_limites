@@ -89,13 +89,14 @@ async function chapterIntegration(){
   const table=explorer.render(kind),items=explorer.items.filter(item=>item.kind===kind);
   assert.equal((table.match(/<table\b/g)||[]).length,1);
   assert.match(table,/<caption\b/);
+  assert.equal((table.match(/<th scope="col">/g)||[]).length,4,'Tables show magnitude, dimension, SI unit and symbol');
+  assert.doesNotMatch(table,/Relación de referencia/);
   assert.equal((table.match(/<th scope="row">/g)||[]).length,count);
   for(const item of items){
    assert.ok(table.includes(item.name),`${item.name}: name is visible`);
    assert.ok(table.includes(item.unit),`${item.name}: SI unit is visible`);
    assert.ok(table.includes(item.symbol),`${item.name}: unit symbol is visible`);
    assert.ok(table.includes('\\('+item.dimension+'\\)'),`${item.name}: dimension uses inline math`);
-   if(item.relation)assert.ok(table.includes('\\('+item.relation+'\\)'),`${item.name}: reference relation is visible`);
   }
   assert.doesNotMatch(table,/<button\b|data-action=|aria-pressed=|magnitude-explorer/);
  }

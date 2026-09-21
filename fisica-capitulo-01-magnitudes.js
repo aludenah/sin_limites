@@ -34,14 +34,12 @@
     const label = derived ? 'Magnitudes derivadas' : 'Magnitudes fundamentales';
     const rows = items.filter(item => item.kind === kind).map(item =>
       '<tr><th scope="row">' + escapeHTML(item.name) + '</th>' +
-      (derived ? '<td class="magnitude-table-relation">' + math(item.relation) + '</td>' : '') +
       '<td class="magnitude-table-dimension">' + math(item.dimension) + '</td>' +
       '<td>' + escapeHTML(item.unit) + '</td><td class="magnitude-table-symbol">' + escapeHTML(item.symbol) + '</td></tr>'
     ).join('');
     return '<div class="magnitude-table table-scroll" tabindex="0" role="region" aria-label="' + label + '">' +
       '<table><caption class="sr-only">' + label + ': dimensiones y unidades del SI</caption><thead><tr>' +
       '<th scope="col">' + (derived ? 'Magnitud derivada' : 'Magnitud fundamental') + '</th>' +
-      (derived ? '<th scope="col">Relación de referencia</th>' : '') +
       '<th scope="col">Dimensión</th><th scope="col">Unidad SI</th><th scope="col">Símbolo</th></tr></thead>' +
       '<tbody>' + rows + '</tbody></table></div>';
   }

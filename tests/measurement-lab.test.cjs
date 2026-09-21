@@ -136,15 +136,14 @@ function interaction(){
 async function chapterIntegration(){
  const html=read('fisica-capitulo-01.html');
  const scripts=[...html.matchAll(/<script\b[^>]*src="([^"]+)"/g)].map(match=>match[1].split('?')[0]);
- assert.ok(scripts.includes('fisica-capitulo-01-medicion.js'));
- assert.ok(scripts.indexOf('fisica-capitulo-01-medicion.js')<scripts.indexOf('fisica-capitulo-01.js'));
- assert.match(html,/href="fisica-capitulo-01-medicion\.css\?/);
+ assert.ok(!scripts.includes('fisica-capitulo-01-medicion.js'),'The removed laboratory is not loaded by the chapter');
+ assert.doesNotMatch(html,/href="fisica-capitulo-01-medicion\.css\?/);
  const h=chapterHarness(['fisica-capitulo-01-data.js']);
  const root=h.run("document.getElementById('chapter-app')"),handlers=new Map();
  root.addEventListener=(type,callback)=>handlers.set(type,callback);
- const calls={mount:0,unmount:0,reset:0,action:0,input:0};
+ const calls={render:0,mount:0,unmount:0,reset:0,action:0,input:0};
  h.run('window').MeasurementLab={
-  render:()=>'<section id="measurement-lab">Medir</section>',
+  render(){calls.render++;return '<section id="measurement-lab">Medir</section>';},
   mount(){calls.mount++;},unmount(){calls.unmount++;},reset(){calls.reset++;},
   handleAction(button){if(button.dataset.action!=='measurement-lab')return false;calls.action++;return true;},
   handleInput(input){if(!input.dataset.measureInput)return false;calls.input++;return true;}
@@ -152,28 +151,25 @@ async function chapterIntegration(){
  h.run(read('fisica-capitulo-01.js'));
  const click=()=>handlers.get('click')({target:{closest:()=>({dataset:{action:'measurement-lab',measureAction:'add-mass',value:'100'},disabled:false})}});
  const input=()=>handlers.get('input')({target:{dataset:{measureInput:'length'},value:'12'}});
- click();input();assert.equal(calls.action+calls.input,0,'Signed-out controls are inactive');
+ const assertRemoved=()=>{
+  assert.doesNotMatch(root.innerHTML,/id="measurement-lab"|laboratorio de medición|assets\/fisica-capitulo-01\/medicion\.svg/);
+  assert.ok(Object.values(calls).every(value=>value===0),'The removed laboratory is neither rendered, mounted, reset nor routed');
+ };
+ click();input();assertRemoved();
  h.run("window.StudyMode.choose('student','free')");await h.signIn({uid:'student'});
- assert.match(root.innerHTML,/id="measurement-lab"/);
- assert.doesNotMatch(root.innerHTML,/assets\/fisica-capitulo-01\/medicion\.svg/,'The interactive lab replaces the old static image');
- assert.equal(calls.mount,1);
+ assert.match(root.innerHTML,/Magnitudes físicas y su clasificación por origen/);assertRemoved();
  const savedPractice=clone(h.run('P.practice10'));
- click();input();assert.equal(calls.action,1);assert.equal(calls.input,1);
- const unmounts=calls.unmount;
- h.run('goLesson(1)');assert.ok(calls.unmount>unmounts);assert.equal(calls.mount,1);
- assert.doesNotMatch(root.innerHTML,/id="measurement-lab"/);
- click();input();assert.equal(calls.action,1);assert.equal(calls.input,1,'Other topics cannot update the lab');
- h.run('goLesson(0)');assert.equal(calls.mount,2);
- h.run("goTab('practice')");click();input();assert.equal(calls.action,1);assert.equal(calls.input,1);
- assert.deepEqual(clone(h.run('P.practice10')),savedPractice,'Measurement experiments never grade practice questions');
- h.run("goTab('theory')");assert.equal(calls.mount,3);
- h.events.get('pagehide')();assert.ok(calls.unmount>unmounts+2);
- h.events.get('pageshow')();assert.equal(calls.mount,4,'Returning from page cache remounts the visible lab');
- const resets=calls.reset;
- await h.signIn(null);assert.equal(calls.reset,resets+1);click();input();
+ click();input();assertRemoved();
+ h.run('goLesson(1)');click();input();assertRemoved();
+ h.run('goLesson(0)');assertRemoved();
+ h.run("goTab('practice')");click();input();assertRemoved();
+ assert.deepEqual(clone(h.run('P.practice10')),savedPractice,'Stale laboratory controls cannot alter practice progress');
+ h.run("goTab('theory')");assertRemoved();
+ h.events.get('pagehide')();assertRemoved();
+ h.events.get('pageshow')();assertRemoved();
+ await h.signIn(null);click();input();assertRemoved();
  h.run("window.StudyMode.choose('other','free')");await h.signIn({uid:'other'});
- assert.equal(calls.reset,resets+2,'A different account starts a fresh experiment');
- assert.equal(calls.action,1);assert.equal(calls.input,1);
+ click();input();assertRemoved();
 }
 
-model();interaction();chapterIntegration().then(()=>console.log('PASS: measurement units, physical limits, ruler displacement, stopwatch lifecycle, chapter gating and independent practice progress.')).catch(error=>{console.error(error);process.exitCode=1;});
+model();interaction();chapterIntegration().then(()=>console.log('PASS: standalone measurement model and interactions, laboratory absent from chapter loading, rendering, lifecycle and event routing.')).catch(error=>{console.error(error);process.exitCode=1;});

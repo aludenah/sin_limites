@@ -103,7 +103,6 @@ function dimensionalFigure(name,caption){
  return `<figure class="dimensional-figure"><a href="${src}" target="_blank" rel="noopener" aria-label="Ampliar gráfico: ${escapeHTML(caption)}"><img src="${src}" width="760" height="${heights[name]}" alt="${escapeHTML(caption)}" loading="lazy"></a><figcaption>${escapeHTML(caption)} <a href="${src}" target="_blank" rel="noopener">Ampliar gráfico</a></figcaption></figure>`;
 }
 function lessonFigures(id){
- if(id==='dim-magnitudes')return window.MeasurementLab?.render()||'<p>Recarga la página para abrir el laboratorio de medición.</p>';
  return (DIMENSIONAL_FIGURES[id]||[]).map(([name,caption])=>dimensionalFigure(name,caption)).join('');
 }
 function lessonBody(lesson){
@@ -131,13 +130,11 @@ function workedExamplesView(){
 
 function resourcesView(){return `<p class="eyebrow">Consulta rápida</p><h2>Formulario y estrategia</h2><p>Usa estas tablas para repasar. Intenta reconstruir cada fórmula dimensional antes de consultarla.</p>${CONTENT.derivedTable}<h3>Reglas esenciales</h3><div class="equation">\\[[AB]=[A][B],\\qquad[A/B]=\\frac{[A]}{[B]},\\qquad[A^n]=[A]^n\\]</div><ul class="resource-list"><li>En una suma o resta, todos los términos deben tener la misma dimensión.</li><li>Los números puros tienen dimensión uno. Las constantes físicas pueden tener dimensiones.</li><li>El argumento de una función trigonométrica, exponencial o logarítmica debe ser adimensional.</li><li>Una ecuación homogénea puede ser físicamente incorrecta. Los factores numéricos no se obtienen solo por dimensiones.</li></ul><h3>Ruta para resolver un problema</h3><ol class="resource-list"><li>Identifica qué representa cada símbolo.</li><li>Escribe sus dimensiones a partir de relaciones conocidas.</li><li>Sustituye y aplica las leyes de exponentes.</li><li>Usa homogeneidad o compara exponentes de M, L y T.</li><li>Comprueba el resultado y sus límites físicos.</li></ol><details><summary>Las siete magnitudes base del SI</summary>${CONTENT.baseTable}</details><h3>Mapa de las magnitudes físicas</h3>${dimensionalFigure('mapa-magnitudes','Clasificación por origen y por naturaleza, y relación con el análisis dimensional.')}<h3>Referencias para ampliar</h3><ul class="resource-list"><li><a href="https://www.bipm.org/en/measurement-units" target="_blank" rel="noopener noreferrer">BIPM · Sistema Internacional de Unidades</a></li><li><a href="https://openstax.org/books/university-physics-volume-1/pages/1-4-dimensional-analysis" target="_blank" rel="noopener noreferrer">OpenStax · Análisis dimensional (en inglés)</a></li></ul><p class="resource-note">${escapeHTML(CONTENT.sourceNote||'Magnitudes físicas. Lumbreras Editores. Material proporcionado para este capítulo.')}</p>`;}
 function render(){
-  window.MeasurementLab?.unmount();
   if(!user)return;
   if(!P.studyMode){window.location.replace('index.html?chapter='+CHAPTER_ID);return;}
   const percent=progressPercent();
   root.innerHTML=`${header()}<section class="hero"><div class="wrap"><p class="eyebrow">Física · Capítulo 1 de 19</p><h1>Análisis Dimensional</h1></div></section><div class="wrap"><section class="card overview"><div><div class="progress-head"><span>Mi avance en el capítulo</span><strong>${percent}%</strong></div><progress max="100" value="${percent}" aria-label="Avance del capítulo">${percent}%</progress><small>${P.practice10.mastered.length}/10 problemas resueltos correctamente</small><p id="save-status" class="save-line ${cloudReady?'':'warning'}" role="status">${escapeHTML(saveMessage)}</p><button id="retry-save" class="button secondary small" data-action="sync" ${cloudReady?'hidden':''}>Reintentar sincronización</button></div></section><div class="layout"><aside class="card sidebar"><p class="eyebrow">Tu ruta de aprendizaje</p><nav class="route" aria-label="Temas del capítulo">${side()}</nav><p class="hint">Completa los 10 problemas de la práctica para alcanzar el 100%. La teoría está disponible para consultar.</p></aside><main class="workspace" id="chapter-content"><nav class="card tabs" aria-label="Secciones del capítulo">${[['theory','Teoría'],['examples','Resueltos · 25'],['practice','Práctica · 10 problemas'],['resources','Materiales']].map(([id,title])=>`<button data-action="tab" data-value="${id}" class="${P.activeTab===id?'active':''}" ${P.activeTab===id?'aria-current="page"':''} >${title}</button>`).join('')}</nav><article class="card article">${notice?`<div role="alert" class="feedback" id="notice">${escapeHTML(notice)}</div>`:''}${P.activeTab==='theory'?lessonView():P.activeTab==='examples'?workedExamplesView():P.activeTab==='practice'?practiceView():resourcesView()}</article></main></div></div><footer class="footer">SIN LÍMITES · Física · Análisis dimensional</footer>`;
   renderMath();if(P.activeTab==='theory'&&LESSONS[P.currentItem].id==='dim-homogeneidad')updateLab(0);
-  if(P.activeTab==='theory'&&LESSONS[P.currentItem].id==='dim-magnitudes')window.MeasurementLab?.mount();
 }
 function scrollContent(){document.getElementById('chapter-content')?.scrollIntoView({behavior:'smooth',block:'start'});}
 function showNotice(message){notice=message;render();document.getElementById('notice')?.scrollIntoView({block:'center',behavior:'smooth'});}
@@ -150,7 +147,7 @@ function checkPractice(id){if(P.activeTab!=='practice')return;const result=windo
 
 root.addEventListener('click',event=>{
 const button=event.target.closest('[data-action]');if(!button||button.disabled||!user)return;
-if(P.activeTab==='theory'&&LESSONS[P.currentItem]?.id==='dim-magnitudes'&&(window.MagnitudeGame?.handleAction(button)||window.MeasurementLab?.handleAction(button)||window.StoneExplorer?.handleAction(button)))return;
+if(P.activeTab==='theory'&&LESSONS[P.currentItem]?.id==='dim-magnitudes'&&(window.MagnitudeGame?.handleAction(button)||window.StoneExplorer?.handleAction(button)))return;
 if(P.activeTab==='theory'&&LESSONS[P.currentItem]?.id==='dim-si'&&(window.PrefixExplorer?.handleAction(button)||window.PrefixGame?.handleAction(button)))return;
 if(P.activeTab==='theory'&&LESSONS[P.currentItem]?.id==='dim-dimensiones'&&(window.DimensionExplorer?.handleAction(button)||window.DimensionGame?.handleAction(button)))return;
 const {action,value,index,id}=button.dataset;if(action==='lesson')goLesson(Number(index));else if(action==='tab')goTab(value);else if(action==='check-practice10')checkPractice(id);else if(action==='sync')retrySync();
@@ -163,16 +160,15 @@ if(input.dataset.group==='practice10'&&window.ChapterPractice.choose(CHAPTER_ID,
 });
 root.addEventListener('input',event=>{
  if(!user)return;
- if(P.activeTab==='theory'&&LESSONS[P.currentItem]?.id==='dim-magnitudes'&&window.MeasurementLab?.handleInput(event.target))return;
  if(P.activeTab==='theory'&&LESSONS[P.currentItem]?.id==='dim-si'&&window.PrefixExplorer?.handleInput(event.target))return;
  if(P.activeTab==='theory'&&LESSONS[P.currentItem]?.id==='dim-dimensiones'&&window.DimensionGame?.handleInput(event.target))return;
  if(event.target.id==='power-slider')updateLab(Number(event.target.value));
 });
-window.addEventListener('pagehide',()=>{window.MeasurementLab?.unmount();if(user&&saveTimer){clearTimeout(saveTimer);persist();}});
+window.addEventListener('pagehide',()=>{if(user&&saveTimer){clearTimeout(saveTimer);persist();}});
 
 async function signedIn(u){
   const epoch=++authEpoch;clearTimeout(saveTimer);user=u;P=emptyProgress();cloudReady=false;saveVersion=0;saveChain=Promise.resolve();notice='';
-  window.MagnitudeGame?.reset();window.MeasurementLab?.reset();window.StoneExplorer?.reset();window.PrefixExplorer?.reset();window.PrefixGame?.reset();window.DimensionExplorer?.reset();window.DimensionGame?.reset();
+  window.MagnitudeGame?.reset();window.StoneExplorer?.reset();window.PrefixExplorer?.reset();window.PrefixGame?.reset();window.DimensionExplorer?.reset();window.DimensionGame?.reset();
   if(!u){root.innerHTML=`${header()}<main id="chapter-content" class="access card"><p class="eyebrow">Física · Capítulo 1 de 19</p><h1>Análisis Dimensional</h1><p>Inicia sesión en la academia para estudiar y guardar tu avance.</p><a class="button" href="index.html?chapter=fisica-capitulo-01">Continuar con Google</a></main>`;return;}
  if(window.StudyMode&&!await window.StudyMode.requireChoice(u.uid,db,'fisica-capitulo-01',()=>epoch===authEpoch))return;
  if(epoch!==authEpoch)return;
@@ -198,5 +194,5 @@ function refreshStudyMode(){
  const mode=window.StudyMode.get(user.uid);
  if(mode&&mode!==P.studyMode){P=normalized(P);notice='';markChanged();render();persist();}
 }
-window.addEventListener('pageshow',()=>{refreshStudyMode();if(user&&P.activeTab==='theory'&&LESSONS[P.currentItem]?.id==='dim-magnitudes')window.MeasurementLab?.mount();});
+window.addEventListener('pageshow',()=>{refreshStudyMode();});
 window.addEventListener('storage',event=>{if(user&&window.StudyMode&&event.key===window.StudyMode.key(user.uid))refreshStudyMode();});
