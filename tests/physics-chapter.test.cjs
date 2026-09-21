@@ -149,7 +149,8 @@ async function mergedContent(){
  assert.ok(rendered.indexOf('Recarga la página para abrir el juego de dimensiones.')>lastPosition,'The dimension activity follows the merged content');
  const before=h.run('P.currentItem');h.run('goLesson(5)');assert.equal(h.run('P.currentItem'),before,'Removed menu positions cannot be opened');
  h.run('goLesson(3)');assert.equal(h.run('LESSONS[P.currentItem].id'),'dim-homogeneidad');
- assert.match(h.elements.get('chapter-app').innerHTML,/id="power-slider"/,'The homogeneity activity remains on its renumbered topic');
+ assert.match(h.elements.get('chapter-app').innerHTML,/id="constant-derivation-homogeneity"/,'The homogeneity examples share an interactive block on topic 4');
+ assert.doesNotMatch(h.elements.get('chapter-app').innerHTML,/homogeneidad\.svg|id="power-slider"|Explora una fórmula/,'The previous homogeneity picture and formula game are removed');
  console.log('PASS: merged dimensions, deductions and rules retain two groups with three ordered examples each, six interactive derivations, activity order and five-topic navigation.');
 }
 sourceContentAndResume().then(removedLessonMigration).then(mergedTopicMigration).then(mergedContent).then(()=>testChapters(['fisica-capitulo-01'])).catch(error=>{console.error(error);process.exitCode=1;});

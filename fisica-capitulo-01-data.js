@@ -81,56 +81,15 @@ window.DIMENSIONAL_CONTENT = {
       "key": "Las dimensiones detectan incompatibilidades, pero no reemplazan las leyes ni las condiciones del problema.",
       "examples": [
         {
-          "title": "Aplicación 8. Comprobación de fórmulas",
-          "question": "Comprueba dimensionalmente \\(d=vt\\) y \\(v_f=v_0+at\\), con distancia \\(d\\), tiempo \\(t\\), velocidad \\(v\\) y aceleración \\(a\\).",
+          "title": "Homogeneidad: de menor a mayor dificultad",
+          "question": "Resuelve los cinco ejemplos en orden. Usa Anterior y Siguiente para recorrer cada resolución.",
+          "interactive": "homogeneity",
           "steps": [
-            "<div class=\"equation\">\\[[vt]=(LT^{-1})T=L=[d]\\]</div>",
-            "La primera expresión es dimensionalmente homogénea; describe la distancia en un movimiento de rapidez constante bajo las condiciones apropiadas.",
-            "<div class=\"equation\">\\[[v_f]=[v_0]=LT^{-1}\\qquad[at]=(LT^{-2})T=LT^{-1}\\]</div>",
-            "La segunda expresión también es homogénea. Su aplicación física supone aceleración constante y componentes compatibles."
-          ],
-          "sourcePage": 15
-        },
-        {
-          "title": "Aplicación 9. Un exponente adimensional",
-          "question": "En \\(A=B+C^{SD\\sin\\theta}\\), \\(D\\) es densidad. Determina \\([S]\\) para que el exponente sea adimensional. Se toma \\(C\\) como un número positivo adimensional y un ángulo con \\(\\sin\\theta\\ne0\\).",
-          "steps": [
-            "El exponente cumple \\([SD\\sin\\theta]=1\\).",
-            "<div class=\"equation\">\\[[S](ML^{-3})(1)=1\\]</div>",
-            "<div class=\"equation\">\\[[S]=\\frac1{ML^{-3}}=M^{-1}L^3\\]</div>",
-            "La condición se obtiene del exponente. Al considerar C adimensional, el término exponencial también lo es; por homogeneidad, A y B deben ser adimensionales."
-          ],
-          "sourcePage": 16
-        },
-        {
-          "title": "Aplicación 10. Dos coeficientes desconocidos",
-          "question": "En la ecuación homogénea \\(20VP=mA+aB\\), \\(V\\) es volumen, \\(P\\) peso, \\(m\\) masa y \\(a\\) aceleración. Encuentra \\([A]\\) y \\([B]\\).",
-          "steps": [
-            "El peso es una fuerza: \\([P]=MLT^{-2}\\). El volumen tiene dimensión \\(L^3\\).",
-            "<div class=\"equation\">\\[[20VP]=L^3(MLT^{-2})=ML^4T^{-2}\\]</div>",
-            "Iguala el término \\(mA\\) al miembro izquierdo:",
-            "<div class=\"equation\">\\[M[A]=ML^4T^{-2}\\quad\\Rightarrow\\quad[A]=L^4T^{-2}\\]</div>",
-            "Iguala ahora el término \\(aB\\):",
-            "<div class=\"equation\">\\[(LT^{-2})[B]=ML^4T^{-2}\\quad\\Rightarrow\\quad[B]=ML^3\\]</div>"
-          ],
-          "sourcePage": 16
-        },
-        {
-          "title": "Ejemplo complementario. Una oscilación",
-          "question": "En \\(x=A\\sin(\\omega t+\\varphi)\\), \\(x\\) es posición y \\(t\\) tiempo. Halla \\([A]\\), \\([\\omega]\\) y \\([\\varphi]\\).",
-          "steps": [
-            "El argumento \\(\\omega t+\\varphi\\) debe ser adimensional. Por homogeneidad, \\([\\omega]T=[\\varphi]=1\\).",
-            "<div class=\"equation\">\\[[\\omega]=T^{-1}\\qquad[\\varphi]=1\\]</div>",
-            "Como el seno es adimensional, \\([x]=[A]\\), por tanto \\([A]=L\\)."
-          ]
-        },
-        {
-          "title": "Ejemplo complementario. Presión y rapidez",
-          "question": "En \\(p=Av^2+B\\), \\(p\\) es presión y \\(v\\) rapidez. Halla las dimensiones de A y B.",
-          "steps": [
-            "<div class=\"equation\">\\[[A](LT^{-1})^2=[B]=ML^{-1}T^{-2}\\]</div>",
-            "<div class=\"equation\">\\[[A]=ML^{-3}\\qquad[B]=ML^{-1}T^{-2}\\]</div>",
-            "A tiene dimensión de densidad y B dimensión de presión. Esto indica compatibilidad dimensional, sin identificar necesariamente su naturaleza."
+            "<strong>Aplicación 8. Comprobación de fórmulas</strong><p>Comprueba dimensionalmente \\(d=vt\\) y \\(v_f=v_0+at\\), con distancia \\(d\\), tiempo \\(t\\), velocidad \\(v\\) y aceleración \\(a\\).</p><ol><li><div class=\"equation\">\\[[vt]=(LT^{-1})T=L=[d]\\]</div></li><li>La primera expresión es dimensionalmente homogénea; describe la distancia en un movimiento de rapidez constante bajo las condiciones apropiadas.</li><li><div class=\"equation\">\\[[v_f]=[v_0]=LT^{-1}\\qquad[at]=(LT^{-2})T=LT^{-1}\\]</div></li><li>La segunda expresión también es homogénea. Su aplicación física supone aceleración constante y componentes compatibles.</li></ol>",
+            "<strong>Ejemplo complementario. Presión y rapidez</strong><p>En \\(p=Av^2+B\\), \\(p\\) es presión y \\(v\\) rapidez. Halla las dimensiones de A y B.</p><ol><li><div class=\"equation\">\\[[A](LT^{-1})^2=[B]=ML^{-1}T^{-2}\\]</div></li><li><div class=\"equation\">\\[[A]=ML^{-3}\\qquad[B]=ML^{-1}T^{-2}\\]</div></li><li>A tiene dimensión de densidad y B dimensión de presión. Esto indica compatibilidad dimensional, sin identificar necesariamente su naturaleza.</li></ol>",
+            "<strong>Aplicación 10. Dos coeficientes desconocidos</strong><p>En la ecuación homogénea \\(20VP=mA+aB\\), \\(V\\) es volumen, \\(P\\) peso, \\(m\\) masa y \\(a\\) aceleración. Encuentra \\([A]\\) y \\([B]\\).</p><ol><li>El peso es una fuerza: \\([P]=MLT^{-2}\\). El volumen tiene dimensión \\(L^3\\).</li><li><div class=\"equation\">\\[[20VP]=L^3(MLT^{-2})=ML^4T^{-2}\\]</div></li><li>Iguala el término \\(mA\\) al miembro izquierdo:</li><li><div class=\"equation\">\\[M[A]=ML^4T^{-2}\\quad\\Rightarrow\\quad[A]=L^4T^{-2}\\]</div></li><li>Iguala ahora el término \\(aB\\):</li><li><div class=\"equation\">\\[(LT^{-2})[B]=ML^4T^{-2}\\quad\\Rightarrow\\quad[B]=ML^3\\]</div></li></ol>",
+            "<strong>Aplicación 9. Un exponente adimensional</strong><p>En \\(A=B+C^{SD\\operatorname{sen}\\theta}\\), \\(D\\) es densidad. Determina \\([S]\\) para que el exponente sea adimensional. Se toma \\(C\\) como un número positivo adimensional y un ángulo con \\(\\operatorname{sen}\\theta\\ne0\\).</p><ol><li>El exponente cumple \\([SD\\operatorname{sen}\\theta]=1\\).</li><li><div class=\"equation\">\\[[S](ML^{-3})(1)=1\\]</div></li><li><div class=\"equation\">\\[[S]=\\frac1{ML^{-3}}=M^{-1}L^3\\]</div></li><li>La condición se obtiene del exponente. Al considerar C adimensional, el término exponencial también lo es; por homogeneidad, A y B deben ser adimensionales.</li></ol>",
+            "<strong>Ejemplo complementario. Una oscilación</strong><p>En \\(x=A\\operatorname{sen}(\\omega t+\\varphi)\\), \\(x\\) es posición y \\(t\\) tiempo. Halla \\([A]\\), \\([\\omega]\\) y \\([\\varphi]\\).</p><ol><li>El argumento \\(\\omega t+\\varphi\\) debe ser adimensional. Por homogeneidad, \\([\\omega]T=[\\varphi]=1\\).</li><li><div class=\"equation\">\\[[\\omega]=T^{-1}\\qquad[\\varphi]=1\\]</div></li><li>Como el seno es adimensional, \\([x]=[A]\\), por tanto \\([A]=L\\).</li></ol>"
           ]
         }
       ]

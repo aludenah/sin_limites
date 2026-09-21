@@ -92,22 +92,14 @@ function side(){return LESSONS.map((lesson,i)=>{const active=P.activeTab==='theo
 
 
 
-function lab(){return '<section class="lab"><p class="eyebrow">Explora una fórmula</p><h3>¿Qué potencia de tiempo falta?</h3><p>La velocidad se expresa como \\(v=v_0+at^n\\). Cambia el exponente para que el término de aceleración tenga dimensión de velocidad.</p><label for="power-slider">Exponente n: <output id="power-value">0</output></label><input id="power-slider" type="range" min="0" max="3" step="1" value="0"><div id="lab-result" aria-live="polite"></div></section>';}
-function updateLab(n){
-  const output=document.getElementById('power-value'),el=document.getElementById('lab-result');if(!el)return;
-  output.textContent=n;el.innerHTML=`<div class="equation">\\[[at^{${n}}]=LT^{${n-2}}\\]</div><p>${n===1?'✓ Con n = 1, ambos términos tienen dimensión de velocidad.':'Todavía no coincide con '+String.raw`\(LT^{-1}\)`+'. Prueba otro exponente.'}</p>`;renderMath();
-}
-const DIMENSIONAL_FIGURES={
- 'dim-homogeneidad':[['homogeneidad','Solo se suman magnitudes compatibles, después de expresar sus valores en unidades compatibles.']]
-};
 function dimensionalFigure(name,caption){
  const src='assets/fisica-capitulo-01/'+name+'.svg';
- const heights={homogeneidad:500,'mapa-magnitudes':940};
+ const heights={'mapa-magnitudes':940};
  return `<figure class="dimensional-figure"><a href="${src}" target="_blank" rel="noopener" aria-label="Ampliar gráfico: ${escapeHTML(caption)}"><img src="${src}" width="760" height="${heights[name]}" alt="${escapeHTML(caption)}" loading="lazy"></a><figcaption>${escapeHTML(caption)} <a href="${src}" target="_blank" rel="noopener">Ampliar gráfico</a></figcaption></figure>`;
 }
 function lessonFigures(id){
  if(id==='dim-deducciones')return window.GeometryDerivation?.render()||String.raw`<section><h4>Magnitudes derivadas: deducción paso a paso</h4><p>Área: \([A]=[b][h]=L\cdot L=L^2\). Su unidad SI es el metro cuadrado.</p><p>Volumen: \([V]=[a][b][c]=L\cdot L\cdot L=L^3\). Su unidad SI es el metro cúbico.</p><p>Densidad: \([\rho]=M/L^3=ML^{-3}\); unidad: kg/m³.</p><p>Velocidad: \([v]=L/T=LT^{-1}\); unidad: m/s.</p><p>Aceleración: \([a]=(LT^{-1})/T=LT^{-2}\); unidad: m/s².</p><p>Fuerza: \([F]=M(LT^{-2})=MLT^{-2}\); unidad: N.</p></section>`;
- return (DIMENSIONAL_FIGURES[id]||[]).map(([name,caption])=>dimensionalFigure(name,caption)).join('');
+ return '';
 }
 function lessonBody(lesson){
  return lesson.body.replace('<div data-stone-explorer></div>',()=>window.StoneExplorer?.render()||'<p>Una piedra tiene magnitudes medibles, como masa, longitud, volumen y temperatura.</p>')
@@ -133,7 +125,7 @@ function lessonSections(lesson){
 }
 function lessonView(){
   const i=P.currentItem,x=LESSONS[i];
-  return `<p class="eyebrow">Tema ${i+1} de ${LESSONS.length} · ${x.subtitle}</p><h2>${x.title}</h2><div class="content">${lessonBody(x)}${lessonFigures(x.id)}</div>${lessonSections(x)}${lessonActivity(x)}${x.id==='dim-homogeneidad'?lab():''}<div class="actions"><button class="button secondary" data-action="lesson" data-index="${i-1}" ${i===0?'disabled':''}>← Tema anterior</button>${i<LESSONS.length-1?`<button class="button" data-action="lesson" data-index="${i+1}" ${!canOpen(i+1)?'disabled':''}>Siguiente tema →</button>`:`<button class="button" data-action="tab" data-value="practice" ${!canApply()?'disabled':''}>Ir a la práctica →</button>`}</div>`;
+  return `<p class="eyebrow">Tema ${i+1} de ${LESSONS.length} · ${x.subtitle}</p><h2>${x.title}</h2><div class="content">${lessonBody(x)}${lessonFigures(x.id)}</div>${lessonSections(x)}${lessonActivity(x)}<div class="actions"><button class="button secondary" data-action="lesson" data-index="${i-1}" ${i===0?'disabled':''}>← Tema anterior</button>${i<LESSONS.length-1?`<button class="button" data-action="lesson" data-index="${i+1}" ${!canOpen(i+1)?'disabled':''}>Siguiente tema →</button>`:`<button class="button" data-action="tab" data-value="practice" ${!canApply()?'disabled':''}>Ir a la práctica →</button>`}</div>`;
 }
 function practiceView(){return window.ChapterPractice.render(CHAPTER_ID,P.practice10,P.studyMode,notice);}
 
@@ -147,7 +139,7 @@ function render(){
   if(!P.studyMode){window.location.replace('index.html?chapter='+CHAPTER_ID);return;}
   const percent=progressPercent();
   root.innerHTML=`${header()}<section class="hero"><div class="wrap"><p class="eyebrow">Física · Capítulo 1 de 19</p><h1>Análisis Dimensional</h1></div></section><div class="wrap"><section class="card overview"><div><div class="progress-head"><span>Mi avance en el capítulo</span><strong>${percent}%</strong></div><progress max="100" value="${percent}" aria-label="Avance del capítulo">${percent}%</progress><small>${P.practice10.mastered.length}/10 problemas resueltos correctamente</small><p id="save-status" class="save-line ${cloudReady?'':'warning'}" role="status">${escapeHTML(saveMessage)}</p><button id="retry-save" class="button secondary small" data-action="sync" ${cloudReady?'hidden':''}>Reintentar sincronización</button></div></section><div class="layout"><aside class="card sidebar"><p class="eyebrow">Tu ruta de aprendizaje</p><nav class="route" aria-label="Temas del capítulo">${side()}</nav><p class="hint">Completa los 10 problemas de la práctica para alcanzar el 100%. La teoría está disponible para consultar.</p></aside><main class="workspace" id="chapter-content"><nav class="card tabs" aria-label="Secciones del capítulo">${[['theory','Teoría'],['examples','Resueltos · 25'],['practice','Práctica · 10 problemas'],['resources','Materiales']].map(([id,title])=>`<button data-action="tab" data-value="${id}" class="${P.activeTab===id?'active':''}" ${P.activeTab===id?'aria-current="page"':''} >${title}</button>`).join('')}</nav><article class="card article">${notice?`<div role="alert" class="feedback" id="notice">${escapeHTML(notice)}</div>`:''}${P.activeTab==='theory'?lessonView():P.activeTab==='examples'?workedExamplesView():P.activeTab==='practice'?practiceView():resourcesView()}</article></main></div></div><footer class="footer">SIN LÍMITES · Física · Análisis dimensional</footer>`;
-  renderMath();if(P.activeTab==='theory'&&LESSONS[P.currentItem].id==='dim-homogeneidad')updateLab(0);
+  renderMath();
 }
 function scrollContent(){document.getElementById('chapter-content')?.scrollIntoView({behavior:'smooth',block:'start'});}
 function showNotice(message){notice=message;render();document.getElementById('notice')?.scrollIntoView({block:'center',behavior:'smooth'});}
@@ -162,7 +154,8 @@ root.addEventListener('click',event=>{
 const button=event.target.closest('[data-action]');if(!button||button.disabled||!user)return;
 if(P.activeTab==='theory'&&LESSONS[P.currentItem]?.id==='dim-magnitudes'&&(window.MagnitudeGame?.handleAction(button)||window.StoneExplorer?.handleAction(button)))return;
 if(P.activeTab==='theory'&&LESSONS[P.currentItem]?.id==='dim-si'&&window.PrefixGame?.handleAction(button))return;
-if(P.activeTab==='theory'&&LESSONS[P.currentItem]?.id==='dim-dimensiones'&&(window.GeometryDerivation?.handleAction(button)||window.ConstantDerivations?.handleAction(button)||window.DimensionGame?.handleAction(button)))return;
+if(P.activeTab==='theory'&&LESSONS[P.currentItem]?.id==='dim-dimensiones'&&(window.GeometryDerivation?.handleAction(button)||window.DimensionGame?.handleAction(button)))return;
+if(P.activeTab==='theory'&&((LESSONS[P.currentItem]?.id==='dim-dimensiones'&&['physical-constants','dimension-one'].includes(button.dataset.card))||(LESSONS[P.currentItem]?.id==='dim-homogeneidad'&&button.dataset.card==='homogeneity'))&&window.ConstantDerivations?.handleAction(button))return;
 const {action,value,index,id}=button.dataset;if(action==='lesson')goLesson(Number(index));else if(action==='tab')goTab(value);else if(action==='check-practice10')checkPractice(id);else if(action==='sync')retrySync();
 });
 root.addEventListener('change',event=>{
@@ -173,7 +166,6 @@ if(input.dataset.group==='practice10'&&window.ChapterPractice.choose(CHAPTER_ID,
 root.addEventListener('input',event=>{
  if(!user)return;
  if(P.activeTab==='theory'&&LESSONS[P.currentItem]?.id==='dim-dimensiones'&&window.DimensionGame?.handleInput(event.target))return;
- if(event.target.id==='power-slider')updateLab(Number(event.target.value));
 });
 window.addEventListener('pagehide',()=>{if(user&&saveTimer){clearTimeout(saveTimer);persist();}});
 

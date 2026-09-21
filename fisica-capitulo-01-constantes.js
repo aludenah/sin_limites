@@ -19,6 +19,16 @@
         { id: 'sine', label: 'Seno', difficulty: 'Intermedio' },
         { id: 'exponential', label: 'Exponencial', difficulty: 'Avanzado' }
       ]
+    },
+    homogeneity: {
+      selection: 'selectedHomogeneity',
+      items: [
+        { id: 'formula-check', label: 'Comprobación', difficulty: 'Básico' },
+        { id: 'pressure-speed', label: 'Presión y rapidez', difficulty: 'Intermedio' },
+        { id: 'two-coefficients', label: 'Dos coeficientes', difficulty: 'Intermedio' },
+        { id: 'dimensionless-exponent', label: 'Exponente', difficulty: 'Avanzado' },
+        { id: 'oscillation', label: 'Oscilación', difficulty: 'Avanzado' }
+      ]
     }
   });
   const cards = Object.keys(groups);
@@ -187,11 +197,125 @@
           hint: 'El coeficiente b tiene dimensión de masa dividida entre tiempo.'
         }
       ]
+    },
+    'formula-check': {
+      name: 'Comprobación de fórmulas',
+      question: 'Comprueba dimensionalmente ' + math('d=vt') + ' y ' + math('v_f=v_0+at') + ', con distancia ' + math('d') + ', tiempo ' + math('t') + ', velocidad ' + math('v') + ' y aceleración ' + math('a') + '.',
+      steps: [
+        {
+          title: 'Comprueba la primera fórmula',
+          text: 'La distancia tiene dimensión L. Multiplica las dimensiones de velocidad y tiempo para comprobar el miembro derecho.',
+          equations: ['d=vt', '[d]=L', '[vt]=[v][t]=(LT^{-1})T=L'],
+          hint: 'Ambos miembros tienen dimensión L. La fórmula es homogénea y describe la distancia para rapidez constante bajo las condiciones apropiadas.'
+        },
+        {
+          title: 'Comprueba cada término de la suma',
+          text: 'Las velocidades inicial y final tienen dimensión LT⁻¹. El producto de aceleración por tiempo debe tener esa misma dimensión.',
+          equations: ['v_f=v_0+at', '[v_f]=[v_0]=LT^{-1}', '[at]=(LT^{-2})T=LT^{-1}', '[v_f]=[v_0]=[at]'],
+          hint: 'Las dos fórmulas son dimensionalmente homogéneas. La segunda se aplica con aceleración constante y componentes compatibles; la homogeneidad por sí sola no demuestra su validez física.'
+        }
+      ]
+    },
+    'pressure-speed': {
+      name: 'Presión y rapidez',
+      question: 'En ' + math('p=Av^2+B') + ', ' + math('p') + ' es presión y ' + math('v') + ' rapidez. Halla las dimensiones de ' + math('A') + ' y ' + math('B') + '.',
+      steps: [
+        {
+          title: 'Iguala las dimensiones de los términos',
+          text: 'Por homogeneidad, el producto Av² y el término B deben tener la misma dimensión que la presión p.',
+          equations: ['[p]=ML^{-1}T^{-2}', '[v]=LT^{-1}', '[A][v]^2=[B]=[p]'],
+          hint: 'Cada término de una suma debe ser dimensionalmente compatible con los demás.'
+        },
+        {
+          title: 'Despeja la dimensión de A',
+          text: 'Divide la dimensión de la presión entre el cuadrado de la dimensión de rapidez. Al dividir potencias, resta sus exponentes.',
+          equations: ['[A]=\\frac{[p]}{[v]^2}', '[A]=\\frac{ML^{-1}T^{-2}}{L^2T^{-2}}=ML^{-3}'],
+          hint: 'La dimensión de tiempo se cancela; la longitud queda con exponente −1 − 2 = −3.'
+        },
+        {
+          title: 'Obtén la dimensión de B',
+          text: 'El término B aparece sumando directamente a Av², por lo que tiene dimensión de presión.',
+          equations: ['[B]=[p]=ML^{-1}T^{-2}', '[A]=ML^{-3},\\qquad[B]=ML^{-1}T^{-2}'],
+          hint: 'A tiene dimensión de densidad y B de presión. Compartir dimensión no identifica necesariamente su naturaleza física.'
+        }
+      ]
+    },
+    'two-coefficients': {
+      name: 'Dos coeficientes desconocidos',
+      question: 'En la ecuación homogénea ' + math('20VP=mA+aB') + ', ' + math('V') + ' es volumen, ' + math('P') + ' peso, ' + math('m') + ' masa y ' + math('a') + ' aceleración. Encuentra ' + math('[A]') + ' y ' + math('[B]') + '.',
+      steps: [
+        {
+          title: 'Calcula la dimensión común',
+          text: 'El peso es una fuerza y el factor numérico 20 tiene dimensión uno. Multiplica las dimensiones de volumen y peso.',
+          equations: ['[V]=L^3,\\qquad[P]=MLT^{-2}', '[20VP]=1\\cdot L^3(MLT^{-2})=ML^4T^{-2}', '[mA]=[aB]=ML^4T^{-2}'],
+          hint: 'Cada término del miembro derecho debe tener la dimensión del miembro izquierdo.'
+        },
+        {
+          title: 'Deduce la dimensión de A',
+          text: 'Iguala la dimensión de mA a la dimensión común y divide entre la dimensión M de la masa.',
+          equations: ['M[A]=ML^4T^{-2}', '[A]=\\frac{ML^4T^{-2}}{M}=L^4T^{-2}'],
+          hint: 'La masa se cancela; quedan las potencias de longitud y tiempo.'
+        },
+        {
+          title: 'Deduce la dimensión de B',
+          text: 'En el término aB, la aceleración aporta LT⁻². Divide la dimensión común entre este factor.',
+          equations: ['(LT^{-2})[B]=ML^4T^{-2}', '[B]=\\frac{ML^4T^{-2}}{LT^{-2}}=ML^3', '[A]=L^4T^{-2},\\qquad[B]=ML^3'],
+          hint: 'En el cociente, el tiempo se cancela y el exponente de longitud pasa de 4 a 3.'
+        }
+      ]
+    },
+    'dimensionless-exponent': {
+      name: 'Un exponente adimensional',
+      question: 'En ' + math('A=B+C^{SD\\operatorname{sen}\\theta}') + ', ' + math('D') + ' es densidad. Determina ' + math('[S]') + ' para que el exponente sea adimensional. Se toma ' + math('C') + ' como un número positivo adimensional y un ángulo con ' + math('\\operatorname{sen}\\theta\\ne0') + '.',
+      steps: [
+        {
+          title: 'Exige dimensión uno en el exponente',
+          text: 'El exponente SD sen θ debe ser adimensional. La densidad D tiene dimensión ML⁻³ y el seno tiene dimensión uno.',
+          equations: ['[SD\\operatorname{sen}\\theta]=1', '[D]=ML^{-3},\\qquad[\\operatorname{sen}\\theta]=1', '[S](ML^{-3})(1)=1'],
+          hint: 'La condición se aplica al exponente completo.'
+        },
+        {
+          title: 'Despeja la dimensión de S',
+          text: 'Divide entre la dimensión de densidad. Al expresar el recíproco como producto de potencias, cambia el signo de cada exponente.',
+          equations: ['[S]=\\frac{1}{ML^{-3}}=M^{-1}L^3'],
+          hint: 'S tiene la dimensión inversa de la densidad.'
+        },
+        {
+          title: 'Comprueba la homogeneidad de la suma',
+          text: 'Como C es adimensional y el exponente también, el término exponencial tiene dimensión uno. Por homogeneidad, A y B deben tener esa misma dimensión.',
+          equations: ['[C^{SD\\operatorname{sen}\\theta}]=1', '[A]=[B]=1', '[S]=M^{-1}L^3'],
+          hint: 'El resultado pedido se obtiene del exponente; la suma permite comprobar las dimensiones de A y B.'
+        }
+      ]
+    },
+    oscillation: {
+      name: 'Una oscilación',
+      question: 'En ' + math('x=A\\operatorname{sen}(\\omega t+\\varphi)') + ', ' + math('x') + ' es posición y ' + math('t') + ' tiempo. Halla ' + math('[A]') + ', ' + math('[\\omega]') + ' y ' + math('[\\varphi]') + '.',
+      steps: [
+        {
+          title: 'Analiza el argumento del seno',
+          text: 'El argumento ωt + φ debe ser adimensional. Sus dos términos también deben tener dimensión uno.',
+          equations: ['[\\omega t+\\varphi]=1', '[\\omega]T=[\\varphi]=1'],
+          hint: 'Dentro del argumento se aplica el mismo principio de homogeneidad que en cualquier suma.'
+        },
+        {
+          title: 'Deduce las dimensiones de ω y φ',
+          text: 'Divide la primera igualdad entre T para despejar la dimensión de ω. La fase φ es adimensional.',
+          equations: ['[\\omega]=\\frac1T=T^{-1}', '[\\varphi]=1'],
+          hint: 'ω tiene dimensión de tiempo inverso y φ tiene dimensión uno.'
+        },
+        {
+          title: 'Deduce la dimensión de A',
+          text: 'El seno es adimensional y x tiene dimensión de longitud. Por tanto, A debe aportar toda la dimensión del miembro derecho.',
+          equations: ['[x]=[A][\\operatorname{sen}(\\omega t+\\varphi)]', 'L=[A]\\cdot1', '[A]=L,\\qquad[\\omega]=T^{-1},\\qquad[\\varphi]=1'],
+          hint: 'La amplitud A tiene dimensión de longitud; el seno aporta un factor de dimensión uno.'
+        }
+      ]
     }
   });
 
   function createSession() {
-    const initialState = () => ({ selected: 'spring', selectedDimension: 'friction', spring: 0, planck: 0, gravity: 0, friction: 0, sine: 0, exponential: 0 });
+    const initialState = () => ({ selected: 'spring', selectedDimension: 'friction', selectedHomogeneity: 'formula-check', spring: 0, planck: 0, gravity: 0, friction: 0, sine: 0, exponential: 0, 'formula-check': 0, 'pressure-speed': 0, 'two-coefficients': 0, 'dimensionless-exponent': 0, oscillation: 0 });
     let state = initialState();
     const snapshot = () => ({ ...state });
     const active = card => state[groups[card].selection];
@@ -230,7 +354,7 @@
     const step = constant.steps[state.step];
     const group = groups[card];
     const index = group.items.findIndex(item => item.id === state.constant);
-    const progress = 'Ejemplo ' + (index + 1) + ' de 3 · ' + group.items[index].difficulty + ' · ';
+    const progress = 'Ejemplo ' + (index + 1) + ' de ' + group.items.length + ' · ' + group.items[index].difficulty + ' · ';
     return '<p class="constant-derivation-progress">' + progress + escapeHTML(constant.name) + ' · Paso ' + (state.step + 1) + ' de ' + constant.steps.length + '</p>' +
       (constant.question ? '<div class="constant-derivation-prompt"><p>' + constant.question + '</p></div>' : '') +
       '<h5>' + step.title + '</h5><p>' + step.text + '</p>' +

@@ -13,7 +13,7 @@ const examples={
  'physical-constants':{interactive:'physical-constants',title:'Constantes físicas: de menor a mayor dificultad',question:'Resuelve los tres ejemplos en orden: resorte, Planck y gravitación. Puedes volver a cada uno conservando el paso en el que te quedaste.'},
  'dimension-one':{interactive:'dimension-one',title:'Dimensión uno: de menor a mayor dificultad',question:'Resuelve los tres ejemplos en orden: rozamiento, seno y exponencial. Puedes volver a cada uno conservando el paso en el que te quedaste.'}
 };
-const initialState={selected:'spring',selectedDimension:'friction',spring:0,planck:0,gravity:0,friction:0,sine:0,exponential:0};
+const initialState={selected:'spring',selectedDimension:'friction',selectedHomogeneity:'formula-check',spring:0,planck:0,gravity:0,friction:0,sine:0,exponential:0,'formula-check':0,'pressure-speed':0,'two-coefficients':0,'dimensionless-exponent':0,oscillation:0};
 
 function element(){
  return {dataset:{},innerHTML:'',textContent:'',disabled:false,attributes:{},
