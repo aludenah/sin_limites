@@ -28,8 +28,8 @@ const LABORATORY=CONTENT.laboratory||null;
 const DETECTIVE=CONTENT.detective||null;
 const WORKSHOP=CONTENT.workshop||null;
 const INDUCTION=CONTENT.induction||null;
-const ENTRY_VERSION=INDUCTION?'20261021-induction1':WORKSHOP?'20261021-polyhedra1':DETECTIVE?'20261021-detective1':'20260918-social1';
-const SITE_VERSION=INDUCTION?'20261021-induction1':WORKSHOP?'20261021-polyhedra1':DETECTIVE?'20261021-detective1':'20260919-fisica19';
+const ENTRY_VERSION=CHAPTER_ID==='biologia-capitulo-11'?'20261021-heartsection1':INDUCTION?'20261021-induction1':WORKSHOP?'20261021-polyhedra1':DETECTIVE?'20261021-detective1':'20260918-social1';
+const SITE_VERSION=CHAPTER_ID==='biologia-capitulo-11'?'20261021-heartsection1':INDUCTION?'20261021-induction1':WORKSHOP?'20261021-polyhedra1':DETECTIVE?'20261021-detective1':'20260919-fisica19';
 
 const CONFIG={apiKey:'AIzaSyCurhmnJ21SMqGM6G54t8QM8jcqO8jV0OE',authDomain:'sin-limites-12f07.firebaseapp.com',projectId:'sin-limites-12f07',storageBucket:'sin-limites-12f07.firebasestorage.app',messagingSenderId:'757098079298',appId:'1:757098079298:web:068a9a7ea93149bfef79db'};
 const root=document.getElementById('chapter-app');
@@ -134,7 +134,7 @@ function mergeProgress(a={},b={}){
  if(COURSE_ID===18){
   const first=a.heartExploration||{},second=b.heartExploration||{};
   const latest=Number(second.updatedMs||0)>Number(first.updatedMs||0)?second:first;
-  merged.heartExploration={...first,...second,...latest,visitedParts:[...new Set([...(Array.isArray(first.visitedParts)?first.visitedParts:[]),...(Array.isArray(second.visitedParts)?second.visitedParts:[])])],visitedSteps:[...new Set([...(Array.isArray(first.visitedSteps)?first.visitedSteps:[]),...(Array.isArray(second.visitedSteps)?second.visitedSteps:[])])].filter(n=>Number.isInteger(n)&&n>=0&&n<8),routeComplete:Boolean(first.routeComplete||second.routeComplete)};
+  merged.heartExploration={...first,...second,...latest,presentation:latest.presentation==='section'?'section':'model',visitedParts:[...new Set([...(Array.isArray(first.visitedParts)?first.visitedParts:[]),...(Array.isArray(second.visitedParts)?second.visitedParts:[])])],visitedSteps:[...new Set([...(Array.isArray(first.visitedSteps)?first.visitedSteps:[]),...(Array.isArray(second.visitedSteps)?second.visitedSteps:[])])].filter(n=>Number.isInteger(n)&&n>=0&&n<8),routeComplete:Boolean(first.routeComplete||second.routeComplete)};
  }
  return normalized(merged);
 }
@@ -268,7 +268,7 @@ window.addEventListener('biology-heart-progress',event=>{
  const value=event.detail||{},previous=P.heartExploration||{};
  const visited=Array.isArray(value.visitedParts)?value.visitedParts.filter(x=>typeof x==='string'&&x.length<80).slice(0,30):[];
  const steps=Array.isArray(value.visitedSteps)?value.visitedSteps.filter(n=>Number.isInteger(n)&&n>=0&&n<8):[];
- P.heartExploration={...previous,visitedParts:[...new Set([...(Array.isArray(previous.visitedParts)?previous.visitedParts:[]),...visited])],visitedSteps:[...new Set([...(Array.isArray(previous.visitedSteps)?previous.visitedSteps:[]),...steps])],selectedPart:typeof value.selectedPart==='string'?value.selectedPart.slice(0,80):null,tab:value.tab==='route'?'route':'explore',routeStep:Math.min(30,Math.max(0,Number(value.routeStep)||0)),routeComplete:Boolean(previous.routeComplete||value.routeComplete),view:value.view==='internal'?'internal':'external',updatedMs:Date.now()};
+ P.heartExploration={...previous,visitedParts:[...new Set([...(Array.isArray(previous.visitedParts)?previous.visitedParts:[]),...visited])],visitedSteps:[...new Set([...(Array.isArray(previous.visitedSteps)?previous.visitedSteps:[]),...steps])],selectedPart:typeof value.selectedPart==='string'?value.selectedPart.slice(0,80):null,tab:value.tab==='route'?'route':'explore',routeStep:Math.min(30,Math.max(0,Number(value.routeStep)||0)),routeComplete:Boolean(previous.routeComplete||value.routeComplete),view:value.view==='internal'?'internal':'external',presentation:value.presentation==='section'?'section':'model',updatedMs:Date.now()};
  saveSoon();
 });
 window.addEventListener('history-exploration-progress',event=>{

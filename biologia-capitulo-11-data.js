@@ -34,7 +34,9 @@ window.HISTORY_CONTENT = {
           title: 'Explora el corazón en tres dimensiones',
           paragraphs: [
             'El corazón es una bomba muscular que mantiene la circulación. Sus dos mitades trabajan coordinadamente: la derecha impulsa sangre hacia los pulmones y la izquierda hacia el resto del cuerpo. En un corazón adulto normal, el tabique separa la sangre de ambas mitades.',
-            'Explora sus estructuras y sigue el recorrido de una gota de sangre. Derecha e izquierda se refieren al cuerpo de la persona representada; en una vista frontal pueden aparecer invertidas respecto de quien observa.'
+            'Explora el modelo tridimensional o abre la sección frontal para seguir el recorrido de la sangre. En la vista anterior, las cavidades derechas aparecen a la izquierda de la imagen y las izquierdas a la derecha: los nombres corresponden a la persona representada.',
+            'Corazón humano: vista anterior en sección longitudinal frontal (esquemática). El plano frontal o coronal divide el cuerpo en porciones anterior y posterior. En esta representación se retiran de manera esquemática partes de las paredes anteriores para visualizar las cavidades, las válvulas y los grandes vasos.',
+            'El corazón se orienta de forma oblicua en el tórax y sus cuatro cavidades no están exactamente en un único plano frontal. Por eso, la sección didáctica reúne estructuras de distinta profundidad y no equivale a un corte coronal estricto. Puedes ampliarla con el botón Pantalla completa.'
           ],
           interactive: 'biology-heart'
         },
