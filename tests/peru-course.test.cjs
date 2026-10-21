@@ -7,7 +7,7 @@ async function test(){
  assert.equal(run('state.view'),'mode');run('openCourse(11)');assert.equal(run('state.view'),'mode');
  run("selectStudyMode('free');openCourse(11)");
  assert.equal(run('state.activeCourseId'),11);assert.equal(run('COURSES.find(c=>c.id===11).topics.length'),35);
- assert.equal(run('window.PERU_CHAPTERS.length'),6);
+ assert.equal(run('window.PERU_CHAPTERS.length'),7);
  assert.equal(run('JSON.stringify(COURSES.find(c=>c.id===11).topics)'),run('JSON.stringify(window.PERU_SYLLABUS.map(c=>c.title))'));
  assert.match(h.elements.get('app').innerHTML,/Historia del Perú: 35 capítulos; contenido desarrollado del 1 al 6/);
  assert.doesNotMatch(h.elements.get('app').innerHTML,/onclick="showStudyModes/);
@@ -35,7 +35,7 @@ async function test(){
  }
  const ctx={window:{}};for(const f of ['peru-catalog.js','history-catalog.js','lenguaje-catalog.js','economia-catalog.js','educacion-civica-catalog.js','fisica-catalog.js'])vm.runInNewContext(fs.readFileSync(path.join(root,f),'utf8'),ctx);
  const admin=fs.readFileSync(path.join(root,'admin.js'),'utf8');const declaration=admin.slice(admin.indexOf('const TRACKED_CHAPTERS='),admin.indexOf("let selectedChapter="));vm.runInNewContext(declaration+';window.tracked=TRACKED_CHAPTERS;',ctx);
- assert.equal(Object.keys(ctx.window.tracked).length,33);for(let n=1;n<=6;n++)assert.equal(ctx.window.tracked[`historia-del-peru-capitulo-0${n}`].items,10);
+ assert.equal(Object.keys(ctx.window.tracked).length,34);for(let n=1;n<=6;n++)assert.equal(ctx.window.tracked[`historia-del-peru-capitulo-0${n}`].items,10);
  const images=new Set();for(let n=1;n<=6;n++){vm.runInNewContext(fs.readFileSync(path.join(root,`historia-del-peru-capitulo-0${n}-data.js`),'utf8'),ctx);const c=ctx.window.HISTORY_CONTENT;for(const b of c.lessons.flatMap(l=>l.blocks)){if(!b.illustration)continue;assert.ok(!images.has(b.illustration.src),'Each image used once');images.add(b.illustration.src);assert.ok(fs.existsSync(path.join(root,b.illustration.src)));}}
  assert.equal(images.size,18);
  console.log('PASS: Peru PDF syllabus, six chapter routes, mode choice, catalog migration, reading resume, isolated course progress, account switching, teacher tracking and 18 unique images.');

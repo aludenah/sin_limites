@@ -102,7 +102,7 @@ async function validateAppAndProgress(){
 function validateTeacherTracking(){
  const ctx={window:{}};for(const f of ['peru-catalog.js','history-catalog.js','lenguaje-catalog.js','economia-catalog.js','educacion-civica-catalog.js','fisica-catalog.js'])vm.runInNewContext(fs.readFileSync(path.join(root,f),'utf8'),ctx);
  const admin=fs.readFileSync(path.join(root,'admin.js'),'utf8');const declaration=admin.slice(admin.indexOf('const TRACKED_CHAPTERS='),admin.indexOf('let selectedChapter='));vm.runInNewContext(declaration+';window.tracked=TRACKED_CHAPTERS;',ctx);
- assert.equal(Object.keys(ctx.window.tracked).length,33);
+ assert.equal(Object.keys(ctx.window.tracked).length,34);
  for(let n=1;n<=6;n++){const tracked=ctx.window.tracked[`lenguaje-capitulo-0${n}`];assert.equal(tracked.items,10);assert.match(tracked.label,new RegExp(`^Lenguaje · Capítulo ${n} ·`));}
 }
 

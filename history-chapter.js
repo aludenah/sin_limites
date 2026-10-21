@@ -21,6 +21,7 @@ const CHAPTER_NUMBER=CHAPTER_META.number||CONTENT.number;
 const CHAPTER_TOPIC_INDEX=CHAPTER_META.topicIndex??(CHAPTER_NUMBER-1);
 const CHAPTER_LABEL=CHAPTER_META.sourceLabel||'Capítulo '+CHAPTER_NUMBER;
 const LESSONS=CONTENT.lessons;
+const EXPLORATION=CONTENT.exploration||null;
 
 const CONFIG={apiKey:'AIzaSyCurhmnJ21SMqGM6G54t8QM8jcqO8jV0OE',authDomain:'sin-limites-12f07.firebaseapp.com',projectId:'sin-limites-12f07',storageBucket:'sin-limites-12f07.firebasestorage.app',messagingSenderId:'757098079298',appId:'1:757098079298:web:068a9a7ea93149bfef79db'};
 const root=document.getElementById('chapter-app');
@@ -38,8 +39,19 @@ function canOpen(i){return Number.isInteger(i)&&i>=0&&i<LESSONS.length;}
 function canApply(){return true;}
 function progressPercent(p=P){return p.practice10.mastered.length*10;}
 function chapterComplete(p=P){return p.practice10.mastered.length===10;}
+function explorationProgress(value={}){
+ value=value&&typeof value==='object'&&!Array.isArray(value)?value:{};
+ const safeList=items=>[...new Set((Array.isArray(items)?items:[]).filter(x=>typeof x==='string'&&/^[a-z0-9_-]{1,80}$/i.test(x)))].slice(0,80);
+ const safeId=id=>typeof id==='string'&&/^[a-z0-9_-]{1,80}$/i.test(id)?id:null;
+ return {experience:EXPLORATION?.id||'',visitedSites:safeList(value.visitedSites),visitedObjects:safeList(value.visitedObjects),completedChallenges:safeList(value.completedChallenges),selectedSite:safeId(value.selectedSite),selectedObject:safeId(value.selectedObject),tab:safeId(value.tab)||'map',updatedMs:Number.isFinite(Number(value.updatedMs))?Math.max(0,Number(value.updatedMs)):0};
+}
+function mergeExploration(a={},b={}){
+ const x=explorationProgress(a),y=explorationProgress(b),latest=y.updatedMs>=x.updatedMs?y:x;
+ return explorationProgress({...latest,visitedSites:[...x.visitedSites,...y.visitedSites],visitedObjects:[...x.visitedObjects,...y.visitedObjects],completedChallenges:[...x.completedChallenges,...y.completedChallenges]});
+}
 function mergeProgress(a={},b={}){
  const merged=window.ChapterPractice.merge(CHAPTER_ID,a,b);
+ if(EXPLORATION)merged.historyExploration=mergeExploration(a.historyExploration,b.historyExploration);
  if(COURSE_ID===18){
   const first=a.heartExploration||{},second=b.heartExploration||{};
   const latest=Number(second.updatedMs||0)>Number(first.updatedMs||0)?second:first;
@@ -133,10 +145,11 @@ function finishContent(){return '<h2>'+(chapterComplete()?'¡Completaste la prá
 function render(){
  window.ChapterInteractions?.unmount?.();
  if(!user)return;if(!P.studyMode){window.location.replace('index.html?chapter='+CONTENT.id+'&v=20260918-social1');return;}
- root.innerHTML=`${header()}<main id="chapter-content"><header class="chapter-hero" id="chapter-top"><div><p class="eyebrow">${escapeHTML(COURSE_NAME)} · Capítulo ${String(CHAPTER_NUMBER).padStart(2,'0')}</p><h1>${escapeHTML(CONTENT.title)}</h1></div></header><section class="progress-panel" aria-label="Avance del capítulo"><div class="progress-heading"><span>Mi avance en el capítulo</span><strong id="progress-count">${progressPercent()}%</strong></div><progress id="chapter-progress" max="100" value="${progressPercent()}" aria-label="Avance del capítulo"></progress><p class="question-note" id="progress-description">${progressSummary()}</p><div class="save-state"><span id="save-status" role="status">${escapeHTML(saveMessage)}</span><button id="retry-save" data-action="sync" ${cloudReady?'hidden':''}>Reintentar sincronización</button></div><div class="hero-actions">${COURSE_ID===18?'<a class="button secondary" href="#heart-lab">Explorar el corazón 3D</a>':''}${P.readingItem>0?`<button class="button secondary" data-action="resume" data-index="${P.readingItem}">Retomar lectura</button>`:''}<a class="button" href="#activities">Ir a la práctica →</a></div></section><div class="reading-layout">${contents()}<article class="chapter-article"><section class="learning-goals" id="learning-goals"><p class="eyebrow">Antes de empezar</p><h2>¿Qué aprenderás?</h2><ul>${CONTENT.goals.map(g=>`<li><strong>${escapeHTML(g.title)}.</strong> ${escapeHTML(g.text)}</li>`).join('')}</ul>${chronology()}${CONTENT.sourceNote?`<p class="source-note">${escapeHTML(CONTENT.sourceNote)}</p>`:''}</section>${LESSONS.map((_,i)=>lessonView(i)).join('')}<section class="activities-section" id="activities"><div id="activities-list">${practiceView()}</div></section><section class="chapter-finish" id="chapter-finish">${finishContent()}</section></article></div></main><footer class="page-footer">SIN LÍMITES · ${escapeHTML(COURSE_NAME)} · ${escapeHTML(CONTENT.title)}</footer><dialog id="image-dialog" aria-labelledby="image-title"></dialog>`;
+ root.innerHTML=`${header()}<main id="chapter-content"><header class="chapter-hero" id="chapter-top"><div><p class="eyebrow">${escapeHTML(COURSE_NAME)} · Capítulo ${String(CHAPTER_NUMBER).padStart(2,'0')}</p><h1>${escapeHTML(CONTENT.title)}</h1></div></header><section class="progress-panel" aria-label="Avance del capítulo"><div class="progress-heading"><span>Mi avance en el capítulo</span><strong id="progress-count">${progressPercent()}%</strong></div><progress id="chapter-progress" max="100" value="${progressPercent()}" aria-label="Avance del capítulo"></progress><p class="question-note" id="progress-description">${progressSummary()}</p><div class="save-state"><span id="save-status" role="status">${escapeHTML(saveMessage)}</span><button id="retry-save" data-action="sync" ${cloudReady?'hidden':''}>Reintentar sincronización</button></div><div class="hero-actions">${EXPLORATION?`<a class="button secondary" href="#${escapeHTML(EXPLORATION.anchor)}">${escapeHTML(EXPLORATION.label)}</a>`:COURSE_ID===18?'<a class="button secondary" href="#heart-lab">Explorar el corazón 3D</a>':''}${P.readingItem>0?`<button class="button secondary" data-action="resume" data-index="${P.readingItem}">Retomar lectura</button>`:''}<a class="button" href="#activities">Ir a la práctica →</a></div></section><div class="reading-layout">${contents()}<article class="chapter-article"><section class="learning-goals" id="learning-goals"><p class="eyebrow">Antes de empezar</p><h2>¿Qué aprenderás?</h2><ul>${CONTENT.goals.map(g=>`<li><strong>${escapeHTML(g.title)}.</strong> ${escapeHTML(g.text)}</li>`).join('')}</ul>${chronology()}${CONTENT.sourceNote?`<p class="source-note">${escapeHTML(CONTENT.sourceNote)}</p>`:''}</section>${LESSONS.map((_,i)=>lessonView(i)).join('')}<section class="activities-section" id="activities"><div id="activities-list">${practiceView()}</div></section><section class="chapter-finish" id="chapter-finish">${finishContent()}</section></article></div></main><footer class="page-footer">SIN LÍMITES · ${escapeHTML(COURSE_NAME)} · ${escapeHTML(CONTENT.title)}</footer><dialog id="image-dialog" aria-labelledby="image-title"></dialog>`;
  observeReading();
  renderMath(root);
- window.ChapterInteractions?.mount?.(root,{saved:P.heartExploration||{}});
+ window.ChapterInteractions?.mount?.(root,{saved:EXPLORATION?explorationProgress(P.historyExploration):P.heartExploration||{}});
+ if(EXPLORATION&&window.location.hash==='#'+EXPLORATION.anchor)scrollToBlock(EXPLORATION.anchor);
 }
 
 
@@ -177,6 +190,11 @@ window.addEventListener('biology-heart-progress',event=>{
  const visited=Array.isArray(value.visitedParts)?value.visitedParts.filter(x=>typeof x==='string'&&x.length<80).slice(0,30):[];
  const steps=Array.isArray(value.visitedSteps)?value.visitedSteps.filter(n=>Number.isInteger(n)&&n>=0&&n<8):[];
  P.heartExploration={...previous,visitedParts:[...new Set([...(Array.isArray(previous.visitedParts)?previous.visitedParts:[]),...visited])],visitedSteps:[...new Set([...(Array.isArray(previous.visitedSteps)?previous.visitedSteps:[]),...steps])],selectedPart:typeof value.selectedPart==='string'?value.selectedPart.slice(0,80):null,tab:value.tab==='route'?'route':'explore',routeStep:Math.min(30,Math.max(0,Number(value.routeStep)||0)),routeComplete:Boolean(previous.routeComplete||value.routeComplete),view:value.view==='internal'?'internal':'external',updatedMs:Date.now()};
+ saveSoon();
+});
+window.addEventListener('history-exploration-progress',event=>{
+ if(!user||!EXPLORATION||event.detail?.experience!==EXPLORATION.id)return;
+ P.historyExploration=mergeExploration(P.historyExploration,{...event.detail,updatedMs:Date.now()});
  saveSoon();
 });
 root.addEventListener('change',event=>{

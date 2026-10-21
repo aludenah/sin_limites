@@ -23,6 +23,14 @@ window.HISTORY_CONTENT = {
       ],
       "blocks": [
         {
+          "id": "egypt-interactive",
+          "title": "Expedición por el antiguo Egipto",
+          "paragraphs": [
+            "Recorre el Nilo, explora una maqueta de la Gran Pirámide y observa piezas de museo. Cada descubrimiento te ayudará a interpretar cómo vivían y se organizaban las sociedades egipcias."
+          ],
+          "interactive": "egypt-expedition"
+        },
+        {
           "title": "Un valle fértil en el desierto",
           "paragraphs": [
             "Egipto se desarrolló en el noreste de África, sobre todo en el valle y el delta del Nilo. Antes de la regulación moderna del río, sus crecidas depositaban sedimentos y favorecían la fertilidad. El transporte fluvial articulaba regiones y actividades.",
@@ -409,5 +417,10 @@ window.HISTORY_CONTENT = {
       "text": "Relacionar monumentos, escritura y creencias con la vida social."
     }
   ],
-  "assessmentFormat": "practice-10"
+  "assessmentFormat": "practice-10",
+  "exploration": {
+    "id": "egypt-expedition",
+    "anchor": "egypt-expedition",
+    "label": "Iniciar la expedición por Egipto"
+  }
 };

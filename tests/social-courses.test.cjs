@@ -79,7 +79,7 @@ async function validateNavigation(){
 function validateTeacher(){
  const ctx={window:{}};for(const f of appFiles.filter(f=>f.includes('catalog')))vm.runInNewContext(fs.readFileSync(path.join(root,f),'utf8'),ctx);
  const admin=fs.readFileSync(path.join(root,'admin.js'),'utf8');vm.runInNewContext(admin.slice(admin.indexOf('const TRACKED_CHAPTERS='),admin.indexOf('let selectedChapter='))+';window.tracked=TRACKED_CHAPTERS;',ctx);
- assert.equal(Object.keys(ctx.window.tracked).length,45);
+ assert.equal(Object.keys(ctx.window.tracked).length,46);
  for(const c of configs)for(let n=1;n<=6;n++){const t=ctx.window.tracked[`${c.prefix}-capitulo-0${n}`];assert.equal(t.items,10);assert.ok(t.label.startsWith(`${c.name} · Capítulo ${n} ·`));}
  for(const file of ['index.html','admin.html'])for(const c of configs)assert.ok(fs.readFileSync(path.join(root,file),'utf8').includes(`${c.prefix}-catalog.js`));
 }

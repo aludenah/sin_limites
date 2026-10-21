@@ -115,7 +115,7 @@ function structure(){
  const html=read(id+'.html');for(const file of [...chapterFiles,'practice-bank.js','chapter-practice.js'])assert.ok(html.includes(file));assert.match(html,/katex@0.16.22/);
  assert.deepEqual(fs.readdirSync(root).filter(f=>/^fisica-capitulo-\d+\.html$/.test(f)).sort(),['fisica-capitulo-01.html','fisica-capitulo-02.html',id+'.html']);
  const admin=read('admin.js');vm.runInNewContext(admin.slice(admin.indexOf('const TRACKED_CHAPTERS='),admin.indexOf('let selectedChapter='))+';window.tracked=TRACKED_CHAPTERS;',ctx);
- assert.equal(Object.keys(ctx.window.tracked).length,45);assert.equal(ctx.window.tracked[id].items,10);assert.match(ctx.window.tracked[id].label,/Capítulo 16/);
+ assert.equal(Object.keys(ctx.window.tracked).length,46);assert.equal(ctx.window.tracked[id].items,10);assert.match(ctx.window.tracked[id].label,/Capítulo 16/);
 }
 
 function circuitInteraction(){

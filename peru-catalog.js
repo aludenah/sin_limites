@@ -249,3 +249,5 @@ window.PERU_CHAPTERS=[
     "assessmentFormat": "practice-10"
   }
 ];
+
+window.PERU_CHAPTERS.push({number:9,title:"Incas",intro:"Explora el Tahuantinsuyo, sigue una misión de chasqui y descubre cómo se articulaba la sociedad inca.",progressId:"historia-del-peru-capitulo-09",legacySources:[],items:6,format:"reading",practiceCount:10,itemLabel:"problemas",assessmentFormat:"practice-10"});

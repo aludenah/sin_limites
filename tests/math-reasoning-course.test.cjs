@@ -109,10 +109,10 @@ function structure(){
   const strings=[JSON.stringify(c),JSON.stringify(questions(n))];for(const s of strings){const opens=(s.match(/\\\\\(/g)||[]).length,closes=(s.match(/\\\\\)/g)||[]).length;assert.equal(opens,closes,'All inline formula delimiters close');formulas+=opens;}
  }
  assert.equal(examples,30);assert.ok(formulas>100);assert.equal(used.size,39,'Every authored figure is used');assert.ok(!fs.existsSync(path.join(root,'razonamiento-matematico-capitulo-07.html')));
- const admin=fs.readFileSync(path.join(root,'admin.js'),'utf8');vm.runInNewContext(admin.slice(admin.indexOf('const TRACKED_CHAPTERS='),admin.indexOf('let selectedChapter='))+';window.tracked=TRACKED_CHAPTERS;',ctx);assert.equal(Object.keys(ctx.window.tracked).length,45);for(let n=1;n<=6;n++)assert.equal(ctx.window.tracked[`razonamiento-matematico-capitulo-0${n}`].items,10);
+ const admin=fs.readFileSync(path.join(root,'admin.js'),'utf8');vm.runInNewContext(admin.slice(admin.indexOf('const TRACKED_CHAPTERS='),admin.indexOf('let selectedChapter='))+';window.tracked=TRACKED_CHAPTERS;',ctx);assert.equal(Object.keys(ctx.window.tracked).length,46);for(let n=1;n<=6;n++)assert.equal(ctx.window.tracked[`razonamiento-matematico-capitulo-0${n}`].items,10);
 }
 async function integration(){
- const home=harness(appFiles);await home.signIn({uid:'student'});home.run("selectStudyMode('free');openCourse(2)");assert.match(home.elements.get('app').innerHTML,/Razonamiento Matemático: 24 capítulos; contenido desarrollado del 1 al 6/);assert.match(home.elements.get('app').innerHTML,/figuras matemáticas en los enunciados/);
+ const home=harness(appFiles);await home.signIn({uid:'student'});home.run("selectStudyMode('free');openCourse(2)");assert.match(home.elements.get('app').innerHTML,/Razonamiento Matemático: 24 capítulos; contenido desarrollado del 1 al 6/);assert.match(home.elements.get('app').innerHTML,/href="razonamiento-matematico-capitulo-01\.html/);
  for(let n=1;n<=6;n++){
   const id=`razonamiento-matematico-capitulo-0${n}`;home.run(`setTopic(${n-1})`);assert.equal(home.redirects.at(-1),id+'.html?v=20260918-social1');
   const direct=harness(chapterFiles(n));await direct.signIn({uid:'new'});assert.equal(direct.redirects.at(-1),`index.html?chapter=${id}&v=20260918-social1`);
