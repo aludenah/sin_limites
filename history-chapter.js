@@ -268,7 +268,7 @@ window.addEventListener('biology-heart-progress',event=>{
  const value=event.detail||{},previous=P.heartExploration||{};
  const visited=Array.isArray(value.visitedParts)?value.visitedParts.filter(x=>typeof x==='string'&&x.length<80).slice(0,30):[];
  const steps=Array.isArray(value.visitedSteps)?value.visitedSteps.filter(n=>Number.isInteger(n)&&n>=0&&n<8):[];
- P.heartExploration={...previous,visitedParts:[...new Set([...(Array.isArray(previous.visitedParts)?previous.visitedParts:[]),...visited])],visitedSteps:[...new Set([...(Array.isArray(previous.visitedSteps)?previous.visitedSteps:[]),...steps])],selectedPart:typeof value.selectedPart==='string'?value.selectedPart.slice(0,80):null,tab:value.tab==='route'?'route':'explore',routeStep:Math.min(30,Math.max(0,Number(value.routeStep)||0)),routeComplete:Boolean(previous.routeComplete||value.routeComplete),view:value.view==='internal'?'internal':'external',presentation:value.presentation==='section'?'section':'model',updatedMs:Date.now()};
+ P.heartExploration={...previous,visitedParts:[...new Set([...(Array.isArray(previous.visitedParts)?previous.visitedParts:[]),...visited])],visitedSteps:[...new Set([...(Array.isArray(previous.visitedSteps)?previous.visitedSteps:[]),...steps])],selectedPart:typeof value.selectedPart==='string'?value.selectedPart.slice(0,80):null,tab:value.tab==='route'?'route':'explore',routeStep:Math.min(30,Math.max(0,Number(value.routeStep)||0)),routeComplete:Boolean(previous.routeComplete||value.routeComplete),view:value.view==='internal'?'internal':'external',presentation:value.presentation==='section'?'section':'model',sectionType:['frontal','right','left','transverse'].includes(value.sectionType)?value.sectionType:'frontal',updatedMs:Date.now()};
  saveSoon();
 });
 window.addEventListener('history-exploration-progress',event=>{
@@ -334,3 +334,4 @@ function refreshStudyMode(){
 }
 window.addEventListener('pageshow',refreshStudyMode);
 window.addEventListener('storage',event=>{if(user&&window.StudyMode&&event.key===window.StudyMode.key(user.uid))refreshStudyMode();});
+

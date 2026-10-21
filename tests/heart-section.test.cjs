@@ -71,9 +71,9 @@ function sectionRenderScheduling(){
  h.a.visible=true;h.a.flow=false;h.a.dirty=0;h.a.flowDirty=false;const scheduled=h.getFrame();h.api.draw(h.a,1100);assert.equal(h.getFrame(),scheduled,'A paused stationary section schedules no perpetual frames');
 }
 
-function sectionHarness(){
+function sectionHarness(type="frontal"){
  const context={window:{},module:{exports:{}}};vm.runInNewContext(read('heart-section.js'),context,{filename:'heart-section.js'});
- const api=context.window.HeartSection,markup=api.render(),nodes=[];
+ const api=context.window.HeartSection,markup=api.render(type),nodes=[];
  for(const match of markup.matchAll(/<([a-z][\w-]*)\b([^>]*)>/gi)){
   const attrs=new Map();for(const [,name,value]of match[2].matchAll(/([^\s=<>]+)="([^"]*)"/g))attrs.set(name,value);
   const node={tag:match[1],attributes:attrs,classList:classList(),style:{},getAttribute:key=>attrs.get(key)??null,setAttribute(key,value){attrs.set(key,String(value));},matches(selector){const m=selector.match(/^\[([^\]=]+)(?:="([^"]*)")?\]$/);return Boolean(m)&&attrs.has(m[1])&&(m[2]===undefined||attrs.get(m[1])===m[2]);}};
@@ -110,19 +110,49 @@ function anatomicalSection(){
   const bright=h.paths.filter(node=>node.getAttribute('opacity')==='.95').map(node=>Number(node.getAttribute('data-bh-section-path')));assert.deepEqual(bright,expectedPaths[step]);
  }
  api.update(svg,{tab:'route',step:1,flow:true});const particle=h.particles[2];api.animate(svg,100);const before=particle.getAttribute('cx');api.animate(svg,1000);assert.notEqual(particle.getAttribute('cx'),before,'A running route advances its particle');
- api.update(svg,{tab:'route',step:1,flow:false});const paused=particle.getAttribute('cx');api.animate(svg,2000);assert.equal(particle.getAttribute('cx'),paused,'A paused route cannot advance particles');assert.equal(particle.getAttribute('visibility'),'hidden');
+ api.update(svg,{tab:'route',step:1,flow:false});const paused=particle.getAttribute('cx');api.animate(svg,2000);assert.equal(particle.getAttribute('cx'),paused,'A paused route cannot advance particles');assert.equal(particle.getAttribute('visibility'),'visible','Pause freezes the current blood particle for inspection');
  api.update(svg,{tab:'explore',selectedPart:'left-ventricle',flow:true});assert.deepEqual(h.parts.filter(node=>node.classList.contains('is-active')).map(node=>node.getAttribute('data-bh-section-part')),['left-ventricle']);assert.ok(h.particles.every(node=>node.getAttribute('visibility')==='hidden'),'Exploration does not pretend blood crosses all routes simultaneously');
  assert.doesNotThrow(()=>api.update(svg,{tab:'route',step:NaN,selectedPart:'<script>',flow:'true'}));assert.doesNotThrow(()=>api.animate(svg,Infinity));
  const html=read('biologia-capitulo-11.html');assert.ok(html.indexOf('heart-section.js')>=0);assert.ok(html.indexOf('heart-section.js')<html.indexOf('heart-3d.js'),'The section is available before the viewer mounts');
+}
+
+function atlasAndPulsatileFlow(){
+ const h=sectionHarness(),{api,svg}=h;
+ assert.deepEqual(Object.keys(api.views),['frontal','right','left','transverse']);
+ for(const type of Object.keys(api.views)){
+  const view=sectionHarness(type);assert.equal(view.svg.getAttribute('data-bh-section-type'),type);
+  assert.match(view.markup,/esquemática/);assert.match(view.markup,/Músculos|papilares|Pared ventricular/);
+ }
+ const r=sectionHarness('right'),l=sectionHarness('left'),t=sectionHarness('transverse');
+ assert.equal(r.parts.some(n=>n.getAttribute('data-bh-section-part')==='left-ventricle'),false);
+ assert.equal(l.parts.some(n=>n.getAttribute('data-bh-section-part')==='right-ventricle'),false);
+ assert.equal(t.paths.length,0,'Transverse blood flow crosses the slice plane, never the septum');
+ assert.equal(t.svg.querySelectorAll('[data-bh-through]').length,2);
+ assert.match(t.markup,/Las válvulas quedan fuera/);
+ api.update(svg,{mode:'cycle',flow:true,speed:1,tab:'explore'});
+ const bright=()=>h.paths.filter(n=>n.getAttribute('opacity')==='.95').map(n=>Number(n.getAttribute('data-bh-section-path')));
+ assert.deepEqual(bright(),[0,1,2,5,6,7,8,9],'Filling has AV flow and venous return, with no arterial ejection');
+ api.animate(svg,3200);assert.deepEqual(bright(),[0,1,5,6,7,8],'Isovolumic contraction closes all four valves');
+ api.animate(svg,4200);assert.deepEqual(bright(),[0,1,3,4,5,6,7,8,10],'Ejection opens outflow without an AV shortcut');
+ for(const node of svg.querySelectorAll('[data-bh-section-valve]')){
+  const n=Number(node.getAttribute('data-bh-section-valve'));assert.equal(node.getAttribute('data-bh-valve-open'),String([2,4].includes(n)));
+ }
+ api.animate(svg,6400);assert.deepEqual(bright(),[0,1,5,6,7,8],'Relaxation has no ventricular throughflow');
+ assert.equal(api.phaseAt(2100,1).id,'filling');assert.equal(api.phaseAt(4200,1).id,'ejection');assert.equal(api.phaseAt(4200,.5).id,'filling');assert.equal(api.phaseAt(Infinity,Infinity).id,'filling');
+ api.update(svg,{mode:'cycle',flow:false});const before=h.particles[0].getAttribute('cx');api.animate(svg,9000);assert.equal(h.particles[0].getAttribute('cx'),before);assert.ok(h.particles.some(n=>n.getAttribute('visibility')==='visible'),'Paused cycle preserves visible blood for inspection');
+ for(const side of ['right','left']){
+  const v=sectionHarness(side);v.api.update(v.svg,{mode:'cycle',flow:true});v.api.animate(v.svg,4200);
+  const expected=side==='right'?3:3;assert.equal(v.paths[expected].getAttribute('opacity'),'.95');
+ }
 }
 
 async function presentationPersistence(){
  const files=['biologia-capitulo-11-practice.js','biologia-catalog.js','history-progress.js','biologia-capitulo-11-data.js','history-chapter.js'];
  const local=new Map(),cloud=new Map(),h=chapterHarness(files,{local,cloud});h.run("window.StudyMode.choose('section-reader','free')");await h.signIn({uid:'section-reader'});await h.run("window.StudyMode.save('section-reader',db)");
  const event=detail=>h.events.get('biology-heart-progress')({detail});
- event({presentation:'section',view:'internal',tab:'route',routeStep:5,selectedPart:'left-ventricle',visitedParts:['left-ventricle'],visitedSteps:[1,5]});await h.run('persist()');
- let record=cloud.get('users/section-reader/progress/biologia-capitulo-11');assert.equal(record.heartExploration.presentation,'section');assert.equal(record.heartExploration.view,'internal');assert.equal(record.percent,0,'Section exploration does not count as practice mastery');
- const fresh=chapterHarness(files,{cloud});await fresh.signIn({uid:'section-reader'});assert.equal(fresh.run('P.heartExploration.presentation'),'section');assert.equal(fresh.run('P.heartExploration.routeStep'),5);
+ event({presentation:'section',sectionType:'left',view:'internal',tab:'route',routeStep:5,selectedPart:'left-ventricle',visitedParts:['left-ventricle'],visitedSteps:[1,5]});await h.run('persist()');
+ let record=cloud.get('users/section-reader/progress/biologia-capitulo-11');assert.equal(record.heartExploration.presentation,'section');assert.equal(record.heartExploration.sectionType,'left');assert.equal(record.heartExploration.view,'internal');assert.equal(record.percent,0,'Section exploration does not count as practice mastery');
+ const fresh=chapterHarness(files,{cloud});await fresh.signIn({uid:'section-reader'});assert.equal(fresh.run('P.heartExploration.presentation'),'section');assert.equal(fresh.run('P.heartExploration.sectionType'),'left');assert.equal(fresh.run('P.heartExploration.routeStep'),5);
  h.setOffline(true);event({presentation:'model',view:'external',tab:'explore',routeStep:0,visitedParts:['right-atrium'],visitedSteps:[0]});await h.run('persist()');assert.equal(JSON.parse(local.get('sin-limites:section-reader:biologia-capitulo-11')).pending,true);
  record=cloud.get('users/section-reader/progress/biologia-capitulo-11');record.heartExploration.visitedParts.push('ascending-aorta');cloud.set('users/section-reader/progress/biologia-capitulo-11',record);
  h.setOffline(false);await h.run('retrySync()');record=cloud.get('users/section-reader/progress/biologia-capitulo-11');assert.equal(record.heartExploration.presentation,'model');assert.deepEqual(new Set(record.heartExploration.visitedParts),new Set(['left-ventricle','right-atrium','ascending-aorta']));
@@ -130,4 +160,5 @@ async function presentationPersistence(){
  h.run("window.StudyMode.choose('other-reader','free')");await h.signIn({uid:'other-reader'});assert.equal(h.run("P.heartExploration?.presentation||'model'"),'model');
 }
 
-(async()=>{anatomicalSection();sectionRenderScheduling();await fullscreenLifecycle();await presentationPersistence();console.log('PASS: Anterior heart section, four valves, connected route steps, paused flow, fullscreen lifecycle, late-request cleanup and presentation persistence.');})().catch(error=>{console.error(error);process.exitCode=1;});
+(async()=>{anatomicalSection();atlasAndPulsatileFlow();sectionRenderScheduling();await fullscreenLifecycle();await presentationPersistence();console.log('PASS: Anterior heart section, four valves, connected route steps, paused flow, fullscreen lifecycle, late-request cleanup and presentation persistence.');})().catch(error=>{console.error(error);process.exitCode=1;});
+

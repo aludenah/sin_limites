@@ -153,3 +153,46 @@
 
 /* View choices stay reachable while the 3D model is loading. */
 .bh-heart .bh-view-switch{z-index:6}
+
+/* Vector atlas: four schematic cuts and a synchronized cardiac cycle. */
+.bh-atlas-controls{padding:16px 16px 5px;background:linear-gradient(145deg,#112e45,#0b2135);border:1px solid #375166;border-radius:14px;margin:4px 8px 12px;color:#e6f2f6}
+.bh-cut-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-bottom:14px}
+.bh-heart .bh-cut-choices button{min-height:44px;border:1px solid #4a667b;background:#19374d;border-radius:9px;color:#cbdde7;padding:9px 10px;font-size:12px!important;font-weight:650;line-height:1.4}
+.bh-heart .bh-cut-choices button[aria-pressed=true]{border-color:#91e1df;background:#c1eee8;color:#123f4d;box-shadow:inset 0 0 0 1px #91e1df}
+.bh-blood-controls{display:flex;align-items:end;gap:10px;flex-wrap:wrap}
+.bh-blood-controls button{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:46px;padding:10px 14px;border-radius:9px;border:1px solid #fcbe9f;background:#f7c4a6;color:#382c35;font-weight:800;font-size:13px!important}
+.bh-blood-controls button svg{width:18px;height:18px;flex:none}
+.bh-blood-controls label{display:grid;gap:5px;font-size:11px;font-weight:650;flex:1;min-width:140px;color:#bcd3df}
+.bh-blood-controls select{width:100%;min-height:44px;padding:8px 24px 8px 10px;border:1px solid #55768b;border-radius:8px;background:#0c2235;color:#eff9ff;font-family:inherit;font-size:12px}
+.bh-cycle-status{display:flex;align-items:center;gap:8px;margin:15px 0 10px;font-size:12px;line-height:1.5;min-height:38px}
+.bh-cycle-status strong{font-size:12px!important;color:#e6f2f6;font-weight:650;flex:1}
+.bh-cycle-status [data-bh-blood-state]{font-size:10px;border:1px solid #496579;border-radius:20px;padding:3px 8px;color:#b9d7de;white-space:nowrap}
+.bh-cycle-dot{width:8px;height:8px;flex:none;border-radius:50%;background:#7ee9d0;box-shadow:0 0 0 4px #7ee9d014}
+.bh-heart .bh-blood-key{display:flex;align-items:center;flex-wrap:wrap;gap:8px 15px;margin:0 0 8px;font-size:11px;line-height:1.6;color:#bdcfda}
+.bh-blood-key span{display:inline-flex;align-items:center;gap:5px}
+.bh-blood-key i{width:15px;height:7px;border-radius:4px;display:inline-block}
+.bh-blue-key{background:#69d8f2}.bh-red-key{background:#ff898e}
+.bh-blood-key small{display:block;flex-basis:100%;font-size:10px;color:#99b3c4;line-height:1.6}
+.bh-section-svg{background:#0b2135}
+.bh-section-svg [data-bh-section-part]{transition:opacity .18s}
+.bh-is-fullscreen.bh-section-mode .bh-section-canvas{height:auto;max-height:none;display:block;padding-bottom:14px}
+.bh-is-fullscreen .bh-section-scroll{height:auto;max-height:68vh;max-height:68dvh}
+.bh-is-fullscreen .bh-section-scroll:not(.is-zoomed) .bh-section-svg{height:auto!important;max-height:none;min-width:100%}
+.bh-is-fullscreen .bh-section-scroll.is-zoomed{height:65vh;height:65dvh;max-height:none}
+.bh-heart .bh-section-active .bh-atlas-controls{display:block}
+.bh-blood-controls select:focus-visible,.bh-cut-choices button:focus-visible,.bh-blood-controls button:focus-visible{outline:3px solid #f5d2af;outline-offset:3px}
+@media(min-width:961px){
+ .bh-is-fullscreen .bh-section-heading .bh-anatomy-note{display:none}
+ .bh-is-fullscreen .bh-section-heading{padding:10px 24px}
+ .bh-is-fullscreen .bh-orientation-summary{margin-top:5px;font-size:12px}
+ .bh-is-fullscreen .bh-atlas-controls{padding:10px 12px 3px;margin-bottom:5px}
+ .bh-is-fullscreen .bh-cut-choices{margin-bottom:8px}
+ .bh-is-fullscreen .bh-cycle-status{margin:7px 0}
+ .bh-is-fullscreen .bh-blood-key small{display:none}
+ .bh-is-fullscreen .bh-section-zoom{padding-top:6px;padding-bottom:6px}
+ .bh-is-fullscreen .bh-section-scroll:not(.is-zoomed){height:56vh;height:56dvh;max-height:none}
+ .bh-is-fullscreen .bh-section-scroll:not(.is-zoomed) .bh-section-svg{height:100%!important;width:auto!important;min-width:0!important;max-width:100%!important;object-fit:contain}
+}
+@media(min-width:1200px){.bh-cut-choices{grid-template-columns:repeat(4,minmax(0,1fr))}.bh-is-fullscreen .bh-blood-controls{flex-wrap:nowrap}}
+@media(max-width:600px){.bh-atlas-controls{padding:12px 10px 5px;margin:4px 5px 8px}.bh-blood-controls{gap:8px}.bh-blood-controls button{flex-basis:100%}.bh-blood-controls label{min-width:120px}.bh-cycle-status strong{font-size:11px!important}.bh-cycle-status{gap:7px}.bh-heart .bh-cut-choices button{font-size:11px!important}.bh-blood-key small{font-size:10px}.bh-heart .bh-section-heading h4{font-size:17px}}
+
