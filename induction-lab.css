@@ -1,0 +1,410 @@
+/* Del movimiento a la electricidad · SIN LÍMITES */
+.il-lab {
+  --il-ink: #21334b;
+  --il-muted: #61738b;
+  --il-line: #d6e1e8;
+  --il-navy: #0b1c30;
+  --il-cyan: #75e4ef;
+  --il-teal: #0a706f;
+  --il-copper: #e4a16c;
+  position: relative;
+  isolation: isolate;
+  min-width: 0;
+  max-width: 100%;
+  margin: 28px 0;
+  border: 1px solid #cbdce4;
+  border-radius: 24px;
+  background: #f4f8fa;
+  color: var(--il-ink);
+  overflow: hidden;
+  font: 14px/1.7 Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  scroll-margin-top: 96px;
+  box-shadow: 0 20px 50px #1a3c5210;
+}
+.il-lab *, .il-lab *::before, .il-lab *::after { box-sizing: border-box; min-width: 0; }
+.il-lab [hidden] { display: none !important; }
+.il-lab p, .il-lab h3, .il-lab h4, .il-lab h5, .il-lab figure { margin: 0; }
+.il-lab p { font-size: 14px; line-height: 1.8; }
+.il-lab h4 { font-size: 27px; line-height: 1.25; font-weight: 750; letter-spacing: -.035em; }
+.il-lab h5 { font-size: 21px; line-height: 1.3; font-weight: 750; letter-spacing: -.025em; }
+.il-lab button, .il-lab select, .il-lab input { font: inherit; }
+.il-lab button {
+  min-height: 44px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  line-height: 1.5;
+  transition: background-color .16s, color .16s, border-color .16s, box-shadow .16s;
+}
+.il-lab button:disabled { cursor: default; opacity: .5; }
+.il-lab button:focus-visible, .il-lab input:focus-visible, .il-lab select:focus-visible, .il-lab [tabindex]:focus-visible {
+  outline: 3px solid #198e9b;
+  outline-offset: 4px;
+}
+.il-lab button:focus:not(:focus-visible) { outline: none; }
+.il-lab a { color: #09676e; text-underline-offset: 3px; }
+.il-lab input[type=range] {
+  display: block;
+  width: 100%;
+  height: 44px;
+  margin: 4px 0 0;
+  padding: 0;
+  accent-color: #167f83;
+  cursor: pointer;
+  touch-action: pan-y;
+}
+.il-lab select, .il-lab input[type=number] {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-height: 44px;
+  margin-top: 7px;
+  padding: 9px 11px;
+  border: 1px solid #bdced8;
+  border-radius: 8px;
+  background: #fff;
+  color: #29445a;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.il-lab svg { display: inline-block; width: 18px; height: 18px; vertical-align: middle; flex: none; }
+.il-lab .il-kicker { font-size: 11px !important; font-weight: 800; line-height: 1.7 !important; letter-spacing: .13em; text-transform: uppercase; }
+.il-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 16px;
+  padding: 34px 32px 30px;
+  background: radial-gradient(ellipse at 95% 10%, #0b728d55, transparent 65%), linear-gradient(115deg, #0b1a2c, #123148);
+  color: #eaf7fc;
+  overflow: hidden;
+}
+.il-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(#a8d5e50a 1px, transparent 1px), linear-gradient(90deg, #a8d5e50a 1px, transparent 1px);
+  background-size: 34px 34px;
+  pointer-events: none;
+}
+.il-hero > * { position: relative; z-index: 1; }
+.il-hero .il-kicker { margin-bottom: 18px; color: #94c6d5; }
+.il-lab .il-hero h3 { color: #f0f7fb; font-size: 46px !important; line-height: 1.07 !important; font-weight: 650 !important; letter-spacing: -.055em; margin: 0 0 20px !important; }
+.il-hero h3 em { font-family: Georgia, 'Times New Roman', serif; color: #8fe7e7; font-weight: 400; letter-spacing: -.035em; }
+.il-hero p { max-width: 430px; color: #b9d0de; }
+.il-lab .il-hero-art { display: block; width: 100%; height: auto; max-width: 100%; aspect-ratio: 460 / 300; overflow: visible; }
+.il-hero-tags, .il-tags { display: flex; gap: 7px; flex-wrap: wrap; margin-top: 20px; }
+.il-hero-tags span, .il-tags span { padding: 5px 8px; border: 1px solid #a7d2de38; border-radius: 5px; font-size: 11px; color: #b4d4e0; line-height: 1.6; }
+.il-progress { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 11px; padding: 16px 26px; background: #0d2236; border-top: 1px solid #8ab6cd26; color: #a7c4d5; font-size: 12px; }
+.il-progress > span { font-size: 11px; font-weight: 750; letter-spacing: .08em; }
+.il-progress strong, .il-progress b { color: #94e7df; font-weight: 650; font-size: 14px; font-variant-numeric: tabular-nums; }
+.il-progress progress { appearance: none; flex-basis: 100%; width: 100%; height: 4px; margin: 0; border: 0; border-radius: 4px; background: #29475b; color: #76d9d6; accent-color: #76d9d6; overflow: hidden; }
+.il-progress progress::-webkit-progress-bar { background: #29475b; }
+.il-progress progress::-webkit-progress-value { background: linear-gradient(90deg, #62c5da, #a0e7ce); }
+.il-progress progress::-moz-progress-bar { background: #76d9d6; }
+.il-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 7px; padding: 12px 16px; background: #e8f0f4; border-bottom: 1px solid #cddce5; }
+.il-lab .il-tabs button { display: flex; align-items: center; justify-content: center; gap: 7px; padding: 10px 8px; min-height: 46px; border-radius: 9px; background: transparent; color: #536d83; font-size: 14px; font-weight: 700; }
+.il-tabs button svg { width: 18px; height: 18px; }
+.il-lab .il-tabs button:hover { background: #d8e8ed; color: #1b5261; }
+.il-lab .il-tabs button[aria-selected=true] { background: #15596b; border-color: #17677a; color: #effcfc; box-shadow: 0 3px 8px #1e52661a; }
+.il-section-intro { padding: 25px 28px; border-bottom: 1px solid var(--il-line); background: #f8fbfc; }
+.il-section-intro .il-kicker { color: #688e9b; margin-bottom: 8px; }
+.il-section-intro h4 { margin-bottom: 11px; }
+.il-section-intro p { max-width: 740px; color: var(--il-muted); }
+.il-layout { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); align-items: start; }
+.il-viewport { position: relative; min-width: 0; background: #0c2035; color: #b9d0e1; overflow: hidden; }
+.il-stage-label { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 18px 20px 0; min-height: 45px; color: #94b7cd; }
+.il-stage-label > span { font-size: 11px; font-weight: 750; letter-spacing: .08em; line-height: 1.6; }
+.il-stage-label > b, .il-stage-label > strong { color: #b9d8e7; font-size: 12px; font-weight: 650; text-align: right; }
+.il-lab .il-stage-svg { display: block; width: 100%; height: auto; max-width: 100%; aspect-ratio: 680 / 390; overflow: hidden; touch-action: pan-y; }
+.il-lab .il-stage-svg [data-il-drag] { cursor: ew-resize; touch-action: pan-y; }
+.il-stage-hint { padding: 0 20px 17px; color: #a5c0d4; text-align: center; font-size: 14px; line-height: 1.7; }
+.il-meters { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; padding: 1px 0; background: #385569; border-top: 1px solid #355166; border-bottom: 1px solid #355166; }
+.il-meters > * { display: flex; flex-direction: column; justify-content: center; gap: 6px; padding: 16px 12px 15px; background: #10273d; text-align: center; }
+.il-meters span, .il-meters small { font-size: 14px; line-height: 1.6; color: #a9c2d2; }
+.il-meters strong, .il-meters b { color: #80e3ed; font-size: 25px; line-height: 1.3; font-weight: 500; font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace; letter-spacing: -.045em; font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
+.il-meters > :nth-child(2) strong, .il-meters > :nth-child(2) b { color: #f3bb84; }
+.il-meters > :nth-child(3) strong, .il-meters > :nth-child(3) b { color: #a5e3bb; }
+.il-plot-section { padding: 20px 18px 18px; background: #0b1c30; }
+.il-plot-section h5 { font-size: 17px; color: #c6e0ec; margin-bottom: 8px; }
+.il-plot-section > p { color: #9ab7ca; font-size: 13px; line-height: 1.75; margin-top: 10px; }
+.il-plot-title, .il-plot-heading { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; margin-bottom: 8px; color: #bdd7e6; font-size: 13px; font-weight: 650; }
+.il-plot-legend, .il-legend { display: flex; gap: 12px; flex-wrap: wrap; color: #a9c6d7; font-size: 12px; line-height: 1.6; }
+.il-plot-legend span, .il-legend span { display: inline-flex; align-items: center; gap: 5px; }
+.il-plot-legend i, .il-legend i { display: inline-block; width: 15px; height: 3px; border-radius: 2px; background: currentColor; }
+.il-lab .il-plot { display: block; width: 100%; max-width: 100%; height: auto; aspect-ratio: auto; overflow: visible; }
+.il-console { min-width: 0; padding: 26px 24px; background: #f8fbfc; border-left: 1px solid #d0dfe7; }
+.il-console > .il-kicker { margin-bottom: 9px; color: #668696; }
+.il-console > h4 { margin-bottom: 21px; color: #2a4a61; }
+.il-control { display: block; margin: 18px 0 0; font-size: 14px; line-height: 1.65; font-weight: 650; color: #526e82; }
+.il-control:first-child { margin-top: 0; }
+.il-control output { float: right; margin-left: 6px; color: #0c6d76; font-family: Consolas, monospace; font-size: 14px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.il-control small { display: block; font-size: 13px; line-height: 1.65; font-weight: 400; color: #708695; }
+.il-control input { clear: both; }
+.il-button-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 16px; }
+.il-lab .il-button-row button { display: flex; flex: 1; align-items: center; justify-content: center; gap: 6px; padding: 10px 8px; border: 1px solid #c6dce2; border-radius: 8px; background: #eaf3f5; color: #326274; font-size: 14px; font-weight: 650; }
+.il-lab .il-button-row button:hover { background: #d9ebee; border-color: #98bdc8; }
+.il-lab .il-button-row button[aria-pressed=true] { background: #d1ece9; border-color: #73afa7; color: #1e655f; }
+.il-lab .il-primary, .il-lab .il-check { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 46px; padding: 11px 12px; border-radius: 8px; background: #127786; border: 1px solid #127786; color: #f0fcfc; font-size: 14px; font-weight: 750; }
+.il-lab .il-primary:hover, .il-lab .il-check:hover { background: #095f71; border-color: #095f71; }
+.il-lab .il-primary[aria-pressed=true] { background: #9b633e; border-color: #9b633e; }
+.il-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+.il-actions > button { flex: 1; }
+.il-lab .il-secondary, .il-lab .il-reset { padding: 10px 12px; background: #eaf1f5; border: 1px solid #c4d7e1; border-radius: 8px; color: #456b80; font-size: 14px; font-weight: 650; }
+.il-discovery { margin-top: 23px; padding: 17px 15px; background: #e8f3f2; border: 1px solid #c6dfdb; border-radius: 10px; color: #3e716f; }
+.il-discovery > span, .il-discovery .il-kicker { display: block; color: #4f827f; margin-bottom: 7px; font-size: 11px; font-weight: 800; letter-spacing: .08em; }
+.il-discovery strong { display: block; color: #236765; font-size: 20px; line-height: 1.4; font-weight: 650; letter-spacing: -.02em; }
+.il-discovery p { color: #537874; margin-top: 9px; font-size: 14px; line-height: 1.8; }
+.il-model-note { margin-top: 18px; color: #687d8f; font-size: 13px; line-height: 1.8; }
+.il-lab .il-model-note p { font-size: 13px; }
+.il-active-mission { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 18px 25px; border-bottom: 1px solid #c6ded7; background: #e5f2ea; color: #356d58; }
+.il-active-mission strong { display: block; font-size: 15px; }
+.il-active-mission p { color: #557d6d; font-size: 14px; }
+.il-active-mission button { background: #f3faf5; border-color: #bad6c6; border-radius: 8px; color: #377456; padding: 9px 11px; font-size: 14px; }
+.il-missions { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); align-items: stretch; background: #f5f9fa; }
+.il-mission { position: relative; padding: 26px 21px 24px; border-right: 1px solid #d8e3e8; }
+.il-mission:last-child { border-right: 0; }
+.il-mission.is-complete { background: #edf7f0; }
+.il-mission-top { display: flex; align-items: center; justify-content: space-between; gap: 9px; margin-bottom: 18px; }
+.il-mission-top > span { color: #9bb6c1; font-family: Georgia, serif; font-size: 36px; line-height: 1; font-weight: 400; }
+.il-mission-top > b, .il-mission-top > strong { color: #698995; font-size: 11px; font-weight: 750; line-height: 1.7; text-align: right; }
+.il-mission.is-complete .il-mission-top > b, .il-mission.is-complete .il-mission-top > strong { color: #3b815f; }
+.il-mission h5 { margin-bottom: 12px; min-height: 55px; color: #365b70; }
+.il-mission > p { color: #647d8d; min-height: 125px; }
+.il-lab .il-prepare { display: flex; justify-content: space-between; align-items: center; gap: 8px; width: 100%; margin: 19px 0 13px; min-height: 46px; padding: 10px 11px; border: 1px solid #c4dce1; border-radius: 8px; background: #e5f1f4; color: #2f6b7a; font-size: 14px; font-weight: 650; text-align: left; }
+.il-lab .il-prepare:hover { background: #d7ebef; border-color: #9bc3cf; }
+.il-lab .il-mission .il-check { margin-top: 11px; }
+.il-mission label { display: block; margin: 15px 0 0; color: #536f80; font-size: 14px; line-height: 1.7; }
+.il-mission select { margin-top: 6px; }
+.il-mission-task { border-top: 1px solid #d5e2e6; padding-top: 15px; margin-top: 16px; }
+.il-feedback { margin-top: 13px; min-height: 45px; color: #84684b; font-size: 14px; line-height: 1.75; }
+.il-feedback.is-correct, .il-feedback.is-success { color: #27714e; }
+.il-feedback.is-error { color: #a04e43; }
+.il-passport { padding: 23px 26px; border-top: 1px solid #d0e1e4; background: #eaf3f5; }
+.il-passport h4, .il-passport h5 { margin-bottom: 11px; color: #426879; }
+.il-passport > p { color: #607c89; font-size: 14px; }
+.il-badges { display: flex; align-items: center; flex-wrap: wrap; gap: 9px; margin-top: 13px; }
+.il-badges > * { display: inline-flex; align-items: center; gap: 7px; padding: 7px 10px; border: 1px solid #c4d9e0; border-radius: 6px; color: #668695; background: #f5f9fa; font-size: 13px; line-height: 1.6; }
+.il-badges .is-complete, .il-badges .is-earned, .il-badges [data-complete=true] { color: #2d7257; border-color: #abd1bd; background: #e1f2e8; }
+.il-badges svg { width: 17px; height: 17px; }
+.il-footnote { padding: 20px 26px 22px; border-top: 1px solid #d2e1e6; background: #f6fafb; color: #687f8e; font-size: 13px; line-height: 1.8; }
+.il-lab .il-footnote p { margin-top: 10px; font-size: 13px; line-height: 1.8; }
+.il-footnote summary { cursor: pointer; color: #496f81; font-size: 14px; font-weight: 650; }
+.il-footnote details + details { margin-top: 12px; }
+.il-sr-only { position: absolute !important; width: 1px !important; height: 1px !important; padding: 0 !important; margin: -1px !important; overflow: hidden !important; clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; border: 0 !important; }
+@supports (overflow: clip) {
+  .il-lab { overflow: clip; }
+}
+@media (min-width: 960px) and (min-height: 1100px) {
+  .il-viewport { position: sticky; top: 84px; }
+}
+@media (min-width: 1200px) {
+  .il-hero { padding: 38px 38px 33px; }
+  .il-lab .il-hero h3 { font-size: 52px !important; }
+  .il-console { padding: 28px 27px; }
+}
+@media (max-width: 959px) {
+  .il-layout { grid-template-columns: minmax(0, 1fr); }
+  .il-console { border-left: 0; border-top: 1px solid #d0dfe7; padding: 27px; }
+  .il-viewport { position: relative; top: auto; }
+  .il-lab .il-stage-svg { max-height: 440px; object-fit: contain; }
+  .il-lab .il-plot { max-height: 225px; }
+  .il-console > h4 { font-size: 28px; margin-bottom: 20px; }
+  .il-hero { grid-template-columns: minmax(0, 1.2fr) minmax(0, .9fr); padding: 29px 27px; }
+  .il-lab .il-hero h3 { font-size: 41px !important; }
+  .il-mission { padding: 24px 17px; }
+  .il-mission h5 { font-size: 20px; min-height: 78px; }
+  .il-mission > p { min-height: 170px; }
+}
+@media (max-width: 720px) {
+  .il-hero { grid-template-columns: minmax(0, 1fr) minmax(0, .75fr); gap: 10px; padding: 28px 24px; }
+  .il-lab .il-hero h3 { font-size: 36px !important; }
+  .il-hero .il-kicker { font-size: 10px !important; letter-spacing: .1em; }
+  .il-hero p { font-size: 14px; }
+  .il-progress { padding: 16px 23px; }
+  .il-section-intro { padding: 25px 24px; }
+  .il-missions { grid-template-columns: minmax(0, 1fr); }
+  .il-mission { padding: 25px 24px; border-right: 0; border-bottom: 1px solid #d8e3e8; }
+  .il-mission:last-child { border-bottom: 0; }
+  .il-mission h5 { font-size: 24px; min-height: 0; }
+  .il-mission > p { min-height: 0; }
+  .il-mission-top { margin-bottom: 13px; }
+  .il-lab .il-prepare { max-width: 360px; }
+  .il-lab .il-mission .il-check { max-width: 360px; }
+  .il-mission label { max-width: 500px; }
+  .il-active-mission { align-items: flex-start; padding: 18px 23px; }
+  .il-active-mission > button { flex-shrink: 0; max-width: 130px; }
+}
+@media (max-width: 520px) {
+  .il-lab { margin: 23px 0; border-radius: 19px; scroll-margin-top: 83px; }
+  .il-hero { display: block; padding: 28px 21px 24px; }
+  .il-lab .il-hero h3 { font-size: 39px !important; line-height: 1.04 !important; margin-bottom: 17px !important; }
+  .il-hero .il-kicker { margin-bottom: 17px; font-size: 10px !important; }
+  .il-hero p { font-size: 14px; max-width: none; }
+  .il-lab .il-hero-art { aspect-ratio: 460 / 230; height: auto; max-height: 190px; margin-top: 17px; object-fit: contain; }
+  .il-hero-tags, .il-tags { margin-top: 16px; gap: 5px; }
+  .il-hero-tags span, .il-tags span { font-size: 11px; padding: 4px 6px; }
+  .il-progress { padding: 15px 19px; gap: 9px; }
+  .il-progress > span { font-size: 10px; }
+  .il-progress strong, .il-progress b { font-size: 13px; }
+  .il-tabs { padding: 9px 8px; gap: 4px; }
+  .il-lab .il-tabs button { gap: 5px; padding: 9px 4px; font-size: 14px; min-height: 45px; }
+  .il-tabs button svg { display: none; }
+  .il-section-intro { padding: 23px 19px; }
+  .il-section-intro h4 { font-size: 25px; }
+  .il-stage-label { padding: 16px 14px 0; gap: 8px; }
+  .il-stage-label > span { font-size: 10px; }
+  .il-stage-label > b, .il-stage-label > strong { font-size: 11px; }
+  .il-lab .il-stage-svg { max-height: none; aspect-ratio: 680 / 390; }
+  .il-stage-hint { padding: 0 15px 16px; font-size: 14px; line-height: 1.75; }
+  .il-meters > * { padding: 13px 5px 12px; gap: 5px; }
+  .il-meters span, .il-meters small { font-size: 14px; line-height: 1.6; }
+  .il-meters strong, .il-meters b { font-size: 21px; letter-spacing: -.06em; }
+  .il-plot-section { padding: 19px 14px 18px; }
+  .il-plot-section h5 { font-size: 17px; }
+  .il-lab .il-plot { aspect-ratio: auto; min-height: 114px; }
+  .il-plot-legend, .il-legend { gap: 7px 12px; font-size: 12px; }
+  .il-plot-section > p { font-size: 14px; }
+  .il-console { padding: 24px 19px; }
+  .il-console > h4 { font-size: 26px; margin-bottom: 19px; }
+  .il-control { margin-top: 19px; font-size: 14px; }
+  .il-control output { font-size: 14px; }
+  .il-control small { font-size: 14px; }
+  .il-button-row { gap: 7px; }
+  .il-lab .il-button-row button { padding: 10px 7px; font-size: 14px; }
+  .il-discovery { padding: 16px 13px; }
+  .il-discovery strong { font-size: 20px; }
+  .il-model-note, .il-lab .il-model-note p { font-size: 14px; }
+  .il-active-mission { display: block; padding: 17px 19px; }
+  .il-active-mission > button { margin-top: 12px; max-width: none; }
+  .il-mission { padding: 24px 19px; }
+  .il-mission h5 { font-size: 23px; }
+  .il-lab .il-prepare, .il-lab .il-mission .il-check { max-width: none; }
+  .il-feedback { min-height: 0; font-size: 14px; }
+  .il-passport { padding: 23px 19px; }
+  .il-badges { gap: 8px; }
+  .il-badges > * { font-size: 13px; }
+  .il-footnote { padding: 20px 19px; font-size: 14px; }
+  .il-lab .il-footnote p { font-size: 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .il-lab * { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
+}
+
+/* Experiment controls and persistent evidence. */
+.il-lab [data-il-action=polarity] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 7px;
+  width: 100%;
+  padding: 10px 11px;
+  margin: 7px 0 20px;
+  border: 1px solid #ccd9e5;
+  border-radius: 8px;
+  background: #eaf0f7;
+  color: #3d6487;
+  font-size: 14px;
+  font-weight: 650;
+}
+.il-lab [data-il-action=polarity]:hover { background: #dde9f4; border-color: #9eb9d0; }
+.il-lab [data-il-action=polarity] > span { margin-left: auto; font: 600 14px/1.5 Consolas, monospace; color: #7b6179; }
+.il-lab .il-switch {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 2px;
+  width: 100%;
+  min-height: 66px;
+  margin: 16px 0 19px;
+  padding: 11px 42px 11px 13px;
+  position: relative;
+  border: 1px solid #d1dce5;
+  border-radius: 9px;
+  background: #edf2f6;
+  color: #62778a;
+  text-align: left;
+  font-size: 15px;
+  font-weight: 700;
+}
+.il-switch::after { content: ''; position: absolute; right: 15px; top: 25px; width: 13px; height: 13px; border: 2px solid #8ba2b4; border-radius: 50%; background: #f7fafc; }
+.il-switch span { display: block; font-size: 14px; font-weight: 400; color: #768b9c; }
+.il-lab .il-switch:hover { background: #e4ecf1; border-color: #a7bdcb; }
+.il-lab .il-switch.is-closed { border-color: #a8d0c6; background: #e7f4ed; color: #2a725a; }
+.il-switch.is-closed span { color: #508672; }
+.il-switch.is-closed::after { background: #459b7c; border-color: #87baa5; box-shadow: 0 0 0 4px #c9e5d8; }
+.il-lab .il-evidence { min-height: 84px; padding: 13px 12px; border: 1px solid #d2e1e7; border-radius: 8px; background: #edf4f7; color: #66808f; font-size: 14px; line-height: 1.8; }
+.il-mission.is-complete .il-evidence { border-color: #c2ddcc; background: #e2f1e7; color: #4d7e60; }
+.il-panel > .il-discovery { margin: 0; padding: 24px 27px; border: 0; border-top: 1px solid #cddfdc; border-radius: 0; }
+.il-panel > .il-discovery p { max-width: 720px; }
+.il-lab .il-discovery [data-il-action=tab] { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 10px 13px; margin-top: 16px; border: 1px solid #b7d5d0; border-radius: 8px; background: #f4fbf8; color: #316f67; font-size: 14px; font-weight: 650; }
+.il-lab .il-discovery [data-il-action=tab]:hover { background: #d5ebe3; border-color: #8cbcaf; }
+.il-badges > article { flex: 1; min-width: 190px; padding: 13px 12px; }
+.il-badges > article > span { font: 400 26px/1 Georgia, serif; color: #a2b9c5; }
+.il-badges > article > div { flex: 1; }
+.il-badges strong { display: block; font-size: 14px; line-height: 1.6; color: #66808f; font-weight: 650; }
+.il-badges small { display: block; font-size: 13px; color: #8299a5; line-height: 1.6; }
+.il-badges article.is-complete strong { color: #346d54; }
+.il-badges article.is-complete small { color: #5d8972; }
+.il-badges article.is-complete > span { color: #6d9e84; }
+.il-lab .il-passport .il-footnote { padding: 15px 0 0; margin-top: 18px; border-top: 1px solid #cedfe4; background: transparent; color: #6a8391; font-size: 14px; line-height: 1.8; }
+.il-lab .il-plot-note { margin-top: 13px; color: #a1bfce; font-size: 14px; }
+@media (max-width: 720px) {
+  .il-lab .il-evidence { min-height: 0; }
+  .il-badges > article { flex-basis: 100%; }
+}
+@media (max-width: 520px) {
+  .il-panel > .il-discovery { padding: 24px 19px; }
+  .il-badges small { font-size: 14px; }
+  .il-plot-heading { display: block; }
+  .il-plot-heading strong { display: block; font-size: 14px; }
+  .il-plot-heading > span { display: block; margin-top: 5px; font-size: 13px; line-height: 1.7; color: #93b3c5; }
+}
+
+/* Keep the experiment controls beside its visible result. */
+.il-stage-actions {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+  align-items: stretch;
+  gap: 9px;
+  padding: 13px 16px 15px;
+  background: #10283d;
+  border-top: 1px solid #3e62763d;
+}
+.il-lab .il-stage-actions .il-primary {
+  width: 100%;
+  min-height: 53px;
+  padding: 10px 11px;
+  border-color: #428b9b;
+  background: #196c83;
+  color: #edfaff;
+  font-size: 14px;
+}
+.il-lab .il-stage-actions .il-primary:hover { background: #247f94; border-color: #73bbca; }
+.il-lab .il-stage-actions .il-primary[aria-pressed=true] { background: #94613d; border-color: #c59160; color: #fff0dc; }
+.il-lab .il-stage-actions .il-switch {
+  width: 100%;
+  min-height: 53px;
+  margin: 0;
+  padding: 9px 29px 9px 10px;
+  border-color: #547181;
+  background: #263e51;
+  color: #cbdae4;
+  font-size: 14px;
+  line-height: 1.45;
+}
+.il-stage-actions .il-switch span { color: #a8c2d2; font-size: 13px; line-height: 1.5; }
+.il-stage-actions .il-switch::after { right: 10px; top: calc(50% - 5px); width: 10px; height: 10px; border-color: #84a2b6; background: #3b5569; }
+.il-lab .il-stage-actions .il-switch:hover { background: #314d63; border-color: #7899ad; }
+.il-lab .il-stage-actions .il-switch.is-closed { color: #c7f2df; background: #164c46; border-color: #477f6d; }
+.il-stage-actions .il-switch.is-closed span { color: #9dcbbb; }
+.il-stage-actions .il-switch.is-closed::after { background: #93d1af; border-color: #77b895; box-shadow: 0 0 0 3px #236254; }
+@media (max-width: 520px) {
+  .il-stage-actions { gap: 7px; padding: 12px 12px 14px; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .il-lab .il-stage-actions .il-primary { gap: 5px; min-height: 62px; padding: 10px 7px; font-size: 14px; }
+  .il-stage-actions .il-primary svg { width: 15px; height: 15px; }
+  .il-lab .il-stage-actions .il-switch { min-height: 62px; padding: 8px 23px 8px 9px; font-size: 14px; }
+  .il-stage-actions .il-switch span { font-size: 14px; }
+  .il-stage-actions .il-switch::after { right: 8px; width: 8px; height: 8px; }
+}

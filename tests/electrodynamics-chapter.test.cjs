@@ -79,7 +79,7 @@ function physics(){
 
 function structure(){
  const course=ctx.window.COURSES.find(c=>c.id===16);assert.equal(course.topics.length,19);assert.match(course.topics[15],/Electrodinámica/);
- assert.deepEqual(Array.from(ctx.window.PHYSICS_CHAPTERS,c=>c.number),[1,2,16]);assert.equal(ctx.window.PHYSICS_CHAPTERS.find(c=>c.progressId===id).topicIndex,15);
+ assert.deepEqual(Array.from(ctx.window.PHYSICS_CHAPTERS,c=>c.number),[1,2,16,17]);assert.equal(ctx.window.PHYSICS_CHAPTERS.find(c=>c.progressId===id).topicIndex,15);
  assert.equal(content.number,16);assert.equal(content.courseId,16);assert.equal(content.math,true);assert.equal(content.lessons.length,5);
  assert.equal(content.lessons.reduce((n,l)=>n+l.examples.length,0),10);assert.match(content.sourceNote,/capítulo XV: Electrodinámica, pp\. 217–228/);
  assert.deepEqual(Array.from(content.lessons.flatMap(l=>l.examples),e=>e.number),[1,2,3,4,5,6,7,8,9,10]);
@@ -113,9 +113,9 @@ function structure(){
  }
  formulas(content);formulas(questions);assert.ok(count>100);
  const html=read(id+'.html');for(const file of [...chapterFiles,'practice-bank.js','chapter-practice.js'])assert.ok(html.includes(file));assert.match(html,/katex@0.16.22/);
- assert.deepEqual(fs.readdirSync(root).filter(f=>/^fisica-capitulo-\d+\.html$/.test(f)).sort(),['fisica-capitulo-01.html','fisica-capitulo-02.html',id+'.html']);
+ assert.deepEqual(fs.readdirSync(root).filter(f=>/^fisica-capitulo-\d+\.html$/.test(f)).sort(),['fisica-capitulo-01.html','fisica-capitulo-02.html',id+'.html','fisica-capitulo-17.html']);
  const admin=read('admin.js');vm.runInNewContext(admin.slice(admin.indexOf('const TRACKED_CHAPTERS='),admin.indexOf('let selectedChapter='))+';window.tracked=TRACKED_CHAPTERS;',ctx);
- assert.equal(Object.keys(ctx.window.tracked).length,46);assert.equal(ctx.window.tracked[id].items,10);assert.match(ctx.window.tracked[id].label,/Capítulo 16/);
+ assert.equal(Object.keys(ctx.window.tracked).length,47);assert.equal(ctx.window.tracked[id].items,10);assert.match(ctx.window.tracked[id].label,/Capítulo 16/);
 }
 
 function circuitInteraction(){

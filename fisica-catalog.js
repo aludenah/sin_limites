@@ -146,5 +146,20 @@ window.PHYSICS_CHAPTERS=[
     "assessmentFormat": "practice-10",
     "legacySources": [],
     "kind": "chapter"
+  },
+  {
+    "number": 17,
+    "title": "Electromagnetismo",
+    "progressId": "fisica-capitulo-17",
+    "topicIndex": 16,
+    "sourceLabel": "Capítulo 17",
+    "intro": "Explora campos y fuerzas magnéticas, interpreta el flujo y experimenta con la inducción y un generador eléctrico.",
+    "format": "reading",
+    "items": 6,
+    "practiceCount": 10,
+    "itemLabel": "problemas",
+    "assessmentFormat": "practice-10",
+    "legacySources": [],
+    "kind": "chapter"
   }
 ];
