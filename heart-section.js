@@ -271,7 +271,7 @@
         if(cell.getAttribute('data-bh-rbc')!==null)cell.setAttribute('transform','translate('+point.x+' '+point.y+') rotate('+angle+')');else{cell.setAttribute('cx',point.x);cell.setAttribute('cy',point.y);cell.setAttribute('transform','rotate('+angle+' '+point.x+' '+point.y+')');}
       }catch{}
     }
-    const scope=svg.closest?.('[data-bh-section]'),label=scope?.querySelector?.('[data-bh-cycle-phase]');
+    const scope=svg.closest?.('[data-biology-heart]')||svg.closest?.('[data-bh-section]'),label=scope?.querySelector?.('[data-bh-cycle-phase]');
     if(label){const text=stepMode?'Recorrido guiado · paso '+(state.step+1)+' de 8':phase.label;if(label.textContent!==text)label.textContent=text;}
   }
   function animate(host,time){const svg=svgFor(host),state=svg&&states.get(svg);if(!state||!state.flow)return;state.lastTime=Number.isFinite(time)?time:0;paint(svg,state,state.lastTime);}

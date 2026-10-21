@@ -196,3 +196,53 @@
 @media(min-width:1200px){.bh-cut-choices{grid-template-columns:repeat(4,minmax(0,1fr))}.bh-is-fullscreen .bh-blood-controls{flex-wrap:nowrap}}
 @media(max-width:600px){.bh-atlas-controls{padding:12px 10px 5px;margin:4px 5px 8px}.bh-blood-controls{gap:8px}.bh-blood-controls button{flex-basis:100%}.bh-blood-controls label{min-width:120px}.bh-cycle-status strong{font-size:11px!important}.bh-cycle-status{gap:7px}.bh-heart .bh-cut-choices button{font-size:11px!important}.bh-blood-key small{font-size:10px}.bh-heart .bh-section-heading h4{font-size:17px}}
 
+/* Section workspace: commands, central anatomy and structure details. */
+.bh-heart{container:heart / inline-size}
+.bh-heart.bh-section-mode .bh-layout{grid-template-columns:minmax(0,1fr);grid-template-areas:"viewer" "commands" "details";align-items:start}
+.bh-section-mode .bh-viewer{grid-area:viewer}
+.bh-section-mode .bh-side{grid-area:details}
+.bh-cut-panel{grid-area:commands;display:flex;flex-direction:column;gap:15px;padding:18px 16px;background:#0b2339;color:#d9e9f0;min-width:0;border-top:1px solid #ffffff1c}
+.bh-heart .bh-cut-panel-title{font-size:16px;font-weight:800;line-height:1.4;color:#ecf7fa}
+.bh-cut-panel .bh-atlas-controls{margin:0;padding:0;border:0;border-radius:0;background:none}
+.bh-cut-panel .bh-cut-choices{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:16px}
+.bh-cut-panel .bh-blood-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.bh-cut-panel .bh-blood-controls button{grid-column:1 / -1;width:100%}
+.bh-cut-panel .bh-blood-controls label{min-width:0;font-size:12px;gap:6px}
+.bh-cut-panel .bh-blood-controls select{min-width:0;font-size:12px}
+.bh-cut-panel .bh-cycle-status{flex-wrap:wrap;align-items:flex-start;margin:15px 0 12px;gap:8px;min-height:0}
+.bh-cut-panel .bh-cycle-status strong{flex:1;min-width:110px;font-size:12px!important;line-height:1.6}
+.bh-cut-panel .bh-cycle-status [data-bh-blood-state]{margin-left:16px}
+.bh-cut-panel .bh-blood-key{font-size:11px;gap:8px 14px}
+.bh-cut-panel .bh-blood-key small{display:block;font-size:11px;line-height:1.6}
+.bh-cut-panel .bh-section-zoom{flex-direction:column;align-items:stretch;gap:9px;background:none;border-top:1px solid #ffffff24;border-bottom:0;padding:15px 0 0}
+.bh-cut-panel .bh-section-zoom > span{text-align:center;font-size:12px}
+.bh-cut-panel .bh-section-zoom > div{gap:4px;flex-wrap:wrap}
+.bh-cut-panel .bh-section-zoom button{min-width:42px;min-height:44px;padding:8px}
+.bh-cut-panel .bh-section-zoom [data-bh-section-zoom-label]{min-width:44px;font-size:13px}
+.bh-heart.bh-section-mode .bh-section-canvas{padding:0 10px 10px;display:block;height:auto;max-height:none}
+.bh-heart.bh-section-mode .bh-section-scroll:not(.is-zoomed){display:block;height:auto;max-height:none}
+.bh-heart.bh-section-mode .bh-section-scroll:not(.is-zoomed) .bh-section-svg{width:100%!important;min-width:0!important;max-width:100%!important;height:auto!important;margin:auto;object-fit:contain}
+.bh-heart.bh-section-mode .bh-section-scroll.is-zoomed{display:block;height:65vh;height:65dvh;max-height:850px}
+@container heart (min-width:1080px){
+ .bh-heart.bh-section-mode .bh-layout{grid-template-columns:minmax(210px,1fr) minmax(0,3fr) minmax(210px,1fr);grid-template-areas:"commands viewer details";align-items:stretch}
+ .bh-section-mode .bh-cut-panel{border-top:0;border-right:1px solid #ffffff1c;padding:18px 14px;max-height:calc(100vh - 240px);max-height:calc(100dvh - 240px);min-height:440px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#50788b #0b2339}
+ .bh-cut-panel .bh-cut-choices{grid-template-columns:minmax(0,1fr)}
+ .bh-heart .bh-cut-panel .bh-cut-choices button{font-size:12px!important;text-align:left;padding:10px 12px}
+ .bh-cut-panel .bh-blood-controls{grid-template-columns:minmax(0,1fr)}
+ .bh-cut-panel .bh-cycle-status [data-bh-blood-state]{margin-left:16px}
+ .bh-section-mode .bh-side{border-left:1px solid #dce5ed;max-height:calc(100vh - 240px);max-height:calc(100dvh - 240px);min-height:440px;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
+ .bh-section-mode .bh-side-content,.bh-section-mode .bh-route-panel{padding:20px 15px}
+ .bh-section-mode .bh-panel-heading{flex-wrap:wrap;gap:6px}
+ .bh-section-mode .bh-part-grid{grid-template-columns:minmax(0,1fr)}
+ .bh-section-mode .bh-parts{max-height:29vh;max-height:29dvh}
+ .bh-heart.bh-section-mode .bh-part{font-size:12px!important;padding:9px}
+ .bh-section-mode .bh-description p,.bh-section-mode .bh-route-text{font-size:13px;line-height:1.75}
+ .bh-section-mode .bh-function span{font-size:12px;line-height:1.65}
+ .bh-section-mode .bh-side-actions{flex-wrap:wrap}
+ .bh-heart.bh-section-mode .bh-route-title{font-size:21px!important}
+ .bh-heart.bh-section-mode .bh-section-scroll:not(.is-zoomed){height:calc(100vh - 332px);height:calc(100dvh - 332px);min-height:350px;max-height:900px}
+ .bh-heart.bh-section-mode .bh-section-scroll:not(.is-zoomed) .bh-section-svg{width:100%!important;height:100%!important;min-width:0!important;max-width:100%!important;max-height:100%;margin:auto}
+ .bh-heart.bh-section-mode .bh-section-scroll.is-zoomed{height:calc(100vh - 332px);height:calc(100dvh - 332px);min-height:350px;max-height:900px}
+ .bh-heart.bh-section-mode .bh-view-switch{margin:12px auto 8px}
+}
+
