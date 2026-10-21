@@ -57,7 +57,7 @@
     const groups=['Cavidades','Grandes vasos','Pared y coronarias'];
     return `<section class="bh-heart" id="heart-lab" data-biology-heart aria-labelledby="bh-title"><header class="bh-header"><div><p class="bh-eyebrow">Laboratorio de anatomía · Biología</p><h3 id="bh-title">Explora el corazón humano</h3><p class="bh-subtitle">Gíralo, entra en sus cavidades y sigue el viaje de la sangre. Selecciona una estructura en el modelo o en la lista para descubrir su función.</p></div><div class="bh-spec"><strong>3D</strong>11 estructuras<br>2 circuitos conectados</div></header>
       <div class="bh-tabs" role="tablist" aria-label="Actividad del corazón"><button type="button" role="tab" class="bh-tab" id="bh-tab-explore" aria-controls="bh-explore" aria-selected="true" data-bh-action="tab" data-value="explore">${icon('cube')}Explorar anatomía</button><button type="button" role="tab" class="bh-tab" id="bh-tab-route" aria-controls="bh-route" aria-selected="false" tabindex="-1" data-bh-action="tab" data-value="route">${icon('route')}Recorrido de la sangre</button></div>
-      <div class="bh-layout"><div class="bh-viewer"><div class="bh-stage"><div class="bh-canvas" data-bh-canvas></div><div class="bh-topline"><span class="bh-status" data-bh-status>Preparando modelo 3D</span><span class="bh-orientation">DERECHA E IZQUIERDA<br>de la persona representada</span></div><div class="bh-view-switch" aria-label="Vista del corazón"><button type="button" data-bh-action="view" data-value="external" aria-pressed="true">Vista externa</button><button type="button" data-bh-action="view" data-value="internal" aria-pressed="false">Vista interna</button></div><div class="bh-tools" role="group" aria-label="Controles del modelo"><button type="button" class="bh-icon-btn" data-bh-action="zoom-in" title="Acercar" aria-label="Acercar"><span aria-hidden="true">+</span></button><button type="button" class="bh-icon-btn" data-bh-action="zoom-out" title="Alejar" aria-label="Alejar"><span aria-hidden="true">−</span></button><button type="button" class="bh-icon-btn" data-bh-action="rotate" aria-pressed="false" title="Activar giro automático" aria-label="Activar giro automático">${icon('rotate')}</button><button type="button" class="bh-icon-btn" data-bh-action="reset-camera" title="Restablecer cámara" aria-label="Restablecer cámara">${icon('reset')}</button></div><span class="bh-label-marker" data-bh-marker aria-hidden="true"></span><div class="bh-selected-label"><small data-bh-label-kicker>Modelo anatómico</small><strong data-bh-label>Corazón humano</strong></div><p class="bh-view-note" data-bh-view-note><b>Arrastra para girar.</b> Acerca con dos dedos o la rueda. También puedes usar las flechas del teclado.</p><div class="bh-loading" data-bh-loading><div class="bh-spinner" aria-hidden="true"></div><span>Cargando anatomía real…</span><small>Preparando las 11 estructuras del modelo</small></div></div><div class="bh-viewer-bottom"><span data-bh-view-caption>Geometría anatómica · no es una imagen plana</span><div class="bh-pose" role="group" aria-label="Orientación de la cámara"><button type="button" data-bh-action="pose" data-value="anterior">Anterior</button><button type="button" data-bh-action="pose" data-value="posterior">Posterior</button><button type="button" data-bh-action="pose" data-value="lateral">Lateral</button></div></div><div class="bh-render-error" data-bh-error hidden></div></div>
+      <div class="bh-layout"><div class="bh-viewer"><div class="bh-stage"><div class="bh-canvas" data-bh-canvas></div><div class="bh-topline"><span class="bh-status" data-bh-status>Preparando modelo 3D</span><span class="bh-orientation">DERECHA E IZQUIERDA<br>de la persona representada</span></div><div class="bh-view-switch" aria-label="Vista del corazón"><button type="button" data-bh-action="view" data-value="external" aria-pressed="true">Vista externa</button><button type="button" data-bh-action="view" data-value="internal" aria-pressed="false">Vista interna</button></div><div class="bh-tools" role="group" aria-label="Controles del modelo"><button type="button" class="bh-icon-btn" data-bh-action="zoom-in" title="Acercar" aria-label="Acercar"><span aria-hidden="true">+</span></button><button type="button" class="bh-icon-btn" data-bh-action="zoom-out" title="Alejar" aria-label="Alejar"><span aria-hidden="true">−</span></button><button type="button" class="bh-icon-btn" data-bh-action="rotate" aria-pressed="false" title="Activar giro automático" aria-label="Activar giro automático">${icon('rotate')}</button><button type="button" class="bh-icon-btn" data-bh-action="reset-camera" title="Restablecer cámara" aria-label="Restablecer cámara">${icon('reset')}</button></div><span class="bh-label-marker" data-bh-marker aria-hidden="true"></span><div class="bh-selected-label"><small data-bh-label-kicker>Modelo anatómico</small><strong data-bh-label>Corazón humano</strong></div><p class="bh-view-note" data-bh-view-note><b>Arrastra para girar.</b> Acerca con dos dedos o la rueda. También puedes usar las flechas del teclado.</p><div class="bh-loading" data-bh-loading><div class="bh-spinner" aria-hidden="true"></div><span>Cargando anatomía real…</span><small>Preparando las 11 estructuras del modelo</small></div></div><div class="bh-viewer-bottom"><span data-bh-view-caption>Geometría anatómica · no es una imagen plana</span><button type="button" class="bh-quality" data-bh-action="quality" aria-pressed="false" title="Reduce el consumo de recursos del modelo">Modo ligero</button><div class="bh-pose" role="group" aria-label="Orientación de la cámara"><button type="button" data-bh-action="pose" data-value="anterior">Anterior</button><button type="button" data-bh-action="pose" data-value="posterior">Posterior</button><button type="button" data-bh-action="pose" data-value="lateral">Lateral</button></div></div><div class="bh-render-error" data-bh-error hidden><p data-bh-error-message></p><button type="button" data-bh-action="retry">Reintentar 3D en modo ligero</button></div></div>
       <div class="bh-side"><div class="bh-side-content" id="bh-explore" role="tabpanel" aria-labelledby="bh-tab-explore"><div class="bh-panel-heading"><h4>Conoce sus partes</h4><span class="bh-explored" data-bh-explored>0 de 11 exploradas</span></div><div class="bh-parts">${groups.map(group=>`<div><p class="bh-group-title">${group}</p><div class="bh-part-grid">${PARTS.filter(p=>p.group===group).map(p=>`<button type="button" class="bh-part" data-bh-action="part" data-value="${p.id}" aria-pressed="false" style="--part-color:${p.color}"><i class="bh-part-dot" aria-hidden="true"></i><span>${p.short}</span><span class="bh-part-check" data-bh-visited="${p.id}" aria-hidden="true"></span></button>`).join('')}</div></div>`).join('')}</div><div class="bh-description" aria-live="polite" aria-atomic="true"><h4 class="bh-description-title" data-bh-part-title>Un órgano, dos bombas</h4><p data-bh-part-text>El lado derecho envía sangre a los pulmones y el izquierdo la impulsa hacia el cuerpo. La orientación de sus partes siempre corresponde a la persona, no a quien observa.</p><div class="bh-function"><small data-bh-function-label>Empieza por aquí</small><span data-bh-part-function>Selecciona una cavidad, un vaso o una arteria coronaria.</span></div></div><div class="bh-side-actions"><button type="button" class="bh-mini-button" data-bh-action="isolate" aria-pressed="false" disabled>Aislar estructura</button><button type="button" class="bh-mini-button" data-bh-action="clear">Ver todo el corazón</button></div><p class="bh-isolated-note" data-bh-isolated hidden>Solo se muestra la estructura seleccionada.</p></div>
       <div class="bh-route-panel" id="bh-route" role="tabpanel" aria-labelledby="bh-tab-route" hidden><div class="bh-step-kicker"><span>Un recorrido completo</span><b data-bh-step-count>Paso 1 de 8</b></div><div class="bh-step-dots" role="group" aria-label="Pasos del recorrido">${ROUTE.map((s,i)=>`<button type="button" data-bh-action="step" data-value="${i}" aria-label="Paso ${i+1}: ${s.title}" ${i===0?'aria-current="step"':''}></button>`).join('')}</div><div aria-live="polite" aria-atomic="true"><h4 class="bh-route-title" data-bh-route-title>${ROUTE[0].title}</h4><p class="bh-route-text" data-bh-route-text>${ROUTE[0].text}</p></div><span class="bh-blood-tag" data-bh-oxygen>Sangre con poco oxígeno</span><div class="bh-route-structure" data-bh-route-label>${ROUTE[0].label}</div><div class="bh-route-actions"><button type="button" data-bh-action="previous" disabled>← Anterior</button><button type="button" class="bh-restart" data-bh-action="restart" aria-label="Reiniciar recorrido" title="Reiniciar recorrido">${icon('reset')}</button><button type="button" class="bh-next" data-bh-action="next">Siguiente →</button></div><div class="bh-route-finish" data-bh-finish hidden><span aria-hidden="true">✓</span><span>Recorrido explorado. La circulación es <strong>doble, cerrada y completa</strong> en el ser humano.</span></div><p class="bh-route-footnote">El modelo incluye cavidades ventriculares, pero no las válvulas, las venas pulmonares ni la vena cava inferior. Estas estructuras sí aparecen explicadas en el recorrido. La vista interna retira la pared ventricular.</p></div></div></div>
       <section class="bh-flow-section" aria-labelledby="bh-flow-title"><div class="bh-flow-head"><div><h4 id="bh-flow-title">Dos circuitos, un solo recorrido</h4><p>La animación señala la dirección. No representa velocidad, escala ni latido.</p></div><button type="button" class="bh-flow-toggle" data-bh-action="flow" aria-pressed="true">${icon('pause')}<span data-bh-flow-label>Pausar flujo</span></button></div><div class="bh-flow-scroll" tabindex="0" role="region" aria-label="Esquema de circulación. Desliza horizontalmente para ver todo el recorrido.">${flowMap()}</div><div class="bh-legend"><span><i style="background:#6aa0b5"></i>Sangre con poco oxígeno</span><span><i style="background:#df98a5"></i>Sangre oxigenada</span><small>Colores convencionales; toda la sangre es roja.</small></div><p class="bh-motion-note" data-bh-motion-note hidden>La animación está pausada para respetar tu preferencia de movimiento reducido.</p></section>
@@ -65,16 +65,23 @@
   }
 
   async function modules(){
-    if(!imports)imports=Promise.all([import('three'),import('three/addons/controls/OrbitControls.js'),import('three/addons/loaders/GLTFLoader.js')]).catch(error=>{imports=null;throw error;});
+    // Same-origin, pinned bundle: no import map or third-party CDN at runtime.
+    if(!imports)imports=import('./vendor/heart-three-160.mjs?v=20261021-mobile1').catch(error=>{imports=null;throw error;});
     return imports;
+  }
+
+  function prefersLightMode(){
+    return Boolean(global.matchMedia?.('(pointer: coarse)').matches||
+      (global.navigator?.deviceMemory&&global.navigator.deviceMemory<=4)||
+      (global.navigator?.maxTouchPoints>0&&global.innerWidth<=1100));
   }
 
   function mount(root,options={}){
     unmount();
     const host=root?.matches?.('[data-biology-heart]')?root:root?.querySelector?.('[data-biology-heart]');
     if(!host)return;
-    const saved=options.saved||{},reduce=global.matchMedia?.('(prefers-reduced-motion: reduce)').matches||false;
-    const active={host,root,saved,disposed:false,controller:new AbortController(),selected:INDEX[saved.selectedPart]?saved.selectedPart:null,visited:new Set((Array.isArray(saved.visitedParts)?saved.visitedParts:[]).filter(id=>INDEX[id])),routeVisited:new Set((Array.isArray(saved.visitedSteps)?saved.visitedSteps:[]).filter(n=>Number.isInteger(n)&&n>=0&&n<ROUTE.length)),step:Math.min(7,Math.max(0,Number(saved.routeStep)||0)),routeComplete:saved.routeComplete===true,view:saved.view==='internal'?'internal':'external',tab:saved.tab==='route'?'route':'explore',flow:!reduce,rotate:false,isolate:false,reduce,scene:null,renderer:null,controls:null,frame:0,dirty:0,visible:true,interacting:false,meshes:[],meshByPart:new Map(),materials:[],marker:null,focus:null,transition:null,flowStart:performance.now(),beads:[],partCenters:new Map()};
+    const saved=options.saved||{},reduce=global.matchMedia?.('(prefers-reduced-motion: reduce)').matches||false,light=prefersLightMode();
+    const active={host,root,saved,disposed:false,controller:new AbortController(),selected:INDEX[saved.selectedPart]?saved.selectedPart:null,visited:new Set((Array.isArray(saved.visitedParts)?saved.visitedParts:[]).filter(id=>INDEX[id])),routeVisited:new Set((Array.isArray(saved.visitedSteps)?saved.visitedSteps:[]).filter(n=>Number.isInteger(n)&&n>=0&&n<ROUTE.length)),step:Math.min(7,Math.max(0,Number(saved.routeStep)||0)),routeComplete:saved.routeComplete===true,view:saved.view==='internal'?'internal':'external',tab:saved.tab==='route'?'route':'explore',flow:!reduce&&!light,rotate:false,isolate:false,reduce,light,attempt:0,scene:null,renderer:null,controls:null,frame:0,dirty:0,flowDirty:true,lastFrame:-Infinity,visible:true,interacting:false,meshes:[],meshByPart:new Map(),materials:[],marker:null,focus:null,transition:null,flowStart:performance.now(),beads:[],partCenters:new Map()};
     current=active;
     const q=selector=>host.querySelector(selector),all=selector=>Array.from(host.querySelectorAll(selector));
     active.q=q;active.all=all;
@@ -159,7 +166,9 @@
       else if(action==='reset-camera')pose(active,'anterior');
       else if(action==='pose')pose(active,value);
       else if(action==='rotate'){active.rotate=!active.rotate;button.setAttribute('aria-pressed',String(active.rotate));button.setAttribute('aria-label',active.rotate?'Pausar giro automático':'Activar giro automático');button.title=button.getAttribute('aria-label');invalidate(active);}
-      else if(action==='flow'){active.flow=!active.flow;syncMotion();invalidate(active);}
+      else if(action==='flow'){active.flow=!active.flow;active.flowDirty=true;syncMotion();schedule(active);}
+      else if(action==='quality'){active.light=!active.light;start3D(active);}
+      else if(action==='retry'){active.light=true;start3D(active);}
     });
     listen(host,'keydown',event=>{
       const tab=event.target.closest('[role="tab"]');if(!tab||!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;
@@ -172,7 +181,7 @@
     setView(active.view,false);if(active.selected)selectPart(active.selected,false);setTab(active.tab,false);syncMotion();
     q('[data-bh-explored]').textContent=active.visited.size+' de 11 exploradas';active.visited.forEach(id=>{const e=q('[data-bh-visited="'+id+'"]');if(e)e.textContent='✓';});
     setStep(active.step,false,false);
-    initialize3D(active).catch(error=>{if(!active.disposed)showFallback(active,error);});
+    start3D(active);
     invalidate(active);
   }
 
@@ -187,7 +196,11 @@
         m.color.copy(m.userData.bhColor);
         if(m.emissive)m.emissive.set(selected?'#9f443d':'#000000');
         if(m.emissiveIntensity!==undefined)m.emissiveIntensity=selected ? .20 : 0;
-        m.transparent=dim;m.opacity=dim ? .24 : 1;m.depthWrite=!dim;m.needsUpdate=true;
+        // On mobile, opaque dimming avoids drawing overlapping surfaces twice.
+        const transparent=dim&&!a.light;
+        if(dim&&a.light)m.color.multiplyScalar(.42);
+        if(m.transparent!==transparent){m.transparent=transparent;m.needsUpdate=true;}
+        m.opacity=transparent ? .24 : 1;m.depthWrite=!transparent;
       }
     }
     invalidate(a);
@@ -199,39 +212,86 @@
     textures.forEach(t=>t.dispose());materials.forEach(m=>m.dispose());geometries.forEach(g=>g.dispose());
   }
 
-  async function initialize3D(a){
-    const [THREE,{OrbitControls},{GLTFLoader}]=await modules();if(a.disposed)return;
+  function release3D(a){
+    a.attempt++;a.loadController?.abort();a.renderController?.abort();
+    a.renderCleanups?.forEach(fn=>fn());a.renderCleanups=[];
+    a.resizeObserver?.disconnect();a.resizeObserver=null;
+    a.transition=null;a.interacting=false;
+    a.controls?.dispose();a.controls=null;
+    if(a.scene)disposeObject(a.scene);if(a.model&&!a.wrapper)disposeObject(a.model);a.scene=null;a.model=null;a.wrapper=null;
+    a.materials.forEach(m=>m.dispose());a.materials.length=0;
+    a.meshes.length=0;a.meshByPart.clear();a.partCenters.clear();
+    if(a.renderer){a.renderer.dispose();a.renderer.forceContextLoss();a.renderer.domElement.remove();}a.renderer=null;a.camera=null;
+  }
+
+  function start3D(a){
+    if(a.disposed)return;
+    release3D(a);a.fallback=false;const attempt=a.attempt;
+    a.q('[data-bh-canvas]').replaceChildren();
+    a.q('[data-bh-error]').hidden=true;a.q('[data-bh-loading]').hidden=false;
+    a.q('[data-bh-loading] span').textContent='Cargando anatomía real…';
+    a.q('[data-bh-status]').textContent=a.light?'Preparando 3D ligero':'Preparando modelo 3D';
+    a.q('[data-bh-action="quality"]').setAttribute('aria-pressed',String(a.light));
+    a.q('[data-bh-marker]').style.display='none';
+    a.all('[data-bh-action="zoom-in"],[data-bh-action="zoom-out"],[data-bh-action="rotate"],[data-bh-action="reset-camera"],[data-bh-action="pose"],[data-bh-action="isolate"]').forEach(b=>b.disabled=true);
+    a.loadController=new AbortController();a.renderController=new AbortController();
+    a.renderListen=(target,event,fn)=>{target.addEventListener(event,fn,{signal:a.renderController.signal});a.renderCleanups.push(()=>target.removeEventListener(event,fn));};
+    initialize3D(a,attempt).catch(error=>{if(!a.disposed&&a.attempt===attempt)showFallback(a,error);});
+  }
+
+  async function initialize3D(a,attempt){
+    const live=()=>!a.disposed&&!a.fallback&&a.attempt===attempt;
+    let bundle;
+    try{bundle=await modules();}catch(error){error.bhReason='network';throw error;}
+    if(!live())return;
+    const {THREE,OrbitControls,GLTFLoader}=bundle;
+    const asset=global.BIOLOGY_HEART_ASSET||{};
+    // Fetch is abortable; a failed or superseded attempt cannot attach a late model.
+    let bytes;const loadController=a.loadController;
+    const timer=setTimeout(()=>loadController.abort(),45000);
+    try{
+      const response=await fetch(asset.url||'assets/biologia-corazon.glb',{signal:loadController.signal});
+      if(!response.ok)throw new Error('HTTP '+response.status);
+      bytes=await response.arrayBuffer();
+    }catch(error){error.bhReason='network';throw error;}finally{clearTimeout(timer);}
+    if(!live())return;
+    a.q('[data-bh-loading] span').textContent='Preparando gráficos del corazón…';
+    const gltf=await new GLTFLoader().parseAsync(bytes,'');
+    if(!live()){disposeObject(gltf.scene);return;}
+    a.model=gltf.scene;
     a.THREE=THREE;
     const canvasHost=a.q('[data-bh-canvas]');
-    const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true,powerPreference:'low-power'});a.renderer=renderer;
-    renderer.setPixelRatio(Math.min(global.devicePixelRatio||1,1.7));renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.16;
+    let renderer;
+    try{renderer=new THREE.WebGLRenderer({antialias:!a.light,alpha:true,powerPreference:'default',stencil:false});}
+    catch(error){disposeObject(gltf.scene);a.model=null;error.bhReason='compatibility';throw error;}
+    a.renderer=renderer;
+    // r160 supports WebGL 1 as well as WebGL 2. Never force high-DPI on phones.
+    renderer.outputColorSpace=THREE.SRGBColorSpace;renderer.toneMapping=a.light?THREE.NoToneMapping:THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.16;
     canvasHost.appendChild(renderer.domElement);renderer.domElement.tabIndex=0;renderer.domElement.setAttribute('role','img');renderer.domElement.setAttribute('aria-label','Corazón anatómico tridimensional. Flechas para girar; más y menos para acercar o alejar; cero para restablecer. Selecciona las partes también mediante la lista.');
     const scene=new THREE.Scene();a.scene=scene;
-    scene.add(new THREE.HemisphereLight(0xe2f5ff,0x223a52,2.4));
-    for(const [color,intensity,position] of [[0xffefe8,3.2,[4,5,6]],[0x79c9e1,1.9,[-4,1,3]],[0xffa19c,2.6,[1,3,-5]]]){const l=new THREE.DirectionalLight(color,intensity);l.position.set(...position);scene.add(l);}
+    scene.add(new THREE.HemisphereLight(0xe2f5ff,0x223a52,a.light?1.8:2.4));
+    const lights=a.light?[[0xffefe8,2,[4,5,6]]]:[[0xffefe8,3.2,[4,5,6]],[0x79c9e1,1.9,[-4,1,3]],[0xffa19c,2.6,[1,3,-5]]];
+    for(const [color,intensity,position] of lights){const l=new THREE.DirectionalLight(color,intensity);l.position.set(...position);scene.add(l);}
     const camera=new THREE.PerspectiveCamera(36,1,.01,100);camera.position.set(0,.25,8.3);a.camera=camera;
     const controls=new OrbitControls(camera,renderer.domElement);a.controls=controls;controls.enablePan=false;controls.enableDamping=true;controls.dampingFactor=.10;controls.minDistance=3.5;controls.maxDistance=13;controls.rotateSpeed=.65;controls.zoomSpeed=.8;controls.target.set(0,0,0);controls.update();
-    a.listen(controls,'change',()=>invalidate(a));a.listen(controls,'start',()=>{a.interacting=true;a.transition=null;invalidate(a);});a.listen(controls,'end',()=>{a.interacting=false;a.dirty=25;invalidate(a);});
-    const resize=()=>{if(a.disposed)return;const w=canvasHost.clientWidth,h=canvasHost.clientHeight;if(w<1||h<1)return;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();invalidate(a);};
-    if(typeof ResizeObserver==='function'){a.resizeObserver=new ResizeObserver(resize);a.resizeObserver.observe(canvasHost);}else a.listen(global,'resize',resize);resize();
+    a.renderListen(controls,'change',()=>invalidate(a));a.renderListen(controls,'start',()=>{a.interacting=true;a.transition=null;invalidate(a);});a.renderListen(controls,'end',()=>{a.interacting=false;invalidate(a);});
+    const resize=()=>{if(!live())return;const w=canvasHost.clientWidth,h=canvasHost.clientHeight;if(w<1||h<1)return;const ratio=Math.min(global.devicePixelRatio||1,a.light?1:1.7,Math.sqrt((a.light?500000:1500000)/(w*h)));renderer.setPixelRatio(ratio);renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();invalidate(a);};
+    if(typeof ResizeObserver==='function'){a.resizeObserver=new ResizeObserver(resize);a.resizeObserver.observe(canvasHost);}else a.renderListen(global,'resize',resize);resize();
     const raycaster=new THREE.Raycaster(),pointer=new THREE.Vector2();let start=null;
-    a.listen(renderer.domElement,'pointerdown',event=>{start={x:event.clientX,y:event.clientY};});
-    a.listen(renderer.domElement,'pointerup',event=>{
+    a.renderListen(renderer.domElement,'pointerdown',event=>{start={x:event.clientX,y:event.clientY};});
+    a.renderListen(renderer.domElement,'pointerup',event=>{
       if(!start||Math.hypot(event.clientX-start.x,event.clientY-start.y)>7){start=null;return;}start=null;if(a.tab==='route')return;
       const r=renderer.domElement.getBoundingClientRect();pointer.set((event.clientX-r.left)/r.width*2-1,-(event.clientY-r.top)/r.height*2+1);raycaster.setFromCamera(pointer,camera);
       const hit=raycaster.intersectObjects(a.meshes.filter(m=>m.visible),false)[0];if(hit?.object.userData.bhPart)a.selectPart(hit.object.userData.bhPart);
     });
-    a.listen(renderer.domElement,'keydown',event=>{
+    a.renderListen(renderer.domElement,'keydown',event=>{
       if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','+','=','-','0','Home'].includes(event.key))event.preventDefault();else return;
       a.transition=null;const delta=camera.position.clone().sub(controls.target),s=new THREE.Spherical().setFromVector3(delta);
       if(event.key==='ArrowLeft')s.theta-=Math.PI/12;if(event.key==='ArrowRight')s.theta+=Math.PI/12;if(event.key==='ArrowUp')s.phi=Math.max(.15,s.phi-Math.PI/15);if(event.key==='ArrowDown')s.phi=Math.min(Math.PI-.15,s.phi+Math.PI/15);
       if(event.key==='+'||event.key==='=')s.radius=Math.max(controls.minDistance,s.radius*.85);if(event.key==='-')s.radius=Math.min(controls.maxDistance,s.radius*1.18);
       if(event.key==='0'||event.key==='Home'){pose(a,'anterior');return;}camera.position.copy(controls.target).add(new THREE.Vector3().setFromSpherical(s));controls.update();invalidate(a);
     });
-    a.listen(renderer.domElement,'webglcontextlost',event=>{event.preventDefault();showFallback(a,new Error('context-lost'));});
-    const asset=global.BIOLOGY_HEART_ASSET||{};
-    const gltf=await new GLTFLoader().loadAsync(asset.url||'assets/biologia-corazon.glb');
-    if(a.disposed){disposeObject(gltf.scene);return;}
+    a.renderListen(renderer.domElement,'webglcontextlost',event=>{event.preventDefault();const error=new Error('context-lost');error.bhReason='context';if(!a.light){a.light=true;start3D(a);}else showFallback(a,error);});
     const model=gltf.scene;a.model=model;
     if(Array.isArray(asset.rotation)&&asset.rotation.length===3)model.rotation.set(...asset.rotation);
     const box=new THREE.Box3().setFromObject(model),size=box.getSize(new THREE.Vector3()),center=box.getCenter(new THREE.Vector3());
@@ -242,13 +302,16 @@
       let node=mesh,id=null;while(node&&!id){id=INDEX[node.name]?node.name:null;node=node.parent;}
       if(!id){id=Object.keys(INDEX).find(key=>mesh.name.toLowerCase().replaceAll('_','-').includes(key))||null;}
       mesh.userData.bhPart=id;
-      const old=Array.isArray(mesh.material)?mesh.material:[mesh.material];const mats=old.map(m=>{const cloned=m.clone();cloned.side=THREE.DoubleSide;cloned.userData.bhColor=cloned.color.clone();if(cloned.roughness!==undefined)cloned.roughness=.6;if(cloned.metalness!==undefined)cloned.metalness=.02;return cloned;});
+      const old=Array.isArray(mesh.material)?mesh.material:[mesh.material];const mats=old.map(m=>{const cloned=a.light?new THREE.MeshPhongMaterial({color:m.color,shininess:24,specular:0x30475b}):m.clone();cloned.side=THREE.DoubleSide;cloned.forceSinglePass=true;cloned.userData.bhColor=cloned.color.clone();if(cloned.roughness!==undefined)cloned.roughness=.6;if(cloned.metalness!==undefined)cloned.metalness=.02;return cloned;});
       mesh.material=Array.isArray(mesh.material)?mats:mats[0];a.materials.push(...old);a.meshes.push(mesh);
       if(id){if(!a.meshByPart.has(id))a.meshByPart.set(id,[]);a.meshByPart.get(id).push(mesh);}
     });
     wrapper.updateMatrixWorld(true);
     for(const [id,meshes] of a.meshByPart){const b=new THREE.Box3();for(const m of meshes)b.union(new THREE.Box3().setFromObject(m));a.partCenters.set(id,b.getCenter(new THREE.Vector3()));}
-    updateMaterials(a);a.q('[data-bh-loading]').hidden=true;a.q('[data-bh-status]').textContent='Modelo anatómico 3D';
+    updateMaterials(a);a.q('[data-bh-loading]').hidden=true;a.q('[data-bh-status]').textContent=a.light?'Modelo 3D · modo ligero':'Modelo anatómico 3D';
+    a.q('[data-bh-view-caption]').textContent=a.light?'11 estructuras · optimizado para móviles':'Geometría anatómica · no es una imagen plana';
+    a.all('[data-bh-action="zoom-in"],[data-bh-action="zoom-out"],[data-bh-action="rotate"],[data-bh-action="reset-camera"],[data-bh-action="pose"]').forEach(b=>b.disabled=false);
+    a.q('[data-bh-action="isolate"]').disabled=!a.selected;
     if(a.selected)focusPart(a,a.selected);invalidate(a);
   }
 
@@ -267,38 +330,47 @@
     if(!a.camera||!a.THREE)return;const T=a.THREE,p=name==='posterior'?new T.Vector3(0,.25,-8.3):name==='lateral'?new T.Vector3(8.3,.25,0):new T.Vector3(0,.25,8.3);transitionCamera(a,p,new T.Vector3(0,0,0));
   }
   function zoom(a,factor){if(!a.controls||!a.camera)return;const delta=a.camera.position.clone().sub(a.controls.target);delta.setLength(Math.min(a.controls.maxDistance,Math.max(a.controls.minDistance,delta.length()*factor)));transitionCamera(a,a.controls.target.clone().add(delta),a.controls.target.clone());}
-  function invalidate(a){if(a.disposed)return;a.dirty=Math.max(a.dirty,3);if(!a.frame&&a.visible)a.frame=requestAnimationFrame(t=>draw(a,t));}
+  function schedule(a){if(!a.disposed&&!a.frame&&a.visible)a.frame=requestAnimationFrame(t=>draw(a,t));}
+  function invalidate(a){if(a.disposed)return;a.dirty=Math.max(a.dirty,2);schedule(a);}
   function draw(a,time){
     a.frame=0;if(a.disposed||!a.visible||!a.host.isConnected)return;
-    if(a.transition){const t=Math.min(1,(time-a.transition.start)/650),e=t*t*(3-2*t);a.camera.position.lerpVectors(a.transition.from,a.transition.to,e);a.controls.target.lerpVectors(a.transition.fromTarget,a.transition.toTarget,e);if(t===1)a.transition=null;}
-    if(a.controls){a.controls.autoRotate=a.rotate;a.controls.autoRotateSpeed=.65;a.controls.update();}
-    if(a.renderer&&a.scene&&a.camera){
-      a.renderer.render(a.scene,a.camera);
+    const interval=1000/(a.light?30:60);
+    if(time-a.lastFrame<interval-1){schedule(a);return;}a.lastFrame=time;
+    // The independent SVG flow must never cause an unchanged GLB to render.
+    const needs3D=a.dirty>0||a.rotate||a.transition||a.interacting;
+    if(needs3D&&a.renderer&&a.scene&&a.camera&&a.controls){
+      if(a.transition){const t=Math.min(1,(time-a.transition.start)/650),e=t*t*(3-2*t);a.camera.position.lerpVectors(a.transition.from,a.transition.to,e);a.controls.target.lerpVectors(a.transition.fromTarget,a.transition.toTarget,e);if(t===1)a.transition=null;}
+      a.controls.autoRotate=a.rotate;a.controls.autoRotateSpeed=.65;a.controls.update();
+      const renderer=a.renderer;
+      try{renderer.render(a.scene,a.camera);}catch(error){showFallback(a,error);return;}
+      if(a.renderer!==renderer)return; // A context-loss handler may replace it synchronously.
       const marker=a.q('[data-bh-marker]'),center=a.selected?a.partCenters.get(a.selected):null;
       if(center){const p=center.clone().project(a.camera),r=a.renderer.domElement;marker.style.left=((p.x*.5+.5)*r.clientWidth)+'px';marker.style.top=((-p.y*.5+.5)*r.clientHeight)+'px';marker.style.display=p.z<1&&Math.abs(p.x)<1&&Math.abs(p.y)<1?'block':'none';}else marker.style.display='none';
     }
-    for(let i=0;i<a.beads.length;i++){const {bead,path,length}=a.beads[i],u=a.flow?((time-a.flowStart)/3700+i*.19)%1:.48,point=path.getPointAtLength(Math.max(0,u)*length);bead.setAttribute('cx',point.x.toFixed(2));bead.setAttribute('cy',point.y.toFixed(2));}
-    a.dirty--;
-    if(a.flow||a.rotate||a.transition||a.interacting||a.dirty>0)a.frame=requestAnimationFrame(t=>draw(a,t));
+    if(a.flow||a.flowDirty){
+      for(let i=0;i<a.beads.length;i++){const {bead,path,length}=a.beads[i],u=a.flow?((time-a.flowStart)/3700+i*.19)%1:.48,point=path.getPointAtLength(Math.max(0,u)*length);bead.setAttribute('cx',point.x.toFixed(2));bead.setAttribute('cy',point.y.toFixed(2));}
+      a.flowDirty=false;
+    }
+    a.dirty=Math.max(0,a.dirty-1);
+    if(a.flow||a.rotate||a.transition||a.interacting||a.dirty>0)schedule(a);
   }
 
   function showFallback(a,error){
     if(a.disposed||a.fallback)return;a.fallback=true;
-    a.controls?.dispose();a.controls=null;a.renderer?.dispose();a.renderer=null;
-    if(a.scene)disposeObject(a.scene);a.scene=null;
+    release3D(a);
     a.q('[data-bh-canvas]').innerHTML='<div class="bh-fallback">'+fallbackSVG()+'<p class="bh-fallback-title">Continúa con el esquema</p><p>La lista de estructuras y el recorrido paso a paso<br>siguen disponibles sin el modelo 3D.</p></div>';
     a.q('[data-bh-loading]').hidden=true;a.q('[data-bh-status]').textContent='Esquema accesible 2D';a.q('[data-bh-view-caption]').textContent='Esquema educativo · no representa la anatomía en escala';
-    const warning=a.q('[data-bh-error]');warning.hidden=false;warning.textContent='No se pudo iniciar o cargar el modelo tridimensional en este navegador. Puedes seguir explorando la anatomía y el recorrido mediante los controles y el esquema. Para ver el modelo, vuelve a cargar con una conexión activa y un navegador compatible con WebGL.';
+    const warning=a.q('[data-bh-error]');warning.hidden=false;
+    const reason=error?.bhReason;
+    a.q('[data-bh-error-message]').textContent=(reason==='network'?'No se pudo completar la descarga del modelo. Comprueba tu conexión y vuelve a intentarlo.':reason==='context'?'El equipo interrumpió los gráficos 3D para liberar recursos. Puedes volver a intentarlo en modo ligero.':reason==='compatibility'?'Este navegador no pudo iniciar los gráficos 3D. Reintenta en modo ligero o abre el capítulo en Chrome actualizado.':'No se pudo preparar el modelo 3D. Puedes volver a intentarlo en modo ligero.')+' La anatomía y el recorrido siguen disponibles mediante el esquema.';
     a.all('[data-bh-action="zoom-in"],[data-bh-action="zoom-out"],[data-bh-action="rotate"],[data-bh-action="reset-camera"],[data-bh-action="pose"],[data-bh-action="isolate"]').forEach(b=>b.disabled=true);
     a.q('[data-bh-marker]').style.display='none';a.rotate=false;invalidate(a);
     if(global.console)console.info('Modelo anatómico no disponible:',error?.message||'WebGL');
   }
   function unmount(){
     const a=current;if(!a)return;current=null;a.disposed=true;
-    a.controller.abort();a.observer?.disconnect();a.resizeObserver?.disconnect();if(a.frame)cancelAnimationFrame(a.frame);
-    a.controls?.dispose();if(a.scene)disposeObject(a.scene);a.materials.forEach(m=>m.dispose());
-    if(a.renderer){a.renderer.dispose();a.renderer.forceContextLoss();a.renderer.domElement.remove();}
-    a.meshes.length=0;a.meshByPart.clear();a.partCenters.clear();a.beads.length=0;
+    a.controller.abort();a.observer?.disconnect();if(a.frame)cancelAnimationFrame(a.frame);a.frame=0;
+    release3D(a);a.beads.length=0;
   }
   global.ChapterInteractions={render,mount,unmount};
 })(window);

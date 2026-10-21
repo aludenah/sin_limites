@@ -1,0 +1,12 @@
+{
+  "name": "sin-limites-heart-viewer-build",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.12",
+    "three": "0.160.1"
+  }
+}
