@@ -18,6 +18,7 @@ const ADMIN_EMAIL='alexludenah@gmail.com';
 const app=document.getElementById('adminApp');
 let allStudents=[];
 const TRACKED_CHAPTERS={
+  ...Object.fromEntries((window.GEOMETRY_CHAPTERS||[]).map(c=>[c.progressId,{label:'Geometría · Capítulo '+c.number+' · '+c.title,items:10}])),
   ...Object.fromEntries((window.CHEMISTRY_CHAPTERS||[]).map(c=>[c.progressId,{label:'Química · Capítulo '+c.number+' · '+c.title,items:10}])),
   ...Object.fromEntries((window.BIOLOGY_CHAPTERS||[]).map(c=>[c.progressId,{label:'Biología · Capítulo '+c.number+' · '+c.title,items:10}])),
   ...Object.fromEntries((window.PHYSICS_CHAPTERS||[]).map(c=>[c.progressId,{label:'Física · '+(c.sourceLabel||'Capítulo '+c.number)+' · '+c.title,items:10}])),

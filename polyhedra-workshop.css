@@ -1,0 +1,176 @@
+/* El taller de las dimensiones · SIN LÍMITES */
+#polyhedra-workshop{--pw-ink:#1b2944;--pw-muted:#68778f;--pw-navy:#111c36;--pw-violet:#a69be8;--pw-cyan:#8ae2eb;--pw-paper:#f7f8fc;--pw-line:#dce2ee;position:relative;isolation:isolate;min-width:0;max-width:100%;margin:28px 0;border:1px solid #cdd5e7;border-radius:24px;background:var(--pw-paper);color:var(--pw-ink);overflow:hidden;font:14px/1.7 Inter,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;scroll-margin-top:95px;box-shadow:0 18px 45px #162b4c0e}
+#polyhedra-workshop *{box-sizing:border-box;min-width:0}
+#polyhedra-workshop [hidden]{display:none!important}
+#polyhedra-workshop p,#polyhedra-workshop h3,#polyhedra-workshop h4,#polyhedra-workshop h5,#polyhedra-workshop figure{margin:0}
+#polyhedra-workshop p{font-size:14px;line-height:1.8}
+#polyhedra-workshop h4{font-size:26px;line-height:1.22;letter-spacing:-.04em;font-weight:750}
+#polyhedra-workshop h5{font-size:19px;line-height:1.35;letter-spacing:-.025em;font-weight:750}
+#polyhedra-workshop button,#polyhedra-workshop select,#polyhedra-workshop input{font:inherit}
+#polyhedra-workshop button{min-height:42px;cursor:pointer;border:0;line-height:1.5;transition:background-color .16s,color .16s,border-color .16s,box-shadow .16s}
+#polyhedra-workshop button:disabled{cursor:default;opacity:.45}
+#polyhedra-workshop button:focus-visible,#polyhedra-workshop input:focus-visible,#polyhedra-workshop select:focus-visible,#polyhedra-workshop [tabindex]:focus-visible{outline:3px solid #7068c7;outline-offset:4px}
+#polyhedra-workshop button:focus:not(:focus-visible){outline:none}
+#polyhedra-workshop input[type=range]{display:block;width:100%;height:44px;margin:3px 0 0;padding:0;accent-color:#7770bf;cursor:pointer;touch-action:pan-y}
+#polyhedra-workshop input[type=number],#polyhedra-workshop select{display:block;width:100%;height:44px;padding:9px 11px;border:1px solid #cbd5e4;border-radius:8px;background:#fff;color:#2b3d59;font-size:14px;line-height:1.5;max-width:100%;margin-top:7px}
+#polyhedra-workshop svg{display:inline-block;width:18px;height:18px;vertical-align:middle;flex:none}
+#polyhedra-workshop a{color:#5c55a1;text-underline-offset:3px}
+#polyhedra-workshop .pw-kicker{font-size:10px!important;font-weight:800;line-height:1.7!important;letter-spacing:.15em;text-transform:uppercase}
+#polyhedra-workshop .pw-hero{position:relative;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:14px;align-items:center;padding:32px 32px 27px;background:radial-gradient(ellipse at 90% 3%,#6266a82a,transparent 70%),linear-gradient(125deg,#101b32,#202a52);color:#eef2ff;overflow:hidden}
+#polyhedra-workshop .pw-hero:before{content:'';position:absolute;inset:0;background-image:linear-gradient(#d3dafa08 1px,transparent 1px),linear-gradient(90deg,#d3dafa08 1px,transparent 1px);background-size:35px 35px;pointer-events:none;opacity:.5}
+#polyhedra-workshop .pw-hero>div,#polyhedra-workshop .pw-hero-art{position:relative;z-index:1}
+#polyhedra-workshop .pw-hero .pw-kicker{color:#aab8e1;margin-bottom:19px}
+#polyhedra-workshop .pw-hero h3{font-size:51px!important;line-height:1.02!important;font-weight:650!important;letter-spacing:-.055em;margin:0 0 20px!important;color:#f3f5fb}
+#polyhedra-workshop .pw-hero h3 em{font-family:Georgia,'Times New Roman',serif;letter-spacing:-.035em;font-weight:400;color:#aaa6ee}
+#polyhedra-workshop .pw-intro{max-width:390px;color:#b5c3df;font-size:14px;line-height:1.85}
+#polyhedra-workshop .pw-hero-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:23px}
+#polyhedra-workshop .pw-hero-tags span{display:inline-block;font-size:10px;font-weight:650;line-height:1.6;padding:5px 8px;border:1px solid #afc4ed2c;border-radius:4px;color:#c2d2ec}
+#polyhedra-workshop .pw-hero-art{display:block;width:100%;height:auto;aspect-ratio:460/300;max-width:100%;margin:0;overflow:visible}
+#polyhedra-workshop .pw-progress{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:17px 27px;background:#111d36;border-top:1px solid #8d9dc329;color:#9aacca;font-size:11px}
+#polyhedra-workshop .pw-progress>span{font-size:10px;font-weight:800;letter-spacing:.14em}
+#polyhedra-workshop .pw-progress>strong{font-size:13px;font-weight:650;color:#a6e2e5;font-variant-numeric:tabular-nums}
+#polyhedra-workshop .pw-progress progress{appearance:none;width:100%;flex-basis:100%;height:4px;margin:0;border:0;border-radius:5px;background:#33415c;color:#a69be8;accent-color:#a69be8}
+#polyhedra-workshop .pw-progress progress::-webkit-progress-bar{background:#33415c}
+#polyhedra-workshop .pw-progress progress::-webkit-progress-value{background:linear-gradient(90deg,#8edfe4,#a897ea)}
+#polyhedra-workshop .pw-progress progress::-moz-progress-bar{background:#aaa0eb}
+#polyhedra-workshop .pw-tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;padding:13px 17px;background:#ebedf6;border-bottom:1px solid #d6dceb}
+#polyhedra-workshop .pw-tabs button{display:flex;align-items:center;justify-content:center;gap:8px;padding:11px 8px;border:1px solid transparent;border-radius:9px;background:transparent;color:#72809a;font-size:14px;font-weight:700;min-height:44px}
+#polyhedra-workshop .pw-tabs button svg{width:17px;height:17px;opacity:.85}
+#polyhedra-workshop .pw-tabs button:hover{color:#414f76;background:#dfe4f1}
+#polyhedra-workshop .pw-tabs button[aria-selected=true]{color:#f1efff;background:#35365e;border-color:#51527a;box-shadow:0 3px 8px #27305e16}
+#polyhedra-workshop .pw-section-intro{padding:28px 28px 25px;border-bottom:1px solid var(--pw-line);background:#f8f9fc;scroll-margin-top:100px}
+#polyhedra-workshop .pw-section-intro .pw-kicker{color:#8987ae;margin-bottom:10px}
+#polyhedra-workshop .pw-section-intro h4{font-size:27px;color:#293b5b;margin-bottom:11px;max-width:660px}
+#polyhedra-workshop .pw-section-intro p:last-child{color:#77859b;max-width:700px}
+#polyhedra-workshop .pw-layout{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);align-items:stretch;min-width:0}
+#polyhedra-workshop .pw-viewport{display:flex;flex-direction:column;min-width:0;background:#13203e;color:#c0d1ee;position:relative;overflow:hidden}
+#polyhedra-workshop .pw-stage-label{display:flex;align-items:center;justify-content:space-between;gap:11px;padding:19px 20px 0;min-height:47px;color:#718fb4}
+#polyhedra-workshop .pw-stage-label>span{font-size:9px;font-weight:800;letter-spacing:.1em;line-height:1.6}
+#polyhedra-workshop .pw-stage-label>b{font-size:11px;font-weight:650;line-height:1.6;color:#adc5e3;text-align:right}
+#polyhedra-workshop .pw-stage-svg{display:block;width:100%;height:auto;max-width:100%;aspect-ratio:680/500;min-height:260px;flex:none;touch-action:pan-y;cursor:grab;overflow:hidden;background:#111e3b}
+#polyhedra-workshop .pw-stage-svg:active{cursor:grabbing}
+#polyhedra-workshop .pw-stage-svg polygon[data-pw-action]{cursor:pointer;transition:fill .15s,fill-opacity .15s,stroke .15s}
+#polyhedra-workshop .pw-stage-svg polygon[data-pw-action]:hover{stroke:#fff1cb;stroke-width:2.5}
+#polyhedra-workshop .pw-stage-hint{font-size:11px;line-height:1.75;color:#809bc0;padding:0 20px 15px;text-align:center}
+#polyhedra-workshop .pw-camera{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:14px 18px;background:#0f1c36;border-top:1px solid #90a6d71a}
+#polyhedra-workshop .pw-camera>div{display:flex;gap:6px}
+#polyhedra-workshop .pw-camera button{display:flex;align-items:center;justify-content:center;gap:6px;background:#253655;border:1px solid #6a80ad39;color:#bfd5ef;border-radius:7px;font-size:12px;font-weight:650;padding:9px 10px;min-height:42px}
+#polyhedra-workshop .pw-camera>div>button{width:42px;padding:9px}
+#polyhedra-workshop .pw-camera button:hover{background:#34466b;color:#e7f5fb;border-color:#8ca8cd77}
+#polyhedra-workshop .pw-camera>button{background:transparent;border-color:transparent;color:#8ca5c7;white-space:nowrap;font-size:11px;padding:8px}
+#polyhedra-workshop .pw-camera svg{width:16px;height:16px}
+#polyhedra-workshop .pw-stage-actions{display:flex;align-items:center;justify-content:center;gap:9px;flex-wrap:wrap;padding:14px 18px 18px;background:#0f1c36}
+#polyhedra-workshop .pw-stage-actions button{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:10px 12px;background:#253e59;border:1px solid #7eafcc44;border-radius:7px;color:#a7dbe3;font-size:13px;font-weight:650;min-height:43px}
+#polyhedra-workshop .pw-stage-actions button:hover{background:#31526a}
+#polyhedra-workshop .pw-stage-actions button[aria-pressed=true]{background:#45466c;border-color:#a59cd566;color:#ddd8fc}
+#polyhedra-workshop .pw-stage-actions svg{width:16px;height:16px}
+#polyhedra-workshop .pw-console{padding:27px 24px 26px;background:#fafbff;border-left:1px solid #d5ddec;min-width:0}
+#polyhedra-workshop .pw-console>.pw-kicker{font-size:9px!important;color:#9693b3;margin-bottom:11px}
+#polyhedra-workshop .pw-console>h4{margin-bottom:23px;font-size:27px;line-height:1.2;color:#344766}
+#polyhedra-workshop .pw-select-label{display:block;font-size:13px;line-height:1.6;color:#637795;font-weight:650;min-width:0}
+#polyhedra-workshop .pw-model-type{display:block;font-size:11px;line-height:1.7;color:#8792ad;margin:11px 0 0}
+#polyhedra-workshop .pw-counts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;padding:18px 0 20px;margin:12px 0 20px;border-bottom:1px solid #dce2ee}
+#polyhedra-workshop .pw-counts>span{display:flex;align-items:center;flex-direction:column;font-size:11px;color:#8492aa;line-height:1.7}
+#polyhedra-workshop .pw-counts b{font-family:'SFMono-Regular',Consolas,'Liberation Mono',monospace;font-weight:500;font-size:29px;line-height:1.25;letter-spacing:-.04em;color:#596586;margin-bottom:4px;font-variant-numeric:tabular-nums}
+#polyhedra-workshop .pw-selection-kind{display:flex;gap:5px;margin:0 0 15px;padding:4px;background:#edf0f8;border:1px solid #dfe4f0;border-radius:8px}
+#polyhedra-workshop .pw-selection-kind button{display:flex;align-items:center;justify-content:center;flex:1;padding:8px 5px;min-height:39px;font-size:12px;font-weight:700;color:#8593ae;background:transparent;border:1px solid transparent;border-radius:6px}
+#polyhedra-workshop .pw-selection-kind button[aria-pressed=true]{background:#fff;color:#535a8b;border-color:#d6dced;box-shadow:0 2px 4px #40538108}
+#polyhedra-workshop .pw-element-note{font-size:14px;line-height:1.85;margin:14px 0 0;padding:13px 12px;background:#eef3fa;border-left:2px solid #b2c1d9;border-radius:0 7px 7px 0;color:#7f8fa7;min-height:78px}
+#polyhedra-workshop .pw-euler,#polyhedra-workshop .pw-discovery{margin-top:23px;padding:17px 15px;background:#efedf8;border:1px solid #dfd9f0;border-radius:9px;color:#7f77a4}
+#polyhedra-workshop .pw-euler>span,#polyhedra-workshop .pw-discovery>span{display:block;font-size:9px;font-weight:800;letter-spacing:.09em;line-height:1.8;color:#9a91b6;margin-bottom:7px}
+#polyhedra-workshop .pw-euler strong{display:block;font-size:21px;line-height:1.4;font-weight:600;letter-spacing:-.03em;color:#726b9d;font-variant-numeric:tabular-nums}
+#polyhedra-workshop .pw-euler p,#polyhedra-workshop .pw-discovery p{font-size:14px;line-height:1.85;color:#8a83a4;margin-top:10px}
+#polyhedra-workshop .pw-slider-label{display:block;margin:19px 0 0;font-size:14px;line-height:1.7;color:#71829f;font-weight:650}
+#polyhedra-workshop .pw-slider-label output{float:right;color:#837aa9;font-family:Consolas,monospace;font-size:13px;font-weight:500;font-variant-numeric:tabular-nums;margin-left:6px}
+#polyhedra-workshop .pw-button-row{display:flex;gap:8px;margin:9px 0 13px}
+#polyhedra-workshop .pw-button-row button{display:flex;align-items:center;justify-content:center;flex:1;min-height:44px;padding:10px 8px;background:#edf0f8;border:1px solid #d5deed;border-radius:7px;color:#72809f;font-size:14px;font-weight:700}
+#polyhedra-workshop .pw-button-row button:hover{background:#e0e6f3;color:#4e6089}
+#polyhedra-workshop .pw-primary{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:12px 10px;min-height:45px;border-radius:8px;background:#7267ab;color:#f5f1ff;font-size:14px;font-weight:750}
+#polyhedra-workshop .pw-primary:hover{background:#5d5298}
+#polyhedra-workshop .pw-primary svg{width:16px;height:16px}
+#polyhedra-workshop .pw-discovery>strong{display:block;font-size:20px;line-height:1.4;color:#7770a3;font-weight:600}
+#polyhedra-workshop .pw-console-note{font-size:13px;line-height:1.85;color:#919ab0;margin-top:17px}
+#polyhedra-workshop .pw-presets{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;margin-top:13px}
+#polyhedra-workshop .pw-presets button{display:flex;align-items:center;justify-content:center;min-height:43px;padding:10px 7px;border:1px solid #d7d7ed;border-radius:7px;background:#f1effa;color:#8a7ead;font-size:13px;font-weight:700}
+#polyhedra-workshop .pw-presets button:hover{background:#e5def5;border-color:#b8a8d8;color:#6c5a91}
+#polyhedra-workshop .pw-section-result{margin-top:24px;padding:17px 12px 14px;border:1px solid #d6e1ee;border-radius:11px;background:#f1f7fb;color:#6d86a3;overflow:hidden}
+#polyhedra-workshop .pw-section-result>.pw-kicker{font-size:8px!important;line-height:1.9!important;color:#9aacc1;letter-spacing:.1em;margin-bottom:8px}
+#polyhedra-workshop .pw-section-result>strong{display:block;font-size:23px;line-height:1.25;font-weight:600;letter-spacing:-.025em;color:#6d8bb0;padding-left:4px}
+#polyhedra-workshop .pw-section-svg{display:block;width:100%;height:auto;max-width:100%;aspect-ratio:270/210;margin:7px 0 0;overflow:visible}
+#polyhedra-workshop .pw-section-svg polygon{fill:#a8cfde5e;stroke:#8ab4ce;stroke-width:2.5;stroke-linejoin:round}
+#polyhedra-workshop .pw-section-svg circle{fill:#729ab9;stroke:#e2f0f5;stroke-width:2}
+#polyhedra-workshop .pw-section-svg path{fill:none;stroke:#c2d2e1;stroke-width:1;stroke-dasharray:4 4}
+#polyhedra-workshop .pw-section-svg text{fill:#a1b6c9;font:12px Inter,system-ui,sans-serif}
+#polyhedra-workshop .pw-section-data{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #d6e2ee;padding-top:13px;gap:10px}
+#polyhedra-workshop .pw-section-data>span{display:flex;flex-direction:column;align-items:center;font-size:11px;line-height:1.7;color:#9badbf}
+#polyhedra-workshop .pw-section-data b{display:block;font-family:Consolas,monospace;font-size:24px;font-weight:500;color:#6d89aa;line-height:1.4;font-variant-numeric:tabular-nums}
+#polyhedra-workshop .pw-section-result>p:last-child{font-size:12px;line-height:1.8;color:#97a9bb;margin-top:13px;padding-top:12px;border-top:1px solid #d6e2ee}
+#polyhedra-workshop .pw-missions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));align-items:start;background:#f5f6fc}
+#polyhedra-workshop .pw-mission{padding:26px 20px 24px;min-width:0;border-right:1px solid #dee2ef;position:relative}
+#polyhedra-workshop .pw-mission:last-child{border-right:0}
+#polyhedra-workshop .pw-mission.is-complete{background:#eef6f3}
+#polyhedra-workshop .pw-mission-top{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:18px}
+#polyhedra-workshop .pw-mission-top>span{font-family:Georgia,serif;font-size:35px;font-weight:400;line-height:1;color:#b7b8d2}
+#polyhedra-workshop .pw-mission-top>b{font-size:9px;font-weight:750;color:#a7a6c4;line-height:1.7;text-align:right}
+#polyhedra-workshop .pw-mission.is-complete .pw-mission-top>b{color:#7da495}
+#polyhedra-workshop .pw-mission>h5{font-size:22px;line-height:1.28;color:#6a6e99;min-height:57px;margin-bottom:13px}
+#polyhedra-workshop .pw-mission>p{font-size:14px;line-height:1.85;color:#949ab6;min-height:130px}
+#polyhedra-workshop .pw-prepare{display:flex;align-items:center;justify-content:space-between;gap:7px;width:100%;min-height:46px;padding:10px 11px;border-radius:7px;background:#ecebf9;border:1px solid #dcd8f0;color:#9282b7;font-size:13px;font-weight:700;line-height:1.6;margin:17px 0 19px}
+#polyhedra-workshop .pw-prepare:hover{background:#e2def3}
+#polyhedra-workshop .pw-prepare svg{width:15px;height:15px}
+#polyhedra-workshop .pw-prepare svg:last-child{width:13px;height:13px}
+#polyhedra-workshop .pw-euler-inputs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin-bottom:16px}
+#polyhedra-workshop .pw-euler-inputs label,#polyhedra-workshop .pw-answer-label{display:block;font-size:11px;font-weight:700;line-height:1.65;color:#8d91ae}
+#polyhedra-workshop .pw-euler-inputs input{font-size:15px;padding:9px 6px;text-align:center}
+#polyhedra-workshop .pw-answer-label{margin-bottom:16px;min-height:76px}
+#polyhedra-workshop .pw-answer-label input{max-width:110px;font-size:16px}
+#polyhedra-workshop .pw-check{display:flex;align-items:center;justify-content:center;gap:6px;min-height:45px;width:100%;padding:11px 10px;background:#7d76aa;color:#f6f4ff;border-radius:8px;font-size:13px;line-height:1.6;font-weight:750}
+#polyhedra-workshop .pw-check:hover{background:#665e98}
+#polyhedra-workshop .pw-check svg{width:15px;height:15px}
+#polyhedra-workshop .pw-feedback{font-size:13px;line-height:1.85;color:#aa8e78;margin-top:17px;padding:13px 12px;background:#faf4eb;border-left:2px solid #c9b294;border-radius:0 7px 7px 0;min-height:0!important}
+#polyhedra-workshop .pw-feedback:empty{display:none}
+#polyhedra-workshop .pw-feedback.is-success{color:#77a08d;background:#e3f0e9;border-left-color:#9fc4b1}
+#polyhedra-workshop .pw-passport{padding:27px 27px 25px;border-top:1px solid #dce3ef;background:#ebeff7}
+#polyhedra-workshop .pw-passport .pw-kicker{color:#9b9db8;margin-bottom:8px}
+#polyhedra-workshop .pw-passport h4{font-size:26px;color:#727c9e;margin-bottom:20px}
+#polyhedra-workshop .pw-badges{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+#polyhedra-workshop .pw-badges article{display:flex;align-items:flex-start;gap:10px;padding:15px 12px;border:1px solid #d5ddee;border-radius:8px;background:#f3f5fb;color:#9aa5bd}
+#polyhedra-workshop .pw-badges article>span{font-family:Georgia,serif;font-size:22px;line-height:1.1;color:#aeb8d0}
+#polyhedra-workshop .pw-badges article>div{flex:1}
+#polyhedra-workshop .pw-badges article strong{display:block;font-size:12px;line-height:1.65;font-weight:750;color:#8594b0}
+#polyhedra-workshop .pw-badges article small{display:block;font-size:10px;line-height:1.7;font-weight:500;color:#a6b1c8;margin-top:5px}
+#polyhedra-workshop .pw-badges article>svg{width:16px;height:16px;margin-top:3px;color:#aab6cc}
+#polyhedra-workshop .pw-badges article.is-complete{background:#e9f4f0;border-color:#c7dfd7}
+#polyhedra-workshop .pw-badges article.is-complete strong,#polyhedra-workshop .pw-badges article.is-complete>svg{color:#85aa9c}
+#polyhedra-workshop .pw-footnote{font-size:12px;line-height:1.85;color:#a0abc1;border-top:1px solid #d4deed;padding-top:18px;margin-top:20px}
+#polyhedra-workshop .pw-sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:1050px){#polyhedra-workshop .pw-hero{padding:29px 27px;gap:8px}#polyhedra-workshop .pw-hero h3{font-size:45px!important}#polyhedra-workshop .pw-hero-tags{gap:5px;margin-top:18px}#polyhedra-workshop .pw-hero-tags span{font-size:9px;padding:5px 7px}#polyhedra-workshop .pw-layout{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)}#polyhedra-workshop .pw-console{padding:25px 21px}#polyhedra-workshop .pw-console>h4{font-size:25px}#polyhedra-workshop .pw-camera{padding:14px 15px;flex-wrap:wrap;justify-content:center;gap:5px 13px}#polyhedra-workshop .pw-camera>button{padding:6px 9px}#polyhedra-workshop .pw-stage-actions{padding:10px 15px 18px}#polyhedra-workshop .pw-stage-actions button{font-size:12px}#polyhedra-workshop .pw-mission{padding:24px 17px}#polyhedra-workshop .pw-mission>h5{font-size:21px;min-height:81px}#polyhedra-workshop .pw-mission>p{min-height:180px}#polyhedra-workshop .pw-mission-top{margin-bottom:16px}}
+@media(max-width:720px){#polyhedra-workshop .pw-layout{grid-template-columns:1fr}#polyhedra-workshop .pw-console{border-left:0;border-top:1px solid #d6e0ee;padding:27px}#polyhedra-workshop .pw-console>h4 br{display:none}#polyhedra-workshop .pw-console>h4{font-size:29px;margin-bottom:23px}#polyhedra-workshop .pw-stage-label{padding:21px 25px 0}#polyhedra-workshop .pw-stage-label>span{font-size:10px}#polyhedra-workshop .pw-stage-label>b{font-size:12px}#polyhedra-workshop .pw-stage-svg{max-height:420px;min-height:300px}#polyhedra-workshop .pw-stage-hint{font-size:12px;padding:2px 25px 18px}#polyhedra-workshop .pw-camera{padding:15px 24px;justify-content:space-between;flex-wrap:nowrap}#polyhedra-workshop .pw-stage-actions{padding:13px 24px 20px}#polyhedra-workshop .pw-stage-actions button{font-size:14px;min-height:44px}#polyhedra-workshop .pw-counts{max-width:420px;margin-top:14px}#polyhedra-workshop .pw-counts b{font-size:34px}#polyhedra-workshop .pw-counts>span{font-size:13px}#polyhedra-workshop .pw-selection-kind{max-width:420px}#polyhedra-workshop .pw-selection-kind button{font-size:14px;min-height:42px}#polyhedra-workshop .pw-select-label{font-size:14px}#polyhedra-workshop .pw-model-type{font-size:12px}#polyhedra-workshop .pw-select-label select{font-size:15px}#polyhedra-workshop .pw-euler strong{font-size:24px}#polyhedra-workshop .pw-euler>span,#polyhedra-workshop .pw-discovery>span{font-size:10px}#polyhedra-workshop .pw-discovery>strong{font-size:23px}#polyhedra-workshop .pw-section-result{max-width:430px}#polyhedra-workshop .pw-section-result>.pw-kicker{font-size:10px!important}#polyhedra-workshop .pw-section-result>strong{font-size:25px}#polyhedra-workshop .pw-section-svg{max-height:270px}#polyhedra-workshop .pw-section-result>p:last-child{font-size:13px}#polyhedra-workshop .pw-missions{grid-template-columns:1fr}#polyhedra-workshop .pw-mission{border-right:0;border-bottom:1px solid #dce4ee;padding:27px}#polyhedra-workshop .pw-mission:last-child{border-bottom:0}#polyhedra-workshop .pw-mission>h5{font-size:25px;min-height:0}#polyhedra-workshop .pw-mission>p{min-height:0;margin-top:11px;max-width:600px}#polyhedra-workshop .pw-mission-top>b{font-size:10px}#polyhedra-workshop .pw-prepare{font-size:14px;max-width:400px;margin-top:21px}#polyhedra-workshop .pw-euler-inputs{max-width:350px;gap:12px;margin-top:22px}#polyhedra-workshop .pw-euler-inputs label,#polyhedra-workshop .pw-answer-label{font-size:14px}#polyhedra-workshop .pw-euler-inputs input{font-size:17px;padding:10px}#polyhedra-workshop .pw-answer-label{min-height:0;margin-top:22px}#polyhedra-workshop .pw-check{font-size:14px;max-width:400px}#polyhedra-workshop .pw-feedback{font-size:14px;max-width:600px}}
+@media(max-width:520px){#polyhedra-workshop{margin:23px 0;border-radius:19px;scroll-margin-top:83px}#polyhedra-workshop .pw-hero{display:flex;flex-direction:column;align-items:stretch;padding:26px 20px 19px;gap:5px}#polyhedra-workshop .pw-hero .pw-kicker{font-size:9px!important;line-height:1.8!important;margin-bottom:19px}#polyhedra-workshop .pw-hero h3{font-size:42px!important;margin-bottom:20px!important;line-height:1.03!important}#polyhedra-workshop .pw-intro{font-size:14px;line-height:1.85}#polyhedra-workshop .pw-hero-tags{gap:6px;margin-top:21px}#polyhedra-workshop .pw-hero-tags span{font-size:9px;padding:5px 7px}#polyhedra-workshop .pw-hero-art{max-height:190px;margin:11px auto 0;width:100%;height:auto}#polyhedra-workshop .pw-progress{padding:16px 18px;gap:11px 9px}#polyhedra-workshop .pw-progress>span{font-size:9px}#polyhedra-workshop .pw-progress>strong{font-size:11px}#polyhedra-workshop .pw-tabs{grid-template-columns:1fr 1fr;padding:11px 10px;gap:6px}#polyhedra-workshop .pw-tabs button{font-size:14px;min-height:43px;padding:9px 6px;gap:7px}#polyhedra-workshop .pw-tabs button svg{width:16px;height:16px}#polyhedra-workshop .pw-section-intro{padding:24px 20px 22px;scroll-margin-top:83px}#polyhedra-workshop .pw-section-intro .pw-kicker{font-size:9px!important;line-height:1.9!important;margin-bottom:11px}#polyhedra-workshop .pw-section-intro h4{font-size:27px;line-height:1.25;margin-bottom:13px}#polyhedra-workshop .pw-section-intro p:last-child{font-size:14px;line-height:1.9}#polyhedra-workshop .pw-stage-label{padding:18px 16px 0;gap:8px;align-items:flex-start}#polyhedra-workshop .pw-stage-label>span{font-size:9px;line-height:1.8;max-width:130px}#polyhedra-workshop .pw-stage-label>b{font-size:10px;line-height:1.8;max-width:130px}#polyhedra-workshop .pw-stage-svg{width:100%;height:auto;min-height:250px;max-height:none;aspect-ratio:680/500}#polyhedra-workshop .pw-stage-hint{font-size:11px;line-height:1.85;padding:4px 18px 17px}#polyhedra-workshop .pw-camera{padding:13px 14px;gap:5px;flex-wrap:wrap;justify-content:center}#polyhedra-workshop .pw-camera>div{gap:7px}#polyhedra-workshop .pw-camera>div>button{width:43px;min-height:43px;padding:10px}#polyhedra-workshop .pw-camera>button{font-size:12px;min-height:42px;margin-top:4px}#polyhedra-workshop .pw-stage-actions{padding:10px 15px 18px;gap:8px;flex-direction:column}#polyhedra-workshop .pw-stage-actions button{width:100%;font-size:14px;min-height:44px;padding:10px 9px}#polyhedra-workshop .pw-console{padding:24px 20px 25px}#polyhedra-workshop .pw-console>.pw-kicker{font-size:9px!important;line-height:1.9!important;margin-bottom:12px}#polyhedra-workshop .pw-console>h4{font-size:27px;line-height:1.25;margin-bottom:24px}#polyhedra-workshop .pw-select-label{font-size:14px}#polyhedra-workshop .pw-select-label select{font-size:14px;height:45px;padding:10px;margin-top:8px}#polyhedra-workshop .pw-model-type{font-size:12px;line-height:1.85;margin-top:13px}#polyhedra-workshop .pw-counts{gap:8px;margin:16px 0 21px;padding:17px 0 21px}#polyhedra-workshop .pw-counts b{font-size:31px;margin-bottom:5px}#polyhedra-workshop .pw-counts>span{font-size:12px}#polyhedra-workshop .pw-selection-kind{gap:3px;padding:4px;margin-bottom:18px}#polyhedra-workshop .pw-selection-kind button{font-size:13px;min-height:43px;padding:9px 4px}#polyhedra-workshop .pw-element-note{padding:14px 12px;margin-top:17px;min-height:0;font-size:14px;line-height:1.9}#polyhedra-workshop .pw-euler,#polyhedra-workshop .pw-discovery{margin-top:21px;padding:17px 14px}#polyhedra-workshop .pw-euler>span,#polyhedra-workshop .pw-discovery>span{font-size:9px;line-height:1.9;margin-bottom:9px}#polyhedra-workshop .pw-euler strong{font-size:23px;line-height:1.5}#polyhedra-workshop .pw-euler p,#polyhedra-workshop .pw-discovery p{font-size:14px;line-height:1.9;margin-top:12px}#polyhedra-workshop .pw-slider-label{font-size:14px;margin-top:22px;line-height:1.9}#polyhedra-workshop .pw-slider-label output{font-size:13px}#polyhedra-workshop input[type=range]{height:46px}#polyhedra-workshop .pw-button-row{gap:8px;margin:11px 0 15px}#polyhedra-workshop .pw-button-row button{font-size:14px;min-height:44px;padding:11px 9px}#polyhedra-workshop .pw-primary{font-size:14px;min-height:45px;padding:12px 10px}#polyhedra-workshop .pw-discovery>strong{font-size:23px;line-height:1.4}#polyhedra-workshop .pw-console-note{font-size:14px;line-height:1.9;margin-top:20px}#polyhedra-workshop .pw-presets{gap:8px;margin-top:16px}#polyhedra-workshop .pw-presets button{font-size:13px;min-height:44px;padding:10px 6px}#polyhedra-workshop .pw-section-result{margin-top:23px;padding:18px 11px 15px}#polyhedra-workshop .pw-section-result>.pw-kicker{font-size:9px!important;line-height:1.9!important;letter-spacing:.08em;margin-bottom:10px}#polyhedra-workshop .pw-section-result>strong{font-size:24px;line-height:1.4}#polyhedra-workshop .pw-section-svg{min-height:190px;margin-top:7px}#polyhedra-workshop .pw-section-svg text{font-size:13px}#polyhedra-workshop .pw-section-data{gap:9px;padding-top:14px}#polyhedra-workshop .pw-section-data b{font-size:25px;line-height:1.4}#polyhedra-workshop .pw-section-data>span{font-size:12px}#polyhedra-workshop .pw-section-result>p:last-child{font-size:13px;line-height:1.9;margin-top:16px;padding-top:13px}#polyhedra-workshop .pw-mission{padding:25px 20px 26px}#polyhedra-workshop .pw-mission-top{margin-bottom:17px}#polyhedra-workshop .pw-mission-top>span{font-size:35px}#polyhedra-workshop .pw-mission-top>b{font-size:10px}#polyhedra-workshop .pw-mission>h5{font-size:25px;line-height:1.3;margin-bottom:13px}#polyhedra-workshop .pw-mission>p{font-size:14px;line-height:1.9}#polyhedra-workshop .pw-prepare{font-size:14px;margin:21px 0 22px;min-height:45px;padding:11px 10px;gap:6px}#polyhedra-workshop .pw-prepare svg{width:14px;height:14px}#polyhedra-workshop .pw-euler-inputs{gap:7px;margin:21px 0 18px}#polyhedra-workshop .pw-euler-inputs label{font-size:12px}#polyhedra-workshop .pw-euler-inputs input{font-size:16px;min-height:44px;padding:10px 5px;margin-top:8px}#polyhedra-workshop .pw-answer-label{font-size:14px;line-height:1.8;margin-top:21px;margin-bottom:20px}#polyhedra-workshop .pw-answer-label input{font-size:17px;max-width:100%;height:45px;margin-top:10px}#polyhedra-workshop .pw-check{font-size:14px;min-height:46px;padding:12px 9px;gap:6px}#polyhedra-workshop .pw-feedback{font-size:14px;line-height:1.9;padding:15px 12px;margin-top:20px}#polyhedra-workshop .pw-passport{padding:25px 20px 22px}#polyhedra-workshop .pw-passport .pw-kicker{font-size:9px!important;line-height:1.9!important;margin-bottom:10px}#polyhedra-workshop .pw-passport h4{font-size:27px;line-height:1.25;margin-bottom:21px}#polyhedra-workshop .pw-badges{grid-template-columns:1fr;gap:9px}#polyhedra-workshop .pw-badges article{padding:15px 13px;gap:12px}#polyhedra-workshop .pw-badges article>span{font-size:24px;line-height:1.2}#polyhedra-workshop .pw-badges article strong{font-size:13px;line-height:1.7}#polyhedra-workshop .pw-badges article small{font-size:11px;line-height:1.7;margin-top:4px}#polyhedra-workshop .pw-badges article>svg{width:17px;height:17px;margin-top:5px}#polyhedra-workshop .pw-footnote{font-size:12px;line-height:1.9;padding-top:18px;margin-top:20px}}
+@media(prefers-reduced-motion:reduce){#polyhedra-workshop *{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+/* Keep the working controls and explanations readable in the chapter column. */
+#polyhedra-workshop .pw-select-label,#polyhedra-workshop .pw-selection-kind button,#polyhedra-workshop .pw-stage-actions button,#polyhedra-workshop .pw-primary,#polyhedra-workshop .pw-presets button,#polyhedra-workshop .pw-prepare,#polyhedra-workshop .pw-check,#polyhedra-workshop .pw-euler-inputs label,#polyhedra-workshop .pw-answer-label,#polyhedra-workshop .pw-feedback,#polyhedra-workshop .pw-console-note,#polyhedra-workshop .pw-section-result>p:last-child{font-size:14px}
+#polyhedra-workshop .pw-section-intro p:last-child{color:#6d7b93}
+#polyhedra-workshop .pw-element-note{color:#6a7d98}
+#polyhedra-workshop .pw-euler p,#polyhedra-workshop .pw-discovery p{color:#746a91}
+#polyhedra-workshop .pw-console-note{color:#74809b}
+#polyhedra-workshop .pw-presets button{color:#7a6b9d}
+#polyhedra-workshop .pw-section-result>p:last-child{color:#788ea7}
+#polyhedra-workshop .pw-mission>p{color:#727d99}
+#polyhedra-workshop .pw-prepare{color:#7e6caa}
+#polyhedra-workshop .pw-euler-inputs label,#polyhedra-workshop .pw-answer-label{color:#76839f}
+#polyhedra-workshop .pw-badges article strong{color:#7587a7}
+#polyhedra-workshop .pw-badges article.is-complete strong{color:#6c9786}
+#polyhedra-workshop .pw-footnote{color:#7f8daa}
+@media print{#polyhedra-workshop{box-shadow:none;border:1px solid #a7adbc}#polyhedra-workshop .pw-hero,#polyhedra-workshop .pw-progress{background:#f5f5f9;color:#222}#polyhedra-workshop .pw-hero h3,#polyhedra-workshop .pw-hero h3 em{color:#222}#polyhedra-workshop .pw-tabs,#polyhedra-workshop .pw-camera,#polyhedra-workshop .pw-stage-actions,#polyhedra-workshop .pw-hero-art{display:none}#polyhedra-workshop .pw-layout{grid-template-columns:1fr}#polyhedra-workshop .pw-console{border-left:0}}
+#polyhedra-workshop .pw-selection-kind button{min-height:42px}
+#polyhedra-workshop .pw-stage-hint{font-size:14px;color:#91a9c8}
+#polyhedra-workshop .pw-camera>button{font-size:14px}
+#polyhedra-workshop .pw-model-type{font-size:14px;color:#6e7b97}
+#polyhedra-workshop .pw-prepare{color:#6d5b99}
+#polyhedra-workshop .pw-check{background:#6e669f}
+/* Keep the model beside long control panels while the page scrolls. */
+@supports(overflow:clip){#polyhedra-workshop{overflow:clip}}
+#polyhedra-workshop .pw-viewport{align-self:start;position:sticky;top:84px}
+@media(min-width:721px) and (max-height:760px){#polyhedra-workshop .pw-stage-svg{min-height:210px;max-height:calc(100svh - 310px)}#polyhedra-workshop .pw-stage-label{padding-top:13px;min-height:40px}#polyhedra-workshop .pw-stage-hint{padding-bottom:10px}#polyhedra-workshop .pw-camera{padding-top:10px;padding-bottom:10px}#polyhedra-workshop .pw-stage-actions{padding-top:8px;padding-bottom:12px}}
+@media(max-width:720px){#polyhedra-workshop .pw-viewport{position:relative;top:auto;align-self:stretch}}
