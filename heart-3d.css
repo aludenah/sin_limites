@@ -150,3 +150,6 @@
 .bh-section-zoom > span{font-size:13px;font-weight:700;line-height:1.5;color:#bad2e1}
 .bh-section-zoom > div{display:flex;align-items:center;justify-content:center;gap:6px;flex:none}
 .bh-section-zoom button svg{display:block;width:18px;height:18px;flex:none}
+
+/* View choices stay reachable while the 3D model is loading. */
+.bh-heart .bh-view-switch{z-index:6}
