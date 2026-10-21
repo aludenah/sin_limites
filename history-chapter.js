@@ -24,6 +24,8 @@ const CHAPTER_LABEL=CHAPTER_META.sourceLabel||'Capítulo '+CHAPTER_NUMBER;
 const LESSONS=CONTENT.lessons;
 const EXPLORATION=CONTENT.exploration||null;
 const LABORATORY=CONTENT.laboratory||null;
+const DETECTIVE=CONTENT.detective||null;
+const SITE_VERSION=DETECTIVE?'20261021-detective1':'20260919-fisica19';
 
 const CONFIG={apiKey:'AIzaSyCurhmnJ21SMqGM6G54t8QM8jcqO8jV0OE',authDomain:'sin-limites-12f07.firebaseapp.com',projectId:'sin-limites-12f07',storageBucket:'sin-limites-12f07.firebasestorage.app',messagingSenderId:'757098079298',appId:'1:757098079298:web:068a9a7ea93149bfef79db'};
 const root=document.getElementById('chapter-app');
@@ -63,8 +65,28 @@ function mergeLaboratory(a={},b={}){
  const x=laboratoryProgress(a),y=laboratoryProgress(b),latest=y.updatedMs>=x.updatedMs?y:x;
  return laboratoryProgress({...latest,completedChallenges:[...x.completedChallenges,...y.completedChallenges],visitedViews:[...x.visitedViews,...y.visitedViews]});
 }
+function detectiveProgress(value={}){
+ value=value&&typeof value==='object'&&!Array.isArray(value)?value:{};
+ const cases=Array.isArray(window.TEXT_DETECTIVE_CASES)?window.TEXT_DETECTIVE_CASES:[];
+ const allQuestions=cases.flatMap(c=>c.questions||[]),allDocuments=cases.flatMap(c=>c.documents||[]);
+ const ids=(items,allowed)=>[...new Set((Array.isArray(items)?items:[]).filter(x=>typeof x==='string'&&allowed.includes(x)))];
+ const activeCase=cases.find(c=>c.id===value.activeCase)||cases[0];
+ const answers={};
+ for(const c of cases)for(const q of c.questions||[]){
+  const item=value.answers&&typeof value.answers==='object'?value.answers[q.id]:null;
+  if(!item||typeof item!=='object'||Array.isArray(item))continue;
+  const sentences=c.documents.flatMap(d=>d.sentences.map(s=>s.id));
+  answers[q.id]={evidence:ids(item.evidence,sentences),choice:q.options.some(o=>o.id===item.choice)?item.choice:null,attempts:typeof item.attempts==='number'&&Number.isFinite(item.attempts)?Math.max(0,Math.min(999,Math.floor(item.attempts))):0};
+ }
+ return {experience:DETECTIVE?.id||'',activeCase:activeCase?.id||null,activeQuestion:activeCase?.questions.some(q=>q.id===value.activeQuestion)?value.activeQuestion:activeCase?.questions[0]?.id||null,activeDocument:activeCase?.documents.some(d=>d.id===value.activeDocument)?value.activeDocument:activeCase?.documents[0]?.id||null,answers,completedQuestions:ids(value.completedQuestions,allQuestions.map(q=>q.id)),visitedDocuments:ids(value.visitedDocuments,allDocuments.map(d=>d.id)),updatedMs:typeof value.updatedMs==='number'&&Number.isFinite(value.updatedMs)?Math.max(0,Math.min(Number.MAX_SAFE_INTEGER,value.updatedMs)):0};
+}
+function mergeDetective(a={},b={}){
+ const x=detectiveProgress(a),y=detectiveProgress(b),latest=y.updatedMs>=x.updatedMs?y:x,other=latest===y?x:y;
+ return detectiveProgress({...latest,answers:{...other.answers,...latest.answers},completedQuestions:[...x.completedQuestions,...y.completedQuestions],visitedDocuments:[...x.visitedDocuments,...y.visitedDocuments]});
+}
 function mergeProgress(a={},b={}){
  const merged=window.ChapterPractice.merge(CHAPTER_ID,a,b);
+ if(DETECTIVE)merged.textDetective=mergeDetective(a.textDetective,b.textDetective);
  if(LABORATORY)merged.chemistryLab=mergeLaboratory(a.chemistryLab,b.chemistryLab);
  if(EXPLORATION)merged.historyExploration=mergeExploration(a.historyExploration,b.historyExploration);
  if(COURSE_ID===18){
@@ -134,8 +156,8 @@ async function retrySync(){
 
 let readingObserver=null;
 const chapterHref=n=>`${(COURSE_ID===16?COURSE_CHAPTERS.find(c=>c.number===n)?.progressId:null)||CHAPTER_PREFIX+'-capitulo-'+String(n).padStart(2,'0')}.html?v=${COURSE_ID===16?'20260919-fisica19':'20260918-social1'}`;
-function header(){return `<header class="topbar"><a class="brand" href="index.html?v=20260919-fisica19"><img src="assets/logo-sin-limites.jpg" width="40" height="40" alt="Logo de SIN LÍMITES"><span>SIN <em>LÍMITES</em></span></a><span class="course-label">${escapeHTML(COURSE_NAME)} · ${escapeHTML(CHAPTER_LABEL)}</span><a class="button secondary" href="index.html?course=${COURSE_ID}&v=20260919-fisica19">← Volver al temario</a></header>`;}
-function chapterLinks(){const previous=COURSE_CHAPTERS.some(c=>c.number===CHAPTER_NUMBER-1),next=COURSE_CHAPTERS.some(c=>c.number===CHAPTER_NUMBER+1);return `<nav class="finish-actions" aria-label="Cambiar de capítulo">${previous?`<a class="button secondary" href="${chapterHref(CHAPTER_NUMBER-1)}">← Capítulo ${CHAPTER_NUMBER-1}</a>`:''}${next?`<a class="button" href="${chapterHref(CHAPTER_NUMBER+1)}">Capítulo ${CHAPTER_NUMBER+1} →</a>`:`<a class="button" href="index.html?course=${COURSE_ID}&v=20260919-fisica19">Volver al temario →</a>`}</nav>`;}
+function header(){return `<header class="topbar"><a class="brand" href="index.html?v=${SITE_VERSION}"><img src="assets/logo-sin-limites.jpg" width="40" height="40" alt="Logo de SIN LÍMITES"><span>SIN <em>LÍMITES</em></span></a><span class="course-label">${escapeHTML(COURSE_NAME)} · ${escapeHTML(CHAPTER_LABEL)}</span><a class="button secondary" href="index.html?course=${COURSE_ID}&v=${SITE_VERSION}">← Volver al temario</a></header>`;}
+function chapterLinks(){const previous=COURSE_CHAPTERS.some(c=>c.number===CHAPTER_NUMBER-1),next=COURSE_CHAPTERS.some(c=>c.number===CHAPTER_NUMBER+1);return `<nav class="finish-actions" aria-label="Cambiar de capítulo">${previous?`<a class="button secondary" href="${chapterHref(CHAPTER_NUMBER-1)}">← Capítulo ${CHAPTER_NUMBER-1}</a>`:''}${next?`<a class="button" href="${chapterHref(CHAPTER_NUMBER+1)}">Capítulo ${CHAPTER_NUMBER+1} →</a>`:`<a class="button" href="index.html?course=${COURSE_ID}&v=${SITE_VERSION}">Volver al temario →</a>`}</nav>`;}
 function contents(){return '<aside class="lesson-sidebar"><details class="lesson-index" open><summary>En este capítulo</summary><nav aria-label="Temas del capítulo"><a href="#learning-goals">Antes de empezar</a>'+LESSONS.map((x,i)=>'<a href="#lesson-'+i+'"><span>'+String(i+1).padStart(2,'0')+'</span>'+escapeHTML(x.title)+'</a>').join('')+'<a class="activities-link" href="#activities">Práctica · 10 problemas</a></nav></details><p class="index-hint">Lee a tu ritmo y vuelve al tema que necesites consultar.</p></aside>';}
 function illustration(block){const v=block.illustration;if(!v)return '';return `<figure class="topic-image"><button class="image-button" data-action="image" data-id="${block.id}" aria-label="Ampliar imagen: ${escapeHTML(v.caption)}"><img src="${escapeHTML(v.src)}" alt="${escapeHTML(v.alt)}" width="1448" height="1086" loading="lazy" decoding="async"><span>Ampliar ⊕</span></button><figcaption>${escapeHTML(v.caption)}<small>${escapeHTML(v.credit||'Reconstrucción didáctica creada con IA')}</small></figcaption></figure>`;}
 function theoryBlock(block){
@@ -159,12 +181,12 @@ function progressSummary(){return P.practice10.mastered.length+' de 10 problemas
 function finishContent(){return '<h2>'+(chapterComplete()?'¡Completaste la práctica!':'Tu avance en el capítulo')+'</h2><p>'+progressSummary()+'</p><p class="question-note">Completa los 10 problemas para alcanzar el 100%. Puedes repasar y volver a responder sin perder tus aciertos.</p>'+chapterLinks();}
 function render(){
  window.ChapterInteractions?.unmount?.();
- if(!user)return;if(!P.studyMode){window.location.replace('index.html?chapter='+CONTENT.id+'&v=20260918-social1');return;}
- root.innerHTML=`${header()}<main id="chapter-content"><header class="chapter-hero" id="chapter-top"><div><p class="eyebrow">${escapeHTML(COURSE_NAME)} · Capítulo ${String(CHAPTER_NUMBER).padStart(2,'0')}</p><h1>${escapeHTML(CONTENT.title)}</h1></div></header><section class="progress-panel" aria-label="Avance del capítulo"><div class="progress-heading"><span>Mi avance en el capítulo</span><strong id="progress-count">${progressPercent()}%</strong></div><progress id="chapter-progress" max="100" value="${progressPercent()}" aria-label="Avance del capítulo"></progress><p class="question-note" id="progress-description">${progressSummary()}</p><div class="save-state"><span id="save-status" role="status">${escapeHTML(saveMessage)}</span><button id="retry-save" data-action="sync" ${cloudReady?'hidden':''}>Reintentar sincronización</button></div><div class="hero-actions">${LABORATORY?`<a class="button secondary" href="#${escapeHTML(LABORATORY.anchor)}">${escapeHTML(LABORATORY.label)}</a>`:EXPLORATION?`<a class="button secondary" href="#${escapeHTML(EXPLORATION.anchor)}">${escapeHTML(EXPLORATION.label)}</a>`:COURSE_ID===18?'<a class="button secondary" href="#heart-lab">Explorar el corazón 3D</a>':''}${P.readingItem>0?`<button class="button secondary" data-action="resume" data-index="${P.readingItem}">Retomar lectura</button>`:''}<a class="button" href="#activities">Ir a la práctica →</a></div></section><div class="reading-layout">${contents()}<article class="chapter-article"><section class="learning-goals" id="learning-goals"><p class="eyebrow">Antes de empezar</p><h2>¿Qué aprenderás?</h2><ul>${CONTENT.goals.map(g=>`<li><strong>${escapeHTML(g.title)}.</strong> ${escapeHTML(g.text)}</li>`).join('')}</ul>${chronology()}${CONTENT.sourceNote?`<p class="source-note">${escapeHTML(CONTENT.sourceNote)}</p>`:''}</section>${LESSONS.map((_,i)=>lessonView(i)).join('')}<section class="activities-section" id="activities"><div id="activities-list">${practiceView()}</div></section><section class="chapter-finish" id="chapter-finish">${finishContent()}</section></article></div></main><footer class="page-footer">SIN LÍMITES · ${escapeHTML(COURSE_NAME)} · ${escapeHTML(CONTENT.title)}</footer><dialog id="image-dialog" aria-labelledby="image-title"></dialog>`;
+ if(!user)return;if(!P.studyMode){window.location.replace('index.html?chapter='+CONTENT.id+'&v='+(DETECTIVE?'20261021-detective1':'20260918-social1'));return;}
+ root.innerHTML=`${header()}<main id="chapter-content"><header class="chapter-hero" id="chapter-top"><div><p class="eyebrow">${escapeHTML(COURSE_NAME)} · Capítulo ${String(CHAPTER_NUMBER).padStart(2,'0')}</p><h1>${escapeHTML(CONTENT.title)}</h1></div></header><section class="progress-panel" aria-label="Avance del capítulo"><div class="progress-heading"><span>Mi avance en el capítulo</span><strong id="progress-count">${progressPercent()}%</strong></div><progress id="chapter-progress" max="100" value="${progressPercent()}" aria-label="Avance del capítulo"></progress><p class="question-note" id="progress-description">${progressSummary()}</p><div class="save-state"><span id="save-status" role="status">${escapeHTML(saveMessage)}</span><button id="retry-save" data-action="sync" ${cloudReady?'hidden':''}>Reintentar sincronización</button></div><div class="hero-actions">${DETECTIVE?`<a class="button secondary" href="#${escapeHTML(DETECTIVE.anchor)}">${escapeHTML(DETECTIVE.label)}</a>`:LABORATORY?`<a class="button secondary" href="#${escapeHTML(LABORATORY.anchor)}">${escapeHTML(LABORATORY.label)}</a>`:EXPLORATION?`<a class="button secondary" href="#${escapeHTML(EXPLORATION.anchor)}">${escapeHTML(EXPLORATION.label)}</a>`:COURSE_ID===18?'<a class="button secondary" href="#heart-lab">Explorar el corazón 3D</a>':''}${P.readingItem>0?`<button class="button secondary" data-action="resume" data-index="${P.readingItem}">Retomar lectura</button>`:''}<a class="button" href="#activities">Ir a la práctica →</a></div></section><div class="reading-layout">${contents()}<article class="chapter-article"><section class="learning-goals" id="learning-goals"><p class="eyebrow">Antes de empezar</p><h2>¿Qué aprenderás?</h2><ul>${CONTENT.goals.map(g=>`<li><strong>${escapeHTML(g.title)}.</strong> ${escapeHTML(g.text)}</li>`).join('')}</ul>${chronology()}${CONTENT.sourceNote?`<p class="source-note">${escapeHTML(CONTENT.sourceNote)}</p>`:''}</section>${LESSONS.map((_,i)=>lessonView(i)).join('')}<section class="activities-section" id="activities"><div id="activities-list">${practiceView()}</div></section><section class="chapter-finish" id="chapter-finish">${finishContent()}</section></article></div></main><footer class="page-footer">SIN LÍMITES · ${escapeHTML(COURSE_NAME)} · ${escapeHTML(CONTENT.title)}</footer><dialog id="image-dialog" aria-labelledby="image-title"></dialog>`;
  observeReading();
  renderMath(root);
- window.ChapterInteractions?.mount?.(root,{saved:LABORATORY?laboratoryProgress(P.chemistryLab):EXPLORATION?explorationProgress(P.historyExploration):P.heartExploration||{}});
- const interaction=LABORATORY||EXPLORATION;if(interaction&&window.location.hash==='#'+interaction.anchor)scrollToBlock(interaction.anchor);
+ window.ChapterInteractions?.mount?.(root,{saved:DETECTIVE?detectiveProgress(P.textDetective):LABORATORY?laboratoryProgress(P.chemistryLab):EXPLORATION?explorationProgress(P.historyExploration):P.heartExploration||{}});
+ const interaction=DETECTIVE||LABORATORY||EXPLORATION;if(interaction&&window.location.hash==='#'+interaction.anchor)scrollToBlock(interaction.anchor);
 }
 
 
@@ -212,6 +234,11 @@ window.addEventListener('history-exploration-progress',event=>{
  P.historyExploration=mergeExploration(P.historyExploration,{...event.detail,updatedMs:Date.now()});
  saveSoon();
 });
+window.addEventListener('text-detective-progress',event=>{
+ if(!user||COURSE_ID!==1||CHAPTER_ID!=='razonamiento-verbal-capitulo-06'||!DETECTIVE||event.detail?.experience!==DETECTIVE.id)return;
+ P.textDetective=mergeDetective(P.textDetective,{...event.detail,updatedMs:Date.now()});
+ saveSoon();
+});
 window.addEventListener('chemistry-lab-progress',event=>{
  if(!user||!LABORATORY||COURSE_ID!==17||event.detail?.experience!==LABORATORY.id)return;
  P.chemistryLab=mergeLaboratory(P.chemistryLab,{...event.detail,updatedMs:Date.now()});
@@ -226,8 +253,8 @@ async function signedIn(u){
   window.ChapterInteractions?.unmount?.();
   readingObserver?.disconnect();
   const epoch=++authEpoch;clearTimeout(saveTimer);user=u;P=emptyProgress();cloudReady=false;saveVersion=0;saveChain=Promise.resolve();notice='';
-  if(!u){root.innerHTML=`${header()}<main id="chapter-content" class="guest-view"><p class="eyebrow">${escapeHTML(COURSE_NAME)} · Capítulo ${CHAPTER_NUMBER}</p><h1>${escapeHTML(CONTENT.title)}</h1><p>Inicia sesión en la academia para estudiar y guardar tu avance.</p><a class="button" href="index.html?chapter=${CONTENT.id}&v=20260918-social1">Continuar con Google</a></main>`;return;}
- if(window.StudyMode&&!await window.StudyMode.requireChoice(u.uid,db,CONTENT.id,()=>epoch===authEpoch))return;
+  if(!u){root.innerHTML=`${header()}<main id="chapter-content" class="guest-view"><p class="eyebrow">${escapeHTML(COURSE_NAME)} · Capítulo ${CHAPTER_NUMBER}</p><h1>${escapeHTML(CONTENT.title)}</h1><p>Inicia sesión en la academia para estudiar y guardar tu avance.</p><a class="button" href="index.html?chapter=${CONTENT.id}&v=${DETECTIVE?'20261021-detective1':'20260918-social1'}">Continuar con Google</a></main>`;return;}
+ if(window.StudyMode&&!await window.StudyMode.requireChoice(u.uid,db,CONTENT.id,()=>epoch===authEpoch,DETECTIVE?'20261021-detective1':'20260918-social1'))return;
  if(epoch!==authEpoch)return;
   const local=readLocal();P=importLegacy(local?.progress||{},legacyLocal(u.uid));
   try{

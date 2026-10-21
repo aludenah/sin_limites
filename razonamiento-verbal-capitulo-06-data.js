@@ -6,24 +6,24 @@ window.HISTORY_CONTENT={
   "courseId": 1,
   "courseName": "Razonamiento Verbal",
   "title": "La comprensión lectora y la jerarquía textual",
-  "intro": "Comprende cómo se conectan las ideas de un texto y distingue su tema central, su idea principal y los detalles que la explican o fundamentan.",
-  "version": 1,
+  "intro": "Comprende cómo se conectan las ideas de un texto, distingue lo explícito de las inferencias y justifica su idea principal con evidencias.",
+  "version": 2,
   "format": "reading",
   "assessmentFormat": "practice-10",
   "sequenceTitle": "Ruta de aprendizaje",
-  "sequenceNote": "Avanza por los temas y aplica lo aprendido en los diez problemas del capítulo.",
+  "sequenceNote": "Explora los expedientes de Detective de textos, revisa la teoría y aplica lo aprendido en los diez problemas del capítulo.",
   "goals": [
     {
       "title": "Comprender",
-      "text": "Relaciona decodificación, interpretación y aprendizaje al leer."
+      "text": "Distingue información explícita, inferencias respaldadas y suposiciones que el texto no permite afirmar."
     },
     {
       "title": "Conectar",
-      "text": "Reconoce coherencia, cohesión, referencias y sustituciones."
+      "text": "Relaciona pistas textuales y reconoce coherencia, cohesión, referencias y sustituciones."
     },
     {
       "title": "Jerarquizar",
-      "text": "Formula el tema y la idea principal y explica la función de las ideas secundarias."
+      "text": "Formula el tema y la idea principal y justifica cómo las ideas secundarias los desarrollan."
     }
   ],
   "timeline": [
@@ -53,10 +53,20 @@ window.HISTORY_CONTENT={
       "title": "Leer para construir significado",
       "blocks": [
         {
+          "id": "rv06-detective",
+          "title": "Detective de textos: lee, conecta y demuestra",
+          "paragraphs": [
+            "Abre un expediente, lee sus documentos y selecciona las oraciones que funcionan como evidencias. Para resolver cada reto, debes elegir una conclusión y demostrar qué fragmentos la sostienen. Una respuesta que parece razonable también necesita respaldo textual.",
+            "Los tres expedientes son situaciones ficticias creadas para practicar: no describen noticias ni investigaciones reales. Trabaja primero con la información explícita, después relaciona pistas para inferir y finalmente reconoce la idea principal."
+          ],
+          "interactive": "text-detective"
+        },
+        {
           "title": "Decodificar, interpretar y aprender",
           "paragraphs": [
             "Comprender un texto implica reconocer palabras, interpretar sus relaciones y construir un sentido global. La decodificación permite identificar formas escritas y significados; la interpretación relaciona ideas, obtiene información implícita y reconoce lo que se comunica. El aprendizaje se produce cuando lo comprendido modifica o amplía nuestros conocimientos y puede explicarse o aplicarse.",
-            "Pronunciar con fluidez no garantiza haber entendido. Después de leer, intenta explicar con tus propias palabras qué plantea el texto y qué razones ofrece. Si recuerdas frases aisladas pero no puedes relacionarlas, vuelve a revisar el conjunto. La conversación entre lectores puede ayudar siempre que sus explicaciones se apoyen en el contenido y no lo sustituyan por opiniones."
+            "Pronunciar con fluidez no garantiza haber entendido. Después de leer, intenta explicar con tus propias palabras qué plantea el texto y qué razones ofrece. Si recuerdas frases aisladas pero no puedes relacionarlas, vuelve a revisar el conjunto. La conversación entre lectores puede ayudar siempre que sus explicaciones se apoyen en el contenido y no lo sustituyan por opiniones.",
+            "Una afirmación explícita aparece directamente en el texto, aunque la pregunta la reformule. Una inferencia relaciona indicios para obtener una conclusión que no se enuncia de la misma manera. Una suposición añade información sin respaldo suficiente. Para distinguirlas, señala las oraciones pertinentes y explica el vínculo entre ellas; repetir palabras del texto no garantiza que una conclusión esté justificada."
           ],
           "id": "rv06-tema1",
           "illustration": {
@@ -268,5 +278,10 @@ window.HISTORY_CONTENT={
       ]
     }
   ],
-  "sourceNote": "Base temática: Razonamiento Verbal, Fredy Salas Panigua y Carlos Alberto Caycho Paredes, Lumbreras Editores, 2022, capítulo 6, pp. 70–84 (páginas impresas). Adaptación didáctica con ejemplos y ejercicios originales de SIN LÍMITES."
+  "sourceNote": "Base temática: Razonamiento Verbal, Fredy Salas Panigua y Carlos Alberto Caycho Paredes, Lumbreras Editores, 2022, capítulo 6, pp. 70–84 (páginas impresas). Adaptación didáctica con ejemplos y ejercicios originales de SIN LÍMITES.",
+  "detective": {
+    "id": "text-detective",
+    "anchor": "text-detective",
+    "label": "Abrir Detective de textos"
+  }
 };

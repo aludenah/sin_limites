@@ -42,11 +42,11 @@
     }catch{}
     return read(uid)?.mode||null;
   }
-  async function requireChoice(uid,db,chapter,isCurrent=()=>true){
+  async function requireChoice(uid,db,chapter,isCurrent=()=>true,version='20260918-social1'){
     const mode=read(uid)?.mode||await load(uid,db);
     if(!isCurrent())return false;
     if(mode)return true;
-    global.location.replace('index.html?chapter='+encodeURIComponent(chapter)+'&v=20260918-social1');
+    global.location.replace('index.html?chapter='+encodeURIComponent(chapter)+'&v='+encodeURIComponent(version));
     return false;
   }
   global.StudyMode={valid,get:uid=>read(uid)?.mode||null,choose,save,load,requireChoice,key};

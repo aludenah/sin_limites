@@ -141,7 +141,7 @@ window.VERBAL_CHAPTERS=[
   {
     "number": 6,
     "title": "La comprensión lectora y la jerarquía textual",
-    "intro": "Comprende cómo se conectan las ideas de un texto y distingue su tema central, su idea principal y los detalles que la explican o fundamentan.",
+    "intro": "Comprende las relaciones y jerarquías de un texto. En Detective de textos, conecta pistas, distingue inferencias de suposiciones y justifica la idea principal.",
     "progressId": "razonamiento-verbal-capitulo-06",
     "legacySources": [],
     "items": 5,
