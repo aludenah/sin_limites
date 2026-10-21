@@ -4,6 +4,7 @@ const CHAPTER_ID=CONTENT.progressId||CONTENT.id;
 const COURSE_ID=CONTENT.courseId||12;
 const COURSE_NAME=CONTENT.courseName||'Historia Universal';
 const COURSE_CONFIG={
+  18:{prefix:'biologia',chapters:window.BIOLOGY_CHAPTERS||[]},
   16:{prefix:'fisica',chapters:window.PHYSICS_CHAPTERS||[]},
   2:{prefix:'razonamiento-matematico',chapters:window.MATH_REASONING_CHAPTERS||[]},
   1:{prefix:'razonamiento-verbal',chapters:window.VERBAL_CHAPTERS||[]},
@@ -37,7 +38,15 @@ function canOpen(i){return Number.isInteger(i)&&i>=0&&i<LESSONS.length;}
 function canApply(){return true;}
 function progressPercent(p=P){return p.practice10.mastered.length*10;}
 function chapterComplete(p=P){return p.practice10.mastered.length===10;}
-function mergeProgress(a={},b={}){return normalized(window.ChapterPractice.merge(CHAPTER_ID,a,b));}
+function mergeProgress(a={},b={}){
+ const merged=window.ChapterPractice.merge(CHAPTER_ID,a,b);
+ if(COURSE_ID===18){
+  const first=a.heartExploration||{},second=b.heartExploration||{};
+  const latest=Number(second.updatedMs||0)>Number(first.updatedMs||0)?second:first;
+  merged.heartExploration={...first,...second,...latest,visitedParts:[...new Set([...(Array.isArray(first.visitedParts)?first.visitedParts:[]),...(Array.isArray(second.visitedParts)?second.visitedParts:[])])],visitedSteps:[...new Set([...(Array.isArray(first.visitedSteps)?first.visitedSteps:[]),...(Array.isArray(second.visitedSteps)?second.visitedSteps:[])])].filter(n=>Number.isInteger(n)&&n>=0&&n<8),routeComplete:Boolean(first.routeComplete||second.routeComplete)};
+ }
+ return normalized(merged);
+}
 function legacyLocal(uid){
   const records={};
   for(const source of CHAPTER_META.legacySources||[]){
@@ -124,10 +133,10 @@ function finishContent(){return '<h2>'+(chapterComplete()?'¡Completaste la prá
 function render(){
  window.ChapterInteractions?.unmount?.();
  if(!user)return;if(!P.studyMode){window.location.replace('index.html?chapter='+CONTENT.id+'&v=20260918-social1');return;}
- root.innerHTML=`${header()}<main id="chapter-content"><header class="chapter-hero" id="chapter-top"><div><p class="eyebrow">${escapeHTML(COURSE_NAME)} · Capítulo ${String(CHAPTER_NUMBER).padStart(2,'0')}</p><h1>${escapeHTML(CONTENT.title)}</h1></div></header><section class="progress-panel" aria-label="Avance del capítulo"><div class="progress-heading"><span>Mi avance en el capítulo</span><strong id="progress-count">${progressPercent()}%</strong></div><progress id="chapter-progress" max="100" value="${progressPercent()}" aria-label="Avance del capítulo"></progress><p class="question-note" id="progress-description">${progressSummary()}</p><div class="save-state"><span id="save-status" role="status">${escapeHTML(saveMessage)}</span><button id="retry-save" data-action="sync" ${cloudReady?'hidden':''}>Reintentar sincronización</button></div><div class="hero-actions">${P.readingItem>0?`<button class="button secondary" data-action="resume" data-index="${P.readingItem}">Retomar lectura</button>`:''}<a class="button" href="#activities">Ir a la práctica →</a></div></section><div class="reading-layout">${contents()}<article class="chapter-article"><section class="learning-goals" id="learning-goals"><p class="eyebrow">Antes de empezar</p><h2>¿Qué aprenderás?</h2><ul>${CONTENT.goals.map(g=>`<li><strong>${escapeHTML(g.title)}.</strong> ${escapeHTML(g.text)}</li>`).join('')}</ul>${chronology()}${CONTENT.sourceNote?`<p class="source-note">${escapeHTML(CONTENT.sourceNote)}</p>`:''}</section>${LESSONS.map((_,i)=>lessonView(i)).join('')}<section class="activities-section" id="activities"><div id="activities-list">${practiceView()}</div></section><section class="chapter-finish" id="chapter-finish">${finishContent()}</section></article></div></main><footer class="page-footer">SIN LÍMITES · ${escapeHTML(COURSE_NAME)} · ${escapeHTML(CONTENT.title)}</footer><dialog id="image-dialog" aria-labelledby="image-title"></dialog>`;
+ root.innerHTML=`${header()}<main id="chapter-content"><header class="chapter-hero" id="chapter-top"><div><p class="eyebrow">${escapeHTML(COURSE_NAME)} · Capítulo ${String(CHAPTER_NUMBER).padStart(2,'0')}</p><h1>${escapeHTML(CONTENT.title)}</h1></div></header><section class="progress-panel" aria-label="Avance del capítulo"><div class="progress-heading"><span>Mi avance en el capítulo</span><strong id="progress-count">${progressPercent()}%</strong></div><progress id="chapter-progress" max="100" value="${progressPercent()}" aria-label="Avance del capítulo"></progress><p class="question-note" id="progress-description">${progressSummary()}</p><div class="save-state"><span id="save-status" role="status">${escapeHTML(saveMessage)}</span><button id="retry-save" data-action="sync" ${cloudReady?'hidden':''}>Reintentar sincronización</button></div><div class="hero-actions">${COURSE_ID===18?'<a class="button secondary" href="#heart-lab">Explorar el corazón 3D</a>':''}${P.readingItem>0?`<button class="button secondary" data-action="resume" data-index="${P.readingItem}">Retomar lectura</button>`:''}<a class="button" href="#activities">Ir a la práctica →</a></div></section><div class="reading-layout">${contents()}<article class="chapter-article"><section class="learning-goals" id="learning-goals"><p class="eyebrow">Antes de empezar</p><h2>¿Qué aprenderás?</h2><ul>${CONTENT.goals.map(g=>`<li><strong>${escapeHTML(g.title)}.</strong> ${escapeHTML(g.text)}</li>`).join('')}</ul>${chronology()}${CONTENT.sourceNote?`<p class="source-note">${escapeHTML(CONTENT.sourceNote)}</p>`:''}</section>${LESSONS.map((_,i)=>lessonView(i)).join('')}<section class="activities-section" id="activities"><div id="activities-list">${practiceView()}</div></section><section class="chapter-finish" id="chapter-finish">${finishContent()}</section></article></div></main><footer class="page-footer">SIN LÍMITES · ${escapeHTML(COURSE_NAME)} · ${escapeHTML(CONTENT.title)}</footer><dialog id="image-dialog" aria-labelledby="image-title"></dialog>`;
  observeReading();
  renderMath(root);
- window.ChapterInteractions?.mount?.(root);
+ window.ChapterInteractions?.mount?.(root,{saved:P.heartExploration||{}});
 }
 
 
@@ -160,7 +169,15 @@ function openMathFigure(id){
  d.innerHTML=`<div class="dialog-heading"><h2 id="image-title">${escapeHTML(v.caption)}</h2><button class="button secondary" data-action="close-image" aria-label="Cerrar figura">Cerrar ×</button></div><p class="question-note">Desplaza la figura si no cabe en tu pantalla.</p><div class="math-figure-zoom" tabindex="0" role="region" aria-label="Figura ampliada" style="--natural-width:${Number(v.width)||760}px"><img class="expanded-image math-expanded" src="${escapeHTML(v.src)}" alt="${escapeHTML(v.alt)}"></div><p>${escapeHTML(v.credit||'Esquema matemático · SIN LÍMITES')}.</p>`;d.showModal();
 }
 root.addEventListener('click',event=>{
-const button=event.target.closest('[data-action]');if(!button||button.disabled||!user)return;if(window.ChapterInteractions?.handleClick(button))return;const {action,index,id}=button.dataset;if(action==='check-practice10')checkPractice(id);else if(action==='sync')retrySync();else if(action==='image')openImage(id);else if(action==='math-figure')openMathFigure(id);else if(action==='close-image')document.getElementById('image-dialog').close();else if(action==='resume')scrollToBlock('lesson-'+Number(index),true);
+const button=event.target.closest('[data-action]');if(!button||button.disabled||!user)return;if(window.ChapterInteractions?.handleClick?.(button))return;const {action,index,id}=button.dataset;if(action==='check-practice10')checkPractice(id);else if(action==='sync')retrySync();else if(action==='image')openImage(id);else if(action==='math-figure')openMathFigure(id);else if(action==='close-image')document.getElementById('image-dialog').close();else if(action==='resume')scrollToBlock('lesson-'+Number(index),true);
+});
+window.addEventListener('biology-heart-progress',event=>{
+ if(!user||COURSE_ID!==18)return;
+ const value=event.detail||{},previous=P.heartExploration||{};
+ const visited=Array.isArray(value.visitedParts)?value.visitedParts.filter(x=>typeof x==='string'&&x.length<80).slice(0,30):[];
+ const steps=Array.isArray(value.visitedSteps)?value.visitedSteps.filter(n=>Number.isInteger(n)&&n>=0&&n<8):[];
+ P.heartExploration={...previous,visitedParts:[...new Set([...(Array.isArray(previous.visitedParts)?previous.visitedParts:[]),...visited])],visitedSteps:[...new Set([...(Array.isArray(previous.visitedSteps)?previous.visitedSteps:[]),...steps])],selectedPart:typeof value.selectedPart==='string'?value.selectedPart.slice(0,80):null,tab:value.tab==='route'?'route':'explore',routeStep:Math.min(30,Math.max(0,Number(value.routeStep)||0)),routeComplete:Boolean(previous.routeComplete||value.routeComplete),view:value.view==='internal'?'internal':'external',updatedMs:Date.now()};
+ saveSoon();
 });
 root.addEventListener('change',event=>{
 if(!user)return;const input=event.target;if(input.dataset.group==='practice10'&&window.ChapterPractice.choose(CHAPTER_ID,P.practice10,input.dataset.question,Number(input.value),P.studyMode))saveSoon();
