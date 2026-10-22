@@ -1,0 +1,65 @@
+{
+  "status": "awaiting_voice_generation",
+  "language": "es-419",
+  "direction": "Una misma voz adulta en español latinoamericano neutro. Tono docente cálido, cercano y natural. Ritmo tranquilo y pausas breves entre ideas. Énfasis suave en cavidades, válvulas y vasos. Sin música ni efectos. Pronunciar con claridad aurícula, ventrículo, tricúspide, alvéolos, aórtica y sistémica.",
+  "source": "Textos de las ocho etapas existentes en heart-3d.js; conservar el contenido científico.",
+  "note": "Los archivos de audio todavía no han sido generados. Las duraciones son estimaciones; medir las reales al producir los MP3.",
+  "steps": [
+    {
+      "step": 1,
+      "title": "La sangre vuelve del cuerpo",
+      "text": "Después de entregar oxígeno a los tejidos, la sangre retorna por las venas cavas y entra en la aurícula derecha.",
+      "outputFilename": "paso-01.mp3",
+      "estimatedSeconds": 10
+    },
+    {
+      "step": 2,
+      "title": "Pasa al ventrículo derecho",
+      "text": "La sangre atraviesa la válvula tricúspide y pasa de la aurícula derecha al ventrículo derecho. La válvula ayuda a evitar el retroceso durante la contracción.",
+      "outputFilename": "paso-02.mp3",
+      "estimatedSeconds": 12
+    },
+    {
+      "step": 3,
+      "title": "El corazón la impulsa a los pulmones",
+      "text": "El ventrículo derecho se contrae. La sangre sale por la válvula pulmonar hacia el tronco pulmonar y las arterias pulmonares.",
+      "outputFilename": "paso-03.mp3",
+      "estimatedSeconds": 10
+    },
+    {
+      "step": 4,
+      "title": "En los pulmones se oxigena",
+      "text": "En los capilares que rodean los alvéolos, la sangre libera dióxido de carbono y recibe oxígeno. Este intercambio ocurre en los pulmones, fuera del corazón.",
+      "outputFilename": "paso-04.mp3",
+      "estimatedSeconds": 12
+    },
+    {
+      "step": 5,
+      "title": "Regresa a la aurícula izquierda",
+      "text": "Las venas pulmonares devuelven al corazón la sangre oxigenada. Desembocan en la aurícula izquierda; son venas porque llevan la sangre hacia el corazón.",
+      "outputFilename": "paso-05.mp3",
+      "estimatedSeconds": 11
+    },
+    {
+      "step": 6,
+      "title": "Llena el ventrículo izquierdo",
+      "text": "La sangre pasa de la aurícula izquierda al ventrículo izquierdo a través de la válvula mitral. Ambos lados del corazón mantienen separados los dos circuitos.",
+      "outputFilename": "paso-06.mp3",
+      "estimatedSeconds": 12
+    },
+    {
+      "step": 7,
+      "title": "Sale por la aorta",
+      "text": "El ventrículo izquierdo se contrae y la sangre atraviesa la válvula aórtica. Recorre la aorta ascendente, el arco aórtico y las ramas que la distribuyen por el cuerpo.",
+      "outputFilename": "paso-07.mp3",
+      "estimatedSeconds": 13
+    },
+    {
+      "step": 8,
+      "title": "El circuito vuelve a empezar",
+      "text": "En los tejidos, la sangre entrega oxígeno y recoge dióxido de carbono. Después retorna por las venas al lado derecho del corazón. La circulación pulmonar y la sistémica forman un recorrido continuo.",
+      "outputFilename": "paso-08.mp3",
+      "estimatedSeconds": 15
+    }
+  ]
+}
