@@ -9,7 +9,7 @@ const escapeHTML=value=>String(value??'').replaceAll('&','&amp;').replaceAll('<'
 let user=null,db=null,cloudReady=false,saveChain=Promise.resolve(),saveVersion=0,authEpoch=0;
 let saveMessage='',notice='',P=emptyProgress(),saveTimer=null;
 
-function emptyProgress(){return {studyMode:null,currentItem:0,readingItem:0,contentVersion:2,activeTab:'theory',practice10:window.ChapterPractice.normalize(CHAPTER_ID),updatedMs:0};}
+function emptyProgress(){return {studyMode:null,currentItem:0,readingItem:0,contentVersion:3,activeTab:'theory',practice10:window.ChapterPractice.normalize(CHAPTER_ID),updatedMs:0};}
 
 
 
@@ -17,14 +17,19 @@ const INDUCTION={id:'induction-lab'};
 function normalized(data={}){
  const p={...data,...emptyProgress()};
  const legacy=['generador','campo-magnetico','fuerzas-magneticas','flujo-faraday','ley-lenz','generador'];
+ const version2=['magnetismo-imanes','campo-magnetico','experimento-oersted','biot-savart','laboratorio-conductor','fuerzas-magneticas','flujo-faraday','ley-lenz','generador'];
  const lessonIndex=index=>{
   if(!Number.isInteger(index))return 0;
-  if(Number(data.contentVersion)>=2)return Math.max(0,Math.min(LESSONS.length-1,index));
-  return Math.max(0,LESSONS.findIndex(x=>x.id===legacy[index]));
+  if(Number(data.contentVersion)>=3)return Math.max(0,Math.min(LESSONS.length-1,index));
+  const id=Number(data.contentVersion)===2?version2[index]:legacy[index];
+  return Math.max(0,LESSONS.findIndex(x=>x.id===id));
  };
  p.studyMode=window.StudyMode?.get(user?.uid)||(['free','progressive'].includes(data.studyMode)?data.studyMode:null);
  p.currentItem=lessonIndex(data.currentItem);p.readingItem=Number.isInteger(data.readingItem)?lessonIndex(data.readingItem):p.currentItem;
  p.activeTab=data.activeTab==='exam'?'practice':['theory','examples','practice'].includes(data.activeTab)?data.activeTab:'theory';
+ const incoming=data.practice10,ids=new Set(window.ChapterPractice.questions(CHAPTER_ID).map(q=>q.id));
+ p.practiceArchive=data.practiceArchive&&typeof data.practiceArchive==='object'?{...data.practiceArchive}:{};
+ if(incoming&&typeof incoming==='object'&&[...(Array.isArray(incoming.mastered)?incoming.mastered:[]),...Object.keys(incoming.answers||{}),...Object.keys(incoming.results||{})].some(id=>!ids.has(id)))p.practiceArchive.beforeSourcePDF=incoming;
  p.practice10=window.ChapterPractice.normalize(CHAPTER_ID,data);p.inductionLab=inductionProgress(data.inductionLab);p.updatedMs=Math.max(0,Number(data.updatedMs)||0);return p;
 }
 function inductionProgress(value={}){
@@ -120,7 +125,7 @@ function lessonView(){
 function practiceView(){return window.ChapterPractice.render(CHAPTER_ID,P.practice10,P.studyMode,notice);}
 
 function workedExamplesView(){
- return `<p class="eyebrow">Aplicamos lo aprendido</p><h2>${CONTENT.workedExamples.length} problemas resueltos</h2><p>Intenta resolver cada problema y abre su solución para comparar el procedimiento.</p>${(CONTENT.workedExamples||[]).map(e=>`<section class="example worked-example" id="electromagnetismo-resuelto-${e.number}"><p class="eyebrow">Problema ${e.number}</p><h3>${e.title}</h3><p>${e.question}</p><details><summary>Ver solución paso a paso</summary><ol>${e.steps.map(step=>`<li>${step}</li>`).join('')}</ol></details></section>`).join('')}`;
+ return `<p class="eyebrow">Aplicamos lo aprendido</p><h2>${CONTENT.workedExamples.length} problemas resueltos</h2><p>Resuelve primero cada problema y abre su solución para comparar el procedimiento. Los ocho primeros pertenecen a «Problemas resueltos» y los dos últimos son ejemplos resueltos de la teoría del material.</p>${(CONTENT.workedExamples||[]).map(e=>`<section class="example worked-example" id="electromagnetismo-resuelto-${e.number}"><p class="eyebrow">Problema ${e.number}</p><h3>${e.title}</h3><p>${e.question}</p>${e.figure?window.ChapterPractice.renderFigure(e.figure,"worked:"+e.number):""}<details><summary>Ver solución paso a paso</summary><ol>${e.steps.map(step=>`<li>${step}</li>`).join('')}</ol></details></section>`).join('')}`;
 }
 
 function render(){
@@ -128,7 +133,7 @@ function render(){
   if(!P.studyMode){window.location.replace('index.html?chapter='+CHAPTER_ID);return;}
   window.WireFieldLab?.destroy();window.ChapterInteractions?.unmount();
   const percent=progressPercent();
-  root.innerHTML=`${header()}<section class="hero"><div class="wrap"><p class="eyebrow">Física · Capítulo 17 de 19</p><h1>Electromagnetismo</h1></div></section><div class="wrap"><section class="card overview"><div><div class="progress-head"><span>Mi avance en el capítulo</span><strong>${percent}%</strong></div><progress max="100" value="${percent}" aria-label="Avance del capítulo">${percent}%</progress><small>${P.practice10.mastered.length}/10 problemas resueltos correctamente</small><p id="save-status" class="save-line ${cloudReady?'':'warning'}" role="status">${escapeHTML(saveMessage)}</p><button id="retry-save" class="button secondary small" data-action="sync" ${cloudReady?'hidden':''}>Reintentar sincronización</button><div class="actions em-lab-shortcuts"><button class="button secondary small" data-action="lab" data-value="wire-field-lab">Explorar conductor rectilíneo</button><button class="button secondary small" data-action="lab" data-value="induction-lab">Laboratorio de inducción</button></div></div></section><div class="layout"><aside class="card sidebar"><p class="eyebrow">Tu ruta de aprendizaje</p><nav class="route" aria-label="Temas del capítulo">${side()}</nav><p class="hint">Completa los 10 problemas de la práctica para alcanzar el 100%. La teoría está disponible para consultar.</p></aside><main class="workspace" id="chapter-content"><nav class="card tabs" aria-label="Secciones del capítulo">${[['theory','Teoría'],['examples','Resueltos · '+CONTENT.workedExamples.length],['practice','Práctica · 10 problemas']].map(([id,title])=>`<button data-action="tab" data-value="${id}" class="${P.activeTab===id?'active':''}" ${P.activeTab===id?'aria-current="page"':''} >${title}</button>`).join('')}</nav><article class="card article">${notice?`<div role="alert" class="feedback" id="notice">${escapeHTML(notice)}</div>`:''}${P.activeTab==='examples'?workedExamplesView():P.activeTab==='practice'?practiceView():lessonView()}</article></main></div></div><footer class="footer">SIN LÍMITES · Física · Electromagnetismo</footer>`;
+  root.innerHTML=`${header()}<section class="hero"><div class="wrap"><p class="eyebrow">Física · Capítulo 17 de 19</p><h1>Electromagnetismo</h1></div></section><div class="wrap"><section class="card overview"><div><div class="progress-head"><span>Mi avance en el capítulo</span><strong>${percent}%</strong></div><progress max="100" value="${percent}" aria-label="Avance del capítulo">${percent}%</progress><small>${P.practice10.mastered.length}/10 problemas resueltos correctamente</small><p id="save-status" class="save-line ${cloudReady?'':'warning'}" role="status">${escapeHTML(saveMessage)}</p><button id="retry-save" class="button secondary small" data-action="sync" ${cloudReady?'hidden':''}>Reintentar sincronización</button><div class="actions em-lab-shortcuts"><button class="button secondary small" data-action="lab" data-value="wire-field-lab">Explorar conductor rectilíneo</button><button class="button secondary small" data-action="lab" data-value="induction-lab">Laboratorio de inducción</button></div></div></section><div class="layout"><aside class="card sidebar"><p class="eyebrow">Tu ruta de aprendizaje</p><nav class="route" aria-label="Temas del capítulo">${side()}</nav><p class="hint">Completa los 10 problemas de la práctica para alcanzar el 100%. La teoría está disponible para consultar.</p></aside><main class="workspace" id="chapter-content"><nav class="card tabs" aria-label="Secciones del capítulo">${[['theory','Teoría'],['examples','Resueltos · '+CONTENT.workedExamples.length],['practice','Práctica · 10 problemas']].map(([id,title])=>`<button data-action="tab" data-value="${id}" class="${P.activeTab===id?'active':''}" ${P.activeTab===id?'aria-current="page"':''} >${title}</button>`).join('')}</nav><article class="card article">${notice?`<div role="alert" class="feedback" id="notice">${escapeHTML(notice)}</div>`:''}${P.activeTab==='examples'?workedExamplesView():P.activeTab==='practice'?practiceView():lessonView()}</article></main></div></div><footer class="footer">SIN LÍMITES · Física · Electromagnetismo</footer><dialog id="em-figure-dialog" class="em-figure-dialog" aria-labelledby="em-figure-title"></dialog>`;
   renderMath();
   window.WireFieldLab?.mount(root);window.ChapterInteractions?.mount(root,{saved:P.inductionLab});
 }
@@ -144,7 +149,7 @@ function checkPractice(id){if(P.activeTab!=='practice')return;const result=windo
 
 root.addEventListener('click',event=>{
 const button=event.target.closest('[data-action]');if(!button||button.disabled||!user)return;
-const {action,value,index,id}=button.dataset;if(action==='lab')openLab(value);else if(action==='lesson')goLesson(Number(index));else if(action==='tab')goTab(value);else if(action==='check-practice10')checkPractice(id);else if(action==='sync')retrySync();
+const {action,value,index,id}=button.dataset;if(action==='math-figure')openFigure(id);else if(action==='close-figure')document.getElementById('em-figure-dialog')?.close();else if(action==='lab')openLab(value);else if(action==='lesson')goLesson(Number(index));else if(action==='tab')goTab(value);else if(action==='check-practice10')checkPractice(id);else if(action==='sync')retrySync();
 });
 root.addEventListener('change',event=>{
 if(!user)return;const input=event.target;
@@ -201,3 +206,11 @@ window.addEventListener('induction-lab-progress',event=>{
  if(!user||event.detail?.experience!=='induction-lab')return;
  P.inductionLab=mergeInduction(P.inductionLab,{...event.detail,updatedMs:Date.now()});saveSoon();
 });
+
+function openFigure(id){
+ const [kind,key]=String(id).split(':');
+ const item=kind==='worked'?CONTENT.workedExamples.find(e=>e.number===Number(key)):window.ChapterPractice.questions(CHAPTER_ID).find(q=>q.id===key);
+ const figure=item?.figure,dialog=document.getElementById('em-figure-dialog');if(!figure||!dialog)return;
+ dialog.innerHTML=`<header><h2 id="em-figure-title">${escapeHTML(figure.caption||'Figura del problema')}</h2><button class="button secondary" data-action="close-figure" autofocus>Cerrar</button></header><img src="${escapeHTML(figure.src)}" alt="${escapeHTML(figure.alt)}" width="${Number(figure.width)||760}" height="${Number(figure.height)||400}">`;
+ dialog.showModal();
+}

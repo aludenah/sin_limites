@@ -13,12 +13,12 @@ const state={tab:'generator',position:.12,speed:.3,direction:-1,polarity:-1,turn
 async function contentAndPractice(){
  const h=harness(chapterFiles);h.run("window.StudyMode.choose('physicist','progressive')");await h.signIn({uid:'physicist'});await h.run("window.StudyMode.save('physicist',db)");
  assert.equal(h.run('cloudPayload().courseId'),16);assert.equal(h.run('cloudPayload().chapterNumber'),17);assert.equal(h.run('CHAPTER_ID'),chapterId);assert.equal(h.run('cloudPayload().topicIndex'),16);
- assert.equal(h.run('INDUCTION.id'),'induction-lab');assert.ok(h.run('LESSONS.length')>=7);assert.equal(h.run("LESSONS.filter(l=>l.body.includes('<div data-induction-lab></div>')).length"),1);
+ assert.equal(h.run('INDUCTION.id'),'induction-lab');assert.equal(h.run('LESSONS.length'),13);assert.equal(h.run("LESSONS.filter(l=>l.body.includes('<div data-induction-lab></div>')).length"),1);
  assert.equal(h.run("LESSONS.filter(l=>l.body.includes('<div data-wire-field-lab></div>')).length"),1);
  assert.match(h.elements.get('chapter-app').innerHTML,/data-value="induction-lab"/);
  h.run("goTab('practice')");
  const questions=plain(h,'window.ChapterPractice.questions(CHAPTER_ID)');assert.equal(questions.length,10);assert.equal(new Set(questions.map(q=>q.id)).size,10);assert.equal(new Set(questions.map(q=>q.prompt)).size,10);
- const counts=[0,0,0,0,0];for(const q of questions){assert.equal(q.options.length,5);assert.equal(new Set(q.options).size,5);assert.ok(Number.isInteger(q.answer)&&q.answer>=0&&q.answer<5);counts[q.answer]++;assert.ok(q.solution.length>35);}assert.deepEqual(counts,[2,2,2,2,2]);
+ for(const q of questions){assert.equal(q.options.length,5);assert.equal(new Set(q.options).size,5);assert.ok(Number.isInteger(q.answer)&&q.answer>=0&&q.answer<5);assert.ok(q.solution.length>35);}assert.deepEqual(questions.map(q=>q.answer),[2,3,0,2,3,1,4,1,3,1],'Answer key follows chapter XVIII of the supplied material');
  assert.equal(h.run(`window.ChapterPractice.choose(CHAPTER_ID,P.practice10,'${questions[1].id}',0,P.studyMode)`),false,'The second problem remains locked until the first is mastered');
  const first=questions[0];h.run(`window.ChapterPractice.choose(CHAPTER_ID,P.practice10,'${first.id}',${(first.answer+1)%5},P.studyMode);checkPractice('${first.id}')`);assert.equal(h.run('progressPercent()'),0);
  for(const q of questions)h.run(`window.ChapterPractice.choose(CHAPTER_ID,P.practice10,'${q.id}',${q.answer},P.studyMode);checkPractice('${q.id}')`);
@@ -29,6 +29,10 @@ async function contentAndPractice(){
 }
 
 function assetReferences(){
+ for(const file of fs.readdirSync(root).filter(name=>name.endsWith('.html'))){
+  assert.ok(read(file).includes('activity-fullscreen.js'),'Shared fullscreen declared in '+file);
+  assert.ok(read(file).includes('activity-fullscreen.css'),'Shared fullscreen style declared in '+file);
+ }
  const html=read(chapterId+'.html');for(const filename of ['fisica-capitulo-17-practice.js','fisica-capitulo-17.js','fisica-capitulo-01.css','wire-field-engine.js','wire-field-lab.js','wire-field-lab.css','induction-engine.js','induction-lab.js','induction-lab.css'])assert.ok(html.includes(filename),'Chapter declares '+filename);
  assert.ok(html.indexOf('induction-engine.js')<html.indexOf('induction-lab.js'));assert.ok(html.indexOf('induction-lab.js')<html.indexOf('fisica-capitulo-17.js'));
  for(const match of html.matchAll(/(?:src|href)="([^"#?]+)(?:\?[^"#]*)?(?:#[^"]*)?"/g)){const file=match[1];if(!/^https?:/.test(file))assert.ok(fs.existsSync(path.join(root,file)),'Local chapter reference exists: '+file);}
@@ -62,12 +66,12 @@ function progressSanitization(){
 }
 
 async function navigationAndTeacher(){
- const destination=chapterId+'.html?v=20261021-magnetismo2';
+ const destination=chapterId+'.html?v=20261021-em-pdf3';
  const guest=harness(chapterFiles);await guest.signIn(null);assert.ok(guest.elements.get('chapter-app').innerHTML.includes('index.html?chapter='+chapterId));
  const first=harness(chapterFiles);await first.signIn({uid:'new-experimenter'});assert.match(first.redirects.at(-1),new RegExp('^index\\.html\\?chapter='+chapterId+'(?:&v=[a-zA-Z0-9-]+)?$'));
  const picker=harness(homeFiles,{search:'?chapter='+chapterId});await picker.signIn({uid:'new-experimenter'});assert.equal(picker.run('state.view'),'mode');picker.run("selectStudyMode('progressive')");assert.equal(picker.redirects.at(-1),destination);
  picker.run('state.activeCourseId=16;setTopic(16)');assert.equal(picker.redirects.at(-1),destination);picker.run("navigationProgress={lastCourseId:16,lastModuleId:'fisica-capitulo-17',lastChapterNumber:17,lastTopicIndex:16};openProgressChapter()");assert.equal(picker.redirects.at(-1),destination);
- picker.run('openCourse(16);state.activeTopicIndex=16;render()');assert.match(picker.elements.get('app').innerHTML,/Electromagnetismo/);assert.equal(picker.run('studyChapterHref(\"fisica-capitulo-17\")'),destination);assert.ok(!destination.includes('#'),'Chapter entry begins with the chapter-one theory layout');assert.match(picker.run('inductionLabCard()'),/fisica-capitulo-17\.html\?v=[^\"]*#induction-lab/,'The explicit induction card still opens its lab');assert.equal(picker.run('PHYSICS_CHAPTERS.find(c=>c.number===17).items'),9);await picker.run("window.StudyMode.save('new-experimenter',db)");const returning=harness(homeFiles,{cloud:picker.cloud,search:'?chapter='+chapterId});await returning.signIn({uid:'new-experimenter'});assert.equal(returning.redirects.at(-1),destination);
+ picker.run('openCourse(16);state.activeTopicIndex=16;render()');assert.match(picker.elements.get('app').innerHTML,/Electromagnetismo/);assert.equal(picker.run('studyChapterHref(\"fisica-capitulo-17\")'),destination);assert.ok(!destination.includes('#'),'Chapter entry begins with the chapter-one theory layout');assert.match(picker.run('inductionLabCard()'),/fisica-capitulo-17\.html\?v=[^\"]*#induction-lab/,'The explicit induction card still opens its lab');assert.equal(picker.run('PHYSICS_CHAPTERS.find(c=>c.number===17).items'),13);await picker.run("window.StudyMode.save('new-experimenter',db)");const returning=harness(homeFiles,{cloud:picker.cloud,search:'?chapter='+chapterId});await returning.signIn({uid:'new-experimenter'});assert.equal(returning.redirects.at(-1),destination);
  const admin=harness(['fisica-capitulo-17-practice.js',...catalogs,'history-progress.js','admin.js']);assert.ok(admin.run('TRACKED_CHAPTERS["'+chapterId+'"]'));assert.equal(admin.run('TRACKED_CHAPTERS["'+chapterId+'"].items'),10);
 }
 
@@ -77,8 +81,27 @@ function chapterOneTemplate(){
  const content=plain(h,'CONTENT');
  assert.equal(content.title,'Electromagnetismo');
  assert.equal(content.workedExamples.length,10);
+ const ordered=['magnetismo-imanes','campo-magnetico','experimento-oersted','laboratorio-conductor','biot-savart','fuerzas-magneticas','fuerza-conductores','movimiento-particula','induccion-electromagnetica','flujo-magnetico','flujo-faraday','ley-lenz','generador'];
+ assert.deepEqual(content.lessons.map(l=>l.id),ordered,'Theory follows the supplied material in order');
+ for(const lesson of content.lessons){assert.ok(Array.isArray(lesson.sourcePages)&&lesson.sourcePages.length>0);assert.ok(lesson.sourcePages.every(n=>Number.isInteger(n)&&n>=1&&n<=16));}
+ assert.doesNotMatch(content.lessons.map(l=>l.body).join(' '),/dominios magn[eé]ticos|integral vectorial|OpenStax/i,'Theory contains no supplemental external topics');
  assert.deepEqual(content.workedExamples.map(e=>e.number),Array.from({length:10},(_,i)=>i+1));
- for(const e of content.workedExamples)assert.ok(e.question.length>20&&e.steps.length>=3);
+ assert.equal(content.source.filename,'electromagnetismo.pdf');
+ assert.deepEqual(content.source.theoryPages,Array.from({length:16},(_,i)=>i+1));
+ assert.deepEqual(content.source.workedPages,[17,18,19,20,21]);
+ assert.deepEqual(content.source.proposedPages,[22,23]);assert.equal(content.source.answerKeyPage,24);
+ for(const [i,e] of content.workedExamples.entries()){
+  assert.ok(e.question.length>20&&e.steps.length>=3);
+  assert.equal(e.sourceKind,i<8?'problema-resuelto':'ejemplo-teoria');
+  assert.equal(e.sourceProblem,i<8?i+1:1);
+  assert.ok(e.sourcePages.every(n=>i<8?n>=17&&n<=21:[5,10].includes(n)));
+  assert.ok(e.figure,'Worked problem '+e.number+' preserves its source diagram');
+  assert.ok(fs.existsSync(path.join(root,e.figure.src)),'Worked diagram exists: '+e.figure.src);
+  assert.ok(e.figure.alt.length>20&&e.figure.caption.length>10);
+  assert.ok(e.figure.width>0&&e.figure.height>0);
+  assert.doesNotMatch(e.question,/<figure|<img/,'Question text keeps its diagram in structured figure data');
+ }
+ assert.deepEqual(content.workedExamples.slice(8).map(e=>e.sourcePages),[[5],[10]],'Two extra solved items are already worked theoretical examples in the material');
  const html=read(chapterId+'.html');
  assert.match(html,/href="fisica-capitulo-01\.css\?/,'Uses the same base style sheet as Análisis dimensional');
  assert.doesNotMatch(html,/href="history-(reading|chapter)\.css/);
@@ -92,8 +115,13 @@ function chapterOneTemplate(){
   assert.equal(h.run(`LESSONS[normalized({contentVersion:1,readingItem:${i}}).readingItem].id`),expected,'Legacy reading bookmark '+i);
  });
  assert.equal(h.run("normalized({activeTab:'exam'}).activeTab"),'practice');
- assert.equal(h.run("normalized({contentVersion:2,currentItem:2}).currentItem"),2);
- assert.equal(h.run("normalized({contentVersion:2,currentItem:999}).currentItem"),content.lessons.length-1);
+ const version2=['magnetismo-imanes','campo-magnetico','experimento-oersted','biot-savart','laboratorio-conductor','fuerzas-magneticas','flujo-faraday','ley-lenz','generador'];
+ version2.forEach((expected,i)=>{
+  assert.equal(h.run(`LESSONS[normalized({contentVersion:2,currentItem:${i}}).currentItem].id`),expected,'Previous nine-topic bookmark '+i);
+  assert.equal(h.run(`LESSONS[normalized({contentVersion:2,readingItem:${i}}).readingItem].id`),expected,'Previous nine-topic reading bookmark '+i);
+ });
+ assert.equal(h.run("normalized({contentVersion:3,currentItem:4}).currentItem"),4);
+ assert.equal(h.run("normalized({contentVersion:3,currentItem:999}).currentItem"),content.lessons.length-1);
  assert.equal(h.run("normalized({contentVersion:1,currentItem:-20}).currentItem"),0);
 }
 
@@ -102,6 +130,13 @@ async function workedAndProposedViews(){
  h.run("goTab('examples')");let html=h.elements.get('chapter-app').innerHTML;
  assert.equal((html.match(/class="example worked-example"/g)||[]).length,10);
  assert.equal((html.match(/Ver solución paso a paso/g)||[]).length,10);
+ const workedSections=[...html.matchAll(/<section class="example worked-example"[^>]*>([\s\S]*?)<\/section>/g)];
+ assert.equal(workedSections.length,10);
+ workedSections.forEach(([,section],i)=>{
+  assert.equal((section.match(/<img\b/g)||[]).length,1,'One source diagram per worked problem');
+  assert.equal((section.match(/data-action="math-figure"/g)||[]).length,1,'One functioning diagram enlargement control per worked problem');
+  assert.ok(section.includes('data-id="worked:'+(i+1)+'"'));
+ });
  assert.match(html,/Resueltos · 10/);assert.match(html,/Práctica · 10 problemas/);
  h.run("goTab('practice')");html=h.elements.get('chapter-app').innerHTML;
  assert.equal((html.match(/class="practice-card"/g)||[]).length,10);
@@ -117,18 +152,21 @@ async function previousPracticeMastery(){
  const legacyIds=Array.from({length:10},(_,i)=>'fis17-p'+String(i+1).padStart(2,'0'));
  cloud.set(key,{contentVersion:1,currentItem:2,updatedMs:10,practice10:{version:1,mastered:legacyIds,answers:{},results:{},attempts:{}}});
  const h=harness(chapterFiles,{cloud,local});h.run("window.StudyMode.choose('returning','free')");await h.signIn({uid:'returning'});
- assert.equal(h.run('P.practice10.mastered.length'),6,'Unchanged questions preserve their existing mastery');
+ assert.equal(h.run('P.practice10.mastered.length'),0,'Old answers cannot be credited to the ten replacement questions from the material');
+ assert.deepEqual(plain(h,'P.practiceArchive.beforeSourcePDF.mastered'),legacyIds,'All prior achievements are retained in the pre-source archive');
+ assert.deepEqual(cloud.get(key).practiceArchive.beforeSourcePDF.mastered,legacyIds,'The pre-source archive is persisted with the new bank');
  assert.equal(h.run('LESSONS[P.currentItem].id'),'fuerzas-magneticas');
- assert.equal(h.run('progressPercent()'),60);
- h.run("goTab('practice');window.ChapterPractice.choose(CHAPTER_ID,P.practice10,'fis17-v2-p01',0,P.studyMode);checkPractice('fis17-v2-p01')");await h.run('persist()');
- assert.equal(h.run('P.practice10.mastered.length'),7);
+ assert.equal(h.run('progressPercent()'),0);
+ h.run("goTab('practice');window.ChapterPractice.choose(CHAPTER_ID,P.practice10,'fis17-pdf-p01',2,P.studyMode);checkPractice('fis17-pdf-p01')");await h.run('persist()');
+ assert.equal(h.run('P.practice10.mastered.length'),1);
  // A stale remote snapshot cannot erase local practice mastery during retry synchronization.
- h.setOffline(true);h.run("window.ChapterPractice.choose(CHAPTER_ID,P.practice10,'fis17-v2-p02',1,P.studyMode);checkPractice('fis17-v2-p02')");await h.run('persist()');
+ h.setOffline(true);h.run("window.ChapterPractice.choose(CHAPTER_ID,P.practice10,'fis17-pdf-p02',3,P.studyMode);checkPractice('fis17-pdf-p02')");await h.run('persist()');
  const localProgress=JSON.parse(local.get('sin-limites:returning:'+chapterId));assert.equal(localProgress.pending,true);
  cloud.set(key,{...cloud.get(key),updatedMs:1,practice10:{version:1,mastered:['fis17-p03'],answers:{},results:{},attempts:{}}});
  h.setOffline(false);await h.run('retrySync()');
- assert.equal(h.run('P.practice10.mastered.length'),8,'Local correct answers survive an older remote version');
- assert.equal(cloud.get(key).practiceCompleted,8);assert.equal(JSON.parse(local.get('sin-limites:returning:'+chapterId)).pending,false);
+ assert.equal(h.run('P.practice10.mastered.length'),2,'Local correct answers to the material survive an older remote version');
+ assert.equal(cloud.get(key).practiceCompleted,2);assert.equal(JSON.parse(local.get('sin-limites:returning:'+chapterId)).pending,false);
+ assert.deepEqual(plain(h,'P.practiceArchive.beforeSourcePDF.mastered'),legacyIds,'An older remote version cannot erase the original achievement archive');
 }
 
 (async()=>{chapterOneTemplate();await workedAndProposedViews();await previousPracticeMastery();await contentAndPractice();await labPersistence();progressSanitization();await navigationAndTeacher();assetReferences();console.log('PASS: Physics 17 content, ten-question grading, progressive/free modes, lab persistence and offline merge, sanitization, account isolation, catalog routing and teacher tracking.');})().catch(error=>{console.error(error);process.exitCode=1;});

@@ -6,215 +6,560 @@ window.ELECTROMAGNETISM_CONTENT = {
   "courseId": 16,
   "courseName": "Física",
   "title": "Electromagnetismo",
-  "intro": "Comprende el magnetismo de los imanes, descubre cómo una corriente produce campo y explora un conductor rectilíneo desde diferentes planos. Estudia la teoría, compara diez problemas resueltos y practica con diez problemas propuestos.",
-  "version": 2,
+  "intro": "Estudia el capítulo siguiendo la estructura del material base: magnetismo, campo de las corrientes, fuerzas magnéticas, inducción y generador eléctrico. Revisa sus fórmulas, ejemplos y problemas.",
+  "version": 3,
   "format": "physics",
   "assessmentFormat": "practice-10",
-  "sourceNote": "Explicaciones, esquemas y problemas elaborados para SIN LÍMITES. Referencias de consulta: OpenStax, University Physics Volume 2, capítulos 11, 12 y 13. Se indican las condiciones y aproximaciones de cada modelo.",
+  "sourceNote": "Contenido organizado exclusivamente a partir del material electromagnetismo.pdf, capítulo XVIII, páginas impresas 214-236. La sección Resueltos conserva los ocho problemas resueltos y añade dos ejemplos ya desarrollados en su teoría; la práctica corresponde a sus diez problemas propuestos.",
+  "source": {
+    "filename": "electromagnetismo.pdf",
+    "pdfPages": 24,
+    "theoryPages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "workedPages": [
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "proposedPages": [
+      22,
+      23
+    ],
+    "answerKeyPage": 24,
+    "printedFirstPage": 214
+  },
   "lessons": [
     {
       "id": "magnetismo-imanes",
-      "title": "Magnetismo e imanes",
-      "subtitle": "Polos, materiales e imantación",
-      "goal": "Reconoce los polos de un imán y explica por qué un fragmento conserva ambos polos.",
-      "body": "<p>Un imán permite atraer ciertos materiales y ejercer fuerzas sobre otros imanes sin contacto directo. Puede ser de barra, herradura o disco. Sus dos regiones polares se denominan <strong>norte (N)</strong> y <strong>sur (S)</strong>.</p><div class=\"table-scroll\"><table><thead><tr><th>Polos enfrentados</th><th>Interacción</th></tr></thead><tbody><tr><td>N con N o S con S</td><td>Repulsión</td></tr><tr><td>N con S</td><td>Atracción</td></tr></tbody></table></div><p>Si cortamos un imán de barra transversalmente, cada fragmento conserva un polo norte y uno sur. Las nuevas caras de corte presentan polos opuestos. <strong>Cortar el imán no permite obtener polos aislados.</strong></p><h4>¿Todos los metales se atraen con fuerza?</h4><p>No. El hierro, el níquel y el cobalto son ejemplos de materiales ferromagnéticos. Un clavo de hierro puede imantarse al acercarle un imán; que sea atraído no demuestra que antes fuera un imán permanente. La respuesta intensa del hierro no se generaliza a todos los metales.</p><h4>Una mirada al interior: dominios magnéticos</h4><p>En un material ferromagnético existen regiones llamadas <strong>dominios</strong>, con momentos magnéticos alineados en su interior. En una muestra sin imantación global, las orientaciones de distintos dominios pueden compensarse. Al imantarla, unas orientaciones pasan a predominar. Según el material y su historia, parte de esa imantación puede conservarse al retirar el campo externo.</p><div class=\"key\"><b>Idea clave</b>Polos iguales se repelen y polos diferentes se atraen. Cada fragmento de un imán sigue siendo un dipolo: posee N y S.</div><p class=\"resource-note\">Para ampliar: <a href=\"https://openstax.org/books/university-physics-volume-2/pages/11-1-magnetism-and-its-historical-discoveries\" target=\"_blank\" rel=\"noopener noreferrer\">Imanes y polos · OpenStax</a>.</p><p class=\"resource-note\">Para ampliar: <a href=\"https://openstax.org/books/university-physics-volume-2/pages/12-7-magnetism-in-matter\" target=\"_blank\" rel=\"noopener noreferrer\">Magnetismo en la materia · OpenStax</a>.</p>",
+      "title": "Aspectos previos y magnetismo",
+      "subtitle": "Imanes y propiedades de sus polos",
+      "sourcePages": [
+        1,
+        2
+      ],
+      "sourcePrintedPages": [
+        214,
+        215
+      ],
+      "body": "<p>El electromagnetismo relaciona los fenómenos eléctricos y magnéticos. El material presenta esta relación a partir del <strong>magnetismo</strong>: un imán atrae cuerpos que contienen hierro y puede ejercer fuerzas sobre otros imanes.</p><p>Los minerales de hierro magnetizado son ejemplos de <strong>imanes permanentes</strong>. Al frotar un cuerpo de hierro con un imán, puede adquirir las características de un <strong>imán artificial</strong>.</p><div class=\"table-scroll\"><table><thead><tr><th>Propiedad del material</th><th>Descripción</th></tr></thead><tbody><tr><td>Polos magnéticos</td><td>Son las zonas del imán donde la acción magnética es más intensa.</td></tr><tr><td>Orientación de una brújula</td><td>Si un imán de barra puede girar libremente, uno de sus extremos apunta aproximadamente hacia el norte geográfico; se denomina polo norte magnético.</td></tr><tr><td>Interacción entre polos</td><td>Polos semejantes se repelen; polos opuestos se atraen.</td></tr><tr><td>Polos en pares</td><td>Al romper un imán se obtienen otros imanes, cada uno con norte y sur; no se aíslan sus polos.</td></tr></tbody></table></div><figure class=\"dimensional-figure\"><img src=\"assets/em-pdf/teoria-imanes.svg\" alt=\"Dos pares de imanes muestran atracción N-S y repulsión S-S; cada fragmento conserva dos polos.\" width=\"760\" height=\"400\" loading=\"lazy\"><figcaption>Propiedades de los imanes, según el material base.</figcaption></figure><div class=\"key\"><b>Idea clave</b>El imán presenta dos polos. Su interacción depende de cuáles queden enfrentados.</div>",
       "examples": []
     },
     {
       "id": "campo-magnetico",
-      "title": "Campo magnético y líneas de campo",
-      "subtitle": "Representar una magnitud vectorial",
-      "goal": "Interpreta la dirección de B y distingue vectores en el plano, entrantes y salientes.",
-      "body": "<p>El <strong>campo magnético</strong> \\(\\vec B\\) describe la interacción magnética en cada punto. Es un vector: tiene magnitud, dirección y sentido. Su unidad del SI es el tesla.</p><div class=\"equation\">\\[1\\,\\mathrm T=1\\,\\frac{\\mathrm N}{\\mathrm{A\\cdot m}}\\qquad1\\,\\mathrm{mT}=10^{-3}\\,\\mathrm T\\qquad1\\,\\mu\\mathrm T=10^{-6}\\,\\mathrm T\\]</div><p>Una brújula libre de girar orienta su extremo norte aproximadamente en el sentido de la componente del campo que está en su plano de giro. Las limaduras de hierro ayudan a visualizar un patrón, pero no convierten las líneas del dibujo en objetos materiales.</p><h4>Cómo leer las líneas</h4><ul><li>La tangente a una línea indica la dirección local de \\(\\vec B\\).</li><li>En una representación comparable, una mayor concentración de líneas señala un campo más intenso.</li><li>Las líneas no se cruzan: el campo tiene una sola dirección en cada punto donde es distinto de cero.</li><li>En el exterior de un imán van de N a S; el recorrido se cierra por su interior de S a N.</li></ul><figure class=\"dimensional-figure\"><svg viewBox=\"0 0 640 310\" role=\"img\" aria-labelledby=\"em-magnet-title\" style=\"display:block;width:100%;height:auto\"><title id=\"em-magnet-title\">Imán de barra: líneas exteriores del norte al sur y retorno interior del sur al norte</title><defs><marker id=\"em-mag-arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"7\" refY=\"4\" orient=\"auto\"><path d=\"M0 0L8 4L0 8Z\" fill=\"#157859\"/></marker></defs><rect x=\"190\" y=\"130\" width=\"130\" height=\"66\" rx=\"8\" fill=\"#dc4b54\"/><path d=\"M320 130H442Q450 130 450 138V188Q450 196 442 196H320Z\" fill=\"#285f9b\"/><g fill=\"white\" font-family=\"sans-serif\" font-size=\"28\" font-weight=\"700\" text-anchor=\"middle\"><text x=\"255\" y=\"172\">N</text><text x=\"385\" y=\"172\">S</text></g><g stroke=\"#157859\" stroke-width=\"3\" fill=\"none\" marker-end=\"url(#em-mag-arrow)\"><path d=\"M190 148C85 145 100 48 260 48H380C540 48 555 145 450 148\"/><path d=\"M190 180C85 185 100 275 260 275H380C540 275 555 185 450 180\"/><path d=\"M362 163H280\"/></g><g fill=\"#157859\"><path d=\"M315 42L327 48L315 54Z\"/><path d=\"M315 269L327 275L315 281Z\"/></g><g font-family=\"sans-serif\" font-size=\"17\" fill=\"#354b65\" text-anchor=\"middle\"><text x=\"320\" y=\"27\">Exterior: N → S</text><text x=\"320\" y=\"228\">Interior: S → N</text></g></svg><figcaption>Las flechas indican el sentido de B. Las curvas representan lazos cerrados; no son trayectorias de partículas.</figcaption></figure><h4>Vectores perpendiculares a una pantalla</h4><div class=\"table-scroll\"><table><thead><tr><th>Símbolo</th><th>Lectura</th><th>Imagen mental</th></tr></thead><tbody><tr><td><strong>⊙</strong></td><td>Sale de la pantalla hacia ti</td><td>Ves la punta de una flecha</td></tr><tr><td><strong>⊗</strong></td><td>Entra en la pantalla y se aleja de ti</td><td>Ves la cola de una flecha</td></tr></tbody></table></div><div class=\"key\"><b>Idea clave</b>Una línea muestra la dirección del campo. Su forma y su sentido deben interpretarse desde la vista indicada.</div><p class=\"resource-note\">Para ampliar: <a href=\"https://openstax.org/books/university-physics-volume-2/pages/11-2-magnetic-fields-and-lines\" target=\"_blank\" rel=\"noopener noreferrer\">Campos magnéticos y líneas · OpenStax</a>.</p>",
+      "title": "Campo magnético",
+      "subtitle": "Líneas de inducción y vector B",
+      "sourcePages": [
+        2
+      ],
+      "sourcePrintedPages": [
+        215
+      ],
+      "body": "<p>Un cuerpo magnetizado puede ejercer fuerzas a distancia. El material representa el campo que lo rodea mediante <strong>líneas de inducción</strong>, orientadas en el sentido que señala el polo norte de una brújula en cada punto.</p><ul><li>Las líneas de inducción son <strong>cerradas</strong>: se cierran dentro del imán.</li><li>Fuera del imán, salen del polo norte y entran en el polo sur.</li></ul><figure class=\"dimensional-figure\"><img src=\"assets/em-pdf/teoria-campo.svg\" alt=\"Imán N-S con líneas cerradas: exterior N hacia S e interior S hacia N.\" width=\"760\" height=\"400\" loading=\"lazy\"><figcaption>Representación de las líneas de inducción de un imán.</figcaption></figure><p>En cada punto se define el vector de <strong>inducción del campo magnético</strong> \\(\\vec B\\). Este vector es tangente a la línea de inducción y apunta en su mismo sentido. Su unidad es el <strong>tesla (T)</strong>.</p><div class=\"key\"><b>Idea clave</b>El vector B describe el campo en un punto; las líneas permiten representar su dirección y sentido.</div>",
       "examples": []
     },
     {
       "id": "experimento-oersted",
-      "title": "Experimento de Oersted",
-      "subtitle": "Una corriente desvía una brújula",
-      "goal": "Relaciona la corriente eléctrica con el campo magnético que produce.",
-      "body": "<p>En 1820, <strong>Hans Christian Oersted</strong> dio a conocer que una corriente en un conductor puede desviar una brújula cercana. La observación conectó electricidad y magnetismo: <strong>las cargas en movimiento producen campo magnético</strong>.</p><h4>Comparación de tres situaciones</h4><div class=\"table-scroll\"><table><thead><tr><th>Situación</th><th>Campo del conductor</th><th>Brújula</th></tr></thead><tbody><tr><td>Corriente nula</td><td>Nulo en el modelo del hilo</td><td>Responde al campo terrestre y a otros campos presentes</td></tr><tr><td>Circula corriente</td><td>Aparece alrededor del hilo</td><td>Puede desviarse respecto a su orientación inicial</td></tr><tr><td>Invertimos la corriente</td><td>Se invierte en cada punto</td><td>La desviación cambia de sentido en una disposición adecuada</td></tr></tbody></table></div><p>La brújula responde al <strong>campo total</strong>, no solamente al del hilo. Si el campo terrestre es relevante, invertir la corriente no obliga a la aguja a girar exactamente 180°. Para aislar el efecto en el modelo, compara el campo del conductor por separado.</p><h4>Regla de la mano derecha para un hilo</h4><ol><li>Imagina que sujetas el conductor con la <strong>mano derecha</strong>.</li><li>Apunta el pulgar en el sentido de la <strong>corriente convencional</strong>.</li><li>Los dedos que rodean el hilo indican el sentido de las circunferencias de campo.</li></ol><p>Visto perpendicularmente al hilo: si la corriente sale hacia ti, <strong>⊙</strong>, el campo gira en sentido <strong>antihorario</strong>. Si entra, <strong>⊗</strong>, gira en sentido <strong>horario</strong>. En un conductor metálico, el movimiento de los electrones tiene sentido opuesto al de la corriente convencional.</p><div class=\"key\"><b>Idea clave</b>La corriente produce el campo. La brújula permite detectar su efecto y el sentido local del campo resultante.</div><p class=\"resource-note\">Para ampliar: <a href=\"https://openstax.org/books/university-physics-volume-2/pages/12-2-magnetic-field-due-to-a-thin-straight-wire\" target=\"_blank\" rel=\"noopener noreferrer\">Oersted y campos producidos por corrientes · OpenStax</a>.</p>",
-      "examples": [
-        {
-          "title": "Mismo punto, corriente opuesta",
-          "question": "Un hilo atraviesa perpendicularmente la hoja. La corriente sale hacia ti. ¿Hacia dónde apunta el campo en un punto situado a su derecha?",
-          "steps": [
-            "Con el pulgar derecho hacia ti, los dedos rodean el hilo en sentido antihorario.",
-            "En el extremo derecho de esa circunferencia, la tangente apunta hacia arriba.",
-            "Al invertir la corriente, el campo en ese mismo punto apunta hacia abajo."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "biot-savart",
-      "title": "Ley de Biot–Savart y conductor rectilíneo",
-      "subtitle": "Calcular el campo de una corriente",
-      "goal": "Relaciona la geometría de la corriente con B y aplica el resultado para un hilo largo.",
-      "body": "<p>La <strong>ley de Biot–Savart</strong> permite calcular el campo de una distribución de corriente estacionaria. Se divide imaginariamente el conductor en pequeños elementos: cada uno aporta un vector de campo y después se suman todas las contribuciones.</p><div class=\"equation\">\\[\\mathrm d\\vec B=\\frac{\\mu_0}{4\\pi}\\frac{I\\,\\mathrm d\\vec\\ell\\times\\hat{\\boldsymbol R}}{R^2}\\]</div><ul><li>\\(\\mathrm d\\vec\\ell\\) apunta en el sentido de la corriente convencional, con \\(I\\geq0\\) para esta escritura.</li><li>\\(\\boldsymbol R\\) va desde el elemento de conductor hasta el punto de observación; \\(R\\) es su longitud y \\(\\hat{\\boldsymbol R}\\) su vector unitario.</li><li>El producto vectorial determina un aporte perpendicular a \\(\\mathrm d\\vec\\ell\\) y a \\(\\boldsymbol R\\).</li></ul><div class=\"equation\">\\[\\vec B=\\frac{\\mu_0}{4\\pi}\\int_{\\text{conductor}}\\frac{I\\,\\mathrm d\\vec\\ell\\times\\hat{\\boldsymbol R}}{R^2}\\]</div><p>La integral expresa esa suma continua; en este nivel usaremos su resultado para la geometría rectilínea. En el vacío tomamos \\(\\mu_0\\approx4\\pi\\times10^{-7}\\,\\mathrm{T\\cdot m/A}\\).</p><h4>Resultado para un conductor muy largo</h4><div class=\"equation\">\\[\\boxed{B=\\frac{\\mu_0|I|}{2\\pi r}}\\qquad B=2\\times10^{-7}\\frac{|I|}{r}\\;\\text{(en SI)}\\]</div><p>Aquí <strong>\\(r\\) es la distancia perpendicular al eje del hilo</strong>, distinta de la distancia \\(R\\) a cada elemento utilizada antes. La expresión es válida fuera de un conductor rectilíneo ideal muy largo; aproxima bien un hilo real si el punto está lejos de sus extremos y su radio es pequeño frente a \\(r\\). Para aire usamos aproximadamente la permeabilidad del vacío. No se aplica en \\(r=0\\), ni se extrapola al interior del material.</p><div class=\"table-scroll\"><table><thead><tr><th>Cambio aislado</th><th>Efecto en la magnitud B</th></tr></thead><tbody><tr><td>Duplicar |I|, conservar r</td><td>Se duplica</td></tr><tr><td>Duplicar r, conservar I</td><td>Se reduce a la mitad</td></tr><tr><td>Invertir I, conservar |I| y r</td><td>Igual magnitud, sentido opuesto</td></tr><tr><td>I = 0</td><td>Campo del hilo nulo; pueden existir otros campos</td></tr></tbody></table></div><h4>Superposición: más de un conductor</h4><div class=\"equation\">\\[\\vec B_{\\text{total}}=\\vec B_1+\\vec B_2+\\cdots\\]</div><p>Calcula cada magnitud y determina cada sentido antes de sumar. Entre dos hilos paralelos con corrientes del mismo sentido, sus campos son opuestos; se anulan en el punto medio solo si las corrientes tienen igual magnitud. Para corrientes de sentidos opuestos, sus campos en ese punto se refuerzan.</p><div class=\"key\"><b>Idea clave</b>Biot–Savart suma aportes vectoriales. Para un hilo largo, B disminuye como 1/r y sus líneas rodean el eje del conductor.</div><p class=\"resource-note\">Para ampliar: <a href=\"https://openstax.org/books/university-physics-volume-2/pages/12-1-the-biot-savart-law\" target=\"_blank\" rel=\"noopener noreferrer\">Ley de Biot–Savart · OpenStax</a>.</p><p class=\"resource-note\">Para ampliar: <a href=\"https://openstax.org/books/university-physics-volume-2/pages/12-2-magnetic-field-due-to-a-thin-straight-wire\" target=\"_blank\" rel=\"noopener noreferrer\">Campo de un hilo rectilíneo · OpenStax</a>.</p>",
+      "title": "Experiencia de Oersted",
+      "subtitle": "La corriente eléctrica produce campo magnético",
+      "sourcePages": [
+        3
+      ],
+      "sourcePrintedPages": [
+        216
+      ],
+      "body": "<p>En 1820, Hans Christian Oersted dio a conocer una relación entre electricidad y magnetismo. En el experimento se coloca una <strong>brújula sobre un alambre horizontal</strong> y se compara su orientación con y sin corriente.</p><div class=\"table-scroll\"><table><thead><tr><th>Situación</th><th>Observación</th></tr></thead><tbody><tr><td>El alambre no conduce corriente: I = 0</td><td>La aguja apunta hacia el norte.</td></tr><tr><td>Circula corriente por el alambre</td><td>La aguja se desvía.</td></tr><tr><td>Se invierte la corriente</td><td>La desviación cambia de sentido en la disposición mostrada.</td></tr></tbody></table></div><div class=\"key\"><b>Idea clave</b>La corriente eléctrica que atraviesa un conductor genera un campo magnético alrededor de él.</div>",
       "examples": []
     },
     {
       "id": "laboratorio-conductor",
-      "title": "Laboratorio: campo de un conductor",
-      "subtitle": "Un mismo campo en diferentes planos",
-      "goal": "Explora cómo cambian la magnitud y la representación de B al variar I, r y la vista.",
-      "body": "<p>El conductor sigue el eje \\(z\\). Explora su campo desde una vista espacial, un plano <strong>transversal</strong> perpendicular al hilo y planos <strong>longitudinales</strong> que lo contienen. Cambiar de vista no cambia el fenómeno: cambia cómo lo representamos.</p><div data-wire-field-lab></div><h4>Guía de exploración</h4><ol><li><strong>Predice:</strong> fija una distancia y decide qué ocurrirá con B al duplicar la corriente. Compruébalo con la lectura numérica.</li><li><strong>Compara:</strong> conserva la corriente y duplica la distancia al eje. Describe qué cambia y qué se mantiene.</li><li><strong>Invierte:</strong> cambia el sentido de la corriente y observa el vector del campo en el mismo punto.</li><li><strong>Cambia de plano:</strong> identifica las circunferencias en el plano transversal y los símbolos entrantes o salientes en el longitudinal.</li><li><strong>Desconecta:</strong> lleva la corriente a cero y distingue el campo del hilo de otros campos si el simulador los muestra.</li></ol><p>Las flechas animadas indican el <strong>sentido del campo magnético</strong>. Con corriente constante, el campo de este modelo es estacionario; las líneas son una representación vectorial. El hilo dibujado tiene longitud finita por motivos de visualización, pero el cálculo usa la aproximación de hilo muy largo.</p><div class=\"key\"><b>Idea clave</b>En el plano transversal, B es tangente a circunferencias. En un plano longitudinal que contiene el hilo, B es perpendicular a ese plano en los puntos fuera del eje.</div>",
+      "title": "Campo de un conductor rectilíneo",
+      "subtitle": "Circunferencias, mano derecha y diferentes vistas",
+      "sourcePages": [
+        3,
+        4
+      ],
+      "sourcePrintedPages": [
+        216,
+        217
+      ],
+      "body": "<p>Alrededor de un conductor rectilíneo, las líneas de inducción son <strong>circunferencias concéntricas</strong> contenidas en planos <strong>perpendiculares</strong> al conductor.</p><p>Para determinar su sentido, se rodea imaginariamente el conductor con la <strong>mano derecha</strong>: el pulgar extendido apunta en el sentido de la corriente eléctrica y los otros dedos indican el sentido de las líneas de inducción.</p><div class=\"table-scroll\"><table><thead><tr><th>Vista del material</th><th>Representación</th></tr></thead><tbody><tr><td>Corriente saliente: ⊙</td><td>Vista axial: líneas de inducción en sentido antihorario.</td></tr><tr><td>Corriente entrante: ⊗</td><td>Vista axial: líneas de inducción en sentido horario.</td></tr><tr><td>Vista longitudinal o de perfil</td><td>El campo atraviesa el plano del dibujo: ⊙ sale de él y ⊗ entra en él.</td></tr></tbody></table></div><p>En la aplicación, el conductor coincide con el eje \\(z\\). La vista transversal muestra las circunferencias; las vistas longitudinales permiten observar el campo que entra o sale del plano, como en los tres observadores del material.</p><div data-wire-field-lab></div><div class=\"key\"><b>Idea clave</b>Cambiar el punto de vista cambia la representación, pero no el sentido físico del campo alrededor del conductor.</div>",
       "examples": []
     },
     {
-      "id": "fuerzas-magneticas",
-      "title": "Fuerzas magnéticas",
-      "subtitle": "Sobre cargas en movimiento y conductores",
-      "goal": "Distingue producir un campo de experimentar una fuerza debida a un campo externo.",
-      "body": "<h4>Sobre una carga en movimiento</h4><div class=\"equation\">\\[\\vec F=q\\,\\vec v\\times\\vec B\\qquad\\boxed{F=|q|vB\\operatorname{sen}\\theta}\\]</div><p>El ángulo \\(\\theta\\) se mide entre la velocidad y el campo. Si la carga está en reposo, o se mueve paralela o antiparalelamente a B, la fuerza magnética es cero. Para movimiento perpendicular es máxima.</p><ol><li>Para una carga positiva, gira los dedos derechos desde \\(\\vec v\\) hacia \\(\\vec B\\) por el giro menor: el pulgar indica \\(\\vec F\\).</li><li>Si la carga es negativa, invierte el sentido obtenido.</li></ol><p>La fuerza magnética sobre una carga puntual es perpendicular a su velocidad. Por sí sola puede desviar la trayectoria, pero no realiza trabajo ni cambia su rapidez.</p><h4>Sobre un tramo de conductor</h4><div class=\"equation\">\\[\\vec F=I\\,\\vec L\\times\\vec B_{\\text{ext}}\\qquad\\boxed{F=B_{\\text{ext}}IL\\operatorname{sen}\\theta}\\]</div><p>Esta expresión se aplica a un tramo recto completamente inmerso en un campo externo uniforme. El vector \\(\\vec L\\) tiene longitud L y apunta en el sentido de la corriente convencional. El ángulo es el que forman la corriente y el campo.</p><p>Un conductor <strong>produce su propio campo</strong>; además, puede experimentar una fuerza por un <strong>campo externo</strong>. Esta segunda interacción permite generar movimiento en motores. Entre dos hilos largos paralelos, corrientes del mismo sentido se atraen y corrientes de sentidos opuestos se repelen.</p><div class=\"table-scroll\"><table><thead><tr><th>Pregunta</th><th>Relación</th></tr></thead><tbody><tr><td>¿Qué campo produce un hilo largo?</td><td>\\(B=\\mu_0|I|/(2\\pi r)\\)</td></tr><tr><td>¿Qué fuerza recibe una carga?</td><td>\\(F=|q|vB\\operatorname{sen}\\theta\\)</td></tr><tr><td>¿Qué fuerza recibe un tramo recto?</td><td>\\(F=B_{\\text{ext}}IL\\operatorname{sen}\\theta\\)</td></tr></tbody></table></div><div class=\"key\"><b>Idea clave</b>El campo se mide en teslas; la fuerza, en newtons. Identifica qué fuente produce B y sobre qué objeto actúa la fuerza.</div><p class=\"resource-note\">Para ampliar: <a href=\"https://openstax.org/books/university-physics-volume-2/pages/11-2-magnetic-fields-and-lines\" target=\"_blank\" rel=\"noopener noreferrer\">Fuerza magnética sobre cargas · OpenStax</a>.</p><p class=\"resource-note\">Para ampliar: <a href=\"https://openstax.org/books/university-physics-volume-2/pages/12-3-magnetic-force-between-two-parallel-currents\" target=\"_blank\" rel=\"noopener noreferrer\">Fuerza entre corrientes paralelas · OpenStax</a>.</p>",
-      "examples": []
-    },
-    {
-      "id": "flujo-faraday",
-      "title": "Flujo magnético y ley de Faraday",
-      "subtitle": "Importa el cambio de flujo",
-      "goal": "Calcula el flujo y distingue fem instantánea de fem media.",
-      "body": "<p>Para una espira plana de área A en un campo uniforme, el <strong>flujo magnético</strong> es:</p><div class=\"equation\">\\[\\boxed{\\Phi=BA\\cos\\theta}\\qquad1\\,\\mathrm{Wb}=1\\,\\mathrm{T\\cdot m^2}\\]</div><p>El ángulo se mide entre \\(\\vec B\\) y la <strong>normal</strong> a la superficie: un vector perpendicular al plano de la espira. No es el ángulo con el propio plano. Elegir la normal fija el signo del flujo.</p><div class=\"table-scroll\"><table><thead><tr><th>Orientación de B</th><th>Ángulo con la normal</th><th>Flujo</th></tr></thead><tbody><tr><td>En el sentido de la normal</td><td>0°</td><td>+BA</td></tr><tr><td>Paralelo al plano</td><td>90°</td><td>0</td></tr><tr><td>Opuesto a la normal</td><td>180°</td><td>−BA</td></tr></tbody></table></div><h4>Ley de Faraday</h4><p>Para una bobina con N espiras que comparten el mismo flujo por espira:</p><div class=\"equation\">\\[\\varepsilon=-N\\frac{\\mathrm d\\Phi}{\\mathrm dt}\\qquad\\varepsilon_{\\text{media}}=-N\\frac{\\Delta\\Phi}{\\Delta t}\\]</div><p>El flujo cambia si varía el campo, el área o la orientación. La <strong>fuerza electromotriz (fem)</strong> se mide en voltios, aunque su nombre incluya la palabra «fuerza». El signo se interpreta con una normal y un sentido de recorrido asociados por la mano derecha.</p><p>La fem instantánea depende de la pendiente del flujo en ese instante; la fem media usa el cambio entre dos extremos de un intervalo. Coinciden si el flujo varía linealmente durante él. Un flujo grande y constante no induce fem; un flujo que pasa por cero sí puede tener una pendiente no nula.</p><div class=\"key\"><b>Idea clave</b>No confundir B, flujo y fem: B describe el campo, Φ depende de la superficie y ε depende del cambio temporal de Φ.</div><p class=\"resource-note\">Para ampliar: <a href=\"https://openstax.org/books/university-physics-volume-2/pages/13-1-faradays-law\" target=\"_blank\" rel=\"noopener noreferrer\">Flujo y ley de Faraday · OpenStax</a>.</p>",
-      "examples": []
-    },
-    {
-      "id": "ley-lenz",
-      "title": "Ley de Lenz y circuito abierto",
-      "subtitle": "El sentido de la inducción",
-      "goal": "Determina el sentido inducido y separa la existencia de fem de la circulación de corriente.",
-      "body": "<p>La <strong>ley de Lenz</strong> establece que el efecto de la corriente inducida se opone al <strong>cambio del flujo</strong> que la origina. No significa que el campo inducido siempre sea contrario al campo externo.</p><ol><li>Identifica el sentido del campo externo a través de la espira.</li><li>Decide si su flujo aumenta o disminuye.</li><li>Elige el campo inducido que contrarresta ese cambio.</li><li>Aplica la mano derecha a la espira para obtener el sentido de la corriente.</li></ol><div class=\"table-scroll\"><table><thead><tr><th>Flujo externo entrante ⊗</th><th>Campo inducido necesario</th><th>Corriente vista de frente</th></tr></thead><tbody><tr><td>Aumenta</td><td>Saliente ⊙</td><td>Antihoraria</td></tr><tr><td>Disminuye</td><td>Entrante ⊗</td><td>Horaria</td></tr></tbody></table></div><h4>Puede haber fem sin corriente sostenida</h4><p>Mientras cambia el flujo, una bobina abierta puede presentar una fem entre sus terminales. Sin una trayectoria conductora cerrada, no circula corriente sostenida por la carga en el modelo del laboratorio. Si el circuito resistivo está cerrado:</p><div class=\"equation\">\\[I=\\frac{\\varepsilon}{R}\\]</div><p>El laboratorio desprecia la autoinducción, la capacitancia y los transitorios de conexión; por eso, en el circuito cerrado, la corriente sigue instantáneamente a ε/R. Una bobina real puede tener respuestas transitorias diferentes. Mantén la misma referencia de terminales para comparar signos.</p><div class=\"key\"><b>Idea clave</b>Lenz se opone al cambio del flujo. Una fem inducida puede existir con el circuito abierto y corriente sostenida nula.</div><p class=\"resource-note\">Para ampliar: <a href=\"https://openstax.org/books/university-physics-volume-2/pages/13-2-lenzs-law\" target=\"_blank\" rel=\"noopener noreferrer\">Ley de Lenz y conservación de la energía · OpenStax</a>.</p>",
+      "id": "biot-savart",
+      "title": "Ley de Biot-Savart-Laplace",
+      "subtitle": "Conductor finito y casos particulares",
+      "sourcePages": [
+        4,
+        5,
+        6
+      ],
+      "sourcePrintedPages": [
+        217,
+        218,
+        219
+      ],
+      "body": "<p>Esta ley permite determinar la inducción magnética en un punto debida a una corriente que fluye por un conductor. Para el tramo rectilíneo mostrado en el material:</p><figure class=\"dimensional-figure\"><img src=\"assets/em-pdf/teoria-biot-finito.svg\" alt=\"Conductor finito: distancia perpendicular d y ángulos alfa y beta medidos desde esa perpendicular.\" width=\"760\" height=\"400\" loading=\"lazy\"><figcaption>Geometría de la ley de Biot-Savart-Laplace · material, p. 217.</figcaption></figure><div class=\"equation\">\\[\\boxed{B_P=\\frac{\\mu_0 I}{4\\pi d}\\left(\\operatorname{sen}\\alpha+\\operatorname{sen}\\beta\\right)}\\]</div><p>\\(d\\) es la distancia perpendicular desde el punto al conductor; \\(\\alpha\\) y \\(\\beta\\) se miden desde esa perpendicular hasta los segmentos que unen el punto con los extremos del tramo. Esta forma corresponde a la disposición mostrada, con la perpendicular situada entre ambos extremos.</p><div class=\"table-scroll\"><table><thead><tr><th>Magnitud</th><th>Unidad</th></tr></thead><tbody><tr><td>I: intensidad de corriente</td><td>amperio (A)</td></tr><tr><td>d: distancia perpendicular</td><td>metro (m)</td></tr><tr><td>B: inducción magnética</td><td>tesla (T)</td></tr></tbody></table></div><div class=\"equation\">\\[\\mu_0\\approx4\\pi\\times10^{-7}\\,\\mathrm{T\\cdot m/A}\\]</div><h4>Casos particulares</h4><div class=\"table-scroll\"><table><thead><tr><th>Conductor</th><th>Campo en el punto indicado</th></tr></thead><tbody><tr><td>Recto de gran longitud, a distancia d</td><td>\\(B_P=\\dfrac{\\mu_0 I}{2\\pi d}\\)</td></tr><tr><td>Conductor semiinfinito, punto sobre la perpendicular que pasa por su extremo</td><td>\\(B_P=\\dfrac{\\mu_0 I}{4\\pi d}\\)</td></tr><tr><td>Espira circular de radio R, en su centro</td><td>\\(B_O=\\dfrac{\\mu_0 I}{2R}\\)</td></tr><tr><td>Arco de circunferencia de radio R y ángulo θ, en su centro</td><td>\\(B_O=\\dfrac{\\mu_0 I\\theta}{4\\pi R}\\); θ en radianes.</td></tr></tbody></table></div><figure class=\"dimensional-figure\"><img src=\"assets/em-pdf/teoria-biot-casos.svg\" alt=\"Casos del material: hilo largo, semiinfinito, espira circular y arco de corriente, con sus fórmulas.\" width=\"760\" height=\"660\" loading=\"lazy\"><figcaption>Casos particulares del material · pp. 217-218.</figcaption></figure><p>Las expresiones dan la <strong>magnitud</strong> del campo. El sentido se determina con la mano derecha. En el aire se emplea aproximadamente la permeabilidad del vacío indicada en el material.</p><div class=\"key\"><b>Idea clave</b>Identifica la geometría del conductor, la distancia perpendicular o el radio y el punto donde se calcula B.</div>",
       "examples": [
         {
-          "title": "Una bobina y dos lecturas",
-          "question": "Un cambio de flujo induce una fem de 3 V. La resistencia total del circuito cerrado es 15 Ω. ¿Qué sucede al abrirlo?",
+          "title": "Ejemplo del material: hilo y espira circular",
+          "question": "Un hilo muy largo lleva \\(I_1=2\\,\\mathrm A\\) y está a \\(20\\,\\mathrm{cm}\\) del centro O de una espira. La espira lleva \\(I_2=2\\,\\mathrm A\\) y su radio es \\(R=\\pi/20\\,\\mathrm m\\). Según los sentidos del gráfico del material, ambos campos en O son opuestos. Calcula el campo resultante.",
           "steps": [
-            "Con el circuito cerrado y en el modelo resistivo: \\(I=3/15=0{,}20\\,\\mathrm A\\).",
-            "Al abrir el circuito, la corriente sostenida por la carga se vuelve cero.",
-            "Si el flujo continúa cambiando del mismo modo, la fem puede seguir siendo 3 V."
+            "<div class=\"equation\">\\[B_1=\\frac{\\mu_0 I_1}{2\\pi d}=2\\times10^{-6}\\,\\mathrm T=2\\,\\mu\\mathrm T\\]</div>",
+            "<div class=\"equation\">\\[B_2=\\frac{\\mu_0 I_2}{2R}=8\\times10^{-6}\\,\\mathrm T=8\\,\\mu\\mathrm T\\]</div>",
+            "Como los campos tienen sentidos opuestos: \\(B_O=|B_1-B_2|=6\\,\\mu\\mathrm T\\)."
           ]
         }
       ]
     },
     {
+      "id": "fuerzas-magneticas",
+      "title": "Fuerza magnética sobre una partícula",
+      "subtitle": "Dirección, magnitud y casos particulares",
+      "sourcePages": [
+        6,
+        7
+      ],
+      "sourcePrintedPages": [
+        219,
+        220
+      ],
+      "body": "<p>Una partícula electrizada en movimiento puede interactuar con un campo magnético externo y experimentar una <strong>fuerza magnética</strong>. La fuerza es perpendicular a la velocidad \\(\\vec v\\) y al campo \\(\\vec B\\).</p><div class=\"equation\">\\[\\boxed{F_{\\mathrm{mag}}=|q|vB\\operatorname{sen}\\theta}\\]</div><div class=\"table-scroll\"><table><thead><tr><th>Símbolo</th><th>Significado y unidad</th></tr></thead><tbody><tr><td>q</td><td>Carga eléctrica, en C</td></tr><tr><td>v</td><td>Rapidez, en m/s</td></tr><tr><td>B</td><td>Inducción magnética, en T</td></tr><tr><td>θ</td><td>Ángulo entre la velocidad y B</td></tr><tr><td>Fmag</td><td>Fuerza magnética, en N</td></tr></tbody></table></div><p>El material determina la dirección mediante la <strong>regla de la palma izquierda</strong>, representada en sus esquemas. Para una carga negativa se invierte el sentido obtenido para una carga positiva con la misma velocidad.</p><figure class=\"dimensional-figure\"><img src=\"assets/em-pdf/teoria-palma-izquierda.svg\" alt=\"Esquemas originales de la regla de la palma izquierda para la fuerza magnética sobre una carga.\" width=\"760\" height=\"400\" loading=\"lazy\"><figcaption>Regla de la palma izquierda · esquema del material, p. 220.</figcaption></figure><div class=\"table-scroll\"><table><thead><tr><th>Orientación</th><th>Resultado</th></tr></thead><tbody><tr><td>Velocidad paralela o antiparalela a B</td><td>\\(F_{\\mathrm{mag}}=0\\)</td></tr><tr><td>Velocidad perpendicular a B</td><td>\\(F_{\\mathrm{mag,max}}=|q|vB\\)</td></tr></tbody></table></div><div class=\"key\"><b>Idea clave</b>La magnitud depende del ángulo; el sentido también depende del signo de la carga.</div>",
+      "examples": [
+        {
+          "title": "Ejemplo del material: fuerza con ángulo de 30°",
+          "question": "Una partícula de carga \\(q=6\\,\\mathrm{mC}\\) se mueve con rapidez \\(v=400\\,\\mathrm{m/s}\\) y forma \\(30^\\circ\\) con un campo de \\(B=0{,}5\\,\\mathrm T\\). Calcula la magnitud de la fuerza.",
+          "steps": [
+            "\\(q=6\\times10^{-3}\\,\\mathrm C\\).",
+            "<div class=\"equation\">\\[F_{\\mathrm{mag}}=(6\\times10^{-3})(400)(0{,}5)\\operatorname{sen}30^\\circ=0{,}6\\,\\mathrm N\\]</div>",
+            "La magnitud de la fuerza es \\(0{,}6\\,\\mathrm N\\)."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fuerza-conductores",
+      "title": "Fuerza magnética sobre conductores",
+      "subtitle": "Corriente, longitud y campo externo",
+      "sourcePages": [
+        8,
+        9
+      ],
+      "sourcePrintedPages": [
+        221,
+        222
+      ],
+      "body": "<p>Un conductor con corriente puede interactuar con un <strong>campo magnético externo</strong>. Para un tramo rectilíneo de longitud L, inmerso en un campo homogéneo:</p><div class=\"equation\">\\[\\boxed{F_{\\mathrm{mag}}=BIL\\operatorname{sen}\\theta}\\]</div><p>La intensidad I se expresa en amperios; L, en metros; B, en teslas, y la fuerza, en newtons. El ángulo θ se mide entre la corriente y el campo.</p><p>La fuerza es perpendicular al plano definido por el conductor y B. El material utiliza la regla de la palma izquierda para determinar su sentido. En un tramo recto homogéneo dentro de un campo uniforme, la resultante se representa en su punto medio.</p><div class=\"table-scroll\"><table><thead><tr><th>Situación del material</th><th>Resultado</th></tr></thead><tbody><tr><td>Conductor paralelo o antiparalelo a B</td><td>\\(F_{\\mathrm{mag}}=0\\)</td></tr><tr><td>Conductor perpendicular a B</td><td>\\(F_{\\mathrm{mag,max}}=BIL\\)</td></tr><tr><td>Conductor no rectilíneo en B homogéneo</td><td>Para hallar la fuerza resultante, se reemplaza por el tramo recto equivalente que une sus extremos, con la misma corriente.</td></tr></tbody></table></div><div class=\"key\"><b>Idea clave</b>Distingue el campo producido por la corriente del campo externo que ejerce la fuerza sobre el conductor.</div>",
+      "examples": [
+        {
+          "title": "Ejemplo del material: tensión en una barra",
+          "question": "Una barra homogénea de \\(500\\,\\mathrm g\\) y \\(1\\,\\mathrm m\\) se mantiene horizontal: está articulada en el extremo derecho y sostenida por una cuerda vertical en el izquierdo. Lleva \\(2{,}5\\,\\mathrm A\\) hacia la izquierda dentro de un campo entrante de \\(0{,}2\\,\\mathrm T\\). Halla la tensión. Usa \\(g=10\\,\\mathrm{m/s^2}\\).",
+          "steps": [
+            "La fuerza magnética y el peso actúan hacia abajo en el punto medio de la barra.",
+            "<div class=\"equation\">\\[F_{\\mathrm{mag}}=BIL=(0{,}2)(2{,}5)(1)=0{,}5\\,\\mathrm N\\qquad mg=(0{,}5)(10)=5\\,\\mathrm N\\]</div>",
+            "Del equilibrio de momentos respecto a la articulación: \\(TL=(F_{\\mathrm{mag}}+mg)L/2\\).",
+            "<div class=\"equation\">\\[T=\\frac{0{,}5+5}{2}=2{,}75\\,\\mathrm N\\]</div>"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "movimiento-particula",
+      "title": "Movimiento de una partícula en un campo homogéneo",
+      "subtitle": "Trayectoria circular y radio",
+      "sourcePages": [
+        10
+      ],
+      "sourcePrintedPages": [
+        223
+      ],
+      "body": "<p>Si una partícula ingresa con velocidad <strong>perpendicular</strong> a un campo magnético homogéneo y actúa sobre ella únicamente la fuerza magnética, dicha fuerza es perpendicular a la velocidad y proporciona la aceleración centrípeta. La trayectoria es una <strong>circunferencia</strong>.</p><div class=\"equation\">\\[F_{\\mathrm{mag}}=F_{\\mathrm{cp}}\\qquad |q|vB=\\frac{mv^2}{R}\\]</div><div class=\"equation\">\\[\\boxed{R=\\frac{mv}{|q|B}}\\]</div><p>R es el radio de la trayectoria, m es la masa y |q| el módulo de la carga. En el problema del material, la distancia entre los puntos de entrada y salida corresponde al diámetro de una semicircunferencia.</p><div class=\"key\"><b>Idea clave</b>Identifica primero si el dato geométrico representa un radio o un diámetro. El ejemplo se desarrolla en el resuelto 10.</div>",
+      "examples": []
+    },
+    {
+      "id": "induccion-electromagnetica",
+      "title": "Inducción electromagnética",
+      "subtitle": "Del campo magnético a una corriente inducida",
+      "sourcePages": [
+        11
+      ],
+      "sourcePrintedPages": [
+        224
+      ],
+      "body": "<p>Después de la experiencia de Oersted, Faraday investigó cómo obtener corriente eléctrica mediante un campo magnético. El material compara un imán cerca de una espira conductora en dos situaciones:</p><div class=\"table-scroll\"><table><thead><tr><th>Situación</th><th>Lo que ocurre en la espira</th></tr></thead><tbody><tr><td>Imán en reposo respecto a la espira</td><td>La cantidad de líneas que atraviesan la superficie de la espira se mantiene constante; el foco permanece apagado.</td></tr><tr><td>El imán se acerca a la espira</td><td>Cambia la cantidad de líneas que atraviesan su superficie; se registra una corriente inducida y el foco se enciende.</td></tr></tbody></table></div><p>Para cuantificar el campo que atraviesa una superficie, el material introduce el <strong>flujo magnético</strong>.</p><div class=\"key\"><b>Idea clave</b>La comparación importante es entre flujo constante y flujo que cambia.</div>",
+      "examples": []
+    },
+    {
+      "id": "flujo-magnetico",
+      "title": "Flujo magnético",
+      "subtitle": "Área, intensidad, orientación y signo",
+      "sourcePages": [
+        11,
+        12,
+        13
+      ],
+      "sourcePrintedPages": [
+        224,
+        225,
+        226
+      ],
+      "body": "<p>El flujo magnético \\(\\Phi\\) cuantifica el campo que atraviesa una superficie. El material compara dos regiones: donde las líneas están más juntas, el campo es más intenso y el flujo a través de un mismo anillo es mayor.</p><ul><li>Con orientación y área fijas, el flujo es directamente proporcional a B.</li><li>Con orientación y campo fijos, el flujo es directamente proporcional al área A.</li></ul><h4>Campo perpendicular a la superficie</h4><div class=\"equation\">\\[\\Phi=BA\\]</div><h4>Superficie con otra orientación</h4><div class=\"equation\">\\[\\boxed{\\Phi=BA\\cos\\theta}\\]</div><p>El ángulo θ se mide entre el vector B y la <strong>normal</strong> \\(\\hat n\\), perpendicular a la superficie. La unidad de flujo es el <strong>weber (Wb)</strong>.</p><div class=\"table-scroll\"><table><thead><tr><th>Normal elegida hacia el observador</th><th>Signo del flujo</th></tr></thead><tbody><tr><td>Campo saliente, hacia el observador</td><td>Positivo (+)</td></tr><tr><td>Campo entrante, alejándose del observador</td><td>Negativo (−)</td></tr></tbody></table></div><div class=\"equation\">\\[\\Delta\\Phi=\\Phi_{\\mathrm{final}}-\\Phi_{\\mathrm{inicial}}\\]</div><div class=\"key\"><b>Idea clave</b>El ángulo se mide con la normal, no con el plano de la espira. El signo depende de la normal elegida.</div>",
+      "examples": [
+        {
+          "title": "Ejemplo del material: una espira que gira",
+          "question": "Una espira rectangular de \\(10\\,\\mathrm{cm}\\) por \\(12\\,\\mathrm{cm}\\) tiene inicialmente su superficie paralela a un campo de \\(0{,}2\\,\\mathrm T\\). Gira \\(53^\\circ\\) alrededor de uno de sus lados, en la disposición del material. La normal elegida en la posición final forma \\(143^\\circ\\) con B. Halla la variación del flujo.",
+          "steps": [
+            "<div class=\"equation\">\\[A=(0{,}10)(0{,}12)=0{,}012\\,\\mathrm{m^2}\\qquad\\Phi_{\\mathrm{inicial}}=0\\]</div>",
+            "Como en el material, se utiliza \\(\\cos143^\\circ=-\\cos37^\\circ\\approx-4/5\\).",
+            "<div class=\"equation\">\\[\\Phi_{\\mathrm{final}}\\approx(0{,}2)(0{,}012)(-4/5)=-1{,}92\\times10^{-3}\\,\\mathrm{Wb}\\]</div>",
+            "<div class=\"equation\">\\[\\Delta\\Phi=-1{,}92\\,\\mathrm{mWb}\\]</div>"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "flujo-faraday",
+      "title": "Ley de Faraday",
+      "subtitle": "Rapidez de variación del flujo y fem inducida",
+      "sourcePages": [
+        13,
+        14
+      ],
+      "sourcePrintedPages": [
+        226,
+        227
+      ],
+      "body": "<p>Cuando varía el flujo magnético a través de una espira, se induce una <strong>fuerza electromotriz</strong> o fem. En un circuito cerrado puede establecerse una corriente inducida. El material calcula la magnitud media de la fem mediante:</p><div class=\"equation\">\\[\\boxed{|\\xi_{\\mathrm{ind,media}}|=\\frac{|\\Delta\\Phi|}{\\Delta t}}\\]</div><p>Si el circuito contiene N espiras conectadas una a continuación de otra y el mismo flujo atraviesa cada una:</p><div class=\"equation\">\\[\\boxed{|\\xi_{\\mathrm{ind,media}}|=N\\frac{|\\Delta\\Phi|}{\\Delta t}}\\]</div><p>\\(\\Delta t\\) es el intervalo de tiempo y \\(|\\Delta\\Phi|/\\Delta t\\) representa la rapidez de variación del flujo. La fem se expresa en voltios.</p><p><strong>Observación del material:</strong> si el flujo cambia linealmente con el tiempo, la fem inducida es constante. Esto también ocurre con una espira fija de área constante cuando el campo homogéneo varía linealmente.</p><figure class=\"dimensional-figure\"><img src=\"assets/em-pdf/teoria-faraday-grafica.svg\" alt=\"Flujo magnético: aumenta de cien a quinientos weber entre dos y diez segundos; resistencia de doscientos ohmios.\" width=\"760\" height=\"400\" loading=\"lazy\"><figcaption>Gráfica del ejemplo resuelto del material · p. 227.</figcaption></figure><div class=\"key\"><b>Idea clave</b>La pendiente de la gráfica de flujo frente al tiempo permite obtener la fem; la regla de Lenz determina su sentido.</div>",
+      "examples": [
+        {
+          "title": "Ejemplo del material: lectura de una gráfica",
+          "question": "En una espira, el flujo aumenta linealmente de \\(100\\,\\mathrm{Wb}\\) a \\(500\\,\\mathrm{Wb}\\) entre \\(t=2\\,\\mathrm s\\) y \\(t=10\\,\\mathrm s\\). La resistencia del foco es \\(200\\,\\Omega\\). Determina la corriente.",
+          "steps": [
+            "<div class=\"equation\">\\[|\\xi_{\\mathrm{ind}}|=\\frac{500-100}{10-2}=50\\,\\mathrm V\\]</div>",
+            "Por la relación \\(V=IR\\):",
+            "<div class=\"equation\">\\[I=\\frac{50}{200}=0{,}25\\,\\mathrm A\\]</div>"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ley-lenz",
+      "title": "Regla de Lenz",
+      "subtitle": "Sentido de la corriente inducida",
+      "sourcePages": [
+        15,
+        16
+      ],
+      "sourcePrintedPages": [
+        228,
+        229
+      ],
+      "body": "<p>La regla de Lenz establece que la corriente inducida en un circuito cerrado tiene un sentido tal que su campo magnético <strong>se opone a la variación del flujo que la origina</strong>. El material relaciona esta oposición con la conservación de la energía.</p><h4>Barra que se desplaza</h4><p>Si una barra conductora se mueve hacia la derecha y aumenta el área del circuito dentro de un campo entrante, aumenta el flujo entrante. El campo de la corriente inducida debe ser saliente. Con la regla de la mano derecha, la corriente resulta <strong>antihoraria</strong>.</p><div class=\"table-scroll\"><table><thead><tr><th>Ejemplos del material</th><th>Conclusión para el observador indicado</th></tr></thead><tbody><tr><td>Un imán se aleja de una espira y disminuye el flujo que produce en ella</td><td>El campo inducido mantiene el sentido del campo que está disminuyendo; en el gráfico, la corriente es antihoraria.</td></tr><tr><td>Una espira se aleja hacia la derecha de un hilo largo con corriente hacia abajo</td><td>En la región de la espira disminuye el campo entrante del hilo; el campo inducido es entrante y la corriente es horaria.</td></tr></tbody></table></div><div class=\"key\"><b>Idea clave</b>Determina qué flujo aumenta o disminuye; después elige el campo que se opone a ese cambio y aplica la mano derecha a la espira.</div>",
+      "examples": []
+    },
+    {
       "id": "generador",
-      "title": "Generador y laboratorio de inducción",
-      "subtitle": "Del movimiento a la energía eléctrica",
-      "goal": "Relaciona giro, señales y energía, y contrasta el modelo con el laboratorio.",
-      "body": "<h4>Una bobina que gira</h4><p>Una bobina de N espiras y área A gira con velocidad angular constante \\(\\omega\\) en un campo uniforme B. Si la normal comienza alineada con el campo, \\(\\theta=\\omega t\\):</p><div class=\"equation\">\\[\\Phi=BA\\cos(\\omega t)\\qquad\\varepsilon=NBA\\omega\\operatorname{sen}(\\omega t)\\]</div><div class=\"equation\">\\[\\varepsilon_0=NBA|\\omega|\\qquad f=\\frac{|\\omega|}{2\\pi}\\qquad T=\\frac{2\\pi}{|\\omega|}\\]</div><p>Al alcanzar el flujo un máximo o un mínimo, su pendiente y la fem instantánea son cero. Cuando el flujo cruza por cero, la magnitud de la pendiente y de la fem es máxima. La señal cambia de signo cada media vuelta.</p><p>Duplicar N duplica la amplitud de la fem y conserva la frecuencia. Duplicar |ω| duplica ambas. Estas comparaciones suponen que las demás variables no cambian.</p><h4>¿De dónde procede la energía?</h4><p>El generador transforma <strong>trabajo mecánico en energía eléctrica</strong>. Mantener el giro bajo carga exige aporte externo contra el efecto electromagnético. El imán permite la interacción, pero no entrega energía ilimitada. En el modelo resistivo ideal cerrado, la carga recibe potencia \\(P=I^2R=\\varepsilon I\\).</p><div data-induction-lab></div><h4>Investiga una variable cada vez</h4><ol><li>Compara el mismo recorrido del imán con dos rapideces distintas. Para comparar la fem, usa posiciones equivalentes.</li><li>Detén el imán. Comprueba que el flujo puede mantenerse distinto de cero aunque la fem se anule.</li><li>Invierte los polos y repite el recorrido: compara los signos con la misma conexión de referencia.</li><li>Abre el interruptor mientras cambia el flujo y distingue las lecturas de fem y corriente.</li><li>En el generador, compara una vuelta completa con las gráficas de flujo y fem. Explica su desfase.</li></ol><p>Formula una predicción, modifica una variable y describe una observación medible. Las gráficas del laboratorio usan escalas independientes: flujo en mWb, fem en V y corriente en mA. Los dibujos son modelos didácticos; sus idealizaciones no reproducen todos los detalles de una bobina real.</p><div class=\"key\"><b>Idea clave</b>Un generador convierte energía. Para sostener la entrega de energía eléctrica se necesita un aporte de energía mecánica.</div><p class=\"resource-note\">Para ampliar: <a href=\"https://openstax.org/books/university-physics-volume-2/pages/13-6-electric-generators-and-back-emf\" target=\"_blank\" rel=\"noopener noreferrer\">Generadores eléctricos · OpenStax</a>.</p>",
+      "title": "Generador eléctrico",
+      "subtitle": "Giro, flujo variable y fem alterna",
+      "sourcePages": [
+        16
+      ],
+      "sourcePrintedPages": [
+        229
+      ],
+      "body": "<p>Un generador transforma la energía que recibe en <strong>energía eléctrica</strong>. El material presenta el modelo de una espira que gira en un campo magnético: al rotar, el flujo que atraviesa su superficie aumenta y disminuye alternadamente, lo que genera una fem alterna.</p><p>Si A es el área de la espira, B la inducción magnética, ω la rapidez angular de giro y t el tiempo:</p><div class=\"equation\">\\[\\xi_{\\mathrm{ind}}=BA\\omega\\operatorname{sen}(\\omega t)\\]</div><p>Para N espiras:</p><div class=\"equation\">\\[\\boxed{\\xi_{\\mathrm{ind}}=NBA\\omega\\operatorname{sen}(\\omega t)}\\]</div><h4>Valor máximo de la fem</h4><div class=\"equation\">\\[\\boxed{\\xi_{\\mathrm{ind,max}}=NBA\\omega}\\]</div><p>El laboratorio permite observar las dos experiencias del material: mover un imán respecto a una bobina y hacer girar una espira en un campo magnético.</p><div data-induction-lab></div><div class=\"key\"><b>Idea clave</b>El giro cambia el flujo a través de la espira; la variación del flujo produce la fem.</div>",
       "examples": []
     }
   ],
   "workedExamples": [
     {
       "number": 1,
-      "title": "Cortar un imán no separa sus polos",
-      "question": "Un imán de barra, con N a la izquierda y S a la derecha, se corta transversalmente por el centro. ¿Qué polos aparecen en las caras nuevas?",
+      "title": "Dos conductores y un punto equidistante",
+      "question": "En la figura se representan las secciones de dos conductores rectilíneos muy largos por los cuales fluye corriente eléctrica. Determina el módulo de la inducción magnética en P.",
       "steps": [
-        "Cada fragmento conserva los dos polos; no obtenemos un norte aislado y un sur aislado.",
-        "En el fragmento izquierdo, el extremo original sigue siendo N y la nueva cara derecha es S.",
-        "En el fragmento derecho, la nueva cara izquierda es N y el extremo original sigue siendo S.",
-        "Respuesta: las caras nuevas enfrentadas son S y N. La división produce dos imanes."
-      ]
+        "Los ángulos de la base son 60°, por lo que el triángulo es equilátero. La distancia de P a cada hilo es \\(d=10\\,\\mathrm{cm}=0{,}10\\,\\mathrm m\\).",
+        "<div class=\"equation\">\\[B_1=B_2=\\frac{\\mu_0 I}{2\\pi d}=\\frac{(4\\pi\\times10^{-7})(30)}{2\\pi(0{,}10)}=60\\,\\mu\\mathrm T\\]</div>",
+        "La mano derecha determina dos vectores simétricos en P. Sus componentes horizontales se cancelan y sus componentes verticales se suman.",
+        "<div class=\"equation\">\\[B_P=2B_1\\cos60^\\circ=B_1=\\boxed{60\\,\\mu\\mathrm T}\\]</div>"
+      ],
+      "sourcePages": [
+        17
+      ],
+      "sourcePrintedPages": [
+        230
+      ],
+      "sourceProblem": 1,
+      "sourceKind": "problema-resuelto",
+      "figure": {
+        "src": "assets/em-pdf/resuelto-01.svg",
+        "alt": "Dos hilos separados 10 cm llevan 30A en sentidos opuestos. P es el vértice del triángulo con ángulos de 60 grados en ambos extremos.",
+        "width": 760,
+        "height": 400,
+        "caption": "Problema resuelto 1 del material · p. 230."
+      }
     },
     {
       "number": 2,
-      "title": "Oersted y el sentido del campo",
-      "question": "Un hilo perpendicular a la hoja conduce corriente hacia quien observa (⊙). Una sonda está a la derecha del hilo. Considera únicamente el campo del conductor. ¿Hacia dónde apunta B y qué ocurre al invertir la corriente?",
+      "title": "Una partícula con velocidad constante",
+      "question": "Una partícula electrizada positivamente se mueve con velocidad constante dentro de un campo eléctrico homogéneo y un campo magnético homogéneo. Su rapidez es \\(50\\,000\\,\\mathrm{m/s}\\). Halla el módulo de la intensidad del campo eléctrico. Desprecia efectos gravitatorios.",
       "steps": [
-        "Apunta el pulgar derecho hacia ti: las líneas rodean el hilo en sentido antihorario.",
-        "En el punto derecho de una circunferencia antihoraria, la tangente apunta hacia arriba. Ese es el sentido inicial de B.",
-        "Al invertir la corriente, las líneas pasan a sentido horario y B en la sonda apunta hacia abajo.",
-        "Respuesta: primero hacia arriba; después hacia abajo. La magnitud se conserva si |I| y la distancia no cambian. Una brújula real seguiría el campo total."
-      ]
+        "Como la velocidad es constante, la fuerza resultante es cero. La fuerza eléctrica apunta hacia abajo y la magnética hacia arriba.",
+        "<div class=\"equation\">\\[F_{\\mathrm{el}}=F_{\\mathrm{mag}}\\quad\\Rightarrow\\quad qE=qvB\\]</div>",
+        "La carga es positiva y distinta de cero; se simplifica q.",
+        "<div class=\"equation\">\\[E=vB=(50\\,000)(0{,}01)=\\boxed{500\\,\\mathrm{N/C}}\\]</div>"
+      ],
+      "sourcePages": [
+        17
+      ],
+      "sourcePrintedPages": [
+        230
+      ],
+      "sourceProblem": 2,
+      "sourceKind": "problema-resuelto",
+      "figure": {
+        "src": "assets/em-pdf/resuelto-02.svg",
+        "alt": "Velocidad de carga positiva hacia la derecha, campo eléctrico hacia abajo y B 0,01T entrante.",
+        "width": 760,
+        "height": 400,
+        "caption": "Problema resuelto 2 del material · p. 230."
+      }
     },
     {
       "number": 3,
-      "title": "Campo de un hilo largo",
-      "question": "Un hilo rectilíneo muy largo lleva \\(5\\,\\mathrm A\\). Calcula la magnitud del campo a \\(2\\,\\mathrm{cm}\\) de su eje, fuera del conductor y lejos de sus extremos. Usa \\(\\mu_0\\approx4\\pi\\times10^{-7}\\,\\mathrm{T\\cdot m/A}\\).",
+      "title": "Fem en una bobina rectangular",
+      "question": "Una bobina rectangular de 500 vueltas y \\(100\\,\\mathrm{cm^2}\\) de sección transversal está dentro de un campo magnético cuya inducción varía con el tiempo según la gráfica. Halla la fem inducida.",
       "steps": [
-        "Convierte la distancia: \\(r=2\\,\\mathrm{cm}=0{,}02\\,\\mathrm m\\).",
-        "El modelo es \\(B=\\mu_0|I|/(2\\pi r)\\).",
-        "<div class=\"equation\">\\[B=\\frac{(4\\pi\\times10^{-7})(5)}{2\\pi(0{,}02)}=5\\times10^{-5}\\,\\mathrm T\\]</div>",
-        "Respuesta: \\(\\boxed{B=50\\,\\mu\\mathrm T}\\). El sentido se determina con la mano derecha; no se obtiene de la magnitud sola."
-      ]
+        "\\(A=100\\,\\mathrm{cm^2}=10^{-2}\\,\\mathrm{m^2}\\). La bobina permanece fija y el ángulo con la normal es 37°.",
+        "<div class=\"equation\">\\[\\Phi_{80}=BA\\cos37^\\circ\\approx(1{,}2)(10^{-2})(4/5)=9{,}6\\times10^{-3}\\,\\mathrm{Wb}\\]</div>",
+        "El flujo inicial es cero. La variación es lineal, por lo que la magnitud de la fem es constante.",
+        "<div class=\"equation\">\\[|\\xi|=500\\frac{9{,}6\\times10^{-3}-0}{80}=0{,}060\\,\\mathrm V=\\boxed{60\\,\\mathrm{mV}}\\]</div>"
+      ],
+      "sourcePages": [
+        18
+      ],
+      "sourcePrintedPages": [
+        231
+      ],
+      "sourceProblem": 3,
+      "sourceKind": "problema-resuelto",
+      "figure": {
+        "src": "assets/em-pdf/resuelto-03.svg",
+        "alt": "B crece linealmente de 0 a 1,2T en 80s; bobina 500vueltas área 100cm 2, normal a 37grados de B.",
+        "width": 760,
+        "height": 400,
+        "caption": "Problema resuelto 3 del material · p. 231."
+      }
     },
     {
       "number": 4,
-      "title": "Superposición entre dos conductores",
-      "question": "Dos hilos largos paralelos atraviesan la hoja y están separados \\(10\\,\\mathrm{cm}\\). Ambos llevan \\(5\\,\\mathrm A\\) salientes (⊙). Calcula el campo total en el punto medio. Después determina qué ocurriría si solo se invierte la corriente del hilo derecho.",
+      "title": "Barra conductora móvil",
+      "question": "La barra conductora se traslada con velocidad constante apoyada en un alambre conductor. Determina la intensidad de la corriente y su sentido. Desprecia la resistencia eléctrica de la barra.",
       "steps": [
-        "El punto medio está a \\(r=5\\,\\mathrm{cm}=0{,}05\\,\\mathrm m\\) de cada hilo.",
-        "Cada hilo produce \\(B=2\\times10^{-7}(5)/0{,}05=2\\times10^{-5}\\,\\mathrm T=20\\,\\mu\\mathrm T\\).",
-        "Con ambas corrientes salientes, el hilo izquierdo produce campo hacia arriba en el punto medio; el derecho, hacia abajo. Los vectores tienen igual magnitud y sentidos opuestos.",
-        "Respuesta inicial: \\(\\boxed{\\vec B_{\\text{total}}=\\vec0}\\). Si solo se invierte el hilo derecho, su campo apunta hacia arriba y se suma al del izquierdo: \\(\\boxed{40\\,\\mu\\mathrm T\\text{ hacia arriba}}\\)."
-      ]
+        "Al avanzar la barra aumenta el área y el flujo entrante. Por Lenz, el campo inducido es saliente y la corriente es antihoraria.",
+        "Durante un intervalo \\(\\Delta t\\), la barra avanza \\(d=v\\Delta t\\) y el área aumenta \\(\\Delta A=Ld\\).",
+        "<div class=\"equation\">\\[|\\xi|=\\frac{B\\Delta A}{\\Delta t}=\\frac{BLv\\Delta t}{\\Delta t}=BLv\\]</div>",
+        "Con la relación \\(|\\xi|=IR\\):",
+        "<div class=\"equation\">\\[I=\\frac{BLv}{R}=\\frac{(0{,}02)(2)(200)}4=\\boxed{2\\,\\mathrm A}\\]</div>",
+        "Respuesta: 2 A en sentido antihorario."
+      ],
+      "sourcePages": [
+        18,
+        19
+      ],
+      "sourcePrintedPages": [
+        231,
+        232
+      ],
+      "sourceProblem": 4,
+      "sourceKind": "problema-resuelto",
+      "figure": {
+        "src": "assets/em-pdf/resuelto-04.svg",
+        "alt": "Circuito 4ohmios con barra vertical 2m que se mueve a 200m/s hacia la derecha, B 0,02T entrante.",
+        "width": 760,
+        "height": 400,
+        "caption": "Problema resuelto 4 del material · pp. 231-232."
+      }
     },
     {
       "number": 5,
-      "title": "Fuerza sobre una carga positiva",
-      "question": "Una carga positiva de \\(3\\,\\mu\\mathrm C\\) se mueve a \\(2\\times10^4\\,\\mathrm{m/s}\\) hacia la derecha de la hoja. El campo uniforme es \\(0{,}40\\,\\mathrm T\\) y entra perpendicularmente en ella (⊗). Halla la magnitud y el sentido de la fuerza.",
+      "title": "Flujo en una espira rectangular",
+      "question": "La espira rectangular se encuentra en un campo magnético homogéneo de \\(B=5\\,\\mathrm{mT}\\). Determina el flujo magnético sobre ella. \\(MN=4\\,\\mathrm{cm}\\) y \\(NR=6\\,\\mathrm{cm}\\).",
       "steps": [
-        "Convierte la carga: \\(q=3\\times10^{-6}\\,\\mathrm C\\). Como \\(\\vec v\\perp\\vec B\\), \\(\\operatorname{sen}90^\\circ=1\\).",
-        "<div class=\"equation\">\\[F=|q|vB=(3\\times10^{-6})(2\\times10^4)(0{,}40)=0{,}024\\,\\mathrm N\\]</div>",
-        "La mano derecha aplicada desde la velocidad hacia la derecha hasta el campo entrante da una fuerza hacia arriba para una carga positiva.",
-        "Respuesta: \\(\\boxed{F=0{,}024\\,\\mathrm N\\text{ hacia arriba}}\\). Para una carga negativa con el mismo |q|, la fuerza apuntaría hacia abajo."
-      ]
+        "<div class=\"equation\">\\[B=5\\times10^{-3}\\,\\mathrm T\\qquad A=(4\\times10^{-2})(6\\times10^{-2})=24\\times10^{-4}\\,\\mathrm{m^2}\\]</div>",
+        "El campo forma 37° con el plano. El ángulo con la normal indicada es \\(\\theta=90^\\circ-37^\\circ=53^\\circ\\). Como en el material, se usa \\(\\cos53^\\circ\\approx3/5\\).",
+        "<div class=\"equation\">\\[\\Phi=BA\\cos\\theta\\approx(5\\times10^{-3})(24\\times10^{-4})(3/5)\\]</div>",
+        "<div class=\"equation\">\\[\\boxed{\\Phi=7{,}2\\times10^{-6}\\,\\mathrm{Wb}}\\]</div>"
+      ],
+      "sourcePages": [
+        19
+      ],
+      "sourcePrintedPages": [
+        232
+      ],
+      "sourceProblem": 5,
+      "sourceKind": "problema-resuelto",
+      "figure": {
+        "src": "assets/em-pdf/resuelto-05.svg",
+        "alt": "Espira 4por 6cm, campo 5mT a 37grados con el plano.",
+        "width": 760,
+        "height": 400,
+        "caption": "Problema resuelto 5 del material · p. 232."
+      }
     },
     {
       "number": 6,
-      "title": "Fuerza sobre un tramo recto",
-      "question": "Un tramo recto de \\(0{,}50\\,\\mathrm m\\) conduce \\(4\\,\\mathrm A\\) y está completamente inmerso en un campo externo uniforme de \\(0{,}30\\,\\mathrm T\\). La corriente forma \\(30^\\circ\\) con el campo. Calcula la magnitud de la fuerza.",
+      "title": "Dos tramos rectos y una semicircunferencia",
+      "question": "El alambre muy largo mostrado transporta una corriente de \\(0{,}5\\,\\mathrm A\\). Determina el módulo de la inducción magnética en O. \\(R=10\\,\\mathrm{cm}\\).",
       "steps": [
-        "La expresión para el tramo recto es \\(F=BIL\\operatorname{sen}\\theta\\). El ángulo se mide entre corriente y campo.",
-        "Sustituye \\(\\operatorname{sen}30^\\circ=0{,}50\\).",
-        "<div class=\"equation\">\\[F=(0{,}30)(4)(0{,}50)(0{,}50)=0{,}30\\,\\mathrm N\\]</div>",
-        "Respuesta: \\(\\boxed{F=0{,}30\\,\\mathrm N}\\). Para fijar su sentido también hace falta conocer la orientación de ambos vectores."
-      ]
+        "Se descompone el conductor en el tramo semiinfinito superior, la semicircunferencia y el tramo semiinfinito inferior. La mano derecha indica que los tres campos en O son entrantes.",
+        "<div class=\"equation\">\\[R=0{,}10\\,\\mathrm m\\qquad B_1=B_3=\\frac{\\mu_0 I}{4\\pi R}=0{,}5\\,\\mu\\mathrm T\\]</div>",
+        "Para el arco semicircular, \\(\\theta=\\pi\\,\\mathrm{rad}\\):",
+        "<div class=\"equation\">\\[B_2=\\frac{\\mu_0 I\\pi}{4\\pi R}=\\frac\\pi2\\,\\mu\\mathrm T\\]</div>",
+        "Se suman las magnitudes porque los tres vectores tienen el mismo sentido.",
+        "<div class=\"equation\">\\[B_O=B_1+B_2+B_3=\\boxed{\\left(1+\\frac\\pi2\\right)\\,\\mu\\mathrm T}\\]</div>"
+      ],
+      "sourcePages": [
+        19,
+        20
+      ],
+      "sourcePrintedPages": [
+        232,
+        233
+      ],
+      "sourceProblem": 6,
+      "sourceKind": "problema-resuelto",
+      "figure": {
+        "src": "assets/em-pdf/resuelto-06.svg",
+        "alt": "Dos tramos semiinfinitos horizontales y semicircunferencia derecha forman un hilo, corriente 0,5A radio 10cm.",
+        "width": 760,
+        "height": 400,
+        "caption": "Problema resuelto 6 del material · pp. 232-233."
+      }
     },
     {
       "number": 7,
-      "title": "Ángulo de la normal y flujo",
-      "question": "Una espira plana de área \\(0{,}030\\,\\mathrm{m^2}\\) está en un campo uniforme de \\(0{,}40\\,\\mathrm T\\). La normal elegida forma \\(60^\\circ\\) con el campo. Calcula el flujo por la espira.",
+      "title": "Fuerza sobre una barra paralela a un hilo",
+      "question": "Un conductor largo está colocado a 10 cm de una barra conductora MN que transporta corriente de igual intensidad. Determina la magnitud de la fuerza magnética sobre la barra de 1 m de longitud. \\(I=1\\,\\mathrm A\\).",
       "steps": [
-        "El ángulo está dado con la normal, así que se utiliza directamente en \\(\\Phi=BA\\cos\\theta\\).",
-        "<div class=\"equation\">\\[\\Phi=(0{,}40)(0{,}030)\\cos60^\\circ=0{,}0060\\,\\mathrm{Wb}\\]</div>",
-        "Respuesta: \\(\\boxed{\\Phi=+6{,}0\\times10^{-3}\\,\\mathrm{Wb}}\\). Es positivo porque \\(\\cos60^\\circ>0\\).",
-        "Si los 60° se hubieran medido con el plano, el ángulo con la normal sería 30° y el resultado sería distinto."
-      ]
+        "El campo del hilo en la barra es entrante y su magnitud se obtiene con la distancia perpendicular \\(d=0{,}10\\,\\mathrm m\\).",
+        "<div class=\"equation\">\\[B=\\frac{\\mu_0 I}{2\\pi d}=\\frac{(4\\pi\\times10^{-7})(1)}{2\\pi(0{,}10)}=2\\times10^{-6}\\,\\mathrm T\\]</div>",
+        "La corriente de la barra es perpendicular a ese campo, por lo que \\(\\theta=90^\\circ\\).",
+        "<div class=\"equation\">\\[F=BIL=(2\\times10^{-6})(1)(1)=\\boxed{2\\times10^{-6}\\,\\mathrm N}\\]</div>",
+        "El sentido de la fuerza es hacia el conductor largo."
+      ],
+      "sourcePages": [
+        20,
+        21
+      ],
+      "sourcePrintedPages": [
+        233,
+        234
+      ],
+      "sourceProblem": 7,
+      "sourceKind": "problema-resuelto",
+      "figure": {
+        "src": "assets/em-pdf/resuelto-07.svg",
+        "alt": "Hilo largo y barraMN 1m paralelos separados 10cm, ambas corrientes 1A hacia arriba.",
+        "width": 760,
+        "height": 400,
+        "caption": "Problema resuelto 7 del material · pp. 233-234."
+      }
     },
     {
       "number": 8,
-      "title": "Fem media de una bobina",
-      "question": "El flujo por espira de una bobina de \\(100\\) vueltas aumenta linealmente de \\(0{,}001\\,\\mathrm{Wb}\\) a \\(0{,}004\\,\\mathrm{Wb}\\) en \\(0{,}15\\,\\mathrm s\\). Calcula la fem media con la referencia de normal y recorrido fijada por la mano derecha.",
+      "title": "Fem a partir de una gráfica de flujo",
+      "question": "La gráfica representa cómo varía el flujo magnético a través de la sección recta de una bobina de 40 espiras. Calcula la fuerza electromotriz inducida.",
       "steps": [
-        "El cambio es \\(\\Delta\\Phi=0{,}004-0{,}001=+0{,}003\\,\\mathrm{Wb}\\).",
-        "<div class=\"equation\">\\[\\varepsilon_{\\text{media}}=-N\\frac{\\Delta\\Phi}{\\Delta t}=-100\\frac{0{,}003}{0{,}15}=-2{,}0\\,\\mathrm V\\]</div>",
-        "Respuesta: \\(\\boxed{\\varepsilon_{\\text{media}}=-2{,}0\\,\\mathrm V}\\); su magnitud es \\(2{,}0\\,\\mathrm V\\).",
-        "El signo expresa oposición al aumento del flujo positivo. Como el flujo cambia linealmente, la fem instantánea es constante durante ese intervalo."
-      ]
+        "De la gráfica: \\(\\Delta\\Phi=6-2=4\\,\\mathrm{Wb}\\) y \\(\\Delta t=4\\,\\mathrm s\\).",
+        "<div class=\"equation\">\\[\\frac{|\\Delta\\Phi|}{\\Delta t}=\\frac44=1\\,\\mathrm{Wb/s}\\]</div>",
+        "Se aplica Faraday para las N = 40 espiras.",
+        "<div class=\"equation\">\\[|\\xi|=N\\frac{|\\Delta\\Phi|}{\\Delta t}=40(1)=\\boxed{40\\,\\mathrm V}\\]</div>"
+      ],
+      "sourcePages": [
+        21
+      ],
+      "sourcePrintedPages": [
+        234
+      ],
+      "sourceProblem": 8,
+      "sourceKind": "problema-resuelto",
+      "figure": {
+        "src": "assets/em-pdf/resuelto-08.svg",
+        "alt": "El flujo aumenta linealmente de 2Wb a 6Wb entre 0y 4s, bobina 40espiras.",
+        "width": 760,
+        "height": 400,
+        "caption": "Problema resuelto 8 del material · p. 234."
+      }
     },
     {
       "number": 9,
-      "title": "Lenz: oponerse a un aumento",
-      "question": "Un campo externo entra en la hoja (⊗) y su flujo a través de una espira conductora cerrada aumenta. ¿Qué sentido tiene la corriente inducida vista de frente? ¿Qué cambia si la espira se abre, en el modelo ideal del laboratorio?",
+      "title": "Ejemplo del material: campo de un hilo largo",
+      "question": "Un conductor muy largo lleva una corriente de 10 A. Halla el módulo de la inducción magnética en P, situado como en la figura.",
       "steps": [
-        "El flujo entrante está aumentando. El campo inducido debe salir de la hoja para oponerse a ese aumento.",
-        "Apunta el pulgar derecho hacia ti para representar el campo inducido saliente: los dedos rodean la espira en sentido antihorario.",
-        "Respuesta: corriente antihoraria mientras la espira está cerrada.",
-        "Al abrir la espira, la corriente sostenida pasa a cero en el modelo, aunque puede seguir existiendo fem inducida mientras cambie el flujo externo."
-      ]
+        "La distancia que se usa en la fórmula es la <strong>perpendicular</strong> al conductor, no el segmento oblicuo de 5 cm.",
+        "<div class=\"equation\">\\[d=(5\\,\\mathrm{cm})\\operatorname{sen}53^\\circ\\approx(5)(4/5)=4\\,\\mathrm{cm}=0{,}04\\,\\mathrm m\\]</div>",
+        "<div class=\"equation\">\\[B_P=\\frac{\\mu_0 I}{2\\pi d}=\\frac{(4\\pi\\times10^{-7})(10)}{2\\pi(0{,}04)}\\]</div>",
+        "<div class=\"equation\">\\[\\boxed{B_P=5\\times10^{-5}\\,\\mathrm T=50\\,\\mu\\mathrm T}\\]</div>"
+      ],
+      "sourcePages": [
+        5
+      ],
+      "sourcePrintedPages": [
+        218
+      ],
+      "sourceProblem": 1,
+      "sourceKind": "ejemplo-teoria",
+      "figure": {
+        "src": "assets/em-pdf/resuelto-09.svg",
+        "alt": "P está sobre segmento de 5cm que forma 53grados con el conductor, corriente 10A hacia arriba.",
+        "width": 760,
+        "height": 400,
+        "caption": "Ejemplo 1 de la teoría del material · p. 218."
+      }
     },
     {
       "number": 10,
-      "title": "Amplitud y frecuencia de un generador",
-      "question": "Una bobina de \\(200\\) espiras y área \\(0{,}010\\,\\mathrm{m^2}\\) gira a \\(20\\,\\mathrm{rad/s}\\) en un campo uniforme de \\(0{,}050\\,\\mathrm T\\). Calcula la fem máxima y la frecuencia. Después predice qué ocurre al duplicar solo la rapidez angular.",
+      "title": "Ejemplo del material: masa de una partícula",
+      "question": "Una partícula electrizada con \\(+0{,}5\\,\\mu\\mathrm C\\) ingresa por A a una zona con campo magnético homogéneo de \\(B=0{,}2\\,\\mathrm T\\) y sale por C. Halla su masa. Desprecia efectos gravitatorios y considera una rapidez de \\(2\\times10^6\\,\\mathrm{m/s}\\).",
       "steps": [
-        "<div class=\"equation\">\\[\\varepsilon_0=NBA|\\omega|=(200)(0{,}050)(0{,}010)(20)=2{,}0\\,\\mathrm V\\]</div>",
-        "<div class=\"equation\">\\[f=\\frac{|\\omega|}{2\\pi}=\\frac{20}{2\\pi}=\\frac{10}{\\pi}\\,\\mathrm{Hz}\\approx3{,}18\\,\\mathrm{Hz}\\]</div>",
-        "Respuesta inicial: \\(\\boxed{\\varepsilon_0=2{,}0\\,\\mathrm V}\\) y \\(\\boxed{f\\approx3{,}18\\,\\mathrm{Hz}}\\).",
-        "Al duplicar |ω|, ambas se duplican: \\(\\varepsilon_0=4{,}0\\,\\mathrm V\\) y \\(f\\approx6{,}37\\,\\mathrm{Hz}\\). Mantener el giro bajo carga requiere energía mecánica externa."
-      ]
+        "Actúa únicamente la fuerza magnética y la trayectoria dentro del campo es semicircular. \\(AC=2R=0{,}4\\,\\mathrm m\\), de modo que \\(R=0{,}2\\,\\mathrm m\\).",
+        "<div class=\"equation\">\\[R=\\frac{mv}{|q|B}\\quad\\Rightarrow\\quad m=\\frac{R|q|B}{v}\\]</div>",
+        "<div class=\"equation\">\\[m=\\frac{(0{,}2)(0{,}5\\times10^{-6})(0{,}2)}{2\\times10^6}\\]</div>",
+        "<div class=\"equation\">\\[\\boxed{m=10^{-14}\\,\\mathrm{kg}}\\]</div>"
+      ],
+      "sourcePages": [
+        10
+      ],
+      "sourcePrintedPages": [
+        223
+      ],
+      "sourceProblem": 1,
+      "sourceKind": "ejemplo-teoria",
+      "figure": {
+        "src": "assets/em-pdf/resuelto-10.svg",
+        "alt": "Carga positiva entra porA con velocidad hacia arriba, campo 0,2T entrante; distanciaAC 0,4m es el diámetro de su trayectoria semicircular.",
+        "width": 760,
+        "height": 400,
+        "caption": "Ejemplo de movimiento de una partícula del material · p. 223."
+      }
     }
   ]
 };

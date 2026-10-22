@@ -10,3 +10,6 @@
 .layout:has(.wfl) .sidebar,.layout:has(.il-lab) .sidebar{padding:16px 12px}
 @media(min-width:1400px){.wrap:has(.wfl),.wrap:has(.il-lab){max-width:1600px}}
 @media(max-width:850px){.layout:has(.wfl),.layout:has(.il-lab){grid-template-columns:1fr}.article:has(.wfl){padding:20px 12px}}
+
+.em-figure-dialog{width:min(1100px,96vw);max-height:95dvh;border:1px solid var(--line);border-radius:18px;padding:20px;color:var(--ink)}
+.em-figure-dialog::backdrop{background:#0a1829b8}.em-figure-dialog header{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:14px}.em-figure-dialog h2{font-size:18px;margin:0}.em-figure-dialog img{display:block;width:100%;height:auto;max-height:75dvh;object-fit:contain}

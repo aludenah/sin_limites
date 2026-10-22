@@ -1,0 +1,16 @@
+/* Shared control; activity nodes and their event ancestry remain in place. */
+.activity-fs-toolbar{display:flex;justify-content:flex-end;align-items:center;gap:16px;margin:0 0 12px;padding:0;min-width:0;position:relative;z-index:5}
+.activity-fs-toolbar .activity-fs-caption{display:none;font:750 14px/1.4 Inter,ui-sans-serif,system-ui,sans-serif;color:#142b45;letter-spacing:0;min-width:0;overflow-wrap:anywhere}
+.activity-fs-toolbar .activity-fs-toggle{display:inline-flex;align-items:center;justify-content:center;gap:6px;width:auto;max-width:100%;min-height:40px;padding:9px 14px;border:1px solid #b9cadb;border-radius:10px;background:#f4f8fc;color:#142b45;font:750 12px/1.4 Inter,ui-sans-serif,system-ui,sans-serif;letter-spacing:0;text-transform:none;text-align:center;white-space:normal;cursor:pointer;box-shadow:none;flex-shrink:0}
+.activity-fs-toolbar .activity-fs-toggle:hover{background:#e5eef7;border-color:#4b789a}
+.activity-fs-toolbar .activity-fs-toggle:focus-visible{outline:3px solid #e49b42;outline-offset:3px}
+html.activity-fs-open,html.activity-fs-open body{overflow:hidden!important;overscroll-behavior:none}
+.activity-fs-active,.activity-fs-active:fullscreen{position:fixed!important;inset:0!important;z-index:2147483000!important;display:block!important;width:100vw!important;height:100vh!important;height:100dvh!important;min-width:0!important;min-height:0!important;max-width:none!important;max-height:none!important;margin:0!important;padding:20px!important;border:0!important;border-radius:0!important;box-shadow:none!important;background:var(--activity-fs-background,#fff)!important;overflow:auto!important;overscroll-behavior:contain;isolation:isolate;box-sizing:border-box!important;scroll-padding-top:78px}
+.activity-fs-active>.activity-fs-toolbar{position:sticky;top:-20px;z-index:200;margin:-20px -20px 20px;padding:12px 20px;background:#fff;border-bottom:1px solid #d7e2ec;box-shadow:0 3px 12px #142b4510;justify-content:space-between}
+.activity-fs-active>.activity-fs-toolbar .activity-fs-caption{display:block}
+.activity-fs-active>.activity-fs-toolbar .activity-fs-toggle{background:#142b45;border-color:#142b45;color:#fff}
+.activity-fs-active>.activity-fs-toolbar .activity-fs-toggle:hover{background:#244764}
+.activity-fs-active .vector-chart{display:block;max-width:780px;width:100%;height:auto;max-height:65vh;margin:auto}
+.activity-fs-active .unified-practice{max-width:1200px;margin-left:auto;margin-right:auto}
+@media(max-width:520px){.activity-fs-active,.activity-fs-active:fullscreen{padding:14px!important}.activity-fs-active>.activity-fs-toolbar{top:-14px;margin:-14px -14px 16px;padding:10px 14px;gap:10px}.activity-fs-toolbar .activity-fs-toggle{padding:8px 10px;font-size:11px;min-height:40px}.activity-fs-active>.activity-fs-toolbar .activity-fs-caption{font-size:12px}.activity-fs-active .vector-chart{max-height:58vh}}
+@media print{.activity-fs-toolbar{display:none!important}.activity-fs-active{position:static!important;width:auto!important;height:auto!important;overflow:visible!important}}
