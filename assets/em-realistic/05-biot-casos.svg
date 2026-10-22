@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+<title id="title">Cuatro geometrías de conductor y su campo magnético</title>
+<desc id="desc">Hilo largo, hilo semiinfinito, espira circular y arco de corriente. Las corrientes dibujadas producen campo saliente hacia el observador en P u O. Las distancias y radios corresponden a las fórmulas indicadas.</desc>
+<defs>
+ <linearGradient id="paper" x1="0%" y1="0%" x2="0%" y2="100%"><stop stop-color="#f8fcff"/><stop offset="1" stop-color="#eaf3fa"/></linearGradient>
+ <linearGradient id="copper" x1="0%" y1="0%" x2="0%" y2="100%"><stop stop-color="#643619"/><stop offset=".13" stop-color="#c7763f"/><stop offset=".36" stop-color="#ffdaa5"/><stop offset=".52" stop-color="#df9257"/><stop offset=".81" stop-color="#a64c25"/><stop offset="1" stop-color="#5e2a13"/></linearGradient>
+ <linearGradient id="tube" gradientUnits="userSpaceOnUse" x1="180" y1="575" x2="370" y2="775"><stop stop-color="#8d3f1b"/><stop offset=".28" stop-color="#ffd79e"/><stop offset=".49" stop-color="#c5743f"/><stop offset=".69" stop-color="#f7c387"/><stop offset="1" stop-color="#803817"/></linearGradient>
+ <linearGradient id="arcTube" gradientUnits="userSpaceOnUse" x1="870" y1="580" x2="970" y2="780"><stop stop-color="#a6532a"/><stop offset=".26" stop-color="#ffdcaa"/><stop offset=".48" stop-color="#c87841"/><stop offset=".72" stop-color="#f0b575"/><stop offset="1" stop-color="#7b3319"/></linearGradient>
+ <radialGradient id="cut"><stop stop-color="#ffdca7"/><stop offset=".65" stop-color="#ca7c46"/><stop offset="1" stop-color="#6e351b"/></radialGradient>
+ <filter id="shadow" x="-20%" y="-50%" width="140%" height="220%"><feDropShadow dx="0" dy="5" stdDeviation="5" flood-color="#153149" flood-opacity=".14"/></filter>
+ <marker id="current" markerWidth="8" markerHeight="8" refX="6.5" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#1478b8"/></marker>
+</defs>
+<rect width="1200" height="900" rx="28" fill="#f0f7fc"/>
+<g font-family="Arial,sans-serif" fill="#173452" stroke-linecap="round" stroke-linejoin="round">
+<text x="42" y="49" font-size="29" font-weight="750">La forma del conductor determina el campo</text>
+<text x="42" y="83" font-size="24" fill="#5c7186">Identifica la geometría y el punto donde se calcula B.</text>
+<rect x="30" y="110" width="555" height="350" rx="22" fill="white" stroke="#ccdeeb" stroke-width="1.5"/>
+<rect x="51" y="132" width="43" height="36" rx="10" fill="#e0f3f4"/><text x="72.5" y="158" text-anchor="middle" font-size="24" font-weight="800" fill="#008f94">01</text>
+<text x="109" y="158" font-size="29" font-weight="750">Conductor muy largo</text>
+<text x="54" y="193" font-size="24" fill="#5c7186">Campo a distancia perpendicular d</text>
+<ellipse cx="312" cy="333" rx="236" ry="14" fill="#153149" opacity=".08"/>
+<rect x="78" y="307" width="462" height="25" rx="12.5" fill="url(#copper)" filter="url(#shadow)"/><path d="M92 312H527" stroke="#ffe6c1" stroke-width="3" opacity=".7"/>
+<path d="M72 319H50M547 319H568" stroke="#5c7186" stroke-width="3" stroke-dasharray="3 7"/>
+<path d="M286 249V319.5M286 306.5H299V319.5" fill="none" stroke="#7e94a8" stroke-width="2.5" stroke-dasharray="5 6"/><text x="312" y="285" font-size="27">d</text><text x="252" y="235" font-size="27" font-weight="700">P</text>
+<circle cx="286" cy="231" r="17" fill="#f0eaff" stroke="#6b47be" stroke-width="2.5"/><circle cx="286" cy="231" r="5.8" fill="#6b47be"/>
+<text x="316" y="240" font-size="28" font-weight="700" fill="#6b47be">B<tspan baseline-shift="sub" font-size="24">P</tspan></text>
+<path d="M183 352H345" fill="none" stroke="#1478b8" stroke-width="4.5" marker-end="url(#current)"/><text x="354" y="363" font-size="28" font-style="italic" font-weight="700" fill="#1478b8">I</text>
+<rect x="54" y="386" width="507" height="65" rx="13" fill="#edf5fa"/>
+<text x="207" y="427" font-family="Arial,sans-serif" font-size="29" text-anchor="end">Bₚ =</text>
+<text x="325" y="412" font-family="Arial,sans-serif" font-size="27" text-anchor="middle">μ₀ I</text><path d="M259 418H391" stroke="#173452" stroke-width="1.5"/><text x="325" y="443" font-family="Arial,sans-serif" font-size="27" text-anchor="middle">2πd</text>
+<rect x="615" y="110" width="555" height="350" rx="22" fill="white" stroke="#ccdeeb" stroke-width="1.5"/>
+<rect x="636" y="132" width="43" height="36" rx="10" fill="#e0f3f4"/><text x="657.5" y="158" text-anchor="middle" font-size="24" font-weight="800" fill="#008f94">02</text>
+<text x="694" y="158" font-size="29" font-weight="750">Conductor semiinfinito</text>
+<text x="639" y="193" font-size="24" fill="#5c7186">P está sobre la perpendicular al extremo</text>
+<ellipse cx="929" cy="333" rx="207" ry="14" fill="#153149" opacity=".08"/><rect x="733" y="307" width="386" height="25" rx="1" fill="url(#copper)" filter="url(#shadow)"/><ellipse cx="733" cy="319.5" rx="7" ry="12.5" fill="url(#cut)"/><path d="M746 312H1116" stroke="#ffe6c1" stroke-width="3" opacity=".7"/>
+<path d="M1124 319H1153" stroke="#5c7186" stroke-width="3" stroke-dasharray="3 7"/><text x="1117" y="298" font-size="27" fill="#5c7186">∞</text>
+<path d="M733 249V319.5M733 306.5H746V319.5" fill="none" stroke="#7e94a8" stroke-width="2.5" stroke-dasharray="5 6"/><text x="759" y="285" font-size="27">d</text><text x="697" y="236" font-size="27" font-weight="700">P</text>
+<circle cx="733" cy="231" r="17" fill="#f0eaff" stroke="#6b47be" stroke-width="2.5"/><circle cx="733" cy="231" r="5.8" fill="#6b47be"/>
+<text x="763" y="240" font-size="28" font-weight="700" fill="#6b47be">B<tspan baseline-shift="sub" font-size="24">P</tspan></text>
+<path d="M875 352H1021" fill="none" stroke="#1478b8" stroke-width="4.5" marker-end="url(#current)"/><text x="1030" y="363" font-size="28" font-style="italic" font-weight="700" fill="#1478b8">I</text>
+<rect x="639" y="386" width="507" height="65" rx="13" fill="#edf5fa"/>
+<text x="792" y="427" font-family="Arial,sans-serif" font-size="29" text-anchor="end">Bₚ =</text>
+<text x="910" y="412" font-family="Arial,sans-serif" font-size="27" text-anchor="middle">μ₀ I</text><path d="M844 418H976" stroke="#173452" stroke-width="1.5"/><text x="910" y="443" font-family="Arial,sans-serif" font-size="27" text-anchor="middle">4πd</text>
+<rect x="30" y="485" width="555" height="350" rx="22" fill="white" stroke="#ccdeeb" stroke-width="1.5"/>
+<rect x="51" y="507" width="43" height="36" rx="10" fill="#e0f3f4"/><text x="72.5" y="533" text-anchor="middle" font-size="24" font-weight="800" fill="#008f94">03</text>
+<text x="109" y="533" font-size="29" font-weight="750">Espira circular</text>
+<text x="54" y="568" font-size="24" fill="#5c7186">Campo en el centro O de la espira</text>
+<ellipse cx="274" cy="743" rx="108" ry="15" fill="#153149" opacity=".08"/><circle cx="270" cy="665" r="75" fill="none" stroke="#71351d" stroke-width="21"/><circle cx="270" cy="665" r="75" fill="none" stroke="url(#tube)" stroke-width="17" filter="url(#shadow)"/><path d="M200 640A73 73 0 0 1 292 595" fill="none" stroke="#ffe6c1" stroke-width="3" opacity=".8"/>
+<path d="M270 665H345" fill="none" stroke="#768da2" stroke-width="2.5" stroke-dasharray="5 6"/><text x="312" y="650" font-size="27">R</text><text x="235" y="696" font-size="27" font-weight="700">O</text>
+<circle cx="270" cy="665" r="17" fill="#f0eaff" stroke="#6b47be" stroke-width="2.5"/><circle cx="270" cy="665" r="5.8" fill="#6b47be"/>
+<path d="M340 735A99 99 0 0 0 368 646" fill="none" stroke="#1478b8" stroke-width="4.5" marker-end="url(#current)"/><text x="389" y="696" font-size="28" font-style="italic" font-weight="700" fill="#1478b8">I</text>
+<rect x="54" y="758" width="507" height="65" rx="13" fill="#edf5fa"/>
+<text x="207" y="799" font-family="Arial,sans-serif" font-size="29" text-anchor="end">Bₒ =</text>
+<text x="325" y="784" font-family="Arial,sans-serif" font-size="27" text-anchor="middle">μ₀ I</text><path d="M259 790H391" stroke="#173452" stroke-width="1.5"/><text x="325" y="815" font-family="Arial,sans-serif" font-size="27" text-anchor="middle">2R</text>
+<rect x="615" y="485" width="555" height="350" rx="22" fill="white" stroke="#ccdeeb" stroke-width="1.5"/>
+<rect x="636" y="507" width="43" height="36" rx="10" fill="#e0f3f4"/><text x="657.5" y="533" text-anchor="middle" font-size="24" font-weight="800" fill="#008f94">04</text>
+<text x="694" y="533" font-size="29" font-weight="750">Arco de corriente</text>
+<text x="639" y="568" font-size="24" fill="#5c7186">Campo en el centro O del arco</text>
+<path d="M911 741A88 88 0 0 0 911 589" fill="none" stroke="#71351d" stroke-width="22"/><path d="M911 741A88 88 0 0 0 911 589" fill="none" stroke="url(#arcTube)" stroke-width="18" filter="url(#shadow)"/><path d="M917 731A84 84 0 0 0 922 608" fill="none" stroke="#ffe6c1" stroke-width="3" opacity=".8"/><circle cx="911" cy="741" r="8" fill="url(#cut)"/><circle cx="911" cy="589" r="8" fill="url(#cut)"/>
+<path d="M867 665L911 589M867 665L911 741" fill="none" stroke="#8197a8" stroke-width="2.5" stroke-dasharray="5 6"/><path d="M888 701A42 42 0 0 0 888 629" fill="none" stroke="#008f94" stroke-width="3"/><text x="900" y="619" font-size="27">R</text><text x="927" y="676" font-size="28" fill="#008f94">θ</text><text x="829" y="697" font-size="27" font-weight="700">O</text>
+<circle cx="867" cy="665" r="17" fill="#f0eaff" stroke="#6b47be" stroke-width="2.5"/><circle cx="867" cy="665" r="5.8" fill="#6b47be"/>
+<path d="M927 751A105 105 0 0 0 970 629" fill="none" stroke="#1478b8" stroke-width="4.5" marker-end="url(#current)"/><text x="992" y="697" font-size="28" font-style="italic" font-weight="700" fill="#1478b8">I</text>
+<rect x="639" y="758" width="507" height="65" rx="13" fill="#edf5fa"/>
+<text x="792" y="799" font-family="Arial,sans-serif" font-size="29" text-anchor="end">Bₒ =</text>
+<text x="910" y="784" font-family="Arial,sans-serif" font-size="27" text-anchor="middle">μ₀ I θ</text><path d="M844 790H976" stroke="#173452" stroke-width="1.5"/><text x="910" y="815" font-family="Arial,sans-serif" font-size="27" text-anchor="middle">4πR</text>
+<text x="867" y="870" font-size="24" text-anchor="middle" fill="#5c7186">Para el arco, θ se expresa en radianes.</text><text x="43" y="870" font-size="24" fill="#6b47be">⊙ B sale hacia el observador</text></g></svg>

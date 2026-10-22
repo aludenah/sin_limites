@@ -208,9 +208,9 @@ window.addEventListener('induction-lab-progress',event=>{
 });
 
 function openFigure(id){
- const [kind,key]=String(id).split(':');
+ const [kind,key,part]=String(id).split(':');
  const item=kind==='worked'?CONTENT.workedExamples.find(e=>e.number===Number(key)):window.ChapterPractice.questions(CHAPTER_ID).find(q=>q.id===key);
- const figure=item?.figure,dialog=document.getElementById('em-figure-dialog');if(!figure||!dialog)return;
+ const figure=kind==='theory'?LESSONS.find(l=>l.id===key)?.visuals?.[Number(part)||0]:item?.figure,dialog=document.getElementById('em-figure-dialog');if(!figure||!dialog)return;
  dialog.innerHTML=`<header><h2 id="em-figure-title">${escapeHTML(figure.caption||'Figura del problema')}</h2><button class="button secondary" data-action="close-figure" autofocus>Cerrar</button></header><img src="${escapeHTML(figure.src)}" alt="${escapeHTML(figure.alt)}" width="${Number(figure.width)||760}" height="${Number(figure.height)||400}">`;
  dialog.showModal();
 }

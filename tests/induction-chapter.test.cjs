@@ -66,7 +66,7 @@ function progressSanitization(){
 }
 
 async function navigationAndTeacher(){
- const destination=chapterId+'.html?v=20261021-em-pdf3';
+ const destination=chapterId+'.html?v=20261022-realismo4';
  const guest=harness(chapterFiles);await guest.signIn(null);assert.ok(guest.elements.get('chapter-app').innerHTML.includes('index.html?chapter='+chapterId));
  const first=harness(chapterFiles);await first.signIn({uid:'new-experimenter'});assert.match(first.redirects.at(-1),new RegExp('^index\\.html\\?chapter='+chapterId+'(?:&v=[a-zA-Z0-9-]+)?$'));
  const picker=harness(homeFiles,{search:'?chapter='+chapterId});await picker.signIn({uid:'new-experimenter'});assert.equal(picker.run('state.view'),'mode');picker.run("selectStudyMode('progressive')");assert.equal(picker.redirects.at(-1),destination);

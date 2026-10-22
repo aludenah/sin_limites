@@ -1,15 +1,67 @@
-/* El capítulo utiliza la misma plantilla y tipografía de Análisis dimensional. */
+/* La estructura conserva el mismo ancho en todos los temas y actividades. */
+.wrap{max-width:1440px}
+.layout{grid-template-columns:220px minmax(0,1fr);gap:24px}
+.sidebar{padding:18px 14px}
+.article{padding:30px}
+.content,.content>*{min-width:0;max-width:100%}
 .content .em-source{font-size:12px;color:var(--muted);margin-top:22px}
 .content svg.em-diagram{display:block;width:100%;height:auto;max-width:620px;margin:22px auto}
 .content .em-note{padding:16px 18px;border-left:3px solid #2e7a85;background:#eef7f8;border-radius:0 12px 12px 0}
-.content table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px}
-.content td,.content th{text-align:left;border-bottom:1px solid var(--line);padding:10px}
+
+/* Las descripciones se leen completas, sin desplazar tablas lateralmente. */
+.content .table-scroll{max-width:100%;overflow:visible;margin:24px 0}
+.content table{width:100%;min-width:0;table-layout:fixed;border-collapse:collapse;margin:0;font-size:14px;white-space:normal}
+.content td,.content th{min-width:0;max-width:100%;white-space:normal;overflow-wrap:anywhere;word-break:normal;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);padding:13px 14px;line-height:1.65}
+.content th{background:#edf4fa;color:#173c59}
+.content th:first-child,.content td:first-child{width:43%}
+.content tr:last-child td{border-bottom:0}
 .em-lab-shortcuts{margin-top:14px}
-.article:has(.wfl){padding:24px 18px}
-.layout:has(.wfl),.layout:has(.il-lab){grid-template-columns:190px minmax(0,1fr);gap:16px}
-.layout:has(.wfl) .sidebar,.layout:has(.il-lab) .sidebar{padding:16px 12px}
-@media(min-width:1400px){.wrap:has(.wfl),.wrap:has(.il-lab){max-width:1600px}}
-@media(max-width:850px){.layout:has(.wfl),.layout:has(.il-lab){grid-template-columns:1fr}.article:has(.wfl){padding:20px 12px}}
+
+/* Propiedades de los imanes: una idea completa por tarjeta. */
+.em-property-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:25px 0}
+.em-property-card{--property-color:#d34d64;--property-wash:#fff3f5;min-width:0;padding:22px;border:1px solid #e7dbe0;border-top:4px solid var(--property-color);border-radius:18px;background:linear-gradient(135deg,var(--property-wash),#fff 76%);box-shadow:0 6px 18px #12274406}
+.em-property-card:nth-child(2){--property-color:#2875b0;--property-wash:#edf7ff;border-color:#d8e6f1;border-top-color:var(--property-color)}
+.em-property-card:nth-child(3){--property-color:#0b8c7c;--property-wash:#edfaf7;border-color:#d3eae5;border-top-color:var(--property-color)}
+.em-property-card:nth-child(4){--property-color:#bd741a;--property-wash:#fff8e9;border-color:#eadfc8;border-top-color:var(--property-color)}
+.em-property-icon{display:grid;place-items:center;width:46px;height:46px;margin-bottom:15px;border-radius:13px;background:white;border:1px solid color-mix(in srgb,var(--property-color) 22%,white);font-size:25px;color:var(--property-color)}
+.em-property-card h3,.em-property-card h4{margin:0 0 10px;color:var(--property-color);font-size:18px;line-height:1.35;letter-spacing:-.02em}
+.content .em-property-card p{margin:0;color:#354b65;font-size:15px;line-height:1.7;overflow-wrap:anywhere}
+
+/* Imágenes amplias y completas: se conserva la relación de aspecto. */
+.em-realistic-figure{margin:26px 0;padding:0;border:1px solid #d3e0eb;border-radius:18px;overflow:hidden;background:#f2f7fb;box-shadow:0 10px 28px #15344f08}
+.em-realistic-figure img,.em-realistic-figure svg{display:block;width:100%;max-width:none;height:auto;margin:0;border-radius:0}
+.em-realistic-figure picture{display:block}
+.em-realistic-figure figcaption{margin:0;padding:13px 18px;background:#fff;color:#536b81;font-size:13px;line-height:1.6;border-top:1px solid #e0e8ee}
+.em-visual-panel{padding:20px;border:1px solid #cfe2eb;border-radius:18px;background:linear-gradient(135deg,#eef8fb,#fff)}
 
 .em-figure-dialog{width:min(1100px,96vw);max-height:95dvh;border:1px solid var(--line);border-radius:18px;padding:20px;color:var(--ink)}
-.em-figure-dialog::backdrop{background:#0a1829b8}.em-figure-dialog header{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:14px}.em-figure-dialog h2{font-size:18px;margin:0}.em-figure-dialog img{display:block;width:100%;height:auto;max-height:75dvh;object-fit:contain}
+.em-figure-dialog::backdrop{background:#0a1829b8}
+.em-figure-dialog header{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:14px}
+.em-figure-dialog h2{font-size:18px;margin:0}
+.em-figure-dialog img{display:block;width:100%;height:auto;max-height:75dvh;object-fit:contain}
+
+@media(max-width:850px){
+ .layout{grid-template-columns:minmax(0,1fr);gap:20px}
+ .sidebar{padding:18px}
+ .article{padding:24px}
+}
+@media(max-width:600px){
+ .em-property-grid{grid-template-columns:minmax(0,1fr);gap:14px}
+ .em-property-card{padding:20px}
+}
+@media(max-width:520px){
+ .layout{gap:16px}
+ .sidebar{padding:15px}
+ .article{padding:20px 16px}
+ .content td,.content th{padding:11px 10px}
+ .content th:first-child,.content td:first-child{width:42%}
+ .em-realistic-figure{margin:22px 0;border-radius:14px}
+ .em-realistic-figure figcaption{padding:12px 14px}
+ .em-figure-dialog{padding:14px}
+ .em-figure-dialog header{align-items:flex-start}
+ .em-figure-dialog h2{font-size:16px}
+}
+
+.em-realistic-figure .em-image-button{position:relative;display:block;width:100%;padding:0;border:0;background:transparent;color:var(--navy);cursor:zoom-in;text-align:inherit}
+.em-realistic-figure .em-image-button>span{display:block;padding:10px 16px;font-size:12px;font-weight:750;background:#edf4f8;border-top:1px solid #d9e5ee;text-align:right}
+.em-realistic-figure .em-image-button:hover>span{background:#dcecf5}

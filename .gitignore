@@ -1,3 +1,6 @@
 # Local source material and full-resolution generation outputs.
 sources/
 generated_images/
+
+# Full-resolution image generation originals; optimized sources are tracked.
+assets/em-realistic/photo-*.png
