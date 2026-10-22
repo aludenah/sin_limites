@@ -246,3 +246,24 @@
  .bh-heart.bh-section-mode .bh-view-switch{margin:12px auto 8px}
 }
 
+
+/* Student-controlled narration follows the eight route steps. */
+.bh-narration{padding:18px 25px 16px;border-top:1px solid #d9e6ed;border-bottom:1px solid #cbdfe6;background:linear-gradient(110deg,#e8f5f3,#f5f8fc)}
+.bh-narration-heading{display:flex;gap:12px;align-items:center;margin-bottom:13px}
+.bh-narration-icon{display:grid;place-items:center;flex:none;width:39px;height:39px;border-radius:12px;background:#d0eae5;color:#126c68;font-size:25px;font-weight:800}
+.bh-heart .bh-narration-heading h4{font-size:17px;line-height:1.4;color:#143d53}
+.bh-heart .bh-narration-heading p{font-size:13px;line-height:1.65;color:#506f80;margin-top:3px}
+.bh-narration-controls{display:flex;align-items:center;flex-wrap:wrap;gap:9px}
+.bh-narration-controls button{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:44px;border:1px solid #b5cdd6;border-radius:10px;padding:10px 13px;background:#fff;color:#234e65;font-size:13px;font-weight:750;line-height:1.4}
+.bh-narration-controls button svg{flex:none;width:17px;height:17px}
+.bh-narration-controls .bh-narration-play{background:#126b68;color:#fff;border-color:#126b68;min-width:182px}
+.bh-narration-controls .bh-narration-play:hover{background:#0d5653}
+.bh-narration-controls button:disabled{opacity:.5}
+.bh-narration-rate{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:750;color:#355a6b}
+.bh-narration-rate select{min-height:44px;border:1px solid #b5cdd6;border-radius:9px;padding:8px 10px;background:#fff;color:#234e65;font:inherit}
+.bh-narration-auto{display:flex;align-items:center;gap:8px;min-height:44px;padding:3px 5px;font-size:12px;color:#355a6b;cursor:pointer;line-height:1.5}
+.bh-narration-auto input{width:18px;height:18px;flex:none;accent-color:#126b68}
+.bh-heart .bh-narration-status{margin-top:10px;font-size:12px;line-height:1.65;color:#3b6574}
+.bh-heart[data-bh-narration=error] .bh-narration-status,.bh-heart[data-bh-narration=unavailable] .bh-narration-status{color:#855029}
+.bh-narration select:focus-visible,.bh-narration input:focus-visible{outline:3px solid #e9a53f;outline-offset:3px}
+@media(max-width:600px){.bh-narration{padding:16px 15px}.bh-narration-controls{display:grid;grid-template-columns:1fr 1fr;gap:8px}.bh-narration-controls .bh-narration-play{grid-column:1/-1}.bh-narration-controls button{padding:10px 8px;font-size:12px}.bh-narration-rate{justify-content:space-between}.bh-narration-auto{padding-left:0}.bh-heart .bh-narration-heading h4{font-size:16px}.bh-heart .bh-narration-heading p{font-size:12px}}

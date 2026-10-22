@@ -57,9 +57,10 @@
     const groups=['Cavidades','Grandes vasos','Pared y coronarias'];
     return `<section class="bh-heart" id="heart-lab" data-biology-heart aria-labelledby="bh-title"><header class="bh-header"><div><p class="bh-eyebrow">Laboratorio de anatomía · Biología</p><h3 id="bh-title">Explora el corazón humano</h3><p class="bh-subtitle">Gíralo, entra en sus cavidades y sigue el viaje de la sangre. Selecciona una estructura en el modelo o en la lista para descubrir su función.</p></div><div class="bh-spec"><strong>3D</strong>11 estructuras<br>2 circuitos conectados</div></header>
       <div class="bh-fullscreen-bar"><span class="bh-fullscreen-title">Exploración del corazón</span><button type="button" class="bh-fullscreen-button" data-bh-action="fullscreen" aria-pressed="false" aria-label="Pantalla completa">${icon('fullscreen')}<span>Pantalla completa</span></button></div><div class="bh-tabs" role="tablist" aria-label="Actividad del corazón"><button type="button" role="tab" class="bh-tab" id="bh-tab-explore" aria-controls="bh-explore" aria-selected="true" data-bh-action="tab" data-value="explore">${icon('cube')}Explorar anatomía</button><button type="button" role="tab" class="bh-tab" id="bh-tab-route" aria-controls="bh-route" aria-selected="false" tabindex="-1" data-bh-action="tab" data-value="route">${icon('route')}Recorrido de la sangre</button></div>
+      <section class="bh-narration" aria-label="Audio del recorrido de la sangre"><div class="bh-narration-heading"><span class="bh-narration-icon" aria-hidden="true">♪</span><div><h4>Escucha el recorrido de la sangre</h4><p>Ocho etapas narradas mientras se destaca su trayecto en el corazón.</p></div></div><div class="bh-narration-controls"><button type="button" class="bh-narration-play" data-bh-action="narration-play">${icon('play')}<span data-bh-narration-play-label>Escuchar recorrido</span></button><button type="button" data-bh-action="narration-repeat" disabled>${icon('reset')}Repetir paso</button><button type="button" data-bh-action="narration-stop" disabled>Detener audio</button><label class="bh-narration-rate">Voz<select data-bh-narration-rate aria-label="Velocidad de la narración"><option value="0.85">Pausada</option><option value="1" selected>Normal</option><option value="1.15">Ágil</option></select></label><label class="bh-narration-auto"><input type="checkbox" data-bh-narration-auto checked>Avanzar automáticamente</label></div><p class="bh-narration-status" data-bh-narration-status role="status" aria-live="polite">Pulsa Escuchar recorrido para comenzar. Puedes pausar o repetir cada paso.</p></section>
       <div class="bh-section-heading" data-bh-section-heading hidden><h4>Corazón humano: vista anterior en sección longitudinal frontal (esquemática)</h4><p class="bh-orientation-summary">Vista desde adelante: el lado derecho de la persona aparece a la izquierda de la imagen, y el izquierdo a la derecha.</p><p class="bh-anatomy-note">Plano frontal o coronal aproximado, con retirada esquemática de parte de las paredes anteriores. El corazón está orientado de forma oblicua: esta representación reúne cavidades, válvulas y grandes vasos y no corresponde a una sección coronal estricta obtenida con un único plano.</p></div><div class="bh-layout"><aside class="bh-cut-panel" data-bh-cut-panel hidden aria-label="Controles de cortes y flujo"><h4 class="bh-cut-panel-title">Cortes y flujo</h4><div class="bh-atlas-controls"><div class="bh-cut-choices" role="group" aria-label="Tipo de sección anatómica">${Object.entries(global.HeartSection?.views||{}).map(([id,v])=>'<button type="button" data-bh-action="section-type" data-value="'+id+'" aria-pressed="'+(id==='frontal')+'">'+v.label+'</button>').join('')}</div><div class="bh-blood-controls"><button type="button" data-bh-action="blood-play" aria-pressed="false">${icon('play')}<span data-bh-blood-play-label>Reproducir flujo</span></button><label>Visualización<select data-bh-flow-mode aria-label="Modo de flujo sanguíneo"><option value="cycle">Ciclo cardíaco completo</option><option value="step">Recorrido paso a paso</option></select></label><label>Velocidad<select data-bh-flow-speed aria-label="Velocidad del flujo sanguíneo"><option value="0.5">Lenta · 0,5×</option><option value="1" selected>Normal · 1×</option><option value="1.5">Rápida · 1,5×</option></select></label></div><div class="bh-cycle-status"><span class="bh-cycle-dot" aria-hidden="true"></span><strong data-bh-cycle-phase>Llenado ventricular · diástole</strong><span data-bh-blood-state>Pausado</span></div><p class="bh-blood-key"><span><i class="bh-blue-key"></i>Menos oxígeno</span><span><i class="bh-red-key"></i>Más oxígeno</span><small>Colores convencionales; toda la sangre es roja. Tiempos y células ampliados para estudiar el flujo.</small></p></div><div class="bh-section-zoom" role="group" aria-label="Ampliación de la sección anatómica"><span>Ampliar sección</span><div><button type="button" data-bh-action="section-zoom-out" aria-label="Alejar sección frontal" title="Alejar sección frontal" disabled>−</button><output data-bh-section-zoom-label aria-label="Ampliación de la sección">100 %</output><button type="button" data-bh-action="section-zoom-in" aria-label="Acercar sección frontal" title="Acercar sección frontal">+</button><button type="button" data-bh-action="section-zoom-reset" aria-label="Restablecer tamaño de sección" title="Restablecer tamaño de sección">${icon('reset')}</button></div></div></aside><div class="bh-viewer"><div class="bh-stage"><div class="bh-canvas" data-bh-canvas></div><div class="bh-section-canvas" data-bh-section hidden><div class="bh-section-scroll" data-bh-section-scroll tabindex="0" role="region" aria-label="Sección anatómica ampliable. Desliza para recorrer la ilustración ampliada.">${global.HeartSection?.render?.()||''}</div></div><div class="bh-topline"><span class="bh-status" data-bh-status>Preparando modelo 3D</span><span class="bh-orientation">DERECHA E IZQUIERDA<br>anatómicas, aunque gires el modelo</span></div><div class="bh-view-switch" aria-label="Vista del corazón"><button type="button" data-bh-action="view" data-value="external" aria-pressed="true">Exterior 3D</button><button type="button" data-bh-action="view" data-value="internal" aria-pressed="false">Cavidades 3D</button><button type="button" data-bh-action="view" data-value="section" aria-pressed="false">Cortes y flujo</button></div><div class="bh-tools" role="group" aria-label="Controles del modelo"><button type="button" class="bh-icon-btn" data-bh-action="zoom-in" title="Acercar" aria-label="Acercar"><span aria-hidden="true">+</span></button><button type="button" class="bh-icon-btn" data-bh-action="zoom-out" title="Alejar" aria-label="Alejar"><span aria-hidden="true">−</span></button><button type="button" class="bh-icon-btn" data-bh-action="rotate" aria-pressed="false" title="Activar giro automático" aria-label="Activar giro automático">${icon('rotate')}</button><button type="button" class="bh-icon-btn" data-bh-action="reset-camera" title="Restablecer cámara" aria-label="Restablecer cámara">${icon('reset')}</button></div><span class="bh-label-marker" data-bh-marker aria-hidden="true"></span><div class="bh-selected-label"><small data-bh-label-kicker>Modelo anatómico</small><strong data-bh-label>Corazón humano</strong></div><p class="bh-view-note" data-bh-view-note><b>Arrastra para girar.</b> Usa los botones + y − para acercar o alejar. También puedes usar las flechas del teclado.</p><div class="bh-loading" data-bh-loading><div class="bh-spinner" aria-hidden="true"></div><span>Cargando anatomía real…</span><small>Preparando las 11 estructuras del modelo</small></div></div><div class="bh-viewer-bottom"><span data-bh-view-caption>Geometría anatómica · no es una imagen plana</span><button type="button" class="bh-quality" data-bh-action="quality" aria-pressed="false" title="Reduce el consumo de recursos del modelo">Modo ligero</button><div class="bh-pose" role="group" aria-label="Orientación de la cámara"><button type="button" data-bh-action="pose" data-value="anterior">Anterior</button><button type="button" data-bh-action="pose" data-value="posterior">Posterior</button><button type="button" data-bh-action="pose" data-value="lateral">Lateral</button></div></div><div class="bh-render-error" data-bh-error hidden><p data-bh-error-message></p><button type="button" data-bh-action="retry">Reintentar 3D en modo ligero</button></div></div>
       <div class="bh-side"><div class="bh-side-content" id="bh-explore" role="tabpanel" aria-labelledby="bh-tab-explore"><div class="bh-panel-heading"><h4>Conoce sus partes</h4><span class="bh-explored" data-bh-explored>0 de 11 exploradas</span></div><div class="bh-parts">${groups.map(group=>`<div><p class="bh-group-title">${group}</p><div class="bh-part-grid">${PARTS.filter(p=>p.group===group).map(p=>`<button type="button" class="bh-part" data-bh-action="part" data-value="${p.id}" aria-pressed="false" style="--part-color:${p.color}"><i class="bh-part-dot" aria-hidden="true"></i><span>${p.short}</span><span class="bh-part-check" data-bh-visited="${p.id}" aria-hidden="true"></span></button>`).join('')}</div></div>`).join('')}</div><div class="bh-description" aria-live="polite" aria-atomic="true"><h4 class="bh-description-title" data-bh-part-title>Un órgano, dos bombas</h4><p data-bh-part-text>El lado derecho envía sangre a los pulmones y el izquierdo la impulsa hacia el cuerpo. La orientación de sus partes siempre corresponde a la persona, no a quien observa.</p><div class="bh-function"><small data-bh-function-label>Empieza por aquí</small><span data-bh-part-function>Selecciona una cavidad, un vaso o una arteria coronaria.</span></div></div><div class="bh-side-actions"><button type="button" class="bh-mini-button" data-bh-action="isolate" aria-pressed="false" disabled>Aislar estructura</button><button type="button" class="bh-mini-button" data-bh-action="clear">Ver todo el corazón</button></div><p class="bh-isolated-note" data-bh-isolated hidden>Solo se muestra la estructura seleccionada.</p></div>
-      <div class="bh-route-panel" id="bh-route" role="tabpanel" aria-labelledby="bh-tab-route" hidden><div class="bh-step-kicker"><span>Un recorrido completo</span><b data-bh-step-count>Paso 1 de 8</b></div><div class="bh-step-dots" role="group" aria-label="Pasos del recorrido">${ROUTE.map((s,i)=>`<button type="button" data-bh-action="step" data-value="${i}" aria-label="Paso ${i+1}: ${s.title}" ${i===0?'aria-current="step"':''}></button>`).join('')}</div><div aria-live="polite" aria-atomic="true"><h4 class="bh-route-title" data-bh-route-title>${ROUTE[0].title}</h4><p class="bh-route-text" data-bh-route-text>${ROUTE[0].text}</p></div><span class="bh-blood-tag" data-bh-oxygen>Sangre con poco oxígeno</span><div class="bh-route-structure" data-bh-route-label>${ROUTE[0].label}</div><div class="bh-route-actions"><button type="button" data-bh-action="previous" disabled>← Anterior</button><button type="button" class="bh-restart" data-bh-action="restart" aria-label="Reiniciar recorrido" title="Reiniciar recorrido">${icon('reset')}</button><button type="button" class="bh-next" data-bh-action="next">Siguiente →</button></div><div class="bh-route-finish" data-bh-finish hidden><span aria-hidden="true">✓</span><span>Recorrido explorado. La circulación es <strong>doble, cerrada y completa</strong> en el ser humano.</span></div><p class="bh-route-footnote">La sección frontal esquemática muestra las cuatro cavidades, las válvulas y los grandes vasos. En Cavidades 3D se retira la pared ventricular; las válvulas, las venas pulmonares y la cava inferior se representan en la sección didáctica, no en esa malla tridimensional.</p></div></div></div>
+      <div class="bh-route-panel" id="bh-route" role="tabpanel" aria-labelledby="bh-tab-route" hidden><div class="bh-step-kicker"><span>Un recorrido completo</span><b data-bh-step-count>Paso 1 de 8</b></div><div class="bh-step-dots" role="group" aria-label="Pasos del recorrido">${ROUTE.map((s,i)=>`<button type="button" data-bh-action="step" data-value="${i}" aria-label="Paso ${i+1}: ${s.title}" ${i===0?'aria-current="step"':''}></button>`).join('')}</div><div data-bh-route-description aria-live="polite" aria-atomic="true"><h4 class="bh-route-title" data-bh-route-title>${ROUTE[0].title}</h4><p class="bh-route-text" data-bh-route-text>${ROUTE[0].text}</p></div><span class="bh-blood-tag" data-bh-oxygen>Sangre con poco oxígeno</span><div class="bh-route-structure" data-bh-route-label>${ROUTE[0].label}</div><div class="bh-route-actions"><button type="button" data-bh-action="previous" disabled>← Anterior</button><button type="button" class="bh-restart" data-bh-action="restart" aria-label="Reiniciar recorrido" title="Reiniciar recorrido">${icon('reset')}</button><button type="button" class="bh-next" data-bh-action="next">Siguiente →</button></div><div class="bh-route-finish" data-bh-finish hidden><span aria-hidden="true">✓</span><span>Recorrido explorado. La circulación es <strong>doble, cerrada y completa</strong> en el ser humano.</span></div><p class="bh-route-footnote">La sección frontal esquemática muestra las cuatro cavidades, las válvulas y los grandes vasos. En Cavidades 3D se retira la pared ventricular; las válvulas, las venas pulmonares y la cava inferior se representan en la sección didáctica, no en esa malla tridimensional.</p></div></div></div>
       <section class="bh-flow-section" aria-labelledby="bh-flow-title"><div class="bh-flow-head"><div><h4 id="bh-flow-title">Dos circuitos, un solo recorrido</h4><p>La animación señala la dirección. No representa velocidad, escala ni latido.</p></div><button type="button" class="bh-flow-toggle" data-bh-action="flow" aria-pressed="true">${icon('pause')}<span data-bh-flow-label>Pausar flujo</span></button></div><div class="bh-flow-scroll" tabindex="0" role="region" aria-label="Esquema de circulación. Desliza horizontalmente para ver todo el recorrido.">${flowMap()}</div><div class="bh-legend"><span><i style="background:#6aa0b5"></i>Sangre con poco oxígeno</span><span><i style="background:#df98a5"></i>Sangre oxigenada</span><small>Colores convencionales; toda la sangre es roja.</small></div><p class="bh-motion-note" data-bh-motion-note hidden>La animación está pausada para respetar tu preferencia de movimiento reducido.</p></section>
       <footer class="bh-footer"><span><strong>Modelo 3D:</strong> BodyParts3D / organui · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a></span><span><strong>Cortes anatómicos:</strong> ilustraciones esquemáticas con detalle interno.</span></footer><span class="bh-sr-only" aria-live="polite" data-bh-live></span></section>`;
   }
@@ -81,7 +82,7 @@
     const host=root?.matches?.('[data-biology-heart]')?root:root?.querySelector?.('[data-biology-heart]');
     if(!host)return;
     const saved=options.saved||{},reduce=global.matchMedia?.('(prefers-reduced-motion: reduce)').matches||false,light=prefersLightMode();
-    const active={host,root,saved,disposed:false,controller:new AbortController(),selected:INDEX[saved.selectedPart]?saved.selectedPart:null,visited:new Set((Array.isArray(saved.visitedParts)?saved.visitedParts:[]).filter(id=>INDEX[id])),routeVisited:new Set((Array.isArray(saved.visitedSteps)?saved.visitedSteps:[]).filter(n=>Number.isInteger(n)&&n>=0&&n<ROUTE.length)),step:Math.min(7,Math.max(0,Number(saved.routeStep)||0)),routeComplete:saved.routeComplete===true,view:saved.view==='internal'?'internal':'external',presentation:saved.presentation==='section'?'section':'model',sectionZoom:1,sectionType:global.HeartSection?.views?.[saved.sectionType]?saved.sectionType:'frontal',flowMode:'cycle',flowSpeed:1,flowElapsed:0,flowLastTime:null,fullscreenMode:null,fullscreenPending:false,fullscreenSeq:0,fullscreenRestore:null,tab:saved.tab==='route'?'route':'explore',flow:!reduce&&!light,rotate:false,isolate:false,reduce,light,attempt:0,scene:null,renderer:null,controls:null,frame:0,dirty:0,flowDirty:true,lastFrame:-Infinity,visible:true,interacting:false,meshes:[],meshByPart:new Map(),materials:[],marker:null,focus:null,transition:null,flowStart:performance.now(),beads:[],partCenters:new Map()};
+    const active={host,root,saved,disposed:false,controller:new AbortController(),selected:INDEX[saved.selectedPart]?saved.selectedPart:null,visited:new Set((Array.isArray(saved.visitedParts)?saved.visitedParts:[]).filter(id=>INDEX[id])),routeVisited:new Set((Array.isArray(saved.visitedSteps)?saved.visitedSteps:[]).filter(n=>Number.isInteger(n)&&n>=0&&n<ROUTE.length)),step:Math.min(7,Math.max(0,Number(saved.routeStep)||0)),routeComplete:saved.routeComplete===true,view:saved.view==='internal'?'internal':'external',presentation:saved.presentation==='section'?'section':'model',sectionZoom:1,sectionType:global.HeartSection?.views?.[saved.sectionType]?saved.sectionType:'frontal',flowMode:'cycle',flowSpeed:1,flowElapsed:0,flowLastTime:null,narration:null,guideEngaged:false,fullscreenMode:null,fullscreenPending:false,fullscreenSeq:0,fullscreenRestore:null,tab:saved.tab==='route'?'route':'explore',flow:!reduce&&!light,rotate:false,isolate:false,reduce,light,attempt:0,scene:null,renderer:null,controls:null,frame:0,dirty:0,flowDirty:true,lastFrame:-Infinity,visible:true,interacting:false,meshes:[],meshByPart:new Map(),materials:[],marker:null,focus:null,transition:null,flowStart:performance.now(),beads:[],partCenters:new Map()};
     current=active;
     const q=selector=>host.querySelector(selector),all=selector=>Array.from(host.querySelectorAll(selector));
     active.q=q;active.all=all;
@@ -111,6 +112,7 @@
     }
     active.syncPresentation=syncPresentation;
     function setView(view,emit=true){
+      if(view!=='section'&&active.guideEngaged)stopNarration();
       if(view==='section'){active.presentation='section';if(!active.sectionOpened){active.sectionOpened=true;active.flow=!active.reduce;active.flowLastTime=null;syncMotion();}}
       else{active.presentation='model';active.view=view==='internal'?'internal':'external';}
       q('[data-bh-view-note]').innerHTML=active.view==='internal'?'<b>Pared ventricular retirada.</b> Se muestran las cavidades de los ventrículos. Usa Sección frontal para ver las válvulas y el recorrido esquemático.':'<b>Arrastra para girar.</b> Usa los botones + y − para acercar o alejar. También puedes usar las flechas del teclado.';
@@ -120,6 +122,7 @@
     }
     function setSectionType(type,emit=true){
       const meta=global.HeartSection?.views?.[type];if(!meta)return;
+      if(type!=='frontal'&&active.guideEngaged)stopNarration();
       active.sectionType=type;active.sectionZoom=1;
       const scroll=q('[data-bh-section-scroll]');scroll.innerHTML=global.HeartSection.render(type);scroll.scrollLeft=0;scroll.scrollTop=0;
       q('[data-bh-section-heading] h4').textContent=meta.title;q('.bh-orientation-summary').textContent=meta.orientation;q('.bh-anatomy-note').textContent=meta.note;
@@ -127,11 +130,13 @@
       syncPresentation();invalidate(active);if(emit){announce(meta.title);notify();}
     }
     function setFlowMode(mode){
+      if(mode!=='step'&&active.guideEngaged)stopNarration();
       active.flowMode=mode==='step'?'step':'cycle';q('[data-bh-flow-mode]').value=active.flowMode;
       if(active.flowMode==='step')setTab('route');
       active.flowElapsed=0;active.flowLastTime=null;updateSection(active);invalidate(active);
     }
     function toggleBlood(){
+      if(active.guideEngaged){const status=active.narration?.getState().status;if(status==='playing'||status==='loading')active.narration.pause();else playNarration();return;}
       active.flow=!active.flow;active.flowDirty=true;active.flowLastTime=null;syncMotion();updateSection(active);invalidate(active);
     }
     function syncSectionZoom(){
@@ -170,7 +175,7 @@
       q('[data-bh-label-kicker]').textContent='Modelo anatómico';q('[data-bh-label]').textContent='Corazón humano';q('[data-bh-action="isolate"]').disabled=true;q('[data-bh-action="isolate"]').setAttribute('aria-pressed','false');q('[data-bh-isolated]').hidden=true;
       updateMaterials(active);pose(active,'anterior');notify();
     }
-    function setStep(n,emit=true,mark=true){
+    function setStep(n,emit=true,mark=true,fromAudio=false){
       active.step=Math.min(ROUTE.length-1,Math.max(0,n));const step=ROUTE[active.step];
       if(mark)active.routeVisited.add(active.step);
       active.routeComplete=active.routeComplete||active.routeVisited.size===ROUTE.length;
@@ -190,17 +195,60 @@
         updateMaterials(active);if(active.presentation!=='section'){if(step.focus)focusPart(active,step.focus);else pose(active,'anterior');}
       }
       updateSection(active);invalidate(active);if(emit)notify();
+      if(!fromAudio&&active.narration){
+        if(active.guideEngaged&&active.narration.getState().status==='ended')active.narration.play(active.step);
+        else active.narration.goTo(active.step);
+      }
     }
     function setTab(tab,emit=true){
+      if(tab!=='route'&&active.guideEngaged)stopNarration();
       active.tab=tab==='route'?'route':'explore';
       all('[role="tab"]').forEach(b=>{const selected=b.dataset.value===active.tab;b.setAttribute('aria-selected',String(selected));b.tabIndex=selected?0:-1;});
       q('#bh-explore').hidden=active.tab!=='explore';q('#bh-route').hidden=active.tab!=='route';
       if(active.tab==='route'){active.flowMode='step';const mode=q('[data-bh-flow-mode]');if(mode)mode.value='step';setStep(active.step,false,true);}else if(active.selected)selectPart(active.selected,false);else updateMaterials(active);
       updateSection(active);if(emit)notify();
     }
+    function syncNarration(state){
+      if(active.disposed)return;
+      const busy=state.status==='playing'||state.status==='loading',unavailable=state.status==='unavailable';
+      host.setAttribute('data-bh-narration',state.status);
+      const play=q('[data-bh-action="narration-play"]');
+      play.disabled=unavailable;play.setAttribute('aria-pressed',String(busy));
+      play.innerHTML=icon(busy?'pause':'play')+'<span data-bh-narration-play-label>'+(busy?'Pausar audio':state.status==='paused'?'Continuar audio':state.status==='ended'?'Escuchar de nuevo':'Escuchar recorrido')+'</span>';
+      q('[data-bh-action="narration-repeat"]').disabled=unavailable||!active.guideEngaged;
+      q('[data-bh-action="narration-stop"]').disabled=unavailable||!active.guideEngaged;
+      q('[data-bh-narration-rate]').disabled=unavailable;q('[data-bh-narration-auto]').disabled=unavailable;
+      q('[data-bh-narration-status]').textContent=state.message;
+      q('[data-bh-route-description]').setAttribute('aria-live',busy?'off':'polite');
+      if(active.guideEngaged){
+        active.flow=state.status==='playing';active.flowDirty=true;active.flowLastTime=null;
+        syncMotion();updateSection(active);invalidate(active);
+      }
+    }
+    function prepareNarration(){
+      // The frontal section contains both circuits, the valves and pulmonary vessels.
+      setView('section',false);if(active.sectionType!=='frontal')setSectionType('frontal',false);
+      if(active.tab!=='route'||active.flowMode!=='step')setTab('route',false);active.guideEngaged=true;
+      active.flow=false;active.flowLastTime=null;syncMotion();
+    }
+    function playNarration(){
+      if(!active.narration)return;
+      const state=active.narration.getState();
+      if(state.status==='unavailable')return;
+      const resume=state.status==='paused';prepareNarration();
+      if(resume)active.narration.resume();else active.narration.play(active.step);
+    }
+    function stopNarration(){
+      const engaged=active.guideEngaged;active.guideEngaged=false;active.narration?.stop();
+      if(engaged){active.flow=false;active.flowDirty=true;active.flowLastTime=null;syncMotion();updateSection(active);invalidate(active);}
+    }
+    active.pauseNarration=()=>active.narration?.pause();
     listen(host,'click',event=>{
       const button=event.target.closest('[data-bh-action]');if(!button||button.disabled)return;const action=button.dataset.bhAction,value=button.dataset.value;
-      if(action==='tab')setTab(value);
+      if(action==='narration-play'){const status=active.narration?.getState().status;if(status==='playing'||status==='loading')active.narration.pause();else playNarration();}
+      else if(action==='narration-repeat'){prepareNarration();active.narration?.repeat();}
+      else if(action==='narration-stop')stopNarration();
+      else if(action==='tab')setTab(value);
       else if(action==='view'){setView(value);announce(value==='section'?'Vista anterior en sección longitudinal frontal esquemática.':value==='internal'?'Cavidades 3D: pared ventricular retirada.':'Exterior 3D del corazón.');}
       else if(action==='fullscreen'){if(active.fullscreenMode)exitFullscreen(active);else enterFullscreen(active);}
       else if(action==='section-type')setSectionType(value);
@@ -230,6 +278,8 @@
       event.preventDefault();const value=event.key==='Home'?'explore':event.key==='End'?'route':active.tab==='explore'?'route':'explore';setTab(value);q('[role="tab"][data-value="'+value+'"]').focus();
     });
     listen(host,'change',event=>{
+      if(event.target.matches('[data-bh-narration-rate]'))active.narration?.setRate(Number(event.target.value));
+      if(event.target.matches('[data-bh-narration-auto]'))active.narration?.setAutoAdvance(event.target.checked);
       if(event.target.matches('[data-bh-flow-mode]'))setFlowMode(event.target.value);
       if(event.target.matches('[data-bh-flow-speed]')){const speed=Number(event.target.value);active.flowSpeed=[.5,1,1.5].includes(speed)?speed:1;updateSection(active);invalidate(active);}
     });
@@ -240,12 +290,19 @@
     }
     listen(document,'fullscreenchange',()=>syncFullscreen(active));
     listen(document,'keydown',event=>handleFullscreenKey(active,event));
-    const vis=()=>{active.visible=!document.hidden&&host.isConnected;invalidate(active);};listen(document,'visibilitychange',vis);
-    if(typeof IntersectionObserver==='function'){active.observer=new IntersectionObserver(es=>{active.visible=es[0].isIntersecting&&!document.hidden;if(active.visible)invalidate(active);},{rootMargin:'180px'});active.observer.observe(host);}
+    const vis=()=>{active.visible=!document.hidden&&host.isConnected;if(document.hidden)active.narration?.pause();invalidate(active);};listen(document,'visibilitychange',vis);
+    if(typeof IntersectionObserver==='function'){active.observer=new IntersectionObserver(es=>{active.visible=es[0].isIntersecting&&!document.hidden;if(active.visible)invalidate(active);else active.narration?.pause();},{rootMargin:'180px'});active.observer.observe(host);}
     active.setView=setView;active.selectPart=selectPart;active.setStep=setStep;
     setSectionType(active.sectionType,false);setView(active.presentation==='section'?'section':active.view,false);if(active.selected)selectPart(active.selected,false);setTab(active.tab,false);syncMotion();
     q('[data-bh-explored]').textContent=active.visited.size+' de 11 exploradas';active.visited.forEach(id=>{const e=q('[data-bh-visited="'+id+'"]');if(e)e.textContent='✓';});
     setStep(active.step,false,false);
+    active.narration=global.HeartNarration?.create?.({steps:ROUTE,onState:syncNarration,onStep:index=>{
+      if(active.disposed)return;
+      active.flowElapsed=0;active.flowLastTime=null;active.flowDirty=true;setStep(index,true,true,true);
+    },onComplete:()=>announce('Has escuchado las ocho etapas del recorrido de la sangre.')})||null;
+    if(active.narration)active.narration.goTo(active.step);
+    else syncNarration({status:'unavailable',message:'El audio no está disponible. Puedes seguir el recorrido con los textos de cada paso.'});
+    listen(global,'pagehide',()=>active.narration?.pause());
     if(active.presentation==='model'&&!active.loadingAttempt&&!active.renderer&&!active.fallback)start3D(active);
     invalidate(active);
   }
@@ -496,6 +553,7 @@
   }
   function unmount(){
     const a=current;if(!a)return;current=null;a.disposed=true;
+    a.narration?.dispose();
     a.controller.abort();a.observer?.disconnect();if(a.frame)cancelAnimationFrame(a.frame);a.frame=0;
     cleanupFullscreen(a);release3D(a);a.beads.length=0;
   }
