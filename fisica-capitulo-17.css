@@ -1,0 +1,12 @@
+/* El capítulo utiliza la misma plantilla y tipografía de Análisis dimensional. */
+.content .em-source{font-size:12px;color:var(--muted);margin-top:22px}
+.content svg.em-diagram{display:block;width:100%;height:auto;max-width:620px;margin:22px auto}
+.content .em-note{padding:16px 18px;border-left:3px solid #2e7a85;background:#eef7f8;border-radius:0 12px 12px 0}
+.content table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px}
+.content td,.content th{text-align:left;border-bottom:1px solid var(--line);padding:10px}
+.em-lab-shortcuts{margin-top:14px}
+.article:has(.wfl){padding:24px 18px}
+.layout:has(.wfl),.layout:has(.il-lab){grid-template-columns:190px minmax(0,1fr);gap:16px}
+.layout:has(.wfl) .sidebar,.layout:has(.il-lab) .sidebar{padding:16px 12px}
+@media(min-width:1400px){.wrap:has(.wfl),.wrap:has(.il-lab){max-width:1600px}}
+@media(max-width:850px){.layout:has(.wfl),.layout:has(.il-lab){grid-template-columns:1fr}.article:has(.wfl){padding:20px 12px}}

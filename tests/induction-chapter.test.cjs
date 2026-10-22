@@ -4,7 +4,7 @@ const {harness}=require('./study-entry.test.cjs');
 const root=path.join(__dirname,'..'),chapterId='fisica-capitulo-17';
 const read=file=>fs.readFileSync(path.join(root,file),'utf8');
 const plain=(h,expression)=>JSON.parse(h.run('JSON.stringify('+expression+')'));
-const chapterFiles=['fisica-capitulo-17-practice.js','fisica-catalog.js','history-progress.js','fisica-capitulo-17-data.js','induction-engine.js','history-chapter.js'];
+const chapterFiles=['fisica-capitulo-17-practice.js','fisica-catalog.js','history-progress.js','fisica-capitulo-17-data.js','induction-engine.js','fisica-capitulo-17.js'];
 const catalogs=['history-catalog.js','peru-catalog.js','lenguaje-catalog.js','economia-catalog.js','educacion-civica-catalog.js','razonamiento-verbal-catalog.js','razonamiento-matematico-catalog.js','fisica-catalog.js','biologia-catalog.js','quimica-catalog.js','geometria-catalog.js'];
 const homeFiles=['quimica-capitulo-18-practice.js','geometria-capitulo-17-practice.js','fisica-capitulo-17-practice.js','courses.js',...catalogs,'history-progress.js','app.js'];
 const event=(h,detail={})=>h.events.get('induction-lab-progress')({detail:{experience:'induction-lab',...detail}});
@@ -12,9 +12,11 @@ const state={tab:'generator',position:.12,speed:.3,direction:-1,polarity:-1,turn
 
 async function contentAndPractice(){
  const h=harness(chapterFiles);h.run("window.StudyMode.choose('physicist','progressive')");await h.signIn({uid:'physicist'});await h.run("window.StudyMode.save('physicist',db)");
- assert.equal(h.run('COURSE_ID'),16);assert.equal(h.run('CHAPTER_NUMBER'),17);assert.equal(h.run('CHAPTER_ID'),chapterId);assert.equal(h.run('CHAPTER_TOPIC_INDEX'),16);
- assert.equal(h.run('INDUCTION.id'),'induction-lab');assert.equal(h.run('LESSONS.length'),6);assert.equal(h.run("LESSONS.flatMap(l=>l.blocks).filter(b=>b.interactive==='induction-lab').length"),1);
- assert.match(h.elements.get('chapter-app').innerHTML,/#induction-lab/);
+ assert.equal(h.run('cloudPayload().courseId'),16);assert.equal(h.run('cloudPayload().chapterNumber'),17);assert.equal(h.run('CHAPTER_ID'),chapterId);assert.equal(h.run('cloudPayload().topicIndex'),16);
+ assert.equal(h.run('INDUCTION.id'),'induction-lab');assert.ok(h.run('LESSONS.length')>=7);assert.equal(h.run("LESSONS.filter(l=>l.body.includes('<div data-induction-lab></div>')).length"),1);
+ assert.equal(h.run("LESSONS.filter(l=>l.body.includes('<div data-wire-field-lab></div>')).length"),1);
+ assert.match(h.elements.get('chapter-app').innerHTML,/data-value="induction-lab"/);
+ h.run("goTab('practice')");
  const questions=plain(h,'window.ChapterPractice.questions(CHAPTER_ID)');assert.equal(questions.length,10);assert.equal(new Set(questions.map(q=>q.id)).size,10);assert.equal(new Set(questions.map(q=>q.prompt)).size,10);
  const counts=[0,0,0,0,0];for(const q of questions){assert.equal(q.options.length,5);assert.equal(new Set(q.options).size,5);assert.ok(Number.isInteger(q.answer)&&q.answer>=0&&q.answer<5);counts[q.answer]++;assert.ok(q.solution.length>35);}assert.deepEqual(counts,[2,2,2,2,2]);
  assert.equal(h.run(`window.ChapterPractice.choose(CHAPTER_ID,P.practice10,'${questions[1].id}',0,P.studyMode)`),false,'The second problem remains locked until the first is mastered');
@@ -27,8 +29,8 @@ async function contentAndPractice(){
 }
 
 function assetReferences(){
- const html=read(chapterId+'.html');for(const filename of ['fisica-capitulo-17-practice.js','fisica-catalog.js','induction-engine.js','induction-lab.js','induction-lab.css'])assert.ok(html.includes(filename),'Chapter declares '+filename);
- assert.ok(html.indexOf('induction-engine.js')<html.indexOf('induction-lab.js'));assert.ok(html.indexOf('induction-lab.js')<html.indexOf('history-chapter.js'));
+ const html=read(chapterId+'.html');for(const filename of ['fisica-capitulo-17-practice.js','fisica-capitulo-17.js','fisica-capitulo-01.css','wire-field-engine.js','wire-field-lab.js','wire-field-lab.css','induction-engine.js','induction-lab.js','induction-lab.css'])assert.ok(html.includes(filename),'Chapter declares '+filename);
+ assert.ok(html.indexOf('induction-engine.js')<html.indexOf('induction-lab.js'));assert.ok(html.indexOf('induction-lab.js')<html.indexOf('fisica-capitulo-17.js'));
  for(const match of html.matchAll(/(?:src|href)="([^"#?]+)(?:\?[^"#]*)?(?:#[^"]*)?"/g)){const file=match[1];if(!/^https?:/.test(file))assert.ok(fs.existsSync(path.join(root,file)),'Local chapter reference exists: '+file);}
  for(const file of ['index.html','admin.html']){assert.ok(read(file).includes('fisica-capitulo-17-practice.js'));assert.ok(read(file).indexOf('fisica-capitulo-17-practice.js')<read(file).indexOf('chapter-practice.js'));}
 }
@@ -60,13 +62,73 @@ function progressSanitization(){
 }
 
 async function navigationAndTeacher(){
- const destination=chapterId+'.html?v=20261021-induction1#induction-lab';
- const guest=harness(chapterFiles);await guest.signIn(null);assert.ok(guest.elements.get('chapter-app').innerHTML.includes('index.html?chapter='+chapterId+'&v=20261021-induction1'));
- const first=harness(chapterFiles);await first.signIn({uid:'new-experimenter'});assert.equal(first.redirects.at(-1),'index.html?chapter='+chapterId+'&v=20261021-induction1');
+ const destination=chapterId+'.html?v=20261021-magnetismo2';
+ const guest=harness(chapterFiles);await guest.signIn(null);assert.ok(guest.elements.get('chapter-app').innerHTML.includes('index.html?chapter='+chapterId));
+ const first=harness(chapterFiles);await first.signIn({uid:'new-experimenter'});assert.match(first.redirects.at(-1),new RegExp('^index\\.html\\?chapter='+chapterId+'(?:&v=[a-zA-Z0-9-]+)?$'));
  const picker=harness(homeFiles,{search:'?chapter='+chapterId});await picker.signIn({uid:'new-experimenter'});assert.equal(picker.run('state.view'),'mode');picker.run("selectStudyMode('progressive')");assert.equal(picker.redirects.at(-1),destination);
  picker.run('state.activeCourseId=16;setTopic(16)');assert.equal(picker.redirects.at(-1),destination);picker.run("navigationProgress={lastCourseId:16,lastModuleId:'fisica-capitulo-17',lastChapterNumber:17,lastTopicIndex:16};openProgressChapter()");assert.equal(picker.redirects.at(-1),destination);
- picker.run('openCourse(16);state.activeTopicIndex=16;render()');assert.match(picker.elements.get('app').innerHTML,/Electromagnetismo/);await picker.run("window.StudyMode.save('new-experimenter',db)");const returning=harness(homeFiles,{cloud:picker.cloud,search:'?chapter='+chapterId});await returning.signIn({uid:'new-experimenter'});assert.equal(returning.redirects.at(-1),destination);
+ picker.run('openCourse(16);state.activeTopicIndex=16;render()');assert.match(picker.elements.get('app').innerHTML,/Electromagnetismo/);assert.equal(picker.run('studyChapterHref(\"fisica-capitulo-17\")'),destination);assert.ok(!destination.includes('#'),'Chapter entry begins with the chapter-one theory layout');assert.match(picker.run('inductionLabCard()'),/fisica-capitulo-17\.html\?v=[^\"]*#induction-lab/,'The explicit induction card still opens its lab');assert.equal(picker.run('PHYSICS_CHAPTERS.find(c=>c.number===17).items'),9);await picker.run("window.StudyMode.save('new-experimenter',db)");const returning=harness(homeFiles,{cloud:picker.cloud,search:'?chapter='+chapterId});await returning.signIn({uid:'new-experimenter'});assert.equal(returning.redirects.at(-1),destination);
  const admin=harness(['fisica-capitulo-17-practice.js',...catalogs,'history-progress.js','admin.js']);assert.ok(admin.run('TRACKED_CHAPTERS["'+chapterId+'"]'));assert.equal(admin.run('TRACKED_CHAPTERS["'+chapterId+'"].items'),10);
 }
 
-(async()=>{await contentAndPractice();await labPersistence();progressSanitization();await navigationAndTeacher();assetReferences();console.log('PASS: Physics 17 content, ten-question grading, progressive/free modes, lab persistence and offline merge, sanitization, account isolation, catalog routing and teacher tracking.');})().catch(error=>{console.error(error);process.exitCode=1;});
+
+function chapterOneTemplate(){
+ const h=harness(chapterFiles);
+ const content=plain(h,'CONTENT');
+ assert.equal(content.title,'Electromagnetismo');
+ assert.equal(content.workedExamples.length,10);
+ assert.deepEqual(content.workedExamples.map(e=>e.number),Array.from({length:10},(_,i)=>i+1));
+ for(const e of content.workedExamples)assert.ok(e.question.length>20&&e.steps.length>=3);
+ const html=read(chapterId+'.html');
+ assert.match(html,/href="fisica-capitulo-01\.css\?/,'Uses the same base style sheet as Análisis dimensional');
+ assert.doesNotMatch(html,/href="history-(reading|chapter)\.css/);
+ assert.ok(!html.includes('src="history-chapter.js'),'Uses its subject-specific chapter-one renderer');
+ const source=read(chapterId+'.js');
+ for(const label of ['Teoría','Resueltos · ','Práctica · 10 problemas'])assert.ok(source.includes(label));
+ for(const className of ['class="layout"','class="card sidebar"','class="workspace"','class="card tabs"','class="card article"'])assert.ok(source.includes(className));
+ const legacy=['generador','campo-magnetico','fuerzas-magneticas','flujo-faraday','ley-lenz','generador'];
+ legacy.forEach((expected,i)=>{
+  assert.equal(h.run(`LESSONS[normalized({contentVersion:1,currentItem:${i}}).currentItem].id`),expected,'Legacy theory bookmark '+i);
+  assert.equal(h.run(`LESSONS[normalized({contentVersion:1,readingItem:${i}}).readingItem].id`),expected,'Legacy reading bookmark '+i);
+ });
+ assert.equal(h.run("normalized({activeTab:'exam'}).activeTab"),'practice');
+ assert.equal(h.run("normalized({contentVersion:2,currentItem:2}).currentItem"),2);
+ assert.equal(h.run("normalized({contentVersion:2,currentItem:999}).currentItem"),content.lessons.length-1);
+ assert.equal(h.run("normalized({contentVersion:1,currentItem:-20}).currentItem"),0);
+}
+
+async function workedAndProposedViews(){
+ const h=harness(chapterFiles);h.run("window.StudyMode.choose('reader','free')");await h.signIn({uid:'reader'});
+ h.run("goTab('examples')");let html=h.elements.get('chapter-app').innerHTML;
+ assert.equal((html.match(/class="example worked-example"/g)||[]).length,10);
+ assert.equal((html.match(/Ver solución paso a paso/g)||[]).length,10);
+ assert.match(html,/Resueltos · 10/);assert.match(html,/Práctica · 10 problemas/);
+ h.run("goTab('practice')");html=h.elements.get('chapter-app').innerHTML;
+ assert.equal((html.match(/class="practice-card"/g)||[]).length,10);
+ assert.equal((html.match(/Comprobar respuesta/g)||[]).length,10);
+ assert.equal((html.match(/type="radio"/g)||[]).length,50);
+ h.run("openLab('wire-field-lab')");assert.equal(h.run('LESSONS[P.currentItem].id'),'laboratorio-conductor');assert.equal(h.run('P.activeTab'),'theory');
+ h.run("openLab('induction-lab')");assert.equal(h.run('LESSONS[P.currentItem].id'),'generador');
+ h.run("window.location.hash='#wire-field-lab';applyAnchor()");assert.equal(h.run('LESSONS[P.currentItem].id'),'laboratorio-conductor');
+}
+
+async function previousPracticeMastery(){
+ const cloud=new Map(),local=new Map(),key='users/returning/progress/'+chapterId;
+ const legacyIds=Array.from({length:10},(_,i)=>'fis17-p'+String(i+1).padStart(2,'0'));
+ cloud.set(key,{contentVersion:1,currentItem:2,updatedMs:10,practice10:{version:1,mastered:legacyIds,answers:{},results:{},attempts:{}}});
+ const h=harness(chapterFiles,{cloud,local});h.run("window.StudyMode.choose('returning','free')");await h.signIn({uid:'returning'});
+ assert.equal(h.run('P.practice10.mastered.length'),6,'Unchanged questions preserve their existing mastery');
+ assert.equal(h.run('LESSONS[P.currentItem].id'),'fuerzas-magneticas');
+ assert.equal(h.run('progressPercent()'),60);
+ h.run("goTab('practice');window.ChapterPractice.choose(CHAPTER_ID,P.practice10,'fis17-v2-p01',0,P.studyMode);checkPractice('fis17-v2-p01')");await h.run('persist()');
+ assert.equal(h.run('P.practice10.mastered.length'),7);
+ // A stale remote snapshot cannot erase local practice mastery during retry synchronization.
+ h.setOffline(true);h.run("window.ChapterPractice.choose(CHAPTER_ID,P.practice10,'fis17-v2-p02',1,P.studyMode);checkPractice('fis17-v2-p02')");await h.run('persist()');
+ const localProgress=JSON.parse(local.get('sin-limites:returning:'+chapterId));assert.equal(localProgress.pending,true);
+ cloud.set(key,{...cloud.get(key),updatedMs:1,practice10:{version:1,mastered:['fis17-p03'],answers:{},results:{},attempts:{}}});
+ h.setOffline(false);await h.run('retrySync()');
+ assert.equal(h.run('P.practice10.mastered.length'),8,'Local correct answers survive an older remote version');
+ assert.equal(cloud.get(key).practiceCompleted,8);assert.equal(JSON.parse(local.get('sin-limites:returning:'+chapterId)).pending,false);
+}
+
+(async()=>{chapterOneTemplate();await workedAndProposedViews();await previousPracticeMastery();await contentAndPractice();await labPersistence();progressSanitization();await navigationAndTeacher();assetReferences();console.log('PASS: Physics 17 content, ten-question grading, progressive/free modes, lab persistence and offline merge, sanitization, account isolation, catalog routing and teacher tracking.');})().catch(error=>{console.error(error);process.exitCode=1;});
