@@ -133,6 +133,21 @@ window.PHYSICS_CHAPTERS=[
     "kind": "chapter"
   },
   {
+    "number": 13,
+    "title": "Ondas mecánicas",
+    "progressId": "fisica-capitulo-13",
+    "topicIndex": 12,
+    "sourceLabel": "Capítulo 13",
+    "intro": "Explora las ondas mecánicas con teoría, 11 actividades interactivas con audio, 10 problemas resueltos y 10 propuestos.",
+    "format": "reading",
+    "items": 11,
+    "practiceCount": 10,
+    "itemLabel": "problemas",
+    "assessmentFormat": "practice-10",
+    "legacySources": [],
+    "kind": "chapter"
+  },
+  {
     "number": 16,
     "title": "Electrodinámica",
     "progressId": "fisica-capitulo-15",

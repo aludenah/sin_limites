@@ -1,0 +1,52 @@
+/* Todos los temas y laboratorios comparten el ancho del capítulo. */
+.wrap{max-width:1440px}
+.layout{grid-template-columns:220px minmax(0,1fr);gap:24px}
+.sidebar{padding:18px 14px}
+.article{padding:30px}
+.workspace,.article,.content,.content>*,[data-wave-lab],[data-wave-lesson-audio]{min-width:0;max-width:100%}
+.content{overflow-wrap:anywhere}
+.content .waves-note{padding:16px 18px;border-left:3px solid #2e7a85;background:#eef7f8;border-radius:0 12px 12px 0}
+.content .waves-source{font-size:12px;color:var(--muted);margin-top:22px}
+
+/* Las comparaciones se leen completas, sin desplazar tablas lateralmente. */
+.content .table-scroll{max-width:100%;overflow:visible;margin:24px 0}
+.content table{width:100%;min-width:0;table-layout:fixed;border-collapse:collapse;margin:0;font-size:14px;white-space:normal}
+.content td,.content th{min-width:0;max-width:100%;white-space:normal;overflow-wrap:anywhere;word-break:normal;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);padding:13px 14px;line-height:1.65}
+.content th{background:#edf4fa;color:#173c59}
+.content tr:last-child td{border-bottom:0}
+.content .equation{max-width:100%}
+
+.waves-property-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:25px 0}
+.waves-property-card{min-width:0;padding:20px;border:1px solid #d3e4ed;border-top:4px solid #168b9a;border-radius:16px;background:linear-gradient(135deg,#eef9fb,#fff 76%)}
+.waves-property-card:nth-child(2n){border-top-color:#b76c24;background:linear-gradient(135deg,#fff7ea,#fff 76%)}
+.waves-property-card h3,.waves-property-card h4{margin:0 0 10px;color:#14657c;font-size:18px;line-height:1.35}
+.content .waves-property-card p:last-child{margin-bottom:0}
+.waves-figure{margin:24px 0;border:1px solid #d3e0eb;border-radius:16px;overflow:hidden;background:#f2f7fb}
+.waves-figure img,.waves-figure svg{display:block;width:100%;height:auto}
+.waves-figure figcaption{margin:0;padding:13px 18px;background:#fff;color:#536b81;font-size:13px;line-height:1.6;border-top:1px solid #e0e8ee}
+.waves-figure-dialog{width:min(1100px,96vw);max-height:95dvh;border:1px solid var(--line);border-radius:18px;padding:20px;color:var(--ink)}
+.waves-figure-dialog::backdrop{background:#0a1829b8}
+.waves-figure-dialog header{display:flex;justify-content:space-between;gap:16px;align-items:center;margin-bottom:14px}
+.waves-figure-dialog h2{font-size:18px;margin:0}
+.waves-figure-dialog img{display:block;width:100%;height:auto;max-height:75dvh;object-fit:contain}
+
+@media(max-width:850px){
+ .layout{grid-template-columns:minmax(0,1fr);gap:20px}
+ .sidebar{padding:18px}
+ .article{padding:24px}
+}
+@media(max-width:600px){
+ .waves-property-grid{grid-template-columns:minmax(0,1fr);gap:14px}
+ .waves-property-card{padding:18px}
+ .tabs{overflow:visible;flex-wrap:wrap}
+ .tabs button{flex:1 1 auto;white-space:normal;padding:11px 10px}
+}
+@media(max-width:520px){
+ .layout{gap:16px}
+ .sidebar{padding:15px}
+ .article{padding:20px 16px}
+ .content td,.content th{padding:11px 10px;font-size:12px}
+ .waves-figure-dialog{padding:14px}
+ .waves-figure-dialog header{align-items:flex-start}
+ .waves-figure-dialog h2{font-size:16px}
+}

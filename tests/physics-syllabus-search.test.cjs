@@ -11,7 +11,7 @@ async function searchAndSyllabus(){
  const h=harness(files);await h.signIn({uid:'student'});h.run("selectStudyMode('free')");
  assert.deepEqual(parse(h,'COURSES.find(c=>c.id===16).topics'),titles);
  assert.deepEqual(parse(h,'window.PHYSICS_SYLLABUS.map(c=>c.page)'),[1,9,21,35,45,64,76,88,109,127,138,154,168,182,200,217,237,262,274]);
- assert.equal(h.run('window.PHYSICS_SYLLABUS[15].number'),16);assert.deepEqual(parse(h,'PHYSICS_CHAPTERS.map(c=>[c.number,c.topicIndex,c.progressId])'),[[1,0,'fisica-capitulo-01'],[2,1,'fisica-capitulo-02'],[16,15,'fisica-capitulo-15']]);
+ assert.equal(h.run('window.PHYSICS_SYLLABUS[15].number'),16);assert.deepEqual(parse(h,'PHYSICS_CHAPTERS.map(c=>[c.number,c.topicIndex,c.progressId])'),[[1,0,'fisica-capitulo-01'],[2,1,'fisica-capitulo-02'],[13,12,'fisica-capitulo-13'],[16,15,'fisica-capitulo-15'],[17,16,'fisica-capitulo-17']]);
  const html=h.elements.get('app').innerHTML;
  assert.ok(html.indexOf('id="searchInput"')<html.indexOf('class="course-card'));
  assert.doesNotMatch(html,/Sigue desde donde te quedaste/);
@@ -30,6 +30,7 @@ async function searchAndSyllabus(){
  for(const title of titles)assert.ok(courseHTML.includes(title));assert.match(courseHTML,/Estudiar Análisis Dimensional/);
  const count=h.redirects.length;h.run('setTopic(2)');assert.equal(h.redirects.length,count);assert.match(h.elements.get('app').innerHTML,/Cinemática y Movimiento rectilíneo uniforme/);
  for(const [index,id] of [[0,'01'],[1,'02'],[15,'15']]){h.run('setTopic('+index+')');assert.equal(h.redirects.at(-1),'fisica-capitulo-'+id+'.html?v=20260919-fisica19');}
+ h.run('setTopic(12)');assert.equal(h.redirects.at(-1),'fisica-capitulo-13.html?v=20261023-waves1');
  // Migrate both prior outlines and never shift current indices twice.
  for(const [oldIndex,newIndex] of [[0,0],[1,1],[3,2],[4,3],[5,4],[9,7],[12,9],[14,10],[17,13],[19,14],[20,14],[21,15],[22,16],[24,18]])assert.equal(h.run(`restoredTopicIndex(COURSES.find(c=>c.id===16),${oldIndex},'',8)`),newIndex);
  for(let previous=0;previous<18;previous++)assert.equal(h.run(`restoredTopicIndex(COURSES.find(c=>c.id===16),${previous},'',9)`),previous===0?0:previous+1);
@@ -40,7 +41,7 @@ async function searchAndSyllabus(){
  assert.equal(h.run("restoredTopicIndex(COURSES.find(c=>c.id===16),0,'Repaso: Vectores',9)"),1);
  assert.equal(h.run("restoredPhysicsModuleId({catalogVersion:2,lastChapterName:'Vectores',lastModuleId:'fisica-capitulo-15'})"),'fisica-capitulo-02');
  assert.equal(h.run("restoredPhysicsModuleId({catalogVersion:8,lastChapterName:'Electrodinámica y circuitos eléctricos',lastModuleId:'fisica-capitulo-02'})"),'fisica-capitulo-15');
- assert.equal(h.run("restoredPhysicsModuleId({catalogVersion:9,lastChapterName:'Electromagnetismo',lastModuleId:'fisica-capitulo-15'})"),null);
+ assert.equal(h.run("restoredPhysicsModuleId({catalogVersion:9,lastChapterName:'Electromagnetismo',lastModuleId:'fisica-capitulo-15'})"),'fisica-capitulo-17');
  console.log('PASS: nineteen chapters, developed-module links, catalog search, v1/v8/v9/v10 navigation migration and stale-ID precedence.');
 }
 
