@@ -27,3 +27,7 @@
 .dimensional-rules .rule-formula{display:block;margin-top:5px;white-space:nowrap}
 .dimensional-rules-note{font-size:13px;line-height:1.65}
 @media(max-width:520px){.dimensional-rules table{font-size:12px}.dimensional-rules th,.dimensional-rules td{padding:10px 12px}}
+
+/* En estudio libre, solo controles de guardado y accesos, sin tarjeta de avance. */
+.chapter-utilities{margin-top:20px}.chapter-utilities .save-line{margin:0}.chapter-utilities>.button{margin-top:8px}.chapter-utilities .em-lab-shortcuts{margin-top:12px}
+@media(max-width:520px){.chapter-utilities{margin-top:16px}}
