@@ -39,6 +39,9 @@ const TAB_INFO={
 };
 
 const state={view:'mode',studyMode:null,activeCourseId:null,activeTopicIndex:0,activeModuleId:null,activeTab:'Teoría',category:'Todos',search:''};
+const academicState={courseId:'all',status:'all',returnView:'mode'};
+let academicSyncState='loading',academicRefreshTimer=null;
+const academicUnavailableSources=new Set();
 let currentUser=null;
 let accountEpoch=0,pendingEntry=null;
 let authMessage='';
@@ -148,6 +151,7 @@ async function ensureUserProfile(user){
 
 async function saveCloudProgress(){
   if(!currentUser||state.activeCourseId==null)return;
+  const user=currentUser,epoch=accountEpoch;
   const course=COURSES.find(c=>c.id===state.activeCourseId);
   if(!course)return;
   try{
@@ -161,7 +165,8 @@ async function saveCloudProgress(){
       lastChapterName:course.topics[state.activeTopicIndex]||'',
       updatedAt:firebase.firestore.FieldValue.serverTimestamp()
     };
-    await db.collection('users').doc(currentUser.uid).collection('progress').doc('navigation').set(payload,{merge:true});
+    await db.collection('users').doc(user.uid).collection('progress').doc('navigation').set(payload,{merge:true});
+    if(epoch!==accountEpoch||currentUser?.uid!==user.uid)return;
     navigationProgress={...navigationProgress,...payload};
     cloudProgressReady=true;
   }catch(e){console.error('Firestore progress save:',e)}
@@ -169,10 +174,11 @@ async function saveCloudProgress(){
 
 function saveProgress(){saveLocalProgress();saveCloudProgress()}
 
-async function loadCloudProgress(){
-  if(!currentUser)return;
+async function loadCloudProgress(user=currentUser,epoch=accountEpoch){
+  if(!user)return;
   try{
-    const snap=await db.collection('users').doc(currentUser.uid).collection('progress').doc('navigation').get();
+    const snap=await db.collection('users').doc(user.uid).collection('progress').doc('navigation').get();
+    if(epoch!==accountEpoch||currentUser?.uid!==user.uid)return;
     if(snap.exists){
       const p=snap.data()||{};
       navigationProgress=p;
@@ -241,29 +247,47 @@ function trackedProgressReaders(){
   return [...ids.map(id=>[id,data=>applyHistoryRecord(id,data)]),...PERU_CHAPTERS.map(c=>[c.progressId,data=>applyPeruProgress(c.number,data)]),...LANGUAGE_CHAPTERS.map(c=>[c.progressId,data=>applyLanguageProgress(c.number,data)]),...Object.entries(SOCIAL_COURSES).flatMap(([id,course])=>course.chapters.map(c=>[c.progressId,data=>applySocialProgress(id,c.number,data)])),['fisica-capitulo-01',applyPhysicsProgress],['fisica-capitulo-02',applyVectorsProgress],...PHYSICS_CHAPTERS.filter(c=>c.number>2).map(c=>[c.progressId,data=>{physicsExtraProgress[c.number]=practiceProgress(c.progressId,data);}])];
 }
 
-async function loadChapterProgress(){
-  if(!currentUser)return;
-  const ref=db.collection('users').doc(currentUser.uid).collection('progress');
+async function loadChapterProgress(user=currentUser,epoch=accountEpoch){
+  if(!user)return;
+  const ref=db.collection('users').doc(user.uid).collection('progress');
   await Promise.all(trackedProgressReaders().map(async ([id,apply])=>{
-    try{const snap=await ref.doc(id).get();apply(snap.exists?snap.data():{})}
-    catch(e){console.error('Chapter progress load:',id,e)}
+    try{
+      const snap=await ref.doc(id).get();
+      if(epoch!==accountEpoch||currentUser?.uid!==user.uid)return;
+      apply(snap.exists?snap.data():{});
+      if(snap.metadata?.fromCache)academicUnavailableSources.add(id);else academicUnavailableSources.delete(id);
+    }catch(e){
+      if(epoch!==accountEpoch||currentUser?.uid!==user.uid)return;
+      academicUnavailableSources.add(id);apply({});
+      console.error('Chapter progress load:',id,e);
+    }
   }));
+  if(epoch===accountEpoch&&currentUser?.uid===user.uid)academicSyncState=academicUnavailableSources.size?'cached':'ready';
 }
 
 function startProgressListener(){
   if(progressUnsubscribe){progressUnsubscribe();progressUnsubscribe=null}
   if(!currentUser)return;
-  const ref=db.collection('users').doc(currentUser.uid).collection('progress');
+  const user=currentUser,epoch=accountEpoch;
+  const ref=db.collection('users').doc(user.uid).collection('progress');
   const listeners=trackedProgressReaders().map(([id,apply])=>ref.doc(id).onSnapshot(snap=>{
+    if(epoch!==accountEpoch||currentUser?.uid!==user.uid)return;
     apply(snap.exists?snap.data():{});
+    if(snap.metadata?.fromCache)academicUnavailableSources.add(id);else academicUnavailableSources.delete(id);
+    academicSyncState=academicUnavailableSources.size?'cached':'ready';
     if(state.view==='catalog')render();
-  },e=>console.error('Chapter progress listener:',id,e)));
+    else if(state.view==='progress')scheduleAcademicRefresh();
+  },e=>{
+    if(epoch!==accountEpoch||currentUser?.uid!==user.uid)return;
+    academicUnavailableSources.add(id);academicSyncState='cached';scheduleAcademicRefresh();
+    console.error('Chapter progress listener:',id,e);
+  }));
   progressUnsubscribe=()=>listeners.forEach(unsubscribe=>unsubscribe());
 }
 
-async function loadProgress(){
+async function loadProgress(user=currentUser,epoch=accountEpoch){
   loadLocalProgress();
-  await Promise.all([loadCloudProgress(),loadChapterProgress()]);
+  await Promise.all([loadCloudProgress(user,epoch),loadChapterProgress(user,epoch)]);
 }
 
 function renderLogin(){
@@ -271,8 +295,8 @@ function renderLogin(){
 }
 
 function renderHeader(){
-  const u=currentUser||{};
-  return `<header class="bg-white border-b border-slate-200 sticky top-0 z-40"><div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-20 py-3 flex items-center justify-between gap-4"><button onclick="goHome()" class="flex items-center gap-3 min-w-0 text-left"><div class="w-11 h-11 rounded-2xl bg-blue-950 text-white flex items-center justify-center shrink-0 shadow-sm font-black"><img src="assets/logo-sin-limites.jpg" alt="Logo de SIN LÍMITES" width="56" height="56" style="display:block;width:100%;height:100%;object-fit:contain;border-radius:inherit"></div><div class="min-w-0"><div class="font-black text-blue-950 tracking-tight leading-tight truncate">SIN <span class="text-red-600">LÍMITES</span></div><div class="text-[11px] uppercase tracking-[0.18em] text-slate-400 truncate">Academia Virtual · Admisión 2026-II</div></div></button><div class="flex items-center gap-2 sm:gap-3">${state.studyMode&&state.view==='catalog'?`<button onclick="showStudyModes()" class="px-3 py-2 rounded-xl border border-blue-200 bg-blue-50 text-xs font-bold text-blue-950" aria-label="Cambiar modo de estudio">${state.studyMode==='free'?'Libre':'Progresivo'} · Cambiar</button>`:''}<span class="hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-50 text-emerald-700 text-[11px] font-bold"><i data-lucide="cloud-check" class="w-3.5 h-3.5"></i>Progreso en la nube</span>${u.photoURL?`<img src="${esc(u.photoURL)}" alt="Perfil" class="w-9 h-9 rounded-full border border-slate-200 object-cover">`:'<div class="w-9 h-9 rounded-full bg-slate-100 flex items-center justify-center"><i data-lucide="user" class="w-4 h-4"></i></div>'}<div class="hidden md:block text-right max-w-44"><div class="text-xs font-bold text-slate-700 truncate">${esc(u.displayName||'Estudiante')}</div><div class="text-[11px] text-slate-400 truncate">${esc(u.email||'')}</div></div><button onclick="logout()" class="inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-slate-200 text-xs font-semibold text-slate-500 hover:text-red-600 hover:border-red-200"><i data-lucide="log-out" class="w-4 h-4"></i><span class="hidden sm:inline">Salir</span></button></div></div></header>`;
+  const u=currentUser||{},name=u.displayName||'Estudiante';
+  return `<header class="academy-header bg-white border-b border-slate-200 sticky top-0 z-40"><div class="academy-header-inner max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-20 py-3 flex items-center justify-between gap-4"><button onclick="goHome()" class="academy-brand flex items-center gap-3 min-w-0 text-left"><div class="academy-logo w-11 h-11 rounded-2xl bg-blue-950 text-white flex items-center justify-center shrink-0 shadow-sm font-black"><img src="assets/logo-sin-limites.jpg" alt="Logo de SIN LÍMITES" width="56" height="56" style="display:block;width:100%;height:100%;object-fit:contain;border-radius:inherit"></div><div class="academy-brand-copy min-w-0"><div class="font-black text-blue-950 tracking-tight leading-tight truncate">SIN <span class="text-red-600">LÍMITES</span></div><div class="academy-brand-caption text-[11px] uppercase tracking-[0.18em] text-slate-400 truncate">Academia Virtual · Admisión 2026-II</div></div></button><div class="academy-header-actions flex items-center gap-2 sm:gap-3">${state.studyMode&&state.view==='catalog'?`<button onclick="showStudyModes()" class="academy-mode-change px-3 py-2 rounded-xl border border-blue-200 bg-blue-50 text-xs font-bold text-blue-950" aria-label="Cambiar modo de estudio">${state.studyMode==='free'?'Libre':'Progresivo'}<span> · Cambiar</span></button>`:''}<button type="button" onclick="showAcademicProgress()" class="account-link" aria-label="${esc(name)} · Mi avance académico" ${state.view==='progress'?'aria-current="page"':''} title="Ver mi avance académico">${u.photoURL?`<img src="${esc(u.photoURL)}" alt="" referrerpolicy="no-referrer" class="account-avatar">`:'<span class="account-avatar" aria-hidden="true"><i data-lucide="user"></i></span>'}<span class="account-copy"><span class="account-name">${esc(name)}</span><span class="account-caption">Mi avance académico</span></span><i data-lucide="chevron-right" class="account-arrow" aria-hidden="true"></i></button><button onclick="logout()" class="academy-logout inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-slate-200 text-xs font-semibold text-slate-500 hover:text-red-600 hover:border-red-200" aria-label="Cerrar sesión"><i data-lucide="log-out" class="w-4 h-4"></i><span class="hidden sm:inline">Salir</span></button></div></div></header>`;
 }
 
 function renderStudyModePicker(){
@@ -284,7 +308,7 @@ function studyChapterHref(id){return id+'.html?v='+(id==='fisica-capitulo-13'?'2
 function entryDestination(){
   const entry=new URLSearchParams(window.location.search);
   const chapters=[...PHYSICS_MODULES.map(c=>c.progressId),...HISTORY_CHAPTERS.map(c=>'historia-universal-capitulo-'+String(c.number).padStart(2,'0')),...PERU_CHAPTERS.map(c=>'historia-del-peru-capitulo-'+String(c.number).padStart(2,'0')),...LANGUAGE_CHAPTERS.map(c=>'lenguaje-capitulo-'+String(c.number).padStart(2,'0')),...Object.values(SOCIAL_COURSES).flatMap(course=>course.chapters.map(c=>c.progressId))];
-  return {chapter:chapters.includes(entry.get('chapter'))?entry.get('chapter'):null,course:COURSES.some(c=>c.id===Number(entry.get('course')))?Number(entry.get('course')):null,choose:entry.get('mode')==='choose'};
+  return {chapter:chapters.includes(entry.get('chapter'))?entry.get('chapter'):null,course:COURSES.some(c=>c.id===Number(entry.get('course')))?Number(entry.get('course')):null,choose:entry.get('mode')==='choose',academic:window.location.hash==='#mi-avance'};
 }
 function continueStudyEntry(){
   if(!state.studyMode){state.view='mode';render();return;}
@@ -302,6 +326,65 @@ function selectStudyMode(mode){
 function readyToChooseCourse(){
   if(state.studyMode)return true;
   state.view='mode';render();return false;
+}
+
+function academicCourses(){
+  const chaptersFor=id=>id===16?PHYSICS_CHAPTERS:id===12?HISTORY_CHAPTERS:id===11?PERU_CHAPTERS:id===7?LANGUAGE_CHAPTERS:SOCIAL_COURSES[id]?.chapters||[];
+  return COURSES.map(course=>({...course,chapters:chaptersFor(course.id).filter(chapter=>window.ChapterPractice.has(chapter.progressId))})).filter(course=>course.chapters.length);
+}
+function academicChapterProgress(courseId,chapter){
+  return courseId===16?physicsChapterProgress(chapter.number):courseId===12?historyChapterProgress(chapter.number):courseId===11?peruChapterProgress(chapter.number):courseId===7?languageChapterProgress(chapter.number):socialChapterProgress(courseId,chapter.number);
+}
+function renderAcademicProgress(){
+  const model=window.StudentProgress.model(academicCourses(),academicChapterProgress);
+  return renderHeader()+window.StudentProgress.render(model,{...academicState,name:currentUser?.displayName||'Estudiante',syncState:academicSyncState});
+}
+function academicAddress(open){
+  if(!window.history)return;
+  if(open){if(window.location.hash!=='#mi-avance')window.history.pushState(null,'','#mi-avance');}
+  else if(window.location.hash==='#mi-avance')window.history.replaceState(null,'',window.location.pathname+window.location.search);
+}
+function showAcademicProgress(){
+  if(!currentUser)return;
+  if(state.view!=='progress')academicState.returnView=state.view;
+  state.view='progress';academicAddress(true);render();window.scrollTo(0,0);
+  document.getElementById('academic-title')?.focus({preventScroll:true});
+}
+function leaveAcademicProgress(){
+  state.view=state.studyMode&&['catalog','course'].includes(academicState.returnView)?academicState.returnView:state.studyMode?'catalog':'mode';
+  academicAddress(false);render();window.scrollTo(0,0);
+}
+function setAcademicCourse(value){
+  if(value!=='all'&&!academicCourses().some(course=>String(course.id)===String(value)))return;
+  academicState.courseId=String(value);render();document.getElementById('academic-course')?.focus({preventScroll:true});
+}
+function setAcademicStatus(value){
+  if(!['all','started','completed','pending'].includes(value))return;
+  academicState.status=value;render();document.getElementById('academic-status')?.focus({preventScroll:true});
+}
+function continueAcademicChapter(progressId){
+  if(!currentUser)return;
+  const course=academicCourses().find(course=>course.chapters.some(chapter=>chapter.progressId===progressId));
+  const chapter=course?.chapters.find(chapter=>chapter.progressId===progressId);
+  if(!chapter)return;
+  state.studyMode=window.StudyMode.choose(currentUser.uid,'progressive');
+  window.StudyMode.save(currentUser.uid,db);
+  const destination=course.id===12?'historia-universal-capitulo-'+String(chapter.number).padStart(2,'0'):chapter.progressId;
+  window.location.assign(studyChapterHref(destination));
+}
+function scheduleAcademicRefresh(){
+  if(state.view!=='progress'||academicRefreshTimer!==null)return;
+  academicRefreshTimer=setTimeout(()=>{
+    academicRefreshTimer=null;
+    if(state.view!=='progress'||!currentUser)return;
+    const opened=[...document.querySelectorAll('details[data-academic-course]')].filter(node=>node.open).map(node=>node.dataset.academicCourse);
+    const problems=[...document.querySelectorAll('details[data-academic-problems]')].filter(node=>node.open).map(node=>node.dataset.academicProblems);
+    const focused=document.activeElement?.id;
+    render();
+    for(const node of document.querySelectorAll('details[data-academic-course]'))node.open=opened.includes(node.dataset.academicCourse);
+    for(const node of document.querySelectorAll('details[data-academic-problems]'))node.open=problems.includes(node.dataset.academicProblems);
+    if(focused)document.getElementById(focused)?.focus({preventScroll:true});
+  },100);
 }
 
 function renderProgressPanel(){
@@ -394,7 +477,7 @@ function renderCourse(){
 }
 
 function render(){
-  document.getElementById('app').innerHTML=!currentUser?renderLogin():!state.studyMode||state.view==='mode'?renderStudyModePicker():state.view==='course'?renderCourse():renderCatalog();
+  document.getElementById('app').innerHTML=!currentUser?renderLogin():state.view==='progress'?renderAcademicProgress():!state.studyMode||state.view==='mode'?renderStudyModePicker():state.view==='course'?renderCourse():renderCatalog();
   lucide.createIcons();
 }
 
@@ -411,7 +494,7 @@ function openCourse(id){
 }
 
 function openProgressChapter(){if(!readyToChooseCourse())return;if(Number(navigationProgress.lastCourseId)===16){const module=activePhysicsModule();if(module){window.location.assign(studyChapterHref(module.progressId));return;}state.activeCourseId=16;state.activeTopicIndex=clamp(navigationProgress.lastTopicIndex,0,COURSES.find(c=>c.id===16).topics.length-1);state.view='course';render();window.scrollTo(0,0);return;}const course=Number(navigationProgress.lastCourseId),prefix=SOCIAL_COURSES[course]?.prefix||(course===16?'fisica':course===11?'historia-del-peru':course===7?'lenguaje':'historia-universal'),number=SOCIAL_COURSES[course]?activeSocialNumber(course):course===16?activePhysicsNumber():course===11?activePeruNumber():course===7?activeLanguageNumber():activeHistoryNumber();window.location.assign(studyChapterHref(prefix+'-capitulo-'+String(number).padStart(2,'0')));}
-function goHome(){state.view='catalog';window.scrollTo(0,0);render()}
+function goHome(){state.view='catalog';academicAddress(false);window.scrollTo(0,0);render()}
 function setTopic(i){if(!readyToChooseCourse())return;const physics=state.activeCourseId===16?PHYSICS_CHAPTERS.find(c=>c.topicIndex===i):null;if(physics){window.location.assign(studyChapterHref(physics.progressId));return;}const social=SOCIAL_COURSES[state.activeCourseId],chapter=social?.chapters.find(c=>c.number===i+1);if(chapter){window.location.assign(studyChapterHref(chapter.progressId));return;}if(state.activeCourseId===7&&Number.isInteger(i)&&i>=0&&i<6){window.location.assign('lenguaje-capitulo-'+String(i+1).padStart(2,'0')+'.html?v=20260918-social1');return;}if(state.activeCourseId===11&&Number.isInteger(i)&&PERU_CHAPTERS.some(c=>c.number===i+1)){window.location.assign('historia-del-peru-capitulo-'+String(i+1).padStart(2,'0')+'.html?v=20260918-social1');return;}if(state.activeCourseId===12&&Number.isInteger(i)&&i>=0&&i<=5){window.location.assign('historia-universal-capitulo-'+String(i+1).padStart(2,'0')+'.html?v=20260918-social1');return}state.activeTopicIndex=i;state.activeModuleId=null;state.activeTab='Teoría';saveProgress();render();window.scrollTo({top:0,behavior:'smooth'})}
 function moveTopic(d){const c=COURSES.find(c=>c.id===state.activeCourseId),n=state.activeTopicIndex+d;if(n>=0&&n<c.topics.length)setTopic(n)}
 function setTab(t){if(TAB_INFO[t]){state.activeTab=t;render()}}
@@ -453,28 +536,41 @@ async function logout(){
   try{await auth.signOut()}catch(e){}
 }
 
+function resetAccountProgress(){
+  if(progressUnsubscribe){progressUnsubscribe();progressUnsubscribe=null;}
+  if(academicRefreshTimer!==null){clearTimeout(academicRefreshTimer);academicRefreshTimer=null;}
+  academicState.courseId='all';academicState.status='all';academicState.returnView='mode';
+  academicUnavailableSources.clear();academicSyncState='loading';
+  cloudProgressReady=false;navigationProgress={};
+  historyProgress={};historyRecords={};peruProgress={};languageProgress={};socialProgress={};physicsExtraProgress={};
+  chapterProgress=window.ChapterPractice.summary('historia-universal-presentacion-01',{});
+  physicsProgress=window.ChapterPractice.summary('fisica-capitulo-01',{});
+  vectorsProgress=window.ChapterPractice.summary('fisica-capitulo-02',{});
+}
+
+window.addEventListener('popstate',()=>{
+  if(!currentUser)return;
+  if(window.location.hash==='#mi-avance')showAcademicProgress();
+  else if(state.view==='progress')leaveAcademicProgress();
+});
 auth.onAuthStateChanged(async user=>{
   const epoch=++accountEpoch;
+  resetAccountProgress();
   if(user){
     authMessage='';
     currentUser=user;
     state.view='mode';state.studyMode=null;
-    await Promise.all([ensureUserProfile(user),loadProgress(),window.StudyMode.load(user.uid,db)]);
+    document.getElementById('app').innerHTML='<main class="min-h-screen flex items-center justify-center"><p role="status" class="text-sm text-slate-600">Cargando tu cuenta y tu avance…</p></main>';
+    await Promise.all([ensureUserProfile(user),loadProgress(user,epoch),window.StudyMode.load(user.uid,db)]);
     if(epoch!==accountEpoch)return;
     state.studyMode=window.StudyMode.get(user.uid);
     pendingEntry=entryDestination();
     startProgressListener();
-    if(state.studyMode&&!pendingEntry.choose&&(pendingEntry.chapter||pendingEntry.course))continueStudyEntry();
+    if(pendingEntry.academic)showAcademicProgress();
+    else if(state.studyMode&&!pendingEntry.choose&&(pendingEntry.chapter||pendingEntry.course))continueStudyEntry();
     else render();
   }else{
     currentUser=null;state.studyMode=null;state.view='mode';pendingEntry=null;
-    cloudProgressReady=false;
-    navigationProgress={};
-    historyProgress={};historyRecords={};peruProgress={};languageProgress={};socialProgress={};physicsExtraProgress={};
-    applyChapterProgress({});
-    applyPhysicsProgress({});
-    applyVectorsProgress({});
-    if(progressUnsubscribe){progressUnsubscribe();progressUnsubscribe=null}
     document.getElementById('app').innerHTML=renderLogin();
     lucide.createIcons();
   }
