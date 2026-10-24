@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 500" fill="none">
+  <title>Estudiantes aprendiendo con computadoras</title>
+  <desc>Dos estudiantes sentados frente a una computadora portátil y una computadora de escritorio, dibujados como siluetas blancas sobre fondo transparente.</desc>
+
+  <!-- The open spaces in the drawing remain transparent, so the illustration
+       works on any solid background without introducing a second ink colour. -->
+  <g fill="#fff">
+    <!-- Student on the left: a quiet, forward-facing profile and long hair. -->
+    <path d="M199 117c-22-4-41 10-45 32-4 19 2 31-3 49-3 12-9 20-8 28 14 4 28 1 35-8l7-25 13-6 13-3 7-9 9-3c3-1 4-4 1-7l-7-7c-1-19-9-35-22-41Z"/>
+    <path d="m188 184-4 24 23 12 12-14-12-25Z"/>
+    <path d="M183 205c-19 4-28 16-30 37l-2 48c-1 17 6 29 22 36l29 7 25-11-9-35 6-45c2-19-5-29-16-34l-8 15-17-18Z"/>
+
+    <!-- The lower arm is separate from the torso, keeping the typing pose clear. -->
+    <path d="M214 220c6 2 11 9 14 17l13 30 37 10 10-2 11 7c3 2 2 7-2 8l-18 1-49-13c-6-2-9-6-12-12l-15-31c-3-8 2-17 11-15Z"/>
+    <path d="M171 325c5-7 14-10 25-7l57 11c13 3 20 11 21 24l4 61 15 10c5 3 7 7 7 12h-40l-10-13-8-62-49-8c-19-3-30-15-22-28Z"/>
+    <path d="m183 344 43 10-10 55 2 14 16 8c5 3 7 6 7 10h-36l-12-12-3-22 7-43-21-7Z"/>
+
+    <!-- Student on the right: short hair, turned towards the desktop screen. -->
+    <path d="M552 121c-20-7-41 4-45 22-1 5 0 10 2 15l-8 10c-2 3-1 6 3 7l7 2 3 12c2 7 9 11 18 10l8-2 15-15 10-18c5-17-1-36-13-43Z"/>
+    <path d="m530 186-1 23 21 15 13-17-17-28Z"/>
+    <path d="M550 207c18 1 28 15 32 34l9 57c2 14-2 25-13 31l-31 5-21-11 8-39-10-46c-4-16 2-27 13-32l5 17 8-16Z"/>
+    <path d="M535 222c-8-3-15 3-19 11l-14 28-29 15-11 1-8 7c-3 3-1 7 3 7l20-1 34-15c6-3 11-7 14-13l18-23c5-8 1-15-8-17Z"/>
+    <path d="M570 321c-6-4-13-5-22-2l-32 12c-10 4-15 12-13 24l9 63-13 12c-4 3-5 7-4 11h37l9-14-8-68 32-10c17-5 19-19 5-28Z"/>
+    <path d="m557 342-15 14 16 62 4 12 12 11h34c0-5-3-9-8-11l-16-7-5-17-9-56Z"/>
+
+    <!-- Chairs. The narrower, separate shapes leave the seated posture readable. -->
+    <rect x="132" y="232" width="11" height="106" rx="5.5"/>
+    <rect x="138" y="337" width="103" height="11" rx="5.5"/>
+    <path d="m148 345-8 102h9l14-102Zm75 0 12 102h9l-6-102Z"/>
+    <rect x="606" y="230" width="11" height="109" rx="5.5"/>
+    <rect x="536" y="337" width="78" height="11" rx="5.5"/>
+    <path d="m544 345-13 102h9l18-102Zm55 0 11 102h9l-5-102Z"/>
+
+    <!-- Laptop frame and its open display, with a low keyboard on the table. -->
+    <path fill-rule="evenodd" d="M297 217h65c4 0 7 3 8 6l13 58c1 4-2 7-6 7h-65c-4 0-7-3-8-6l-13-58c-1-4 2-7 6-7Zm6 11 11 49h56l-11-49h-56Z" clip-rule="evenodd"/>
+    <path d="M288 292h102l9 7c2 2 1 5-2 5H279c-3 0-4-3-2-5l11-7Z"/>
+
+    <!-- Desktop display, stand, and keyboard. -->
+    <path fill-rule="evenodd" d="M422 207h83c4 0 7 3 7 7v58c0 4-3 7-7 7h-83c-4 0-7-3-7-7v-58c0-4 3-7 7-7Zm2 10v49h79v-49h-79Z" clip-rule="evenodd"/>
+    <path d="M457 277h13v13h13c4 0 7 3 7 7h-47c0-4 3-7 7-7h7v-13Z"/>
+    <rect x="440" y="299" width="74" height="5" rx="2.5"/>
+
+    <!-- A shared work surface and discreet central supports. -->
+    <rect x="268" y="308" width="267" height="9" rx="4.5"/>
+    <path d="M321 316h10l-10 131h-10l10-131Zm160 0h10l10 131h-10l-10-131Z"/>
+
+    <!-- Closed books at the edge of the workspace. -->
+    <g transform="translate(30 105)">
+    <path d="M370 185h38v7h-38c-3 0-5-2-5-4s2-3 5-3Zm2 11h33v7h-33c-3 0-5-2-5-4s2-3 5-3Z"/>
+    </g>
+  </g>
+
+  <path d="M101 452h556" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+</svg>
