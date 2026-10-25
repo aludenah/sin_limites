@@ -185,7 +185,7 @@ window.addEventListener('storage',event=>{if(user&&window.StudyMode&&event.key==
 // Deep links open the matching lesson before the activity is mounted.
 function applyAnchor(draw=true){
  const id=window.location.hash?.slice(1);if(!id)return;
- const aliases={'elementos-onda':'transversal-longitudinal','ecuacion-de-onda':'magnitudes-onda','comparador-ecuacion-onda':'magnitudes-onda','onda-en-cuerda':'ecuacion-onda','simulador-cuerda':'ecuacion-onda','teoria-ondas-estacionarias':'rapidez-cuerda','animacion-armonicos':'rapidez-cuerda'};
+ const aliases={'elementos-onda':'transversal-longitudinal','ecuacion-de-onda':'magnitudes-onda','comparador-ecuacion-onda':'magnitudes-onda','onda-en-cuerda':'ecuacion-onda','simulador-cuerda':'ecuacion-onda','teoria-ondas-estacionarias':'rapidez-cuerda','animacion-armonicos':'rapidez-cuerda','nodos-y-antinodos':'rapidez-cuerda'};
  const lessonId=aliases[id]||id;
  const lab=id.startsWith('wave-lab-')?id.slice(9):null;
  const index=LESSONS.findIndex(lesson=>lesson.id===lessonId||(lab&&lesson.body.includes('data-wave-lab="'+lab+'"')));

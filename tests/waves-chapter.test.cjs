@@ -96,7 +96,7 @@ async function chapterFormatAndViews(){
    assert.match(lesson.body,/\\(?:sin|operatorname\{sen\})/,'The standing-wave equation describes its spatial dependence');
    assert.match(lesson.body,/\\cos/,'The standing-wave equation describes its temporal oscillation');
    for(const symbol of ['\\lambda','\\omega','\\mu','\\sqrt'])assert.ok(lesson.body.includes(symbol),'The theoretical relationships include '+symbol);
-   assert.doesNotMatch(lesson.body,/<(?:img|svg|canvas|audio|video|input|button)\b|data-wave-|data-string-wave-speed|data-activity-fullscreen|F_T|F_\{T\}/i,'Item five retains theory, uses F for tension and has no audio or unrelated activity');
+   assert.doesNotMatch(lesson.body,/<(?:svg|canvas|audio|video|input|button)\b|data-wave-|data-string-wave-speed|F_T|F_\{T\}/i,'Item five retains its theory, static illustration and harmonic selector, uses F for tension and has no audio or unrelated activity');
    assert.equal(lesson.audioSegments.length,0,'The standing-wave theory has no audio');
    assert.equal(lesson.examples.length,0,'Item five retains its theoretical framework');
    assert.equal((lesson.body.match(/data-standing-wave-harmonics/g)||[]).length,1,'The standing-wave lesson contains one harmonic animation');

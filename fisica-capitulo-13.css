@@ -71,3 +71,6 @@
 .waves-elements-figure picture{display:block}
 .waves-elements-figure.activity-fs-active picture>img{max-height:calc(100dvh - 240px);object-fit:contain}
 @media(max-width:600px){.waves-elements-figure.activity-fs-active picture>img{max-height:none}}
+
+/* Un solo esquema estático junto a las definiciones de nodos y vientres. */
+.waves-nodes-figure{max-width:720px;margin:26px auto;background:#f9fbf6}
