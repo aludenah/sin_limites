@@ -106,7 +106,7 @@ function workedExamplesView(){
  return `<p class="eyebrow">Aplicamos lo aprendido</p><h2>${CONTENT.workedExamples.length} problemas resueltos</h2><p>Resuelve primero cada problema y abre su solución para comparar el procedimiento. Cada solución muestra los datos, la ecuación y el resultado con sus unidades.</p>${(CONTENT.workedExamples||[]).map(e=>`<section class="example worked-example" id="ondas-resuelto-${e.number}"><p class="eyebrow">Problema ${e.number}</p><h3>${e.title}</h3><p>${e.question}</p>${e.figure?window.ChapterPractice.renderFigure(e.figure,"worked:"+e.number):""}<details><summary>Ver solución paso a paso</summary><ol>${e.steps.map(step=>`<li>${step}</li>`).join('')}</ol></details></section>`).join('')}`;
 }
 
-function destroyActivities(){window.WaveLessonAudio?.destroy();window.MechanicalWaveLabs?.destroy();window.WaveExampleAnimations?.destroy();}
+function destroyActivities(){window.WaveLessonAudio?.destroy();window.MechanicalWaveLabs?.destroy();window.WaveExampleAnimations?.destroy();window.WaveAmplitudeFrequency?.destroy();}
 
 function chapterProgressView(){
   const tools=`<p id="save-status" class="save-line ${cloudReady?'':'warning'}" role="status">${escapeHTML(saveMessage)}</p><button id="retry-save" class="button secondary small" data-action="sync" ${cloudReady?'hidden':''}>Reintentar sincronización</button>`;
@@ -123,6 +123,7 @@ function render(){
   renderMath();
   window.MechanicalWaveLabs?.mount(root);
   window.WaveExampleAnimations?.mount(root);
+  window.WaveAmplitudeFrequency?.mount(root);
   window.WaveLessonAudio?.mount(root,{lesson:P.activeTab==='theory'?LESSONS[P.currentItem]:null});
 }
 function scrollContent(){document.getElementById('chapter-content')?.scrollIntoView({behavior:'smooth',block:'start'});}
