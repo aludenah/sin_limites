@@ -96,7 +96,9 @@ function lessonSections(lesson){
 }
 function lessonView(){
   const i=P.currentItem,x=LESSONS[i];
-  return `<p class="eyebrow">Tema ${i+1} de ${LESSONS.length} · ${x.subtitle}</p><h2 id="${escapeHTML(x.id)}">${x.title}</h2><div data-wave-lesson-audio></div><div class="content">${lessonBody(x)}${lessonFigures(x.id)}</div>${lessonSections(x)}${lessonActivity(x)}<div class="actions"><button class="button secondary" data-action="lesson" data-index="${i-1}" ${i===0?'disabled':''}>← Tema anterior</button>${i<LESSONS.length-1?`<button class="button" data-action="lesson" data-index="${i+1}" ${!canOpen(i+1)?'disabled':''}>Siguiente tema →</button>`:`<button class="button" data-action="tab" data-value="practice" ${!canApply()?'disabled':''}>Ir a la práctica →</button>`}</div>`;
+  const subtitle=x.subtitle?' · '+escapeHTML(x.subtitle):'';
+  const audio=x.audioSegments?.length?'<div data-wave-lesson-audio></div>':'';
+  return `<p class="eyebrow">Tema ${i+1} de ${LESSONS.length}${subtitle}</p><h2 id="${escapeHTML(x.id)}">${x.title}</h2>${audio}<div class="content">${lessonBody(x)}${lessonFigures(x.id)}</div>${lessonSections(x)}${lessonActivity(x)}<div class="actions"><button class="button secondary" data-action="lesson" data-index="${i-1}" ${i===0?'disabled':''}>← Tema anterior</button>${i<LESSONS.length-1?`<button class="button" data-action="lesson" data-index="${i+1}" ${!canOpen(i+1)?'disabled':''}>Siguiente tema →</button>`:`<button class="button" data-action="tab" data-value="practice" ${!canApply()?'disabled':''}>Ir a la práctica →</button>`}</div>`;
 }
 function practiceView(){return window.ChapterPractice.render(CHAPTER_ID,P.practice10,P.studyMode,notice);}
 

@@ -27,6 +27,12 @@ async function chapterFormatAndViews(){
  assert.deepEqual(content.lessons.map(l=>l.id),lessonIds);assert.equal(content.workedExamples.length,10);
  assert.deepEqual(content.workedExamples.map(e=>e.number),Array.from({length:10},(_,i)=>i+1));
  content.lessons.forEach((lesson,i)=>{
+  if(i===0){
+   assert.match(lesson.body,/^<p>Una onda mecánica es una perturbación[\s\S]*<\/p>$/);
+   assert.doesNotMatch(lesson.body,/<(?:img|svg|audio|video|details)|data-wave-lab|ejemplo/i);
+   assert.equal(lesson.audioSegments.length,0);assert.equal(lesson.examples.length,0);
+   return;
+  }
   assert.ok(lesson.body.includes('data-wave-lab="'+labKinds[i]+'"'),'Working placeholder in lesson '+lesson.id);
   assert.equal((lesson.body.match(/data-wave-lab=/g)||[]).length,1);
   assert.equal(lesson.audioSegments.length,3);for(const audio of lesson.audioSegments)assert.ok(audio.title&&audio.text.length>50);
@@ -36,7 +42,9 @@ async function chapterFormatAndViews(){
  assert.equal((markup.match(/<nav class="route"[^>]*>([\s\S]*?)<\/nav>/)[1].match(/data-action="lesson" data-index=/g)||[]).length,11,'The complete route is visible');
  for(let i=0;i<lessonIds.length;i++){
   h.run('goLesson('+i+')');markup=h.elements.get('chapter-app').innerHTML;
-  assert.ok(markup.includes('data-wave-lab="'+labKinds[i]+'"'));assert.ok(markup.includes('id="'+lessonIds[i]+'"'));
+  if(i===0)assert.doesNotMatch(markup,/data-wave-lab=|data-wave-lesson-audio/);
+  else assert.ok(markup.includes('data-wave-lab="'+labKinds[i]+'"'));
+  assert.ok(markup.includes('id="'+lessonIds[i]+'"'));
   assert.equal(h.run('P.readingItem'),i);
  }
  h.run("goTab('examples')");markup=h.elements.get('chapter-app').innerHTML;
@@ -48,7 +56,7 @@ async function chapterFormatAndViews(){
  assert.equal((markup.match(/Comprobar respuesta/g)||[]).length,10);
  assert.doesNotMatch(markup,/data-wave-lesson-audio/);
  assert.doesNotThrow(()=>h.run("openFigure('worked:999')"),'A worked item without a figure never opens a broken dialog');
- for(const [kind,id] of labKinds.map((kind,i)=>[kind,lessonIds[i]])){
+ for(const [kind,id] of labKinds.map((kind,i)=>[kind,lessonIds[i]]).slice(1)){
   h.run("window.location.hash='#wave-lab-"+kind+"';applyAnchor()");assert.equal(h.run('LESSONS[P.currentItem].id'),id);assert.equal(h.run('P.activeTab'),'theory');
  }
  h.run("window.location.hash='#sonido';applyAnchor()");assert.equal(h.run('LESSONS[P.currentItem].id'),'sonido');
@@ -97,4 +105,4 @@ function progressSanitization(){
  assert.equal(h.run('normalized({inductionLab:{turns:100}}).inductionLab'),undefined,'Chapter state contains no unrelated laboratory record');
 }
 
-(async()=>{sourceAndDependencies();progressSanitization();await chapterFormatAndViews();await activityLifecycle();await practicePersistenceAndAccounts();console.log('PASS: waves chapter format, eleven lessons and labs, explanatory audio lifecycle, ten-problem grading, account isolation, offline merge, direct links and responsive dependencies.');})().catch(error=>{console.error(error);process.exitCode=1;});
+(async()=>{sourceAndDependencies();progressSanitization();await chapterFormatAndViews();await activityLifecycle();await practicePersistenceAndAccounts();console.log('PASS: waves chapter format, concept-only introduction, ten lesson labs, explanatory audio lifecycle, ten-problem grading, account isolation, offline merge, direct links and responsive dependencies.');})().catch(error=>{console.error(error);process.exitCode=1;});

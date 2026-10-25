@@ -50,36 +50,3 @@
  .waves-figure-dialog header{align-items:flex-start}
  .waves-figure-dialog h2{font-size:16px}
 }
-
-/* Ítem inicial: definiciones, situaciones y observaciones del medio. */
-.content .wave-intro-definition{margin:22px 0 26px;padding:23px 25px;border:1px solid #b8d9dd;border-left:5px solid #128e92;border-radius:0 17px 17px 0;background:#edf8f7;color:#173f50}
-.content .wave-intro-definition p{margin:0;font-size:17px;line-height:1.85}
-.content .wave-intro-definition p+p{margin-top:12px}
-.content .wave-intro-definition strong{color:#0f5964}
-.content .wave-intro-terms{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:22px 0 28px}
-.content .wave-intro-terms>article{min-width:0;padding:19px 20px;border:1px solid #d5e3ec;border-top:3px solid #6686a5;border-radius:14px;background:#f5f9fc}
-.content .wave-intro-terms h4{margin:0 0 9px;font-size:18px;line-height:1.4;color:#224d6b}
-.content .wave-intro-terms p{margin:0;font-size:15px;line-height:1.75;color:#486579}
-.content .wave-intro-examples{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:21px;margin:24px 0 30px}
-.content .wave-intro-example{min-width:0;display:flex;flex-direction:column;border:1px solid #cddfe9;border-radius:18px;background:#fff;overflow:hidden;box-shadow:0 7px 18px #173d5e06}
-.content .wave-intro-example>img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:16/7;object-fit:contain;border:0;border-radius:0;margin:0;background:#12344f}
-.content .wave-intro-example-copy{min-width:0;padding:23px 23px 21px}
-.content .wave-intro-example h4{margin:0 0 12px;font-size:21px;line-height:1.4;color:#173f5e;letter-spacing:-.015em}
-.content .wave-intro-example-copy>p{margin:0 0 17px;font-size:16px;line-height:1.8;color:#3c5a71}
-.content .wave-intro-example dl{display:grid;grid-template-columns:minmax(0,112px) minmax(0,1fr);gap:8px 12px;margin:19px 0;padding-top:16px;border-top:1px solid #e1eaf0;font-size:14px;line-height:1.7}
-.content .wave-intro-example dt{font-weight:800;color:#2d6278}
-.content .wave-intro-example dd{min-width:0;margin:0;color:#4c677b}
-.content .wave-intro-example-copy .wave-intro-observe{margin:19px 0 0;padding:15px 16px;border-radius:11px;background:#f0f7fa;border-left:3px solid #63a8b6;font-size:15px;line-height:1.8;color:#254f64}
-.content .wave-intro-pulse{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:22px 0 27px}
-.content .wave-intro-pulse>article{min-width:0;padding:21px 23px;border:1px solid #cfdfe9;border-radius:15px;background:#f5f9fc}
-.content .wave-intro-pulse>article+article{background:#fff8ed;border-color:#e9d8bb}
-.content .wave-intro-pulse h4{margin:0 0 10px;font-size:19px;line-height:1.4;color:#214e6c}
-.content .wave-intro-pulse p{margin:0;font-size:16px;line-height:1.8;color:#426176}
-.content .wave-intro-check{margin:25px 0}
-.content .wave-intro-check>details{margin:12px 0;border:1px solid #c7dfe3;border-radius:13px;background:#f3faf9;overflow:hidden}
-.content .wave-intro-check summary{padding:18px 21px;font-size:16px;line-height:1.7;font-weight:750;color:#1e5966;cursor:pointer;min-height:48px}
-.content .wave-intro-check details>p{margin:0;padding:0 21px 20px;font-size:16px;line-height:1.85;color:#365d70}
-.content .wave-intro-check summary:focus-visible{outline:3px solid #c58c2d;outline-offset:-4px;border-radius:10px}
-@media(max-width:1050px){.content .wave-intro-terms{grid-template-columns:minmax(0,1fr)}.content .wave-intro-terms>article{padding:17px 20px}.content .wave-intro-example-copy{padding:21px 19px}.content .wave-intro-example dl{grid-template-columns:minmax(0,95px) minmax(0,1fr);gap:8px 10px;font-size:13px}}
-@media(max-width:650px){.content .wave-intro-definition{padding:20px 18px;margin-block:20px 24px}.content .wave-intro-definition p{font-size:16px}.content .wave-intro-examples{grid-template-columns:minmax(0,1fr);gap:21px;margin-block:22px 27px}.content .wave-intro-example-copy{padding:21px 20px}.content .wave-intro-example h4{font-size:20px}.content .wave-intro-example dl{grid-template-columns:minmax(0,104px) minmax(0,1fr);font-size:14px;gap:8px 10px}.content .wave-intro-pulse{grid-template-columns:minmax(0,1fr);gap:13px}.content .wave-intro-pulse>article{padding:20px}.content .wave-intro-check summary{padding:16px 18px}.content .wave-intro-check details>p{padding:0 18px 18px}}
-@media(max-width:360px){.content .wave-intro-example-copy{padding:19px 16px}.content .wave-intro-example dl{grid-template-columns:minmax(0,1fr);gap:3px}.content .wave-intro-example dd+dt{margin-top:10px}.content .wave-intro-example-copy .wave-intro-observe{padding:13px}.content .wave-intro-terms>article{padding:17px}}
