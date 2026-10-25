@@ -6,7 +6,7 @@ const read=file=>fs.readFileSync(path.join(root,file),'utf8');
 const files=['fisica-capitulo-13-practice.js','fisica-capitulo-13-data.js','fisica-capitulo-13.js'];
 const plain=(h,expression)=>JSON.parse(h.run('JSON.stringify('+expression+')'));
 const lessonIds=['naturaleza-onda','transversal-longitudinal','magnitudes-onda','ecuacion-onda','rapidez-cuerda','reflexion-pulsos','superposicion','ondas-estacionarias','sonido','fenomenos-ondulatorios','efecto-doppler'];
-const labKinds=['propagation','types','parameters','equation','string','reflection','superposition','standing','sound','wavefronts','doppler'];
+const labKinds=[null,null,'parameters','equation','string','reflection','superposition','standing','sound','wavefronts','doppler'];
 
 function sourceAndDependencies(){
  const html=read(chapterId+'.html'),css=read(chapterId+'.css'),source=read(chapterId+'.js');
@@ -32,7 +32,7 @@ async function chapterFormatAndViews(){
    assert.match(lesson.body,/medio material/);assert.match(lesson.body,/energía/);
    assert.match(lesson.body,/partículas/);assert.match(lesson.body,/equilibrio/);
    assert.match(lesson.body,/fuente/);assert.match(lesson.body,/interacción entre sus partes vecinas/);assert.match(lesson.body,/cantidad de movimiento/);
-   assert.deepEqual([...lesson.body.matchAll(/data-wave-animation="([^"]+)"/g)].map(match=>match[1]),['rope','transverse','longitudinal']);
+   assert.deepEqual([...lesson.body.matchAll(/data-wave-animation="([^"]+)"/g)].map(match=>match[1]),['transverse','longitudinal']);
    for(const [heading,kind] of [['tipo-transversal','transverse'],['tipo-longitudinal','longitudinal']]){
     const section=lesson.body.match(new RegExp('<section[^>]*aria-labelledby="'+heading+'"[^>]*>([\\s\\S]*?)</section>'));
     assert.ok(section,'The '+kind+' explanation has its own section');
@@ -41,6 +41,18 @@ async function chapterFormatAndViews(){
    }
    assert.doesNotMatch(lesson.body,/<(?:img|audio|video)|data-wave-lab|data-wave-lesson-audio|juego|puntaje|misión/i);
    assert.equal(lesson.audioSegments.length,0);assert.equal(lesson.examples.length,0);
+   return;
+  }
+  if(i===1){
+   assert.equal(lesson.title,'Elementos de una onda');
+   for(const concept of [/cresta/i,/valle/i,/equilibrio/i,/amplitud/i,/longitud de onda/i,/período/i,/frecuencia/i])assert.match(lesson.body,concept);
+   assert.match(lesson.body,/assets\/waves-elements-diagram\.svg/,'The elements lesson includes its own annotated diagram');
+   assert.match(lesson.body,/data-activity-fullscreen/,'The diagram can be viewed in fullscreen');
+   assert.doesNotMatch(lesson.body,/data-wave-lab=|data-wave-animation=/,'Item two no longer repeats the classification activity');
+   assert.ok(fs.existsSync(path.join(root,'assets/waves-elements-diagram.svg')),'The diagram asset exists');
+   assert.equal(lesson.audioSegments.length,3);for(const audio of lesson.audioSegments)assert.ok(audio.title&&audio.text.length>50);
+   assert.doesNotMatch(lesson.audioSegments.map(audio=>audio.text).join(' '),/Alterna los dos tipos|transversal.*longitudinal/i,'Narration follows the elements lesson rather than the previous classification');
+   assert.equal(lesson.examples.length,0);
    return;
   }
   assert.ok(lesson.body.includes('data-wave-lab="'+labKinds[i]+'"'),'Working placeholder in lesson '+lesson.id);
@@ -52,7 +64,8 @@ async function chapterFormatAndViews(){
  assert.equal((markup.match(/<nav class="route"[^>]*>([\s\S]*?)<\/nav>/)[1].match(/data-action="lesson" data-index=/g)||[]).length,11,'The complete route is visible');
  for(let i=0;i<lessonIds.length;i++){
   h.run('goLesson('+i+')');markup=h.elements.get('chapter-app').innerHTML;
-  if(i===0){assert.doesNotMatch(markup,/data-wave-lab=|data-wave-lesson-audio/);assert.equal((markup.match(/data-wave-animation=/g)||[]).length,3);}
+  if(i===0){assert.doesNotMatch(markup,/data-wave-lab=|data-wave-lesson-audio/);assert.equal((markup.match(/data-wave-animation=/g)||[]).length,2);}
+  else if(i===1){assert.match(markup,/Elementos de una onda/);assert.match(markup,/waves-elements-diagram\.svg/);assert.doesNotMatch(markup,/data-wave-lab="types"/);}
   else assert.ok(markup.includes('data-wave-lab="'+labKinds[i]+'"'));
   assert.ok(markup.includes('id="'+lessonIds[i]+'"'));
   assert.equal(h.run('P.readingItem'),i);
@@ -66,10 +79,12 @@ async function chapterFormatAndViews(){
  assert.equal((markup.match(/Comprobar respuesta/g)||[]).length,10);
  assert.doesNotMatch(markup,/data-wave-lesson-audio/);
  assert.doesNotThrow(()=>h.run("openFigure('worked:999')"),'A worked item without a figure never opens a broken dialog');
- for(const [kind,id] of labKinds.map((kind,i)=>[kind,lessonIds[i]]).slice(1)){
+ for(const [kind,id] of labKinds.map((kind,i)=>[kind,lessonIds[i]]).filter(([kind])=>kind)){
   h.run("window.location.hash='#wave-lab-"+kind+"';applyAnchor()");assert.equal(h.run('LESSONS[P.currentItem].id'),id);assert.equal(h.run('P.activeTab'),'theory');
  }
  h.run("window.location.hash='#sonido';applyAnchor()");assert.equal(h.run('LESSONS[P.currentItem].id'),'sonido');
+ h.run("window.location.hash='#elementos-onda';applyAnchor()");assert.equal(h.run('P.currentItem'),1);assert.equal(h.run('LESSONS[P.currentItem].id'),'transversal-longitudinal');assert.match(h.elements.get('chapter-app').innerHTML,/id="elementos-onda"/,'The elements alias opens the lesson and targets its content');
+ h.run("window.location.hash='#transversal-longitudinal';applyAnchor()");assert.equal(h.run('P.currentItem'),1);assert.equal(h.run('LESSONS[P.currentItem].title'),'Elementos de una onda','The old topic link remains valid after its content changes');
  h.run("window.location.hash='#naturaleza-onda';applyAnchor()");assert.equal(h.run('P.currentItem'),0);
  const before=h.run('P.currentItem');h.run("window.location.hash='#unrelated';applyAnchor()");assert.equal(h.run('P.currentItem'),before);
 }
@@ -79,7 +94,7 @@ async function activityLifecycle(){
  await h.signIn({uid:'wave-lifecycle'});
  h.run("window.lifecycle=[];goLesson(5)");
  assert.deepEqual(plain(h,'window.lifecycle'),['audio:destroy','labs:destroy','animations:destroy','labs:mount','animations:mount','audio:reflexion-pulsos'],'Previous media stops before the new lesson starts');
- h.run("window.lifecycle=[];goLesson(0)");assert.deepEqual(plain(h,'window.lifecycle'),['audio:destroy','labs:destroy','animations:destroy','labs:mount','animations:mount','audio:naturaleza-onda'],'Returning to the introduction tears down the previous lesson before starting its three animations');
+ h.run("window.lifecycle=[];goLesson(0)");assert.deepEqual(plain(h,'window.lifecycle'),['audio:destroy','labs:destroy','animations:destroy','labs:mount','animations:mount','audio:naturaleza-onda'],'Returning to the introduction tears down the previous lesson before starting its two animations');
  h.run("window.lifecycle=[];goTab('practice')");assert.deepEqual(plain(h,'window.lifecycle'),['audio:destroy','labs:destroy','animations:destroy','labs:mount','animations:mount','audio:none']);
  h.run('window.lifecycle=[]');h.events.get('pagehide')();assert.deepEqual(plain(h,'window.lifecycle'),['audio:destroy','labs:destroy','animations:destroy']);
  h.run('window.lifecycle=[]');h.events.get('pageshow')({persisted:true});assert.deepEqual(plain(h,'window.lifecycle'),['audio:destroy','labs:destroy','animations:destroy','labs:mount','animations:mount','audio:none'],'Restored pages reinitialize activities after pagehide');
@@ -117,4 +132,4 @@ function progressSanitization(){
  assert.equal(h.run('normalized({inductionLab:{turns:100}}).inductionLab'),undefined,'Chapter state contains no unrelated laboratory record');
 }
 
-(async()=>{sourceAndDependencies();progressSanitization();await chapterFormatAndViews();await activityLifecycle();await practicePersistenceAndAccounts();console.log('PASS: waves chapter format, PDF-aligned theory with three animations without games or audio in the introduction, ten lesson labs, media lifecycle, grading, account isolation, offline merge and direct links.');})().catch(error=>{console.error(error);process.exitCode=1;});
+(async()=>{sourceAndDependencies();progressSanitization();await chapterFormatAndViews();await activityLifecycle();await practicePersistenceAndAccounts();console.log('PASS: waves chapter format, two introduction animations, PDF-aligned elements lesson and fullscreen diagram, nine lesson labs, media lifecycle, grading, account isolation, offline merge and direct links.');})().catch(error=>{console.error(error);process.exitCode=1;});

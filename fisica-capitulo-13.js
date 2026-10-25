@@ -181,8 +181,9 @@ window.addEventListener('storage',event=>{if(user&&window.StudyMode&&event.key==
 // Deep links open the matching lesson before the activity is mounted.
 function applyAnchor(draw=true){
  const id=window.location.hash?.slice(1);if(!id)return;
+ const lessonId=id==='elementos-onda'?'transversal-longitudinal':id;
  const lab=id.startsWith('wave-lab-')?id.slice(9):null;
- const index=LESSONS.findIndex(lesson=>lesson.id===id||(lab&&lesson.body.includes('data-wave-lab="'+lab+'"')));
+ const index=LESSONS.findIndex(lesson=>lesson.id===lessonId||(lab&&lesson.body.includes('data-wave-lab="'+lab+'"')));
  if(index<0)return;
  P.currentItem=index;P.readingItem=index;P.activeTab='theory';
  if(draw){notice='';markChanged();render();persist();scrollAnchor(id);}

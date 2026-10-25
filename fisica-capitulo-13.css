@@ -55,3 +55,11 @@
 .waves-types-sections{display:grid;grid-template-columns:minmax(0,1fr);gap:24px;margin:25px 0;min-width:0;max-width:100%}
 .waves-types-sections .wave-example-animation{margin:22px 0 0}
 @media(max-width:600px){.waves-types-sections{gap:20px}.waves-types-sections>.waves-property-card{padding:16px 12px}}
+
+/* Esquema de elementos: lectura completa y ampliación con el mismo contenido. */
+.waves-elements-figure>h3{margin:0;padding:20px 24px;background:#eff6f9;color:#173e55}
+.waves-elements-figure figcaption{font-size:16px;line-height:1.7}
+.waves-elements-figure .activity-fs-toggle{min-height:44px}
+.waves-elements-figure.activity-fs-active{background:#f7f9f5}
+.waves-elements-figure.activity-fs-active>img{width:100%;max-height:calc(100dvh - 240px);object-fit:contain}
+@media(max-width:600px){.waves-elements-figure>h3{padding:18px;font-size:18px}.waves-elements-figure figcaption{padding:16px;font-size:16px}}
