@@ -62,7 +62,7 @@ function harness(options={}){
  return {window,document,api,frames,observers,errors,state,frame,advance,mount(kinds=['rope','sound','water']){const view=surface(kinds);api.mount(view.root);return view;}};
 }
 function modelsAndScenes(){
- const h=harness(),api=h.api;assert.deepEqual(Array.from(api.kinds),['rope','sound','water']);
+ const h=harness(),api=h.api;assert.deepEqual(Array.from(api.kinds),['rope','sound','water','transverse','longitudinal']);
  const initialScenes=new Set();
  for(const kind of api.kinds){
   initialScenes.add(api.renderScene(kind,2,'audit-'+kind));
@@ -71,7 +71,7 @@ function modelsAndScenes(){
   }
   assert.notEqual(api.renderScene(kind,.2,'same'),api.renderScene(kind,2.8,'same'),kind+' must visibly animate, rather than display a static drawing');
  }
- assert.equal(initialScenes.size,3,'Each example has its own physical representation');
+ assert.equal(initialScenes.size,5,'Each example has its own physical representation');
  const rope0=api.sample('rope',0),ropeTimes=Array.from({length:80},(_,i)=>api.sample('rope',i*rope0.cycleDuration/80));
  assert.ok(api.sample('rope',1.4).front>api.sample('rope',1).front,'The rope disturbance travels away from its source');
  assert.ok(ropeTimes.some(p=>Math.abs(p.marker.displacement)>1e-4),'The marked rope point actually moves when the pulse passes');
@@ -108,8 +108,58 @@ function modelsAndScenes(){
  assert.ok(waterTimes.some(p=>Math.abs(p.float.displacement)>1e-4),'The float responds after the arriving ripple');
  for(const p of waterTimes){assert.equal(p.float.x,p.float.x0,'The float does not drift outward with a ring');for(const ring of p.rings){assert.ok(ring.age>=0);assert.ok(ring.radius>=0);}}
 }
-function independentPlayback(){
- const h=harness(),view=h.mount();assert.equal(h.state().length,3);
+function typeWaveModels(){
+ const {api}=harness();
+ const close=(actual,expected,message,tolerance=1e-9)=>assert.ok(Math.abs(actual-expected)<tolerance,message+' ('+actual+' versus '+expected+')');
+ for(const kind of ['transverse','longitudinal']){
+  const initial=api.sample(kind,0),frames=Array.from({length:96},(_,i)=>api.sample(kind,i*initial.cycleDuration/96));
+  close(initial.speed,initial.frequency*initial.wavelength,kind+' propagation speed agrees with its wavelength and frequency');
+  const afterCycle=api.sample(kind,initial.cycleDuration);
+  for(let i=0;i<initial.particles.length;i++){
+   close(afterCycle.particles[i].x,initial.particles[i].x,kind+' has no material-position jump at the loop');
+   close(afterCycle.particles[i].y,initial.particles[i].y,kind+' has no transverse jump at the loop');
+  }
+  const nearSeam=api.sample(kind,initial.cycleDuration-1e-5),pastSeam=api.sample(kind,initial.cycleDuration+1e-5);
+  for(let i=0;i<initial.particles.length;i++){
+   close(nearSeam.particles[i].x,pastSeam.particles[i].x,kind+' horizontal movement is continuous at the loop',1e-3);
+   close(nearSeam.particles[i].y,pastSeam.particles[i].y,kind+' vertical movement is continuous at the loop',1e-3);
+  }
+  const dx=initial.particles[1].x0-initial.particles[0].x0,t=.7;
+  const first=api.sample(kind,t),next=api.sample(kind,t+dx/initial.speed);
+  for(let i=1;i<first.particles.length-2;i++)close(first.particles[i].displacement,next.particles[i+1].displacement,kind+' pattern travels to the right, independently of each material point');
+  assert.ok(frames.some(frame=>frame.marker.displacement>1e-3),kind+' marked material point moves in one direction');
+  assert.ok(frames.some(frame=>frame.marker.displacement< -1e-3),kind+' marked material point returns in the opposite direction');
+  for(const frame of frames){
+   assert.deepEqual(frame.particles.map(p=>p.x0),initial.particles.map(p=>p.x0),kind+' equilibrium locations stay fixed');
+   for(let i=0;i<frame.particles.length;i++){
+    const p=frame.particles[i];
+    if(kind==='transverse')assert.equal(p.x,p.x0,'Transverse particles have no horizontal travel with the wave');
+    else assert.equal(p.y,p.y0,'Longitudinal particles move only along the propagation direction');
+    if(i)assert.ok(p.x>frame.particles[i-1].x,'Material elements never cross in '+kind+' demonstration');
+   }
+  }
+  if(kind==='transverse'){
+   for(const frame of frames)assert.equal(frame.marker.x,frame.marker.x0,'The transverse P marker stays at its own horizontal location');
+   continue;
+  }
+  let densityFrames=0;
+  const equilibriumSpacing=initial.particles[1].x0-initial.particles[0].x0;
+  for(const frame of frames){
+   const spacingAt=center=>{
+    let index=0;for(let i=1;i<frame.particles.length;i++)if(Math.abs(frame.particles[i].x-center)<Math.abs(frame.particles[index].x-center))index=i;
+    return index<2||index>frame.particles.length-3?null:(frame.particles[index+2].x-frame.particles[index-2].x)/4;
+   };
+   const dense=frame.compressions.map(spacingAt).filter(value=>value!==null),sparse=frame.rarefactions.map(spacingAt).filter(value=>value!==null);
+   if(!dense.length||!sparse.length)continue;
+   assert.ok(dense.every(value=>value<equilibriumSpacing),'Every labelled compression really has coil spacing below equilibrium');
+   assert.ok(sparse.every(value=>value>equilibriumSpacing),'Every labelled rarefaction really has coil spacing above equilibrium');
+   assert.ok(Math.max(...dense)<Math.min(...sparse),'Compressions are visibly denser than rarefactions');densityFrames++;
+  }
+  assert.ok(densityFrames>40,'The longitudinal model supplies verifiable moving compressions throughout its cycle');
+ }
+}
+function independentPlayback(kinds=['rope','sound','water']){
+ const h=harness(),view=h.mount(kinds);assert.equal(h.state().length,3);
  for(const item of view.views){
   assert.match(item.placeholder.innerHTML,/data-activity-fullscreen/);
   assert.equal(item.buttons.length,2,'Only playback and restart controls belong to the animation');
@@ -118,7 +168,7 @@ function independentPlayback(){
  h.advance(320);assert.ok(h.state().every(p=>p.time>0),'All visible animations advance');
  const rope=view.views[0],beforePause=h.state();rope.click('play');h.advance(240);const paused=h.state();
  assert.equal(paused[0].time,beforePause[0].time);assert.equal(paused[0].playing,false);
- assert.ok(paused[1].time>beforePause[1].time,'Pausing rope does not pause sound');assert.ok(paused[2].time>beforePause[2].time,'Pausing rope does not pause water');
+ assert.ok(paused[1].time>beforePause[1].time,'Pausing the introduction does not pause the second animation');assert.ok(paused[2].time>beforePause[2].time,'Pausing the introduction does not pause the third animation');
  rope.click('restart');assert.equal(h.state()[0].time,0);assert.equal(h.state()[1].time,paused[1].time,'Restarting rope leaves the other clock untouched');
  if(!h.state()[0].playing)rope.click('play');h.advance(200);assert.ok(h.state()[0].time>0);
  const scene=rope.q('[data-wave-example-scene]').innerHTML;h.advance(200);assert.notEqual(rope.q('[data-wave-example-scene]').innerHTML,scene,'RAF redraws the visible scene');
@@ -126,8 +176,8 @@ function independentPlayback(){
  for(const observer of h.observers)assert.equal(observer.disconnected,true);for(const item of view.views)assert.equal(item.host.listenerCount(),0);
  assert.deepEqual(h.errors,[]);
 }
-function visibilityReducedMotionAndReplacement(){
- const h=harness(),first=h.mount();h.advance(200);
+function visibilityReducedMotionAndReplacement(kinds=['rope','sound','water']){
+ const h=harness(),first=h.mount(kinds);h.advance(200);
  const observer=h.observers.find(o=>o.host===first.views[1].host);assert.ok(observer);observer.intersect(false);
  const offscreen=h.state()[1].time;h.advance(200);assert.equal(h.state()[1].time,offscreen,'An offscreen animation stops independently');
  h.document.hidden=true;h.document.emit('visibilitychange');const hidden=h.state().map(p=>p.time);h.advance(400);assert.deepEqual(h.state().map(p=>p.time),hidden,'The hidden page runs no animation clock');
@@ -136,10 +186,10 @@ function visibilityReducedMotionAndReplacement(){
  const second=h.mount(['water']);assert.equal(h.state().length,1);assert.ok(h.observers.slice(0,3).every(o=>o.disconnected));assert.ok(first.views.every(v=>v.host.listenerCount()===0));
  const before=h.state();first.views[0].click('play');assert.deepEqual(h.state(),before,'Controls detached by a lesson change cannot affect the new lesson');
  h.api.mount(surface([]).root);assert.equal(h.state().length,0);assert.equal(h.frames.size,0,'A lesson without these examples retains no old RAF');assert.equal(h.document.listenerCount(),0);assert.equal(second.views[0].host.listenerCount(),0);
- const reduced=harness({reduced:true}),still=reduced.mount();assert.ok(reduced.state().every(p=>p.playing===false));assert.equal(reduced.frames.size,0,'Reduced-motion visitors see a meaningful static frame first');
+ const reduced=harness({reduced:true}),still=reduced.mount(kinds);assert.ok(reduced.state().every(p=>p.playing===false));assert.equal(reduced.frames.size,0,'Reduced-motion visitors see a meaningful static frame first');
  assert.ok(reduced.state().every(p=>p.time>0),'Initial reduced-motion frames show the phenomenon rather than a blank initial state');
  still.views[2].click('play');reduced.advance(200);assert.ok(reduced.state()[2].playing);assert.ok(reduced.state()[2].time>0);assert.equal(reduced.state()[0].playing,false);reduced.api.destroy();
- const background=harness({hidden:true});background.mount();background.advance(300);assert.ok(background.state().every(p=>p.time===0));assert.equal(background.frames.size,0);background.api.destroy();h.api.destroy();
+ const background=harness({hidden:true});background.mount(kinds);background.advance(300);assert.ok(background.state().every(p=>p.time===0));assert.equal(background.frames.size,0);background.api.destroy();h.api.destroy();
 }
-modelsAndScenes();independentPlayback();visibilityReducedMotionAndReplacement();
-console.log('PASS: three true animations, causal rope/sound/water models, independent playback, no game or audio controls, fullscreen markers, visibility/reduced-motion behavior and complete cleanup.');
+modelsAndScenes();typeWaveModels();independentPlayback();independentPlayback(['rope','transverse','longitudinal']);visibilityReducedMotionAndReplacement();visibilityReducedMotionAndReplacement(['rope','transverse','longitudinal']);
+console.log('PASS: five supported animations, causal rope/sound/water models and both wave-type demonstrations, independent playback, no game or audio controls, fullscreen markers, visibility/reduced-motion behavior and complete cleanup.');

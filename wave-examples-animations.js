@@ -1,10 +1,12 @@
-/* Tres demostraciones visuales: reproducción independiente, sin retos ni puntuación. */
+/* Demostraciones visuales: reproducción independiente, sin retos ni puntuación. */
 (function(global){
  'use strict';
- const KINDS=['rope','sound','water'];
+ const KINDS=['rope','sound','water','transverse','longitudinal'];
  const DESCRIPTIONS={
   rope:{title:'Pulso en una cuerda tensa',caption:'Al mover la mano hacia arriba y abajo se genera un pulso que avanza por la cuerda tensa, conservando aproximadamente su forma. El punto P (amarillo) sube y baja perpendicularmente al avance y vuelve al equilibrio, sin viajar con el pulso.',stillTime:3.5},
   sound:{title:'El sonido de un parlante',caption:'La vibración del parlante produce compresiones y rarefacciones que se propagan por el aire. Las partículas se mueven de ida y vuelta cerca de su posición inicial. Movimiento ralentizado.',stillTime:4.2},
+  transverse:{title:'Animación de una onda transversal',caption:'La onda avanza hacia la derecha. El punto P, que pertenece a la cuerda, solo sube y baja: su movimiento es perpendicular a la propagación. La flecha verde muestra el avance y la dorada, la oscilación.',stillTime:.4},
+  longitudinal:{title:'Animación de una onda longitudinal',caption:'Las zonas de compresión y rarefacción avanzan hacia la derecha. La espira marcada con P solo va y viene horizontalmente alrededor de su posición de equilibrio: su movimiento es paralelo a la propagación.',stillTime:.4},
   water:{title:'Una piedra cae al agua',caption:'La caída perturba la superficie y aparecen frentes de onda que se expanden. El marcador flota y oscila cerca de su lugar. Representación cualitativa de la propagación superficial.',stillTime:3.1}
  };
  const document=global.document;
@@ -56,7 +58,24 @@
   const y=t<impactTime?46+(210-46)*(t/impactTime)**2:210+38*(1-Math.exp(-Math.max(0,age)*3));
   return {time:t,cycleDuration:7.2,speed,impactTime,stone:{x:450,y,visible:t<impactTime+1.1,submerged:t>=impactTime,opacity:t<impactTime?1:clamp(1-age/1.1,0,1)},rings,float:{x0:450+floatRadius,x:450+floatRadius,y0:210,y:210-displacement,displacement,arrival,radius:floatRadius},splashAge:age,period:.28};
  }
- function sample(kind,time){return kind==='rope'?ropeSample(time):kind==='sound'?soundSample(time):kind==='water'?waterSample(time):null;}
+ const TYPE_WAVE=Object.freeze({frequency:.45,wavelength:3,speed:1.35,cycleDuration:4/.45});
+ function typePhase(x,time){return 2*Math.PI*(x/TYPE_WAVE.wavelength-TYPE_WAVE.frequency*time);}
+ function transverseSample(time){
+  const t=phase(time,TYPE_WAVE.cycleDuration),at=x0=>{const displacement=.75*Math.sin(typePhase(x0,t));return {x0,x:x0,y0:0,y:displacement,displacement};};
+  const points=Array.from({length:277},(_,i)=>at(-.6+i/30));
+  return {...TYPE_WAVE,time:t,amplitude:.75,points,particles:points,marker:at(3.6)};
+ }
+ function longitudinalSample(time){
+  const t=phase(time,TYPE_WAVE.cycleDuration),at=x0=>{const displacement=-.3*Math.sin(typePhase(x0,t));return {x0,x:x0+displacement,y0:0,y:0,displacement};};
+  const particles=Array.from({length:65},(_,i)=>at(i/8)),compressions=[],rarefactions=[];
+  for(let j=-8;j<=8;j++){
+   const compression=TYPE_WAVE.speed*t+j*TYPE_WAVE.wavelength,rarefaction=compression+TYPE_WAVE.wavelength/2;
+   if(compression>.35&&compression<7.65)compressions.push(compression);
+   if(rarefaction>.35&&rarefaction<7.65)rarefactions.push(rarefaction);
+  }
+  return {...TYPE_WAVE,time:t,amplitude:.3,particles,points:particles,compressions,rarefactions,marker:at(4)};
+ }
+ function sample(kind,time){return kind==='rope'?ropeSample(time):kind==='sound'?soundSample(time):kind==='water'?waterSample(time):kind==='transverse'?transverseSample(time):kind==='longitudinal'?longitudinalSample(time):null;}
  function line(x1,y1,x2,y2,color,width=2,extra=''){return `<path d="M${n(x1)} ${n(y1)}L${n(x2)} ${n(y2)}" fill="none" stroke="${color}" stroke-width="${width}" ${extra}/>`;}
  function arrow(x1,y1,x2,y2,color='#60dbc9',both=false){
   const angle=Math.atan2(y2-y1,x2-x1),head=(x,y,a)=>`<path d="M${n(x)} ${n(y)}l${n(-14*Math.cos(a)+7*Math.sin(a))} ${n(-14*Math.sin(a)-7*Math.cos(a))}l${n(-14*Math.sin(a))} ${n(14*Math.cos(a))}Z" fill="${color}"/>`;
@@ -99,6 +118,43 @@
    arrow(579,97,764,97,'#187e83')+label(670,69,'El pulso avanza','#275559',22)+
    arrow(mx+34,172,mx+34,275,'#a47b26',true)+label(480,373,'P sube y baja; la cuerda no viaja con el pulso','#3f574f',22)+label(100,306,'Mano','#415e61',18);
  }
+ function typeBackdrop(id){
+  return ropeDefs(id)+`<rect width="900" height="410" fill="url(#${id}-studio)"/><rect width="900" height="410" fill="url(#${id}-light)"/><path d="M0 335L900 320V410H0Z" fill="url(#${id}-bench)" opacity=".22"/><path d="M0 335L900 320" fill="none" stroke="#fffef5" stroke-width="3" opacity=".7"/>`;
+ }
+ function typeMarker(x,y,id){return `<ellipse cx="${n(x+1)}" cy="${n(y+4)}" rx="11" ry="8" fill="#5f593d" opacity=".18"/><circle cx="${n(x)}" cy="${n(y)}" r="10" fill="url(#${id}-gold)" stroke="#99712a" stroke-width="1.2"/><circle cx="${n(x-3)}" cy="${n(y-3)}" r="2" fill="#fff8c4" opacity=".85"/><text x="${n(x-24)}" y="${n(y-17)}" fill="#805d21" font-size="24" font-weight="750" text-anchor="middle">P</text>`;}
+ function transverseScene(s,id){
+  const px=x=>55+x*100,py=y=>213-y*62;
+  const points=s.points.map(p=>({x:px(p.x),y:py(p.y)})),path=points.map((p,i)=>(i?'L':'M')+n(p.x)+' '+n(p.y)).join('');
+  const mx=px(s.marker.x),my=py(s.marker.y);let fibers='';
+  for(let i=1;i<points.length-1;i+=2){
+   const p=points[i],a=points[i-1],b=points[i+1],length=Math.hypot(b.x-a.x,b.y-a.y),tx=(b.x-a.x)/length,ty=(b.y-a.y)/length,nx=-ty,ny=tx;
+   fibers+=line(p.x-tx*2.8+nx*3.3,p.y-ty*2.8+ny*3.3,p.x+tx*2.8-nx*3.3,p.y+ty*2.8-ny*3.3,'#a58759',1,'stroke-linecap="round"');
+  }
+  return typeBackdrop(id)+line(0,213,900,213,'#697f7a',1.2,'stroke-dasharray="5 7" opacity=".36"')+
+   `<path d="${path}" transform="translate(2 12)" fill="none" stroke="#5c6b60" stroke-width="12" opacity=".07" stroke-linecap="round"/><path d="${path}" fill="none" stroke="#766243" stroke-width="11" stroke-linecap="round"/><path d="${path}" fill="none" stroke="#cfb985" stroke-width="8.5" stroke-linecap="round"/><path d="${path}" transform="translate(0 -2.3)" fill="none" stroke="#f2e5c4" stroke-width="2" stroke-linecap="round"/>`+fibers+
+   line(mx,137,mx,290,'#a78135',1.2,'stroke-dasharray="4 6" opacity=".55"')+`<circle cx="${n(mx)}" cy="213" r="8" fill="none" stroke="#8b7748" stroke-opacity=".5" stroke-width="1.6"/>`+typeMarker(mx,my,id)+
+   arrow(595,92,780,92,'#187e83')+label(687,63,'La onda avanza','#275559',22)+arrow(mx+35,152,mx+35,275,'#a47b26',true)+
+   label(450,365,'P sube y baja: oscilación perpendicular','#3f574f',24);
+ }
+ function longitudinalScene(s,id){
+  const px=x=>55+x*100,axisY=221,radius=35,segments=1204;
+  let wire='';
+  for(let i=0;i<=segments;i++){
+   const x0=-.7+i*9.4/segments,theta=2*Math.PI*8*x0+Math.PI/2,displacement=-.3*Math.sin(typePhase(x0,s.time));
+   const x=px(x0+displacement)+4*Math.cos(theta),y=axisY+radius*Math.sin(theta);
+   wire+=(i?'L':'M')+n(x)+' '+n(y);
+  }
+  const compression=[...s.compressions].sort((a,b)=>Math.abs(a-2.4)-Math.abs(b-2.4))[0],rarefaction=[...s.rarefactions].sort((a,b)=>Math.abs(a-6)-Math.abs(b-6))[0];
+  const mx=px(s.marker.x),mean=px(s.marker.x0),my=axisY+radius;
+  let guides='';
+  if(compression!==undefined){const x=px(compression);guides+=`<rect x="${n(x-32)}" y="173" width="64" height="96" rx="18" fill="#187e83" opacity=".07"/>`+label(x,136,'Compresión','#27676b',22)+line(x,148,x,177,'#438d91',1.4);}
+  if(rarefaction!==undefined){const x=px(rarefaction);guides+=label(x,305,'Rarefacción','#536d7b',22)+line(x,267,x,282,'#6b8793',1.4);}
+  return typeBackdrop(id)+`<defs><linearGradient id="${id}-coil" gradientUnits="userSpaceOnUse" x1="0" y1="186" x2="0" y2="256"><stop stop-color="#536b77"/><stop offset=".2" stop-color="#dce7e9"/><stop offset=".4" stop-color="#809aa5"/><stop offset=".63" stop-color="#eaf1f2"/><stop offset=".8" stop-color="#7f969e"/><stop offset="1" stop-color="#3c5867"/></linearGradient></defs>`+
+   line(0,axisY,900,axisY,'#708782',1,'stroke-dasharray="4 8" opacity=".23"')+guides+
+   `<path d="${wire}" transform="translate(1 10)" fill="none" stroke="#53645d" stroke-width="6" opacity=".06" stroke-linejoin="round"/><path d="${wire}" fill="none" stroke="#46606c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="${wire}" fill="none" stroke="url(#${id}-coil)" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/><path d="${wire}" transform="translate(-.3 -.7)" fill="none" stroke="#f3f9f9" stroke-width=".7" opacity=".65" stroke-linecap="round" stroke-linejoin="round"/>`+
+   line(mean,277,mean,353,'#a78135',1.2,'stroke-dasharray="4 6" opacity=".55"')+`<circle cx="${n(mean)}" cy="${my}" r="8" fill="none" stroke="#8b7748" stroke-opacity=".5" stroke-width="1.5"/>`+typeMarker(mx,my,id)+
+   arrow(590,81,775,81,'#187e83')+label(682,53,'La onda avanza','#275559',22)+arrow(mean-43,337,mean+43,337,'#a47b26',true)+label(450,383,'P va y viene: oscilación paralela','#3f574f',24);
+ }
  function soundScene(s,id){
   const shift=s.sourceDisplacement;
   let body=`<rect x="40" y="139" width="55" height="132" rx="12" fill="#385568" stroke="#8aabba" stroke-width="2"/><path d="M95 154L${n(147+shift)} 129V281L95 256Z" fill="url(#${id}-metal)" stroke="#b4d2e1" stroke-width="2"/><ellipse cx="${n(147+shift)}" cy="205" rx="18" ry="76" fill="#10293e" stroke="#90b4c9" stroke-width="4"/><ellipse cx="${n(148+shift)}" cy="205" rx="10" ry="29" fill="#5d829a"/>`;
@@ -130,7 +186,7 @@
  function renderScene(kind,time,id='wave-example'){
   if(!KINDS.includes(kind))return '';
   id=String(id).replace(/[^a-zA-Z0-9_-]/g,'-');
-  const s=sample(kind,time),body=kind==='rope'?ropeScene(s,id):kind==='sound'?soundScene(s,id):waterScene(s,id);
+  const s=sample(kind,time),body=kind==='rope'?ropeScene(s,id):kind==='sound'?soundScene(s,id):kind==='water'?waterScene(s,id):kind==='transverse'?transverseScene(s,id):longitudinalScene(s,id);
   return `<svg class="wave-example-svg" viewBox="0 0 900 410" width="900" height="410" role="img" aria-label="${esc(DESCRIPTIONS[kind].title)}. ${esc(DESCRIPTIONS[kind].caption)}" xmlns="http://www.w3.org/2000/svg">${defs(id)}<rect width="900" height="410" fill="url(#${id}-bg)"/>${body}</svg>`;
  }
  function update(a){
@@ -164,8 +220,8 @@
   const used=new Set(),reduced=!!global.matchMedia?.('(prefers-reduced-motion: reduce)').matches;
   for(const placeholder of placeholders){
    const kind=placeholder.dataset.waveAnimation;if(!KINDS.includes(kind)||used.has(kind))continue;used.add(kind);
-   const d=DESCRIPTIONS[kind],id='wave-example-'+kind+'-'+(++sequence),sectionId='wave-animation-'+kind;
-   placeholder.innerHTML=`<section class="wave-example-animation" id="${sectionId}" data-activity-fullscreen aria-labelledby="${id}-title"><header class="wave-example-header"><h3 id="${id}-title">${d.title}</h3></header><div class="wave-example-stage" data-wave-example-scene></div><p class="wave-example-caption">${d.caption}</p><div class="wave-example-controls"><button type="button" data-wave-example-action="play" aria-pressed="${!reduced}"></button><button type="button" data-wave-example-action="restart" aria-label="Reiniciar · ${d.title}">↺ Reiniciar</button><span class="wave-example-motion-note">${reduced?'Pulsa Reproducir para ver el movimiento.':'La animación se repite automáticamente.'}</span></div></section>`;
+   const d=DESCRIPTIONS[kind],id='wave-example-'+kind+'-'+(++sequence),sectionId='wave-animation-'+kind,heading=kind==='transverse'||kind==='longitudinal'?'h5':'h3';
+   placeholder.innerHTML=`<section class="wave-example-animation" id="${sectionId}" data-activity-fullscreen aria-labelledby="${id}-title"><header class="wave-example-header"><${heading} id="${id}-title">${d.title}</${heading}></header><div class="wave-example-stage" data-wave-example-scene></div><p class="wave-example-caption">${d.caption}</p><div class="wave-example-controls"><button type="button" data-wave-example-action="play" aria-pressed="${!reduced}"></button><button type="button" data-wave-example-action="restart" aria-label="Reiniciar · ${d.title}">↺ Reiniciar</button><span class="wave-example-motion-note">${reduced?'Pulsa Reproducir para ver el movimiento.':'La animación se repite automáticamente.'}</span></div></section>`;
    const host=placeholder.firstElementChild;
    const a={kind,id,host,time:reduced?d.stillTime:0,playing:!reduced,visible:true,last:null,pending:0,drawAt:-Infinity,disposed:false,cleanups:[]};instances.push(a);
    const click=event=>{

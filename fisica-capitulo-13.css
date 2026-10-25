@@ -50,3 +50,8 @@
  .waves-figure-dialog header{align-items:flex-start}
  .waves-figure-dialog h2{font-size:16px}
 }
+
+/* Cada explicación conserva su animación inmediatamente debajo, a todo el ancho. */
+.waves-types-sections{display:grid;grid-template-columns:minmax(0,1fr);gap:24px;margin:25px 0;min-width:0;max-width:100%}
+.waves-types-sections .wave-example-animation{margin:22px 0 0}
+@media(max-width:600px){.waves-types-sections{gap:20px}.waves-types-sections>.waves-property-card{padding:16px 12px}}
