@@ -52,9 +52,9 @@ window.MECHANICAL_WAVES_CONTENT = {
   "lessons": [
     {
       "id": "naturaleza-onda",
-      "title": "Concepto de onda mecánica",
+      "title": "¿Qué es una onda mecánica?",
       "subtitle": "",
-      "body": "<p>Una onda mecánica es una perturbación que se propaga a través de un medio material y transporta energía, sin transporte neto de materia.</p>",
+      "body": "<p>Una <strong>onda mecánica</strong> es una alteración, llamada <strong>perturbación</strong>, que se propaga de un lugar a otro a través de un <strong>medio material</strong>, como un sólido, un líquido o un gas.</p><p>Las partículas del medio se mueven alrededor de su posición de equilibrio y transmiten esa alteración a sus vecinas. Así avanza la perturbación y se transporta <strong>energía</strong>, mientras las partículas no viajan con la onda a lo largo de todo su recorrido.</p><div data-wave-animation=\"rope\"></div><div data-wave-animation=\"sound\"></div><div data-wave-animation=\"water\"></div>",
       "examples": [],
       "audioSegments": []
     },
