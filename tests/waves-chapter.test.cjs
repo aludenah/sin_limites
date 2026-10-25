@@ -6,7 +6,7 @@ const read=file=>fs.readFileSync(path.join(root,file),'utf8');
 const files=['fisica-capitulo-13-practice.js','fisica-capitulo-13-data.js','fisica-capitulo-13.js'];
 const plain=(h,expression)=>JSON.parse(h.run('JSON.stringify('+expression+')'));
 const lessonIds=['naturaleza-onda','transversal-longitudinal','magnitudes-onda','ecuacion-onda','rapidez-cuerda','reflexion-pulsos','superposicion','ondas-estacionarias','sonido','fenomenos-ondulatorios','efecto-doppler'];
-const labKinds=[null,null,'parameters','equation','string','reflection','superposition','standing','sound','wavefronts','doppler'];
+const labKinds=[null,null,null,'equation','string','reflection','superposition','standing','sound','wavefronts','doppler'];
 
 function sourceAndDependencies(){
  const html=read(chapterId+'.html'),css=read(chapterId+'.css'),source=read(chapterId+'.js');
@@ -57,6 +57,20 @@ async function chapterFormatAndViews(){
    assert.equal(lesson.examples.length,0);
    return;
   }
+  if(i===2){
+   assert.equal(lesson.title,'Ecuación de onda');
+   assert.match(lesson.body,/id="ecuacion-de-onda"/,'The wave-equation lesson exposes its public anchor');
+   for(const concept of [/amplitud/i,/posición/i,/tiempo/i,/longitud de onda/i,/período/i,/frecuencia/i,/fase/i])assert.match(lesson.body,concept);
+   assert.match(lesson.body,/y\s*\(x,t\)/,'The equation describes both position and time');
+   assert.match(lesson.body,/\\(?:omega|varphi|phi)/,'The harmonic equation includes its phase variables');
+   assert.doesNotMatch(lesson.body,/data-wave-lab=|data-wave-animation=|data-wave-amplitude-frequency|data-wave-lesson-audio|<audio|<video|<input|<button/i,'The equation lesson contains definitions and static illustrations only');
+   assert.equal(lesson.audioSegments.length,0,'The wave-equation lesson has no listening panel');
+   assert.match(lesson.body,/assets\/wave-equation-reading\.svg/,'The equation lesson includes its static reading diagram');
+   assert.match(lesson.body,/data-activity-fullscreen/,'The static equation diagram can be expanded');
+   assert.ok(fs.existsSync(path.join(root,'assets/wave-equation-reading.svg')),'The equation diagram asset exists');
+   assert.equal(lesson.examples.length,0);
+   return;
+  }
   assert.ok(lesson.body.includes('data-wave-lab="'+labKinds[i]+'"'),'Working placeholder in lesson '+lesson.id);
   assert.equal((lesson.body.match(/data-wave-lab=/g)||[]).length,1);
   assert.equal(lesson.audioSegments.length,3);for(const audio of lesson.audioSegments)assert.ok(audio.title&&audio.text.length>50);
@@ -68,6 +82,7 @@ async function chapterFormatAndViews(){
   h.run('goLesson('+i+')');markup=h.elements.get('chapter-app').innerHTML;
   if(i===0){assert.doesNotMatch(markup,/data-wave-lab=|data-wave-lesson-audio/);assert.equal((markup.match(/data-wave-animation=/g)||[]).length,2);}
   else if(i===1){assert.match(markup,/Elementos de una onda/);assert.match(markup,/waves-elements-diagram\.svg/);assert.match(markup,/data-wave-amplitude-frequency/);assert.doesNotMatch(markup,/data-wave-lab="types"|data-wave-lesson-audio|Reconoce los elementos en el perfil/);}
+  else if(i===2){assert.match(markup,/Ecuación de onda/);assert.match(markup,/id="ecuacion-de-onda"/);assert.doesNotMatch(markup,/data-wave-lab=|data-wave-animation=|data-wave-amplitude-frequency|data-wave-lesson-audio|Escucha y observa/);}
   else assert.ok(markup.includes('data-wave-lab="'+labKinds[i]+'"'));
   assert.ok(markup.includes('id="'+lessonIds[i]+'"'));
   assert.equal(h.run('P.readingItem'),i);
@@ -87,6 +102,9 @@ async function chapterFormatAndViews(){
  h.run("window.location.hash='#sonido';applyAnchor()");assert.equal(h.run('LESSONS[P.currentItem].id'),'sonido');
  h.run("window.location.hash='#elementos-onda';applyAnchor()");assert.equal(h.run('P.currentItem'),1);assert.equal(h.run('LESSONS[P.currentItem].id'),'transversal-longitudinal');assert.match(h.elements.get('chapter-app').innerHTML,/id="elementos-onda"/,'The elements alias opens the lesson and targets its content');
  h.run("window.location.hash='#transversal-longitudinal';applyAnchor()");assert.equal(h.run('P.currentItem'),1);assert.equal(h.run('LESSONS[P.currentItem].title'),'Elementos de una onda','The old topic link remains valid after its content changes');
+ h.run("window.location.hash='#ecuacion-de-onda';applyAnchor()");assert.equal(h.run('P.currentItem'),2);assert.equal(h.run('LESSONS[P.currentItem].id'),'magnitudes-onda');assert.match(h.elements.get('chapter-app').innerHTML,/id="ecuacion-de-onda"/,'The wave-equation alias opens item three');
+ h.run("window.location.hash='#magnitudes-onda';applyAnchor()");assert.equal(h.run('P.currentItem'),2);assert.equal(h.run('LESSONS[P.currentItem].title'),'Ecuación de onda','The previous item-three link remains compatible');
+ h.run("window.location.hash='#ecuacion-onda';applyAnchor()");assert.equal(h.run('P.currentItem'),3,'The existing item-four link retains its destination');
  h.run("window.location.hash='#naturaleza-onda';applyAnchor()");assert.equal(h.run('P.currentItem'),0);
  const before=h.run('P.currentItem');h.run("window.location.hash='#unrelated';applyAnchor()");assert.equal(h.run('P.currentItem'),before);
 }
@@ -101,6 +119,8 @@ async function activityLifecycle(){
  h.run("window.lifecycle=[];goLesson(0)");assert.deepEqual(plain(h,'window.lifecycle'),[...teardown,...setup,'audio:naturaleza-onda'],'Returning to the introduction cleans up the previous interactive widget');
  h.run("window.lifecycle=[];goLesson(1)");assert.deepEqual(plain(h,'window.lifecycle'),[...teardown,...setup,'audio:transversal-longitudinal'],'The elements lesson mounts its interactive widget through the shared lifecycle');
  assert.doesNotMatch(h.elements.get('chapter-app').innerHTML,/data-wave-lesson-audio/,'The removed listening panel does not return when reopening elements');
+ h.run("window.lifecycle=[];goLesson(2)");assert.deepEqual(plain(h,'window.lifecycle'),[...teardown,...setup,'audio:magnitudes-onda'],'Opening the equation lesson clears the preceding interactive widget');
+ assert.doesNotMatch(h.elements.get('chapter-app').innerHTML,/data-wave-lesson-audio|data-wave-amplitude-frequency|data-wave-lab=/,'The equation lesson mounts no listening panel or interactive activity');
  h.run("window.lifecycle=[];goTab('practice')");assert.deepEqual(plain(h,'window.lifecycle'),[...teardown,...setup,'audio:none']);
  h.run('window.lifecycle=[]');h.events.get('pagehide')();assert.deepEqual(plain(h,'window.lifecycle'),teardown);
  h.run('window.lifecycle=[]');h.events.get('pageshow')({persisted:true});assert.deepEqual(plain(h,'window.lifecycle'),[...teardown,...setup,'audio:none'],'Restored pages reinitialize activities after pagehide');
@@ -138,4 +158,4 @@ function progressSanitization(){
  assert.equal(h.run('normalized({inductionLab:{turns:100}}).inductionLab'),undefined,'Chapter state contains no unrelated laboratory record');
 }
 
-(async()=>{sourceAndDependencies();progressSanitization();await chapterFormatAndViews();await activityLifecycle();await practicePersistenceAndAccounts();console.log('PASS: waves chapter format, two introduction animations, PDF-aligned elements without listening panel, fullscreen diagram and two-control amplitude/frequency activity, nine lesson labs, media lifecycle, grading, account isolation, offline merge and direct links.');})().catch(error=>{console.error(error);process.exitCode=1;});
+(async()=>{sourceAndDependencies();progressSanitization();await chapterFormatAndViews();await activityLifecycle();await practicePersistenceAndAccounts();console.log('PASS: waves chapter format, two introduction animations, PDF-aligned elements without listening panel, fullscreen diagram and two-control amplitude/frequency activity, a theory-only wave-equation lesson, eight lesson labs, media lifecycle, grading, account isolation, offline merge and direct links.');})().catch(error=>{console.error(error);process.exitCode=1;});

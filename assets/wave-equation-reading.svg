@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 530" width="900" height="530" role="img" aria-labelledby="wave-equation-title wave-equation-desc">
+  <title id="wave-equation-title">Cómo leer la ecuación de onda</title>
+  <desc id="wave-equation-desc">Dos lecturas de una onda armónica con fase inicial cero. A la izquierda se fija el tiempo en cero y se representa el desplazamiento y frente a la posición x: la distancia horizontal entre crestas consecutivas es la longitud de onda lambda. A la derecha se fija la posición x en cero y se representa el desplazamiento y frente al tiempo t: el intervalo entre dos máximos consecutivos es el período T. En ambos perfiles, la amplitud A se mide desde el equilibrio hasta un máximo.</desc>
+  <defs>
+    <marker id="we-axis" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="#9eaeae" stroke-width="1.5"/></marker>
+    <marker id="we-dimension" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M1 1L9 5L1 9" fill="none" stroke="#597b83" stroke-width="1.5"/></marker>
+    <marker id="we-amplitude" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M1 1L9 5L1 9" fill="none" stroke="#a67636" stroke-width="1.5"/></marker>
+    <path id="we-cosine" d="M0.00 -62.000 L2.00 -61.902 L4.00 -61.610 L6.00 -61.124 L8.00 -60.446 L10.00 -59.577 L12.00 -58.521 L14.00 -57.281 L16.00 -55.860 L18.00 -54.264 L20.00 -52.497 L22.00 -50.565 L24.00 -48.474 L26.00 -46.230 L28.00 -43.841 L30.00 -41.313 L32.00 -38.656 L34.00 -35.878 L36.00 -32.986 L38.00 -29.991 L40.00 -26.901 L42.00 -23.726 L44.00 -20.477 L46.00 -17.164 L48.00 -13.796 L50.00 -10.385 L52.00 -6.942 L54.00 -3.476 L56.00 -0.000 L58.00 3.476 L60.00 6.942 L62.00 10.385 L64.00 13.796 L66.00 17.164 L68.00 20.477 L70.00 23.726 L72.00 26.901 L74.00 29.991 L76.00 32.986 L78.00 35.878 L80.00 38.656 L82.00 41.313 L84.00 43.841 L86.00 46.230 L88.00 48.474 L90.00 50.565 L92.00 52.497 L94.00 54.264 L96.00 55.860 L98.00 57.281 L100.00 58.521 L102.00 59.577 L104.00 60.446 L106.00 61.124 L108.00 61.610 L110.00 61.902 L112.00 62.000 L114.00 61.902 L116.00 61.610 L118.00 61.124 L120.00 60.446 L122.00 59.577 L124.00 58.521 L126.00 57.281 L128.00 55.860 L130.00 54.264 L132.00 52.497 L134.00 50.565 L136.00 48.474 L138.00 46.230 L140.00 43.841 L142.00 41.313 L144.00 38.656 L146.00 35.878 L148.00 32.986 L150.00 29.991 L152.00 26.901 L154.00 23.726 L156.00 20.477 L158.00 17.164 L160.00 13.796 L162.00 10.385 L164.00 6.942 L166.00 3.476 L168.00 0.000 L170.00 -3.476 L172.00 -6.942 L174.00 -10.385 L176.00 -13.796 L178.00 -17.164 L180.00 -20.477 L182.00 -23.726 L184.00 -26.901 L186.00 -29.991 L188.00 -32.986 L190.00 -35.878 L192.00 -38.656 L194.00 -41.313 L196.00 -43.841 L198.00 -46.230 L200.00 -48.474 L202.00 -50.565 L204.00 -52.497 L206.00 -54.264 L208.00 -55.860 L210.00 -57.281 L212.00 -58.521 L214.00 -59.577 L216.00 -60.446 L218.00 -61.124 L220.00 -61.610 L222.00 -61.902 L224.00 -62.000 L226.00 -61.902 L228.00 -61.610 L230.00 -61.124 L232.00 -60.446 L234.00 -59.577 L236.00 -58.521 L238.00 -57.281 L240.00 -55.860 L242.00 -54.264 L244.00 -52.497 L246.00 -50.565 L248.00 -48.474 L250.00 -46.230 L252.00 -43.841 L254.00 -41.313 L256.00 -38.656 L258.00 -35.878 L260.00 -32.986 L262.00 -29.991 L264.00 -26.901 L266.00 -23.726 L268.00 -20.477 L270.00 -17.164 L272.00 -13.796 L274.00 -10.385 L276.00 -6.942 L278.00 -3.476 L280.00 -0.000 L282.00 3.476 L284.00 6.942 L286.00 10.385 L288.00 13.796 L290.00 17.164 L292.00 20.477 L294.00 23.726 L296.00 26.901 L298.00 29.991 L300.00 32.986 L302.00 35.878 L304.00 38.656 L306.00 41.313"/>
+  </defs>
+  <style>
+    text{font-family:Inter,Arial,sans-serif;fill:#25444f}
+    .panel-title{font-size:30px;font-weight:500;letter-spacing:.1px}
+    .condition{font-family:Georgia,serif;font-style:italic;font-size:26px;fill:#6a8084}
+    .dimension{font-size:26px;font-weight:500;fill:#3b6671}
+    .axis-label{font-size:24px;font-weight:400;fill:#637c81}
+    .symbol{font-family:Georgia,serif;font-style:italic}
+    .formula{font-family:Georgia,serif;font-size:27px;font-style:italic;fill:#254d5b}
+    .legend{font-size:21px;font-weight:400;fill:#75898c}
+    @media(max-width:600px){.panel-title{font-size:32px}.dimension{font-size:29px}.axis-label{font-size:26px}.formula{font-size:29px}}
+  </style>
+  <rect width="900" height="530" fill="#fbfcfa"/>
+  <path d="M450 36V477" fill="none" stroke="#e3e9e5" stroke-width="1"/>
+  <text class="panel-title" x="232" y="63" text-anchor="middle">Tiempo fijo</text>
+  <text class="condition" x="232" y="103" text-anchor="middle">t = 0</text>
+  <text class="panel-title" x="668" y="63" text-anchor="middle">Posición fija</text>
+  <text class="condition" x="668" y="103" text-anchor="middle">x = 0</text>
+  <!-- Both curves use y=A cos(2πu/224), with u=0 at the first crest. -->
+  <g transform="translate(108 300)">
+    <path d="M0 84V-94" fill="none" stroke="#bdcbc9" stroke-width="1.1" marker-end="url(#we-axis)"/>
+    <path d="M0 0H322" fill="none" stroke="#a8b8b5" stroke-width="1.2" stroke-dasharray="4 6" marker-end="url(#we-axis)"/>
+    <text class="axis-label symbol" x="-13" y="-103" text-anchor="middle">y</text>
+    <text class="axis-label" x="-10" y="25" text-anchor="end">0</text>
+    <path d="M0 -117H224" fill="none" stroke="#597b83" stroke-width="1.5" marker-start="url(#we-dimension)" marker-end="url(#we-dimension)"/>
+    <path d="M0 -124V-110M224 -110V-68" fill="none" stroke="#bdceca" stroke-width="1.1" stroke-dasharray="3 5"/>
+    <text class="dimension" x="112" y="-143" text-anchor="middle">Longitud de onda <tspan class="symbol">λ</tspan></text>
+    <path d="M-21 -62V0" fill="none" stroke="#a67636" stroke-width="1.6" marker-start="url(#we-amplitude)" marker-end="url(#we-amplitude)"/>
+    <text class="dimension symbol" x="-38" y="-24" text-anchor="middle" style="fill:#9b733b">A</text>
+    <use href="#we-cosine" fill="none" stroke="#276c73" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="0" cy="-62" r="4.3" fill="#fbfcfa" stroke="#276c73" stroke-width="1.7"/>
+    <circle cx="224" cy="-62" r="4.3" fill="#fbfcfa" stroke="#276c73" stroke-width="1.7"/>
+    <text class="axis-label" x="157" y="116" text-anchor="middle">Posición <tspan class="symbol">x</tspan></text>
+  </g>
+  <g transform="translate(544 300)">
+    <path d="M0 84V-94" fill="none" stroke="#bdcbc9" stroke-width="1.1" marker-end="url(#we-axis)"/>
+    <path d="M0 0H322" fill="none" stroke="#a8b8b5" stroke-width="1.2" stroke-dasharray="4 6" marker-end="url(#we-axis)"/>
+    <text class="axis-label symbol" x="-13" y="-103" text-anchor="middle">y</text>
+    <text class="axis-label" x="-10" y="25" text-anchor="end">0</text>
+    <path d="M0 -117H224" fill="none" stroke="#597b83" stroke-width="1.5" marker-start="url(#we-dimension)" marker-end="url(#we-dimension)"/>
+    <path d="M0 -124V-110M224 -110V-68" fill="none" stroke="#bdceca" stroke-width="1.1" stroke-dasharray="3 5"/>
+    <text class="dimension" x="112" y="-143" text-anchor="middle">Período <tspan class="symbol">T</tspan></text>
+    <path d="M-21 -62V0" fill="none" stroke="#a67636" stroke-width="1.6" marker-start="url(#we-amplitude)" marker-end="url(#we-amplitude)"/>
+    <text class="dimension symbol" x="-38" y="-24" text-anchor="middle" style="fill:#9b733b">A</text>
+    <use href="#we-cosine" fill="none" stroke="#314f68" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="0" cy="-62" r="4.3" fill="#fbfcfa" stroke="#314f68" stroke-width="1.7"/>
+    <circle cx="224" cy="-62" r="4.3" fill="#fbfcfa" stroke="#314f68" stroke-width="1.7"/>
+    <text class="axis-label" x="157" y="116" text-anchor="middle">Tiempo <tspan class="symbol">t</tspan></text>
+  </g>
+  <text class="formula" x="232" y="471" text-anchor="middle">y(x, 0) = A <tspan font-style="normal">cos</tspan>(kx)</text>
+  <text class="formula" x="668" y="471" text-anchor="middle">y(0, t) = A <tspan font-style="normal">cos</tspan>(ωt)</text>
+  <text class="legend" x="450" y="510" text-anchor="middle"><tspan class="symbol">y</tspan>: desplazamiento respecto al equilibrio</text>
+</svg>
