@@ -10,7 +10,7 @@ window.MECHANICAL_WAVES_CONTENT = {
   "version": 1,
   "format": "physics",
   "assessmentFormat": "practice-10",
-  "sourceNote": "Desarrollo original para el capítulo 13 del temario. Teoría, guiones explicativos y problemas redactados para esta actividad; las referencias se emplean para verificar conceptos y relaciones físicas. Los modelos ideales y sus condiciones se indican en cada tema.",
+  "sourceNote": "El concepto y la animación del ítem 1 se ajustan al material ondas.pdf proporcionado por el docente: sección 13.7, páginas impresas 456–457 (páginas 20–21 del PDF). Los demás temas conservan su desarrollo previo y las referencias de verificación indicadas; los modelos ideales y sus condiciones se explican en cada tema.",
   "sourceRefs": [
     {
       "title": "OpenStax · Traveling Waves",
@@ -54,7 +54,7 @@ window.MECHANICAL_WAVES_CONTENT = {
       "id": "naturaleza-onda",
       "title": "¿Qué es una onda mecánica?",
       "subtitle": "",
-      "body": "<p>Una <strong>onda mecánica</strong> es una alteración, llamada <strong>perturbación</strong>, que se propaga de un lugar a otro a través de un <strong>medio material</strong>, como un sólido, un líquido o un gas.</p><p>Las partículas del medio se mueven alrededor de su posición de equilibrio y transmiten esa alteración a sus vecinas. Así avanza la perturbación y se transporta <strong>energía</strong>, mientras las partículas no viajan con la onda a lo largo de todo su recorrido.</p><div data-wave-animation=\"rope\"></div><div data-wave-animation=\"sound\"></div><div data-wave-animation=\"water\"></div>",
+      "body": "<p>Una <strong>onda mecánica</strong> es una <strong>perturbación</strong> que se propaga a través de un <strong>medio material</strong>, como una cuerda, el agua o el aire. Para que se produzca, se necesita una <strong>fuente</strong> que origine la perturbación, un medio que pueda ser perturbado y una <strong>interacción entre sus partes vecinas</strong> que permita transmitirla de un lugar a otro.</p><p>Durante su propagación, la onda transporta <strong>energía y cantidad de movimiento</strong>. Las partículas del medio se mueven alrededor de su posición de equilibrio, pero no acompañan a la onda a lo largo de todo su recorrido: lo que avanza es la perturbación.</p><div data-wave-animation=\"rope\"></div>",
       "examples": [],
       "audioSegments": []
     },

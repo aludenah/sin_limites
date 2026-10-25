@@ -3,7 +3,7 @@
  'use strict';
  const KINDS=['rope','sound','water'];
  const DESCRIPTIONS={
-  rope:{title:'Onda en una cuerda',caption:'El pulso avanza hacia la derecha. El punto amarillo se mueve arriba y abajo alrededor de su posición de equilibrio, sin acompañar al pulso.',stillTime:3.5},
+  rope:{title:'Pulso en una cuerda tensa',caption:'Al subir y bajar la fuente se genera un pulso que avanza por la cuerda tensa, conservando aproximadamente su forma. El punto P (amarillo) sube y baja perpendicularmente al avance y vuelve al equilibrio, sin viajar con el pulso.',stillTime:3.5},
   sound:{title:'El sonido de un parlante',caption:'La vibración del parlante produce compresiones y rarefacciones que se propagan por el aire. Las partículas se mueven de ida y vuelta cerca de su posición inicial. Movimiento ralentizado.',stillTime:4.2},
   water:{title:'Una piedra cae al agua',caption:'La caída perturba la superficie y aparecen frentes de onda que se expanden. El marcador flota y oscila cerca de su lugar. Representación cualitativa de la propagación superficial.',stillTime:3.1}
  };
@@ -68,11 +68,11 @@
   const px=x=>99+x*120,py=y=>215-y*100;
   const path=s.points.map((p,i)=>(i?'L':'M')+n(px(p.x))+' '+n(py(p.y))).join('');
   const sourceY=py(s.sourceDisplacement),mx=px(s.marker.x),my=py(s.marker.y);
-  return label(620,58,'La perturbación avanza')+arrow(546,83,733,83)+line(88,215,950,215,'#afcbd5',1.5,'stroke-dasharray="7 8" opacity=".45"')+
+  return label(620,58,'El pulso avanza hacia la derecha')+arrow(546,83,733,83)+line(88,215,950,215,'#afcbd5',1.5,'stroke-dasharray="7 8" opacity=".45"')+
    `<rect x="42" y="114" width="30" height="202" rx="13" fill="#0c2237" stroke="#67889e" stroke-width="2"/><rect x="48" y="${n(sourceY-17)}" width="45" height="34" rx="9" fill="url(#${id}-metal)" stroke="#d4e6ed" stroke-width="1.5"/>`+line(93,sourceY,99,sourceY,'#e7b57a',7)+
    `<path d="${path}" fill="none" stroke="#513322" stroke-width="12" stroke-linecap="round"/><path d="${path}" fill="none" stroke="url(#${id}-rope)" stroke-width="7" stroke-linecap="round"/><path d="${path}" fill="none" stroke="#fff5cf" stroke-width="1.2" stroke-linecap="round" opacity=".55" transform="translate(0 -2)"/>`+
-   line(mx,110,mx,308,'#ffce68',1.5,'stroke-dasharray="4 7" opacity=".55"')+`<circle cx="${n(mx)}" cy="215" r="7" fill="none" stroke="#d6e6ee" stroke-width="2"/><circle cx="${n(mx)}" cy="${n(my)}" r="12" fill="url(#${id}-bead)" stroke="#ffeab0" stroke-width="2"/>`+
-   arrow(mx+32,162,mx+32,268,'#f4cc76',true)+label(mx,352,'El punto oscila alrededor de su lugar','#f5d58c')+label(68,354,'Fuente','#a7c7d8',21);
+   line(mx,110,mx,308,'#ffce68',1.5,'stroke-dasharray="4 7" opacity=".55"')+`<circle cx="${n(mx)}" cy="215" r="7" fill="none" stroke="#d6e6ee" stroke-width="2"/><circle cx="${n(mx)}" cy="${n(my)}" r="12" fill="url(#${id}-bead)" stroke="#ffeab0" stroke-width="2"/><text x="${n(mx-25)}" y="${n(my-24)}" fill="#ffe7a0" font-size="27" font-weight="700" text-anchor="middle">P</text>`+
+   arrow(mx+32,162,mx+32,268,'#f4cc76',true)+label(mx,352,'P sube y baja; no avanza con el pulso','#f5d58c')+label(68,354,'Fuente','#a7c7d8',21);
  }
  function soundScene(s,id){
   const shift=s.sourceDisplacement;
