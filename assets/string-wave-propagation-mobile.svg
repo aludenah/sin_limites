@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 680" width="450" height="680" role="img" aria-labelledby="string-pulse-mobile-title string-pulse-mobile-desc">
+  <title id="string-pulse-mobile-title">Propagación de un pulso en una cuerda</title>
+  <desc id="string-pulse-mobile-desc">Tres instantes sucesivos de la misma cuerda tensa. El mismo pulso avanza hacia la derecha conservando su forma y amplitud. El punto material P conserva su posición horizontal: primero permanece en equilibrio, después se eleva al pasar la cresta y finalmente vuelve al equilibrio. Las fuerzas de tensión opuestas se muestran en la primera instantánea. La cuerda continúa fuera del encuadre.</desc>
+  <defs>
+    <linearGradient id="string-pulse-mobile-rope" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#245563"/><stop offset=".5" stop-color="#2b7b7b"/><stop offset="1" stop-color="#245563"/></linearGradient>
+    <marker id="string-pulse-mobile-travel" markerWidth="10" markerHeight="10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="#276f78" stroke-width="1.8"/></marker>
+    <marker id="string-pulse-mobile-force" markerWidth="9" markerHeight="9" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="#344e60" stroke-width="1.6"/></marker>
+    <path id="string-pulse-mobile-profile" d="M-1000 0H-45C-28 0-26-50 0-50C26-50 28 0 45 0H1000"/>
+    <clipPath id="string-pulse-mobile-window"><rect x="62" y="112" width="388" height="434"/></clipPath>
+  </defs>
+  <style>
+    text{font-family:Inter,Arial,sans-serif;fill:#284853}
+    .pulse-mobile-intro{font-size:24px;font-weight:500}
+    .pulse-mobile-note{font-size:22px;fill:#71878c}
+    .pulse-mobile-time{font-family:Georgia,serif;font-style:italic;font-size:28px;fill:#405d68}
+    .pulse-mobile-point{font-family:Georgia,serif;font-style:italic;font-size:26px;fill:#9a743c}
+    .pulse-mobile-force{font-family:Georgia,serif;font-style:italic;font-size:23px;fill:#344e60}
+    .pulse-mobile-caption{font-size:24px;font-weight:500}
+    .pulse-mobile-baseline{stroke:#d7dfdb;stroke-width:1.2;stroke-dasharray:4 7;fill:none}
+    .pulse-mobile-rope{stroke:url(#string-pulse-mobile-rope);stroke-width:4.4;stroke-linecap:round;stroke-linejoin:round;fill:none}
+  </style>
+  <rect width="450" height="680" fill="#fbfcfa"/>
+  <text class="pulse-mobile-intro" x="225" y="36" text-anchor="middle">Un pulso, tres instantes</text>
+  <text class="pulse-mobile-note" x="27" y="87">t₁ &lt; t₂ &lt; t₃</text>
+  <text class="pulse-mobile-note" x="350" y="75" text-anchor="middle" style="fill:#276f78">Avance</text>
+  <path d="M280 98H420" fill="none" stroke="#276f78" stroke-width="2" marker-end="url(#string-pulse-mobile-travel)"/>
+  <!-- The guide marks one fixed horizontal material coordinate. -->
+  <path d="M250 126V535" fill="none" stroke="#c8b999" stroke-width="1.2" stroke-dasharray="3 7"/>
+  <g clip-path="url(#string-pulse-mobile-window)">
+    <path class="pulse-mobile-baseline" d="M62 190H452M62 350H452M62 510H452"/>
+    <!-- A single pulse is reused: amplitude50 and translations115 are unchanged. -->
+    <g data-snapshot="t1" data-center-x="135" data-equilibrium-y="190"><use href="#string-pulse-mobile-profile" class="pulse-mobile-rope" transform="translate(135 190)"/><use href="#string-pulse-mobile-profile" transform="translate(135 188.8)" fill="none" stroke="#dbe9e3" stroke-width=".8" stroke-linecap="round" opacity=".7"/></g>
+    <g data-snapshot="t2" data-center-x="250" data-equilibrium-y="350"><use href="#string-pulse-mobile-profile" class="pulse-mobile-rope" transform="translate(250 350)"/><use href="#string-pulse-mobile-profile" transform="translate(250 348.8)" fill="none" stroke="#dbe9e3" stroke-width=".8" stroke-linecap="round" opacity=".7"/></g>
+    <g data-snapshot="t3" data-center-x="365" data-equilibrium-y="510"><use href="#string-pulse-mobile-profile" class="pulse-mobile-rope" transform="translate(365 510)"/><use href="#string-pulse-mobile-profile" transform="translate(365 508.8)" fill="none" stroke="#dbe9e3" stroke-width=".8" stroke-linecap="round" opacity=".7"/></g>
+  </g>
+  <text class="pulse-mobile-time" x="18" y="199">t₁</text>
+  <text class="pulse-mobile-time" x="18" y="359">t₂</text>
+  <text class="pulse-mobile-time" x="18" y="519">t₃</text>
+  <!-- Each tension force has its own arrow path and arrowhead. -->
+  <path d="M85 190H64" fill="none" stroke="#344e60" stroke-width="1.8" marker-end="url(#string-pulse-mobile-force)"/>
+  <path d="M415 190H445" fill="none" stroke="#344e60" stroke-width="1.8" marker-end="url(#string-pulse-mobile-force)"/>
+  <text class="pulse-mobile-force" x="75" y="226" text-anchor="middle">F<tspan baseline-shift="sub" font-size="15">T</tspan></text>
+  <text class="pulse-mobile-force" x="428" y="226" text-anchor="middle">F<tspan baseline-shift="sub" font-size="15">T</tspan></text>
+  <g fill="#ac8344" stroke="#fffdf6" stroke-width="2">
+    <circle data-material-point="P" cx="250" cy="190" r="6.5"/>
+    <circle data-material-point="P" cx="250" cy="300" r="6.5"/>
+    <circle data-material-point="P" cx="250" cy="510" r="6.5"/>
+  </g>
+  <text class="pulse-mobile-point" x="265" y="178">P</text>
+  <text class="pulse-mobile-point" x="265" y="288">P</text>
+  <text class="pulse-mobile-point" x="265" y="498">P</text>
+  <path d="M24 563H426" fill="none" stroke="#e1e7e3" stroke-width="1"/>
+  <text class="pulse-mobile-caption" x="225" y="599" text-anchor="middle">El pulso avanza.</text>
+  <text class="pulse-mobile-caption" x="225" y="630" text-anchor="middle">P vuelve al equilibrio.</text>
+  <text class="pulse-mobile-note" x="225" y="663" text-anchor="middle">Su posición horizontal no cambia.</text>
+</svg>

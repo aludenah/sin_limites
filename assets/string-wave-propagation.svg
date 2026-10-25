@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 680" width="900" height="680" role="img" aria-labelledby="string-pulse-title string-pulse-desc">
+  <title id="string-pulse-title">Propagación de un pulso en una cuerda</title>
+  <desc id="string-pulse-desc">Tres instantes sucesivos de la misma cuerda tensa. Un pulso de igual forma y amplitud avanza hacia la derecha. El mismo punto material P conserva su posición horizontal: antes del paso del pulso está en equilibrio, cuando llega la cresta se eleva y después vuelve al equilibrio. Las fuerzas de tensión se representan en sentidos opuestos sobre la primera instantánea. La cuerda continúa fuera del encuadre; no se representa un extremo fijo ni una reflexión.</desc>
+  <defs>
+    <linearGradient id="string-pulse-rope" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#245563"/><stop offset=".5" stop-color="#2b7b7b"/><stop offset="1" stop-color="#245563"/></linearGradient>
+    <marker id="string-pulse-travel" markerWidth="10" markerHeight="10" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="#276f78" stroke-width="1.8"/></marker>
+    <marker id="string-pulse-force" markerWidth="9" markerHeight="9" viewBox="0 0 10 10" refX="9" refY="5" markerUnits="userSpaceOnUse" orient="auto"><path d="M1 1L9 5L1 9" fill="none" stroke="#344e60" stroke-width="1.6"/></marker>
+    <path id="string-pulse-profile" d="M-1000 0H-94C-62 0-55-64 0-64C55-64 62 0 94 0H1000"/>
+    <clipPath id="string-pulse-window"><rect x="112" y="106" width="788" height="440"/></clipPath>
+  </defs>
+  <style>
+    text{font-family:Inter,Arial,sans-serif;fill:#284853}
+    .string-intro{font-size:26px;font-weight:500}
+    .string-note{font-size:22px;fill:#75898c}
+    .string-time{font-family:Georgia,serif;font-style:italic;font-size:32px;fill:#405d68}
+    .string-point-label{font-family:Georgia,serif;font-style:italic;font-size:28px;fill:#9a743c}
+    .string-force-label{font-family:Georgia,serif;font-style:italic;font-size:25px;fill:#344e60}
+    .string-caption{font-size:26px;font-weight:500}
+    .string-baseline{stroke:#d7dfdb;stroke-width:1.2;stroke-dasharray:4 7;fill:none}
+    .string-profile{stroke:url(#string-pulse-rope);stroke-width:5;stroke-linecap:round;stroke-linejoin:round;fill:none}
+    @media(max-width:600px){.string-time{font-size:38px}.string-point-label{font-size:34px}.string-intro{font-size:28px}.string-caption{font-size:28px}}
+  </style>
+  <rect width="900" height="680" fill="#fbfcfa"/>
+  <text class="string-intro" x="40" y="43">Una misma cuerda, tres instantes</text>
+  <text class="string-note" x="43" y="80">t₁ &lt; t₂ &lt; t₃</text>
+  <text class="string-note" x="732" y="48" text-anchor="middle" style="fill:#276f78">Avance del pulso</text>
+  <path d="M646 75H823" fill="none" stroke="#276f78" stroke-width="2" marker-end="url(#string-pulse-travel)"/>
+  <!-- The common x guide identifies the same material point in the three snapshots. -->
+  <path d="M490 122V535" fill="none" stroke="#c8b999" stroke-width="1.2" stroke-dasharray="3 7"/>
+  <g clip-path="url(#string-pulse-window)">
+    <path class="string-baseline" d="M112 190H902M112 350H902M112 510H902"/>
+    <!-- One reusable pulse, translated without changing its shape or amplitude. -->
+    <g data-snapshot="t1" data-center-x="280" data-equilibrium-y="190">
+      <use href="#string-pulse-profile" class="string-profile" transform="translate(280 190)"/>
+      <use href="#string-pulse-profile" transform="translate(280 188.7)" fill="none" stroke="#dbe9e3" stroke-width=".8" stroke-linecap="round" opacity=".7"/>
+    </g>
+    <g data-snapshot="t2" data-center-x="490" data-equilibrium-y="350">
+      <use href="#string-pulse-profile" class="string-profile" transform="translate(490 350)"/>
+      <use href="#string-pulse-profile" transform="translate(490 348.7)" fill="none" stroke="#dbe9e3" stroke-width=".8" stroke-linecap="round" opacity=".7"/>
+    </g>
+    <g data-snapshot="t3" data-center-x="700" data-equilibrium-y="510">
+      <use href="#string-pulse-profile" class="string-profile" transform="translate(700 510)"/>
+      <use href="#string-pulse-profile" transform="translate(700 508.7)" fill="none" stroke="#dbe9e3" stroke-width=".8" stroke-linecap="round" opacity=".7"/>
+    </g>
+  </g>
+  <text class="string-time" x="42" y="200">t₁</text>
+  <text class="string-time" x="42" y="360">t₂</text>
+  <text class="string-time" x="42" y="520">t₃</text>
+  <!-- Tension is shown on the first snapshot; it is distinct from the pulse's travel. -->
+  <path d="M172 190H119" fill="none" stroke="#344e60" stroke-width="1.8" marker-end="url(#string-pulse-force)"/>
+  <path d="M835 190H888" fill="none" stroke="#344e60" stroke-width="1.8" marker-end="url(#string-pulse-force)"/>
+  <text class="string-force-label" x="145" y="226" text-anchor="middle">F<tspan baseline-shift="sub" font-size="17">T</tspan></text>
+  <text class="string-force-label" x="861" y="226" text-anchor="middle">F<tspan baseline-shift="sub" font-size="17">T</tspan></text>
+  <g fill="#ac8344" stroke="#fffdf6" stroke-width="2">
+    <circle data-material-point="P" cx="490" cy="190" r="7"/>
+    <circle data-material-point="P" cx="490" cy="286" r="7"/>
+    <circle data-material-point="P" cx="490" cy="510" r="7"/>
+  </g>
+  <text class="string-point-label" x="507" y="178">P</text>
+  <text class="string-point-label" x="507" y="274">P</text>
+  <text class="string-point-label" x="507" y="498">P</text>
+  <path d="M40 565H860" fill="none" stroke="#e1e7e3" stroke-width="1"/>
+  <text class="string-caption" x="450" y="612" text-anchor="middle">El pulso avanza; P vuelve al equilibrio.</text>
+  <text class="string-note" x="450" y="648" text-anchor="middle">La posición horizontal de P no cambia.</text>
+</svg>
