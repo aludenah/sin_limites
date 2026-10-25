@@ -6,7 +6,7 @@ const read=file=>fs.readFileSync(path.join(root,file),'utf8');
 const files=['fisica-capitulo-13-practice.js','fisica-capitulo-13-data.js','fisica-capitulo-13.js'];
 const plain=(h,expression)=>JSON.parse(h.run('JSON.stringify('+expression+')'));
 const lessonIds=['naturaleza-onda','transversal-longitudinal','magnitudes-onda','ecuacion-onda','rapidez-cuerda','reflexion-pulsos','superposicion','ondas-estacionarias','sonido','fenomenos-ondulatorios','efecto-doppler'];
-const labKinds=[null,null,null,null,'string','reflection','superposition','standing','sound','wavefronts','doppler'];
+const labKinds=[null,null,null,null,null,'reflection','superposition','standing','sound','wavefronts','doppler'];
 
 function sourceAndDependencies(){
  const html=read(chapterId+'.html'),css=read(chapterId+'.css'),source=read(chapterId+'.js');
@@ -89,6 +89,18 @@ async function chapterFormatAndViews(){
    assert.equal(lesson.examples.length,0);
    return;
   }
+  if(i===4){
+   assert.equal(lesson.title,'Ondas estacionarias');
+   assert.match(lesson.body,/id="teoria-ondas-estacionarias"/,'The standing-wave theory has its own unambiguous public anchor');
+   for(const concept of [/superposici[oó]n/i,/nodos/i,/vientres|antinodos/i,/arm[oó]nicos/i,/fundamental/i,/resonancia/i,/tensi[oó]n/i,/densidad lineal/i])assert.match(lesson.body,concept);
+   assert.match(lesson.body,/\\(?:sin|operatorname\{sen\})/,'The standing-wave equation describes its spatial dependence');
+   assert.match(lesson.body,/\\cos/,'The standing-wave equation describes its temporal oscillation');
+   for(const symbol of ['\\lambda','\\omega','\\mu','\\sqrt'])assert.ok(lesson.body.includes(symbol),'The theoretical relationships include '+symbol);
+   assert.doesNotMatch(lesson.body,/<(?:img|svg|canvas|audio|video|input|button)\b|data-wave-|data-string-wave-speed|data-activity-fullscreen|F_T|F_\{T\}/i,'Item five contains only theory and uses F for tension');
+   assert.equal(lesson.audioSegments.length,0,'The standing-wave theory has no audio');
+   assert.equal(lesson.examples.length,0,'Item five is the theoretical framework only');
+   return;
+  }
   assert.ok(lesson.body.includes('data-wave-lab="'+labKinds[i]+'"'),'Working placeholder in lesson '+lesson.id);
   assert.equal((lesson.body.match(/data-wave-lab=/g)||[]).length,1);
   assert.equal(lesson.audioSegments.length,3);for(const audio of lesson.audioSegments)assert.ok(audio.title&&audio.text.length>50);
@@ -102,6 +114,7 @@ async function chapterFormatAndViews(){
   else if(i===1){assert.match(markup,/Elementos de una onda/);assert.match(markup,/waves-elements-diagram\.svg/);assert.match(markup,/data-wave-amplitude-frequency/);assert.doesNotMatch(markup,/data-wave-lab="types"|data-wave-lesson-audio|Reconoce los elementos en el perfil/);}
   else if(i===2){assert.equal((markup.match(/data-wave-equation-comparison/g)||[]).length,1);assert.match(markup,/Ecuación de onda/);assert.match(markup,/id="ecuacion-de-onda"/);assert.doesNotMatch(markup,/data-wave-lab=|data-wave-animation=|data-wave-amplitude-frequency|data-wave-lesson-audio|Escucha y observa/);}
   else if(i===3){assert.equal((markup.match(/data-string-wave-speed/g)||[]).length,1);assert.match(markup,/Onda en una cuerda/);assert.match(markup,/id="onda-en-cuerda"/);assert.match(markup,/string-wave-propagation\.svg/);assert.doesNotMatch(markup,/data-wave-lab=|data-wave-animation=|data-wave-amplitude-frequency|data-wave-lesson-audio|Escucha y observa/);}
+  else if(i===4){assert.match(markup,/<h2 id="rapidez-cuerda">Ondas estacionarias<\/h2>/);assert.match(markup,/id="teoria-ondas-estacionarias"/);assert.doesNotMatch(markup,/data-wave-lab=|data-wave-animation=|data-wave-amplitude-frequency|data-wave-equation-comparison|data-string-wave-speed|data-wave-lesson-audio|Escucha y observa/,'Opening item five renders its theory without media or interactive widgets');}
   else assert.ok(markup.includes('data-wave-lab="'+labKinds[i]+'"'));
   assert.ok(markup.includes('id="'+lessonIds[i]+'"'));
   assert.equal(h.run('P.readingItem'),i);
@@ -127,6 +140,9 @@ async function chapterFormatAndViews(){
  h.run("window.location.hash='#onda-en-cuerda';applyAnchor()");assert.equal(h.run('P.currentItem'),3);assert.equal(h.run('LESSONS[P.currentItem].id'),'ecuacion-onda');assert.match(h.elements.get('chapter-app').innerHTML,/id="onda-en-cuerda"/,'The string-wave alias opens item four');
  h.run("window.location.hash='#simulador-cuerda';applyAnchor()");assert.equal(h.run('P.currentItem'),3);assert.match(h.elements.get('chapter-app').innerHTML,/id="simulador-cuerda"/,'The simulation alias opens item four and its interactive rope');
  h.run("window.location.hash='#ecuacion-onda';applyAnchor()");assert.equal(h.run('P.currentItem'),3,'The existing item-four link retains its destination');assert.equal(h.run('LESSONS[P.currentItem].title'),'Onda en una cuerda');
+ h.run("window.location.hash='#teoria-ondas-estacionarias';applyAnchor()");assert.equal(h.run('P.currentItem'),4);assert.match(h.elements.get('chapter-app').innerHTML,/id="teoria-ondas-estacionarias"/,'The new standing-wave theory link opens item five');
+ h.run("window.location.hash='#rapidez-cuerda';applyAnchor()");assert.equal(h.run('P.currentItem'),4,'The previous item-five link remains compatible');assert.equal(h.run('LESSONS[P.currentItem].title'),'Ondas estacionarias');
+ h.run("window.location.hash='#ondas-estacionarias';applyAnchor()");assert.equal(h.run('P.currentItem'),7,'The existing standing-wave activity link retains its original destination');
  h.run("window.location.hash='#naturaleza-onda';applyAnchor()");assert.equal(h.run('P.currentItem'),0);
  const before=h.run('P.currentItem');h.run("window.location.hash='#unrelated';applyAnchor()");assert.equal(h.run('P.currentItem'),before);
 }
@@ -149,6 +165,7 @@ async function activityLifecycle(){
  assert.doesNotMatch(h.elements.get('chapter-app').innerHTML,/data-wave-equation-comparison/,'Changing to the string lesson removes the comparison host');
  assert.match(h.elements.get('chapter-app').innerHTML,/data-string-wave-speed/,'The string activity is present only in item four');
  h.run("window.lifecycle=[];goLesson(4)");assert.deepEqual(plain(h,'window.lifecycle'),[...teardown,...setup,'audio:rapidez-cuerda']);assert.doesNotMatch(h.elements.get('chapter-app').innerHTML,/data-string-wave-speed/,'Leaving item four removes the string simulation host');
+ assert.doesNotMatch(h.elements.get('chapter-app').innerHTML,/data-wave-lesson-audio|data-wave-lab=|data-wave-animation=|data-wave-amplitude-frequency|data-wave-equation-comparison/,'The standing-wave theory remains without media when opened after an active simulation');
  h.run("window.lifecycle=[];goTab('practice')");assert.deepEqual(plain(h,'window.lifecycle'),[...teardown,...setup,'audio:none']);
  h.run('window.lifecycle=[]');h.events.get('pagehide')();assert.deepEqual(plain(h,'window.lifecycle'),teardown);
  h.run('window.lifecycle=[]');h.events.get('pageshow')({persisted:true});assert.deepEqual(plain(h,'window.lifecycle'),[...teardown,...setup,'audio:none'],'Restored pages reinitialize activities after pagehide');
@@ -186,4 +203,4 @@ function progressSanitization(){
  assert.equal(h.run('normalized({inductionLab:{turns:100}}).inductionLab'),undefined,'Chapter state contains no unrelated laboratory record');
 }
 
-(async()=>{sourceAndDependencies();progressSanitization();await chapterFormatAndViews();await activityLifecycle();await practicePersistenceAndAccounts();console.log('PASS: waves chapter format, two introduction animations, PDF-aligned elements without listening panel, fullscreen diagram and two-control amplitude/frequency activity, wave-equation comparison and two-control string-speed lesson, seven lesson labs, media lifecycle, grading, account isolation, offline merge and direct links.');})().catch(error=>{console.error(error);process.exitCode=1;});
+(async()=>{sourceAndDependencies();progressSanitization();await chapterFormatAndViews();await activityLifecycle();await practicePersistenceAndAccounts();console.log('PASS: waves chapter format, two introduction animations, PDF-aligned elements without listening panel, fullscreen diagram and two-control amplitude/frequency activity, wave-equation comparison and two-control string-speed lesson, standing-wave theory without media, six lesson labs, media lifecycle, grading, account isolation, offline merge and direct links.');})().catch(error=>{console.error(error);process.exitCode=1;});

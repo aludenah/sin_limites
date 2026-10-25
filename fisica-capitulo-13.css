@@ -66,6 +66,7 @@
 
 /* Las expresiones del tema de ecuación se leen completas en pantallas pequeñas. */
 @media(max-width:600px){#ecuacion-de-onda .equation .katex{font-size:1em}}
+@media(max-width:600px){#teoria-ondas-estacionarias .equation .katex{font-size:1em}}
 
 .waves-elements-figure picture{display:block}
 .waves-elements-figure.activity-fs-active picture>img{max-height:calc(100dvh - 240px);object-fit:contain}
