@@ -106,7 +106,7 @@ function workedExamplesView(){
  return `<p class="eyebrow">Aplicamos lo aprendido</p><h2>${CONTENT.workedExamples.length} problemas resueltos</h2><p>Resuelve primero cada problema y abre su solución para comparar el procedimiento. Cada solución muestra los datos, la ecuación y el resultado con sus unidades.</p>${(CONTENT.workedExamples||[]).map(e=>`<section class="example worked-example" id="ondas-resuelto-${e.number}"><p class="eyebrow">Problema ${e.number}</p><h3>${e.title}</h3><p>${e.question}</p>${e.figure?window.ChapterPractice.renderFigure(e.figure,"worked:"+e.number):""}<details><summary>Ver solución paso a paso</summary><ol>${e.steps.map(step=>`<li>${step}</li>`).join('')}</ol></details></section>`).join('')}`;
 }
 
-function destroyActivities(){window.WaveLessonAudio?.destroy();window.MechanicalWaveLabs?.destroy();window.WaveExampleAnimations?.destroy();window.WaveAmplitudeFrequency?.destroy();window.WaveEquationComparison?.destroy();}
+function destroyActivities(){window.WaveLessonAudio?.destroy();window.MechanicalWaveLabs?.destroy();window.WaveExampleAnimations?.destroy();window.WaveAmplitudeFrequency?.destroy();window.WaveEquationComparison?.destroy();window.StringWaveSpeed?.destroy();}
 
 function chapterProgressView(){
   const tools=`<p id="save-status" class="save-line ${cloudReady?'':'warning'}" role="status">${escapeHTML(saveMessage)}</p><button id="retry-save" class="button secondary small" data-action="sync" ${cloudReady?'hidden':''}>Reintentar sincronización</button>`;
@@ -125,6 +125,7 @@ function render(){
   window.WaveExampleAnimations?.mount(root);
   window.WaveAmplitudeFrequency?.mount(root);
   window.WaveEquationComparison?.mount(root);
+  window.StringWaveSpeed?.mount(root);
   window.WaveLessonAudio?.mount(root,{lesson:P.activeTab==='theory'?LESSONS[P.currentItem]:null});
 }
 function scrollContent(){document.getElementById('chapter-content')?.scrollIntoView({behavior:'smooth',block:'start'});}
@@ -183,7 +184,7 @@ window.addEventListener('storage',event=>{if(user&&window.StudyMode&&event.key==
 // Deep links open the matching lesson before the activity is mounted.
 function applyAnchor(draw=true){
  const id=window.location.hash?.slice(1);if(!id)return;
- const aliases={'elementos-onda':'transversal-longitudinal','ecuacion-de-onda':'magnitudes-onda','comparador-ecuacion-onda':'magnitudes-onda','onda-en-cuerda':'ecuacion-onda'};
+ const aliases={'elementos-onda':'transversal-longitudinal','ecuacion-de-onda':'magnitudes-onda','comparador-ecuacion-onda':'magnitudes-onda','onda-en-cuerda':'ecuacion-onda','simulador-cuerda':'ecuacion-onda'};
  const lessonId=aliases[id]||id;
  const lab=id.startsWith('wave-lab-')?id.slice(9):null;
  const index=LESSONS.findIndex(lesson=>lesson.id===lessonId||(lab&&lesson.body.includes('data-wave-lab="'+lab+'"')));

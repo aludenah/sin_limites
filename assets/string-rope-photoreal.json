@@ -1,0 +1,20 @@
+{
+  "src": "assets/string-rope-photoreal.webp",
+  "width": 1536,
+  "height": 1024,
+  "sourceRect": {
+    "x": 0,
+    "y": 434,
+    "width": 1536,
+    "height": 147
+  },
+  "coreRect": {
+    "x": 0,
+    "y": 438,
+    "width": 1536,
+    "height": 140
+  },
+  "centerY": 507.5,
+  "alphaThresholdForCore": 80,
+  "description": "Cuerda beige trenzada fotorrealista, recta y horizontal, sobre fondo transparente."
+}
