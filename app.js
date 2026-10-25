@@ -484,13 +484,21 @@ function render(){
 function openCourse(id){
   if(!readyToChooseCourse()||!COURSES.some(c=>c.id===id))return;
   state.activeCourseId=id;
-  state.activeTopicIndex=id===4?16:id===17?17:id===18?10:0;
+  state.activeTopicIndex=0;
   state.activeModuleId=null;
   state.activeTab='Teoría';
   state.view='course';
   saveProgress();
   window.scrollTo(0,0);
   render();
+  const firstChapter=firstCourseChapterHref(id);
+  if(firstChapter)window.location.assign(firstChapter);
+}
+
+function firstCourseChapterHref(id){
+  const first=academicCourses().find(course=>course.id===id)?.chapters.find(chapter=>chapter.number===1);
+  if(!first)return null;
+  return studyChapterHref(id===12?'historia-universal-capitulo-01':first.progressId);
 }
 
 function openProgressChapter(){if(!readyToChooseCourse())return;if(Number(navigationProgress.lastCourseId)===16){const module=activePhysicsModule();if(module){window.location.assign(studyChapterHref(module.progressId));return;}state.activeCourseId=16;state.activeTopicIndex=clamp(navigationProgress.lastTopicIndex,0,COURSES.find(c=>c.id===16).topics.length-1);state.view='course';render();window.scrollTo(0,0);return;}const course=Number(navigationProgress.lastCourseId),prefix=SOCIAL_COURSES[course]?.prefix||(course===16?'fisica':course===11?'historia-del-peru':course===7?'lenguaje':'historia-universal'),number=SOCIAL_COURSES[course]?activeSocialNumber(course):course===16?activePhysicsNumber():course===11?activePeruNumber():course===7?activeLanguageNumber():activeHistoryNumber();window.location.assign(studyChapterHref(prefix+'-capitulo-'+String(number).padStart(2,'0')));}
