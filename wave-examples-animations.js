@@ -119,7 +119,7 @@
    arrow(mx+34,172,mx+34,275,'#a47b26',true)+label(480,373,'P sube y baja; la cuerda no viaja con el pulso','#3f574f',22)+label(100,306,'Mano','#415e61',18);
  }
  function typeBackdrop(id){
-  return ropeDefs(id)+`<rect width="900" height="410" fill="url(#${id}-studio)"/><rect width="900" height="410" fill="url(#${id}-light)"/><path d="M0 335L900 320V410H0Z" fill="url(#${id}-bench)" opacity=".22"/><path d="M0 335L900 320" fill="none" stroke="#fffef5" stroke-width="3" opacity=".7"/>`;
+  return ropeDefs(id)+`<rect width="900" height="410" fill="url(#${id}-studio)"/><rect width="900" height="410" fill="url(#${id}-light)"/><path d="M0 328H900V410H0Z" fill="url(#${id}-bench)" opacity=".22"/><path d="M0 328H900" fill="none" stroke="#fffef5" stroke-width="3" opacity=".7"/>`;
  }
  function typeMarker(x,y,id){return `<ellipse cx="${n(x+1)}" cy="${n(y+4)}" rx="11" ry="8" fill="#5f593d" opacity=".18"/><circle cx="${n(x)}" cy="${n(y)}" r="10" fill="url(#${id}-gold)" stroke="#99712a" stroke-width="1.2"/><circle cx="${n(x-3)}" cy="${n(y-3)}" r="2" fill="#fff8c4" opacity=".85"/><text x="${n(x-24)}" y="${n(y-17)}" fill="#805d21" font-size="24" font-weight="750" text-anchor="middle">P</text>`;}
  function transverseScene(s,id){
