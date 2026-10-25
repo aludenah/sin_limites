@@ -49,8 +49,8 @@
   <!-- Tension is shown on the first snapshot; it is distinct from the pulse's travel. -->
   <path d="M172 190H119" fill="none" stroke="#344e60" stroke-width="1.8" marker-end="url(#string-pulse-force)"/>
   <path d="M835 190H888" fill="none" stroke="#344e60" stroke-width="1.8" marker-end="url(#string-pulse-force)"/>
-  <text class="string-force-label" x="145" y="226" text-anchor="middle">F<tspan baseline-shift="sub" font-size="17">T</tspan></text>
-  <text class="string-force-label" x="861" y="226" text-anchor="middle">F<tspan baseline-shift="sub" font-size="17">T</tspan></text>
+  <text class="string-force-label" x="145" y="226" text-anchor="middle">F</text>
+  <text class="string-force-label" x="861" y="226" text-anchor="middle">F</text>
   <g fill="#ac8344" stroke="#fffdf6" stroke-width="2">
     <circle data-material-point="P" cx="490" cy="190" r="7"/>
     <circle data-material-point="P" cx="490" cy="286" r="7"/>

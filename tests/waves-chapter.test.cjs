@@ -77,7 +77,7 @@ async function chapterFormatAndViews(){
    assert.match(lesson.body,/id="onda-en-cuerda"/,'The string-wave lesson exposes its public anchor');
    for(const concept of [/cuerda/i,/propagaci[oó]n/i,/transversal/i,/tensi[oó]n/i,/densidad lineal/i,/amplitud/i])assert.match(lesson.body,concept);
    assert.match(lesson.body,/\\mu/,'Linear density is distinguished from the mass of the whole string');
-   assert.match(lesson.body,/\\frac\{[mM]\}\{L\}/,'Linear density is mass per length');
+   assert.match(lesson.body,/\\frac\{m\}\{l\}/,'Linear density is mass per length');
    assert.match(lesson.body,/\\sqrt/,'The string-wave speed follows the square-root relationship');
    assert.doesNotMatch(lesson.body,/data-wave-lab=|data-wave-animation=|data-wave-amplitude-frequency|data-wave-lesson-audio|<audio|<video|<input|<button/i,'The string-wave lesson retains its theory without unrelated activities or audio');
    assert.equal((lesson.body.match(/data-string-wave-speed/g)||[]).length,1,'The string lesson has one tension/density activity');

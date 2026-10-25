@@ -39,8 +39,8 @@
   <!-- Each tension force has its own arrow path and arrowhead. -->
   <path d="M85 190H64" fill="none" stroke="#344e60" stroke-width="1.8" marker-end="url(#string-pulse-mobile-force)"/>
   <path d="M415 190H445" fill="none" stroke="#344e60" stroke-width="1.8" marker-end="url(#string-pulse-mobile-force)"/>
-  <text class="pulse-mobile-force" x="75" y="226" text-anchor="middle">F<tspan baseline-shift="sub" font-size="15">T</tspan></text>
-  <text class="pulse-mobile-force" x="428" y="226" text-anchor="middle">F<tspan baseline-shift="sub" font-size="15">T</tspan></text>
+  <text class="pulse-mobile-force" x="75" y="226" text-anchor="middle">F</text>
+  <text class="pulse-mobile-force" x="428" y="226" text-anchor="middle">F</text>
   <g fill="#ac8344" stroke="#fffdf6" stroke-width="2">
     <circle data-material-point="P" cx="250" cy="190" r="6.5"/>
     <circle data-material-point="P" cx="250" cy="300" r="6.5"/>
