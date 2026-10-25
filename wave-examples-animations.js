@@ -68,26 +68,20 @@
   <linearGradient id="${id}-studio" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#f6f5ee"/><stop offset=".55" stop-color="#e3e9e5"/><stop offset="1" stop-color="#c9d6d2"/></linearGradient>
   <radialGradient id="${id}-light" cx=".26" cy=".05" r=".9"><stop stop-color="#fff" stop-opacity=".82"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
   <linearGradient id="${id}-bench" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#c0b39c"/><stop offset="1" stop-color="#8d8578"/></linearGradient>
-  <linearGradient id="${id}-skin" x1="0" y1="0" x2=".35" y2="1"><stop stop-color="#ecc3a2"/><stop offset=".32" stop-color="#d9a57f"/><stop offset=".72" stop-color="#bf805b"/><stop offset="1" stop-color="#a86b4d"/></linearGradient>
-  <linearGradient id="${id}-thumb" x1="0" y1="0" x2=".4" y2="1"><stop stop-color="#f1c7a6"/><stop offset=".5" stop-color="#dca883"/><stop offset="1" stop-color="#b67b56"/></linearGradient>
-  <linearGradient id="${id}-nail" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#eed1ba"/><stop offset="1" stop-color="#d4a98b"/></linearGradient>
-  <linearGradient id="${id}-sleeve" x1="0" y1="0" x2=".2" y2="1"><stop stop-color="#426779"/><stop offset=".5" stop-color="#234658"/><stop offset="1" stop-color="#132f40"/></linearGradient>
   <radialGradient id="${id}-gold" cx=".3" cy=".23"><stop stop-color="#fff8b6"/><stop offset=".35" stop-color="#f2ce57"/><stop offset=".8" stop-color="#bf8623"/><stop offset="1" stop-color="#8e5f1c"/></radialGradient>
  </defs>`;}
- // The hand and its grip move with the driven endpoint; the braid is fixed to material coordinates.
- function ropeHand(id,offset,front=false){
-  if(front)return `<g transform="translate(0 ${n(offset)})"><path d="M111 214C121 209 135 214 145 222L159 232C165 237 161 247 154 248C147 249 141 241 133 236L116 230C108 227 105 218 111 214Z" fill="url(#${id}-thumb)" stroke="#a46c4f" stroke-width="1.1"/><path d="M149 227C153 226 160 231 161 235L158 239C154 241 148 235 147 232Z" fill="url(#${id}-nail)" stroke="#bc8a6b" stroke-width=".8"/><path d="M116 215C127 213 139 220 146 225M117 229L127 233" fill="none" stroke="#f4cfb2" stroke-width="1.6" opacity=".65"/><path d="M138 226L136 230M140 227L139 232" stroke="#b37a58" stroke-width=".75" opacity=".75"/></g>`;
-  return `<g transform="translate(0 ${n(offset)})"><path d="M-20 203C10 200 38 204 62 209L92 207C103 197 118 193 131 198L145 208C156 216 164 225 161 232C158 238 150 235 143 230C151 242 157 252 150 259C145 265 138 261 134 256C136 266 129 273 121 270C117 269 112 265 110 263C108 273 97 274 89 269L65 255C36 253 8 257-20 261Z" fill="url(#${id}-skin)" stroke="#a06c50" stroke-width="1.15"/>
-   <path d="M54 214C72 220 83 225 89 239M69 248C82 246 91 247 101 253M121 240C126 246 132 252 134 256M103 245C106 253 111 260 118 263M90 239C95 239 101 243 103 246M133 222C140 226 144 230 146 234" fill="none" stroke="#ab7252" stroke-width="1.2" stroke-linecap="round" opacity=".65"/>
-   <path d="M79 213C91 216 102 210 110 205M102 204C115 198 123 199 129 203M70 252C77 257 88 262 93 263" fill="none" stroke="#f3c9a7" stroke-width="2.1" stroke-linecap="round" opacity=".55"/>
-   <path d="M-20 198L46 202C53 215 57 241 54 259L-20 271Z" fill="url(#${id}-sleeve)" stroke="#254555" stroke-width="1.2"/><path d="M43 203C49 223 52 242 49 260M34 203C41 223 45 245 41 263" fill="none" stroke="#63808a" stroke-width="1.1" opacity=".75"/>
-  </g>`;
+ // The photographic cutout stays above the rope, hiding its short end inside the grip.
+ // These source-image coordinates identify the thumb/index contact in the 1536 × 1024 asset.
+ function ropePhotoHand(sourceY){
+  const scale=245/1536,gripX=1255,gripY=505;
+  const x=159-gripX*scale,y=sourceY-gripY*scale;
+  return `<image class="wave-rope-photo-hand" href="assets/wave-rope-hand-photo.webp" x="${n(x)}" y="${n(y)}" width="245" height="${n(1024*scale)}" preserveAspectRatio="xMidYMid meet" aria-hidden="true"/>`;
  }
  function ropeScene(s,id){
   const px=x=>159+x*112,py=y=>237-y*90;
   const points=s.points.map(p=>({x:px(p.x),y:py(p.y),x0:p.x0}));
   const path=points.map((p,i)=>(i?'L':'M')+n(p.x)+' '+n(p.y)).join('');
-  const sourceY=py(s.sourceDisplacement),mx=px(s.marker.x),my=py(s.marker.y),offset=sourceY-237;
+  const sourceY=py(s.sourceDisplacement),mx=px(s.marker.x),my=py(s.marker.y);
   let fibers='';
   // Short surface hatches follow the local normal and share each material point's displacement.
   for(let i=1;i<points.length-1;i+=2){
@@ -100,8 +94,7 @@
    <ellipse cx="510" cy="327" rx="405" ry="13" fill="#5b6b64" opacity=".08"/>
    <path d="${path}" transform="translate(2 17)" fill="none" stroke="#5c6b60" stroke-width="15" opacity=".035" stroke-linecap="round"/><path d="${path}" transform="translate(2 12)" fill="none" stroke="#5c6b60" stroke-width="9" opacity=".06" stroke-linecap="round"/>`+
    line(152,237,950,237,'#697f7a',1.1,'stroke-dasharray="4 8" opacity=".3"')+
-   ropeHand(id,offset)+
-   `<path d="${path}" fill="none" stroke="#68583f" stroke-width="11" stroke-linecap="round"/><path d="${path}" fill="none" stroke="#af966b" stroke-width="9.6" stroke-linecap="round"/><path d="${path}" transform="translate(0 -1.5)" fill="none" stroke="#d5c398" stroke-width="6.7" stroke-linecap="round"/><path d="${path}" transform="translate(0 -3.1)" fill="none" stroke="#f0e3c1" stroke-width="1.2" stroke-linecap="round" opacity=".8"/>`+fibers+ropeHand(id,offset,true)+
+   `<path d="${path}" fill="none" stroke="#68583f" stroke-width="11" stroke-linecap="round"/><path d="${path}" fill="none" stroke="#af966b" stroke-width="9.6" stroke-linecap="round"/><path d="${path}" transform="translate(0 -1.5)" fill="none" stroke="#d5c398" stroke-width="6.7" stroke-linecap="round"/><path d="${path}" transform="translate(0 -3.1)" fill="none" stroke="#f0e3c1" stroke-width="1.2" stroke-linecap="round" opacity=".8"/>`+fibers+ropePhotoHand(sourceY)+
    line(mx,141,mx,296,'#b18331',1.2,'stroke-dasharray="4 6" opacity=".45"')+`<circle cx="${n(mx)}" cy="237" r="8" fill="none" stroke="#8b7748" stroke-opacity=".5" stroke-width="1.5"/><ellipse cx="${n(mx+1)}" cy="${n(my+4)}" rx="11" ry="8" fill="#5f593d" opacity=".2"/><circle cx="${n(mx)}" cy="${n(my)}" r="10" fill="url(#${id}-gold)" stroke="#99712a" stroke-width="1"/><circle cx="${n(mx-3)}" cy="${n(my-3.5)}" r="2" fill="#fff8c4" opacity=".85"/><text x="${n(mx-22)}" y="${n(my-19)}" fill="#805d21" font-size="23" font-weight="750" text-anchor="middle">P</text>`+
    arrow(579,97,764,97,'#187e83')+label(670,69,'El pulso avanza','#275559',22)+
    arrow(mx+34,172,mx+34,275,'#a47b26',true)+label(480,373,'P sube y baja; la cuerda no viaja con el pulso','#3f574f',22)+label(100,306,'Mano','#415e61',18);
