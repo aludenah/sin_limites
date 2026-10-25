@@ -178,7 +178,7 @@ function laboratoryActionsAndLifecycle(){
 async function navigationAndTeacher(){
  const direct=harness(chapterFiles);await direct.signIn({uid:'new'});assert.match(direct.redirects.at(-1),/^index\.html\?chapter=quimica-capitulo-18/);
  const home=harness(homeFiles,{search:'?chapter='+id});await home.signIn({uid:'new'});assert.equal(home.run('state.view'),'mode');home.run("selectStudyMode('progressive')");assert.match(home.redirects.at(-1),/^quimica-capitulo-18\.html\?/);
- home.run('openCourse(17)');assert.equal(home.run('state.activeTopicIndex'),17);assert.match(home.elements.get('app').innerHTML,/Entrar al laboratorio de pH/);
+ home.run('openCourse(17)');assert.equal(home.run('state.activeTopicIndex'),null);assert.match(home.elements.get('app').innerHTML,/Temario completo/);assert.equal((home.elements.get('app').innerHTML.match(/onclick="setTopic\(/g)||[]).length,24);assert.doesNotMatch(home.elements.get('app').innerHTML,/Entrar al laboratorio de pH/);
  home.run('setTopic(17)');assert.match(home.redirects.at(-1),/^quimica-capitulo-18\.html\?/);
  assert.equal(home.run('window.CHEMISTRY_SYLLABUS.length'),24);assert.equal(home.run('window.CHEMISTRY_CHAPTERS.length'),1);assert.equal(home.run("window.ChapterPractice.questions('quimica-capitulo-18').length"),10);
  const context={window:{}};for(const file of catalogs)vm.runInNewContext(fs.readFileSync(path.join(root,file),'utf8'),context);

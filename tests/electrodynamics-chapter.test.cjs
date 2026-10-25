@@ -154,7 +154,7 @@ function circuitInteraction(){
 
 async function integration(){
  const home=harness(appFiles);await home.signIn({uid:'student'});home.run("selectStudyMode('free');openCourse(16)");
- assert.match(home.elements.get('app').innerHTML,/1, 2, 16/);
+ assert.match(home.elements.get('app').innerHTML,/Temario completo/);assert.equal(home.run('state.activeTopicIndex'),null);assert.equal((home.elements.get('app').innerHTML.match(/onclick="setTopic\(/g)||[]).length,19);
  const redirectCount=home.redirects.length;home.run('setTopic(2)');assert.equal(home.redirects.length,redirectCount,'Kinematics follows the two introductory chapters');
  for(const [topic,number] of [[15,'15']]){home.run(`setTopic(${topic})`);assert.equal(home.redirects.at(-1),`fisica-capitulo-${number}.html?v=20260919-fisica19`);}
  const direct=harness(chapterFiles);await direct.signIn({uid:'new'});assert.equal(direct.redirects.at(-1),`index.html?chapter=${id}&v=20260918-social1`);
@@ -173,7 +173,7 @@ async function integration(){
  study.run("goLesson(4);window.ChapterPractice.choose(CHAPTER_ID,P.practice10,'p01',window.ChapterPractice.questions(CHAPTER_ID)[0].answer,P.studyMode);checkPractice('p01')");await study.run('persist()');assert.match(study.run('window.mathCalls.at(-1).html'),/Respuesta correcta/);
  const nav=home.cloud.get('users/student/progress/navigation');assert.equal(nav.lastCourseId,16);assert.equal(nav.lastChapterNumber,16);assert.equal(nav.lastTopicIndex,15);
  const restored=harness(chapterFiles,{local:home.local,cloud:home.cloud});await restored.signIn({uid:'student'});assert.equal(restored.run('P.readingItem'),4);assert.equal(restored.run('progressPercent()'),10);
- const catalog=harness(appFiles,{local:home.local,cloud:home.cloud,search:'?course=16'});await catalog.signIn({uid:'student'});assert.equal(catalog.run('state.activeTopicIndex'),15);assert.equal(catalog.run('activePhysicsNumber()'),16);assert.equal(catalog.run('physicsChapterProgress(16).percent'),10);assert.equal(catalog.run('physicsChapterProgress(1).percent'),0);assert.equal(catalog.run('physicsChapterProgress(2).percent'),0);
+ const catalog=harness(appFiles,{local:home.local,cloud:home.cloud,search:'?course=16'});await catalog.signIn({uid:'student'});assert.equal(catalog.run('state.activeTopicIndex'),null);assert.equal(catalog.run('navigationProgress.lastTopicIndex'),15);assert.equal(catalog.run('activePhysicsNumber()'),16);assert.equal(catalog.run('physicsChapterProgress(16).percent'),10);assert.equal(catalog.run('physicsChapterProgress(1).percent'),0);assert.equal(catalog.run('physicsChapterProgress(2).percent'),0);
  assert.match(catalog.run('renderProgressPanel()'),/Electrodinámica/);catalog.run('openProgressChapter()');assert.equal(catalog.redirects.at(-1),id+'.html?v=20260919-fisica19');
  const offline=harness(chapterFiles,{local:home.local});offline.setOffline(true);await offline.signIn({uid:'student'});assert.equal(offline.run('progressPercent()'),10);
  await catalog.signIn({uid:'other'});assert.equal(catalog.run('physicsChapterProgress(16).percent'),0);assert.doesNotMatch(study.run('chapterLinks()'),/capitulo-14|capitulo-16/);

@@ -31,8 +31,8 @@ async function test(){
  const homeFiles=['courses.js','history-catalog.js','peru-catalog.js','lenguaje-catalog.js','economia-catalog.js','educacion-civica-catalog.js','razonamiento-verbal-catalog.js','razonamiento-matematico-catalog.js','fisica-catalog.js','biologia-catalog.js','biologia-capitulo-11-practice.js','history-progress.js','app.js'];
  const home=harness(homeFiles,{search:'?chapter='+id});await home.signIn({uid:'entry'});
  home.run("selectStudyMode('free')");assert.match(home.redirects.at(-1),/biologia-capitulo-11\.html/);
- home.run('openCourse(18)');assert.equal(home.run('state.activeTopicIndex'),10);
- assert.match(home.elements.get('app').innerHTML,/Explorar el corazón 3D/);
+ home.run('openCourse(18)');assert.equal(home.run('state.activeTopicIndex'),null);
+ assert.match(home.elements.get('app').innerHTML,/Temario completo/);assert.equal((home.elements.get('app').innerHTML.match(/onclick="setTopic\(/g)||[]).length,home.run('window.BIOLOGY_SYLLABUS.length'));assert.doesNotMatch(home.elements.get('app').innerHTML,/Explorar el corazón 3D/);
  home.run('setTopic(10)');assert.match(home.redirects.at(-1),/biologia-capitulo-11\.html/);
  const context={window:{}};for(const f of homeFiles.filter(f=>f.endsWith('catalog.js')))vm.runInNewContext(fs.readFileSync(path.join(root,f),'utf8'),context);
  const admin=fs.readFileSync(path.join(root,'admin.js'),'utf8');vm.runInNewContext(admin.slice(admin.indexOf('const TRACKED_CHAPTERS='),admin.indexOf('let selectedChapter='))+';window.tracked=TRACKED_CHAPTERS;',context);

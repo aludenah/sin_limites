@@ -57,7 +57,7 @@ function validateContent(){
 async function validateNavigation(){
  for(const c of configs){
   const home=harness(appFiles);await home.signIn({uid:'student'});home.run(`openCourse(${c.id})`);assert.equal(home.run('state.view'),'mode');
-  home.run(`selectStudyMode('free');openCourse(${c.id})`);assert.match(home.elements.get('app').innerHTML,new RegExp(`${c.name}: ${c.count} capítulos; contenido desarrollado del 1 al 6`));
+  home.run(`selectStudyMode('free');openCourse(${c.id})`);assert.match(home.elements.get('app').innerHTML,/Temario completo/);assert.match(home.elements.get('app').innerHTML,new RegExp(`${c.count} capítulos`));assert.equal(home.run('state.activeTopicIndex'),null);assert.equal((home.elements.get('app').innerHTML.match(/onclick="setTopic\(/g)||[]).length,c.count);
   for(let n=1;n<=6;n++){home.run(`setTopic(${n-1})`);assert.equal(home.redirects.at(-1),`${c.prefix}-capitulo-0${n}.html?v=20260918-social1`);}
   const count=home.redirects.length;home.run('setTopic(6)');assert.equal(home.redirects.length,count);assert.equal(home.run('state.activeTopicIndex'),6);
   for(let n=1;n<=6;n++){
@@ -68,7 +68,7 @@ async function validateNavigation(){
    study.run("goLesson(4);window.ChapterPractice.choose(CHAPTER_ID,P.practice10,'p01',window.ChapterPractice.questions(CHAPTER_ID)[0].answer,P.studyMode);checkPractice('p01')");await study.run('persist()');
    const nav=study.cloud.get('users/student/progress/navigation');assert.equal(nav.lastCourseId,c.id);assert.equal(nav.lastChapterNumber,n);assert.equal(nav.catalogVersion,10);
    const restored=harness(chapterFiles(c,n),{local:home.local,cloud:home.cloud});await restored.signIn({uid:'student'});assert.equal(restored.run('P.readingItem'),4);assert.equal(restored.run('progressPercent()'),10);
-   const catalog=harness(appFiles,{local:home.local,cloud:home.cloud,search:`?course=${c.id}`});await catalog.signIn({uid:'student'});assert.equal(catalog.run('state.activeTopicIndex'),n-1);assert.equal(catalog.run(`socialChapterProgress(${c.id},${n}).percent`),10);assert.equal(catalog.run(`socialChapterProgress(${c.id===10?14:10},${n}).percent`),0);
+   const catalog=harness(appFiles,{local:home.local,cloud:home.cloud,search:`?course=${c.id}`});await catalog.signIn({uid:'student'});assert.equal(catalog.run('state.activeTopicIndex'),null);assert.equal(catalog.run('navigationProgress.lastTopicIndex'),n-1);assert.equal(catalog.run(`socialChapterProgress(${c.id},${n}).percent`),10);assert.equal(catalog.run(`socialChapterProgress(${c.id===10?14:10},${n}).percent`),0);
    assert.match(catalog.run('renderProgressPanel()'),new RegExp(`${c.name} · Capítulo ${n}`));catalog.run('openProgressChapter()');assert.equal(catalog.redirects.at(-1),`${id}.html?v=20260918-social1`);
    const links=study.run('chapterLinks()');assert.doesNotMatch(links,/capitulo-00|capitulo-07|historia-universal|lenguaje-capitulo/);
    await catalog.signIn({uid:'another'});assert.equal(catalog.run(`socialChapterProgress(${c.id},${n}).percent`),0);

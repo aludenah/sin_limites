@@ -27,7 +27,7 @@ async function searchAndSyllabus(){
  h.run("setCategory('Ciencias');setSearch('fisica')");assert.deepEqual(parse(h,'filteredCourses().map(c=>c.id)'),[16]);
  h.run('openSearchResult()');assert.equal(h.run('state.activeCourseId'),16);assert.equal(h.run('state.view'),'course');
  const courseHTML=h.elements.get('app').innerHTML;assert.match(courseHTML,/19 capítulos/);assert.doesNotMatch(courseHTML,/18 capítulos|25 capítulos|Repasos complementarios|Temario del PDF/);
- for(const title of titles)assert.ok(courseHTML.includes(title));assert.match(courseHTML,/Estudiar Análisis Dimensional/);
+ for(const title of titles)assert.ok(courseHTML.includes(title));assert.match(courseHTML,/Temario completo/);assert.equal(h.run('state.activeTopicIndex'),null);assert.doesNotMatch(courseHTML,/Estudiar Análisis Dimensional/);
  const count=h.redirects.length;h.run('setTopic(2)');assert.equal(h.redirects.length,count);assert.match(h.elements.get('app').innerHTML,/Cinemática y Movimiento rectilíneo uniforme/);
  for(const [index,id] of [[0,'01'],[1,'02'],[15,'15']]){h.run('setTopic('+index+')');assert.equal(h.redirects.at(-1),'fisica-capitulo-'+id+'.html?v=20260919-fisica19');}
  h.run('setTopic(12)');assert.equal(h.redirects.at(-1),'fisica-capitulo-13.html?v=20261023-waves1');
@@ -49,17 +49,17 @@ async function previousCatalogMigration(){
  // v9 review pages stored the combined first-topic name locally plus a stable module ID.
  for(const [id,index,title] of [['fisica-capitulo-01',0,'Análisis Dimensional'],['fisica-capitulo-02',1,'Análisis Vectorial'],['fisica-capitulo-15',15,'Electrodinámica']]){
   const priorIndex=id==='fisica-capitulo-15'?14:0;
-  const local=new Map([['academia-sm-state',JSON.stringify({catalogVersion:9,activeCourseId:16,activeTopicIndex:priorIndex,activeModuleId:id,activeTopicName:priorIndex===0?'Magnitudes y análisis vectorial':title})],['sin-limites:student:study-mode','free'],['sin-limites:student:'+id,JSON.stringify({progress:achieved})]]);
+  const local=new Map([['academia-sm-state',JSON.stringify({catalogVersion:9,activeCourseId:16,activeTopicIndex:priorIndex,activeModuleId:id,activeTopicName:priorIndex===0?'Magnitudes y análisis vectorial':title})],['sin-limites:student:study-mode',JSON.stringify({mode:'free',updatedMs:1})],['sin-limites:student:'+id,JSON.stringify({progress:achieved})]]);
   const offline=harness(files,{local,search:'?course=16'});offline.setOffline(true);await offline.signIn({uid:'student'});
-  assert.equal(offline.run('state.activeTopicIndex'),index);assert.equal(offline.run('activePhysicsModule().progressId'),id);
+  assert.equal(offline.run('state.activeTopicIndex'),null);assert.equal(offline.run('navigationProgress.lastTopicIndex'),index);assert.equal(offline.run('activePhysicsModule().progressId'),id);
   assert.equal(offline.run('physicsChapterProgress('+(index+1)+').percent'),20);
   const saved=JSON.parse(local.get('academia-sm-state'));assert.equal(saved.catalogVersion,10);assert.equal(saved.activeTopicIndex,index);assert.equal(saved.activeTopicName,title);
-  const reopened=harness(files,{local,search:'?course=16'});reopened.setOffline(true);await reopened.signIn({uid:'student'});assert.equal(reopened.run('state.activeTopicIndex'),index,'Current local navigation must not migrate a second time');
+  const reopened=harness(files,{local,search:'?course=16'});reopened.setOffline(true);await reopened.signIn({uid:'student'});assert.equal(reopened.run('state.activeTopicIndex'),null,'A return visit shows the syllabus without selecting a chapter');assert.equal(reopened.run('navigationProgress.lastTopicIndex'),index,'Current local navigation must not migrate a second time');
  }
  // v9 field-free navigation moves all later chapters once, including the final topic.
  for(const [oldIndex,nextIndex] of [[1,2],[14,15],[17,18]]){
   const cloud=new Map([[navigation,{catalogVersion:9,lastCourseId:16,lastTopicIndex:oldIndex,studyMode:'free'}]]);
-  const catalog=harness(files,{cloud,search:'?course=16'});await catalog.signIn({uid:'student'});assert.equal(catalog.run('state.activeTopicIndex'),nextIndex);
+  const catalog=harness(files,{cloud,search:'?course=16'});await catalog.signIn({uid:'student'});assert.equal(catalog.run('state.activeTopicIndex'),null);assert.equal(catalog.run('navigationProgress.lastTopicIndex'),nextIndex);
  }
  console.log('PASS: version-nine offline modules, preserved achievements, last-chapter bounds and idempotent return visits.');
 }
@@ -67,7 +67,7 @@ async function previousCatalogMigration(){
 async function progressMigration(){
  const cloud=new Map([[navigation,{catalogVersion:8,lastCourseId:16,lastCourseName:'Física',lastTopicIndex:21,lastChapterNumber:15,lastChapterName:'Electrodinámica',studyMode:'free'}],['users/student/progress/fisica-capitulo-15',structuredClone(achieved)]]);
  const h=harness(files,{cloud,search:'?course=16'});await h.signIn({uid:'student'});
- assert.equal(h.run('state.activeTopicIndex'),15);assert.equal(h.run('physicsChapterProgress(16).percent'),20);h.run('openProgressChapter()');assert.equal(h.redirects.at(-1),'fisica-capitulo-15.html?v=20260919-fisica19');
+ assert.equal(h.run('state.activeTopicIndex'),null);assert.equal(h.run('navigationProgress.lastTopicIndex'),15);assert.equal(h.run('physicsChapterProgress(16).percent'),20);h.run('openProgressChapter()');assert.equal(h.redirects.at(-1),'fisica-capitulo-15.html?v=20260919-fisica19');
  assert.deepEqual(cloud.get('users/student/progress/fisica-capitulo-15'),achieved,'Navigation migration never overwrites practice data');
  const reader=harness(['fisica-catalog.js','history-progress.js','fisica-capitulo-15-data.js','history-chapter.js'],{cloud,local:h.local});await reader.signIn({uid:'student'});
  assert.equal(reader.run('CHAPTER_ID'),'fisica-capitulo-15');assert.equal(reader.run('CHAPTER_NUMBER'),16);assert.equal(reader.run('CHAPTER_TOPIC_INDEX'),15);assert.equal(reader.run('progressPercent()'),20);
@@ -80,7 +80,7 @@ async function progressMigration(){
  for(const [n,title] of [[1,'Análisis dimensional'],[2,'Vectores']]){
   const id=`fisica-capitulo-0${n}`,oldCloud=new Map([[navigation,{catalogVersion:2,lastCourseId:16,lastCourseName:'Física',lastTopicIndex:n-1,lastChapterNumber:n,lastChapterName:title,studyMode:'free'}],['users/student/progress/'+id,structuredClone(achieved)]]);
   const catalog=harness(files,{cloud:oldCloud,search:'?course=16'});await catalog.signIn({uid:'student'});
-  assert.equal(catalog.run('state.activeTopicIndex'),n-1);assert.equal(catalog.run('activePhysicsModule().progressId'),id);assert.equal(catalog.run(`physicsChapterProgress(${n}).percent`),20);assert.match(catalog.run('renderProgressPanel()'),new RegExp('Física · Capítulo '+n));
+  assert.equal(catalog.run('state.activeTopicIndex'),null);assert.equal(catalog.run('navigationProgress.lastTopicIndex'),n-1);assert.equal(catalog.run('activePhysicsModule().progressId'),id);assert.equal(catalog.run(`physicsChapterProgress(${n}).percent`),20);assert.match(catalog.run('renderProgressPanel()'),new RegExp('Física · Capítulo '+n));
   catalog.run('openProgressChapter()');assert.equal(catalog.redirects.at(-1),id+'.html?v=20260919-fisica19');
   const review=harness(['fisica-catalog.js',id+'-data.js',id+'.js'],{local:catalog.local,cloud:oldCloud});await review.signIn({uid:'student'});assert.equal(review.run('progressPercent()'),20);assert.match(review.elements.get('chapter-app').innerHTML,new RegExp('Física · Capítulo 0?'+n));assert.doesNotMatch(review.elements.get('chapter-app').innerHTML,/Repaso complementario|de 25/);
   const nav=oldCloud.get(navigation);assert.equal(nav.catalogVersion,10);assert.equal(nav.lastTopicIndex,n-1);assert.equal(nav.lastModuleId,id);assert.equal(nav.lastChapterNumber,n);

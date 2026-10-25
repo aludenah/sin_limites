@@ -48,14 +48,14 @@ async function navigationAndProgress(){
  const home=harness(appFiles);await home.signIn({uid:'student'});
  home.run('openCourse(1)');assert.equal(home.run('state.view'),'mode');
  home.run("selectStudyMode('free');openCourse(1)");
- assert.match(home.elements.get('app').innerHTML,/Razonamiento Verbal: 15 capítulos; contenido desarrollado del 1 al 6/);
+ assert.match(home.elements.get('app').innerHTML,/Temario completo/);assert.match(home.elements.get('app').innerHTML,/15 capítulos/);assert.equal(home.run('state.activeTopicIndex'),null);assert.equal((home.elements.get('app').innerHTML.match(/onclick="setTopic\(/g)||[]).length,15);
  for(let n=1;n<=6;n++){
-  const id=`razonamiento-verbal-capitulo-0${n}`;
-  home.run(`setTopic(${n-1})`);assert.equal(home.redirects.at(-1),id+'.html?v=20260918-social1');
+  const id=`razonamiento-verbal-capitulo-0${n}`,version=n===6?'20261021-detective1':'20260918-social1',destination=id+'.html?v='+version+(n===6?'#text-detective':'');
+  home.run(`setTopic(${n-1})`);assert.equal(home.redirects.at(-1),destination);
   const direct=harness(chapterFiles(n));await direct.signIn({uid:'new'});
-  assert.equal(direct.redirects.at(-1),`index.html?chapter=${id}&v=20260918-social1`);
+  assert.equal(direct.redirects.at(-1),`index.html?chapter=${id}&v=${version}`);
   const entry=harness(appFiles,{search:'?chapter='+id});await entry.signIn({uid:'new'});entry.run("selectStudyMode('progressive')");
-  assert.equal(entry.redirects.at(-1),id+'.html?v=20260918-social1');
+  assert.equal(entry.redirects.at(-1),destination);
   const study=harness(chapterFiles(n),{local:home.local,cloud:home.cloud});await study.signIn({uid:'student'});
   const html=study.elements.get('chapter-app').innerHTML;
   assert.equal((html.match(/class="topic-image"/g)||[]).length,3);
@@ -71,10 +71,10 @@ async function navigationAndProgress(){
   const restored=harness(chapterFiles(n),{local:home.local,cloud:home.cloud});await restored.signIn({uid:'student'});
   assert.equal(restored.run('P.readingItem'),4);assert.equal(restored.run('progressPercent()'),10);
   const catalog=harness(appFiles,{local:home.local,cloud:home.cloud,search:'?course=1'});await catalog.signIn({uid:'student'});
-  assert.equal(catalog.run('state.activeTopicIndex'),n-1);assert.equal(catalog.run(`socialChapterProgress(1,${n}).percent`),10);
+  assert.equal(catalog.run('state.activeTopicIndex'),null);assert.equal(catalog.run('navigationProgress.lastTopicIndex'),n-1);assert.equal(catalog.run(`socialChapterProgress(1,${n}).percent`),10);
   assert.equal(catalog.run(`socialChapterProgress(14,${n}).percent`),0);assert.equal(catalog.run(`socialChapterProgress(10,${n}).percent`),0);
   assert.match(catalog.run('renderProgressPanel()'),new RegExp(`Razonamiento Verbal · Capítulo ${n}`));
-  catalog.run('openProgressChapter()');assert.equal(catalog.redirects.at(-1),id+'.html?v=20260918-social1');
+  catalog.run('openProgressChapter()');assert.equal(catalog.redirects.at(-1),destination);
   assert.doesNotMatch(study.run('chapterLinks()'),/capitulo-00|capitulo-07|historia-universal|lenguaje-capitulo/);
   await catalog.signIn({uid:'other'});assert.equal(catalog.run(`socialChapterProgress(1,${n}).percent`),0);
  }
@@ -85,7 +85,7 @@ async function navigationAndProgress(){
  assert.equal(h.run("restoredTopicIndex(COURSES.find(c=>c.id===1),4,'Conectores lógicos',7)"),4);
  const oldCloud=new Map([['users/legacy/progress/navigation',{lastCourseId:1,lastTopicIndex:4,lastChapterName:'Idea principal',catalogVersion:6,studyMode:'free'}]]);
  const migrated=harness(appFiles,{cloud:oldCloud,search:'?course=1'});await migrated.signIn({uid:'legacy'});
- assert.equal(migrated.run('state.activeTopicIndex'),5);
+ assert.equal(migrated.run('state.activeTopicIndex'),null);assert.equal(migrated.run('navigationProgress.lastTopicIndex'),5);
 }
 
 (async()=>{contentAndAssets();await navigationAndProgress();console.log('PASS: Razonamiento Verbal chapters 1–6, 60 practices, 18 reference images, 30 guided examples, syllabus migration, direct links, reading resume, account/course isolation, image dialogs and teacher tracking.');})().catch(e=>{console.error(e);process.exitCode=1;});

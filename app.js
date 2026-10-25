@@ -109,6 +109,7 @@ function restoredTopicIndex(course,index,topicName,catalogVersion){
 }
 
 function saveLocalProgress(){
+  if(!Number.isInteger(state.activeTopicIndex))return;
   const course=COURSES.find(c=>c.id===state.activeCourseId);
   try{localStorage.setItem('academia-sm-state',JSON.stringify({
     activeCourseId:state.activeCourseId,
@@ -150,7 +151,7 @@ async function ensureUserProfile(user){
 }
 
 async function saveCloudProgress(){
-  if(!currentUser||state.activeCourseId==null)return;
+  if(!currentUser||state.activeCourseId==null||!Number.isInteger(state.activeTopicIndex))return;
   const user=currentUser,epoch=accountEpoch;
   const course=COURSES.find(c=>c.id===state.activeCourseId);
   if(!course)return;
@@ -314,7 +315,7 @@ function continueStudyEntry(){
   if(!state.studyMode){state.view='mode';render();return;}
   const entry=pendingEntry;pendingEntry=null;state.view='catalog';
   if(entry?.chapter){window.location.replace(studyChapterHref(entry.chapter));return;}
-  if(entry?.course){state.activeCourseId=entry.course;state.activeTopicIndex=entry.course===16?clamp(navigationProgress.lastTopicIndex,0,COURSES.find(c=>c.id===16).topics.length-1):entry.course===12?Math.max(0,activeHistoryNumber()-1):entry.course===11?Math.max(0,activePeruNumber()-1):entry.course===7?Math.max(0,activeLanguageNumber()-1):SOCIAL_COURSES[entry.course]?activeSocialNumber(entry.course)-1:0;state.activeTab='Teoría';state.view='course';}
+  if(entry?.course){state.activeCourseId=entry.course;state.activeTopicIndex=null;state.activeModuleId=null;state.activeTab='Teoría';state.view='course';}
   window.scrollTo(0,0);render();
 }
 function selectStudyMode(mode){
@@ -462,8 +463,14 @@ function specialHistoryContent(course){
   return null;
 }
 
+function renderCourseSyllabus(course){
+  const chapters=course.topics.map((name,idx)=>`<li class="min-w-0"><button type="button" onclick="setTopic(${idx})" class="chapter-btn group w-full h-full flex items-center gap-4 p-4 sm:p-5 rounded-2xl border border-slate-200 bg-white text-left hover:border-blue-300 hover:bg-blue-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-800"><span class="w-11 h-11 shrink-0 rounded-xl bg-blue-50 text-blue-950 flex items-center justify-center font-extrabold text-sm">${String(idx+1).padStart(2,'0')}</span><span class="min-w-0 flex-1"><span class="block text-[10px] font-bold uppercase tracking-wider text-slate-400">Capítulo ${idx+1}</span><span class="block mt-1 text-sm sm:text-base font-semibold leading-snug text-slate-800 break-words">${esc(name)}</span></span><i data-lucide="chevron-right" class="w-4 h-4 text-slate-400 group-hover:text-blue-900 shrink-0" aria-hidden="true"></i></button></li>`).join('');
+  return `${renderHeader()}<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8"><button type="button" onclick="goHome()" class="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-white border border-slate-200 text-sm font-semibold text-slate-600 hover:text-blue-950"><i data-lucide="arrow-left" class="w-4 h-4" aria-hidden="true"></i> Cursos</button><section class="mt-5 rounded-3xl bg-blue-950 text-white p-6 sm:p-8" aria-labelledby="course-title"><p class="text-xs font-bold uppercase tracking-[.18em] text-blue-200">${esc(course.category)}</p><div class="mt-3 flex items-start sm:items-center gap-4"><span class="w-12 h-12 shrink-0 rounded-2xl bg-white/10 flex items-center justify-center"><i data-lucide="${esc(course.icon)}" class="w-6 h-6" aria-hidden="true"></i></span><h1 id="course-title" class="text-2xl sm:text-4xl font-black leading-tight break-words min-w-0">${esc(course.name)}</h1></div><p class="mt-4 text-sm sm:text-base text-blue-100">Elige un capítulo del temario para abrir su contenido.</p></section><nav class="mt-7" aria-labelledby="course-syllabus-title"><div class="mb-4 flex flex-wrap items-center justify-between gap-2"><h2 id="course-syllabus-title" class="text-xl sm:text-2xl font-extrabold text-slate-900">Temario completo</h2><span class="text-sm font-semibold text-slate-500">${course.topics.length} capítulos</span></div><ol class="grid md:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-4">${chapters}</ol></nav></main>`;
+}
+
 function renderCourse(){
   const course=COURSES.find(c=>c.id===state.activeCourseId)||COURSES[0];
+  if(!Number.isInteger(state.activeTopicIndex))return renderCourseSyllabus(course);
   const topic=course.topics[state.activeTopicIndex];
   const tab=TAB_INFO[state.activeTab]||TAB_INFO.Teoría;
   const syllabusNote=course.id===16?`<p class="mt-3 mb-3 text-sm text-slate-500">${course.topics.length} capítulos. Contenido desarrollado: ${PHYSICS_CHAPTERS.map(c=>c.number).join(', ')}.</p>`:SOCIAL_COURSES[course.id]?`<p class="mt-3 text-sm text-slate-500">${esc(course.name)}: ${course.topics.length} capítulos; ${SOCIAL_COURSES[course.id].developedLabel?'contenido desarrollado: '+esc(SOCIAL_COURSES[course.id].developedLabel):'contenido desarrollado del 1 al 6'}.</p>`:course.id===12?'<p class="mt-3 text-sm text-slate-500">Historia Universal: 40 capítulos; contenido desarrollado del 1 al 6.</p>':course.id===11?'<p class="mt-3 text-sm text-slate-500">Historia del Perú: 35 capítulos; contenido desarrollado del 1 al 6 y capítulo 9.</p>':course.id===7?'<p class="mt-3 text-sm text-slate-500">Lenguaje: 34 capítulos; contenido desarrollado del 1 al 6.</p>':'';
@@ -473,7 +480,7 @@ function renderCourse(){
   const prevDisabled=state.activeTopicIndex===0;
   const nextDisabled=state.activeTopicIndex===course.topics.length-1;
   const standard=`<div class="bg-white rounded-3xl border border-slate-200 overflow-hidden"><div class="p-6 sm:p-8 bg-gradient-to-r from-blue-950 to-blue-900 text-white"><p class="text-xs font-bold uppercase tracking-[.18em] text-blue-200">${esc(course.name)} · Capítulo ${String(state.activeTopicIndex+1).padStart(2,'0')} de ${course.topics.length}</p><h2 class="mt-3 text-2xl sm:text-4xl font-black leading-tight">${esc(topic)}</h2></div><div class="px-4 sm:px-6 border-b border-slate-100 overflow-x-auto custom-scrollbar"><div class="flex min-w-max">${tabs}</div></div><div class="p-6 sm:p-8"><div class="fade-in"><div class="w-12 h-12 rounded-2xl bg-red-50 text-red-600 flex items-center justify-center"><i data-lucide="${tab.icon}" class="w-6 h-6"></i></div><h3 class="mt-5 text-xl font-extrabold text-slate-900">${tab.title}</h3><p class="mt-2 text-slate-600 leading-relaxed max-w-3xl">${tab.text}</p><div class="mt-7 rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-5 sm:p-6"><div class="flex items-start gap-3"><i data-lucide="construction" class="w-5 h-5 text-amber-500 mt-0.5 shrink-0"></i><div><p class="font-semibold text-slate-700">Estructura académica creada</p><p class="mt-1 text-sm text-slate-500">El capítulo ya forma parte de la malla. En la siguiente etapa podemos incorporar el contenido académico de esta sección.</p></div></div></div></div></div></div>`;
-  return `${renderHeader()}<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6"><div class="mb-5 flex flex-wrap items-center gap-3"><button onclick="goHome()" class="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-white border border-slate-200 text-sm font-semibold text-slate-600 hover:text-blue-950"><i data-lucide="arrow-left" class="w-4 h-4"></i> Cursos</button><span class="text-xs font-bold uppercase tracking-wider text-slate-400">${esc(course.category)}</span></div><div class="grid lg:grid-cols-[330px_1fr] gap-6 min-h-[72vh]"><aside class="bg-white rounded-3xl border border-slate-200 overflow-hidden lg:sticky lg:top-24 lg:h-[calc(100vh-7.5rem)]"><div class="p-5 border-b border-slate-100"><div class="flex items-center gap-3"><div class="w-11 h-11 rounded-2xl bg-blue-50 text-blue-950 flex items-center justify-center shrink-0"><i data-lucide="${esc(course.icon)}" class="w-5 h-5"></i></div><div><h1 class="font-extrabold text-slate-900 leading-tight">${esc(course.name)}</h1><p class="text-xs text-slate-400 mt-1">${course.topics.length} capítulos</p></div></div></div><div class="p-3 overflow-y-auto custom-scrollbar h-[calc(100%-86px)]">${chapterButtons}</div></aside><section class="min-w-0">${special||standard}<div class="mt-4 px-2 py-3 flex items-center justify-between gap-4"><button onclick="moveTopic(-1)" ${prevDisabled?'disabled':''} class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold border border-slate-200 ${prevDisabled?'text-slate-300 cursor-not-allowed':'text-slate-600 hover:text-blue-950 hover:border-blue-300'}"><i data-lucide="chevron-left" class="w-4 h-4"></i> Anterior</button><div class="hidden sm:block text-xs text-slate-400">${state.activeTopicIndex+1} / ${course.topics.length}</div><button onclick="moveTopic(1)" ${nextDisabled?'disabled':''} class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold border border-slate-200 ${nextDisabled?'text-slate-300 cursor-not-allowed':'text-slate-600 hover:text-blue-950 hover:border-blue-300'}">Siguiente <i data-lucide="chevron-right" class="w-4 h-4"></i></button></div></section></div></main>`;
+  return `${renderHeader()}<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6"><div class="mb-5 flex flex-wrap items-center gap-3"><button onclick="goHome()" class="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-white border border-slate-200 text-sm font-semibold text-slate-600 hover:text-blue-950"><i data-lucide="arrow-left" class="w-4 h-4"></i> Cursos</button><button type="button" onclick="openCourse(${course.id})" class="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-white border border-slate-200 text-sm font-semibold text-slate-600 hover:text-blue-950"><i data-lucide="list" class="w-4 h-4" aria-hidden="true"></i> Temario completo</button><span class="text-xs font-bold uppercase tracking-wider text-slate-400">${esc(course.category)}</span></div><div class="grid lg:grid-cols-[330px_1fr] gap-6 min-h-[72vh]"><aside class="bg-white rounded-3xl border border-slate-200 overflow-hidden lg:sticky lg:top-24 lg:h-[calc(100vh-7.5rem)]"><div class="p-5 border-b border-slate-100"><div class="flex items-center gap-3"><div class="w-11 h-11 rounded-2xl bg-blue-50 text-blue-950 flex items-center justify-center shrink-0"><i data-lucide="${esc(course.icon)}" class="w-5 h-5"></i></div><div><h1 class="font-extrabold text-slate-900 leading-tight">${esc(course.name)}</h1><p class="text-xs text-slate-400 mt-1">${course.topics.length} capítulos</p></div></div></div><div class="p-3 overflow-y-auto custom-scrollbar h-[calc(100%-86px)]">${chapterButtons}</div></aside><section class="min-w-0">${special||standard}<div class="mt-4 px-2 py-3 flex items-center justify-between gap-4"><button onclick="moveTopic(-1)" ${prevDisabled?'disabled':''} class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold border border-slate-200 ${prevDisabled?'text-slate-300 cursor-not-allowed':'text-slate-600 hover:text-blue-950 hover:border-blue-300'}"><i data-lucide="chevron-left" class="w-4 h-4"></i> Anterior</button><div class="hidden sm:block text-xs text-slate-400">${state.activeTopicIndex+1} / ${course.topics.length}</div><button onclick="moveTopic(1)" ${nextDisabled?'disabled':''} class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold border border-slate-200 ${nextDisabled?'text-slate-300 cursor-not-allowed':'text-slate-600 hover:text-blue-950 hover:border-blue-300'}">Siguiente <i data-lucide="chevron-right" class="w-4 h-4"></i></button></div></section></div></main>`;
 }
 
 function render(){
@@ -484,27 +491,18 @@ function render(){
 function openCourse(id){
   if(!readyToChooseCourse()||!COURSES.some(c=>c.id===id))return;
   state.activeCourseId=id;
-  state.activeTopicIndex=0;
+  state.activeTopicIndex=null;
   state.activeModuleId=null;
   state.activeTab='Teoría';
   state.view='course';
-  saveProgress();
   window.scrollTo(0,0);
   render();
-  const firstChapter=firstCourseChapterHref(id);
-  if(firstChapter)window.location.assign(firstChapter);
-}
-
-function firstCourseChapterHref(id){
-  const first=academicCourses().find(course=>course.id===id)?.chapters.find(chapter=>chapter.number===1);
-  if(!first)return null;
-  return studyChapterHref(id===12?'historia-universal-capitulo-01':first.progressId);
 }
 
 function openProgressChapter(){if(!readyToChooseCourse())return;if(Number(navigationProgress.lastCourseId)===16){const module=activePhysicsModule();if(module){window.location.assign(studyChapterHref(module.progressId));return;}state.activeCourseId=16;state.activeTopicIndex=clamp(navigationProgress.lastTopicIndex,0,COURSES.find(c=>c.id===16).topics.length-1);state.view='course';render();window.scrollTo(0,0);return;}const course=Number(navigationProgress.lastCourseId),prefix=SOCIAL_COURSES[course]?.prefix||(course===16?'fisica':course===11?'historia-del-peru':course===7?'lenguaje':'historia-universal'),number=SOCIAL_COURSES[course]?activeSocialNumber(course):course===16?activePhysicsNumber():course===11?activePeruNumber():course===7?activeLanguageNumber():activeHistoryNumber();window.location.assign(studyChapterHref(prefix+'-capitulo-'+String(number).padStart(2,'0')));}
 function goHome(){state.view='catalog';academicAddress(false);window.scrollTo(0,0);render()}
-function setTopic(i){if(!readyToChooseCourse())return;const physics=state.activeCourseId===16?PHYSICS_CHAPTERS.find(c=>c.topicIndex===i):null;if(physics){window.location.assign(studyChapterHref(physics.progressId));return;}const social=SOCIAL_COURSES[state.activeCourseId],chapter=social?.chapters.find(c=>c.number===i+1);if(chapter){window.location.assign(studyChapterHref(chapter.progressId));return;}if(state.activeCourseId===7&&Number.isInteger(i)&&i>=0&&i<6){window.location.assign('lenguaje-capitulo-'+String(i+1).padStart(2,'0')+'.html?v=20260918-social1');return;}if(state.activeCourseId===11&&Number.isInteger(i)&&PERU_CHAPTERS.some(c=>c.number===i+1)){window.location.assign('historia-del-peru-capitulo-'+String(i+1).padStart(2,'0')+'.html?v=20260918-social1');return;}if(state.activeCourseId===12&&Number.isInteger(i)&&i>=0&&i<=5){window.location.assign('historia-universal-capitulo-'+String(i+1).padStart(2,'0')+'.html?v=20260918-social1');return}state.activeTopicIndex=i;state.activeModuleId=null;state.activeTab='Teoría';saveProgress();render();window.scrollTo({top:0,behavior:'smooth'})}
-function moveTopic(d){const c=COURSES.find(c=>c.id===state.activeCourseId),n=state.activeTopicIndex+d;if(n>=0&&n<c.topics.length)setTopic(n)}
+function setTopic(i){if(!readyToChooseCourse())return;const course=COURSES.find(c=>c.id===state.activeCourseId);if(!course||!Number.isInteger(i)||i<0||i>=course.topics.length)return;const physics=state.activeCourseId===16?PHYSICS_CHAPTERS.find(c=>c.topicIndex===i):null;if(physics){window.location.assign(studyChapterHref(physics.progressId));return;}const social=SOCIAL_COURSES[state.activeCourseId],chapter=social?.chapters.find(c=>c.number===i+1);if(chapter){window.location.assign(studyChapterHref(chapter.progressId));return;}if(state.activeCourseId===7&&Number.isInteger(i)&&i>=0&&i<6){window.location.assign('lenguaje-capitulo-'+String(i+1).padStart(2,'0')+'.html?v=20260918-social1');return;}if(state.activeCourseId===11&&Number.isInteger(i)&&PERU_CHAPTERS.some(c=>c.number===i+1)){window.location.assign('historia-del-peru-capitulo-'+String(i+1).padStart(2,'0')+'.html?v=20260918-social1');return;}if(state.activeCourseId===12&&Number.isInteger(i)&&i>=0&&i<=5){window.location.assign('historia-universal-capitulo-'+String(i+1).padStart(2,'0')+'.html?v=20260918-social1');return}state.activeTopicIndex=i;state.activeModuleId=null;state.activeTab='Teoría';saveProgress();render();window.scrollTo({top:0,behavior:'smooth'})}
+function moveTopic(d){if(!Number.isInteger(state.activeTopicIndex))return;const c=COURSES.find(c=>c.id===state.activeCourseId),n=state.activeTopicIndex+d;if(n>=0&&n<c.topics.length)setTopic(n)}
 function setTab(t){if(TAB_INFO[t]){state.activeTab=t;render()}}
 function updateCourseResults(){
  const results=document.getElementById('courseResults');if(results)results.innerHTML=renderCourseResults();
