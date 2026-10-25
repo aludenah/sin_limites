@@ -4,6 +4,7 @@
 .content .wave-example-animation h3,.wave-example-animation h3{margin:0;color:#173e55;font-size:23px;line-height:1.4;font-weight:800;letter-spacing:-.02em}
 .wave-example-header{padding:21px 25px;background:#eff6f9;border-bottom:1px solid #d7e5eb}
 .wave-example-stage{width:100%;max-width:100%;min-width:0;line-height:0;background:#102c45;overflow:hidden}
+#wave-animation-rope .wave-example-stage{background:#e3e9e5}
 .wave-example-svg{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:900/410;font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif}
 .wave-example-svg text{font-family:inherit;font-weight:650}
 .content .wave-example-caption,.wave-example-caption{margin:0;padding:20px 25px 13px;color:#3c5d72;font-size:16px;line-height:1.8;overflow-wrap:anywhere;background:#fff}

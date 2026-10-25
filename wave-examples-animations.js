@@ -3,7 +3,7 @@
  'use strict';
  const KINDS=['rope','sound','water'];
  const DESCRIPTIONS={
-  rope:{title:'Pulso en una cuerda tensa',caption:'Al subir y bajar la fuente se genera un pulso que avanza por la cuerda tensa, conservando aproximadamente su forma. El punto P (amarillo) sube y baja perpendicularmente al avance y vuelve al equilibrio, sin viajar con el pulso.',stillTime:3.5},
+  rope:{title:'Pulso en una cuerda tensa',caption:'Al mover la mano hacia arriba y abajo se genera un pulso que avanza por la cuerda tensa, conservando aproximadamente su forma. El punto P (amarillo) sube y baja perpendicularmente al avance y vuelve al equilibrio, sin viajar con el pulso.',stillTime:3.5},
   sound:{title:'El sonido de un parlante',caption:'La vibración del parlante produce compresiones y rarefacciones que se propagan por el aire. Las partículas se mueven de ida y vuelta cerca de su posición inicial. Movimiento ralentizado.',stillTime:4.2},
   water:{title:'Una piedra cae al agua',caption:'La caída perturba la superficie y aparecen frentes de onda que se expanden. El marcador flota y oscila cerca de su lugar. Representación cualitativa de la propagación superficial.',stillTime:3.1}
  };
@@ -64,15 +64,47 @@
  }
  function label(x,y,text,color='#dcecf5',size=24,extra=''){return `<text class="wave-example-detail-label" x="${x}" y="${y}" fill="${color}" font-size="${size}" text-anchor="middle" ${extra}>${esc(text)}</text>`;}
  function defs(id){return `<defs><linearGradient id="${id}-bg" x2="1" y2="1"><stop stop-color="#102b44"/><stop offset="1" stop-color="#194c5e"/></linearGradient><linearGradient id="${id}-rope" x2="0" y2="1"><stop stop-color="#ffe3a3"/><stop offset=".45" stop-color="#e6ad67"/><stop offset="1" stop-color="#9b5e2e"/></linearGradient><radialGradient id="${id}-bead" cx=".35" cy=".25"><stop stop-color="#fff9cc"/><stop offset=".45" stop-color="#ffce62"/><stop offset="1" stop-color="#b77b26"/></radialGradient><linearGradient id="${id}-metal"><stop stop-color="#657e91"/><stop offset=".4" stop-color="#d8e9f3"/><stop offset=".65" stop-color="#a2bdcf"/><stop offset="1" stop-color="#405c72"/></linearGradient><radialGradient id="${id}-water" cx=".4" cy=".3"><stop stop-color="#408da6"/><stop offset=".6" stop-color="#226b8b"/><stop offset="1" stop-color="#124564"/></radialGradient><linearGradient id="${id}-glass" x2="0" y2="1"><stop stop-color="#d5efff" stop-opacity=".2"/><stop offset=".65" stop-color="#87c8e6" stop-opacity=".07"/><stop offset="1" stop-color="#a3d4e9" stop-opacity=".28"/></linearGradient><clipPath id="${id}-waterclip"><ellipse cx="450" cy="210" rx="300" ry="92"/></clipPath><clipPath id="${id}-airclip"><rect x="174" y="117" width="666" height="164" rx="15"/></clipPath></defs>`;}
+ function ropeDefs(id){return `<defs>
+  <linearGradient id="${id}-studio" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#f6f5ee"/><stop offset=".55" stop-color="#e3e9e5"/><stop offset="1" stop-color="#c9d6d2"/></linearGradient>
+  <radialGradient id="${id}-light" cx=".26" cy=".05" r=".9"><stop stop-color="#fff" stop-opacity=".82"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+  <linearGradient id="${id}-bench" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#c0b39c"/><stop offset="1" stop-color="#8d8578"/></linearGradient>
+  <linearGradient id="${id}-skin" x1="0" y1="0" x2=".35" y2="1"><stop stop-color="#ecc3a2"/><stop offset=".32" stop-color="#d9a57f"/><stop offset=".72" stop-color="#bf805b"/><stop offset="1" stop-color="#a86b4d"/></linearGradient>
+  <linearGradient id="${id}-thumb" x1="0" y1="0" x2=".4" y2="1"><stop stop-color="#f1c7a6"/><stop offset=".5" stop-color="#dca883"/><stop offset="1" stop-color="#b67b56"/></linearGradient>
+  <linearGradient id="${id}-nail" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#eed1ba"/><stop offset="1" stop-color="#d4a98b"/></linearGradient>
+  <linearGradient id="${id}-sleeve" x1="0" y1="0" x2=".2" y2="1"><stop stop-color="#426779"/><stop offset=".5" stop-color="#234658"/><stop offset="1" stop-color="#132f40"/></linearGradient>
+  <radialGradient id="${id}-gold" cx=".3" cy=".23"><stop stop-color="#fff8b6"/><stop offset=".35" stop-color="#f2ce57"/><stop offset=".8" stop-color="#bf8623"/><stop offset="1" stop-color="#8e5f1c"/></radialGradient>
+ </defs>`;}
+ // The hand and its grip move with the driven endpoint; the braid is fixed to material coordinates.
+ function ropeHand(id,offset,front=false){
+  if(front)return `<g transform="translate(0 ${n(offset)})"><path d="M111 214C121 209 135 214 145 222L159 232C165 237 161 247 154 248C147 249 141 241 133 236L116 230C108 227 105 218 111 214Z" fill="url(#${id}-thumb)" stroke="#a46c4f" stroke-width="1.1"/><path d="M149 227C153 226 160 231 161 235L158 239C154 241 148 235 147 232Z" fill="url(#${id}-nail)" stroke="#bc8a6b" stroke-width=".8"/><path d="M116 215C127 213 139 220 146 225M117 229L127 233" fill="none" stroke="#f4cfb2" stroke-width="1.6" opacity=".65"/><path d="M138 226L136 230M140 227L139 232" stroke="#b37a58" stroke-width=".75" opacity=".75"/></g>`;
+  return `<g transform="translate(0 ${n(offset)})"><path d="M-20 203C10 200 38 204 62 209L92 207C103 197 118 193 131 198L145 208C156 216 164 225 161 232C158 238 150 235 143 230C151 242 157 252 150 259C145 265 138 261 134 256C136 266 129 273 121 270C117 269 112 265 110 263C108 273 97 274 89 269L65 255C36 253 8 257-20 261Z" fill="url(#${id}-skin)" stroke="#a06c50" stroke-width="1.15"/>
+   <path d="M54 214C72 220 83 225 89 239M69 248C82 246 91 247 101 253M121 240C126 246 132 252 134 256M103 245C106 253 111 260 118 263M90 239C95 239 101 243 103 246M133 222C140 226 144 230 146 234" fill="none" stroke="#ab7252" stroke-width="1.2" stroke-linecap="round" opacity=".65"/>
+   <path d="M79 213C91 216 102 210 110 205M102 204C115 198 123 199 129 203M70 252C77 257 88 262 93 263" fill="none" stroke="#f3c9a7" stroke-width="2.1" stroke-linecap="round" opacity=".55"/>
+   <path d="M-20 198L46 202C53 215 57 241 54 259L-20 271Z" fill="url(#${id}-sleeve)" stroke="#254555" stroke-width="1.2"/><path d="M43 203C49 223 52 242 49 260M34 203C41 223 45 245 41 263" fill="none" stroke="#63808a" stroke-width="1.1" opacity=".75"/>
+  </g>`;
+ }
  function ropeScene(s,id){
-  const px=x=>99+x*120,py=y=>215-y*100;
-  const path=s.points.map((p,i)=>(i?'L':'M')+n(px(p.x))+' '+n(py(p.y))).join('');
-  const sourceY=py(s.sourceDisplacement),mx=px(s.marker.x),my=py(s.marker.y);
-  return label(620,58,'El pulso avanza hacia la derecha')+arrow(546,83,733,83)+line(88,215,950,215,'#afcbd5',1.5,'stroke-dasharray="7 8" opacity=".45"')+
-   `<rect x="42" y="114" width="30" height="202" rx="13" fill="#0c2237" stroke="#67889e" stroke-width="2"/><rect x="48" y="${n(sourceY-17)}" width="45" height="34" rx="9" fill="url(#${id}-metal)" stroke="#d4e6ed" stroke-width="1.5"/>`+line(93,sourceY,99,sourceY,'#e7b57a',7)+
-   `<path d="${path}" fill="none" stroke="#513322" stroke-width="12" stroke-linecap="round"/><path d="${path}" fill="none" stroke="url(#${id}-rope)" stroke-width="7" stroke-linecap="round"/><path d="${path}" fill="none" stroke="#fff5cf" stroke-width="1.2" stroke-linecap="round" opacity=".55" transform="translate(0 -2)"/>`+
-   line(mx,110,mx,308,'#ffce68',1.5,'stroke-dasharray="4 7" opacity=".55"')+`<circle cx="${n(mx)}" cy="215" r="7" fill="none" stroke="#d6e6ee" stroke-width="2"/><circle cx="${n(mx)}" cy="${n(my)}" r="12" fill="url(#${id}-bead)" stroke="#ffeab0" stroke-width="2"/><text x="${n(mx-25)}" y="${n(my-24)}" fill="#ffe7a0" font-size="27" font-weight="700" text-anchor="middle">P</text>`+
-   arrow(mx+32,162,mx+32,268,'#f4cc76',true)+label(mx,352,'P sube y baja; no avanza con el pulso','#f5d58c')+label(68,354,'Fuente','#a7c7d8',21);
+  const px=x=>159+x*112,py=y=>237-y*90;
+  const points=s.points.map(p=>({x:px(p.x),y:py(p.y),x0:p.x0}));
+  const path=points.map((p,i)=>(i?'L':'M')+n(p.x)+' '+n(p.y)).join('');
+  const sourceY=py(s.sourceDisplacement),mx=px(s.marker.x),my=py(s.marker.y),offset=sourceY-237;
+  let fibers='';
+  // Short surface hatches follow the local normal and share each material point's displacement.
+  for(let i=1;i<points.length-1;i+=2){
+   const p=points[i],before=points[i-1],after=points[i+1],dx=after.x-before.x,dy=after.y-before.y,len=Math.hypot(dx,dy),tx=dx/len,ty=dy/len,nx=-ty,ny=tx;
+   const stitch=(a,b,side,color,width)=>line(p.x+tx*a+nx*side,p.y+ty*a+ny*side,p.x+tx*b-nx*side,p.y+ty*b-ny*side,color,width,'stroke-linecap="round"');
+   fibers+=stitch(-3.4,2.4,3.6,'#9d825b',1.15)+stitch(-2.4,3.3,2.9,'#f3e5c3',.85);
+  }
+  return ropeDefs(id)+`<rect width="900" height="410" fill="url(#${id}-studio)"/><rect width="900" height="410" fill="url(#${id}-light)"/>
+   <path d="M0 329L900 314V410H0Z" fill="url(#${id}-bench)" opacity=".38"/><path d="M0 330L900 315" fill="none" stroke="#f8f7eb" stroke-width="3" opacity=".7"/><path d="M0 347L900 331" fill="none" stroke="#7e8074" stroke-opacity=".12"/>
+   <ellipse cx="510" cy="327" rx="405" ry="13" fill="#5b6b64" opacity=".08"/>
+   <path d="${path}" transform="translate(2 17)" fill="none" stroke="#5c6b60" stroke-width="15" opacity=".035" stroke-linecap="round"/><path d="${path}" transform="translate(2 12)" fill="none" stroke="#5c6b60" stroke-width="9" opacity=".06" stroke-linecap="round"/>`+
+   line(152,237,950,237,'#697f7a',1.1,'stroke-dasharray="4 8" opacity=".3"')+
+   ropeHand(id,offset)+
+   `<path d="${path}" fill="none" stroke="#68583f" stroke-width="11" stroke-linecap="round"/><path d="${path}" fill="none" stroke="#af966b" stroke-width="9.6" stroke-linecap="round"/><path d="${path}" transform="translate(0 -1.5)" fill="none" stroke="#d5c398" stroke-width="6.7" stroke-linecap="round"/><path d="${path}" transform="translate(0 -3.1)" fill="none" stroke="#f0e3c1" stroke-width="1.2" stroke-linecap="round" opacity=".8"/>`+fibers+ropeHand(id,offset,true)+
+   line(mx,141,mx,296,'#b18331',1.2,'stroke-dasharray="4 6" opacity=".45"')+`<circle cx="${n(mx)}" cy="237" r="8" fill="none" stroke="#8b7748" stroke-opacity=".5" stroke-width="1.5"/><ellipse cx="${n(mx+1)}" cy="${n(my+4)}" rx="11" ry="8" fill="#5f593d" opacity=".2"/><circle cx="${n(mx)}" cy="${n(my)}" r="10" fill="url(#${id}-gold)" stroke="#99712a" stroke-width="1"/><circle cx="${n(mx-3)}" cy="${n(my-3.5)}" r="2" fill="#fff8c4" opacity=".85"/><text x="${n(mx-22)}" y="${n(my-19)}" fill="#805d21" font-size="23" font-weight="750" text-anchor="middle">P</text>`+
+   arrow(579,97,764,97,'#187e83')+label(670,69,'El pulso avanza','#275559',22)+
+   arrow(mx+34,172,mx+34,275,'#a47b26',true)+label(480,373,'P sube y baja; la cuerda no viaja con el pulso','#3f574f',22)+label(100,306,'Mano','#415e61',18);
  }
  function soundScene(s,id){
   const shift=s.sourceDisplacement;
