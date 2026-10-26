@@ -1,0 +1,25 @@
+/* Propagación longitudinal y un detalle explícitamente ampliado del punto P. */
+.spa-lab{container-type:inline-size;min-width:0;max-width:100%;margin:28px 0;border:1px solid #d2e1da;border-radius:20px;background:#fff;color:#31554f;overflow:hidden;isolation:isolate}
+.spa-lab,.spa-lab *{box-sizing:border-box;min-width:0}
+.spa-header{padding:22px 24px 17px;background:#eff7f2;border-bottom:1px solid #dce8df}
+.content .spa-eyebrow,.spa-eyebrow{margin:0 0 7px;color:#7b947a;font:800 10px/1.5 Inter,system-ui,sans-serif;letter-spacing:.15em;text-transform:uppercase}
+.content .spa-header h3,.spa-header h3{margin:0;font-size:25px;line-height:1.3;color:#2b6256;letter-spacing:-.025em}
+.content .spa-header>p:last-child,.spa-header>p:last-child{margin:8px 0 0;font-size:15px;line-height:1.6;color:#738b7a}
+.spa-controls{display:flex;gap:9px;padding:14px 24px;flex-wrap:wrap}
+.spa-controls button{min-height:44px;padding:9px 16px;border:1px solid #cfdfd4;border-radius:10px;background:#fff;color:#426c59;font:700 12px/1.4 Inter,system-ui,sans-serif;cursor:pointer;touch-action:manipulation}
+.spa-controls button:first-child{background:#337b66;color:#fff;border-color:#337b66}
+.spa-controls button:focus-visible{outline:3px solid #cba44d;outline-offset:3px}
+.spa-stage{position:relative;width:100%;height:400px;min-width:0;min-height:0;background:#edf5ef;overflow:hidden}
+.spa-canvas{position:absolute;inset:0;display:block;width:100%;height:100%;max-width:100%;min-width:0}
+.spa-legend{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));background:#f5faf4;border-top:1px solid #dbe8dc;border-bottom:1px solid #dfe9dd}
+.spa-legend>div{padding:15px 22px}.spa-legend>div+div{border-left:1px solid #dbe6da}
+.spa-legend strong{display:flex;align-items:center;gap:8px;color:#467565;font-size:14px;line-height:1.5;font-weight:700}.spa-legend span{display:block;margin:4px 0 0 32px;font-size:12px;line-height:1.5;color:#7f927c}
+.spa-letter{display:inline-grid;place-items:center;flex:none;width:24px;height:24px;border-radius:7px;font:800 12px/1 Inter,system-ui,sans-serif}.spa-compression{background:#d7eae1;color:#247e70}.spa-rarefaction{background:#e7eef0;color:#748fa3}
+.spa-footer{padding:16px 24px 18px}.content .spa-footer p,.spa-footer p{margin:0;color:#7e927b;font-size:12px;line-height:1.75}.content .spa-footer p+p,.spa-footer p+p{margin-top:7px}
+.spa-lab .activity-fs-toolbar{margin:0;padding:11px 17px;background:#fbfdf9;border-bottom:1px solid #dce6dc}.spa-lab .activity-fs-toggle{min-height:44px}
+.spa-lab.activity-fs-active{display:flex!important;flex-direction:column;background:#f4f8f1}
+.spa-lab.activity-fs-active>.spa-stage{flex:1;min-height:330px;height:400px}
+.spa-lab.activity-fs-active>.activity-fs-toolbar,.spa-lab.activity-fs-active>.spa-header,.spa-lab.activity-fs-active>.spa-controls,.spa-lab.activity-fs-active>.spa-legend,.spa-lab.activity-fs-active>.spa-footer{flex:none}
+@media(min-width:900px) and (min-height:650px){.spa-lab.activity-fs-active .spa-header{padding:12px 20px}.spa-lab.activity-fs-active .spa-eyebrow,.spa-lab.activity-fs-active .spa-header>p:last-child{display:none}.spa-lab.activity-fs-active .spa-controls{padding:11px 20px}.spa-lab.activity-fs-active .spa-legend>div{padding:12px 20px}.spa-lab.activity-fs-active .spa-footer{padding:13px 20px}}
+@container(max-width:480px){.spa-header{padding:19px 16px 15px}.content .spa-header h3,.spa-header h3{font-size:22px}.content .spa-header>p:last-child,.spa-header>p:last-child{font-size:14px}.spa-controls{padding:13px 16px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}.spa-controls button{padding:8px 6px;font-size:12px}.spa-stage{height:420px}.spa-legend>div{padding:12px 10px}.spa-legend strong{font-size:11px;gap:5px}.spa-legend span{margin-left:0;font-size:11px}.spa-letter{width:20px;height:20px;font-size:11px}.spa-footer{padding:14px 16px 16px}.content .spa-footer p,.spa-footer p{font-size:11px}.spa-lab.activity-fs-active .spa-header{padding:11px 16px}.spa-lab.activity-fs-active .spa-eyebrow,.spa-lab.activity-fs-active .spa-header>p:last-child{display:none}.spa-lab.activity-fs-active>.spa-stage{min-height:330px}}
+@media(prefers-reduced-motion:reduce){.spa-lab *{scroll-behavior:auto!important}}

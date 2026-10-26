@@ -74,3 +74,6 @@
 
 /* Un solo esquema estático junto a las definiciones de nodos y vientres. */
 .waves-nodes-figure{max-width:720px;margin:26px auto;background:#f9fbf6}
+
+/* Esquemas de sonido completos y legibles, también al ampliarlos. */
+.sound-theory-figure{max-width:720px;margin:28px auto;background:#fbfcfa}
