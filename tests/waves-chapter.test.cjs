@@ -5,8 +5,7 @@ const root=path.join(__dirname,'..'),chapterId='fisica-capitulo-13';
 const read=file=>fs.readFileSync(path.join(root,file),'utf8');
 const files=['fisica-capitulo-13-practice.js','fisica-capitulo-13-data.js','fisica-capitulo-13.js'];
 const plain=(h,expression)=>JSON.parse(h.run('JSON.stringify('+expression+')'));
-const lessonIds=['naturaleza-onda','transversal-longitudinal','magnitudes-onda','ecuacion-onda','rapidez-cuerda','reflexion-pulsos','superposicion','ondas-estacionarias','sonido','fenomenos-ondulatorios','efecto-doppler'];
-const labKinds=[null,null,null,null,null,null,'superposition','standing','sound','wavefronts','doppler'];
+const lessonIds=['naturaleza-onda','transversal-longitudinal','magnitudes-onda','ecuacion-onda','rapidez-cuerda','reflexion-pulsos'];
 
 function sourceAndDependencies(){
  const html=read(chapterId+'.html'),css=read(chapterId+'.css'),source=read(chapterId+'.js');
@@ -125,13 +124,10 @@ async function chapterFormatAndViews(){
    assert.equal(lesson.examples.length,0,'Item six retains its theoretical framework');
    return;
   }
-  assert.ok(lesson.body.includes('data-wave-lab="'+labKinds[i]+'"'),'Working placeholder in lesson '+lesson.id);
-  assert.equal((lesson.body.match(/data-wave-lab=/g)||[]).length,1);
-  assert.equal(lesson.audioSegments.length,3);for(const audio of lesson.audioSegments)assert.ok(audio.title&&audio.text.length>50);
  });
  let markup=h.elements.get('chapter-app').innerHTML;
  assert.match(markup,/Física · Capítulo 13 de 19/);assert.match(markup,/Teoría/);assert.match(markup,/Resueltos · 10/);assert.match(markup,/Práctica · 10 problemas/);
- assert.equal((markup.match(/<nav class="route"[^>]*>([\s\S]*?)<\/nav>/)[1].match(/data-action="lesson" data-index=/g)||[]).length,11,'The complete route is visible');
+ assert.equal((markup.match(/<nav class="route"[^>]*>([\s\S]*?)<\/nav>/)[1].match(/data-action="lesson" data-index=/g)||[]).length,6,'Only the six developed lessons remain in the route');
  for(let i=0;i<lessonIds.length;i++){
   h.run('goLesson('+i+')');markup=h.elements.get('chapter-app').innerHTML;
   if(i===0){assert.doesNotMatch(markup,/data-wave-lab=|data-wave-lesson-audio/);assert.equal((markup.match(/data-wave-animation=/g)||[]).length,2);}
@@ -140,7 +136,6 @@ async function chapterFormatAndViews(){
   else if(i===3){assert.equal((markup.match(/data-string-wave-speed/g)||[]).length,1);assert.match(markup,/Onda en una cuerda/);assert.match(markup,/id="onda-en-cuerda"/);assert.match(markup,/string-wave-propagation\.svg/);assert.doesNotMatch(markup,/data-wave-lab=|data-wave-animation=|data-wave-amplitude-frequency|data-wave-lesson-audio|Escucha y observa/);}
   else if(i===4){assert.match(markup,/<h2 id="rapidez-cuerda">Ondas estacionarias<\/h2>/);assert.equal((markup.match(/data-standing-wave-harmonics/g)||[]).length,1);assert.equal((markup.match(/data-standing-wave-superposition/g)||[]).length,1);assert.match(markup,/id="teoria-ondas-estacionarias"/);assert.doesNotMatch(markup,/data-wave-lab=|data-wave-animation=|data-wave-amplitude-frequency|data-wave-equation-comparison|data-string-wave-speed|data-wave-lesson-audio|Escucha y observa/,'Opening item five renders no audio or unrelated widgets');}
   else if(i===5){assert.match(markup,/<h2 id="reflexion-pulsos">Sonido<\/h2>/);assert.match(markup,/id="teoria-del-sonido"/);assert.doesNotMatch(markup,/data-wave-|data-standing-wave-|data-string-wave-|Escucha y observa/,'Opening item six adds no audio or unrelated activities');assert.match(markup,/data-sound-propagation-animation/);assert.equal((markup.match(/<img\b/g)||[]).length,5,'The four sound images render alongside the shared brand image');}
-  else assert.ok(markup.includes('data-wave-lab="'+labKinds[i]+'"'));
   assert.ok(markup.includes('id="'+lessonIds[i]+'"'));
   assert.equal(h.run('P.readingItem'),i);
  }
@@ -153,10 +148,8 @@ async function chapterFormatAndViews(){
  assert.equal((markup.match(/Comprobar respuesta/g)||[]).length,10);
  assert.doesNotMatch(markup,/data-wave-lesson-audio/);
  assert.doesNotThrow(()=>h.run("openFigure('worked:999')"),'A worked item without a figure never opens a broken dialog');
- for(const [kind,id] of labKinds.map((kind,i)=>[kind,lessonIds[i]]).filter(([kind])=>kind)){
-  h.run("window.location.hash='#wave-lab-"+kind+"';applyAnchor()");assert.equal(h.run('LESSONS[P.currentItem].id'),id);assert.equal(h.run('P.activeTab'),'theory');
- }
- h.run("window.location.hash='#sonido';applyAnchor()");assert.equal(h.run('LESSONS[P.currentItem].id'),'sonido');assert.equal(h.run('P.currentItem'),8,'The existing sound activity link retains its original destination');
+ h.run("window.location.hash='#sonido';applyAnchor()");assert.equal(h.run('LESSONS[P.currentItem].id'),'reflexion-pulsos');assert.equal(h.run('P.currentItem'),5,'The old sound link opens the retained sound lesson');
+ h.run("window.location.hash='#superposicion';applyAnchor()");assert.equal(h.run('P.currentItem'),4,'The old superposition link opens the retained standing-wave explanation');
  h.run("window.location.hash='#elementos-onda';applyAnchor()");assert.equal(h.run('P.currentItem'),1);assert.equal(h.run('LESSONS[P.currentItem].id'),'transversal-longitudinal');assert.match(h.elements.get('chapter-app').innerHTML,/id="elementos-onda"/,'The elements alias opens the lesson and targets its content');
  h.run("window.location.hash='#transversal-longitudinal';applyAnchor()");assert.equal(h.run('P.currentItem'),1);assert.equal(h.run('LESSONS[P.currentItem].title'),'Elementos de una onda','The old topic link remains valid after its content changes');
  h.run("window.location.hash='#ecuacion-de-onda';applyAnchor()");assert.equal(h.run('P.currentItem'),2);assert.equal(h.run('LESSONS[P.currentItem].id'),'magnitudes-onda');assert.match(h.elements.get('chapter-app').innerHTML,/id="ecuacion-de-onda"/,'The wave-equation alias opens item three');
@@ -169,12 +162,12 @@ async function chapterFormatAndViews(){
  h.run("window.location.hash='#superposicion-onda-estacionaria';applyAnchor()");assert.equal(h.run('P.currentItem'),4);assert.match(h.elements.get('chapter-app').innerHTML,/id="superposicion-onda-estacionaria"/,'The formation animation alias opens item five');
  h.run("window.location.hash='#animacion-armonicos';applyAnchor()");assert.equal(h.run('P.currentItem'),4);assert.match(h.elements.get('chapter-app').innerHTML,/id="animacion-armonicos"/,'The harmonic animation alias opens item five');
  h.run("window.location.hash='#rapidez-cuerda';applyAnchor()");assert.equal(h.run('P.currentItem'),4,'The previous item-five link remains compatible');assert.equal(h.run('LESSONS[P.currentItem].title'),'Ondas estacionarias');
- h.run("window.location.hash='#ondas-estacionarias';applyAnchor()");assert.equal(h.run('P.currentItem'),7,'The existing standing-wave activity link retains its original destination');
+ h.run("window.location.hash='#ondas-estacionarias';applyAnchor()");assert.equal(h.run('P.currentItem'),4,'The old standing-wave link opens the retained standing-wave lesson');
  h.run("window.location.hash='#teoria-del-sonido';applyAnchor()");assert.equal(h.run('P.currentItem'),5);assert.match(h.elements.get('chapter-app').innerHTML,/id="teoria-del-sonido"/,'The new sound theory link opens item six');
  h.run("window.location.hash='#animacion-propagacion-sonido';applyAnchor()");assert.equal(h.run('P.currentItem'),5);assert.match(h.elements.get('chapter-app').innerHTML,/id="animacion-propagacion-sonido"/,'The sound animation link opens item six');
  h.run("window.location.hash='#reflexion-pulsos';applyAnchor()");assert.equal(h.run('P.currentItem'),5,'The previous item-six link remains compatible');assert.equal(h.run('LESSONS[P.currentItem].title'),'Sonido');
  h.run("window.location.hash='#naturaleza-onda';applyAnchor()");assert.equal(h.run('P.currentItem'),0);
- const before=h.run('P.currentItem');h.run("window.location.hash='#unrelated';applyAnchor()");assert.equal(h.run('P.currentItem'),before);
+ const before=h.run('P.currentItem');for(const hash of ['#unrelated','#fenomenos-ondulatorios','#efecto-doppler']){h.run("window.location.hash='"+hash+"';applyAnchor()");assert.equal(h.run('P.currentItem'),before,'Unknown or removed links do not reopen deleted lessons');}
 }
 
 async function activityLifecycle(){
@@ -211,16 +204,16 @@ async function practicePersistenceAndAccounts(){
  h.run("window.StudyMode.choose('wave-student','progressive')");await h.signIn({uid:'wave-student'});await h.run("window.StudyMode.save('wave-student',db)");
  assert.equal(h.run('cloudPayload().chapterNumber'),13);assert.equal(h.run('cloudPayload().topicIndex'),12);assert.equal(h.run('cloudPayload().courseId'),16);
  const questions=plain(h,'window.ChapterPractice.questions(CHAPTER_ID)');assert.equal(questions.length,10);
- assert.equal(h.run("window.ChapterPractice.canOpen(CHAPTER_ID,P.practice10,9,P.studyMode)"),false);assert.equal(h.run('canOpen(10)'),true,'Theory remains available in progressive mode');
+ assert.equal(h.run("window.ChapterPractice.canOpen(CHAPTER_ID,P.practice10,9,P.studyMode)"),false);assert.equal(h.run('canOpen(5)'),true,'The retained theory remains available in progressive mode');assert.equal(h.run('canOpen(6)'),false,'Deleted lesson seven cannot be opened');
  h.run("goTab('practice')");const first=questions[0];
  h.run("window.ChapterPractice.choose(CHAPTER_ID,P.practice10,'"+first.id+"',"+((first.answer+1)%first.options.length)+",P.studyMode);checkPractice('"+first.id+"')");assert.equal(h.run('progressPercent()'),0);
  for(const question of questions)h.run("window.ChapterPractice.choose(CHAPTER_ID,P.practice10,'"+question.id+"',"+question.answer+",P.studyMode);checkPractice('"+question.id+"')");
  await h.run('persist()');const key='users/wave-student/progress/'+chapterId,saved=cloud.get(key);
  assert.equal(saved.practiceCompleted,10);assert.equal(saved.practiceTotal,10);assert.equal(saved.percent,100);assert.equal(saved.chapterCompleted,true);assert.equal(saved.contentVersion,1);
  const reload=harness(files,{cloud});await reload.signIn({uid:'wave-student'});assert.equal(reload.run('P.practice10.mastered.length'),10);assert.equal(reload.run('chapterComplete()'),true);
- h.run("goLesson(6)");h.setOffline(true);h.run('goLesson(9)');await h.run('persist()');assert.equal(h.run('cloudReady'),false);assert.equal(JSON.parse(local.get('sin-limites:wave-student:'+chapterId)).pending,true);
+ h.run("goLesson(2)");h.setOffline(true);h.run('goLesson(5)');await h.run('persist()');assert.equal(h.run('cloudReady'),false);assert.equal(JSON.parse(local.get('sin-limites:wave-student:'+chapterId)).pending,true);
  cloud.set(key,{...saved,currentItem:0,updatedMs:1});h.setOffline(false);await h.run('retrySync()');
- assert.equal(h.run('P.currentItem'),9);assert.equal(h.run('P.practice10.mastered.length'),10);assert.equal(JSON.parse(local.get('sin-limites:wave-student:'+chapterId)).pending,false);
+ assert.equal(h.run('P.currentItem'),5);assert.equal(h.run('P.practice10.mastered.length'),10);assert.equal(JSON.parse(local.get('sin-limites:wave-student:'+chapterId)).pending,false);
  h.run("window.StudyMode.choose('wave-other','free')");await h.signIn({uid:'wave-other'});assert.equal(h.run('P.practice10.mastered.length'),0);assert.equal(h.run('P.currentItem'),0);assert.equal(h.run('P.studyMode'),'free');
  assert.equal(cloud.get(key).practiceCompleted,10,'A different account cannot erase the first student’s mastery');
  assert.equal(h.run('window.ChapterPractice.canOpen(CHAPTER_ID,P.practice10,9,P.studyMode)'),true);
@@ -229,11 +222,11 @@ async function practicePersistenceAndAccounts(){
 
 function progressSanitization(){
  const h=harness(files);assert.doesNotThrow(()=>h.run('normalized(null)'));
- assert.equal(h.run('normalized({currentItem:999}).currentItem'),10);assert.equal(h.run('normalized({currentItem:-8}).currentItem'),0);assert.equal(h.run('normalized({currentItem:2.5}).currentItem'),0);
- assert.equal(h.run("normalized({currentItem:4,readingItem:999,activeTab:'foreign',updatedMs:Infinity}).readingItem"),10);
+ assert.equal(h.run('normalized({currentItem:999}).currentItem'),5);assert.equal(h.run('normalized({currentItem:-8}).currentItem'),0);assert.equal(h.run('normalized({currentItem:2.5}).currentItem'),0);
+ assert.equal(h.run("normalized({currentItem:4,readingItem:999,activeTab:'foreign',updatedMs:Infinity}).readingItem"),5,'Reading positions from deleted lessons clamp to the last retained lesson');
  assert.equal(h.run("normalized({activeTab:'foreign'}).activeTab"),'theory');assert.equal(h.run("normalized({activeTab:'exam'}).activeTab"),'practice');assert.equal(h.run('normalized({updatedMs:Infinity}).updatedMs'),0);
  assert.equal(h.run('normalized({currentItem:4}).readingItem'),4);
  assert.equal(h.run('normalized({inductionLab:{turns:100}}).inductionLab'),undefined,'Chapter state contains no unrelated laboratory record');
 }
 
-(async()=>{sourceAndDependencies();progressSanitization();await chapterFormatAndViews();await activityLifecycle();await practicePersistenceAndAccounts();console.log('PASS: waves chapter format, two introduction animations, PDF-aligned elements without listening panel, fullscreen diagram and two-control amplitude/frequency activity, wave-equation comparison and two-control string-speed lesson, standing-wave theory with synchronized superposition and harmonic animations and no audio, sound theory with four static illustrations and a propagation animation without audio, five lesson labs, media lifecycle, grading, account isolation, offline merge and direct links.');})().catch(error=>{console.error(error);process.exitCode=1;});
+(async()=>{sourceAndDependencies();progressSanitization();await chapterFormatAndViews();await activityLifecycle();await practicePersistenceAndAccounts();console.log('PASS: six-lesson waves route, retained theory and animations, legacy links to current lessons, media lifecycle, ten-question grading and mastery, account isolation, offline merge and clamped reading positions.');})().catch(error=>{console.error(error);process.exitCode=1;});
