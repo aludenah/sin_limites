@@ -1,4 +1,38 @@
 window.DIMENSIONAL_CONTENT = {
+  "goals": [
+    {
+      "title": "Reconocer magnitudes",
+      "text": "Distingue magnitudes fundamentales y derivadas, y relaciona cada cantidad física con su valor numérico y su unidad."
+    },
+    {
+      "title": "Convertir unidades",
+      "text": "Utiliza los prefijos del Sistema Internacional y los factores de conversión para expresar una misma cantidad de distintas maneras."
+    },
+    {
+      "title": "Verificar relaciones físicas",
+      "text": "Deduce dimensiones y aplica sus reglas para comprobar la homogeneidad de una ecuación."
+    }
+  ],
+  "sequenceTitle": "El recorrido que vamos a seguir",
+  "timeline": [
+    [
+      "Magnitudes y unidades",
+      "Identifica qué se mide y distingue las magnitudes fundamentales de las que se obtienen al combinarlas."
+    ],
+    [
+      "Prefijos y conversiones",
+      "Cambia la unidad o el prefijo sin alterar la cantidad física representada."
+    ],
+    [
+      "Dimensiones y sus reglas",
+      "Expresa magnitudes mediante dimensiones fundamentales y opera con sus ecuaciones dimensionales."
+    ],
+    [
+      "Homogeneidad dimensional",
+      "Comprueba que los términos de una relación física tengan dimensiones compatibles."
+    ]
+  ],
+
   "title": "Análisis Dimensional",
   "intro": "Aprende a medir y clasificar magnitudes físicas y analizar las dimensiones de una ecuación. La teoría incluye aplicaciones explicadas y 10 problemas resueltos de deducción dimensional para estudiar antes de la práctica.",
   "sourceNote": "Fuente: Magnitudes físicas, Colección Esencial, Lumbreras Editores (material proporcionado). Contenido adaptado con notación revisada y aclaraciones sobre el alcance del análisis dimensional.",

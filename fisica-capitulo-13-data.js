@@ -1,5 +1,39 @@
 'use strict';
 window.MECHANICAL_WAVES_CONTENT = {
+  "goals": [
+    {
+      "title": "Describir una onda",
+      "text": "Distingue la propagación de la perturbación del movimiento de las partículas, y reconoce los tipos y elementos de una onda mecánica."
+    },
+    {
+      "title": "Interpretar la propagación",
+      "text": "Relaciona los parámetros de la ecuación de onda con su comportamiento y explica cómo la tensión y la densidad lineal determinan la rapidez en una cuerda."
+    },
+    {
+      "title": "Explicar patrones y sonido",
+      "text": "Relaciona la superposición con los nodos, los vientres y los armónicos, y distingue las cualidades y la intensidad del sonido."
+    }
+  ],
+  "sequenceTitle": "El recorrido que vamos a seguir",
+  "timeline": [
+    [
+      "Naturaleza y tipos de ondas",
+      "Compara las oscilaciones longitudinales y transversales con la dirección en que avanza la perturbación."
+    ],
+    [
+      "Elementos y ecuación de onda",
+      "Reconoce las magnitudes de la onda y relaciona el desplazamiento con la posición y el tiempo."
+    ],
+    [
+      "Propagación en una cuerda",
+      "Examina la relación entre la rapidez, la tensión y la masa por unidad de longitud."
+    ],
+    [
+      "Ondas estacionarias y sonido",
+      "Explica la formación de nodos y vientres, y estudia la propagación, las cualidades y la intensidad sonora."
+    ]
+  ],
+
   "number": 13,
   "id": "fisica-capitulo-13",
   "progressId": "fisica-capitulo-13",

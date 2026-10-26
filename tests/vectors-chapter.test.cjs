@@ -2,7 +2,7 @@
 const {testChapters}=require('./practice-ten.test.cjs');
 const assert=require('node:assert/strict');
 const {harness}=require('./study-entry.test.cjs');
-const h=harness(['fisica-capitulo-02-data.js','fisica-capitulo-02.js']);
+const h=harness(['fisica-capitulo-02-data.js','chapter-learning-goals.js','fisica-capitulo-02.js']);
 for(const [input,expected] of [[[4,0,0,3],[4,3,5]],[[-4,0,0,3],[-4,3,5]],[[-4,0,0,-3],[-4,-3,5]],[[4,0,0,-3],[4,-3,5]],[[4,3,-4,-3],[0,0,0]],[[0,2,0,3],[0,5,5]]]){
  const r=JSON.parse(h.run('JSON.stringify(vectorResult('+input.join(',')+'))'));
  assert.deepEqual([r.x,r.y,r.magnitude],expected);

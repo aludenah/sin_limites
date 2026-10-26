@@ -1,4 +1,38 @@
 window.VECTOR_CONTENT = {
+  "goals": [
+    {
+      "title": "Representar vectores",
+      "text": "Reconoce el módulo y la dirección de un vector, y expresa sus componentes mediante vectores unitarios."
+    },
+    {
+      "title": "Obtener resultantes",
+      "text": "Suma y resta vectores con métodos gráficos y analíticos, y distingue la resultante de la equilibrante."
+    },
+    {
+      "title": "Interpretar productos de vectores",
+      "text": "Diferencia el producto escalar del producto vectorial y relaciona sus resultados con proyecciones, perpendicularidad y áreas."
+    }
+  ],
+  "sequenceTitle": "El recorrido que vamos a seguir",
+  "timeline": [
+    [
+      "Elementos de un vector",
+      "Reconoce las características que permiten representar y comparar vectores."
+    ],
+    [
+      "Suma y resta",
+      "Construye la combinación de vectores y considera el ángulo que forman."
+    ],
+    [
+      "Componentes, resultante y equilibrante",
+      "Pasa del dibujo a las coordenadas para obtener la resultante y el vector que la equilibra."
+    ],
+    [
+      "Productos y proyecciones",
+      "Interpreta qué mide cada producto y cómo se relaciona con las direcciones de los vectores."
+    ]
+  ],
+
   "title": "Análisis Vectorial",
   "lessons": [
     {

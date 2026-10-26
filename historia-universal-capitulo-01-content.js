@@ -1,4 +1,24 @@
 window.HISTORY_READING = {
+  "sequenceTitle": "El recorrido que vamos a seguir",
+  "timeline": [
+    [
+      "La historia y sus protagonistas",
+      "Reconoce qué estudia la historia, para qué sirve y cómo se relacionan las personas con procesos de distinta duración."
+    ],
+    [
+      "Fuentes e investigación",
+      "Examina las huellas del pasado y las preguntas que permiten interpretarlas, con apoyo de otras ciencias y disciplinas."
+    ],
+    [
+      "Formas de escribir historia",
+      "Compara cómo han cambiado las explicaciones históricas, desde el mundo grecorromano hasta la historia social."
+    ],
+    [
+      "Maneras de ordenar el pasado",
+      "Distingue la periodización tradicional de la materialista y reconoce el criterio que utiliza cada una."
+    ]
+  ],
+
   "title": "La ciencia histórica",
   "chapter": 1,
   "courseId": 12,

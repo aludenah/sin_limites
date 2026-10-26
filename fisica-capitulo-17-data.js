@@ -1,5 +1,39 @@
 'use strict';
 window.ELECTROMAGNETISM_CONTENT = {
+  "goals": [
+    {
+      "title": "Relacionar magnetismo y corriente",
+      "text": "Reconoce las propiedades de los imanes y explica cómo una corriente eléctrica produce un campo magnético."
+    },
+    {
+      "title": "Analizar campos y fuerzas",
+      "text": "Interpreta el campo de un conductor y determina las fuerzas magnéticas sobre cargas y corrientes, así como el movimiento de una partícula en un campo homogéneo."
+    },
+    {
+      "title": "Explicar la inducción",
+      "text": "Relaciona el flujo magnético con las leyes de Faraday y Lenz y con el funcionamiento de un generador eléctrico."
+    }
+  ],
+  "sequenceTitle": "El recorrido que vamos a seguir",
+  "timeline": [
+    [
+      "Imanes, campo y experiencia de Oersted",
+      "Reconoce el campo magnético y vincula sus efectos con los imanes y las corrientes eléctricas."
+    ],
+    [
+      "Campo de los conductores",
+      "Estudia el conductor rectilíneo y relaciona su geometría con el campo mediante la ley de Biot-Savart-Laplace."
+    ],
+    [
+      "Fuerzas y movimiento",
+      "Determina la acción del campo sobre partículas y conductores, y analiza la trayectoria de una carga."
+    ],
+    [
+      "Inducción y generación eléctrica",
+      "Interpreta la variación del flujo, la fem inducida y el sentido de la corriente mediante las leyes de Faraday y Lenz."
+    ]
+  ],
+
   "number": 17,
   "id": "fisica-capitulo-17",
   "progressId": "fisica-capitulo-17",

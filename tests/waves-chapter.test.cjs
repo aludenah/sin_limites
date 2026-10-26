@@ -3,7 +3,7 @@ const fs=require('node:fs'),path=require('node:path');
 const {harness}=require('./study-entry.test.cjs');
 const root=path.join(__dirname,'..'),chapterId='fisica-capitulo-13';
 const read=file=>fs.readFileSync(path.join(root,file),'utf8');
-const files=['fisica-capitulo-13-practice.js','fisica-capitulo-13-data.js','fisica-capitulo-13.js'];
+const files=['fisica-capitulo-13-practice.js','fisica-capitulo-13-data.js','chapter-learning-goals.js','fisica-capitulo-13.js'];
 const plain=(h,expression)=>JSON.parse(h.run('JSON.stringify('+expression+')'));
 const lessonIds=['naturaleza-onda','transversal-longitudinal','magnitudes-onda','ecuacion-onda','rapidez-cuerda','reflexion-pulsos'];
 

@@ -4,7 +4,7 @@ const {harness}=require('./study-entry.test.cjs');
 const root=path.join(__dirname,'..'),chapterId='fisica-capitulo-17';
 const read=file=>fs.readFileSync(path.join(root,file),'utf8');
 const plain=(h,expression)=>JSON.parse(h.run('JSON.stringify('+expression+')'));
-const chapterFiles=['fisica-capitulo-17-practice.js','fisica-catalog.js','history-progress.js','fisica-capitulo-17-data.js','induction-engine.js','fisica-capitulo-17.js'];
+const chapterFiles=['fisica-capitulo-17-practice.js','fisica-catalog.js','history-progress.js','fisica-capitulo-17-data.js','induction-engine.js','chapter-learning-goals.js','fisica-capitulo-17.js'];
 const catalogs=['history-catalog.js','peru-catalog.js','lenguaje-catalog.js','economia-catalog.js','educacion-civica-catalog.js','razonamiento-verbal-catalog.js','razonamiento-matematico-catalog.js','fisica-catalog.js','biologia-catalog.js','quimica-catalog.js','geometria-catalog.js'];
 const homeFiles=['quimica-capitulo-18-practice.js','geometria-capitulo-17-practice.js','fisica-capitulo-17-practice.js','courses.js',...catalogs,'history-progress.js','app.js'];
 const event=(h,detail={})=>h.events.get('induction-lab-progress')({detail:{experience:'induction-lab',...detail}});
