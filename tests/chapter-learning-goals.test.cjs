@@ -48,12 +48,19 @@ function pageManifest(file){
  return {file,files,renderer,reading:renderer==='history-reading.js',physics:/^fisica-capitulo-(?:01|02|13|17)\.js$/.test(renderer)};
 }
 
-function assertIntroduction(html,label){
+function assertIntroduction(html,label,{separate=false}={}){
  assert.equal(count(html,/id="learning-goals"/g),1,label+' has one introduction');
  assert.equal(count(html,/¿Qué aprenderás\?/g),1,label+' has one goals heading');
  assert.match(html,/<details class="(?:chapter-chronology|chapter-learning-route)"/,label+' has an expandable route');
  const start=html.indexOf('id="learning-goals"'),theory=html.indexOf('<div class="content">')>=0?html.indexOf('<div class="content">'):html.indexOf('<section class="reading-section"');
- assert.ok(start>=0&&theory>start,label+' places goals before theory');
+ if(separate){
+  assert.equal(theory,-1,label+' shows the introduction independently from the lesson');
+  const entry=html.match(/<button[^>]*data-action="intro"[^>]*>[\s\S]*?<\/button>/)?.[0];
+  assert.ok(entry,label+' exposes the separate introduction in the chapter route');
+  assert.doesNotMatch(entry,/data-index=|<span[^>]*>\s*\d+\s*<\/span>/,label+' does not number the introduction as a lesson');
+  assert.ok(html.indexOf('data-action="intro"')<html.indexOf('data-index="0"'),label+' places the introduction before item 1');
+  assert.match(html,/data-action="lesson" data-index="0"/,'The first lesson remains accessible with its original index');
+ }else assert.ok(start>=0&&theory>start,label+' places goals before theory');
 }
 
 async function allDevelopedChapters(){
@@ -72,17 +79,28 @@ async function allDevelopedChapters(){
   signatures.add(signature);courses.add(content.courseId||12);
   assert.ok(Array.isArray(content.timeline)&&content.timeline.length>=2,page+' has its own learning route');
   const container=manifest.reading?'reading-app':'chapter-app',html=h.elements.get(container).innerHTML;
-  assertIntroduction(html,page);
+  assertIntroduction(html,page,{separate:manifest.physics});
   for(const goal of goals){assert.ok(text(html).includes(goal.title),page+' renders its goal title');assert.ok(text(html).includes(goal.text),page+' renders its goal explanation');}
   const before=plain(h,'P');h.run('render();render()');
   assert.deepEqual(plain(h,'P'),before,page+' does not award progress or change reading position on render');
-  assertIntroduction(h.elements.get(container).innerHTML,page+' after repeated rendering');
+  assertIntroduction(h.elements.get(container).innerHTML,page+' after repeated rendering',{separate:manifest.physics});
   if(manifest.physics){
    renderers.physics++;
+   assert.equal(h.run('P.activeTab'),'intro',page+' opens in its independent introduction');
+   assert.equal(h.run("normalized({activeTab:'intro'}).activeTab"),'intro',page+' preserves an introduction bookmark');
+   const lessonIds=content.lessons.map(lesson=>lesson.id||lesson.title);
    for(const mode of ['free','progressive']){
     h.run(`window.StudyMode.choose('learning-reader','${mode}');refreshStudyMode()`);
     for(let i=0;i<content.lessons.length;i++){
-     h.run(`goLesson(${i})`);assertIntroduction(h.elements.get(container).innerHTML,page+' / '+mode+' / topic '+i);
+     h.run(`goLesson(${i})`);
+     const lesson=h.elements.get(container).innerHTML;
+     assert.doesNotMatch(lesson,/id="learning-goals"|class="chapter-learning-goals"/,page+' / '+mode+' / topic '+i+' has no repeated introduction');
+     assert.equal(h.run('P.currentItem'),i,page+' keeps original item numbering');
+     const bookmark=plain(h,'({currentItem:P.currentItem,readingItem:P.readingItem,practice10:P.practice10})');
+     h.run('goIntro()');
+     assert.equal(h.run('P.activeTab'),'intro');
+     assert.deepEqual(plain(h,'({currentItem:P.currentItem,readingItem:P.readingItem,practice10:P.practice10})'),bookmark,page+' opening the introduction preserves the reading position and mastery');
+     assertIntroduction(h.elements.get(container).innerHTML,page+' / '+mode+' / intro after topic '+i,{separate:true});
     }
     const view=h.elements.get(container).innerHTML;
     for(const tab of ['practice','examples','resources'].filter(tab=>view.includes('data-value="'+tab+'"'))){
@@ -90,6 +108,14 @@ async function allDevelopedChapters(){
      assert.doesNotMatch(h.elements.get(container).innerHTML,/id="learning-goals"|class="chapter-learning-goals"/,page+' hides the introduction in '+tab);
     }
    }
+   assert.deepEqual(plain(h,'LESSONS.map(lesson=>lesson.id||lesson.title)'),lessonIds,page+' keeps all lesson IDs and counts unchanged');
+   for(const anchor of ['#learning-goals','#antes-de-empezar']){
+    h.run(`goLesson(LESSONS.length-1);window.location.hash='${anchor}';applyIntroAnchor()`);
+    assert.equal(h.run('P.activeTab'),'intro',page+' routes '+anchor+' to the separate introduction');
+    assertIntroduction(h.elements.get(container).innerHTML,page+' / '+anchor,{separate:true});
+   }
+   h.run('goLesson(0)');assert.equal(h.run('P.currentItem'),0);assert.equal(h.run('P.activeTab'),'theory');
+   assert.match(h.elements.get(container).innerHTML,/data-action="intro"[^>]*>←\s*Antes de empezar/,page+' lets item 1 return to the introduction');
   }else if(manifest.reading){
    renderers.reading++;
    assert.match(html,/id="learning-goals" data-reading-block="1" tabindex="-1"/,'The original reading anchor and progress index stay unchanged');
@@ -97,7 +123,7 @@ async function allDevelopedChapters(){
  }
  assert.equal(courses.size,11,'The audit includes every course with developed chapters');
  assert.deepEqual(renderers,{shared:46,reading:1,physics:4});
- console.log('PASS: all 51 chapters in 11 courses have specific goals and a route before theory; Physics introductions appear once in either study mode and stay out of other tabs.');
+ console.log('PASS: all 51 chapters in 11 courses have specific goals and a route before theory; Physics introductions are independent, unnumbered sections before item 1 and never repeat in lesson views; progress and deep links are preserved.');
 }
 
 async function main(){helperContract();await allDevelopedChapters();}

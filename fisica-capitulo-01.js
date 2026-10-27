@@ -9,7 +9,7 @@ const escapeHTML=value=>String(value??'').replaceAll('&','&amp;').replaceAll('<'
 let user=null,db=null,cloudReady=false,saveChain=Promise.resolve(),saveVersion=0,authEpoch=0;
 let saveMessage='',notice='',P=emptyProgress(),saveTimer=null;
 
-function emptyProgress(){return {studyMode:null,currentItem:0,readingItem:0,contentVersion:6,activeTab:'theory',practice10:window.ChapterPractice.normalize(CHAPTER_ID),updatedMs:0};}
+function emptyProgress(){return {studyMode:null,currentItem:0,readingItem:0,contentVersion:6,activeTab:'intro',practice10:window.ChapterPractice.normalize(CHAPTER_ID),updatedMs:0};}
 
 
 
@@ -35,7 +35,7 @@ function normalized(data={}){
  };
  p.studyMode=window.StudyMode?.get(user?.uid)||(['free','progressive'].includes(data.studyMode)?data.studyMode:null);
  p.currentItem=lessonIndex(data.currentItem);p.readingItem=Number.isInteger(data.readingItem)?lessonIndex(data.readingItem):p.currentItem;
- p.activeTab=data.activeTab==='exam'?'practice':['theory','examples','practice'].includes(data.activeTab)?data.activeTab:'theory';
+ p.activeTab=data.activeTab==='exam'?'practice':['intro','theory','examples','practice'].includes(data.activeTab)?data.activeTab:'intro';
  p.practice10=window.ChapterPractice.normalize(CHAPTER_ID,data);p.updatedMs=Math.max(0,Number(data.updatedMs)||0);return p;
 }
 function progressiveLimit(p=P){return window.ChapterPractice.limit(CHAPTER_ID,p.practice10);}
@@ -90,7 +90,7 @@ function renderMath(){
 }
 function header(){return '<a class="skip" href="#chapter-content">Ir al contenido</a><header class="top"><div class="wrap"><a class="brand" href="index.html?v=20260919-fisica19"><span class="logo"><img src="assets/logo-sin-limites.jpg" alt="Logo de SIN LÍMITES" width="56" height="56" style="display:block;width:100%;height:100%;object-fit:contain;border-radius:inherit"></span><span>SIN <em>LÍMITES</em><small>ACADEMIA VIRTUAL</small></span></a><a class="back" href="index.html?course=16&v=20260919-fisica19">← Temario de Física · 19 capítulos</a></div></header>';}
 
-function side(){return LESSONS.map((lesson,i)=>{const active=P.activeTab==='theory'&&P.currentItem===i;return '<button data-action="lesson" data-index="'+i+'" '+(active?'aria-current="step"':'')+' class="'+(active?'active':'')+'"><span class="stepno">'+String(i+1).padStart(2,'0')+'</span><span>'+lesson.title+'</span></button>';}).join('');}
+function side(){return `<button data-action="intro" ${P.activeTab==='intro'?'aria-current="step"':''} class="${P.activeTab==='intro'?'active':''}"><span class="stepno" aria-hidden="true">✦</span><span>Antes de empezar</span></button>`+LESSONS.map((lesson,i)=>{const active=P.activeTab==='theory'&&P.currentItem===i;return '<button data-action="lesson" data-index="'+i+'" '+(active?'aria-current="step"':'')+' class="'+(active?'active':'')+'"><span class="stepno">'+String(i+1).padStart(2,'0')+'</span><span>'+lesson.title+'</span></button>';}).join('');}
 
 
 
@@ -120,9 +120,10 @@ function lessonSections(lesson){
   return `<section${label}>${heading}<div class="content">${lessonBody(section)}${lessonFigures(section.id)}</div>${lessonActivity(section)}</section>`;
  }).join('');
 }
+function introView(){return `${window.ChapterLearningGoals?.render(CONTENT)||''}<div class="actions"><button class="button" data-action="lesson" data-index="0">Comenzar capítulo →</button></div>`;}
 function lessonView(){
   const i=P.currentItem,x=LESSONS[i];
-  return `<p class="eyebrow">Tema ${i+1} de ${LESSONS.length} · ${x.subtitle}</p><h2>${x.title}</h2><div class="content">${lessonBody(x)}${lessonFigures(x.id)}</div>${lessonSections(x)}${lessonActivity(x)}<div class="actions"><button class="button secondary" data-action="lesson" data-index="${i-1}" ${i===0?'disabled':''}>← Tema anterior</button>${i<LESSONS.length-1?`<button class="button" data-action="lesson" data-index="${i+1}" ${!canOpen(i+1)?'disabled':''}>Siguiente tema →</button>`:`<button class="button" data-action="tab" data-value="practice" ${!canApply()?'disabled':''}>Ir a la práctica →</button>`}</div>`;
+  return `<p class="eyebrow">Tema ${i+1} de ${LESSONS.length} · ${x.subtitle}</p><h2>${x.title}</h2><div class="content">${lessonBody(x)}${lessonFigures(x.id)}</div>${lessonSections(x)}${lessonActivity(x)}<div class="actions"><button class="button secondary" data-action="${i===0?'intro':'lesson'}" data-index="${i-1}">${i===0?'← Antes de empezar':'← Tema anterior'}</button>${i<LESSONS.length-1?`<button class="button" data-action="lesson" data-index="${i+1}" ${!canOpen(i+1)?'disabled':''}>Siguiente tema →</button>`:`<button class="button" data-action="tab" data-value="practice" ${!canApply()?'disabled':''}>Ir a la práctica →</button>`}</div>`;
 }
 function practiceView(){return window.ChapterPractice.render(CHAPTER_ID,P.practice10,P.studyMode,notice);}
 
@@ -140,13 +141,16 @@ function renderChapterProgress(){
 function render(){
   if(!user)return;
   if(!P.studyMode){window.location.replace('index.html?chapter='+CHAPTER_ID);return;}
-  root.innerHTML=`${header()}<section class="hero"><div class="wrap"><p class="eyebrow">Física · Capítulo 1 de 19</p><h1>Análisis Dimensional</h1></div></section><div class="wrap">${renderChapterProgress()}<div class="layout"><aside class="card sidebar"><p class="eyebrow">Tu ruta de aprendizaje</p><nav class="route" aria-label="Temas del capítulo">${side()}</nav><p class="hint">${P.studyMode==='progressive'?'Completa los 10 problemas de la práctica para alcanzar el 100%. La teoría está disponible para consultar.':'Explora la teoría y la práctica en el orden que prefieras.'}</p></aside><main class="workspace" id="chapter-content"><nav class="card tabs" aria-label="Secciones del capítulo">${[['theory','Teoría'],['examples','Resueltos · '+CONTENT.workedExamples.length],['practice','Práctica · 10 problemas']].map(([id,title])=>`<button data-action="tab" data-value="${id}" class="${P.activeTab===id?'active':''}" ${P.activeTab===id?'aria-current="page"':''} >${title}</button>`).join('')}</nav><article class="card article">${P.activeTab==='theory'?(window.ChapterLearningGoals?.render(CONTENT)||''):''}${notice?`<div role="alert" class="feedback" id="notice">${escapeHTML(notice)}</div>`:''}${P.activeTab==='examples'?workedExamplesView():P.activeTab==='practice'?practiceView():lessonView()}</article></main></div></div><footer class="footer">SIN LÍMITES · Física · Análisis dimensional</footer>`;
+  root.innerHTML=`${header()}<section class="hero"><div class="wrap"><p class="eyebrow">Física · Capítulo 1 de 19</p><h1>Análisis Dimensional</h1></div></section><div class="wrap">${renderChapterProgress()}<div class="layout"><aside class="card sidebar"><p class="eyebrow">Tu ruta de aprendizaje</p><nav class="route" aria-label="Temas del capítulo">${side()}</nav><p class="hint">${P.studyMode==='progressive'?'Completa los 10 problemas de la práctica para alcanzar el 100%. La teoría está disponible para consultar.':'Explora la teoría y la práctica en el orden que prefieras.'}</p></aside><main class="workspace" id="chapter-content"><nav class="card tabs" aria-label="Secciones del capítulo">${[['theory','Teoría'],['examples','Resueltos · '+CONTENT.workedExamples.length],['practice','Práctica · 10 problemas']].map(([id,title])=>`<button data-action="tab" data-value="${id}" class="${(P.activeTab===id||(id==='theory'&&P.activeTab==='intro'))?'active':''}" ${(P.activeTab===id||(id==='theory'&&P.activeTab==='intro'))?'aria-current="page"':''} >${title}</button>`).join('')}</nav><article class="card article">${notice?`<div role="alert" class="feedback" id="notice">${escapeHTML(notice)}</div>`:''}${P.activeTab==='intro'?introView():P.activeTab==='examples'?workedExamplesView():P.activeTab==='practice'?practiceView():lessonView()}</article></main></div></div><footer class="footer">SIN LÍMITES · Física · Análisis dimensional</footer>`;
   renderMath();
 }
 function scrollContent(){document.getElementById('chapter-content')?.scrollIntoView({behavior:'smooth',block:'start'});}
 function showNotice(message){notice=message;render();document.getElementById('notice')?.scrollIntoView({block:'center',behavior:'smooth'});}
-function goLesson(i){if(!canOpen(i))return;P.currentItem=i;P.activeTab='theory';notice='';markChanged();render();persist();scrollContent();}
-function goTab(tab){if(!['theory','examples','practice'].includes(tab))return;P.activeTab=tab;notice='';markChanged();render();persist();scrollContent();}
+function clearAnchor(){if(window.location.hash&&window.history?.replaceState)window.history.replaceState(null,'',window.location.pathname+window.location.search);}
+function goIntro(){clearAnchor();P.activeTab='intro';notice='';markChanged();render();persist();scrollContent();}
+function applyIntroAnchor(draw=true){if(!['learning-goals','antes-de-empezar'].includes(window.location.hash?.slice(1)))return false;P.activeTab='intro';if(draw){notice='';markChanged();render();persist();scrollContent();}return true;}
+function goLesson(i){if(!canOpen(i))return;clearAnchor();P.currentItem=i;P.activeTab='theory';notice='';markChanged();render();persist();scrollContent();}
+function goTab(tab){if(!['theory','examples','practice'].includes(tab))return;clearAnchor();P.activeTab=tab;notice='';markChanged();render();persist();scrollContent();}
 
 function checkPractice(id){if(P.activeTab!=='practice')return;const result=window.ChapterPractice.check(CHAPTER_ID,P.practice10,id,P.studyMode);if(result==='locked'||result==='unchanged')return;notice=result==='missing'?'Selecciona una alternativa antes de comprobar.':'';if(result==='graded')markChanged();render();if(result==='graded'){persist();const feedback=document.getElementById('practice-feedback-'+id);feedback?.focus({preventScroll:true});feedback?.scrollIntoView({block:'nearest',behavior:'instant'});}else document.querySelector('input[name="practice10-'+id+'"]')?.focus();}
 
@@ -158,7 +162,7 @@ if(P.activeTab==='theory'&&LESSONS[P.currentItem]?.id==='dim-magnitudes'&&(windo
 if(P.activeTab==='theory'&&LESSONS[P.currentItem]?.id==='dim-si'&&window.PrefixGame?.handleAction(button))return;
 if(P.activeTab==='theory'&&LESSONS[P.currentItem]?.id==='dim-dimensiones'&&(window.GeometryDerivation?.handleAction(button)||window.DimensionGame?.handleAction(button)))return;
 if(P.activeTab==='theory'&&((LESSONS[P.currentItem]?.id==='dim-dimensiones'&&['physical-constants','dimension-one'].includes(button.dataset.card))||(LESSONS[P.currentItem]?.id==='dim-homogeneidad'&&button.dataset.card==='homogeneity'))&&window.ConstantDerivations?.handleAction(button))return;
-const {action,value,index,id}=button.dataset;if(action==='lesson')goLesson(Number(index));else if(action==='tab')goTab(value);else if(action==='check-practice10')checkPractice(id);else if(action==='sync')retrySync();
+const {action,value,index,id}=button.dataset;if(action==='intro')goIntro();else if(action==='lesson')goLesson(Number(index));else if(action==='tab')goTab(value);else if(action==='check-practice10')checkPractice(id);else if(action==='sync')retrySync();
 });
 root.addEventListener('change',event=>{
 if(!user)return;const input=event.target;
@@ -182,7 +186,7 @@ async function signedIn(u){
     const snap=await record().get();if(epoch!==authEpoch)return;
     P=mergeProgress(snap.exists?snap.data():{},P);cloudReady=true;setSaveStatus('Tu avance está actualizado.');
   }catch(error){if(epoch!==authEpoch)return;console.error('Chapter load:',error);setSaveStatus('No se pudo cargar el avance en la nube. Puedes continuar y reintentar la sincronización.');}
-  render();
+  applyIntroAnchor(false);render();
   if(cloudReady){markChanged();await persist();}
   if(epoch!==authEpoch)return;
   // The navigation document lets the catalog and teacher panel resume this chapter.
@@ -201,3 +205,5 @@ function refreshStudyMode(){
 }
 window.addEventListener('pageshow',()=>{refreshStudyMode();});
 window.addEventListener('storage',event=>{if(user&&window.StudyMode&&event.key===window.StudyMode.key(user.uid))refreshStudyMode();});
+
+window.addEventListener('hashchange',()=>{if(user)applyIntroAnchor();});

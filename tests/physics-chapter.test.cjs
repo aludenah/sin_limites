@@ -44,14 +44,14 @@ async function removedMaterialsMigration(){
   const local=new Map([['sin-limites:student:study-mode',JSON.stringify({mode:'free',updatedMs:1})]]),cloud=new Map();
   if(source==='local')local.set(key,JSON.stringify({progress,pending:true}));else cloud.set(record,progress);
   const h=harness(files,{local,cloud});await h.signIn({uid:'student'});
-  assert.equal(h.run('P.activeTab'),'theory',source+' Materials bookmark resumes in theory');
+  assert.equal(h.run('P.activeTab'),'intro',source+' removed Materials bookmark opens the independent introduction');
   for(const field of ['currentItem','readingItem','examBest','examAttempts','itemScores'])assert.deepEqual(clone(h.run('P.'+field)),progress[field],source+' preserves '+field);
   assert.deepEqual(clone(h.run('P.practice10.mastered')),progress.practice10.mastered);assert.equal(h.run('P.practice10.attempts.p01'),3);
   assert.equal(h.run('progressPercent()'),10);
   await h.run('persist()');
-  for(const saved of [JSON.parse(local.get(key)).progress,cloud.get(record)])assert.equal(saved.activeTab,'theory','The corrected tab is saved locally and in the cloud');
+  for(const saved of [JSON.parse(local.get(key)).progress,cloud.get(record)])assert.equal(saved.activeTab,'intro','The corrected tab is saved locally and in the cloud');
  }
- console.log('PASS: removed Materials bookmarks resume in theory without changing reading positions, practice or grades.');
+ console.log('PASS: removed Materials bookmarks open the introduction without changing reading positions, practice or grades.');
 }
 async function removedLessonMigration(){
  const id='fisica-capitulo-01',record='users/student/progress/'+id;

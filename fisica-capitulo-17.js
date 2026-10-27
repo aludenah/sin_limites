@@ -9,7 +9,7 @@ const escapeHTML=value=>String(value??'').replaceAll('&','&amp;').replaceAll('<'
 let user=null,db=null,cloudReady=false,saveChain=Promise.resolve(),saveVersion=0,authEpoch=0;
 let saveMessage='',notice='',P=emptyProgress(),saveTimer=null;
 
-function emptyProgress(){return {studyMode:null,currentItem:0,readingItem:0,contentVersion:3,activeTab:'theory',practice10:window.ChapterPractice.normalize(CHAPTER_ID),updatedMs:0};}
+function emptyProgress(){return {studyMode:null,currentItem:0,readingItem:0,contentVersion:3,activeTab:'intro',practice10:window.ChapterPractice.normalize(CHAPTER_ID),updatedMs:0};}
 
 
 
@@ -26,7 +26,7 @@ function normalized(data={}){
  };
  p.studyMode=window.StudyMode?.get(user?.uid)||(['free','progressive'].includes(data.studyMode)?data.studyMode:null);
  p.currentItem=lessonIndex(data.currentItem);p.readingItem=Number.isInteger(data.readingItem)?lessonIndex(data.readingItem):p.currentItem;
- p.activeTab=data.activeTab==='exam'?'practice':['theory','examples','practice'].includes(data.activeTab)?data.activeTab:'theory';
+ p.activeTab=data.activeTab==='exam'?'practice':['intro','theory','examples','practice'].includes(data.activeTab)?data.activeTab:'intro';
  const incoming=data.practice10,ids=new Set(window.ChapterPractice.questions(CHAPTER_ID).map(q=>q.id));
  p.practiceArchive=data.practiceArchive&&typeof data.practiceArchive==='object'?{...data.practiceArchive}:{};
  if(incoming&&typeof incoming==='object'&&[...(Array.isArray(incoming.mastered)?incoming.mastered:[]),...Object.keys(incoming.answers||{}),...Object.keys(incoming.results||{})].some(id=>!ids.has(id)))p.practiceArchive.beforeSourcePDF=incoming;
@@ -99,7 +99,7 @@ function renderMath(){
 }
 function header(){return '<a class="skip" href="#chapter-content">Ir al contenido</a><header class="top"><div class="wrap"><a class="brand" href="index.html?v=20260919-fisica19"><span class="logo"><img src="assets/logo-sin-limites.jpg" alt="Logo de SIN LÍMITES" width="56" height="56" style="display:block;width:100%;height:100%;object-fit:contain;border-radius:inherit"></span><span>SIN <em>LÍMITES</em><small>ACADEMIA VIRTUAL</small></span></a><a class="back" href="index.html?course=16&v=20260919-fisica19">← Temario de Física · 19 capítulos</a></div></header>';}
 
-function side(){return LESSONS.map((lesson,i)=>{const active=P.activeTab==='theory'&&P.currentItem===i;return '<button data-action="lesson" data-index="'+i+'" '+(active?'aria-current="step"':'')+' class="'+(active?'active':'')+'"><span class="stepno">'+String(i+1).padStart(2,'0')+'</span><span>'+lesson.title+'</span></button>';}).join('');}
+function side(){return `<button data-action="intro" ${P.activeTab==='intro'?'aria-current="step"':''} class="${P.activeTab==='intro'?'active':''}"><span class="stepno" aria-hidden="true">✦</span><span>Antes de empezar</span></button>`+LESSONS.map((lesson,i)=>{const active=P.activeTab==='theory'&&P.currentItem===i;return '<button data-action="lesson" data-index="'+i+'" '+(active?'aria-current="step"':'')+' class="'+(active?'active':'')+'"><span class="stepno">'+String(i+1).padStart(2,'0')+'</span><span>'+lesson.title+'</span></button>';}).join('');}
 
 
 
@@ -118,9 +118,10 @@ function lessonSections(lesson){
   return `<section${label}>${heading}<div class="content">${lessonBody(section)}${lessonFigures(section.id)}</div>${lessonActivity(section)}</section>`;
  }).join('');
 }
+function introView(){return `${window.ChapterLearningGoals?.render(CONTENT)||''}<div class="actions"><button class="button" data-action="lesson" data-index="0">Comenzar capítulo →</button></div>`;}
 function lessonView(){
   const i=P.currentItem,x=LESSONS[i];
-  return `<p class="eyebrow">Tema ${i+1} de ${LESSONS.length} · ${x.subtitle}</p><h2>${x.title}</h2><div class="content">${lessonBody(x)}${lessonFigures(x.id)}</div>${lessonSections(x)}${lessonActivity(x)}<div class="actions"><button class="button secondary" data-action="lesson" data-index="${i-1}" ${i===0?'disabled':''}>← Tema anterior</button>${i<LESSONS.length-1?`<button class="button" data-action="lesson" data-index="${i+1}" ${!canOpen(i+1)?'disabled':''}>Siguiente tema →</button>`:`<button class="button" data-action="tab" data-value="practice" ${!canApply()?'disabled':''}>Ir a la práctica →</button>`}</div>`;
+  return `<p class="eyebrow">Tema ${i+1} de ${LESSONS.length} · ${x.subtitle}</p><h2>${x.title}</h2><div class="content">${lessonBody(x)}${lessonFigures(x.id)}</div>${lessonSections(x)}${lessonActivity(x)}<div class="actions"><button class="button secondary" data-action="${i===0?'intro':'lesson'}" data-index="${i-1}">${i===0?'← Antes de empezar':'← Tema anterior'}</button>${i<LESSONS.length-1?`<button class="button" data-action="lesson" data-index="${i+1}" ${!canOpen(i+1)?'disabled':''}>Siguiente tema →</button>`:`<button class="button" data-action="tab" data-value="practice" ${!canApply()?'disabled':''}>Ir a la práctica →</button>`}</div>`;
 }
 function practiceView(){return window.ChapterPractice.render(CHAPTER_ID,P.practice10,P.studyMode,notice);}
 
@@ -139,13 +140,15 @@ function render(){
   if(!user)return;
   if(!P.studyMode){window.location.replace('index.html?chapter='+CHAPTER_ID);return;}
   window.WireFieldLab?.destroy();window.ChapterInteractions?.unmount();
-  root.innerHTML=`${header()}<section class="hero"><div class="wrap"><p class="eyebrow">Física · Capítulo 17 de 19</p><h1>Electromagnetismo</h1></div></section><div class="wrap">${chapterProgressView()}<div class="layout"><aside class="card sidebar"><p class="eyebrow">Tu ruta de aprendizaje</p><nav class="route" aria-label="Temas del capítulo">${side()}</nav><p class="hint">${P.studyMode==='progressive'?'Completa los 10 problemas de la práctica para alcanzar el 100%. La teoría está disponible para consultar.':'Explora la teoría y la práctica en el orden que prefieras.'}</p></aside><main class="workspace" id="chapter-content"><nav class="card tabs" aria-label="Secciones del capítulo">${[['theory','Teoría'],['examples','Resueltos · '+CONTENT.workedExamples.length],['practice','Práctica · 10 problemas']].map(([id,title])=>`<button data-action="tab" data-value="${id}" class="${P.activeTab===id?'active':''}" ${P.activeTab===id?'aria-current="page"':''} >${title}</button>`).join('')}</nav><article class="card article">${P.activeTab==='theory'?(window.ChapterLearningGoals?.render(CONTENT)||''):''}${notice?`<div role="alert" class="feedback" id="notice">${escapeHTML(notice)}</div>`:''}${P.activeTab==='examples'?workedExamplesView():P.activeTab==='practice'?practiceView():lessonView()}</article></main></div></div><footer class="footer">SIN LÍMITES · Física · Electromagnetismo</footer><dialog id="em-figure-dialog" class="em-figure-dialog" aria-labelledby="em-figure-title"></dialog>`;
+  root.innerHTML=`${header()}<section class="hero"><div class="wrap"><p class="eyebrow">Física · Capítulo 17 de 19</p><h1>Electromagnetismo</h1></div></section><div class="wrap">${chapterProgressView()}<div class="layout"><aside class="card sidebar"><p class="eyebrow">Tu ruta de aprendizaje</p><nav class="route" aria-label="Temas del capítulo">${side()}</nav><p class="hint">${P.studyMode==='progressive'?'Completa los 10 problemas de la práctica para alcanzar el 100%. La teoría está disponible para consultar.':'Explora la teoría y la práctica en el orden que prefieras.'}</p></aside><main class="workspace" id="chapter-content"><nav class="card tabs" aria-label="Secciones del capítulo">${[['theory','Teoría'],['examples','Resueltos · '+CONTENT.workedExamples.length],['practice','Práctica · 10 problemas']].map(([id,title])=>`<button data-action="tab" data-value="${id}" class="${(P.activeTab===id||(id==='theory'&&P.activeTab==='intro'))?'active':''}" ${(P.activeTab===id||(id==='theory'&&P.activeTab==='intro'))?'aria-current="page"':''} >${title}</button>`).join('')}</nav><article class="card article">${notice?`<div role="alert" class="feedback" id="notice">${escapeHTML(notice)}</div>`:''}${P.activeTab==='intro'?introView():P.activeTab==='examples'?workedExamplesView():P.activeTab==='practice'?practiceView():lessonView()}</article></main></div></div><footer class="footer">SIN LÍMITES · Física · Electromagnetismo</footer><dialog id="em-figure-dialog" class="em-figure-dialog" aria-labelledby="em-figure-title"></dialog>`;
   renderMath();
   window.WireFieldLab?.mount(root);window.ChapterInteractions?.mount(root,{saved:P.inductionLab});
 }
 function scrollContent(){document.getElementById('chapter-content')?.scrollIntoView({behavior:'smooth',block:'start'});}
 function showNotice(message){notice=message;render();document.getElementById('notice')?.scrollIntoView({block:'center',behavior:'smooth'});}
 function clearAnchor(){if(window.location.hash&&window.history?.replaceState)window.history.replaceState(null,'',window.location.pathname+window.location.search);}
+function goIntro(){clearAnchor();P.activeTab='intro';notice='';markChanged();render();persist();scrollContent();}
+function applyIntroAnchor(draw=true){if(!['learning-goals','antes-de-empezar'].includes(window.location.hash?.slice(1)))return false;P.activeTab='intro';if(draw){notice='';markChanged();render();persist();scrollContent();}return true;}
 function goLesson(i){if(!canOpen(i))return;clearAnchor();P.currentItem=i;P.activeTab='theory';notice='';markChanged();render();persist();scrollContent();}
 function goTab(tab){if(!['theory','examples','practice'].includes(tab))return;clearAnchor();P.activeTab=tab;notice='';markChanged();render();persist();scrollContent();}
 
@@ -155,7 +158,7 @@ function checkPractice(id){if(P.activeTab!=='practice')return;const result=windo
 
 root.addEventListener('click',event=>{
 const button=event.target.closest('[data-action]');if(!button||button.disabled||!user)return;
-const {action,value,index,id}=button.dataset;if(action==='math-figure')openFigure(id);else if(action==='close-figure')document.getElementById('em-figure-dialog')?.close();else if(action==='lab')openLab(value);else if(action==='lesson')goLesson(Number(index));else if(action==='tab')goTab(value);else if(action==='check-practice10')checkPractice(id);else if(action==='sync')retrySync();
+const {action,value,index,id}=button.dataset;if(action==='math-figure')openFigure(id);else if(action==='close-figure')document.getElementById('em-figure-dialog')?.close();else if(action==='lab')openLab(value);else if(action==='intro')goIntro();else if(action==='lesson')goLesson(Number(index));else if(action==='tab')goTab(value);else if(action==='check-practice10')checkPractice(id);else if(action==='sync')retrySync();
 });
 root.addEventListener('change',event=>{
 if(!user)return;const input=event.target;
@@ -202,6 +205,7 @@ function openLab(id){
  if(window.history?.replaceState)window.history.replaceState(null,'','#'+id);scrollAnchor(id);
 }
 function applyAnchor(draw=true){
+ if(applyIntroAnchor(draw))return;
  const hash=window.location.hash;if(!hash)return;
  const id=hash.slice(1),target=id==='wire-field-lab'?'laboratorio-conductor':id==='induction-lab'?'generador':null;
  if(target){P.currentItem=Math.max(0,LESSONS.findIndex(x=>x.id===target));P.activeTab='theory';if(draw){render();scrollAnchor(id);}}

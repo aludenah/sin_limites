@@ -224,7 +224,7 @@ function progressSanitization(){
  const h=harness(files);assert.doesNotThrow(()=>h.run('normalized(null)'));
  assert.equal(h.run('normalized({currentItem:999}).currentItem'),5);assert.equal(h.run('normalized({currentItem:-8}).currentItem'),0);assert.equal(h.run('normalized({currentItem:2.5}).currentItem'),0);
  assert.equal(h.run("normalized({currentItem:4,readingItem:999,activeTab:'foreign',updatedMs:Infinity}).readingItem"),5,'Reading positions from deleted lessons clamp to the last retained lesson');
- assert.equal(h.run("normalized({activeTab:'foreign'}).activeTab"),'theory');assert.equal(h.run("normalized({activeTab:'exam'}).activeTab"),'practice');assert.equal(h.run('normalized({updatedMs:Infinity}).updatedMs'),0);
+ assert.equal(h.run("normalized({activeTab:'foreign'}).activeTab"),'intro');assert.equal(h.run("normalized({activeTab:'exam'}).activeTab"),'practice');assert.equal(h.run('normalized({updatedMs:Infinity}).updatedMs'),0);
  assert.equal(h.run('normalized({currentItem:4}).readingItem'),4);
  assert.equal(h.run('normalized({inductionLab:{turns:100}}).inductionLab'),undefined,'Chapter state contains no unrelated laboratory record');
 }
