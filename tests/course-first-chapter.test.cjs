@@ -6,6 +6,7 @@ const root=path.join(__dirname,'..');
 const firstChapters=new Map([
  [1,'razonamiento-verbal-capitulo-01'],
  [2,'razonamiento-matematico-capitulo-01'],
+ [4,'geometria-capitulo-01'],
  [7,'lenguaje-capitulo-01'],
  [10,'educacion-civica-capitulo-01'],
  [11,'historia-del-peru-capitulo-01'],

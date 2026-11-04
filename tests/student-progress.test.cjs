@@ -5,7 +5,7 @@ const root=path.join(__dirname,'..');
 const files=[
  'practice-bank.js','historia-del-peru-capitulo-09-practice.js','quimica-capitulo-18-practice.js',
  'biologia-capitulo-11-practice.js','fisica-capitulo-13-practice.js','fisica-capitulo-17-practice.js',
- 'geometria-capitulo-17-practice.js','chapter-practice.js','courses.js','history-catalog.js',
+ 'geometria-capitulo-17-practice.js','geometria-capitulo-01-practice.js','chapter-practice.js','courses.js','history-catalog.js',
  'peru-catalog.js','lenguaje-catalog.js','economia-catalog.js','educacion-civica-catalog.js',
  'razonamiento-verbal-catalog.js','razonamiento-matematico-catalog.js','fisica-catalog.js',
  'geometria-catalog.js','quimica-catalog.js','biologia-catalog.js','history-progress.js',
@@ -48,8 +48,8 @@ async function test(){
  const h=harness();await h.signIn({uid:'learner',displayName:'Ana <López>'});
  const initial=model(h);
  assert.equal(initial.courses.length,11);
- assert.equal(initial.chapters.length,51);
- assert.equal(initial.total,510);
+ assert.equal(initial.chapters.length,52);
+ assert.equal(initial.total,520);
  assert.equal(initial.solved,0);
  assert.equal(initial.completed,0);
  const header=h.run('renderHeader()');
@@ -136,7 +136,7 @@ async function test(){
  const direct=harness({hash:'#mi-avance'});await direct.signIn({uid:'bookmark'});
  assert.equal(direct.run('state.view'),'progress');
  assert.equal(direct.run('state.studyMode'),null);
- console.log('PASS: academic panel, 51 chapters/510 problems, saved mastery and progressive locks, explicit continuation, routing, read-only views, offline fallback and account isolation.');
+ console.log('PASS: academic panel, 52 chapters/520 problems, saved mastery and progressive locks, explicit continuation, routing, read-only views, offline fallback and account isolation.');
 }
 module.exports={harness};
 if(require.main===module)test().catch(error=>{console.error(error);process.exitCode=1;});

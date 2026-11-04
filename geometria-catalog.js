@@ -1,6 +1,6 @@
 'use strict';
 window.GEOMETRY_SYLLABUS=(window.COURSES?.find(c=>c.id===4)?.topics||[
-  "Segmento de recta y ángulos",
+  "Segmentos y ángulos",
   "Triángulos y congruencia",
   "Desigualdades geométricas",
   "Rectas perpendiculares y paralelas",
@@ -26,6 +26,11 @@ window.GEOMETRY_SYLLABUS=(window.COURSES?.find(c=>c.id===4)?.topics||[
   "Circunferencia, parábola y elipse"
 ]).map((title,index)=>({number:index+1,title}));
 window.GEOMETRY_CHAPTERS=[
+  {
+    number:1,title:'Segmentos y ángulos',
+    intro:'Reconoce los elementos de las figuras, opera con segmentos y relaciona ángulos entre paralelas.',
+    progressId:'geometria-capitulo-01',legacySources:[],items:8,format:'reading',practiceCount:10,itemLabel:'problemas',assessmentFormat:'practice-10'
+  },
   {
     "number": 17,
     "title": "Poliedros convexos y regulares",

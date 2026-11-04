@@ -45,7 +45,7 @@ function pageManifest(file){
   assert.match(html,/<link\b[^>]*href="chapter-learning-goals\.css[?"]/,
    file+' includes the introduction styles');
  }
- return {file,files,renderer,reading:renderer==='history-reading.js',physics:/^fisica-capitulo-(?:01|02|13|17)\.js$/.test(renderer)};
+ return {file,files,renderer,reading:renderer==='history-reading.js',paged:/^(?:fisica-capitulo-(?:01|02|13|17)|geometria-capitulo-01)\.js$/.test(renderer)};
 }
 
 function assertIntroduction(html,label,{separate=false}={}){
@@ -65,8 +65,8 @@ function assertIntroduction(html,label,{separate=false}={}){
 
 async function allDevelopedChapters(){
  const pages=fs.readdirSync(root).filter(file=>/-capitulo-\d+\.html$/.test(file)).sort();
- assert.equal(pages.length,51,'Every developed chapter is included in this audit');
- const signatures=new Set(),courses=new Set(),renderers={shared:0,reading:0,physics:0};
+ assert.equal(pages.length,52,'Every developed chapter is included in this audit');
+ const signatures=new Set(),courses=new Set(),renderers={shared:0,reading:0,paged:0};
  for(const page of pages){
   const manifest=pageManifest(page),h=harness(manifest.files);
   h.run("window.StudyMode.choose('learning-reader','free')");await h.signIn({uid:'learning-reader'});
@@ -79,13 +79,13 @@ async function allDevelopedChapters(){
   signatures.add(signature);courses.add(content.courseId||12);
   assert.ok(Array.isArray(content.timeline)&&content.timeline.length>=2,page+' has its own learning route');
   const container=manifest.reading?'reading-app':'chapter-app',html=h.elements.get(container).innerHTML;
-  assertIntroduction(html,page,{separate:manifest.physics});
+  assertIntroduction(html,page,{separate:manifest.paged});
   for(const goal of goals){assert.ok(text(html).includes(goal.title),page+' renders its goal title');assert.ok(text(html).includes(goal.text),page+' renders its goal explanation');}
   const before=plain(h,'P');h.run('render();render()');
   assert.deepEqual(plain(h,'P'),before,page+' does not award progress or change reading position on render');
-  assertIntroduction(h.elements.get(container).innerHTML,page+' after repeated rendering',{separate:manifest.physics});
-  if(manifest.physics){
-   renderers.physics++;
+  assertIntroduction(h.elements.get(container).innerHTML,page+' after repeated rendering',{separate:manifest.paged});
+  if(manifest.paged){
+   renderers.paged++;
    assert.equal(h.run('P.activeTab'),'intro',page+' opens in its independent introduction');
    assert.equal(h.run("normalized({activeTab:'intro'}).activeTab"),'intro',page+' preserves an introduction bookmark');
    const lessonIds=content.lessons.map(lesson=>lesson.id||lesson.title);
@@ -103,7 +103,7 @@ async function allDevelopedChapters(){
      assertIntroduction(h.elements.get(container).innerHTML,page+' / '+mode+' / intro after topic '+i,{separate:true});
     }
     const view=h.elements.get(container).innerHTML;
-    for(const tab of ['practice','examples','resources'].filter(tab=>view.includes('data-value="'+tab+'"'))){
+    for(const tab of ['practice','examples','proposed','resources'].filter(tab=>view.includes('data-value="'+tab+'"'))){
      h.run(`goTab('${tab}')`);
      assert.doesNotMatch(h.elements.get(container).innerHTML,/id="learning-goals"|class="chapter-learning-goals"/,page+' hides the introduction in '+tab);
     }
@@ -122,8 +122,8 @@ async function allDevelopedChapters(){
   }else renderers.shared++;
  }
  assert.equal(courses.size,11,'The audit includes every course with developed chapters');
- assert.deepEqual(renderers,{shared:46,reading:1,physics:4});
- console.log('PASS: all 51 chapters in 11 courses have specific goals and a route before theory; Physics introductions are independent, unnumbered sections before item 1 and never repeat in lesson views; progress and deep links are preserved.');
+ assert.deepEqual(renderers,{shared:46,reading:1,paged:5});
+ console.log('PASS: all 52 chapters in 11 courses have specific goals and a route before theory; Paginated introductions are independent, unnumbered sections before item 1 and never repeat in lesson views; progress and deep links are preserved.');
 }
 
 async function main(){helperContract();await allDevelopedChapters();}
