@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 480" role="img" aria-labelledby="title desc">
+<title id="title">Prisma triangular</title><desc id="desc">Dos bases triangulares paralelas y tres caras laterales rectangulares. La arista posterior de la base inferior es discontinua.</desc>
+<defs>
+<linearGradient id="top" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e7f8fc"/><stop offset="1" stop-color="#bddfe9" stop-opacity=".72"/></linearGradient>
+<linearGradient id="left" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#b9eef0" stop-opacity=".54"/><stop offset="1" stop-color="#42b7c7" stop-opacity=".50"/></linearGradient>
+<linearGradient id="right" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a2c8ed" stop-opacity=".62"/><stop offset="1" stop-color="#8b7bdb" stop-opacity=".44"/></linearGradient>
+<filter id="shadow" x="-25%" y="-20%" width="150%" height="155%"><feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#3a5e96" flood-opacity=".13"/></filter>
+</defs>
+<g filter="url(#shadow)" stroke-linejoin="round" stroke-linecap="round">
+<path d="M170 325 438 325 336 413Z" fill="#a1c8e5" fill-opacity=".26"/>
+<path d="M170 68 336 156 336 413 170 325Z" fill="url(#left)"/>
+<path d="M438 68 336 156 336 413 438 325Z" fill="url(#right)"/>
+<path d="M170 68 438 68 336 156Z" fill="url(#top)"/>
+<path d="M170 325H438" fill="none" stroke="#426482" stroke-width="2.6" stroke-dasharray="8 8" opacity=".8"/>
+<path d="M170 325V68H438V325L336 413Z M170 68 336 156 438 68" fill="none" stroke="#2a527f" stroke-width="4"/>
+<path d="M336 156V413" fill="none" stroke="#e8fdff" stroke-width="5"/>
+<path d="M336 156V413" fill="none" stroke="#287a9f" stroke-width="2.6"/>
+</g>
+<g fill="#fff" stroke="#367b99" stroke-width="2.5"><circle cx="170" cy="68" r="5"/><circle cx="438" cy="68" r="5"/><circle cx="336" cy="156" r="5"/><circle cx="170" cy="325" r="5"/><circle cx="438" cy="325" r="5"/><circle cx="336" cy="413" r="5"/></g>
+</svg>

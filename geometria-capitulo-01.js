@@ -81,7 +81,7 @@ function side(){return `<button data-action="intro" ${P.activeTab==='intro'?'ari
 function introView(){return `${window.ChapterLearningGoals.render(CONTENT)}<p class="geometry-source">${escapeHTML(CONTENT.sourceNote)}</p><div class="actions"><button class="button" data-action="lesson" data-index="0">Comenzar capítulo →</button></div>`;}
 function lessonView(){
  const i=P.currentItem,x=LESSONS[i];
- const body=x.body.replace(/__FIGURE_(\w+)__/g,(_,key)=>window.ChapterPractice.renderFigure(CONTENT.inlineFigures[key],'inline:'+key)).replace('__SHAPE_CAROUSEL__',()=>window.GeometryShapeCarousel?.render(CONTENT.shapeGallery)||'').replace('__PLANE_SHAPE_CAROUSEL__',()=>window.GeometryShapeCarousel?.render(CONTENT.planeShapeGallery,{id:'geometria-plana-figuras',label:'Ejemplos de geometría plana'})||'');
+ const body=x.body.replace(/__FIGURE_(\w+)__/g,(_,key)=>window.ChapterPractice.renderFigure(CONTENT.inlineFigures[key],'inline:'+key)).replace('__SHAPE_CAROUSEL__',()=>window.GeometryShapeCarousel?.render(CONTENT.shapeGallery)||'').replace('__PLANE_SHAPE_CAROUSEL__',()=>window.GeometryShapeCarousel?.render(CONTENT.planeShapeGallery,{id:'geometria-plana-figuras',label:'Ejemplos de geometría plana'})||'').replace('__SPACE_SHAPE_CAROUSEL__',()=>window.GeometryShapeCarousel?.render(CONTENT.spaceShapeGallery,{id:'geometria-espacio-figuras',label:'Ejemplos de geometría del espacio'})||'');
  return `<p class="eyebrow">Tema ${i+1} de ${LESSONS.length}</p><h2 id="${escapeHTML(x.id)}">${escapeHTML(x.title)}</h2><div class="content">${body}${x.visuals.map((v,j)=>window.ChapterPractice.renderFigure(v,'theory:'+x.id+':'+j)).join('')}</div><div class="actions"><button class="button secondary" data-action="${i===0?'intro':'lesson'}" data-index="${i-1}">${i===0?'← Antes de empezar':'← Tema anterior'}</button>${i<LESSONS.length-1?`<button class="button" data-action="lesson" data-index="${i+1}">Siguiente tema →</button>`:'<button class="button" data-action="tab" data-value="examples">Ver problemas resueltos →</button>'}</div>`;
 }
 function workedExamplesView(){return `<p class="eyebrow">Aplicamos lo aprendido</p><h2>4 problemas resueltos</h2><p>Lee el enunciado y observa el gráfico. Después abre la solución para seguir el razonamiento paso a paso.</p>${CONTENT.workedExamples.map(e=>`<section class="example worked-example" id="geometria-resuelto-${e.number}"><p class="eyebrow">Problema resuelto ${e.number} · ${escapeHTML(e.source)}</p><h3>${escapeHTML(e.title)}</h3><p>${e.question}</p>${window.ChapterPractice.renderFigure(e.figure,'worked:'+e.number)}<details><summary>Ver solución paso a paso</summary><ol>${e.steps.map(step=>'<li>'+step+'</li>').join('')}</ol></details></section>`).join('')}`;}
@@ -163,7 +163,7 @@ window.addEventListener('storage',event=>{if(user&&window.StudyMode&&event.key==
 function applyAnchor(draw=true){
  if(applyIntroAnchor(draw))return;
  const id=window.location.hash?.slice(1);if(!id)return;
- const index=['figuras-geometricas','geometria-plana-figuras'].includes(id)?0:LESSONS.findIndex(l=>l.id===id);
+ const index=['figuras-geometricas','geometria-plana-figuras','geometria-espacio-figuras'].includes(id)?0:LESSONS.findIndex(l=>l.id===id);
  if(index>=0){P.currentItem=index;P.readingItem=index;P.activeTab='theory';}
  else if(/^geometria-resuelto-\d+$/.test(id))P.activeTab='examples';
  else if(/^geometria-propuesto-\d+$/.test(id)||['propuestos-basicos','propuestos-intermedios'].includes(id))P.activeTab='proposed';
