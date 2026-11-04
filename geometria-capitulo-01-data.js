@@ -47,7 +47,7 @@ window.GEOMETRY_CONTENT={
     {
       "id": "geometria-y-ramas",
       "title": "Geometría y sus ramas",
-      "body": "<p>La <strong>geometría</strong> es la rama de la matemática que estudia las figuras geométricas. Su uso práctico se encuentra en distintas culturas antiguas; los griegos organizaron sus conocimientos de manera sistemática. El material también menciona los conocimientos geométricos de la ciudad de Caral, en nuestro país.</p><p>La palabra proviene del griego <em>geo</em>, «tierra», y <em>metron</em>, «medida»: significa <strong>medida de la tierra</strong>.</p><h3>Figura geométrica</h3><p>Es un conjunto de puntos que presenta una forma o característica determinada. El triángulo, la circunferencia y la pirámide son ejemplos de figuras geométricas.</p>__SHAPE_CAROUSEL__<h3>Partes de la geometría</h3><dl class=\"geometry-definitions\"><dt>Geometría plana o planimetría</dt><dd>Estudia figuras cuyos puntos pertenecen a un mismo plano, como el ángulo y el trapecio.</dd><dt>Geometría del espacio o estereometría</dt><dd>Estudia figuras cuyos puntos no están contenidos todos en un mismo plano, como el prisma y el cono.</dd><dt>Geometría analítica</dt><dd>Relaciona el álgebra y la geometría: representa figuras mediante ecuaciones lineales o cuadráticas.</dd></dl><p>Entre las representaciones analíticas del material se encuentran la recta y la circunferencia:</p><div class=\"geometry-equation\">\\[Ax+By+C=0\\]</div><div class=\"geometry-equation\">\\[(x-h)^2+(y-k)^2=r^2\\]</div>",
+      "body": "<p>La <strong>geometría</strong> es la rama de la matemática que estudia las figuras geométricas. Su uso práctico se encuentra en distintas culturas antiguas; los griegos organizaron sus conocimientos de manera sistemática. El material también menciona los conocimientos geométricos de la ciudad de Caral, en nuestro país.</p><p>La palabra proviene del griego <em>geo</em>, «tierra», y <em>metron</em>, «medida»: significa <strong>medida de la tierra</strong>.</p><h3>Figura geométrica</h3><p>Es un conjunto de puntos que presenta una forma o característica determinada. El triángulo, la circunferencia y la pirámide son ejemplos de figuras geométricas.</p>__SHAPE_CAROUSEL__<h3>Partes de la geometría</h3><dl class=\"geometry-definitions\"><dt>Geometría plana o planimetría</dt><dd>Estudia figuras cuyos puntos pertenecen a un mismo plano, como el ángulo y el trapecio.</dd></dl>__PLANE_SHAPE_CAROUSEL__<dl class=\"geometry-definitions\"><dt>Geometría del espacio o estereometría</dt><dd>Estudia figuras cuyos puntos no están contenidos todos en un mismo plano, como el prisma y el cono.</dd><dt>Geometría analítica</dt><dd>Relaciona el álgebra y la geometría: representa figuras mediante ecuaciones lineales o cuadráticas.</dd></dl><p>Entre las representaciones analíticas del material se encuentran la recta y la circunferencia:</p><div class=\"geometry-equation\">\\[Ax+By+C=0\\]</div><div class=\"geometry-equation\">\\[(x-h)^2+(y-k)^2=r^2\\]</div>",
       "visuals": [
         {
           "src": "assets/geometria-capitulo-01/ramas.svg",
@@ -747,6 +747,23 @@ window.GEOMETRY_CONTENT={
       "name": "Pirámide",
       "src": "assets/geometria-capitulo-01/ejemplo-piramide.svg",
       "alt": "Pirámide de base triangular en perspectiva, con caras translúcidas turquesa y violeta y la arista oculta de la base dibujada con trazos discontinuos."
+    }
+  ],
+  "planeShapeGallery": [
+    {
+      "name": "Ángulo",
+      "src": "assets/geometria-capitulo-01/plana-angulo.svg",
+      "alt": "Ángulo formado por dos rayos azules con un origen común y su abertura señalada por un arco suave."
+    },
+    {
+      "name": "Trapecio",
+      "src": "assets/geometria-capitulo-01/plana-trapecio.svg",
+      "alt": "Trapecio redibujado en azul y turquesa: sus dos bases horizontales son paralelas y tienen distinta longitud."
+    },
+    {
+      "name": "Rectángulo",
+      "src": "assets/geometria-capitulo-01/plana-rectangulo.svg",
+      "alt": "Rectángulo redibujado en azul y violeta, con los cuatro ángulos rectos señalados en su interior."
     }
   ]
 };
