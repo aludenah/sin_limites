@@ -81,7 +81,7 @@ function side(){return `<button data-action="intro" ${P.activeTab==='intro'?'ari
 function introView(){return `${window.ChapterLearningGoals.render(CONTENT)}<p class="geometry-source">${escapeHTML(CONTENT.sourceNote)}</p><div class="actions"><button class="button" data-action="lesson" data-index="0">Comenzar capítulo →</button></div>`;}
 function lessonView(){
  const i=P.currentItem,x=LESSONS[i];
- const body=x.body.replace(/__FIGURE_(\w+)__/g,(_,key)=>window.ChapterPractice.renderFigure(CONTENT.inlineFigures[key],'inline:'+key));
+ const body=x.body.replace(/__FIGURE_(\w+)__/g,(_,key)=>window.ChapterPractice.renderFigure(CONTENT.inlineFigures[key],'inline:'+key)).replace('__SHAPE_CAROUSEL__',()=>window.GeometryShapeCarousel?.render(CONTENT.shapeGallery)||'');
  return `<p class="eyebrow">Tema ${i+1} de ${LESSONS.length}</p><h2 id="${escapeHTML(x.id)}">${escapeHTML(x.title)}</h2><div class="content">${body}${x.visuals.map((v,j)=>window.ChapterPractice.renderFigure(v,'theory:'+x.id+':'+j)).join('')}</div><div class="actions"><button class="button secondary" data-action="${i===0?'intro':'lesson'}" data-index="${i-1}">${i===0?'← Antes de empezar':'← Tema anterior'}</button>${i<LESSONS.length-1?`<button class="button" data-action="lesson" data-index="${i+1}">Siguiente tema →</button>`:'<button class="button" data-action="tab" data-value="examples">Ver problemas resueltos →</button>'}</div>`;
 }
 function workedExamplesView(){return `<p class="eyebrow">Aplicamos lo aprendido</p><h2>4 problemas resueltos</h2><p>Lee el enunciado y observa el gráfico. Después abre la solución para seguir el razonamiento paso a paso.</p>${CONTENT.workedExamples.map(e=>`<section class="example worked-example" id="geometria-resuelto-${e.number}"><p class="eyebrow">Problema resuelto ${e.number} · ${escapeHTML(e.source)}</p><h3>${escapeHTML(e.title)}</h3><p>${e.question}</p>${window.ChapterPractice.renderFigure(e.figure,'worked:'+e.number)}<details><summary>Ver solución paso a paso</summary><ol>${e.steps.map(step=>'<li>'+step+'</li>').join('')}</ol></details></section>`).join('')}`;}
@@ -98,8 +98,10 @@ function chapterProgressView(){
 function render(){
  if(!user)return;
  if(!P.studyMode){window.location.replace('index.html?chapter='+CHAPTER_ID);return;}
+ window.GeometryShapeCarousel?.destroy();
  root.innerHTML=`${header()}<section class="hero"><div class="wrap"><p class="eyebrow">Geometría · Capítulo 1 de 24</p><h1>Segmentos y ángulos</h1></div></section><div class="wrap">${chapterProgressView()}<div class="layout"><aside class="card sidebar"><p class="eyebrow">Tu ruta de aprendizaje</p><nav class="route" aria-label="Temas del capítulo">${side()}</nav><p class="hint">${P.studyMode==='progressive'?'Completa los 10 problemas de la práctica para alcanzar el 100%. La teoría y los propuestos están disponibles para consultar.':'Explora la teoría y los problemas en el orden que prefieras.'}</p></aside><main class="workspace" id="chapter-content"><nav class="card tabs geometry-tabs" aria-label="Secciones del capítulo">${[['theory','Teoría'],['examples','Resueltos · 4'],['proposed','Propuestos · 35'],['practice','Práctica · 10']].map(([id,title])=>`<button data-action="tab" data-value="${id}" class="${P.activeTab===id||id==='theory'&&P.activeTab==='intro'?'active':''}" ${P.activeTab===id||id==='theory'&&P.activeTab==='intro'?'aria-current="page"':''}>${title}</button>`).join('')}</nav><article class="card article">${notice&&P.activeTab!=='practice'?`<div role="alert" class="feedback" id="notice">${escapeHTML(notice)}</div>`:''}${P.activeTab==='intro'?introView():P.activeTab==='examples'?workedExamplesView():P.activeTab==='proposed'?proposedView():P.activeTab==='practice'?practiceView():lessonView()}</article></main></div></div><footer class="footer">SIN LÍMITES · Geometría · Segmentos y ángulos</footer><dialog id="geometry-figure-dialog" class="geometry-figure-dialog" aria-labelledby="geometry-figure-title"></dialog>`;
  renderMath();
+ window.GeometryShapeCarousel?.mount(root);
 }
 function scrollContent(){document.getElementById('chapter-content')?.scrollIntoView({behavior:'smooth',block:'start'});}
 function showNotice(message){notice=message;render();document.getElementById('notice')?.scrollIntoView({block:'center',behavior:'smooth'});}
@@ -122,9 +124,10 @@ if(!user)return;const input=event.target;
 
 if(input.dataset.group==='practice10'&&window.ChapterPractice.choose(CHAPTER_ID,P.practice10,input.dataset.question,Number(input.value),P.studyMode))saveSoon();
 });
-window.addEventListener('pagehide',()=>{if(user&&saveTimer){clearTimeout(saveTimer);persist();}});
+window.addEventListener('pagehide',()=>{window.GeometryShapeCarousel?.destroy();if(user&&saveTimer){clearTimeout(saveTimer);persist();}});
 
 async function signedIn(u){
+  window.GeometryShapeCarousel?.destroy();
   const epoch=++authEpoch;clearTimeout(saveTimer);user=u;P=emptyProgress();cloudReady=false;saveVersion=0;saveChain=Promise.resolve();notice='';
   
   if(!u){root.innerHTML=`${header()}<main id="chapter-content" class="access card"><p class="eyebrow">Geometría · Capítulo 1 de 24</p><h1>Segmentos y ángulos</h1><p>Inicia sesión en la academia para estudiar y guardar tu avance.</p><a class="button" href="index.html?chapter=geometria-capitulo-01">Continuar con Google</a></main>`;return;}
@@ -160,7 +163,7 @@ window.addEventListener('storage',event=>{if(user&&window.StudyMode&&event.key==
 function applyAnchor(draw=true){
  if(applyIntroAnchor(draw))return;
  const id=window.location.hash?.slice(1);if(!id)return;
- const index=LESSONS.findIndex(l=>l.id===id);
+ const index=id==='figuras-geometricas'?0:LESSONS.findIndex(l=>l.id===id);
  if(index>=0){P.currentItem=index;P.readingItem=index;P.activeTab='theory';}
  else if(/^geometria-resuelto-\d+$/.test(id))P.activeTab='examples';
  else if(/^geometria-propuesto-\d+$/.test(id)||['propuestos-basicos','propuestos-intermedios'].includes(id))P.activeTab='proposed';
